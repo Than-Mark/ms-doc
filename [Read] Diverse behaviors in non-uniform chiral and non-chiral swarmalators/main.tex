@@ -63,7 +63,7 @@
 \definecolor{mycyan}{cmyk}{.3,0,0,0}
 
 %题目，作者，学校，日期
-\title{Phase Plane}
+\title{Paper Reading}
 %\subtitle{\fontsize{9pt}{14pt}\textbf{跨临界分岔}}
 \author{Speaker: Yichen Lu\quad \newline  \newline \quad }
 \institute{\fontsize{8pt}{14pt}}
@@ -85,25 +85,26 @@
 % -----------------------------------------------------------------------------
 \begin{document}
 % -----------------------------------------------------------------------------
-\frame{\titlepage}
+% \frame{\titlepage}
 
 \begin{frame}
     \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{title.jpg}
     \end{figure}
+    % 手性：swarmalators具有固定的圆形轨道，这个方向可以是顺时针也可以是逆时针
 \end{frame}
 
 \begin{frame}
     In the original model:
-    % 在原来的模型中，是把所有swarmalators的速度的模都设为一个常数，并且为0
+    % 在原来的模型中，是把所有粒子的自然速度的模都设为一个常数v_0，并且为0
         $$|\mathbf{v}_i|=v_0=0$$
     In this paper:
     % 在这篇paper中，作者做出了如下改进
         $$
         \mathbf{v}_i=c_i \mathbf{n}_i
         $$
-    % 这么做的好处是速度与swarmalators的相位构成了一个直接映射，并且速度会像相位一样沿着圆形轨道的方向
+    % 这么做的好处是速度与swarmalators的相位构成了一个直接映射，并且自然速度会像相位一样沿着圆形轨道的方向
         $$
         \begin{array}{c}
             c_i=\omega _iR_i\\
@@ -113,7 +114,7 @@
         \end{array} \right]\\
         \end{array}
         $$
-    % 这里c_i依赖与自然频率吧omega_i和旋转半径R_i, n_i是一个单位向量，与相位角垂直，也就是说每个swarmalators的相位是它所在轨道上的角位置
+    % 这里c_i依赖与自然频率omega_i和旋转半径R_i, n_i是一个单位向量，与相位角垂直，也就是说每个swarmalators的相位是它所在轨道上的角位置
 
 \end{frame}
 
@@ -157,6 +158,56 @@
     \newline
 
     How can I ensure that $J\cos \left( \theta _j-\theta _i \right) > 0$, which means $\theta _j-\theta _i > \pi$ when $\operatorname{sgn} \omega _j\ne\operatorname{sgn} \omega _i$?
+\end{frame}
+
+\begin{frame}
+    Model equations:
+    $$
+    \dot{\mathbf{x}}_i=\mathbf{v}_i+\frac{1}{N}\sum_{j\ne i}^N{\left[ \frac{\mathbf{x}_j-\mathbf{x}_i}{\left| \mathbf{x}_j-\mathbf{x}_i \right|}\left( A+J\cos \left( \theta _j-\theta _i-Q_{\dot{x}} \right) \right) -B\frac{\mathbf{x}_j-\mathbf{x}_i}{\left| \mathbf{x}_j-\mathbf{x}_i \right|^2} \right]}
+    $$
+    $$
+    \dot{\theta}_i=\omega _i+\frac{K}{N}\sum_{j\ne i}^N{\frac{\sin \left( \theta _j-\theta _i-Q_{\dot{\theta}} \right)}{\left| \mathbf{x}_j-\mathbf{x}_i \right|}}
+    $$
+\end{frame}
+
+\begin{frame}
+    Several different cases of natural frequencies $\omega$ in this paper:
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{omega.jpg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{fig2.jpg}
+    \end{figure}
+    % 图2e显示了两个相互作用的相位波，每一个都由相同自然频率的swarmalators组成；当两个环状结构形成的相位波绕着圆形边界移动时，会与相反的相位波相互作用。
+    % 无论相位波是同心的还是互锁的，它们根据相位保持圆周排列，
+    % 在K=-0/1. J=1的情况下，相同震动频率的swarmalators群体会形成分裂相位波，不同震动频率之间的相位波同心旋转，但方向相反。
+    % 当不同的震动频率增加时，分裂出的相位波的数量也增加了，分裂出的相位波的数量和自然频率的数量是相关的。当有3个以上的自然频组时，组间的间距不清楚，旋转方向就不明确了。—— movie 2
+
+    % 当自然频率分布为f2，也就是有2种时，会根据不同的频率形成两个群体，各自在内部形成并同步，并与频率相反的群体不同步。它们无法同步导致集体进入一个(bouncing cluster state)跳跃团簇状态，在这个状态下，每个群体在与另一个群体的吸引和排斥之间振荡，形成一种周期运动。这种振荡行为是由于群体具有相反的自然频率。当有2个以上的自然频率组时，他们的行为会更加复杂，而不是单轴的对称
+
+    % 当K值很大，J=0时，具有自然频率分布𝐹2的集体形成环状结构并进入一种叫做(static anti-phase states)的状态，由于K值很大，他们在相位上的耦合很强，粒子在它们自己的自然频率组内同步，但又被相反组的相位抵消。由于J=0，使得相似相位的粒子之间在空间上没有吸引力，因此粒子在空间上均匀地分布在圆内。当K较小时，在相位上的耦合较小，此时相位波呈现出在径向方向上移动。
+
+    % 当J<0时，相位相似的粒子会在空间上相互排斥，比如在K值比较大，粒子发生同步之后，由于都具有相同的相位，斥力会导致他们均匀碰撞。当有两种相反的自然频率时，粒子表现出的是在空间上径向的振荡状态，来自两个自然频率群的主体均匀分布在一个圆形地层中，并周期性地膨胀和收缩。这是因为当两组的相位差减小时，主体相互排斥，集体膨胀，但当相位差达到最大时，吸引力发生，群体收缩。
+\end{frame}
+
+\begin{frame}
+    $$
+    Z=\frac{1}{N}\sum_{j=1}^N{e^{i\left( \theta _j \right)}},\ \  \beta =\left| \frac{1}{n_{\omega}>0}\sum_{j=1}^{n_{\omega >0}}{\boldsymbol{x}_{\omega >0}}-\frac{1}{n_{\omega <0}}\sum_{j=1}^{n_{\omega <0}}{\boldsymbol{x}_{\omega <0}} \right|
+    $$
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{fig3.jpg}
+    \end{figure}
+    % 下面是实验统计的一些序参量，
+    % γ表示在暂态后，也就是稳定后在空间和相位上完成至少一个周期的swarmalators比例。
+    % Z来自Kuramoto模型，表示相位同步的程度
+    % β是自然频率为正和自然频率为负的swarmalators的平均位置的差值，也就是说，它是两个相位波之间的距离，所以当进入跳跃群体状态时，β会变大。
+    % K是比较小的正值时，S保持在较高的取值，当K增加到很大后，有轻微的下降，这是因为当K增加时，相位波的数量也增加了，这使得相位波之间的相互作用增加，从而导致了S的下降。
 \end{frame}
 
 % -----------------------------------------------------------------------------
