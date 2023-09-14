@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  4 SEP 2023 21:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  14 SEP 2023 08:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1113,55 +1113,85 @@ File: title.png Graphic file (type bmp)
 <title.png>
 [1
 
+] (./main.toc) [2
+
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 102.
+(Font)              scaled to size 9.00096pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 102.
+(Font)              scaled to size 6.00064pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 102.
+(Font)              scaled to size 5.00053pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 102.
+(Font)              scaled to size 8.99904pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 102.
+(Font)              scaled to size 5.99936pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 102.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 102.
+(Font)              scaled to size 4.99947pt on input line 104.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 102.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 102.
+(Font)              scaled to size 10.00107pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 7.40077pt on input line 102.
+(Font)              scaled to size 7.40077pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 5.50058pt on input line 102.
+(Font)              scaled to size 5.50058pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 102.
+(Font)              scaled to size 9.99893pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 7.3992pt on input line 102.
+(Font)              scaled to size 7.3992pt on input line 104.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 5.4994pt on input line 102.
-[2
-
-] [3
+(Font)              scaled to size 5.4994pt on input line 104.
+[3
 
 ] [4
+
+] [5
 
 ]
 File: f2.png Graphic file (type bmp)
 <f2.png>
-[5
-
-] [6
+[6
 
 ] [7
 
-] [8
+] (./main.toc) [8
+
+]
+File: title.png Graphic file (type bmp)
+<title.png>
+[9
+
+] [10
+
+] [11
+
+]
+File: map.png Graphic file (type bmp)
+<map.png>
+
+Overfull \vbox (5.70946pt too high) detected at line 238
+ []
+
+[12
+
+]
+File: f2.png Graphic file (type bmp)
+<f2.png>
+[13
+
+]
+File: withOP.png Graphic file (type bmp)
+<withOP.png>
+[14
+
+] [15
 
 ]
 \tf@nav=\write7
@@ -1175,15 +1205,15 @@ File: f2.png Graphic file (type bmp)
 
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: F7783316EBDAC372A6964D68407905AA;313.
  ) 
 Here is how much of TeX's memory you used:
- 29303 strings out of 478907
- 561903 string characters out of 5866571
- 1230395 words of memory out of 5000000
- 48551 multiletter control sequences out of 15000+600000
- 409424 words of font info for 102 fonts, out of 8000000 for 9000
+ 29395 strings out of 478907
+ 563808 string characters out of 5866571
+ 1236395 words of memory out of 5000000
+ 48635 multiletter control sequences out of 15000+600000
+ 409432 words of font info for 103 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 112i,15n,116p,423b,2933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 112i,19n,116p,423b,2933s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (8 pages).
+Output written on main.pdf (15 pages).

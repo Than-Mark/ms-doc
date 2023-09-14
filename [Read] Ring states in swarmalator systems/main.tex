@@ -87,6 +87,8 @@
     \end{figure}
 \end{frame}
 
+\section{Original content}
+
 \begin{frame}
     Model equations:
     {
@@ -178,13 +180,75 @@
 
 \end{frame}
 
+\section{Define the order parameters}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{title.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    Model equations:
+    {
+    \small
+    $$
+    \dot{\mathbf{x}}_k=\frac{1}{N}\sum_{j\ne i}^N{\left[ \left( \mathbf{x}_j-\mathbf{x}_k \right) \left( A+J_1\cos \left( \theta _j-\theta _k \right) \right) -\left( B-J_2\cos \left( \theta _j-\theta _k \right) \right) \frac{\mathbf{x}_j-\mathbf{x}_k}{\left| \mathbf{x}_j-\mathbf{x}_k \right|^2} \right]}
+    $$
+    $$
+    \dot{\theta}_k=\frac{K}{N}\sum_{j\ne i}^N{\frac{\sin \left( \theta _j-\theta _k \right)}{\left| \mathbf{x}_j-\mathbf{x}_k \right|^2}}
+    $$
+    }
+    $A=B=1$
+\end{frame}
+
 \begin{frame}
     $$
     \begin{aligned}
-        R_k&=\sqrt{\hat{x}_{k}^{2}+\hat{y}_{k}^{2}}\\
-        S&=\sqrt{\frac{\sum\nolimits_{j=1}^N{\left( R_j-\bar{R} \right)}^2}{n-1}}\\
+        R_j&=\sqrt{\hat{x}_{j}^{2}+\hat{y}_{j}^{2}}\\
+        \bar{R}&=\frac{1}{N}\sum_{j=1}^N{R_j},\left( \mathrm{Mean}\ \mathrm{radius} \right)\\
     \end{aligned}
     $$
+
+    Order parameters:
+    
+    $$
+    V=\frac{\sqrt{\frac{\sum\nolimits_{j=1}^N{\left( R_j-\bar{R} \right) ^2}}{n-1}}}{\bar{R}}, \left( \mathrm{Coefficient}\ \mathrm{of}\ \mathrm{Variation} \right)
+    $$
+
+    % $$
+    % \begin{aligned}
+    %     \bar{R}&=\frac{1}{N}\sum_{j=1}^N{R_j},\left( \mathrm{Mean} \mathrm{radius} \right)\\
+    %     V&=\frac{\sqrt{\frac{\sum\nolimits_{j=1}^N{\left( R_j-\bar{R} \right) ^2}}{N-1}}}{\bar{R}},\left( \mathrm{Coefficient} \mathrm{of} \mathrm{Variation} \right)\\
+    %     Ku&=\frac{\frac{\sum\nolimits_{j=1}^N{\left( R_j-\bar{R} \right) ^4}}{N-1}}{\left[ \frac{\sum\nolimits_{j=1}^N{\left( R_j-\bar{R} \right) ^2}}{N-1} \right] ^2}\\
+    % \end{aligned}
+    % $$
+
+\end{frame}
+
+\begin{frame}
+    $$
+    K\in \left[ -5, -1 \right] , J_1\in \left[ -2, 2 \right] , J_2\in \left\{ -2, -1, 0, 1, 2, 3 \right\} 
+    $$
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{map.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{f2.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{withOP.png}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
