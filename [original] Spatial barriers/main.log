@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  28 SEP 2023 08:53
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  8 OCT 2023 22:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1138,29 +1138,43 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/m/n --> TU/lmss/b/n on input line 80.
 \c@lstlisting=\count368
-(./main.nav) [1
+(./main.nav) (./main.toc)
+
+LaTeX Font Warning: Font shape `TU/HardingTextWebRegularRegular.ttf(0)/b/n' undefined
+(Font)              using `TU/HardingTextWebRegularRegular.ttf(0)/m/n' instead on input line 82.
+
+[1
+
+]
+File: ChenY2014Face.jpg Graphic file (type bmp)
+<ChenY2014Face.jpg>
+[2
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 106.
+(Font)              scaled to size 10.00107pt on input line 102.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 7.40077pt on input line 106.
+(Font)              scaled to size 7.40077pt on input line 102.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
-(Font)              scaled to size 5.50058pt on input line 106.
+(Font)              scaled to size 5.50058pt on input line 102.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 106.
+(Font)              scaled to size 9.99893pt on input line 102.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 7.3992pt on input line 106.
+(Font)              scaled to size 7.3992pt on input line 102.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(3)/m/n' will be
-(Font)              scaled to size 5.4994pt on input line 106.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 106.
+(Font)              scaled to size 5.4994pt on input line 102.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 102.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 106.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 102.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2
+) [3
+
+] (./main.toc) [4
+
+] [5
 
 ]
 \tf@nav=\write7
@@ -1173,16 +1187,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout9 = `main.snm'.
 
 (./main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: EA72CF7A90A760EE602CEF5B5D248D3D;195.
  ) 
 Here is how much of TeX's memory you used:
- 29232 strings out of 478907
- 561248 string characters out of 5866571
- 1223246 words of memory out of 5000000
- 48506 multiletter control sequences out of 15000+600000
- 406849 words of font info for 81 fonts, out of 8000000 for 9000
+ 29331 strings out of 478907
+ 563728 string characters out of 5866571
+ 1225246 words of memory out of 5000000
+ 48596 multiletter control sequences out of 15000+600000
+ 406865 words of font info for 83 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 112i,15n,116p,423b,2933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 112i,19n,116p,423b,2933s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (2 pages).
+Output written on main.pdf (5 pages).

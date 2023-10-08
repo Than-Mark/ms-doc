@@ -79,9 +79,29 @@
 % -----------------------------------------------------------------------------
 \begin{document}
 
+\section{Chen Y, 2014}
+
 \begin{frame}
-    
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{ChenY2014Face.jpg}
+	\end{figure}
+	
+	\textbf{Keywords:}  predator–prey interactions, biological, aggregation, dynamical systems
 \end{frame}
+
+\begin{frame}
+    The model of this paper:
+	$$
+	\frac{dx_j}{dt}=\frac{1}{N}\sum_{k=1,k\ne j}^N{\left( \frac{x_j-x_k}{\left| x_j-x_k \right|^2}-a\left( x_j-x_k \right) \right) +b\frac{x_j-z}{\left| x_j-z \right|^2}}
+	$$
+	and
+	$$
+	\frac{dz}{dt}=\frac{c}{N}\sum_{k=1}^N{\frac{x_k-z}{\left| x_k-z \right|^p}}
+	$$
+\end{frame}
+
+\section{My Model}
 
 \begin{frame}
     $$
@@ -104,6 +124,8 @@
 
 
 \end{frame}
+
+
 
 
 % -----------------------------------------------------------------------------
