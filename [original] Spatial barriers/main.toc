@@ -1,2 +1,0 @@
-\beamer@sectionintoc {1}{Chen Y, 2014}{1}{0}{1}
-\beamer@sectionintoc {2}{My Model}{4}{0}{2}
