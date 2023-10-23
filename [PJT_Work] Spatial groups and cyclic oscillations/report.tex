@@ -20,6 +20,60 @@
     \item 必要的理论分析与估计
 \end{enumerate}
 
+分析点
+\subsection{单个粒子的运动问题（无相互作用）}
 
+$$
+\begin{cases}
+	\begin{array}{c}
+	\Delta x\left( t \right) =v\cos \theta \Delta t\\
+	\Delta y\left( t \right) =v\sin \theta \Delta t\\
+\end{array}\rightarrow \begin{array}{c}
+	\dot{x}=v\cos \theta\\
+	\dot{y}=v\sin \theta\\
+\end{array}\\
+	\dot{\theta}_i=\omega _i\rightarrow \theta _i\left( t \right) =\omega _it\\
+	v=\sqrt{\dot{x}_{i}^{2}+\dot{y}_{i}^{2}}=v\left( constant \right)\\
+\end{cases}
+$$
+
+运动半径 $=\ ?$
+
+$$
+\begin{cases}
+	x_i\left( t \right) =x_i\left( 0 \right) -\frac{v}{\omega _i}\sin \omega _it\\
+	y_i\left( t \right) =y_i\left( 0 \right) -\frac{v}{\omega _i}\cos \omega _it\\
+\end{cases}
+$$
+
+$$
+\Rightarrow \left( x_i-x_{i}^{0} \right) ^2+\left( y_i-y_{i}^{0} \right) ^2=\left( \frac{v}{\omega _i} \right) ^2
+$$
+
+每个粒子的运动轨迹是一个圆，圆心为 $\left( x_i^0,y_i^0 \right)$，半径为 $\frac{v}{\omega _i}$
+
+\subsection{考虑相互作用$\lambda$，耦合距离$d_0$ ($\{A_ij\}$，注意是时变的)}
+
+\begin{itemize}
+    \item 看空间聚集过程
+    \item 空间尺度也考虑进去
+\end{itemize}
+
+粒子数$N$，$L\times L\sim \sqrt{\frac{L\times L}{N}}\sim \frac{L}{\sqrt{N}}$
+
+\begin{enumerate}
+    \item 每个单粒子的运动空间尺度, $\cfrac{v}{\omega_i}$
+    \item 耦合距离 $d_0$
+    \item 粒子平均间距 $\cfrac{L}{\sqrt{N}}$
+\end{enumerate}
+
+$$
+d_0\sim \frac{L}{\sqrt{N}}\rightarrow d_0\ll \frac{L}{\sqrt{N}}, d_0\gg \frac{L}{\sqrt{N}}
+$$
+
+低频粒子：$d_0\ll \frac{v}{\omega _i}$
+高频粒子：$d_0\gg \frac{v}{\omega _i}$
+
+在计算空间pattern同时，还要跟踪每个粒子的相速度$\dot{\theta}_i(t)$
 
 \end{document}
