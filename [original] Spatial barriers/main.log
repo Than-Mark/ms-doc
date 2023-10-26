@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 OCT 2023 09:23
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  26 OCT 2023 08:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -581,54 +581,6 @@ Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 ) (e:/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 
-./main.tex:9: Package fontspec Error: The font "Harding Text Web Regular Regular" cannot
-(fontspec)                be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.9 \usepackage
-               {diagbox} % 表头斜线分区
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-./main.tex:9: Package fontspec Error: The font "Harding Text Web Regular Regular" cannot
-(fontspec)                be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.9 \usepackage
-               {diagbox} % 表头斜线分区
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-./main.tex:9: Package fontspec Error: The font "Harding Text Web Regular Regular" cannot
-(fontspec)                be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.9 \usepackage
-               {diagbox} % 表头斜线分区
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
 Package fontspec Info: Font family 'HardingTextWebRegularRegular.ttf(0)'
 (fontspec)             created for font 'Harding Text Web Regular Regular.ttf'
 (fontspec)             with options [Ligatures=TeX].
@@ -637,9 +589,11 @@ Package fontspec Info: Font family 'HardingTextWebRegularRegular.ttf(0)'
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[Harding Text Web
-(fontspec)             Regular Regular.ttf]/OT"
+(fontspec)             Regular
+(fontspec)             Regular.ttf]/OT:script=latn;language=dflt;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"[Harding
-(fontspec)             Text Web Regular Regular.ttf]/OT"
+(fontspec)             Text Web Regular
+(fontspec)             Regular.ttf]/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
 
 (e:/texlive/2021/texmf-dist/tex/latex/diagbox/diagbox.sty
 Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
@@ -702,54 +656,6 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 \g__um_primekern_muskip=\muskip18
 (e:/texlive/2021/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (e:/texlive/2021/texmf-dist/tex/latex/beamer/beamerfontthemeserif.sty)
 
-./main.tex:13: Package fontspec Error: The font "Harding Text Web Regular Regular" cannot
-(fontspec)                be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.13 \setmathfont
-                 {TeX Gyre Termes Math} % 如果您使用 XeLaTeX 或 LuaLaTeX 编译，可以使用其他...
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-./main.tex:13: Package fontspec Error: The font "Harding Text Web Regular Regular" cannot
-(fontspec)                be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.13 \setmathfont
-                 {TeX Gyre Termes Math} % 如果您使用 XeLaTeX 或 LuaLaTeX 编译，可以使用其他...
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
-./main.tex:13: Package fontspec Error: The font "Harding Text Web Regular Regular" cannot
-(fontspec)                be found.
-
-For immediate help type H <return>.
- ...                                              
-                                                  
-l.13 \setmathfont
-                 {TeX Gyre Termes Math} % 如果您使用 XeLaTeX 或 LuaLaTeX 编译，可以使用其他...
-
-A font might not be found for many reasons.
- Check the spelling, where the font is installed etc. etc.
-
- When in doubt, ask someone for help!
-
-
-
 Package fontspec Info: Font family 'HardingTextWebRegularRegular.ttf(1)'
 (fontspec)             created for font 'Harding Text Web Regular Regular.ttf'
 (fontspec)             with options [].
@@ -758,9 +664,10 @@ Package fontspec Info: Font family 'HardingTextWebRegularRegular.ttf(1)'
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[Harding Text Web
-(fontspec)             Regular Regular.ttf]/OT"
+(fontspec)             Regular Regular.ttf]/OT:script=latn;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"[Harding
-(fontspec)             Text Web Regular Regular.ttf]/OT"
+(fontspec)             Text Web Regular
+(fontspec)             Regular.ttf]/OT:script=latn;language=dflt;+smcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/HardingTextWebRegularRegular.ttf(1)/m/n on input line 13.
@@ -1139,18 +1046,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 10.0pt
 (hyperref)                replaced by space on input line 62.
 
-./main.tex:80: Font TU/HardingTextWebRegularRegular.ttf(0)/m/n/10="[Harding Text Web Regular Regular.ttf]/OT" at 10.0pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.80 \begin{document}
-                     
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-No file main.aux.
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -1220,11 +1116,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 80.
 LaTeX Info: Redefining \pageref on input line 80.
 LaTeX Info: Redefining \nameref on input line 80.
+(./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 (e:/texlive/2021/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1244,384 +1138,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/m/n --> TU/lmss/b/n on input line 80.
 \c@lstlisting=\count368
-(./main.nav)
-./main.tex:80: Font TU/HardingTextWebRegularRegular.ttf(0)/m/n/5="[Harding Text Web Regular Regular.ttf]/OT" at 5.0pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.80 \begin{document}
-                     
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no S ("53) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no L ("4C) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no P ("50) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no R ("52) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-No file main.toc.
-./main.tex:82: Font TU/HardingTextWebRegularRegular.ttf(0)/m/n/14.4="[Harding Text Web Regular Regular.ttf]/OT" at 14.4pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.82 \section{Chen Y, 2014}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
+(./main.nav) (./main.toc)
 
 LaTeX Font Warning: Font shape `TU/HardingTextWebRegularRegular.ttf(0)/b/n' undefined
 (Font)              using `TU/HardingTextWebRegularRegular.ttf(0)/m/n' instead on input line 82.
 
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-./main.tex:82: Font TU/HardingTextWebRegularRegular.ttf(0)/m/n/4="[Harding Text Web Regular Regular.ttf]/OT" at 4.0pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.82 \section{Chen Y, 2014}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no S ("53) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no L ("4C) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no P ("50) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no R ("52) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
 [1
 
 ]
 File: ChenY2014Face.jpg Graphic file (type bmp)
 <ChenY2014Face.jpg>
-./main.tex:91: Font TU/HardingTextWebRegularRegular.ttf(0)/b/n/10="[Harding Text Web Regular Regular.ttf]/OT" at 10.0pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.91 \end{frame}
-                
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no K ("4B) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no w ("77) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no – ("2013) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no b ("62) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no m ("6D) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no m ("6D) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no S ("53) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no L ("4C) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no P ("50) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no R ("52) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
 [2
 
 ]
-Missing character: There is no T ("54) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no m ("6D) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no f ("66) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
 (Font)              scaled to size 10.00107pt on input line 102.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(2)/m/n' will be
@@ -1641,248 +1170,36 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 102.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no S ("53) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no L ("4C) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no P ("50) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no R ("52) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no 3 ("33) in font nullfont!
-[3
+) [3
+
+] (./main.toc) [4
+
+] [5
 
 ]
-No file main.toc.
-./main.tex:104: Font TU/HardingTextWebRegularRegular.ttf(0)/b/n/14.4="[Harding Text Web Regular Regular.ttf]/OT" at 14.4pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.104 \section{My Model}
-                        
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
+\tf@nav=\write7
+\openout7 = `main.nav'.
 
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no t ("74) in font nullfont!
-Missing character: There is no s ("73) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no . ("2E) in font nullfont!
-Missing character: There is no C ("43) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no , ("2C) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 0 ("30) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no y ("79) in font nullfont!
-Missing character: There is no M ("4D) in font nullfont!
-Missing character: There is no o ("6F) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no l ("6C) in font nullfont!
-Missing character: There is no S ("53) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no k ("6B) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no : ("3A) in font nullfont!
-Missing character: There is no Y ("59) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no c ("63) in font nullfont!
-Missing character: There is no h ("68) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no L ("4C) in font nullfont!
-Missing character: There is no u ("75) in font nullfont!
-Missing character: There is no P ("50) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no p ("70) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no r ("72) in font nullfont!
-Missing character: There is no R ("52) in font nullfont!
-Missing character: There is no e ("65) in font nullfont!
-Missing character: There is no a ("61) in font nullfont!
-Missing character: There is no d ("64) in font nullfont!
-Missing character: There is no i ("69) in font nullfont!
-Missing character: There is no n ("6E) in font nullfont!
-Missing character: There is no g ("67) in font nullfont!
-Missing character: There is no 4 ("34) in font nullfont!
-[4
+\tf@toc=\write8
+\openout8 = `main.toc'.
 
-]
-./main.tex:127: Font TU/HardingTextWebRegularRegular.ttf(1)/m/n/10="[Harding Text Web Regular Regular.ttf]/OT" at 10.0pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.127 \end{frame}
-                 
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
+\tf@snm=\write9
+\openout9 = `main.snm'.
 
-./main.tex:127: Font TU/HardingTextWebRegularRegular.ttf(1)/m/n/7.4="[Harding Text Web Regular Regular.ttf]/OT" at 7.4pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.127 \end{frame}
-                 
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
+(./main.aux)
 
-./main.tex:127: Font TU/HardingTextWebRegularRegular.ttf(1)/m/n/5.5="[Harding Text Web Regular Regular.ttf]/OT" at 5.5pt not loadable: Metric (TFM) file or installed font not found.
-<to be read again> 
-                   relax 
-l.127 \end{frame}
-                 
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-./main.tex:127: \textfont 7 is undefined (character x).
-\beamer@doifinframe ...mathrm {x}_i \right |^2} $$
-                                                   \par $$ \dot {\theta }_i=...
-l.127 \end{frame}
-                 
-Somewhere in the math formula just ended, you used the
-stated character from an undefined font family. For example,
-plain TeX doesn't allow \it or \sl in subscripts. Proceed,
-and I'll try to forget that I needed that character.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: EA72CF7A90A760EE602CEF5B5D248D3D;195.
+ ) 
+Here is how much of TeX's memory you used:
+ 29331 strings out of 478907
+ 563728 string characters out of 5866571
+ 1227246 words of memory out of 5000000
+ 48596 multiletter control sequences out of 15000+600000
+ 406865 words of font info for 83 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 112i,19n,116p,423b,2933s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on main.pdf (5 pages).
