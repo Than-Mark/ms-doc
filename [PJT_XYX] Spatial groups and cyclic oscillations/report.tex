@@ -3,6 +3,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{graphicx}
 
 \setlength{\parindent}{2em}
 \usepackage{geometry}
@@ -75,5 +77,100 @@ $$
 高频粒子：$d_0\gg \frac{v}{\omega _i}$
 
 在计算空间pattern同时，还要跟踪每个粒子的相速度$\dot{\theta}_i(t)$
+
+\newpage
+
+\section{局部耦合中跨边界坐标的调整}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{./figs/fig1.jpg}
+    \caption{跨边界坐标的调整}
+    \label{fig:fig1}
+\end{figure}
+
+给定$(x_i, y_i)$, 对于任意的$(x_j, y_j)$, 做如下变换
+
+$$
+\bar{x}_j=\begin{cases}
+	x_j,&		|x_i-x_j|\le L/2\\
+	x_j+L,&		x_i-x_j>L/2\\
+	x_j-L,&		x_j-x_i>L/2\\
+\end{cases}
+$$
+
+$$
+\bar{y}_j=\begin{cases}
+    y_j,&		|y_i-y_j|\le L/2\\
+    y_j+L,&		y_i-y_j>L/2\\
+    y_j-L,&		y_j-y_i>L/2\\
+\end{cases}
+$$
+
+其中，$L$为边界长度. 例如，对于\ref{fig:fig1}中的情况，以A为$(x_i, y_i)$时，B需调整纵坐标，D需调整横坐标，C需同时调整横纵坐标.
+
+$\ $
+
+原始距离为
+
+$$
+d_{ij}=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}
+$$
+
+变换后的距离为
+
+$$
+\bar{d}_{ij}=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}
+$$
+
+下证$\bar{d} \le d_{ij}$:
+
+$ $
+
+对于$(x_i-x_j)^2, (x_i-\bar{x}_j)^2$, 若$x_i\ne \bar{x}_j$,有
+
+$$
+\begin{array}{l}
+	(x_i-\bar{x}_j)^2-(x_i-x_j)^2\\
+	=\left( x_j\pm L-x_i \right) ^2-(x_i-x_j)^2\\
+	=L^2\pm 2L\left( x_j-x_i \right)\\
+	=\left\{ \begin{matrix}
+	L^2+2L\left( x_j-x_i \right) ,&		x_i-x_j>5\\
+	L^2-2L\left( x_j-x_i \right) ,&		x_j-x_i>5\\
+\end{matrix} \right.\\
+	<L^2-10L\\
+	=0, \left( L=10 \right)\\
+\end{array}
+$$
+
+即
+
+$$
+(x_i-\bar{x}_j)^2<(x_i-x_j)^2, \left( L=10, x_i\ne \bar{x}_j \right)
+$$
+
+同理可证
+
+$$
+(y_i-\bar{y}_j)^2<(y_i-y_j)^2, \left( L=10, x_i\ne \bar{x}_j \right)
+$$
+
+综上有
+
+$$
+\bar{d}_{ij}=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}\le \sqrt{(x_i-x_j)^2+(y_i-y_j)^2}=d_{ij}
+$$
+
+当且仅当$x_i=\bar{x}_j$且$y_i=\bar{y}_j$时，取等号.
+
+因此
+
+$$
+\begin{aligned}
+	D_{ij}&=\min \left\{ \sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2},\sqrt{(x_i-x_j)^2+(y_i-y_j)^2} \right\}\\
+	&=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}\\
+\end{aligned}
+$$
+
 
 \end{document}
