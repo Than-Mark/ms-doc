@@ -4,13 +4,118 @@
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 \usepackage{bm}
+\usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{float}
 
 \setlength{\parindent}{2em}
 \usepackage{geometry}
 \geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
 
+% 设置文章行距
+\renewcommand{\baselinestretch}{1.5}
+
+% 定义引用格式
+% \newcommand{\myeqref}[1]{\eqref{#1}式}
+% \newcommand{\figref}[1]{图\ref{#1}}
+% \newcommand{\tabref}[1]{表\ref{#1}}
+
 \begin{document}
+
+
+\section{局部耦合中跨边界坐标的调整}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{./figs/fig1.jpg}
+    \caption{跨边界坐标的调整}
+    \label{fig:fig22}
+\end{figure}
+
+给定$(x_i, y_i)$, 对于任意的$(x_j, y_j)$, 做如下变换
+
+$$
+\bar{x}_j=\begin{cases}
+	x_j,&		|x_i-x_j|\le L/2\\
+	x_j+L,&		x_i-x_j>L/2\\
+	x_j-L,&		x_j-x_i>L/2\\
+\end{cases}
+$$
+
+$$
+\bar{y}_j=\begin{cases}
+    y_j,&		|y_i-y_j|\le L/2\\
+    y_j+L,&		y_i-y_j>L/2\\
+    y_j-L,&		y_j-y_i>L/2\\
+\end{cases}
+$$
+
+其中，$L$为边界长度. 例如，对于\ref{fig:fig22}中的情况，以A为$(x_i, y_i)$时，B需调整纵坐标，D需调整横坐标，C需同时调整横纵坐标.
+
+$\ $
+
+原始距离为
+
+$$
+d_{ij}=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}
+$$
+
+变换后的距离为
+
+$$
+\bar{d}_{ij}=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}
+$$
+
+下证$\bar{d}_{ij} \le d_{ij}$, 即调整后的距离不会大于原始距离.
+
+$ $
+
+对于$(x_i-x_j)^2, (x_i-\bar{x}_j)^2$, 若$x_i\ne \bar{x}_j$,有
+
+$$
+\begin{array}{l}
+	(x_i-\bar{x}_j)^2-(x_i-x_j)^2\\
+	=\left( x_j\pm L-x_i \right) ^2-(x_i-x_j)^2\\
+	=L^2\pm 2L\left( x_j-x_i \right)\\
+	=\left\{ \begin{matrix}
+	L^2+2L\left( x_j-x_i \right) ,&		x_i-x_j>5\\
+	L^2-2L\left( x_j-x_i \right) ,&		x_j-x_i>5\\
+\end{matrix} \right.\\
+	<L^2-10L\\
+	=0, \left( L=10 \right)\\
+\end{array}
+$$
+
+即
+
+$$
+(x_i-\bar{x}_j)^2<(x_i-x_j)^2, \left( L=10, x_i\ne \bar{x}_j \right)
+$$
+
+同理可证
+
+$$
+(y_i-\bar{y}_j)^2<(y_i-y_j)^2, \left( L=10, x_i\ne \bar{x}_j \right)
+$$
+
+综上有
+
+$$
+\bar{d}_{ij}=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}\le \sqrt{(x_i-x_j)^2+(y_i-y_j)^2}=d_{ij}
+$$
+
+当且仅当$x_i=\bar{x}_j$且$y_i=\bar{y}_j$时，取等号.
+
+因此
+
+$$
+\begin{aligned}
+	D_{ij}&=\min \left\{ \sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2},\sqrt{(x_i-x_j)^2+(y_i-y_j)^2} \right\}\\
+	&=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}\\
+\end{aligned}
+$$
+
+\newpage
 
 \section{相位-取向关联的集群振子系统的动力学研究}
 
@@ -78,99 +183,89 @@ $$
 
 在计算空间pattern同时，还要跟踪每个粒子的相速度$\dot{\theta}_i(t)$
 
-\newpage
+\subsection{序参量 Order Parameter}
 
-\section{局部耦合中跨边界坐标的调整}
+\subsubsection{相位单位圆}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.4\textwidth]{./figs/fig1.jpg}
-    \caption{跨边界坐标的调整}
-    \label{fig:fig1}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_2.00.eps}
+	\caption{相位单位圆}
+	\label{fig:fig11}
 \end{figure}
 
-给定$(x_i, y_i)$, 对于任意的$(x_j, y_j)$, 做如下变换
+$z$轴表示单位圆上相位处于该区间的粒子数，类似于分布.
+
+\subsubsection{每个粒子旋转质心的坐标}
+
+对于任意的粒子$i$，其当前坐标为$\left( x_i,y_i \right)$，相速度为$\dot{\theta}_i$，假设从当前时刻开始，其相速度不变，即$\dot{\theta}_i$为常数，记录该粒子在一个周期($2\pi$)内的运动轨迹，即$2\pi / \dot{\theta}_i$时间内，以当前坐标$\left( x_i,y_i \right)$为起点，以$\left\{ v\cos \theta _i,v\sin \theta _i \right\} $为速度，运动得到的轨迹，以轨迹上点坐标的算数平均作为该粒子的旋转质心坐标，即
 
 $$
-\bar{x}_j=\begin{cases}
-	x_j,&		|x_i-x_j|\le L/2\\
-	x_j+L,&		x_i-x_j>L/2\\
-	x_j-L,&		x_j-x_i>L/2\\
+\begin{cases}
+	\bar{x}_i=\frac{1}{2\pi / \dot{\theta}_i}\int_{0}^{2\pi / \dot{\theta}_i}{\left( x_i+v\cos \theta _it \right) dt}\\
+	\bar{y}_i=\frac{1}{2\pi / \dot{\theta}_i}\int_{0}^{2\pi / \dot{\theta}_i}{\left( y_i+v\sin \theta _it \right) dt}\\
 \end{cases}
 $$
+由上式计算得到的每个状态的旋转质心坐标，见附录\ref{sec:appendix}, 图% \ref{fig:fig2}.
+
+以轨迹上点距离旋转质心的距离的算数平均作为该粒子的旋转半径，即
 
 $$
-\bar{y}_j=\begin{cases}
-    y_j,&		|y_i-y_j|\le L/2\\
-    y_j+L,&		y_i-y_j>L/2\\
-    y_j-L,&		y_j-y_i>L/2\\
-\end{cases}
+\bar{r}_i=\frac{1}{2\pi / \dot{\theta}_i}\int_{0}^{2\pi / \dot{\theta}_i}{\sqrt{\left( x_i+v\cos \theta _it-\bar{x}_i \right) ^2+\left( y_i+v\sin \theta _it-\bar{y}_i \right) ^2}dt}
 $$
 
-其中，$L$为边界长度. 例如，对于\ref{fig:fig1}中的情况，以A为$(x_i, y_i)$时，B需调整纵坐标，D需调整横坐标，C需同时调整横纵坐标.
-
-$\ $
-
-原始距离为
+此外，还可以计算每个旋转质心距离原点的距离，即
 
 $$
-d_{ij}=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}
+d_i=\sqrt{\bar{x}_i^2+\bar{y}_i^2}
 $$
 
-变换后的距离为
+\subsubsection{序参量的定义}
+
+旋转质心距离原点的距离标准差
 
 $$
-\bar{d}_{ij}=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}
+\sigma _d=\sqrt{\frac{1}{N}\sum_{i=1}^{N}{\left( d_i-\bar{d} \right) ^2}}
 $$
 
-下证$\bar{d} \le d_{ij}$:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/stdd.jpg}
+	\caption{旋转质心原点距离标准差}
+	\label{fig:fig12}
+\end{figure}
 
-$ $
+旋转质心邻域内的其余质心数
 
-对于$(x_i-x_j)^2, (x_i-\bar{x}_j)^2$, 若$x_i\ne \bar{x}_j$,有
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/nearbyNums.png}
+	\caption{旋转质心原点距离标准差}
+	\label{fig:fig13}
+\end{figure}
 
-$$
-\begin{array}{l}
-	(x_i-\bar{x}_j)^2-(x_i-x_j)^2\\
-	=\left( x_j\pm L-x_i \right) ^2-(x_i-x_j)^2\\
-	=L^2\pm 2L\left( x_j-x_i \right)\\
-	=\left\{ \begin{matrix}
-	L^2+2L\left( x_j-x_i \right) ,&		x_i-x_j>5\\
-	L^2-2L\left( x_j-x_i \right) ,&		x_j-x_i>5\\
-\end{matrix} \right.\\
-	<L^2-10L\\
-	=0, \left( L=10 \right)\\
-\end{array}
-$$
 
-即
 
-$$
-(x_i-\bar{x}_j)^2<(x_i-x_j)^2, \left( L=10, x_i\ne \bar{x}_j \right)
-$$
+\newpage
 
-同理可证
+\section{附录}\label{sec:appendix}
 
-$$
-(y_i-\bar{y}_j)^2<(y_i-y_j)^2, \left( L=10, x_i\ne \bar{x}_j \right)
-$$
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=\textwidth]{./figs/centorsBigGraph.png}
+% 	\caption{旋转质心}
+% 	\label{fig:fig2}
+% \end{figure}
 
-综上有
+% \title{Swarm dynamics for oscillators with Phase Orientation Correlation}
+% \maketitle
 
-$$
-\bar{d}_{ij}=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}\le \sqrt{(x_i-x_j)^2+(y_i-y_j)^2}=d_{ij}
-$$
+% \section{Introduction}
 
-当且仅当$x_i=\bar{x}_j$且$y_i=\bar{y}_j$时，取等号.
-
-因此
-
-$$
-\begin{aligned}
-	D_{ij}&=\min \left\{ \sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2},\sqrt{(x_i-x_j)^2+(y_i-y_j)^2} \right\}\\
-	&=\sqrt{(x_i-\bar{x}_j)^2+(y_i-\bar{y}_j)^2}\\
-\end{aligned}
-$$
+% \section{Results}
+% \subsection{The Model}
+% \subsection{Numerics}
+% \subsection{Theoretical Analysis}
 
 
 \end{document}
