@@ -442,7 +442,7 @@ $$
 \noindent\textbf{中心距离倒数加权相位同步程度(截面序参量)}
 
 \begin{equation}\label{weightedPhaseSync}
-	\frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
+	S = \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
 \end{equation}
 
 \vspace{-0.5cm}
@@ -482,6 +482,36 @@ $$
 \end{figure}
 
 \newpage
+\noindent\textbf{中心距离倒数加权相位同步程度(各粒子/时序序参量)}
+
+$$
+S_i=\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|
+$$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/weightedPhaseSync_ts.png}
+	\vspace{-0.5cm}
+	\caption{中心距离倒数加权相位同步程度(各粒子)}
+	\label{fig:fig234t.2}
+\end{figure}
+
+\newpage
+\noindent\textbf{中心距离倒数加权相位同步程度(全局/时序序参量)}
+
+$$
+S = \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
+$$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/weightedPhaseSyncOp_ts.png}
+	\vspace{-0.5cm}
+	\caption{中心距离倒数加权相位同步程度(全局)}
+	\label{fig:fig234t.3}
+\end{figure}
+
+\newpage
 \noindent\textbf{旋转中心空间聚集程度1(时序序参量)}
 
 \begin{figure}[H]
@@ -489,7 +519,7 @@ $$
 	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp1_ts.png}
 	\vspace{-0.5cm}
 	\caption{旋转中心空间聚集程度1}
-	\label{fig:fig234t.2}
+	\label{fig:fig234t.4}
 \end{figure}
 
 \newpage
@@ -500,7 +530,7 @@ $$
 	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp2_ts.png}
 	\vspace{-0.5cm}
 	\caption{旋转中心空间聚集程度2}
-	\label{fig:fig234t.3}
+	\label{fig:fig234t.5}
 \end{figure}
 
 \newpage
@@ -517,7 +547,7 @@ $$
 	\includegraphics[width=0.9\textwidth]{./figs/centerAgg1_ts.png}
 	\vspace{-0.5cm}
 	\caption{旋转中心平均距离分布}
-	\label{fig:fig234t.4}
+	\label{fig:fig234t.6}
 \end{figure}
 
 % \newpage
