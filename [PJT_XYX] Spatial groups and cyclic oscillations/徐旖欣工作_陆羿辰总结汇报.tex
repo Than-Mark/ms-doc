@@ -6,6 +6,7 @@
 \usepackage{bm}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{float}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 
@@ -24,7 +25,7 @@
 \begin{document}
 
 
-\section{局部耦合中跨边界坐标的调整}
+\section{局部耦合中跨边界坐标的调整}\label{positionAdj}
 
 \begin{figure}[htbp]
     \centering
@@ -191,7 +192,7 @@ $$
 	\centering
 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_0.10.eps}
 	\vspace{-1cm}
-	\caption{混沌态 ($\lambda=0.01, d_0=0.1, random seed=10$)}
+	\caption{无序态 ($\lambda=0.01, d_0=0.1, random seed=10$)}
 	\label{fig:fig231.1}
 \end{figure}
 
@@ -203,7 +204,7 @@ $$
 	\label{fig:fig231.2}
 \end{figure}
 
-当粒子处于混沌态或环态时，相位单位圆的分布如图\ref{fig:fig231.1}和图\ref{fig:fig231.2}所示. 此时，单位圆分布较为平滑，单位圆上的粒子数分布较为均匀, 相位同步的程度较低.
+当粒子处于无序态或环态时，相位单位圆的分布如图\ref{fig:fig231.1}和图\ref{fig:fig231.2}所示. 此时，单位圆分布较为平滑，单位圆上的粒子数分布较为均匀, 相位同步的程度较低.
 
 \begin{figure}[H]
 	\centering
@@ -217,11 +218,11 @@ $$
 	\centering
 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.600_3.00.eps}
 	\vspace{-1cm}
-	\caption{快速取向一致 ($\lambda=0.6, d_0=3, random seed=10$)}
+	\caption{快速同步态 ($\lambda=0.6, d_0=3, random seed=10$)}
 	\label{fig:fig231.4}
 \end{figure}
 
-当粒子处于集群态或快速取向一致时，相位单位圆的分布如图\ref{fig:fig231.3}和图\ref{fig:fig231.4}所示. 这两种状态的相位同步的程度较高.
+当粒子处于集群态或快速同步态时，相位单位圆的分布如图\ref{fig:fig231.3}和图\ref{fig:fig231.4}所示. 这两种状态的相位同步的程度较高.
 
 \subsubsection{粒子旋转中心的坐标}
 
@@ -267,7 +268,7 @@ $$
 
 
 
-\subsubsection{基于调整耦合距离的聚类算法}
+\subsubsection{基于调整耦合距离的聚类算法}\label{clustering}
 
 考虑到粒子在形成环态或集群态时，会形成多个环或集群，因此可以对粒子进行聚类从而计算各环或群的局部序参量. 由于环在欧氏空间中的分布较为特殊（中空，环与环相邻），因此改为对粒子的旋转中心进行聚类. 此外，周期性边界条件会导致粒子的旋转中心跨边界，这里采样式\ref{eq:eq1}对旋转中心坐标进行调整.
 
@@ -299,7 +300,7 @@ $$
 	\caption{Clustering algorithm based on adjusted distance}\label{algo_disjdecomp}
 \end{algorithm}\DecMargin{1em}
 
-执行该算法后，可以得到如下图\ref{fig:fig233.1}所示的聚类结果. 对比左侧子图与右侧子图，可以发现，算法可以较好地将多个环分开.
+取$d_{th}=1, \lambda=0.02, d_0=0.4, random seed=80$并对模型终态执行算法，可得到如下图\ref{fig:fig233.1}所示的聚类结果. 对比左侧子图与右侧子图，可以发现，算法可以较好地将多个环分开.
 
 \begin{figure}[H]
 	\centering
@@ -311,93 +312,213 @@ $$
 
 \subsubsection{序参量的定义与计算}
 
-% \textbf{旋转中心距离原点的距离标准差(截面序参量)}
-
-% $$
-% \sigma _d=\sqrt{\frac{1}{N}\sum_{i=1}^{N}{\left( d_i-\bar{d} \right) ^2}}
-% $$
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.7\textwidth]{./figs/stdd.jpg}
-% 	\caption{旋转中心原点距离标准差}
-% 	\label{fig:fig12}
-% \end{figure}
-
-\textbf{旋转中心邻域内的其余中心数(截面序参量)}
-
-$$
-N_{nearby}=\frac{1}{N}\sum_{i=1}^N{\left( \sum_{j=1}^N{\left[ \bar{d}_{ij}<\bar{d}_{ij}^{th} \right]} \right)}, 
-$$
-
-其中，$\bar{d}_{ij}^{th}$为阈值，取$\bar{d}_{ij}^{th}=1$.
+为了评估截面序参量对相图的刻画能力，这里根据终态的拓扑结构绘制了主观划分的相图，以提供对比，如下图\ref{fig:fig234.1}所示. 从左至右，从上至下，分别为无序态、环态、集群态、快速同步态. 图\ref{fig:fig232.2}中的四种状态分别对应图\ref{fig:fig234.1}中的四个区域，对比观察可以发现，环态与集群态在空间上的聚集程度较高，而无序态与快速同步态在空间上分布较为均匀，聚集程度低; 此外，集群态与快速同步态在相位(速度方向)上的同步程度较高，而环态与无序态较低.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figs/nearbyNums.png}
-	\caption{旋转中心邻域内的其余中心数}
+	\includegraphics[width=0.5\textwidth]{./figs/subjectiveOp.png}
+	\vspace{-0.5cm}
+	\caption{主观划分相图}
 	\label{fig:fig234.1}
 \end{figure}
+\vspace{-0.5cm}
 
-观察图\ref{fig:fig234.1}，可以发现，该序参量可以较好地将空间当中的聚集情况反映出来.左上角与右下角深色区域的粒子在空间上没有形成聚集，而中间部分的粒子在空间上形成了聚集.此外，集群态的序参量取值比环态的序参量取值小，这是因为集群态的旋转中心集中度较低，导致与原点距离的标准差更小.
+\noindent\textbf{相位(速度方向)同步率(截面序参量)}
+
+$$
+r e^{i\psi}=\frac{1}{N}\sum_{j=1}^{N}{e^{i\theta _j}}
+$$
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/phaseSyncOp.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{相位(速度方向)同步率}
+	\label{fig:fig234c.1}
+\end{figure}
+
+\vspace{-0.5cm}
+由于部分集群态存在分裂现象，因此某些集群态的全局相位同步程度较低，导致该序参量过渡不均匀，不易区分环态与集群态. 针对这个问题的改进见\ref{fig:fig234c.5}和\ref{fig:fig234c.6}
+
+% 观察图\ref{fig:fig234.2}，可以发现，该序参量可以较好地将空间当中的聚集情况反映出来.左上角与右下角深色区域的粒子在空间上没有形成聚集，而中间部分的粒子在空间上形成了聚集.此外，集群态的序参量取值比环态的序参量取值小，这是因为集群态的旋转中心集中度较低，导致与原点距离的标准差更小.
 
 \newpage
-\noindent\textbf{粒子旋转中心坐标(时序序参量)}
+\noindent\textbf{旋转中心空间聚集程度1(截面序参量)}
+
+这里以粒子旋转中心间的距离来刻画中心的空间聚集程度，考虑到周期性边界条件，这里采用式\ref{eq:eq1}对旋转中心坐标进行调整，然后计算所有粒子旋转中心间距离的算数平均，即
+
+$$
+\frac{1}{N}\sum_{i=1}^N{\left( \frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}} \right)}
+$$
+
+其中，$\bar{d}_{ij}$为调整后的粒子$i$与粒子$j$的旋转中心距离.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/centerAggOp1.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{旋转中心空间聚集程度1}
+	\vspace{-0.5cm}
+	\label{fig:fig234c.3}
+\end{figure}
+
+\noindent\textbf{旋转中心空间聚集程度2(截面序参量)}
+
+$$
+\frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j=1}^N{\mathbf{C}_i-\bar{\mathbf{C}}_j}}{N} \right|}
+$$
+
+其中，$\bar{\mathbf{C}}_j$为第$j$个粒子旋转中心以第$i$个粒子旋转中心为基准，根据方法\ref{positionAdj}调整后的坐标.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/centerAggOp2.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{旋转中心空间聚集程度2}
+	\label{fig:fig234c.4}
+\end{figure}
+
+\newpage
+\noindent\textbf{聚类平均相位同步程度(截面序参量)}
+
+这里基于方法\ref{clustering}($d_{th}=1$)对粒子旋转中心进行聚类，然后计算每一类(粒子数不足5个的分类剔除)中粒子的相位同步程度，最后取所有类的相位同步程度的算数平均，即
+
+$$
+\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left( \frac{1}{N_k}\sum_{i\in C_k}{\left| r e^{i\psi} \right|} \right)}
+$$
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/clusteringPhaseSync.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{聚类平均相位同步程度}
+	\label{fig:fig234c.5}
+\end{figure}
+
+\vspace{-0.5cm}
+对比图\ref{fig:fig234c.1}可以发现，图\ref{fig:fig234c.5}能够更好地刻画环态与集群态的相位同步程度, 从而将它们区分, 但算法\ref{clustering}的计算复杂度较高，且不易区分集群态与快速同步态，因此做出如下改进:
+
+\noindent\textbf{中心距离倒数加权相位同步程度(截面序参量)}
+
+\begin{equation}\label{weightedPhaseSync}
+	\frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
+\end{equation}
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/weightedPhaseSync.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+		
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{中心距离倒数加权相位同步程度}
+	\label{fig:fig234c.6}
+\end{figure}
+
+\vspace{-0.5cm}
+对比图\ref{fig:fig234c.5}可以发现两序参量的刻画能力相近，但图\ref{fig:fig234c.6}能够将集群态与快速同步态相区分，与主观划分相图更接近. 此外，式\ref{weightedPhaseSync}的计算复杂度更低.
+
+\newpage
+\noindent\textbf{旋转中心空间分布(时序序参量)}
 
 考虑到粒子在二维平面上运动，因此该序参量分为$x$坐标和$y$坐标两个分量，将各粒子旋转中心坐标以散点图形式分别绘制得到图下图像：
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/totalXY.png}
-	\caption{旋转中心坐标}
-	\label{fig:fig234.2}
+	\vspace{-0.5cm}
+	\caption{旋转中心空间分布}
+	\label{fig:fig234t.1}
 \end{figure}
 
+\newpage
+\noindent\textbf{旋转中心空间聚集程度1(时序序参量)}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp1_ts.png}
+	\vspace{-0.5cm}
+	\caption{旋转中心空间聚集程度1}
+	\label{fig:fig234t.2}
+\end{figure}
 
 \newpage
-\noindent\textbf{粒子旋转半径(时序序参量)}
+\noindent\textbf{旋转中心空间聚集程度2(时序序参量)}
 
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.8\textwidth]{./figs/globalR.png}
-% 	\caption{旋转中心邻域内的其余中心数}
-% 	\label{fig:fig234.2}
-% \end{figure}
-
-\newpage
-\noindent\textbf{聚类旋转半径(时序序参量)}
-
-根据欧式聚类的结果，将所有粒子分为若干类，每一类的旋转半径为该类所有粒子的旋转半径的算数平均，即
-
-$$
-\bar{R}_c=\frac{1}{N_c}\sum_{i=1}^{N_c}{\bar{r}_i},\ (N_c\ge N_{th})
-$$
-
-其中，$N_c$为第$c$类的粒子数. 此外，为防止空间当中出现孤立的粒子，将粒子数小于某一阈值的类剔除，这里，$N_{th}$为阈值，取$N_{th}=5$.
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.8\textwidth]{./figs/clusterR.png}
-% 	\caption{旋转中心邻域内的其余中心数}
-% 	\label{fig:fig234.3}
-% \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp2_ts.png}
+	\vspace{-0.5cm}
+	\caption{旋转中心空间聚集程度2}
+	\label{fig:fig234t.3}
+\end{figure}
 
 \newpage
-\noindent\textbf{聚类中心坐标(时序序参量)}
+\noindent\textbf{旋转中心平均距离分布(时序序参量)}
 
-考虑到粒子在二维平面上运动，因此该序参量分为$x$坐标和$y$坐标两个分量，即
+将各粒子旋转中心与其余旋转中心的距离求平均，得到旋转中心平均距离分布，如下图所示：
 
 $$
-\bar{x}_c=\frac{1}{N_c}\sum_{i=1}^{N_c}{\bar{x}_i},\quad \bar{y}_c=\frac{1}{N_c}\sum_{i=1}^{N_c}{\bar{y}_i},\ (N_c\ge N_{th})
+\bar{D}_i=\frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}}
 $$
 
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.8\textwidth]{./figs/clusterXY.png}
-% 	\caption{旋转中心邻域内的其余中心数}
-% 	\label{fig:fig234.4}
-% \end{figure}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/centerAgg1_ts.png}
+	\vspace{-0.5cm}
+	\caption{旋转中心平均距离分布}
+	\label{fig:fig234t.4}
+\end{figure}
 
 % \newpage
 
