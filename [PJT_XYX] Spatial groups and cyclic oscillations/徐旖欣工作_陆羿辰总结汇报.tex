@@ -126,7 +126,6 @@ $$
     \item 必要的理论分析与估计
 \end{enumerate}
 
-分析点
 \subsection{单个粒子的运动问题（无相互作用）}
 
 $$
@@ -143,7 +142,7 @@ $$
 \end{cases}
 $$
 
-运动半径 $=\ ?$
+\textbf{运动半径的求解}
 
 $$
 \begin{cases}
@@ -157,6 +156,31 @@ $$
 $$
 
 每个粒子的运动轨迹是一个圆，圆心为 $\left( x_i^0,y_i^0 \right)$，半径为 $\frac{v}{\omega _i}$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/noCouplingRadius.png}
+	\caption{解析解与数值模拟结果 ($\lambda=0, d_0=0, random seed=10$, Single Chirality)}
+	\label{fig:fig21.1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/DisorderStateRadius.png}
+		\vspace{-1cm}
+		\caption{无序态 ($\lambda=0.01:0.03$)}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/RingStateRadios.png}
+		\vspace{-1cm}
+		\caption{环态 ($\lambda=0.04:0.1$)}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{无序态、环态解析解与数值模拟结果 ($d_0=0.1, random seed=10$ Single Chirality)}
+	\label{fig:fig21.2}
+\end{figure}
 
 \subsection{考虑相互作用$\lambda$，耦合距离$d_0$ ($\{A_ij\}$，注意是时变的)}
 
@@ -228,7 +252,7 @@ $$
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{./figs/旋转圆心示意图.pdf}
+	\includegraphics[width=0.3\textwidth]{./figs/CenterEps.pdf}
 	\vspace{-0.2cm}
 	\caption{旋转圆心示意图}
 	\label{fig:fig232.1}
