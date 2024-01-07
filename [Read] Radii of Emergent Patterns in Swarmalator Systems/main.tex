@@ -136,9 +136,11 @@
     $ $
 
     Due to symmetry, $\sum\nolimits_{j\ne i}^N{e_{ij,y}g_{ij}^{\alpha}}=0$, $\sum\nolimits_{j\ne i}^N{e_{ij,y}g_{ij}^{\beta}}=0$,  
-    from which follows $$r_{\mathrm{out}}^{\alpha}\sum\nolimits_{j\ne i}^N{e_{ij,x}g_{ij}^{\alpha}\left( 1+J\cos \theta _{ij} \right)}=r_{\mathrm{out}}^{\beta}\sum\nolimits_{j\ne i}^N{e_{ij,x}g_{ij}^{\alpha}}$$
+    which yields 
+    \vspace{-0.2cm}
+    $$r_{\mathrm{out}}^{\alpha}\sum\nolimits_{j\ne i}^N{e_{ij,x}g_{ij}^{\alpha}\left( 1+J\cos \theta _{ij} \right)}=r_{\mathrm{out}}^{\beta}\sum\nolimits_{j\ne i}^N{e_{ij,x}g_{ij}^{\alpha}}$$
 
-    Next, we consider the limiting case $N \rightarrow \infty$
+    Next, the authors consider the limiting case $N \rightarrow \infty$
     and rewrite the sums as integrals ($\mathrm{d}x\mathrm{d}y = r\mathrm{d}r\mathrm{d}\phi$)
     \vspace{-0.3cm}
     $$
@@ -147,8 +149,31 @@
 \end{frame}
 
 \begin{frame}
+    The solution in the first integration: 
+    $$
+    \int_0^{l_{O1}\left( \phi \right)}{r^{1+m}dr}=\frac{1}{2+m}l_{O1}^{2+m}\left( \phi \right) =\frac{\left( 2\cos \phi \right) ^{2+m}}{2+m}
+    $$
+    Supposed $\theta_{ij}$ is a constant, we have
+    $$
+    \begin{aligned}
+        r_{\mathrm{out}}^{\alpha -\beta}&=\frac{\frac{2^{2+\beta}}{2+\beta}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos ^{3+\beta}\phi \mathrm{d}\phi}}{\frac{\left( 1+J\cos \theta _{ij} \right) 2^{2+\alpha}}{2+\alpha}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos ^{3+\alpha}\phi \mathrm{d}\phi}}\\
+        &=\frac{2^{\beta -\alpha}\left( 2+\alpha \right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos ^{3+\beta}\phi \mathrm{d}\phi}}{\left( 1+J\cos \theta _{ij} \right) \left( 2+\beta \right) \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos ^{3+\alpha}\phi \mathrm{d}\phi}}\\
+    \end{aligned}
+    $$
+
+
+
+\end{frame}
+
+\begin{frame}
     \begin{itemize}
-        \item \textbf{Static Sync.} In Static Sync State, $J$
+        \item \textbf{Static Sync.} In Static Sync State, $J\cos \theta _{ij}=J\,\,\forall \left( i, j \right)$, For $\alpha = 0$ and $\beta=-1$, we have
+        $$
+            r_{\mathrm{out}}=\frac{\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos \phi \frac{\sin \left( 2\phi \right)}{\sin \phi}\mathrm{d}\phi}}{\left( 1+J \right) \frac{1}{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos \phi \frac{\sin ^2\left( 2\phi \right)}{\sin ^2\phi}\mathrm{d}\phi}}=\frac{3\pi}{8\left( 1+J \right)}
+        $$
+
+
+        \item 
     \end{itemize}
 \end{frame}
 
