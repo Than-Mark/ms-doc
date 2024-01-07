@@ -4,18 +4,12 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{fontspec}
+\usepackage{multicol}
 
 % \setmainfont{Harding Text Web Regular Regular.ttf}
 \usepackage{diagbox} % 表头斜线分区
 \usepackage{unicode-math}
 \usefonttheme{serif}
-% \setmathrm{Harding Text Web Regular Regular.ttf} % 设置数学字体为 Times New Roman
-\setmathfont{TeX Gyre Termes Math} % 如果您使用 XeLaTeX 或 LuaLaTeX 编译，可以使用其他数学字体
-\setmathtt{Courier New} % 设置等宽字体为 Courier New
-\setboldmathrm{Times New Roman}
-\setmathfont{TeX Gyre Termes Math}[version=bold] % 设置粗体数学字体
-\setmathfont{TeX Gyre Termes Math}[range={\mathit}]
-
 
 \usetheme{Berlin} %主题
 \setbeamertemplate{page number in head/foot}[pagenumber]
@@ -57,10 +51,10 @@
 \definecolor{mycyan}{cmyk}{.3,0,0,0}
 
 %题目，作者，学校，日期
-\title{Paper Reading}
+\title{Paper Reading: Radii of Emergent Patterns in Swarmalator Systems}
 %\subtitle{\fontsize{9pt}{14pt}\textbf{跨临界分岔}}
 \author{Speaker: Yichen Lu\quad \newline  \newline \quad }
-\institute{\fontsize{8pt}{14pt}}
+\institute{School of Mathematical Science}
 \date{\today}
 \newcommand{\concept}{Paper Reading}
 
@@ -116,11 +110,47 @@
     where $r_{\mathrm{out}}=\underset{1\le i\le N}{\max}\left\| \boldsymbol{x}_i-\bar{\boldsymbol{x}} \right\| $, 
     $g_{ij}=\frac{d_{ij}}{r_{\mathrm{out}}}$.
 
-
-
 \end{frame}
 
+\begin{frame}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{f2a.png}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \footnotesize
+            \begin{itemize}
+                \item Pattern center $\bar{\boldsymbol{x}}$ is positioned at $(1, 0)$ and a swarmalator is present at the origin.
+                \item using polar coordinates $(r, \phi)$, hecnce $e_{ij}=\left( \cos \phi ,\sin \phi  \right)$ and $g_{ij}=r$.
+                \item $
+                l_{O1}\left( \phi \right) =2\cos \phi =\frac{2\sin \phi \cos \phi}{\sin \phi}=\frac{\sin 2\phi}{\sin \phi}
+                $
+            \end{itemize}
+            
+        \end{column}
+    \end{columns}
+    
+    $ $
 
+    Due to symmetry, $\sum\nolimits_{j\ne i}^N{e_{ij,y}g_{ij}^{\alpha}}=0$, $\sum\nolimits_{j\ne i}^N{e_{ij,y}g_{ij}^{\beta}}=0$,  
+    from which follows $$r_{\mathrm{out}}^{\alpha}\sum\nolimits_{j\ne i}^N{e_{ij,x}g_{ij}^{\alpha}\left( 1+J\cos \theta _{ij} \right)}=r_{\mathrm{out}}^{\beta}\sum\nolimits_{j\ne i}^N{e_{ij,x}g_{ij}^{\alpha}}$$
+
+    Next, we consider the limiting case $N \rightarrow \infty$
+    and rewrite the sums as integrals ($\mathrm{d}x\mathrm{d}y = r\mathrm{d}r\mathrm{d}\phi$)
+    \vspace{-0.3cm}
+    $$
+    r_{\mathrm{out}}^{\alpha -\beta}=\frac{\mathrm{Repulsion}}{\mathrm{Attraction}}=\frac{\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos \phi \int_0^{l_{O1}\left( \phi \right)}{r^{1+\beta}\mathrm{d}r\mathrm{d}\phi}}}{\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}{\cos \phi \int_0^{l_{O1}\left( \phi \right)}{\left( 1+J\cos \theta _{ij} \right) r^{1+\alpha}\mathrm{d}r\mathrm{d}\phi}}}
+    $$
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item \textbf{Static Sync.} In Static Sync State, $J$
+    \end{itemize}
+\end{frame}
 
 
 
