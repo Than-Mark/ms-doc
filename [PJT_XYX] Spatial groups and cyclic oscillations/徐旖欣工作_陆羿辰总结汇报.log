@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  11 JAN 2024 12:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  16 JAN 2024 10:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,11 +717,20 @@ File: ./figs/clusteringPhaseSync.png Graphic file (type bmp)
 <./figs/clusteringPhaseSync.png>
 File: ./figs/subjectiveOp.png Graphic file (type bmp)
 <./figs/subjectiveOp.png>
+File: ./figs/limitDisPhaseSync.png Graphic file (type bmp)
+<./figs/limitDisPhaseSync.png>
+File: ./figs/subjectiveOp.png Graphic file (type bmp)
+<./figs/subjectiveOp.png>
+ [12]
 File: ./figs/weightedPhaseSync.png Graphic file (type bmp)
 <./figs/weightedPhaseSync.png>
 File: ./figs/subjectiveOp.png Graphic file (type bmp)
 <./figs/subjectiveOp.png>
- [12]
+File: ./figs/radiusTheryDiff.png Graphic file (type bmp)
+<./figs/radiusTheryDiff.png>
+File: ./figs/subjectiveOp.png Graphic file (type bmp)
+<./figs/subjectiveOp.png>
+ [13]
 File: ./figs/classNum0.1.png Graphic file (type bmp)
 <./figs/classNum0.1.png>
 File: ./figs/classNum0.3.png Graphic file (type bmp)
@@ -734,7 +743,7 @@ File: ./figs/classNum1.png Graphic file (type bmp)
 <./figs/classNum1.png>
 File: ./figs/subjectiveOp.png Graphic file (type bmp)
 <./figs/subjectiveOp.png>
- [13]
+ [14]
 File: ./figs/classVarDis0.1.png Graphic file (type bmp)
 <./figs/classVarDis0.1.png>
 File: ./figs/classVarDis0.5.png Graphic file (type bmp)
@@ -743,40 +752,32 @@ File: ./figs/classVarDis1.png Graphic file (type bmp)
 <./figs/classVarDis1.png>
 File: ./figs/subjectiveOp.png Graphic file (type bmp)
 <./figs/subjectiveOp.png>
- [14]
-File: ./figs/radiusTheryDiff.png Graphic file (type bmp)
-<./figs/radiusTheryDiff.png>
-File: ./figs/subjectiveOp.png Graphic file (type bmp)
-<./figs/subjectiveOp.png>
  [15]
 File: ./figs/totalXY.png Graphic file (type bmp)
 <./figs/totalXY.png>
  [16]
-File: ./figs/weightedPhaseSync_ts.png Graphic file (type bmp)
-<./figs/weightedPhaseSync_ts.png>
+File: ./figs/limitDisPhaseSync_ts.png Graphic file (type bmp)
+<./figs/limitDisPhaseSync_ts.png>
  [17]
-File: ./figs/weightedPhaseSyncOp_ts.png Graphic file (type bmp)
-<./figs/weightedPhaseSyncOp_ts.png>
+File: ./figs/limitDisPhaseSyncOp_ts.png Graphic file (type bmp)
+<./figs/limitDisPhaseSyncOp_ts.png>
  [18]
-File: ./figs/centerAggOp1_ts.png Graphic file (type bmp)
-<./figs/centerAggOp1_ts.png>
+File: ./figs/classCountsOp.png Graphic file (type bmp)
+<./figs/classCountsOp.png>
  [19]
-File: ./figs/centerAggOp2_ts.png Graphic file (type bmp)
-<./figs/centerAggOp2_ts.png>
- [20]
 File: ./figs/centerAgg1_ts.png Graphic file (type bmp)
 <./figs/centerAgg1_ts.png>
- [21] (./徐旖欣工作_陆羿辰总结汇报.aux)
+ [20] (./徐旖欣工作_陆羿辰总结汇报.aux)
 Package rerunfilecheck Info: File `徐旖欣工作_陆羿辰总结汇报.out' has not changed.
 (rerunfilecheck)             Checksum: 3434972D74EA12CAD7DE87EC2DB29108;1521.
  ) 
 Here is how much of TeX's memory you used:
  16986 strings out of 476683
- 356881 string characters out of 5807574
+ 356883 string characters out of 5807574
  1861012 words of memory out of 5000000
  36940 multiletter control sequences out of 15000+600000
  528959 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  72i,21n,90p,352b,853s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (21 pages).
+Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (20 pages).

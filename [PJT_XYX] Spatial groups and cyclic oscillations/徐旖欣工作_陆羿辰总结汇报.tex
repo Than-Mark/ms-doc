@@ -475,9 +475,7 @@ $$
 
 这里基于方法\ref{clustering}($d_{th}=1$)对粒子旋转中心进行聚类，然后计算每一类(粒子数不足5个的分类剔除)中粒子的相位同步程度，最后取所有类的相位同步程度的算数平均，即
 
-$$
-\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left( \frac{1}{N_k}\sum_{i\in C_k}{\left| r e^{i\psi} \right|} \right)}
-$$
+$$\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}\left|\cfrac{1}{N_{k}}\sum_{i\in C_{k}}e^{i\theta_i}\right|$$
 
 \vspace{-0.5cm}
 \begin{figure}[H]
@@ -500,6 +498,36 @@ $$
 
 \vspace{-0.5cm}
 对比图\ref{fig:fig234c.1}可以发现，图\ref{fig:fig234c.5}能够更好地刻画环态与集群态的相位同步程度, 从而将它们区分, 但算法\ref{clustering}的计算复杂度较高，且不易区分集群态与快速同步态，因此做出如下改进:
+
+\noindent\textbf{有限距离相位同步程度(截面序参量)}
+
+\vspace{-0.5cm}
+$$
+S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
+$$
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/limitDisPhaseSync.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{聚类平均相位同步程度}
+	\label{fig:fig234c.5.1}
+\end{figure}
+
+\vspace{-0.5cm}
+这里计算各粒子中心半径$d_{th}=1$的邻域内粒子的相位序参量.
+对比图\ref{fig:fig234c.5}发现两序参量的刻画能力相近，此外，式\ref{weightedPhaseSync}的计算复杂度更低.
 
 \noindent\textbf{中心距离倒数加权相位同步程度(截面序参量)}
 
@@ -528,7 +556,34 @@ $$
 \end{figure}
 
 \vspace{-0.5cm}
-对比图\ref{fig:fig234c.5}可以发现两序参量的刻画能力相近，但图\ref{fig:fig234c.6}能够将集群态与快速同步态相区分，与主观划分相图更接近. 此外，式\ref{weightedPhaseSync}的计算复杂度更低.
+图\ref{fig:fig234c.6}能够将四种态大致区分，但分界并不明显.
+
+\noindent\textbf{真实半径与无耦合理论半径差异(截面序参量)}
+
+$$
+\frac{1}{N}\sum_{i=1}^N{\left| \frac{\left| \mathbf{X}_i-\mathbf{C}_i \right|}{r_i}-1 \right|}
+$$
+
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/radiusTheryDiff.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+		
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{真实半径与无耦合理论半径差异}
+	\label{fig:fig234c.9}
+\end{figure}
 
 \newpage
 \noindent\textbf{聚类数(截面时序序参量)}
@@ -627,34 +682,6 @@ $$
 \end{figure}
 
 \newpage
-\noindent\textbf{半径与理论半径差异(截面序参量)}
-
-$$
-\frac{1}{N}\sum_{i=1}^N{\left| \frac{\left| \mathbf{X}_i-\mathbf{C}_i \right|}{r_i}-1 \right|}
-$$
-
-
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/radiusTheryDiff.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-		
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
-		\vspace{-1cm}
-		\caption{主观划分相图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{半径与理论半径差异}
-	\label{fig:fig234c.9}
-\end{figure}
-
-\newpage
 \noindent\textbf{旋转中心空间分布(时序序参量)}
 
 考虑到粒子在二维平面上运动，因此该序参量分为$x$坐标和$y$坐标两个分量，将各粒子旋转中心坐标以散点图形式分别绘制得到图下图像：
@@ -662,62 +689,67 @@ $$
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/totalXY.png}
-	\vspace{-0.5cm}
 	\caption{旋转中心空间分布}
 	\label{fig:fig234t.1}
 \end{figure}
 
 \newpage
-\noindent\textbf{中心距离倒数加权相位同步程度(各粒子/时序序参量)}
+\noindent\textbf{有限距离相位同步程度(各粒子/时序序参量)}
 
-$$
-S_i=\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|
-$$
+$$S_{i}=\left|\frac{1}{N_{i}}\sum_{j\in C_{i}}e^{i\theta_{j}}\right|,C_{i}=\{j|\bar{d}_{ij}\leq d_{th}\}$$
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/weightedPhaseSync_ts.png}
-	\vspace{-0.5cm}
-	\caption{中心距离倒数加权相位同步程度(各粒子)}
+	\includegraphics[width=0.9\textwidth]{./figs/limitDisPhaseSync_ts.png}
+	\caption{有限距离相位同步程度(各粒子)}
 	\label{fig:fig234t.2}
 \end{figure}
 
 \newpage
-\noindent\textbf{中心距离倒数加权相位同步程度(全局/时序序参量)}
+\noindent\textbf{有限距离相位同步程度(算数平均/时序序参量)}
 
 $$
-S = \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j/\bar{d}_{ij}}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
+S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
 $$
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/weightedPhaseSyncOp_ts.png}
-	\vspace{-0.5cm}
-	\caption{中心距离倒数加权相位同步程度(全局)}
+	\includegraphics[width=0.9\textwidth]{./figs/limitDisPhaseSyncOp_ts.png}
+	\caption{中心距离倒数加权相位同步程度(算数平均)}
 	\label{fig:fig234t.3}
 \end{figure}
 
 \newpage
-\noindent\textbf{旋转中心空间聚集程度1(时序序参量)}
+\noindent\textbf{聚类数(时序序参量)}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp1_ts.png}
-	\vspace{-0.5cm}
-	\caption{旋转中心空间聚集程度1}
+	\includegraphics[width=0.9\textwidth]{./figs/classCountsOp.png}
+	\caption{聚类数}
 	\label{fig:fig234t.4}
 \end{figure}
 
-\newpage
-\noindent\textbf{旋转中心空间聚集程度2(时序序参量)}
+% \newpage
+% \noindent\textbf{旋转中心空间聚集程度1(时序序参量)}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp2_ts.png}
-	\vspace{-0.5cm}
-	\caption{旋转中心空间聚集程度2}
-	\label{fig:fig234t.5}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp1_ts.png}
+% 	\vspace{-0.5cm}
+% 	\caption{旋转中心空间聚集程度1}
+% 	\label{fig:fig234t.4}
+% \end{figure}
+
+% \newpage
+% \noindent\textbf{旋转中心空间聚集程度2(时序序参量)}
+
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp2_ts.png}
+% 	\vspace{-0.5cm}
+% 	\caption{旋转中心空间聚集程度2}
+% 	\label{fig:fig234t.5}
+% \end{figure}
 
 \newpage
 \noindent\textbf{旋转中心平均距离分布(时序序参量)}
