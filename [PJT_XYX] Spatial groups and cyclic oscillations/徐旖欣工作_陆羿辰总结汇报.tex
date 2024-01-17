@@ -638,7 +638,7 @@ $$
 类似的，考虑到聚类算法的复杂度较高，因此这里计算各粒子中心半径$d_{th}=1$的邻域内粒子的数量，并取算数平均，即
 
 $$
-\frac{1}{N}\sum_{i=1}^N{\left[ \bar{d}_{ij}\le d_{th} \right]}
+\frac{1}{N}\sum_{i=1}^N{\frac{\left[ \bar{d}_{ij}\le d_{th} \right]}{N/2}}=\frac{2}{N^2}\sum_{i=1}^N{\left[ \bar{d}_{ij}\le d_{th} \right]}
 $$
 
 \vspace{-0.5cm}
@@ -727,19 +727,19 @@ $$
 \end{figure}
 
 \newpage
-\noindent\textbf{有限距离相位同步程度(各粒子/时序序参量)}
+\noindent\textbf{旋转中心邻域内相位同步程度(各粒子/时序序参量)}
 
 $$S_{i}=\left|\frac{1}{N_{i}}\sum_{j\in C_{i}}e^{i\theta_{j}}\right|,C_{i}=\{j|\bar{d}_{ij}\leq d_{th}\}$$
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/limitDisPhaseSync_ts.png}
-	\caption{有限距离相位同步程度(各粒子)}
+	\caption{旋转中心邻域内相位同步程度(各粒子)}
 	\label{fig:fig234t.2}
 \end{figure}
 
 \newpage
-\noindent\textbf{有限距离相位同步程度(算数平均/时序序参量)}
+\noindent\textbf{旋转中心邻域内相位同步程度(算数平均/时序序参量)}
 
 $$
 S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
@@ -748,7 +748,7 @@ $$
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{./figs/limitDisPhaseSyncOp_ts.png}
-	\caption{中心距离倒数加权相位同步程度(算数平均)}
+	\caption{旋转中心邻域内相位同步程度(算数平均)}
 	\label{fig:fig234t.3}
 \end{figure}
 
@@ -760,6 +760,26 @@ $$
 	\includegraphics[width=0.9\textwidth]{./figs/classCountsOp.png}
 	\caption{聚类数}
 	\label{fig:fig234t.4}
+\end{figure}
+
+\newpage
+\noindent\textbf{旋转中心邻域内中心数(各粒子/时序序参量)}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/centerNearbyCounts.png}
+	\caption{旋转中心邻域内中心数(各粒子)}
+	\label{fig:fig234t.4.1}
+\end{figure}
+
+\newpage
+\noindent\textbf{旋转中心邻域内中心数(算术平均/时序序参量)}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/centerNearbyCountsOp.png}
+	\caption{旋转中心邻域内中心数(算术平均)}
+	\label{fig:fig234t.4.2}
 \end{figure}
 
 % \newpage
