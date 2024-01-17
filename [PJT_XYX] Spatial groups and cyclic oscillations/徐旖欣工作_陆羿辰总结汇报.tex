@@ -31,7 +31,7 @@
     \centering
     \includegraphics[width=0.4\textwidth]{./figs/fig1.jpg}
     \caption{跨边界坐标的调整}
-    \label{fig:fig22}
+    \label{fig:fig1}
 \end{figure}
 
 给定$(x_i, y_i)$, 对于任意的$(x_j, y_j)$, 做如下变换
@@ -49,7 +49,7 @@
 	\end{cases}
 \end{equation}
 
-其中，$L$为边界长度. 例如，对于\ref{fig:fig22}中的情况，以A为$(x_i, y_i)$时，B需调整纵坐标，D需调整横坐标，C需同时调整横纵坐标.
+其中，$L$为边界长度. 例如，对于\ref{fig:fig1}中的情况，以A为$(x_i, y_i)$时，B需调整纵坐标，D需调整横坐标，C需同时调整横纵坐标.
 
 $\ $
 
@@ -216,6 +216,62 @@ $$
 	\vspace{-0.5cm}
 	\caption{集群态旋转半径的近似 ($\lambda=0.1, d_0=0.3, random seed=10$, Single Chirality)}
 	\label{fig:fig21.3}
+\end{figure}
+
+\subsection{集群态相速度的推导}
+
+考虑到集群态粒子的运动轨迹是一个圆，即对于任意的粒子$i$，其运动轨迹为
+
+$$
+\left( x_i-x_{i}^{0} \right) ^2+\left( y_i-y_{i}^{0} \right) ^2=\left( \frac{v}{\dot{\theta}_i} \right) ^2
+$$
+
+其中，$\left( x_{i}^{0},y_{i}^{0} \right)$为粒子$i$的初始坐标，$v$为粒子的运动的线速度，$\dot{\theta}_i$为粒子$i$的相速度，即粒子运动的角速度. 由于集群态粒子运动轨迹的半径相同，因此对于任意的粒子$i$与粒子$j$，有
+
+$$
+\left( \frac{v}{C} \right) ^2=\left( \frac{v}{\dot{\theta}_i} \right) ^2,i=1,2,\cdots ,N
+$$
+
+其中$C$为常数，即所有粒子具有相同的相速度. 又由于
+
+$$
+\dot{\theta}_i=\omega _i+\lambda \sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)}
+$$
+
+求和后得到
+
+$$
+\begin{aligned}
+	NC&=\sum_{i=1}^N{\left( \omega _i+\lambda \sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)} \right)}\\
+	C&=\frac{1}{N}\sum_{i=1}^N{\omega _i}+\frac{\lambda}{N}\sum_{i=1}^N{\sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)}}\\
+\end{aligned}
+$$
+
+再根据$A_{ij}=A_{ji}$以及$\sin \left( \theta _j-\theta _i \right)=-\sin \left( \theta _i-\theta _j \right)$可得$
+A_{ij}\sin \left( \theta _j-\theta _i \right) =-A_{ji}\sin \left( \theta _i-\theta _j \right) 
+$
+
+从而有
+
+$$
+\sum_{i=1}^N{\sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)}}=0
+$$
+
+因此
+
+$$
+C=\frac{1}{N}\sum_{i=1}^N{\omega _i}
+$$
+
+
+即所集群态粒子的相速度为集群中所有粒子自然频率的算数平均.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/swarmRadiusSimu.png}
+	\vspace{-1cm}
+	\caption{集群态相速度模拟}
+	\label{fig:fig22}
 \end{figure}
 
 \subsection{考虑相互作用$\lambda$，耦合距离$d_0$ ($\{A_ij\}$，注意是时变的)}
