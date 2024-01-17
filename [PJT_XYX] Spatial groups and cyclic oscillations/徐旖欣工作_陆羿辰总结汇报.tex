@@ -239,6 +239,7 @@ $$
 $$
 
 求和后得到
+\vspace{-0.5cm}
 
 $$
 \begin{aligned}
@@ -258,6 +259,7 @@ $$
 $$
 
 因此
+\vspace{-0.5cm}
 
 $$
 C=\frac{1}{N}\sum_{i=1}^N{\omega _i}
@@ -270,9 +272,13 @@ $$
 	\centering
 	\includegraphics[width=\textwidth]{./figs/swarmRadiusSimu.png}
 	\vspace{-1cm}
-	\caption{集群态相速度模拟}
+	\caption{集群态相速度模拟 ($\lambda=0.02, d_0=1, random seed=10$, Single Chirality)}
 	\label{fig:fig22}
 \end{figure}
+
+\vspace{-0.5cm}
+
+可以看到，在均匀分布与高斯分布的情况下，集群态的相速度都接近于自然频率的算数平均.
 
 \begin{figure}[H]
 	\centering
@@ -506,61 +512,61 @@ $$
 
 % 观察图\ref{fig:fig234.2}，可以发现，该序参量可以较好地将空间当中的聚集情况反映出来.左上角与右下角深色区域的粒子在空间上没有形成聚集，而中间部分的粒子在空间上形成了聚集.此外，集群态的序参量取值比环态的序参量取值小，这是因为集群态的旋转中心集中度较低，导致与原点距离的标准差更小.
 
-\newpage
-\noindent\textbf{旋转中心空间聚集程度1(截面序参量)}
+% \newpage
+% \noindent\textbf{旋转中心空间聚集程度1(截面序参量)}
 
-这里以粒子旋转中心间的距离来刻画中心的空间聚集程度，考虑到周期性边界条件，这里采用式\ref{eq:eq1}对旋转中心坐标进行调整，然后计算所有粒子旋转中心间距离的算数平均，即
+% 这里以粒子旋转中心间的距离来刻画中心的空间聚集程度，考虑到周期性边界条件，这里采用式\ref{eq:eq1}对旋转中心坐标进行调整，然后计算所有粒子旋转中心间距离的算数平均，即
 
-$$
-\frac{1}{N}\sum_{i=1}^N{\left( \frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}} \right)}
-$$
+% $$
+% \frac{1}{N}\sum_{i=1}^N{\left( \frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}} \right)}
+% $$
 
-其中，$\bar{d}_{ij}$为调整后的粒子$i$与粒子$j$的旋转中心距离.
+% 其中，$\bar{d}_{ij}$为调整后的粒子$i$与粒子$j$的旋转中心距离.
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/centerAggOp1.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
-		\vspace{-1cm}
-		\caption{主观划分相图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{旋转中心空间聚集程度1}
-	\vspace{-0.5cm}
-	\label{fig:fig234c.3}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/centerAggOp1.png}
+% 		\vspace{-1cm}
+% 		\caption{计算结果}
+% 	\end{subfigure}
+% 	% \hfill
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\vspace{-1cm}
+% 		\caption{主观划分相图}
+% 	\end{subfigure}
+% 	\vspace{-0.5cm}
+% 	\caption{旋转中心空间聚集程度1}
+% 	\vspace{-0.5cm}
+% 	\label{fig:fig234c.3}
+% \end{figure}
 
-\noindent\textbf{旋转中心空间聚集程度2(截面序参量)}
+% \noindent\textbf{旋转中心空间聚集程度2(截面序参量)}
 
-$$
-\frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j=1}^N{\mathbf{C}_i-\bar{\mathbf{C}}_j}}{N} \right|}
-$$
+% $$
+% \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j=1}^N{\mathbf{C}_i-\bar{\mathbf{C}}_j}}{N} \right|}
+% $$
 
-其中，$\bar{\mathbf{C}}_j$为第$j$个粒子旋转中心以第$i$个粒子旋转中心为基准，根据方法\ref{positionAdj}调整后的坐标.
+% 其中，$\bar{\mathbf{C}}_j$为第$j$个粒子旋转中心以第$i$个粒子旋转中心为基准，根据方法\ref{positionAdj}调整后的坐标.
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/centerAggOp2.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
-		\vspace{-1cm}
-		\caption{主观划分相图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{旋转中心空间聚集程度2}
-	\label{fig:fig234c.4}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/centerAggOp2.png}
+% 		\vspace{-1cm}
+% 		\caption{计算结果}
+% 	\end{subfigure}
+% 	% \hfill
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\vspace{-1cm}
+% 		\caption{主观划分相图}
+% 	\end{subfigure}
+% 	\vspace{-0.5cm}
+% 	\caption{旋转中心空间聚集程度2}
+% 	\label{fig:fig234c.4}
+% \end{figure}
 
 \newpage
 \noindent\textbf{聚类平均相位同步程度(截面序参量)}
@@ -621,61 +627,61 @@ $$
 这里计算各粒子中心半径$d_{th}=1$的邻域内粒子的相位序参量.
 对比图\ref{fig:fig234c.5}发现两序参量的刻画能力相近，此外，式\ref{weightedPhaseSync}的计算复杂度更低.
 
-\noindent\textbf{中心距离倒数加权相位同步程度(截面序参量)}
+% \noindent\textbf{中心距离倒数加权相位同步程度(截面序参量)}
 
-\begin{equation}\label{weightedPhaseSync}
-	S = \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j}/\bar{d}_{ij}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
-\end{equation}
+% \begin{equation}\label{weightedPhaseSync}
+% 	S = \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j}/\bar{d}_{ij}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
+% \end{equation}
 
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/weightedPhaseSync.png}
-		\vspace{-1cm}
-		\caption{计算结果}
+% \vspace{-0.5cm}
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/weightedPhaseSync.png}
+% 		\vspace{-1cm}
+% 		\caption{计算结果}
 		
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
-		\vspace{-1cm}
-		\caption{主观划分相图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{中心距离倒数加权相位同步程度}
-	\label{fig:fig234c.6}
-\end{figure}
+% 	\end{subfigure}
+% 	% \hfill
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\vspace{-1cm}
+% 		\caption{主观划分相图}
+% 	\end{subfigure}
+% 	\vspace{-0.5cm}
+% 	\caption{中心距离倒数加权相位同步程度}
+% 	\label{fig:fig234c.6}
+% \end{figure}
 
-\vspace{-0.5cm}
-图\ref{fig:fig234c.6}能够将四种态大致区分，但分界并不明显.
+% \vspace{-0.5cm}
+% 图\ref{fig:fig234c.6}能够将四种态大致区分，但分界并不明显.
 
-\noindent\textbf{真实半径与无耦合理论半径差异(截面序参量)}
+% \noindent\textbf{真实半径与无耦合理论半径差异(截面序参量)}
 
-$$
-\frac{1}{N}\sum_{i=1}^N{\left| \frac{\left| \mathbf{X}_i-\mathbf{C}_i \right|}{r_i}-1 \right|}
-$$
+% $$
+% \frac{1}{N}\sum_{i=1}^N{\left| \frac{\left| \mathbf{X}_i-\mathbf{C}_i \right|}{r_i}-1 \right|}
+% $$
 
 
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/radiusTheryDiff.png}
-		\vspace{-1cm}
-		\caption{计算结果}
+% \vspace{-0.5cm}
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/radiusTheryDiff.png}
+% 		\vspace{-1cm}
+% 		\caption{计算结果}
 		
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
-		\vspace{-1cm}
-		\caption{主观划分相图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{真实半径与无耦合理论半径差异}
-	\label{fig:fig234c.9}
-\end{figure}
+% 	\end{subfigure}
+% 	% \hfill
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\vspace{-1cm}
+% 		\caption{主观划分相图}
+% 	\end{subfigure}
+% 	\vspace{-0.5cm}
+% 	\caption{真实半径与无耦合理论半径差异}
+% 	\label{fig:fig234c.9}
+% \end{figure}
 
 \newpage
 \noindent\textbf{聚类数(截面时序序参量)}
@@ -730,7 +736,7 @@ $$
 类似的，考虑到聚类算法的复杂度较高，因此这里计算各粒子中心半径$d_{th}=1$的邻域内粒子的数量，并取算数平均，即
 
 $$
-\frac{1}{N}\sum_{i=1}^N{\frac{\left[ \bar{d}_{ij}\le d_{th} \right]}{N/2}}=\frac{2}{N^2}\sum_{i=1}^N{\left[ \bar{d}_{ij}\le d_{th} \right]}
+\frac{1}{N}\sum_{i=1}^N{\frac{H\left( d_{th}-\bar{d}_{ij} \right)}{N/2}}=\frac{2}{N^2}\sum_{i=1}^N{H\left( d_{th}-\bar{d}_{ij} \right)}
 $$
 
 \vspace{-0.5cm}
@@ -756,55 +762,55 @@ $$
 观察上图可以发现，该序参量对四种态的刻画能力与聚类数接近，此外，在集群太内部还能够对不同的集群数进行区分，集群数越小的集群态在该序参量上的取值越大.
 
 
-\newpage
-\noindent\textbf{聚类平均距离方差(截面序参量)}
-$$
-\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_k}\sum_{i,j\in C_k,i\ne j}{\left( d_{ij}-\left< d_{ij} \right> \right) ^2} \right]}
-$$
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/classVarDis0.1.png}
-		\vspace{-1cm}
-		\caption{$d_{th}=0.1$}
+% \newpage
+% \noindent\textbf{聚类平均距离方差(截面序参量)}
+% $$
+% \frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_k}\sum_{i,j\in C_k,i\ne j}{\left( d_{ij}-\left< d_{ij} \right> \right) ^2} \right]}
+% $$
+% \vspace{-0.5cm}
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/classVarDis0.1.png}
+% 		\vspace{-1cm}
+% 		\caption{$d_{th}=0.1$}
 		
-	\end{subfigure}
-	% \hfill
-	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/classVarDis0.3.png}
-	% 	\vspace{-1cm}
-	% 	\caption{$d_{th}=0.3$}
-	% \end{subfigure}
-	% 
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/classVarDis0.5.png}
-		\vspace{-1cm}
-		\caption{$d_{th}=0.5$}
-	\end{subfigure}
-	% 
-	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/classVarDis0.8.png}
-	% 	\vspace{-1cm}
-	% 	\caption{$d_{th}=0.8$}
-	% \end{subfigure}
-	% 
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/classVarDis1.png}
-		\vspace{-1cm}
-		\caption{$d_{th}=1$}
-	\end{subfigure}
-	% 
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
-		\vspace{-1cm}
-		\caption{主观划分相图}
-	\end{subfigure}
+% 	\end{subfigure}
+% 	% \hfill
+% 	% \begin{subfigure}[b]{0.49\textwidth}
+% 	% 	\includegraphics[width=\textwidth]{./figs/classVarDis0.3.png}
+% 	% 	\vspace{-1cm}
+% 	% 	\caption{$d_{th}=0.3$}
+% 	% \end{subfigure}
+% 	% 
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/classVarDis0.5.png}
+% 		\vspace{-1cm}
+% 		\caption{$d_{th}=0.5$}
+% 	\end{subfigure}
+% 	% 
+% 	% \begin{subfigure}[b]{0.49\textwidth}
+% 	% 	\includegraphics[width=\textwidth]{./figs/classVarDis0.8.png}
+% 	% 	\vspace{-1cm}
+% 	% 	\caption{$d_{th}=0.8$}
+% 	% \end{subfigure}
+% 	% 
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/classVarDis1.png}
+% 		\vspace{-1cm}
+% 		\caption{$d_{th}=1$}
+% 	\end{subfigure}
+% 	% 
+% 	\begin{subfigure}[b]{0.49\textwidth}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\vspace{-1cm}
+% 		\caption{主观划分相图}
+% 	\end{subfigure}
 
-	\vspace{-0.5cm}
-	\caption{聚类平均距离方差}
-	\label{fig:fig234c.8}
-\end{figure}
+% 	\vspace{-0.5cm}
+% 	\caption{聚类平均距离方差}
+% 	\label{fig:fig234c.8}
+% \end{figure}
 
 \newpage
 \noindent\textbf{旋转中心空间分布(时序序参量)}
@@ -844,15 +850,15 @@ $$
 	\label{fig:fig234t.3}
 \end{figure}
 
-\newpage
-\noindent\textbf{聚类数(时序序参量)}
+% \newpage
+% \noindent\textbf{聚类数(时序序参量)}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/classCountsOp.png}
-	\caption{聚类数}
-	\label{fig:fig234t.4}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{./figs/classCountsOp.png}
+% 	\caption{聚类数}
+% 	\label{fig:fig234t.4}
+% \end{figure}
 
 \newpage
 \noindent\textbf{旋转中心邻域内中心数(各粒子/时序序参量)}
@@ -896,22 +902,22 @@ $$
 % 	\label{fig:fig234t.5}
 % \end{figure}
 
-\newpage
-\noindent\textbf{旋转中心平均距离分布(时序序参量)}
+% \newpage
+% \noindent\textbf{旋转中心平均距离分布(时序序参量)}
 
-将各粒子旋转中心与其余旋转中心的距离求平均，得到旋转中心平均距离分布，如下图所示：
+% 将各粒子旋转中心与其余旋转中心的距离求平均，得到旋转中心平均距离分布，如下图所示：
 
-$$
-\bar{D}_i=\frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}}
-$$
+% $$
+% \bar{D}_i=\frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}}
+% $$
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/centerAgg1_ts.png}
-	\vspace{-0.5cm}
-	\caption{旋转中心平均距离分布}
-	\label{fig:fig234t.6}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.9\textwidth]{./figs/centerAgg1_ts.png}
+% 	\vspace{-0.5cm}
+% 	\caption{旋转中心平均距离分布}
+% 	\label{fig:fig234t.6}
+% \end{figure}
 
 % \newpage
 
