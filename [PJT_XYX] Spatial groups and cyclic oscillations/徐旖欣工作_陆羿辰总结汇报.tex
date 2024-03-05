@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{multicol}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 
 \setlength{\parindent}{2em}
@@ -476,7 +477,7 @@ $$
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./figs/subjectiveOp.png}
+	\includegraphics[width=0.5\textwidth]{./figs/subjectiveOp2.png}
 	\vspace{-0.5cm}
 	\caption{主观划分相图}
 	\label{fig:fig234.1}
@@ -498,7 +499,7 @@ $$
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 		\vspace{-1cm}
 		\caption{主观划分相图}
 	\end{subfigure}
@@ -532,7 +533,7 @@ $$
 % 	\end{subfigure}
 % 	% \hfill
 % 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 % 		\vspace{-1cm}
 % 		\caption{主观划分相图}
 % 	\end{subfigure}
@@ -559,7 +560,7 @@ $$
 % 	\end{subfigure}
 % 	% \hfill
 % 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 % 		\vspace{-1cm}
 % 		\caption{主观划分相图}
 % 	\end{subfigure}
@@ -585,7 +586,7 @@ $$\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}\left|\cfrac{1}{N_{k}}\sum_{i\in C_{k
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 		\vspace{-1cm}
 		\caption{主观划分相图}
 	\end{subfigure}
@@ -614,12 +615,12 @@ $$
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 		\vspace{-1cm}
 		\caption{主观划分相图}
 	\end{subfigure}
 	\vspace{-0.5cm}
-	\caption{旋转中心邻域内相位同步程度}
+	\caption{旋转中心邻域内相位同步程度(Two Chiralities)}
 	\label{fig:fig234c.5.1}
 \end{figure}
 
@@ -644,7 +645,7 @@ $$
 % 	\end{subfigure}
 % 	% \hfill
 % 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 % 		\vspace{-1cm}
 % 		\caption{主观划分相图}
 % 	\end{subfigure}
@@ -674,7 +675,7 @@ $$
 % 	\end{subfigure}
 % 	% \hfill
 % 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 % 		\vspace{-1cm}
 % 		\caption{主观划分相图}
 % 	\end{subfigure}
@@ -715,11 +716,11 @@ $$
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{./figs/classNum1.png}
 		\vspace{-1cm}
-		\caption{$d_{th}=1$}
+		\caption{$d_{th}=0.3$}
 	\end{subfigure}
 	% 
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 		\vspace{-1cm}
 		\caption{主观划分相图}
 	\end{subfigure}
@@ -750,7 +751,7 @@ $$
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 		\vspace{-1cm}
 		\caption{主观划分相图}
 	\end{subfigure}
@@ -761,6 +762,67 @@ $$
 
 观察上图可以发现，该序参量对四种态的刻画能力与聚类数接近，此外，在集群太内部还能够对不同的集群数进行区分，集群数越小的集群态在该序参量上的取值越大.
 
+\newpage
+\noindent\textbf{\large 单手性模型环态的细致刻画}
+
+\noindent\textbf{旋转中心邻域内相位同步程度(截面序参量)}
+$$
+S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
+$$
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/limitDisPhaseSyncRing.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOpRing.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{旋转中心邻域内相位同步程度(Single Chirality)}
+	\label{fig:fig234c.5.2}
+\end{figure}
+
+
+\noindent\textbf{旋转中心邻域内中心数(截面时序序参量)}
+
+$$
+\frac{1}{N}\sum_{i=1}^N{\frac{H\left( d_{th}-\bar{d}_{ij} \right)}{N/2}}=\frac{2}{N^2}\sum_{i=1}^N{H\left( d_{th}-\bar{d}_{ij} \right)}
+$$
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/nearbyNumsRing.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+		
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOpRing.png}
+		\vspace{-1cm}
+		\caption{主观划分相图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{旋转中心邻域内中心数}
+	\label{fig:fig234c.7.1}
+\end{figure}
+
+% 关于环数的研究, 需注意观察对于各种不同的初值条件的差异。
+
+% Comments: 
+% \begin{itemize}
+% 	\item 初值条件对系统的空间集群、相位同步均会产生影响；
+% 	\item 当振子空间密集度较高时，初值条件影响应不大；
+% 	\item 但密度较低时，初值configuration可能影响较大.
+% \end{itemize}
 
 % \newpage
 % \noindent\textbf{聚类平均距离方差(截面序参量)}
@@ -802,7 +864,7 @@ $$
 % 	\end{subfigure}
 % 	% 
 % 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp.png}
+% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp2.png}
 % 		\vspace{-1cm}
 % 		\caption{主观划分相图}
 % 	\end{subfigure}
@@ -939,6 +1001,147 @@ $$
 % \subsection{The Model}
 % \subsection{Numerics}
 % \subsection{Theoretical Analysis}
+
+\newpage
+\subsection{集群行为对同步的影响}
+
+集群行为的讨论既要分析各种不同的空间集群态，也应研究对同步的影响。除了计算系统序参量以外，要计算振子之间的锁相。
+
+定义平均频率差
+
+$$
+\begin{aligned}
+	\Delta \Omega _1&=\overline{\left( \left< \dot{\theta}_i \right> -\bar{\Omega} \right) ^2}\\
+	\Delta \Omega _2&=\frac{1}{N^2}\sum_{i,j=1}^N{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2}\\
+\end{aligned}
+$$
+
+其中，$\left< \cdot \right>$为长时平均，$\overline{\,\,\cdot \,\,}$为系统平均. $\bar{A}=\frac{1}{N^2}\sum\nolimits_i^{}{A_i}$, $\left< A \right> =\lim_{T\rightarrow \infty} \frac{1}{T}\int_{t_0}^{t_0+T}{A\left( t \right) dt}$
+
+$ $
+
+\noindent\textbf{全局平均频率差}
+
+这里取$t_0=500$ (50000次迭代, $\mathrm{d}t=0.01$), $T=100$ (10000次迭代, $shotsnaps=5$, 2000个样本点)进行计算.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/deltaOmega1.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _1$}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/deltaOmega2.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _2$}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{全局平均频率差}
+	\label{fig:fig2.5.global}
+\end{figure}
+
+观察图\ref{fig:fig2.5.global}可以发现，$\Delta \Omega _1$与$\Delta \Omega _2$的取值分布基本一致，并且都在快速同步态与集群态之间有明显的差异. 处于快速同步态或单集群的集群态时，系统发生整体锁相，$\Delta\Omega_1$与$\Delta\Omega_2$趋于0. 考虑到集群态在各个集群内部的同步程度较高，因此下面对集群的平均频率差进行讨论.
+
+\newpage
+\noindent\textbf{聚类平均频率差}
+
+除了对全局平均频率差的讨论，还可以对各个集群的平均频率差进行讨论. 这里对集群的定义采用方法\ref{clustering}($d_{th}=0.3$)进行聚类，然后计算每一类(粒子数不足5个的分类剔除)中粒子的平均频率差，最后取所有类的平均频率差的算数平均.
+
+$$
+\begin{array}{l}
+	\Delta \Omega _{1}^{*}=\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\overline{\left( \left< \dot{\theta}_i \right> -\bar{\Omega} \right) ^2}}\\
+	\Delta \Omega _{2}^{*}=\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}\\
+\end{array}
+$$
+
+其中，$N_{class}$为集群数，$N_k$为第$k$个集群的粒子数. $\overline{\,\,\cdot \,\,}$为集群内平均, 即$\bar{x}=\frac{1}{N_k}\sum_{i\in C_k}{x_i}$
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/clusterDeltaOmega1.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _{1}^{*}$}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/clusterDeltaOmega2.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _{2}^{*}$}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{全局平均频率差}
+	\label{fig:fig2.5.cluster}
+\end{figure}
+
+\subsection{同异手性粒子间的相互作用}
+
+\begin{figure}[H]
+	\centering
+	% \begin{subfigure}[b]{0.49\textwidth}
+	% 	\includegraphics[width=\textwidth]{./figs/noCoupling2particals.png}
+	% 	\vspace{-1cm}
+	% 	\caption{无耦合}
+	% \end{subfigure}
+
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/diffChir.png}
+		\vspace{-1cm}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=2$)}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/sameChir.png}
+		\vspace{-1cm}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=2$)}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/diffChirInf.png}
+		\vspace{-1cm}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=+\infty$)}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/sameChirInf.png}
+		\vspace{-1cm}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=+\infty$)}
+	\end{subfigure}
+	\caption{同异手性在相同初值条件下的演化结果($\lambda=0.5$)}
+	\label{fig:fig2.6.chir}
+\end{figure}
+
+$$
+\begin{cases}
+	\dot{x}_1=v\cos \theta _1\\
+	\dot{y}_1=v\sin \theta _1\\
+	\dot{\theta}_1=\omega _1+\lambda \sin \left( \theta _2-\theta _1 \right)\\
+	\dot{x}_2=v\cos \theta _2\\
+	\dot{y}_2=v\sin \theta _2\\
+	\dot{\theta}_2=\omega _2+\lambda \sin \left( \theta _1-\theta _2 \right)\\
+\end{cases}
+$$
+
+
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/2particalDis.png}
+	\vspace{-0.5cm}
+	\caption{两振子距离的时序变化}
+	\label{fig:fig2.6.dis}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/2particalCentersDis.png}
+	\vspace{-0.5cm}
+	\caption{两振子旋转中心距离的时序变化}
+	\label{fig:fig2.6.centerDis}
+\end{figure}
 
 
 \end{document}
