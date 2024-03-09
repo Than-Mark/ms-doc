@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  9 MAR 2024 16:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  9 MAR 2024 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -696,13 +696,47 @@ File: ./figs/wgtOmegaRadius.png Graphic file (type bmp)
  [4]
 File: ./figs/swarmRadiusSimu.png Graphic file (type bmp)
 <./figs/swarmRadiusSimu.png>
- [5]
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 283.
+
+[5]
 File: ./figs/circleSwarmEdges1.png Graphic file (type bmp)
 <./figs/circleSwarmEdges1.png>
  [6]
 File: ./figs/circleSwarmEdges2.png Graphic file (type bmp)
 <./figs/circleSwarmEdges2.png>
  [7]
+File: ./figs/circleSwarmEdgesSync.png Graphic file (type bmp)
+<./figs/circleSwarmEdgesSync.png>
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
+ [8]
 File: ./figs/CorrectCoupling_uniform_0.010_0.10_10_radius.png Graphic file (type bmp)
 <./figs/CorrectCoupling_uniform_0.010_0.10_10_radius.png>
 File: ./figs/CorrectCoupling_uniform_0.020_0.40_10_radius.png Graphic file (type bmp)
@@ -711,59 +745,59 @@ File: ./figs/CorrectCoupling_uniform_0.010_2.00_10_radius.png Graphic file (type
 <./figs/CorrectCoupling_uniform_0.010_2.00_10_radius.png>
 File: ./figs/CorrectCoupling_uniform_0.300_2.00_10_radius.png Graphic file (type bmp)
 <./figs/CorrectCoupling_uniform_0.300_2.00_10_radius.png>
- [8]
+ [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 371.
+(hyperref)                removing `math shift' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `\lambda' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `math shift' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 371.
+(hyperref)                removing `math shift' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `subscript' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `math shift' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 371.
+(hyperref)                removing `math shift' on input line 434.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 371.
+(hyperref)                removing `subscript' on input line 434.
 
-[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 434.
+
+[10]
 File: ./figs/CorrectCoupling_uniform_0.010_0.10.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.010_0.10.eps>
 File: ./figs/CorrectCoupling_uniform_0.020_0.30.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.020_0.30.eps>
 File: ./figs/CorrectCoupling_uniform_0.010_2.00.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.010_2.00.eps>
- [10]
+ [11]
 File: ./figs/CorrectCoupling_uniform_0.600_3.00.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.600_3.00.eps>
- [11]
+ [12]
 File: ./figs/CenterEps.pdf Graphic file (type pdf)
 <use ./figs/CenterEps.pdf>
 File: ./figs/centorsBigGraph_sub.png Graphic file (type bmp)
 <./figs/centorsBigGraph_sub.png>
- [12]
+ [13]
 
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
@@ -782,40 +816,40 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 
 File: ./figs/ClusteringResult.png Graphic file (type bmp)
 <./figs/ClusteringResult.png>
-[13]
-File: ./figs/subjectiveOp2.png Graphic file (type bmp)
-<./figs/subjectiveOp2.png>
+[14]
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
 File: ./figs/phaseSyncOp.png Graphic file (type bmp)
 <./figs/phaseSyncOp.png>
-File: ./figs/subjectiveOp2.png Graphic file (type bmp)
-<./figs/subjectiveOp2.png>
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
 
 
-LaTeX Warning: Reference `fig:fig234c.6' on page 14 undefined on input line 563.
-
-[14]
-File: ./figs/clusteringPhaseSync.png Graphic file (type bmp)
-<./figs/clusteringPhaseSync.png>
-File: ./figs/subjectiveOp2.png Graphic file (type bmp)
-<./figs/subjectiveOp2.png>
-File: ./figs/limitDisPhaseSync.png Graphic file (type bmp)
-<./figs/limitDisPhaseSync.png>
-File: ./figs/subjectiveOp2.png Graphic file (type bmp)
-<./figs/subjectiveOp2.png>
-
-
-LaTeX Warning: Reference `weightedPhaseSync' on page 15 undefined on input line 680.
+LaTeX Warning: Reference `fig:fig234c.6' on page 15 undefined on input line 626.
 
 [15]
+File: ./figs/clusteringPhaseSync.png Graphic file (type bmp)
+<./figs/clusteringPhaseSync.png>
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
+File: ./figs/limitDisPhaseSync.png Graphic file (type bmp)
+<./figs/limitDisPhaseSync.png>
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
+
+
+LaTeX Warning: Reference `weightedPhaseSync' on page 16 undefined on input line 743.
+
+[16]
 File: ./figs/classNum1.png Graphic file (type bmp)
 <./figs/classNum1.png>
-File: ./figs/subjectiveOp2.png Graphic file (type bmp)
-<./figs/subjectiveOp2.png>
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
 File: ./figs/nearbyNums.png Graphic file (type bmp)
 <./figs/nearbyNums.png>
-File: ./figs/subjectiveOp2.png Graphic file (type bmp)
-<./figs/subjectiveOp2.png>
- [16]
+File: ./figs/subjectiveOp3.png Graphic file (type bmp)
+<./figs/subjectiveOp3.png>
+ [17]
 File: ./figs/limitDisPhaseSyncRing.png Graphic file (type bmp)
 <./figs/limitDisPhaseSyncRing.png>
 File: ./figs/subjectiveOpRing.png Graphic file (type bmp)
@@ -824,27 +858,27 @@ File: ./figs/nearbyNumsRing.png Graphic file (type bmp)
 <./figs/nearbyNumsRing.png>
 File: ./figs/subjectiveOpRing.png Graphic file (type bmp)
 <./figs/subjectiveOpRing.png>
- [17]
+ [18]
 File: ./figs/totalXY.png Graphic file (type bmp)
 <./figs/totalXY.png>
- [18]
+ [19]
 File: ./figs/limitDisPhaseSync_ts.png Graphic file (type bmp)
 <./figs/limitDisPhaseSync_ts.png>
- [19]
+ [20]
 File: ./figs/limitDisPhaseSyncOp_ts.png Graphic file (type bmp)
 <./figs/limitDisPhaseSyncOp_ts.png>
- [20]
+ [21]
 File: ./figs/centerNearbyCounts.png Graphic file (type bmp)
 <./figs/centerNearbyCounts.png>
- [21]
+ [22]
 File: ./figs/centerNearbyCountsOp.png Graphic file (type bmp)
 <./figs/centerNearbyCountsOp.png>
- [22]
+ [23]
 File: ./figs/deltaOmega1.png Graphic file (type bmp)
 <./figs/deltaOmega1.png>
 File: ./figs/deltaOmega2.png Graphic file (type bmp)
 <./figs/deltaOmega2.png>
- [23]
+ [24]
 File: ./figs/clusterDeltaOmega1.png Graphic file (type bmp)
 <./figs/clusterDeltaOmega1.png>
 File: ./figs/clusterDeltaOmega2.png Graphic file (type bmp)
@@ -857,12 +891,12 @@ File: ./figs/diffChirInf.png Graphic file (type bmp)
 <./figs/diffChirInf.png>
 File: ./figs/sameChirInf.png Graphic file (type bmp)
 <./figs/sameChirInf.png>
- [24] [25]
+ [25] [26]
 File: ./figs/2particalDis.png Graphic file (type bmp)
 <./figs/2particalDis.png>
 File: ./figs/2particalCentersDis.png Graphic file (type bmp)
 <./figs/2particalCentersDis.png>
- [26] (./徐旖欣工作_陆羿辰总结汇报.aux)
+ [27] (./徐旖欣工作_陆羿辰总结汇报.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -870,15 +904,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `徐旖欣工作_陆羿辰总结汇报.out' has not changed.
-(rerunfilecheck)             Checksum: A9A137599EEA999BEA1D45094F2575E7;2097.
+(rerunfilecheck)             Checksum: 5D32EFEC46BCE68DE3A36CD7CC16CC0F;2106.
  ) 
 Here is how much of TeX's memory you used:
- 16102 strings out of 478907
- 324196 string characters out of 5866571
- 689293 words of memory out of 5000000
- 35654 multiletter control sequences out of 15000+600000
+ 16091 strings out of 478907
+ 322933 string characters out of 5866571
+ 688455 words of memory out of 5000000
+ 35642 multiletter control sequences out of 15000+600000
  419568 words of font info for 124 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 82i,20n,107p,380b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 82i,20n,107p,366b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (26 pages).
+Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (27 pages).
