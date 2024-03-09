@@ -143,7 +143,7 @@ $$
 \end{cases}
 $$
 
-\textbf{运动半径的求解}
+\textbf{无耦合情况下振子转动半径的求解}
 
 $$
 \begin{cases}
@@ -262,10 +262,9 @@ $$
 因此
 \vspace{-0.5cm}
 
-$$
-C=\frac{1}{N}\sum_{i=1}^N{\omega _i}
-$$
-
+\begin{equation}\label{eq:eq2.2.1}
+	C=\frac{1}{N}\sum_{i=1}^N{\omega _i}
+\end{equation}
 
 即集群中振子的相速度为集群中所有振子自然频率的算数平均.
 
@@ -283,17 +282,54 @@ $$
 
 \subsection{环态与集群态相边界的推导}
 
-考虑到同手性振子在形成环态时，存在旋转中心的聚集现象，因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下，同手性振子会聚集成环，如下图\ref{fig:fig23.1}(a)所示. 而在耦合强度与作用半径大于临界值且恰巧形成集群的情况下，同手性振子会聚集成集群，如下图\ref{fig:fig23.1}(b)所示.
+考虑到同手性振子在形成环态时，存在旋转中心的聚集现象，因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下，同手性振子会聚集成环，如下图\ref{fig:fig23.1}(a)所示. 而在耦合强度与作用半径大于临界值且恰巧形成集群的情况下，同手性振子会在保持原转动半径的情况下聚集成群，如下图\ref{fig:fig23.1}(b)所示.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./figs/circleSwarmEdges1.png}
 	\vspace{-1cm}
-	\caption{\textbf{集群态与环态临界状态下的空间分布}. (a)环态. 最外侧的粒子在; (b)集群态.}
+	\caption{\small \textbf{集群态与环态临界状态下的空间分布}. (a)环态. 其中$r_{\max}$为最外侧粒子的转动半径，$r_{\min}$为最内侧粒子的转动半径; (b)集群态. $r_{s}$为集群态形成的瞬间，集群中心距离原环带中心的距离}
 	\label{fig:fig23.1}
 \end{figure}
 
+设振子$i$是最后一个即将被同步到集群的振子，其自然频率为$\omega _i$，在图\ref{fig:fig23.1}以$O$为圆心，$r_{\min}\leqslant r\leqslant r_{\max}$的环带上运动，其余振子$j$恰巧形成集群($j=1,\cdots ,i-1,i+1,\cdots ,N$)，即$\dot{\theta}_j=\omega_s$，以$C$为中心，聚集为圆形团簇，由于该集群恰巧形成，此时其中振子仍保留原圆周运动的转动半径，因此集群圆内切环带外边界于点$B$，外切环带内边界于点$A$. 下面考虑单振子与集群的同步动力学
 
+\begin{equation}\label{eq:eq2}
+	\begin{cases}
+		\dot{\theta}_i=\omega _i+\lambda \sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)}\\
+		\dot{\theta}_j=\omega _s\\
+	\end{cases}
+\end{equation}
+
+其中，$\omega _s$为集群的相速度.
+
+引入新的变量$\Delta \theta =\theta _i-\theta _j$，$\Delta \omega =\omega _i-\omega _s$，则由式\ref{eq:eq2}可得
+
+\begin{equation}\label{eq:eq3}
+	\begin{aligned}
+		\Delta \dot{\theta}&=\Delta \omega -\lambda \sum_{j=1}^N{A_{ij}\sin \Delta \theta}\\
+		&=\Delta \omega -\lambda \left( \sin \Delta \theta \right) \sum_{j=1}^N{A_{ij}}\\
+	\end{aligned}
+\end{equation}
+
+当$\lambda \sum_{j=1}^N{A_{ij}}\geqslant \left| \Delta \omega \right|$时，方程有不动点解，$\Delta \dot{\theta}=0$, 因此，在给定的耦合强度下，$\left| \Delta \omega \right|$越大的振子越难以被同步到集群. 由于$\omega _j\sim U\left( \omega _{\min}, \omega _{\max} \right) $, 且由式\ref{eq:eq2.2.1}可知集群中振子的相速度为集群中所有振子自然频率的算数平均, 则当$N$足够大时，有
+
+$$
+\omega _s=\frac{1}{N-1}\sum_{j=1,j\ne i}^N{\omega _j}\approx \frac{\omega _{\min}+\omega _{\max}}{2}
+$$
+
+从而当且仅当$\omega _i\in \left\{ \omega _{\max},\omega _{\min} \right\}$时，$\left| \Delta \omega \right|$取得最大值, 此时的振子$i$最难被同步到集群. 
+$\omega _{\min}$与$\omega _{\max}$分别为振子的最小自然频率与最大自然频率, 对应于最大转动半径$r_{\max}$与最小转动半径$r_{\min}$, 即振子$i$在以$O$为圆心，$r_{\min}$或$r_{\max}$为半径的圆周上运动. 
+由于振子在空间中并无直接的相互作用，振子需要自发运动到与集群中的振子接触，才能被同步到集群, 因此不妨设振子$i$相切于集群圆外侧，即振子$i$当前位于点$A$或点$B$处.
+由于圆具有对称性, 且$\left| \omega _{\min}-\omega _s \right|=\left| \omega _{\max}-\omega _s \right|$, 不妨设振子$i$位于点$A$处，即$\omega_i=\omega_{\max}$, 则如下图所示
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/circleSwarmEdges2.png}
+	\vspace{-1cm}
+	\caption{\small \textbf{集群态与环态临界状态下的空间分布}}
+	\label{fig:fig23.2}
+\end{figure}
 
 \newpage
 \begin{figure}[H]
