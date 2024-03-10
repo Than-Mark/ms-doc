@@ -281,6 +281,7 @@ $$
 可以看到,在均匀分布与高斯分布的情况下,集群态的相速度都接近于自然频率的算数平均.
 
 \subsection{给定$d_0$下临界耦合强度$\lambda_c$的求解}
+\subsubsection{集群行为临界耦合强度$\lambda_{c1}$}
 
 考虑到同手性振子在形成环态时,存在旋转中心的聚集现象,因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下,同手性振子会聚集成环,如下图\ref{fig:fig23.1}(a)所示. 而在耦合强度与作用半径大于临界值且恰巧形成集群的情况下,同手性振子会在保持原转动半径的情况下聚集成群,如下图\ref{fig:fig23.1}(b)所示.
 
@@ -363,15 +364,19 @@ $$
 \end{cases}
 $$
 
-又由$\Delta \omega =\omega _{\max}-\frac{\omega _{\min}+\omega _{\max}}{2}=\frac{\omega _{\max}-\omega _{\min}}{2}$可得临界耦合强度$\lambda _{c}$与$d_0$的关系为
+又由$\Delta \omega =\omega _{\max}-\frac{\omega _{\min}+\omega _{\max}}{2}=\frac{\omega _{\max}-\omega _{\min}}{2}$可得临界耦合强度$\lambda _{c1}$与$d_0$的关系为
 
 $$
 \begin{cases}
-	\lambda _c=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{2\left( N-1 \right) \left( \alpha d_{0}^{2}+\beta r_{s}^{2}-2d_0\sin \frac{\alpha}{2} \right)}\\
+	\lambda _{c1}=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{2\left( N-1 \right) \left( \alpha d_{0}^{2}+\beta r_{s}^{2}-2d_0\sin \frac{\alpha}{2} \right)}\\
 	\beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{s}^{2}} \right)\\
 	\alpha =\frac{2\pi -\beta}{2}\\
 \end{cases}
 $$
+
+\subsubsection{瞬时同步态临界耦合强度$\lambda_{c2}$}
+
+\subsubsection{数值模拟与理论推导结果的对比}
 
 最后将理论推导结果与数值模拟结果进行对比,如下图\ref{fig:fig23.3}所示
 
@@ -380,7 +385,7 @@ $$
 	\begin{subfigure}[b]{0.49\textwidth}
 		\includegraphics[width=\textwidth]{./figs/circleSwarmEdgesSync.png}
 		\vspace{-1cm}
-		\caption{聚类序参量与相边界理论值}
+		\caption{聚类序参量与$\lambda_{c1}$临界线}
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -388,11 +393,11 @@ $$
 		\vspace{-1cm}
 		\caption{主观划分空间状态图}
 	\end{subfigure}
-	\caption{相边界理论值与数值模拟结果}
+	\caption{\small\textbf{临界线理论值与数值模拟结果}. (a)该临界线与序参量在0附近的临界值较为吻合. (b)主观划分空间状态图}
 	\label{fig:fig23.3}
 \end{figure}
 
-观察上图可以发现，理论推导的相边界与序参量在0附近的临界值较为吻合, 考虑到在耦合强度稍强的环态中会出现局部的集群现象(序参量上也出现上升趋势), 而在主观划分空间状态图时，这部分终态被划分为环态，所以导致在主观划分空间状态图中，对环态与集群态相边界的划分不够准确.
+ 考虑到在耦合强度稍强的环态中会出现局部的集群现象(序参量上也出现上升趋势), 而在主观划分空间状态图时，这部分终态被划分为环态，所以导致在主观划分空间状态图中，对环态与集群态相边界的划分不够准确.
 
 \newpage
 \begin{figure}[H]
@@ -427,7 +432,7 @@ $$
 	\centering
 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.300_2.00_10_radius.png}
 	\vspace{-1cm}
-	\caption{快速同步态 ($\lambda=0.3, d_0=2, random seed=10$)}
+	\caption{瞬时同步态 ($\lambda=0.3, d_0=2, random seed=10$)}
 	\label{fig:fig22.4}
 \end{figure}
 
@@ -492,11 +497,11 @@ $$
 	\centering
 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.600_3.00.eps}
 	\vspace{-1cm}
-	\caption{快速同步态 ($\lambda=0.6, d_0=3, random seed=10$)}
+	\caption{瞬时同步态 ($\lambda=0.6, d_0=3, random seed=10$)}
 	\label{fig:fig231.4}
 \end{figure}
 
-当振子处于集群态或快速同步态时,相位单位圆的分布如图\ref{fig:fig231.3}和图\ref{fig:fig231.4}所示. 这两种状态的相位同步的程度较高.
+当振子处于集群态或瞬时同步态时,相位单位圆的分布如图\ref{fig:fig231.3}和图\ref{fig:fig231.4}所示. 这两种状态的相位同步的程度较高.
 
 \newpage
 \subsubsection{振子旋转中心的坐标}
@@ -587,7 +592,7 @@ $$
 
 \subsubsection{序参量的定义与计算}
 
-为了评估截面序参量对相图的刻画能力,这里根据终态的拓扑结构绘制了主观划分的相图,以提供对比,如下图\ref{fig:fig234.1}所示. 从左至右,从上至下,分别为无序态、环态、集群态、快速同步态. 图\ref{fig:fig232.2}中的四种状态分别对应图\ref{fig:fig234.1}中的四个区域,对比观察可以发现,环态与集群态在空间上的聚集程度较高,而无序态与快速同步态在空间上分布较为均匀,聚集程度低; 此外,集群态与快速同步态在相位(速度方向)上的同步程度较高,而环态与无序态较低.
+为了评估截面序参量对相图的刻画能力,这里根据终态的拓扑结构绘制了主观划分的相图,以提供对比,如下图\ref{fig:fig234.1}所示. 从左至右,从上至下,分别为无序态、环态、集群态、瞬时同步态. 图\ref{fig:fig232.2}中的四种状态分别对应图\ref{fig:fig234.1}中的四个区域,对比观察可以发现,环态与集群态在空间上的聚集程度较高,而无序态与瞬时同步态在空间上分布较为均匀,聚集程度低; 此外,集群态与瞬时同步态在相位(速度方向)上的同步程度较高,而环态与无序态较低.
 
 \begin{figure}[H]
 	\centering
@@ -710,7 +715,7 @@ $$\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}\left|\cfrac{1}{N_{k}}\sum_{i\in C_{k
 \end{figure}
 
 \vspace{-0.5cm}
-对比图\ref{fig:fig234c.1}可以发现,图\ref{fig:fig234c.5}能够更好地刻画环态与集群态的相位同步程度, 从而将它们区分, 但算法\ref{clustering}的计算复杂度较高,且不易区分集群态与快速同步态,因此做出如下改进:
+对比图\ref{fig:fig234c.1}可以发现,图\ref{fig:fig234c.5}能够更好地刻画环态与集群态的相位同步程度, 从而将它们区分, 但算法\ref{clustering}的计算复杂度较高,且不易区分集群态与瞬时同步态,因此做出如下改进:
 
 \noindent\textbf{旋转中心邻域内相位同步程度(截面序参量)}
 
@@ -844,7 +849,7 @@ $$
 	\label{fig:fig234c.7}
 \end{figure}
 
-聚类数能够比较好地将无序态与环态、集群态与快速同步态区分开来,但在环态与集群态之间的区分能力不明显.
+聚类数能够比较好地将无序态与环态、集群态与瞬时同步态区分开来,但在环态与集群态之间的区分能力不明显.
 
 \noindent\textbf{旋转中心邻域内中心数(截面时序序参量)}
 
@@ -1156,7 +1161,7 @@ $ $
 	\label{fig:fig2.5.global}
 \end{figure}
 
-观察图\ref{fig:fig2.5.global}可以发现,$\Delta \Omega _1$与$\Delta \Omega _2$的取值分布基本一致,并且都在快速同步态与集群态之间有明显的差异. 处于快速同步态或单集群的集群态时,系统发生整体锁相,$\Delta\Omega_1$与$\Delta\Omega_2$趋于0. 考虑到集群态在各个集群内部的同步程度较高,因此下面对集群的平均频率差进行讨论.
+观察图\ref{fig:fig2.5.global}可以发现,$\Delta \Omega _1$与$\Delta \Omega _2$的取值分布基本一致,并且都在瞬时同步态与集群态之间有明显的差异. 处于瞬时同步态或单集群的集群态时,系统发生整体锁相,$\Delta\Omega_1$与$\Delta\Omega_2$趋于0. 考虑到集群态在各个集群内部的同步程度较高,因此下面对集群的平均频率差进行讨论.
 
 \newpage
 \noindent\textbf{聚类平均频率差}
