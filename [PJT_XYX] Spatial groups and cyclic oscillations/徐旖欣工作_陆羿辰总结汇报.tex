@@ -280,8 +280,35 @@ $$
 
 可以看到,在均匀分布与高斯分布的情况下,集群态的相速度都接近于自然频率的算数平均.
 
-\subsection{给定$d_0$下临界耦合强度$\lambda_c$的求解}
-\subsubsection{集群行为临界耦合强度$\lambda_{c1}$}
+\subsection{给定作用半径$d_0$下临界耦合强度$\lambda_c$的求解}
+\subsubsection{环态临界耦合强度$\lambda_{c1}$}
+
+由于环态的对称性,不妨考虑如下两振子的动力学方程
+
+$$
+\begin{cases}
+	\dot{x}_1=v\cos \theta _1\\
+	\dot{y}_1=v\sin \theta _1\\
+	\dot{\theta}_1=\omega _1+\lambda f_H\left( d_0-d \right) \sin \left( \theta _2-\theta _1 \right)\\
+	\dot{x}_2=v\cos \theta _2\\
+	\dot{y}_2=v\sin \theta _2\\
+	\dot{\theta}_2=\omega _2+\lambda f_H\left( d_0-d \right) \sin \left( \theta _1-\theta _2 \right)\\
+\end{cases}
+$$
+其中$f_H\left( x \right)$为Heaviside阶跃函数,即
+$$
+f_H\left( x \right)=\begin{cases}
+	1,&		x\geqslant 0\\
+	0,&		x<0\\
+\end{cases}
+$$
+$d$为两振子之间的距离,即$d=\sqrt{\left( x_1-x_2 \right) ^2+\left( y_1-y_2 \right) ^2}$. 考虑到Heaviside函数的不连续性, 以近似函数$f_{F}\left( x \right)$代替$f_H\left( x \right)$,即
+$$
+f_F\left( x \right) =\frac{1}{e^{\left( d-d_0 \right) /\mu}+1}
+$$
+其中, $\mu$为参数, 满足$\mu>0$, 且当$\mu\rightarrow0^{+}$时, 有$f_{F}\left( x \right)\rightarrow f_H\left( x \right)$. 已知振子
+
+\subsubsection{集群态临界耦合强度$\lambda_{c2}$}
 
 考虑到同手性振子在形成环态时,存在旋转中心的聚集现象,因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下,同手性振子会聚集成环,如下图\ref{fig:fig23.1}(a)所示. 而在耦合强度与作用半径大于临界值且恰巧形成集群的情况下,同手性振子会在保持原转动半径的情况下聚集成群,如下图\ref{fig:fig23.1}(b)所示.
 
@@ -289,7 +316,7 @@ $$
 	\centering
 	\includegraphics[width=\textwidth]{./figs/circleSwarmEdges1.png}
 	\vspace{-1cm}
-	\caption{\small \textbf{集群态与环态临界状态下的空间分布}. (a)环态. 其中$r_{\max}$为最外侧粒子的转动半径,$r_{\min}$为最内侧粒子的转动半径; (b)集群态. $A$、$B$分别为集群圆与环带内外边界的切点}
+	\caption{\small \textbf{集群态与环态临界状态下的空间分布}. (a)环态. 其中$r_{\max}$为最外侧振子的转动半径,$r_{\min}$为最内侧振子的转动半径; (b)集群态. $A$、$B$分别为集群圆与环带内外边界的切点}
 	\label{fig:fig23.1}
 \end{figure}
 
@@ -344,7 +371,7 @@ $$
 	N_i\left( d_0 \right) =\left( N-1 \right) \frac{S_i}{S_s}
 \end{equation}
 
-其中$(N-1)$是集群中的粒子数, $S_i$是$\mathbf{x}_i$为圆心,以$d_0$为半径的圆与集群重叠部分的面积, $S_s$是集群圆的面积. 由初等几何知识可得
+其中$(N-1)$是集群中的振子数, $S_i$是$\mathbf{x}_i$为圆心,以$d_0$为半径的圆与集群重叠部分的面积, $S_s$是集群圆的面积. 由初等几何知识可得
 
 \begin{equation}\label{eq:eq5}
 	\begin{cases}
@@ -368,13 +395,13 @@ $$
 
 $$
 \begin{cases}
-	\lambda _{c1}=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{2\left( N-1 \right) \left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}\\
+	\lambda _{c2}=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{2\left( N-1 \right) \left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}\\
 	\beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{s}^{2}} \right)\\
 	\alpha =\frac{2\pi -\beta}{2}\\
 \end{cases}
 $$
 
-\subsubsection{同手性振子全同步临界耦合强度$\lambda_{c2}$}
+\subsubsection{同手性振子全同步临界耦合强度$\lambda_{c3}$}
 
 考虑到在耦合强度较弱时, 同手性振子的运动轨迹会产生聚集现象, 而异手性振子之间的轨迹会相互排斥, 因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下, 两种手性的振子会分别占据空间中的一半, 这里假设振子在各自空间上的分布是均匀的, 从而有
 
@@ -382,24 +409,24 @@ $$
 	\rho =\frac{N_c}{L^2/2}=\frac{2N_c}{L^2}
 \end{equation}
 
-其中$N_c$为同手性粒子数, $L$为边界长度. 与$\lambda_{c1}$的推导类似, 这里假设振子$i$是最后一个即将被同步到集群的振子, 其余振子$j$恰巧形成集群, 可考虑与\ref{eq:eq2}式相同的同步动力学. 由于振子在空间上的分布是均匀的, 从而有
+其中$N_c$为同手性振子数, $L$为边界长度. 与$\lambda_{c1}$的推导类似, 这里假设振子$i$是最后一个即将被同步到集群的振子, 其余振子$j$恰巧形成集群, 可考虑与\ref{eq:eq2}式相同的同步动力学. 由于振子在空间上的分布是均匀的, 从而有
 
 $$
 \sum_{j=1}^N{A_{ij}}=\rho \pi d_{0}^{2}=\frac{2N_c\pi d_{0}^{2}}{L^2}
 $$
 
-上式可以理解为振子$i$作用半径内的粒子数等于单位面积下的振子数乘以其作用范围的面积. 由\ref{eq:eq3}式可知在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. $\Delta \omega =\omega _{\max}-\omega _{\min}$时取得最大值, 此时同手性的振子$i$最难被同步到集群. 从而临界耦合强度$\lambda_{c2}(d_0)$为
+上式可以理解为振子$i$作用半径内的振子数等于单位面积下的振子数乘以其作用范围的面积. 由\ref{eq:eq3}式可知在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. $\Delta \omega =\omega _{\max}-\omega _{\min}$时取得最大值, 此时同手性的振子$i$最难被同步到集群. 从而临界耦合强度$\lambda_{c2}(d_0)$为
 
 \begin{equation}\label{eq:eq6}
-	\lambda _{c2}=\frac{\Delta \omega}{\sum_{j=1}^N{A_{ij}}}=\frac{\omega _{\max}-\omega _{\min}}{\frac{2N_c\pi d_{0}^{2}}{L^2}}=\frac{L^2\left( \omega _{\max}-\omega _{\min} \right)}{2N_c\pi d_{0}^{2}}
+	\lambda _{c3}=\frac{\Delta \omega}{\sum_{j=1}^N{A_{ij}}}=\frac{\omega _{\max}-\omega _{\min}}{\frac{2N_c\pi d_{0}^{2}}{L^2}}=\frac{L^2\left( \omega _{\max}-\omega _{\min} \right)}{2N_c\pi d_{0}^{2}}
 \end{equation}
 
-\subsubsection{瞬时同步态临界耦合强度$\lambda_{c3}$}
+\subsubsection{瞬时同步态临界耦合强度$\lambda_{c4}$}
 
 瞬时同步态可以看作是集群态的一种特例, 即系统内的全体振子(包括同手性与异手性)完成了全局同步, 因此类似于瞬时同步态的推导, 类似\ref{eq:eq6}式可得
 
 \begin{equation}\label{eq:eq7}
-	\lambda _{c3}=\frac{L^2\left[ \omega _{\max}-\left( -\omega _{\max} \right) \right]}{N\pi d_{0}^{2}/2}=\frac{4L^2\omega _{\max}}{N\pi d_{0}^{2}}
+	\lambda _{c4}=\frac{L^2\left[ \omega _{\max}-\left( -\omega _{\max} \right) \right]}{N\pi d_{0}^{2}/2}=\frac{4L^2\omega _{\max}}{N\pi d_{0}^{2}}
 \end{equation}
 
 其中$N$为系统内全体振子数. 由于两种手性分别服从关于原点对称的两个均匀分布, 因子在全局同步中, $Delta \omega$最大值可取$\omega _{\max}-\left( -\omega _{\max} \right)=2\omega _{\max}$. 此外, 考虑到两种手性的振子在空间中相互排斥且已完成局部集群, 因此振子密度为\ref{eq:eq5.5}式中的$1/2$
@@ -435,7 +462,7 @@ $$
 		\caption{主观划分空间状态图}
 	\end{subfigure}
 	\vspace{-0.3cm}
-	\caption{\small\textbf{临界线理论值与数值模拟结果}. (a) ($N=500, \Delta \omega=1, r_s=1$) (b) ($N_c=500, \Delta \omega=2$) (c) ($N=1000, \Delta \bar{\omega}=6$)大于该临界值的终态序参量均接近于1, 即同手性粒子全同步. (d)主观划分空间状态图.}
+	\caption{\small\textbf{临界线理论值与数值模拟结果}. (a) ($N=500, \Delta \omega=1, r_s=1$) (b) ($N_c=500, \Delta \omega=2$) (c) ($N=1000, \Delta \bar{\omega}=6$)大于该临界值的终态序参量均接近于1, 即同手性振子全同步. (d)主观划分空间状态图.}
 	\label{fig:fig23.3}
 \end{figure}
 
@@ -1272,18 +1299,6 @@ $$
 	\caption{同异手性在相同初值条件下的演化结果($\lambda=0.5$)}
 	\label{fig:fig2.6.chir}
 \end{figure}
-
-$$
-\begin{cases}
-	\dot{x}_1=v\cos \theta _1\\
-	\dot{y}_1=v\sin \theta _1\\
-	\dot{\theta}_1=\omega _1+\lambda \sin \left( \theta _2-\theta _1 \right)\\
-	\dot{x}_2=v\cos \theta _2\\
-	\dot{y}_2=v\sin \theta _2\\
-	\dot{\theta}_2=\omega _2+\lambda \sin \left( \theta _1-\theta _2 \right)\\
-\end{cases}
-$$
-
 
 \newpage
 
