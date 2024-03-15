@@ -219,7 +219,7 @@ $$
 	\label{fig:fig21.3}
 \end{figure}
 
-\subsection{集群态相速度的推导}
+\subsection{集群态相速度的推导}\label{swarmPointTheta}
 
 考虑到集群态振子的运动轨迹是一个圆,即对于任意的振子$i$,其运动轨迹为
 
@@ -285,32 +285,67 @@ $$
 
 由于环态的对称性,不妨考虑如下两振子的动力学方程
 
-$$
-\begin{cases}
-	\dot{x}_1=v\cos \theta _1\\
-	\dot{y}_1=v\sin \theta _1\\
-	\dot{\theta}_1=\omega _1+\lambda f_H\left( d_0-d \right) \sin \left( \theta _2-\theta _1 \right)\\
-	\dot{x}_2=v\cos \theta _2\\
-	\dot{y}_2=v\sin \theta _2\\
-	\dot{\theta}_2=\omega _2+\lambda f_H\left( d_0-d \right) \sin \left( \theta _1-\theta _2 \right)\\
-\end{cases}
-$$
-其中$f_H\left( x \right)$为Heaviside阶跃函数,即
-$$
-f_H\left( x \right)=\begin{cases}
-	1,&		x\geqslant 0\\
-	0,&		x<0\\
-\end{cases}
-$$
-$d$为两振子之间的距离,即$d=\sqrt{\left( x_1-x_2 \right) ^2+\left( y_1-y_2 \right) ^2}$. 考虑到Heaviside函数的不连续性, 以近似函数$f_{F}\left( x \right)$代替$f_H\left( x \right)$,即
+\begin{equation}\label{eq:l1.1}
+	\begin{cases}
+		\dot{x}_1=v\cos \theta _1\\
+		\dot{y}_1=v\sin \theta _1\\
+		\dot{\theta}_1=\omega _1+\lambda f_F\left( d_0-d \right) \sin \left( \theta _2-\theta _1 \right)\\
+		\dot{x}_2=v\cos \theta _2\\
+		\dot{y}_2=v\sin \theta _2\\
+		\dot{\theta}_2=\omega _2+\lambda f_F\left( d_0-d \right) \sin \left( \theta _1-\theta _2 \right)\\
+	\end{cases}
+\end{equation}
+其中$f_{F}\left( x \right)$为原方程中Heaviside函数的近似函数,即
 $$
 f_F\left( x \right) =\frac{1}{e^{\left( d-d_0 \right) /\mu}+1}
 $$
-其中, $\mu$为参数, 满足$\mu>0$, 且当$\mu\rightarrow0^{+}$时, 有$f_{F}\left( x \right)\rightarrow f_H\left( x \right)$. 已知振子
+其中, $\mu>0$为参数, 当$\mu\rightarrow0^{+}$时, 有$f_{F}\left( x \right)\rightarrow f_H\left( x \right)$, 且$f_H(x)$在其定义域内连续. 显然系统(\ref{eq:l1.1})没有不动点解, 需要对其进行换元. 已知当系统处于环态时, 振子的运动轨迹与无耦合状态下的轨迹类似, 即以恒定的旋转半径围绕旋转中心做圆周运动, 此时振子由相位所决定的速度方向$(\cos\theta, \sin\theta)$与其径向方向垂直; 此外, 由图\ref{fig:fig2.5.cluster}中的聚类平均频率差$\Delta \Omega _{1}^{*}$与$\Delta \Omega _{2}^{*}$在相同上的取值可知, 系统在各个环内产生局部锁相, 综合以上两点, 考虑以粒子的旋转中心为原点, 对系统(\ref{eq:l1.1})做极坐标换元: 令
+$$
+\begin{array}{c}
+	x_i=r_i\cos \varphi _i\;,\\
+	y_i=r_i\sin \varphi _i\;,\\
+\end{array}
+$$
+从而有
+$$
+\begin{array}{c}
+	\dot{r}_i=v\cos \varphi _i\cos \theta _i+v\sin \varphi _i\sin \theta _i=v\cos \left( \varphi _i-\theta _i \right)\\
+	\dot{\varphi}_i=\frac{v}{r_i}\left( \sin \varphi _i\cos \theta _i-\cos \varphi _i\sin \theta _i \right) =\frac{v}{r_i}\sin \left( \varphi _i-\theta _i \right)\\
+\end{array}
+$$
+再引入新的变量$\alpha_i=\varphi_i-\theta_i$, $\Delta \theta =\theta _2-\theta _1$, $\Delta \varphi =\varphi _2-\varphi _1$, $\Delta \omega =\omega _2-\omega _1$, 则有
+\begin{equation}\label{eq:l1.2}
+	\begin{cases}
+		\dot{r}_1=v\cos \alpha _1\\
+		\dot{r}_2=v\cos \alpha _2\\
+		\dot{\alpha}_1=\frac{v}{r_1}\sin \alpha _1-\omega _1-\lambda f_F\left( d \right) \sin \Delta \theta\\
+		\dot{\alpha}_2=\frac{v}{r_2}\sin \alpha _2-\omega _2+\lambda f_F\left( d \right) \sin \Delta \theta\\
+		\Delta \dot{\varphi}=\frac{v}{r_2}\sin \alpha _2-\frac{v}{r_1}\sin \alpha _1\\
+		\Delta \dot{\theta}_i=\Delta \omega -2\lambda f_F\left( d \right) \sin \Delta \theta\\
+	\end{cases}
+\end{equation}
+其中
+$$
+\begin{aligned}
+	d&=\sqrt{\left( r_1\cos \varphi _1-r_2\cos \varphi _2 \right) ^2+\left( r_1\sin \varphi _1-r_2\sin \varphi _2 \right) ^2}\\
+	&=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_1r_2\cos \Delta \varphi}\\
+\end{aligned}\;.
+$$
+
+当$\sin \alpha _1=\sin \alpha _2,\ \cos \alpha _1=\cos \alpha _2=0$时, 方程组(\ref{eq:l1.2})有不动点解, 即$\alpha _1=\alpha _2=\pi$, 这意味着振子1与振子2的径向方向(极角)与速度方向(相位)垂直, 且垂直方向相同, 即两种振子为同手性振子, 这从另一个角度上印证了同手性振子会聚集成环的结论. 已知系统的初始状态是均匀分布的, 因此可以假设振子的极角$\varphi_i$与极径$r_i$是均匀分布的, 此时假设$Delta \varphi=2\pi/N_c$, 其中$N_c$为单个手性的振子数, 另外假设振子振子仅由临近的同手性振子对其产生作用, 即$r_1=r_2=C_r$, 则有
+
+$$
+d=C_r\sqrt{2-2\cos \Delta \varphi}
+$$
+其中, $C_r$为常数. 由无耦合状态下振子的运动方程可知, 自然频率约大的振子的运动半径约小, 即在空间当中, 自然频率约大的振子更难以与其他振子相遇, 所以在临界状态下, 可以假设$C_r=v/\omega _{\max}$, 其中$\omega_{\max}$为振子的最大自然频率. 另外, 方程组有不动点解需满足$2\lambda f_F\left( d \right) \sin \Delta \theta \geqslant |\Delta \omega |$. 因此,在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. 在同手性振子中, 当$\Delta \omega=\omega_{\max}-\omega_{\min}$时取得最大值. 综上可得临界耦合强度$\lambda _{c1}$与$d_0$的关系为
+
+$$
+\lambda _{c1}=\frac{1}{2}\left( \omega _{\max}-\omega _{\min} \right) \left\{ \exp \left[ \left( \frac{v}{\omega _{\max}}\sqrt{2-2\cos \Delta \varphi}-d_0 \right) /\mu \right] +1 \right\} 
+$$
 
 \subsubsection{集群态临界耦合强度$\lambda_{c2}$}
 
-考虑到同手性振子在形成环态时,存在旋转中心的聚集现象,因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下,同手性振子会聚集成环,如下图\ref{fig:fig23.1}(a)所示. 而在耦合强度与作用半径大于临界值且恰巧形成集群的情况下,同手性振子会在保持原转动半径的情况下聚集成群,如下图\ref{fig:fig23.1}(b)所示.
+由于同手性振子的相互作用会导致振子的聚集现象, 因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下, 全体同手性振子会聚集成环, 如图\ref{fig:fig23.1}(a)所示. 假设在耦合强度与作用半径大于临界值且恰巧形成集群的情况下,同手性振子会在保持原转动半径的情况下聚集成群,如下图\ref{fig:fig23.1}(b)所示.
 
 \begin{figure}[H]
 	\centering
@@ -340,7 +375,7 @@ $$
 	\end{aligned}
 \end{equation}
 
-当$\lambda \sum_{j=1}^N{A_{ij}}\geqslant \left| \Delta \omega \right|$时,方程有不动点解, $\Delta \dot{\theta}=0$, 因此,在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. 由于$\omega _j\sim U\left( \omega _{\min}, \omega _{\max} \right) $, 且由式\ref{eq:eq2.2.1}可知集群中振子的相速度为集群中所有振子自然频率的算数平均, 则当$N$足够大时,有
+当$\lambda \sum_{j=1}^N{A_{ij}}\geqslant \left| \Delta \omega \right|$时,方程有不动点解, 由于$\omega _j\sim U\left( \omega _{\min}, \omega _{\max} \right) $, 且由式\ref{eq:eq2.2.1}可知集群中振子的相速度为集群中所有振子自然频率的算数平均, 则当$N$足够大时,有
 
 $$
 \omega _s=\frac{1}{N-1}\sum_{j=1,j\ne i}^N{\omega _j}\approx \frac{\omega _{\min}+\omega _{\max}}{2}
@@ -353,7 +388,7 @@ $\omega _{\min}$与$\omega _{\max}$分别为振子的最小自然频率与最大
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./figs/circleSwarmEdges2.png}
+	\includegraphics[width=0.45\textwidth]{./figs/circleSwarmEdges2.png}
 	\caption{\small \textbf{振子$i$与集群示意图}}
 	\label{fig:fig23.2}
 \end{figure}
@@ -368,10 +403,10 @@ $$
 可知式\ref{eq:eq3}中的$\sum_{j=1}^N{A_{ij}}$可表示为振子$i$作用半径$d_0$内的其余振子数,即$\sum_{j=1}^N{A_{ij}}=N_i\left( d_0 \right)$,是关于$d_0$的函数. 考虑到集群内的振子数足够多, $N_i\left( d_0 \right)$可视作连续函数, 为
 
 \begin{equation}\label{eq:eq4}
-	N_i\left( d_0 \right) =\left( N-1 \right) \frac{S_i}{S_s}
+	N_i\left( d_0 \right) =\left( N_c-1 \right) \frac{S_i}{S_s}
 \end{equation}
 
-其中$(N-1)$是集群中的振子数, $S_i$是$\mathbf{x}_i$为圆心,以$d_0$为半径的圆与集群重叠部分的面积, $S_s$是集群圆的面积. 由初等几何知识可得
+其中$(N_c-1)$是集群中的振子数, $S_i$是$\mathbf{x}_i$为圆心,以$d_0$为半径的圆与集群重叠部分的面积, $S_s$是集群圆的面积. 由初等几何知识可得
 
 \begin{equation}\label{eq:eq5}
 	\begin{cases}
@@ -385,17 +420,17 @@ $$
 
 $$
 \begin{cases}
-	N_i\left( d_0 \right) =\frac{\left( N-1 \right) \left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}{\pi r_{s}^{2}}\\
+	N_i\left( d_0 \right) =\frac{\left( N_c-1 \right) \left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}{\pi r_{s}^{2}}\\
 	\beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{s}^{2}} \right)\\
 	\alpha =\frac{2\pi -\beta}{2}\\
 \end{cases}
 $$
 
-又由$\Delta \omega =\omega _{\max}-\frac{\omega _{\min}+\omega _{\max}}{2}=\frac{\omega _{\max}-\omega _{\min}}{2}$可得临界耦合强度$\lambda _{c1}$与$d_0$的关系为
+又由$\Delta \omega =\omega _{\max}-\frac{\omega _{\min}+\omega _{\max}}{2}=\frac{\omega _{\max}-\omega _{\min}}{2}$可得临界耦合强度$\lambda _{c2}$与$d_0$的关系为
 
 $$
 \begin{cases}
-	\lambda _{c2}=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{2\left( N-1 \right) \left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}\\
+	\lambda _{c2}=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{2\left( N_c-1 \right) \left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}\\
 	\beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{s}^{2}} \right)\\
 	\alpha =\frac{2\pi -\beta}{2}\\
 \end{cases}
@@ -415,7 +450,7 @@ $$
 \sum_{j=1}^N{A_{ij}}=\rho \pi d_{0}^{2}=\frac{2N_c\pi d_{0}^{2}}{L^2}
 $$
 
-上式可以理解为振子$i$作用半径内的振子数等于单位面积下的振子数乘以其作用范围的面积. 由\ref{eq:eq3}式可知在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. $\Delta \omega =\omega _{\max}-\omega _{\min}$时取得最大值, 此时同手性的振子$i$最难被同步到集群. 从而临界耦合强度$\lambda_{c2}(d_0)$为
+上式可以理解为振子$i$作用半径内的振子数等于单位面积下的振子数乘以其作用范围的面积. 由\ref{eq:eq3}式可知在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. $\Delta \omega =\omega _{\max}-\omega _{\min}$时取得最大值, 此时同手性的振子$i$最难被同步到集群. 从而临界耦合强度$\lambda_{c3}(d_0)$为
 
 \begin{equation}\label{eq:eq6}
 	\lambda _{c3}=\frac{\Delta \omega}{\sum_{j=1}^N{A_{ij}}}=\frac{\omega _{\max}-\omega _{\min}}{\frac{2N_c\pi d_{0}^{2}}{L^2}}=\frac{L^2\left( \omega _{\max}-\omega _{\min} \right)}{2N_c\pi d_{0}^{2}}
@@ -423,15 +458,54 @@ $$
 
 \subsubsection{瞬时同步态临界耦合强度$\lambda_{c4}$}
 
-瞬时同步态可以看作是集群态的一种特例, 即系统内的全体振子(包括同手性与异手性)完成了全局同步, 因此类似于瞬时同步态的推导, 类似\ref{eq:eq6}式可得
+瞬时同步态可以看作是集群态的一种特例, 即系统内的全体振子(包括同手性与异手性)完成了全局同步, 因此可以假设瞬时同步态的临界阈值等价于集群态两种手性的振子达成全局同步的临界阈值.
 
-\begin{equation}\label{eq:eq7}
-	\lambda _{c4}=\frac{L^2\left[ \omega _{\max}-\left( -\omega _{\max} \right) \right]}{N\pi d_{0}^{2}/2}=\frac{4L^2\omega _{\max}}{N\pi d_{0}^{2}}
-\end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/circleSwarmEdges3.png}
+	\caption{\small \textbf{双集群示意图}}
+	\label{fig:fig235.1}
+\end{figure}
 
-其中$N$为系统内全体振子数. 由于两种手性分别服从关于原点对称的两个均匀分布, 因子在全局同步中, $Delta \omega$最大值可取$\omega _{\max}-\left( -\omega _{\max} \right)=2\omega _{\max}$. 此外, 考虑到两种手性的振子在空间中相互排斥且已完成局部集群, 因此振子密度为\ref{eq:eq5.5}式中的$1/2$
+假设在两种手性振子在达成全局前已分别形成手性振子全同步且在手性内部取向一致, 且两种手性的振子在空间中相互排斥且已完成局部集群, 如上图\ref{fig:fig235.1}所示, 红色与蓝色圆分别代表两种手性的集群, 以相同的转动半径$r_c$分别围绕旋转中心$A$与$B$做圆周运动(此处转动半径为集群内各振子与其各自旋转中心的距离、或是集群几何中心与$A$、$B$的距离，而非各振子与$A$、$B$的距离). 两个集群圆的半径均为$r_s$, 由数值模拟结果可知, 集团圆的半径随耦合强度$\lambda$与作用半径$d_0$的增大而增大, 考虑到此时的耦合强度处于临界处, 因此$r_s$取集群态所能保持的集群圆大小的最大值.
 
+由\ref{swarmPointTheta}中的推导可知
+$$
+r_s=\frac{2v}{\left| \omega _{\max}+\omega _{\min} \right|}\; .
+$$
 
+以图\ref{fig:fig235.1}中的红色集群圆为例,下面用反证法证明$\max r_s=r_c$: 假设$r_s>r_c$, 则点$A$在集群圆内, 由于集群圆围绕点$A$做圆周运动, 此时点$C$处的振子与直径另一侧的振子相位存在$\pi$的相位差, 这与同手性振子取向一致的假设相矛盾, 因此$\max r_s=r_c$.
+
+考虑到两种手性的振子相互排斥且振子间的空间距离越大越不利于产生同步, 假设集群的旋转中心$A$、$B$的间距$l_{AB}$为以$L$为边界的周期性边界盒子中的最大相对距离, 即
+
+$$
+l_{AB}=\frac{\sqrt{2}}{2}L,
+$$
+
+与$\lambda_{c2}$的推导类似, 考虑与(\ref{eq:eq2})式相同的单振子与集群的同步动力学, 因此同样有$\sum_{j=1}^N{A_{ij}}=N_i\left( d_0 \right)$, 为得到$N_i\left( d_0 \right)$, 考虑两集群边界处振子距离取得最小值的情况, 即如图\ref{fig:fig235.1}所示, 两集群圆的圆心与$A$、$B$共线, 设红色圆与直线交于点$C$, 显然振子$i$仅与以$C$为圆心$d_0$为半径的圆与蓝色集群圆重叠面积$S_i$(图中黄色区域)中的振子存在耦合, 
+由初等几何解得
+
+$$
+\begin{cases}
+	S_i=\frac{\alpha}{2}r_{s}^{2}+\frac{\beta}{2}d_{0}^{2}-d_0r_d\sin \frac{\beta}{2}\\
+	r_d=\frac{L}{\sqrt{2}}-r_s-2r_c\\
+	\beta =2\mathrm{arc}\cos \frac{d_{0}^{2}+r_{d}^{2}-r_{s}^{2}}{2d_0r_d}\\
+	\alpha =2\mathrm{arc}\cos \frac{r_{s}^{2}+r_{d}^{2}-d_{0}^{2}}{2r_sr_d}\\
+\end{cases}
+$$
+
+最后类似$\lambda_{c2}$的求解, 令$\Delta \omega =\omega _{\max}-\left( -\omega _{\max} \right) =2\omega _{\max}$可得临界耦合强度$\lambda _{c4}$与$d_0$的关系为
+
+$$
+\begin{cases}
+	\lambda _{c4}=\frac{2\pi r_{s}^{2}\omega _{\max}}{N_c\left( \frac{\alpha}{2}r_{s}^{2}+\frac{\beta}{2}d_{0}^{2}-d_0r_d\sin \frac{\beta}{2} \right)}\\
+	r_d=\frac{L}{\sqrt{2}}-r_s-2r_c\\
+	\beta =2\mathrm{arc}\cos \frac{d_{0}^{2}+r_{d}^{2}-r_{s}^{2}}{2d_0r_d}\\
+	\alpha =2\mathrm{arc}\cos \frac{r_{s}^{2}+r_{d}^{2}-d_{0}^{2}}{2r_sr_d}\\
+\end{cases}
+$$
+
+\newpage
 \subsubsection{数值模拟与理论推导结果的对比}
 
 最后将理论推导结果与数值模拟结果进行对比,如下图\ref{fig:fig23.3}所示
@@ -439,21 +513,21 @@ $$
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/circleSwarmEdgesSync.png}
+		\includegraphics[width=\textwidth]{./figs/lambdaC1.png}
 		\vspace{-1cm}
-		\caption{聚类序参量与$\lambda_{c1}$临界线}
+		\caption{聚类平均频率差$\Delta\Omega_2^{*}$与$\lambda_{c1}$临界线}
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/circleSwarmEdgesTotalSync.png}
+		\includegraphics[width=\textwidth]{./figs/lambdaC2_C3.png}
 		\vspace{-1cm}
-		\caption{聚类数与$\lambda_{c2}$临界线}
+		\caption{聚类序参量与$\lambda_{c2}$、$\lambda_{c3}$临界线}
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/circleSwarmEdgesCounts.png}
+		\includegraphics[width=\textwidth]{./figs/lambdaC4.png}
 		\vspace{-1cm}
-		\caption{聚类序参量与$\lambda_{c3}$临界线}
+		\caption{全局参量与$\lambda_{c3}$临界线}
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -465,68 +539,6 @@ $$
 	\caption{\small\textbf{临界线理论值与数值模拟结果}. (a) ($N=500, \Delta \omega=1, r_s=1$) (b) ($N_c=500, \Delta \omega=2$) (c) ($N=1000, \Delta \bar{\omega}=6$)大于该临界值的终态序参量均接近于1, 即同手性振子全同步. (d)主观划分空间状态图.}
 	\label{fig:fig23.3}
 \end{figure}
-
-
-\newpage
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_0.10_10_radius.png}
-% 	\vspace{-1cm}
-% 	\caption{无序态 ($\lambda=0.01, d_0=0.1, random seed=10$)}
-% 	\label{fig:fig22.1}
-% \end{figure}
-
-% \vspace{-1cm}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.020_0.40_10_radius.png}
-% 	\vspace{-1cm}
-% 	\caption{环态 ($\lambda=0.02, d_0=0.4, random seed=10$)}
-% 	\label{fig:fig22.2}
-% \end{figure}
-
-% \vspace{-1cm}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_2.00_10_radius.png}
-% 	\vspace{-1cm}
-% 	\caption{集群态 ($\lambda=0.01, d_0=2, random seed=10$)}
-% 	\label{fig:fig22.3}
-% \end{figure}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.300_2.00_10_radius.png}
-% 	\vspace{-1cm}
-% 	\caption{瞬时同步态 ($\lambda=0.3, d_0=2, random seed=10$)}
-% 	\label{fig:fig22.4}
-% \end{figure}
-
-\subsection{考虑相互作用$\lambda$,耦合距离$d_0$ ($\{A_ij\}$,注意是时变的)}
-
-\begin{itemize}
-    \item 看空间聚集过程
-    \item 空间尺度也考虑进去
-\end{itemize}
-
-振子数$N$,$L\times L\sim \sqrt{\frac{L\times L}{N}}\sim \frac{L}{\sqrt{N}}$
-
-\begin{enumerate}
-    \item 每个单振子的运动空间尺度, $\cfrac{v}{\omega_i}$
-    \item 耦合距离 $d_0$
-    \item 振子平均间距 $\cfrac{L}{\sqrt{N}}$
-\end{enumerate}
-
-$$
-d_0\sim \frac{L}{\sqrt{N}}\rightarrow d_0\ll \frac{L}{\sqrt{N}}, d_0\gg \frac{L}{\sqrt{N}}
-$$
-
-低频振子：$d_0\ll \frac{v}{\omega _i}$
-高频振子：$d_0\gg \frac{v}{\omega _i}$
-
-在计算空间pattern同时,还要跟踪每个振子的相速度$\dot{\theta}_i(t)$
 
 \newpage
 \subsection{序参量 Order Parameter}
@@ -1192,7 +1204,7 @@ $$
 \newpage
 \subsection{集群行为对同步的影响}
 
-集群行为的讨论既要分析各种不同的空间集群态,也应研究对同步的影响。除了计算系统序参量以外,要计算振子之间的锁相。
+集群行为的讨论既要分析各种不同的空间集群态,也应研究对同步的影响. 除了计算系统序参量以外,要计算振子之间的锁相.
 
 定义平均频率差
 
@@ -1259,7 +1271,7 @@ $$
 		\caption{$\Delta \Omega _{2}^{*}$}
 	\end{subfigure}
 	\vspace{-0.5cm}
-	\caption{全局平均频率差}
+	\caption{聚类平均频率差}
 	\label{fig:fig2.5.cluster}
 \end{figure}
 
