@@ -78,7 +78,7 @@ Second institution and/or address%\\This line break forced% with \\
 The color of the background represents the order parameter $r$ of the system. The color of the snapshots represents the phase of the oscillators. The color of the arrows represents the direction of the velocity of the oscillators. The size of the arrows represents the speed of the oscillators. 
 
 \section{model}
-Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right) $ and an internal phase $\theta_i$ which evoleve according to equations:
+Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evoleve according to equations:
 
 \begin{eqnarray}
     \dot{x}_i&=&v\cos \theta _i\;,\label{eq:dotxi}
@@ -132,7 +132,12 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
     \caption{
-        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundary between the states is analytic approximations given by \textcolor{red}{XXXXXXX}. The snapshots of Ring ($\lambda=0.015,\ d_0=0.35$), Swarm (Multi-Clusters) ($\lambda=0.8,\ d_0=0.2$), Swarm (Double-Clusters) ($\lambda=0.15,\ d_0=0.9$) and Quick Sync ($\lambda=0.95,\ d_0=2$) states are shown around the diagram. For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-linear (For $\lambda$ in $\left[ 0.01, 0.1 \right]$ and $\left[ 0.1, 1 \right]$, step length is $0.1$ and $0.05$, respectively. For $d_0$ in $\left[ 0.1, 1 \right]$ and $\left[ 1, 2 \right]$, step length is $0.05$ and $0.5$, respectively). Other parameters are $N=1000$, $v=3$, $L=10$, $\omega _{\min}=1$, $\omega _{\max}=3$.
+        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundary between the states is analytic approximations given by \textcolor{red}{XXXXXXX}. 
+        For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-linear (For $\lambda$ in $\left[ 0.01, 0.1 \right]$ and $\left[ 0.1, 1 \right]$, step length is $0.1$ and $0.05$, respectively. For $d_0$ in $\left[ 0.1, 1 \right]$ and $\left[ 1, 2 \right]$, step length is $0.05$ and $0.5$, respectively).
+        \textbf{(a)}, The snapshots of Ring ($\lambda=0.015,\ d_0=0.35$). 
+        \textbf{(b)}, Swarm (Multi-Clusters) ($\lambda=0.8,\ d_0=0.2$).
+        \textbf{(c)}, Swarm (Double-Clusters) ($\lambda=0.15,\ d_0=0.9$).
+        \textbf{(d)}, Quick Sync ($\lambda=0.95,\ d_0=2$).
     }
 \end{figure*}
 
@@ -141,6 +146,44 @@ $N=1000$ oscillators were distributed uniformly in the square of length $L=10$ a
 Two-parameter of coupling strength $\lambda$ and action radius $d_0$ are presented in the phase diagram in Fig.~\ref{fig:phaseDiagram}. We found the system settles into five states: \textbf{Disorder}, \textbf{Ring}, \textbf{Swarm} (which can be further divided into \textbf{Multi-Clusters} and \textbf{Double-Clusters}), and \textbf{Quick Sync}. In Fig.~\ref{fig:phaseDiagram} we show the snapshots of the last four states and where these states are located in the phase diagram. We next discuss these five states.
 
 \subsection{Disorder State}
+
+When both $\lambda$ and $d_0$ are small, the system is in the Disorder state, as shown in Fig.~\ref{fig:disorderState}a. In this state, the oscillators are not synchronized and move in a way which similar to uncoupled oscillators ($\lambda=0$). According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), when $\lambda=0$, the equations of oscillators' motion can be written as:
+
+\begin{equation}
+    \begin{array}{c}
+        x_i\left( t \right) =x_i\left( 0 \right) +\frac{v}{\omega _i}\sin \omega _it\;,\\
+        y_i\left( t \right) =y_i\left( 0 \right) +\frac{v}{\omega _i}\cos \omega _it\;.\\
+    \end{array}
+\end{equation}
+
+In such a setup, oscillators move in a circular trajectory with a radius $v/\omega _i$ and the phase $\theta_i$ increases linearly with time, as show in Fig.~\ref{fig:disorderState}b. To calculate the real-time rotational radius, we first estimate real-time centers $\mathbf{c}(t)
+$ of the circular trajectory with method in Fig.~\ref{fig:CenterEps} and then solve the following linear equations:
+
+\begin{equation}
+    \begin{array}{c}
+        \mathbf{c}_i\left( t_1 \right) \cdot \mathbf{v}_i\left( t_1 \right) =\mathbf{x}_i\left( t_1 \right) \cdot \mathbf{v}_i\left( t_1 \right)\;,\\
+        \mathbf{c}_i\left( t_2 \right) \cdot \mathbf{v}_i\left( t_2 \right) =\mathbf{x}_i\left( t_2 \right) \cdot \mathbf{v}_i\left( t_2 \right)\,\\
+    \end{array}
+\end{equation}
+where $\mathbf{r}_i$
+
+\begin{figure}
+    \includegraphics[width=0.3\textwidth]{./figs/CenterEps.pdf}
+    \caption{\label{fig:CenterEps} Estimation for real-time centers. $\mathbf{c}$}
+\end{figure}
+
+
+
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
+    \caption{\label{fig:disorderState} A figure caption. The figure captions are
+    automatically numbered.}
+\end{figure}
+
+
+\subsection{Ring State}
+
+The Ring state is characterized by the oscillators forming several ring clusters, each of which is composed of oscillators with the same chirality.  
 
 \appendix
 
