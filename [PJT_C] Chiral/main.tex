@@ -150,9 +150,31 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
     }
 \end{figure*}
 
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
+    \caption{
+        \label{fig:disorderState} Key properties of the Disorder state. 
+        \textbf{(a)}, The snapshot of the Disorder state ($\lambda=0.01,\ d_0=0.1$). 
+        \textbf{(b)}, The scatter plot of last 100 time steps of 20 positive chirality oscillators and 20 negative chirality oscillators. The plot shows the trajectories are circular.
+    }
+\end{figure}
+
 We performed numerical simulations of the model to probe the behavior of its solutions (see Appendix \ref{sec:numerics} for details on the numerical methods). 
 $N=1000$ oscillators were distributed uniformly in the square of length $L=10$ and their natural frequencies were distributed in the range $\left[ \omega _{\min},\omega _{\max} \right]=\left[ 1,3 \right]$ and $\left[ -\omega _{\max},-\omega _{\min} \right]=\left[ -3,-1 \right]$.
 Two-parameter of coupling strength $\lambda$ and action radius $d_0$ are presented in the phase diagram in Fig.~\ref{fig:phaseDiagram}. We found the system settles into five states: \textbf{Disorder}, \textbf{Ring}, \textbf{Swarm} (which can be further divided into \textbf{Multi-Clusters} and \textbf{Double-Clusters}), and \textbf{Quick Sync}. In Fig.~\ref{fig:phaseDiagram} we show the snapshots of the last four states and where these states are located in the phase diagram. We next discuss these five states.
+
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/phaseHist.pdf}
+    \caption{
+        \label{fig:phaseHist} Histogram of the oscillators' phases.
+        \textbf{(a)}, Ring state ($\lambda=0.015,\ d_0=0.35$).
+        \textbf{(b)}, Swarm state (Multi-Clusters, $\lambda=0.8,\ d_0=0.2$).
+        \textbf{(c)}, Swarm state (Double-Clusters, $\lambda=0.15,\ d_0=0.9$).
+        \textbf{(d)}, Quick Sync state ($\lambda=0.95,\ d_0=2$). The histograms are calculated with $70$ bins.
+    }
+\end{figure*}
+
+
 
 \subsection{Disorder State}
 
@@ -165,23 +187,13 @@ Disorder state occurs when both $\lambda$ and $d_0$ are small. In this state, th
     \end{array}
 \end{equation}
 
-\begin{figure}
-    \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
-    \caption{
-        \label{fig:disorderState} Key properties of the Disorder state. 
-        \textbf{(a)}, The snapshot of the Disorder state ($\lambda=0.01,\ d_0=0.1$). 
-        \textbf{(b)}, The scatter plot of last 100 time steps of 20 positive chirality oscillators and 20 negative chirality oscillators. The plot shows the trajectories are circular.
-    }
-\end{figure}
-
 In such a setup, oscillators move in a circular trajectory with a radius $v/\omega _i$ and the phase $\theta_i$ increases linearly with time, as show in Fig.~\ref{fig:disorderState}b. To calculate the real-time rotational radius, we first estimate real-time centers $\mathbf{c}(t)
 $ of the circular trajectory with method in Fig.~\ref{fig:CenterEps} and then solve the following linear equations:
 
 \begin{figure}
-    \includegraphics[width=0.3\textwidth]{./figs/CenterEps.pdf}
+    \includegraphics[width=0.25\textwidth]{./figs/CenterEps.pdf}
     \caption{\label{fig:CenterEps} Estimation for real-time centers. $\mathbf{v}_i(t_1)$ and $\mathbf{r}_i(t_1)$ are the velocity and position of $i$th oscillator at $t_1$, respectively. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), we can calculate $\mathbf{v}_i(t_2)$ and $\mathbf{r}_i(t_2)$, ($t_2=t_1+\Delta t$). 
-    The line $\mathbf{c}_i(t)\mathbf{v}_i(t)$ is perpendicular to $\mathbf{v}_i(t)$.
-    Then we can estimate the real-time center $\mathbf{c}_i(t)$ of the circular trajectory by Eq.~(\ref{eq:linearEquations}).}
+    The line $\mathbf{c}_i(t)\mathbf{v}_i(t)$ is perpendicular to $\mathbf{v}_i(t)$.}
 \end{figure}
 
 \begin{equation}\label{eq:linearEquations}
@@ -192,7 +204,7 @@ $ of the circular trajectory with method in Fig.~\ref{fig:CenterEps} and then so
 \end{equation}
  
 \begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/radiusOmega.pdf}
+    \includegraphics[width=0.9\textwidth]{./figs/radiusOmega.pdf}
     \caption{
         \label{fig:radiusOmega} The real-time and analytical rotational radius.
         \textbf{(a)}, Radius for the Disorder state ($d_0=0.1$, $\lambda=0.01:0.06$) and Ring state ($d_0=0.1$, $\lambda=0.06:0.1$). The real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator. 
@@ -203,24 +215,22 @@ $ of the circular trajectory with method in Fig.~\ref{fig:CenterEps} and then so
 
 The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a.
 
-
-
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{./figs/ringStateCenters.pdf}
+    \caption{
+        \label{fig:ringStateCenters} Scatter plot of the real-time centers position (Ring, $\lambda=0.02$, $d_0=0.4$). 
+        \textbf{(a)},\textbf{(b)}, horizontal and vertical coordinate of centers' positions. As time goes on, the centers of oscillators with the same chirality converge.
+    }
+\end{figure}
 
 
 \subsection{Ring State}
 
 The Ring state is characterized by the oscillators forming several rings with thickness, each of which is composed of oscillators with the same chirality, as is show in Fig.~\ref{fig:phaseDiagram}a. The oscillators in the same ring cluster move in a circular trajectory with a constant rotational radius, as shown in Fig.~\ref{fig:radiusOmega}a. 
+The oscillators' phase is uniformly distributed in the range $\left[ -\pi,\pi \right]$, as shown in Fig.~\ref{fig:phaseHist}a. 
 There is a long transient time before this state is reached, and in this transient time, the trajectories of oscillators with the same chirality aggregate slowly. Conversely, the trajectories of oscillators with different chirality repel each other, as shown in Fig.~\ref{fig:ringStateCenters}. For parameter plane in Fig.~\ref{fig:phaseDiagram}, the number of ring decreases and local swarms appear at high-frequency ($\left|\omega_i\right|\rightarrow \omega_{\max}$) oscillators with $\lambda$ and $d_0$ increasing, as is shown in Fig.~\ref{fig:ringStateNum}a. 
 
 
-\begin{figure}
-    \includegraphics[width=0.48\textwidth]{./figs/ringStateCenters.pdf}
-    \caption{
-        \label{fig:ringStateCenters} Scatter plot of the real-time centers position (Ring, $\lambda=0.02$, $d_0=0.4$). 
-        \textbf{(a)}, horizontal coordinate of centers' positions.
-        \textbf{(b)}, vertical coordinate of centers' positions. As time goes on, the centers of oscillators with the same chirality converge.
-    }
-\end{figure}
 
 
 \begin{figure}
@@ -234,7 +244,7 @@ There is a long transient time before this state is reached, and in this transie
 
 \subsection{Swarm State}
 
-Swarm State is a state where the oscillators align into several clusters, as shown in Fig.~\ref{fig:phaseDiagram}b and \ref{fig:phaseDiagram}c. When $\lambda$ and $d_0$ increases, the number of clusters decreases by 2, which is named by as Double-Clusters state, and other states are named by Multi-Clusters state. The clusters are composed of oscillators with the same chirality, and the phase $\theta_i$ of the oscillators in the same cluster is synchronized, which means that the oscillators in the cluster move with the same velocity $\mathbf{v}_i=\left( \cos \theta _s,\ \sin \theta _s \right)$ and rotational radius $r_i=v/\theta_s$, where $\theta_s$ is the oscillators' phase in the cluster. Based on this property, we can calculate $\theta_s$ and $r_i$ with Eq.~(\ref{eq:dotthetai}):
+Swarm State is a state where the oscillators align into several clusters, as shown in Fig.~\ref{fig:phaseDiagram}b and \ref{fig:phaseDiagram}c. When $\lambda$ and $d_0$ increases, the number of clusters decreases by 2, which is named by as Double-Clusters state, and other states are named by Multi-Clusters state. The clusters are composed of oscillators with the same chirality, and the phase $\theta_i$ of the oscillators in the same cluster is synchronized as seen in Fig.~\ref{fig:phaseHist}b and \ref{fig:phaseHist}c, which means that the oscillators in the cluster move with the same velocity $\mathbf{v}_i=\left( \cos \theta _s,\ \sin \theta _s \right)$ and rotational radius $r_i=v/\theta_s$, where $\theta_s$ is the oscillators' phase in the cluster. Based on this property, we can calculate $\theta_s$ and $r_i$ with Eq.~(\ref{eq:dotthetai}):
 
 \begin{equation}
     \begin{aligned}
@@ -259,9 +269,12 @@ as shown in Fig.~\ref{fig:radiusOmega}b. But for Multi-Clusters, due to which os
 
 \subsection{Quick Sync State}
 
-The Quick Sync state is characterized by the oscillators forming a single cluster, as shown in Fig.~\ref{fig:phaseDiagram}d. The oscillators in the cluster move with the same velocity and rotational radius, as shown in Fig.~\ref{fig:radiusOmega}a. The oscillators in the cluster are synchronized, and the phase $\theta_i$ of the oscillators in the cluster is the same, as shown in Fig.~\ref{fig:quickSyncState}.
+Quick Sync state is a simple state where total oscillators are synchronized quickly, as shown in Fig.~\ref{fig:phaseDiagram}d. and \ref{fig:phaseHist}d. The oscillators are synchronized in an extremely short time, which leads have no time to form clusters (cam alse be considered as a special case of Swarm state). Due to the two types of chirality oscillators are synchronized and their distribution of natural frequencies is symmetric, the phase velocities of total oscillators are close to zero.
 
 \section{Order Parameter}
+
+Having described the five states of our system,
+we next discuss how to distinguish them.
 
 \section{\label{analytical} analytical approximations}
 
