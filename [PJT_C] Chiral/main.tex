@@ -23,6 +23,7 @@
 \usepackage{mathptmx}
 \usepackage{etoolbox}
 \usepackage{hyperref}
+\usepackage{float}
 \usepackage{svg}
 
 \hypersetup{
@@ -117,14 +118,14 @@ For simplicity, we consider oscillators are initially distributed uniformly in a
     \end{array}
 \end{equation}
 where $\Delta t$ is the discrete time step. When two oscillators are on opposite sides of the square, the absolute value of the difference between one of their coordinates is greater than $L/2$. In this case, we take the minimum distance between them, which is the distance between the two points in the periodic boundary conditions. For a given pair of points $\mathbf{r}_i$ and $\mathbf{r}_j$, the distance between them is $\left| \mathbf{r}_i-\bar{\mathbf{r}}_j \right|$, where $\bar{\mathbf{r}}_j=\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator, given by:
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:adj_pos1}
     \bar{x}_j=\begin{cases}
         x_j,&		\left| x_i-x_j \right|\le L/2\\
         x_j+L,&		x_i-x_j>L/2\\
         x_j-L,&		x_i-x_j>L/2\\
     \end{cases},
     \\
-    \bar{y}_j=\begin{cases}
+    \bar{y}_j=\begin{cases}\label{eq:adj_pos2}
         y_j,&		\left| y_i-y_j \right|\le L/2\\
         y_j+L,&		y_i-y_j>L/2\\
         y_j-L,&		y_i-y_j>L/2\\
@@ -150,12 +151,12 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
     }
 \end{figure*}
 
-\begin{figure}
+\begin{figure}[b]
     \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
     \caption{
         \label{fig:disorderState} Key properties of the Disorder state. 
         \textbf{(a)}, The snapshot of the Disorder state ($\lambda=0.01,\ d_0=0.1, T=60000$). 
-        \textbf{(b)}, The scatter plot of last 100 time steps of 20 positive chirality oscillators and 20 negative chirality oscillators. The plot shows the trajectories are circular. 
+        \textbf{(b)}, The scatter plot of last 100 time steps of 20 positive chirality oscillators and 20 negative chirality oscillators.
     }
 \end{figure}
 
@@ -189,7 +190,7 @@ Disorder state occurs when both $\lambda$ and $d_0$ are small. In this state, th
 \end{equation}
 In such a setup, oscillators move in a circular trajectory with radius $v/\omega _i$ and the phases $\theta_i$ increase linearly with time, as show in Fig.~\ref{fig:disorderState}b. To calculate the real-time rotational radius, we first estimate real-time centers $\mathbf{c}(t)$ of the circular trajectory with method in Fig.~\ref{fig:CenterEps} and then solve the following linear equations:
 
-\begin{figure}
+\begin{figure}[b]
     \includegraphics[width=0.25\textwidth]{./figs/CenterEps.pdf}
     \caption{\label{fig:CenterEps} Estimation for real-time centers. $\mathbf{v}_i(t_1)$ and $\mathbf{r}_i(t_1)$ are the velocity and position of $i$th oscillator at $t_1$, respectively. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), we can calculate $\mathbf{v}_i(t_2)$ and $\mathbf{r}_i(t_2)$, ($t_2=t_1+\Delta t$). 
     The line $\mathbf{c}_i(t)\mathbf{v}_i(t)$ is perpendicular to $\mathbf{v}_i(t)$.}
@@ -203,7 +204,7 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
 \end{equation}
  
 \begin{figure*}
-    \includegraphics[width=0.9\textwidth]{./figs/radiusOmega.pdf}
+    \includegraphics[width=\textwidth]{./figs/radiusOmega.pdf}
     \caption{
         \label{fig:radiusOmega} The real-time and analytical rotational radius.
         \textbf{(a)}, Radius for the Disorder ($d_0=0.1$, $\lambda=0.01:0.06$) and Ring ($d_0=0.1$, $\lambda=0.06:0.1$). The real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator. 
@@ -214,40 +215,39 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
 
 The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a.
 
-\begin{figure}
-    \includegraphics[width=0.48\textwidth]{./figs/ringStateCenters.pdf}
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/centersPosition.png}
     \caption{
-        \label{fig:ringStateCenters} Scatter plot of the real-time centers position (Ring, $\lambda=0.02$, $d_0=0.4$). 
-        \textbf{(a)} and \textbf{(b)}, horizontal and vertical coordinate of centers' positions. As time goes on, the centers of oscillators with the same chirality converge.
+        \label{fig:centersPosition} Scatter plot of the real-time centers position. 
+        \textbf{(a)}, centers position of Ring ($\lambda=0.02$, $d_0=0.4$). As time goes on, the centers of oscillators with the same chirality converge.
+        \textbf{(b)}, centers position of Swarm ($\lambda=0.01$, $d_0=2$). Unlike Ring, the centers converge quickly.
+        The centers position are estimated with method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}).
+    }
+\end{figure*}
+
+\begin{figure}[b!]
+    \includegraphics[width=0.48\textwidth]{./figs/ringStateNum.pdf}
+    \caption{
+        \label{fig:ringStateNum} Snapshots of the Ring state. 
+        \textbf{(a)}, Four rings ($\lambda=0.02$, $d_0=0.4$). 
+        \textbf{(b)}, Three rings ($\lambda=0.025$, $d_0=0.45$).
     }
 \end{figure}
-
 
 \subsection{Ring State}
 
 The Ring state is characterized by the oscillators forming several rings with thickness, each of which is composed of oscillators with the same chirality, as is show in Fig.~\ref{fig:phaseDiagram}a. 
 Similar to Disorder state, the oscillators in the same ring cluster move in a circular trajectory with a constant rotational radius calculated in Fig.~\ref{fig:radiusOmega}a. 
-The oscillators' phase is uniformly distributed in the range $\left[ -\pi,\pi \right]$ (cf. Fig.~\ref{fig:phaseHist}a). 
-Fig.~\ref{fig:ringStateCenters} shows there is a long transient time before this state is reached, and in this transient time, the trajectories of oscillators with the same chirality aggregate slowly. Conversely, the oscillators with different chirality repel each other. For parameter plane in Fig.~\ref{fig:phaseDiagram}, the number of ring decreases and local swarms appear at high-frequency ($\left|\omega_i\right|\rightarrow \omega_{\max}$) oscillators with $\lambda$ and $d_0$ increasing, as is shown in Fig.~\ref{fig:ringStateNum}a. 
+The oscillators' phase is uniformly distributed in the range $\left[ -\pi,\pi \right]$ (cf. Fig.~\ref{fig:phaseHist}a), which leads to oscillators uniformly located on the circular trajectory.
+Fig.~\ref{fig:centersPosition}a shows there is a long transient time before this state is reached, and in this transient time, the trajectories of oscillators with the same chirality aggregate slowly. Conversely, the oscillators with different chirality repel each other. 
+For parameter plane in Fig.~\ref{fig:phaseDiagram}, the number of ring decreases and local swarms appear at high-frequency ($\left|\omega_i\right|\rightarrow \omega_{\max}$) oscillators with $\lambda$ and $d_0$ increasing, as is shown in Fig.~\ref{fig:ringStateNum}a. 
 
-
-
-
-\begin{figure}
-    \includegraphics[width=0.48\textwidth]{./figs/ringStateNum.pdf}
-    \caption{
-        \label{fig:ringStateNum} Snapshots of the Ring state. 
-        \textbf{(a)}, Ring state with four rings ($\lambda=0.02$, $d_0=0.4$). 
-        \textbf{(b)}, Ring state with three rings ($\lambda=0.025$, $d_0=0.45$).
-        All the above snapshots are taken at $t=60000$.
-    }
-\end{figure}
 
 \subsection{Swarm State}
 
-Swarm State is a state where the oscillators align into several clusters, as shown in Fig.~\ref{fig:phaseDiagram}b and \ref{fig:phaseDiagram}c. When $\lambda$ and $d_0$ increases, the number of clusters decreases by 2, which is named by as Double-Clusters state, and other states are named by Multi-Clusters state. The clusters are composed of oscillators with the same chirality, and the phase $\theta_i$ of the oscillators in the same cluster is synchronized as seen in Fig.~\ref{fig:phaseHist}b and \ref{fig:phaseHist}c, which means that the oscillators in the cluster move with the same velocity $\mathbf{v}_i=\left( \cos \theta _s,\ \sin \theta _s \right)$ and rotational radius $r_i=v/\theta_s$, where $\theta_s$ is the oscillators' phase in the cluster. Based on this property, we can calculate $\theta_s$ and $r_i$ with Eq.~(\ref{eq:dotthetai}):
+Swarm State is a state where the oscillators form spatial clusters and align into several clusters [Fig.~\ref{fig:phaseDiagram}b, c and Fig.~\ref{fig:centersPosition}b]. When $\lambda$ and $d_0$ increases, the number of clusters decreases by 2, which is named by as Double-Clusters state, and other states are named by Multi-Clusters state. The clusters are composed of oscillators with the same chirality, and the phase $\theta_i$ of the oscillators in the same cluster is synchronized as seen in Fig.~\ref{fig:phaseHist}b and \ref{fig:phaseHist}c, which means that the oscillators in the cluster move with the same velocity $\mathbf{v}_i=\left( \cos \theta _s,\ \sin \theta _s \right)$ and rotational radius $r_i=v/\theta_s$, where $\theta_s$ is the oscillators' phase in the cluster. Based on this property, we can calculate $\theta_s$ and $r_i$ with Eq.~(\ref{eq:dotthetai}):
 
-\begin{equation}
+\begin{equation}\label{eq:clusterState}
     \begin{aligned}
         N_s\omega _s&=\sum_{i=1}^{N_s}{\left( \omega _i+\lambda \sum_{j=1}^{N_s}{A_{ij}\sin \left( \theta _j-\theta _i \right)} \right)}\\
         \omega _s&=\frac{1}{N_s}\sum_{i=1}^{N_s}{\omega _i}+\frac{\lambda}{N_s}\sum_{i=1}^{N_s}{\sum_{j=1}^{N_s}{A_{ij}\sin \left( \theta _j-\theta _i \right)}}\\
@@ -270,26 +270,38 @@ as shown in Fig.~\ref{fig:radiusOmega}b. But for Multi-Clusters, due to which os
 
 \subsection{Quick Sync State}
 
-Quick Sync state is a simple state where total oscillators are synchronized quickly, as shown in Fig.~\ref{fig:phaseDiagram}d. and \ref{fig:phaseHist}d. The oscillators are synchronized in an extremely short time, which leads have no time to form clusters (cam alse be considered as a special case of Swarm state). Due to the two types of chirality oscillators are synchronized and their distribution of natural frequencies is symmetric, the phase velocities of total oscillators are close to zero.
-
-\section{Order Parameter}
+Quick Sync state is a simple state where total oscillators are synchronized quickly, as shown in Fig.~\ref{fig:phaseDiagram}d. and \ref{fig:phaseHist}d. The oscillators are synchronized in an extremely short time, which leads them have no time to form clusters (can also be considered as a special case of Swarm state). Due to the two types of chirality oscillators are synchronized and the distributions of them is symmetric, the phase velocities of total oscillators are close to zero according to Eq.~(\ref{eq:clusterState}).
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/orderParam.png}
     \caption{
-        \label{fig:orderParam} Order parameter heatmaps. 
-        \textbf{(a)}, The order parameter $r$ of the system in the parameter plane.
-        % \textbf{(b)}, The order parameter $r$ of the system in the time domain. 
+        \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane. 
+        \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
+        \textbf{(b)}, order parameter $R_s$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
         All order parameters are calculated at $t=60000$
     }
 \end{figure*}
 
-Having described the four states of our system, we next discuss how to distinguish them. We use the order parameter $r$ to metric global synchronization. The order parameter $r$ is defined as:
+\section{Order Parameter}
+
+Having described the four states of our system, we next discuss how to distinguish them. We use the order parameter $R$ to metric global synchronization. The order parameter $R$ is defined as:
 
 \begin{equation}
-    R=\left| \frac{1}{N}\sum_{i=1}^N{e^{i\theta _i}} \right|\;.
+    R=\left| \frac{1}{N}\sum_{j=1}^N{e^{i\theta _j}} \right|\;.
 \end{equation}
-The order parameter $R$ is a complex number, and its absolute value $R$ is a measure of the degree of synchronization of the oscillators. When $R=1$, the oscillators are completely synchronized, and when $R=0$, the oscillators are completely desynchronized. Fig \ref{fig:orderParam}a shows the order parameter $r$ in the parameter plane. 
+The order parameter $R$ is absolute value of the mean of the complex numbers $e^{i\theta _i}$, which can be interpreted as the mean direction of the oscillators.
+When $R=1$, the oscillators are completely synchronized, and when $R=0$, the oscillators are completely desynchronized. Fig \ref{fig:orderParam}a shows the order parameter $R$ in the parameter plane. The order parameter $R$ is close to $1$ in the Quick Sync state, close to $0$ in the Disorder state and most of the Ring state, and between $0$ and $1$ in other states. In these states, We see the order parameter $R$ changes non-monotonically in the sense that phases in these states are not globally synchronized and each cluster's phase velocity $\omega_s\ne 0$. When the phases of different clusters are exactly equal, the order parameter $R$ is close to $1$, and when they are exactly opposite, $R$ is close to $0$. 
+
+Having realized that the order parameter $R$ is not enough to distinguish the states with clusters, we next define the following order parameter $R_s$ to metric the local synchronization,
+
+\begin{equation}
+    R_s=\frac{1}{N_s}\sum_{k=1}^{N_s}{\left| \frac{1}{\left| C_k \right|}\sum_{j\in C_k}{e^{i\theta _j}} \right|}\;,
+\end{equation}
+where $N_s$ is the number of clusters, $C_k$ is the $k$th cluster, and $\left| C_k \right|$ is the number of oscillators in the $k$th cluster. We can consider $R_s$ as an order parameter that studies the spatial position and internal phase simultaneously.
+To estimate the number of clusters, we use the following method: we first calculate the relative center distance matrix $D_{ij}=\left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$, where $\bar{\mathbf{c}}_j=
+\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator's rotational center calculated by Eq.~(\ref{eq:adj_pos1}), (\ref{eq:adj_pos2}) and (\ref{eq:linearEquations}). Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
+
+Combining the order parameter $R$ and $R_s$, we can find only the distinction between Ring and Disorder states has not been resolved. 
 
 \section{\label{analytical} analytical approximations}
 
@@ -304,6 +316,21 @@ The order parameter $R$ is a complex number, and its absolute value $R$ is a mea
 
 All the simulations of the model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) were run on Python using Euler integration, with a time step $\Delta t=0.01$, and a total time of $T=60000$. 
 
-% Other parameters are $N=1000$, $v=0.03$, $L=10$, $\omega _{\min}=1$, $\omega _{\max}=3$, and $\Delta t=0.01$. 
+\section{\label{sec:DBSCAN_param} Determination of DBSCAN's parameters}
+
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the maximum distance between two samples for one to be considered as in the neighborhood of the other, and $m$ is the minimum number of samples in a neighborhood for a point to be considered as a core point. 
+
+We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$. We determined these parameters as follows. 
+We traverse all values between $0.1$ and $0.5$ with a step length of $0.1$, and for each value of $\varepsilon$, we calculate the number of clusters with $m=0$.
+
+\begin{figure}[H]
+    \includegraphics[width=0.48\textwidth]{./figs/DBSCANparam.pdf}
+    \caption{
+        \label{fig:DBSCANparam} The number of clusters with different $\varepsilon$, $m=0$. The number of clusters is calculated with the DBSCAN algorithm. 
+    }
+\end{figure}
+As shown in Fig.~\ref{fig:DBSCANparam}, the minimum counts of clusters $2$ (corresponding to Double-Clusters state of Swarm) first appear at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$.
+
+Then we set $m$ to be $10$ which is $1\%$ of the population ($N=1000$) of the system.
 
 \end{document}
