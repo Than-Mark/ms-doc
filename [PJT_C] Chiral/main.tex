@@ -320,7 +320,28 @@ where $\left< \dot{\theta}_i \right>$ is the average of the phase velocity of th
 We estimate $\left< \dot{\theta}_i \right>$ by the average of the phase velocity of the oscillators in the $i$th cluster at the last $1000$ time steps. 
 The order parameter $\Delta \Omega > 0$ in the Disorder state, and $\Delta \Omega = 0$ in other states, as shown in Fig.~\ref{fig:orderParam}c.
 
-To sum up, using $R$, $R_s$ and $\Delta \Omega$ in combination allows us to discern all the equilibrium state of our system. The Disorder state is characterized by $R\approx 0$, $R_s\approx 0$, and $\Delta \Omega > 0$. The Ring state is characterized by $R\approx 0$, $R_s\approx 0$, and $\Delta \Omega = 0$. The Swarm state is characterized by $R > 0$, $R_s\approx 1$, and $\Delta \Omega = 0$ (The $R_s$ of Double-Clusters state closer to $1$ than Multi-Clusters). The Quick Sync state is characterized by $R\approx 1$, $R_s\approx 1$, and $\Delta \Omega = 0$. 
+To sum up, using $R$, $R_s$ and $\Delta \Omega$ in combination allows us to discern all the equilibrium state of our system. 
+The key properties of the states are summarized in Table \ref{tab:orderParam}.
+
+\vspace{-0.7cm}
+\begin{table}[H]
+    \caption{\label{tab:orderParam} Key properties of the states. 
+    }
+    \begin{ruledtabular}
+        \begin{tabular}{lccc}
+        State& $R$ & $R_s$ & $\Delta\Omega$ \\
+        \hline
+        Disorder&$\approx 0$&$\approx 0$&$> 0$\\
+        Ring&$\approx 0$&$\approx 0$&$= 0$\\
+        Swarm (Multi-Clusters)&$> 0$&$\approx 1$&$= 0$\\
+        Swarm (Double-Clusters)&$> 0$&$\approx 1$&$= 0$\\
+        Quick Sync&$\approx 1$&$\approx 1$&$= 0$\\
+        \end{tabular}
+    \end{ruledtabular}
+    \vspace{0.1cm}
+
+    Note that the $R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters.
+\end{table}
 
 \section{\label{analytical} analytical approximations}
 

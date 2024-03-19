@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  18 MAR 2024 16:58
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  19 MAR 2024 09:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -674,23 +674,20 @@ File: ./figs/clusterCounts.png Graphic file (type bmp)
  [5]
 File: ./figs/DBSCANparam.pdf Graphic file (type pdf)
 <use ./figs/DBSCANparam.pdf>
-
-No file main.bbl.
-No file main.bbl.
-[6]
+ (./main.bbl) (./main.bbl) [6]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     352.
+(LaTeX3)     373.
 
  (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 47B4A40BB2F2DABBBADC4A36B0853638;2166.
  ) 
 Here is how much of TeX's memory you used:
- 13947 strings out of 478907
- 212751 string characters out of 5866571
- 582008 words of memory out of 5000000
- 33534 multiletter control sequences out of 15000+600000
+ 13961 strings out of 478907
+ 212892 string characters out of 5866571
+ 582057 words of memory out of 5000000
+ 33544 multiletter control sequences out of 15000+600000
  470751 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  97i,15n,102p,1248b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
