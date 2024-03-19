@@ -140,8 +140,7 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
     \caption{
-        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundaries between states is 
-        analytical approximations given by Section~\ref{analytical}. 
+        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundaries between states are analytical approximations given by Section~\ref{analytical}. 
         For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-linear (For $\lambda$ in $\left[ 0.01, 0.1 \right]$ and $\left[ 0.1, 1 \right]$, step length is $0.1$ and $0.05$, respectively. For $d_0$ in $\left[ 0.1, 1 \right]$ and $\left[ 1, 2 \right]$, step length is $0.05$ and $0.5$, respectively).
         \textbf{(a)}, The snapshots of Ring ($\lambda=0.015,\ d_0=0.35$). 
         \textbf{(b)}, Swarm (Multi-Clusters) ($\lambda=0.8,\ d_0=0.2$).
@@ -213,7 +212,7 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
     }
 \end{figure*}
 
-The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a.
+The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a. The estimation results of four states's real-time rotational centers are shown in Appendix \ref{sec:estimationCenter}.
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/centersPosition.png}
@@ -279,7 +278,8 @@ Quick Sync state is a simple state where total oscillators are synchronized quic
         \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane. 
         \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
         \textbf{(b)}, order parameter $R_s$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
-        All order parameters are calculated at $t=60000$
+        \textbf{(c)}, order parameter $\Delta \Omega$ and critical lines of $\lambda_{c1}$.
+        All order parameters are calculated at $t=60000$.
     }
 \end{figure*}
 
@@ -299,7 +299,9 @@ Having realized that the order parameter $R$ is not enough to distinguish the st
     R_s=\frac{1}{N_c}\sum_{k=1}^{N_c}{\left| \frac{1}{\left| C_k \right|}\sum_{j\in C_k}{e^{i\theta _j}} \right|}\;,
 \end{equation}
 where $N_c$ is the number of clusters, $C_k$ is the $k$th cluster, and $\left| C_k \right|$ is the number of oscillators in the $k$th cluster. We can consider $R_s$ as an order parameter that studies the spatial position and internal phase simultaneously.
-To determine the classification of clusters, we use the following method: we first calculate the relative center distance matrix $D_{ij}=\left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$, where $\bar{\mathbf{c}}_j=\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator's rotational center calculated by Eq.~(\ref{eq:adj_pos1}), (\ref{eq:adj_pos2}) and (\ref{eq:linearEquations}). Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). The number of clusters in the parameter plane is shown in Fig.~\ref{fig:clusterCounts}.We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
+To determine the classification of clusters, we use the following method: we first calculate the relative center distance matrix $D_{ij}=\left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$, where $\bar{\mathbf{c}}_j=\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator's rotational center calculated by Eq.~(\ref{eq:adj_pos1}), (\ref{eq:adj_pos2}) and (\ref{eq:linearEquations}). 
+The reason of using the distance between centers instead of the distance between oscillators' positions is that the oscillators in the Ring state are uniformly distributed on the circular trajectory, and the distance between them is much larger than the distance between the centers.
+Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). The number of clusters in the parameter plane is shown in Fig.~\ref{fig:clusterCounts}.We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
 
 \begin{figure}[b]
     \includegraphics[width=0.35\textwidth]{./figs/clusterCounts.png}
@@ -356,7 +358,24 @@ The key properties of the states are summarized in Table \ref{tab:orderParam}.
 
 All the simulations of the model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) were run on Python using Euler integration, with a time step $\Delta t=0.01$, and a total time of $T=60000$. 
 
-\section{\label{sec:DBSCAN_param} Determination of DBSCAN's parameters}
+\section{\label{sec:estimationCenter} ESTIMATION RESULTS OF REAL-TIME ROTATIONAL CENTERS}
+
+The real-time rotational centers are estimated with method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}). The estimation results of four states are shown in Fig.~\ref{fig:etimateCenter}.
+
+\begin{figure}[H]
+    \includegraphics[width=0.48\textwidth]{./figs/etimateCenter.png}
+    \caption{
+        \label{fig:etimateCenter} Estimation results of real-time rotational centers. 
+        The centers of two types of chirality oscillators are represented by light yellow ($\omega_i > 0$) and light blue
+        ($\omega_i < 0$) points, respectively.
+        \textbf{(a)}, Disorder state ($\lambda=0.01,\ d_0=0.1$).
+        \textbf{(b)}, Swarm state, ($\lambda=0.01,\ d_0=2$).
+        \textbf{(c)}, Quick Sync stat ($\lambda=0.9,\ d_0=2$).
+        \textbf{(d)}, Ring state ($\lambda=0.02,\ d_0=0.4$).
+    }
+\end{figure}
+
+\section{\label{sec:DBSCAN_param} DETERMINATION OF DBSCAN'S PARAMETERS}
 
 DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the maximum distance between two samples for one to be considered as in the neighborhood of the other, and $m$ is the minimum number of samples in a neighborhood for a point to be considered as a core point. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$. We determined these parameters as follows. 
 
@@ -369,5 +388,7 @@ We traverse all values between $0.1$ and $0.5$ with a step length of $0.1$, and 
     }
 \end{figure}
 As shown in Fig.~\ref{fig:DBSCANparam}, the minimum counts of clusters $2$ (corresponding to Double-Clusters state of Swarm) first appear at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$.Finally, we set $m$ to be $10$ which is $1\%$ of the population ($N=1000$) of the system.
+
+
 
 \end{document}
