@@ -135,9 +135,27 @@ $$
 
 \begin{figure}[H]
 	\centering
+	\includegraphics[width=0.6\textwidth]{./figs/subjectivePhase.png}
+	\caption{临界耦合强度与经验性相图}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
 	\includegraphics[width=\textwidth]{./figs/orderParam.png}
 	\caption{序参量与临界耦合强度}
 \end{figure}
+
+$$
+R = \left| \frac{1}{N}\sum_{j=1}^N{e^{i\theta _j}} \right|
+$$
+
+$$
+R_c = \frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left| \frac{1}{N_k}\sum_{i\in C_k}{e^{i\theta _i}} \right|}
+$$
+
+$$
+\Delta \Omega =\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}
+$$
 
 \newpage
 \subsection{单个振子的运动问题（无相互作用）}
