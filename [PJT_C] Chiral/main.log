@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  19 MAR 2024 22:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  20 MAR 2024 22:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -669,26 +669,29 @@ File: ./figs/ringStateNum.pdf Graphic file (type pdf)
 File: ./figs/orderParam.png Graphic file (type bmp)
 <./figs/orderParam.png>
  [4]
-File: ./figs/clusterCounts.png Graphic file (type bmp)
-<./figs/clusterCounts.png>
+File: ./figs/classifyResult.pdf Graphic file (type pdf)
+<use ./figs/classifyResult.pdf>
  [5]
-File: ./figs/etimateCenter.png Graphic file (type bmp)
-<./figs/etimateCenter.png>
 File: ./figs/DBSCANparam.pdf Graphic file (type pdf)
 <use ./figs/DBSCANparam.pdf>
- [6] (./main.bbl) (./main.bbl) [7]
+File: ./figs/etimateCenter.png Graphic file (type bmp)
+<./figs/etimateCenter.png>
+ (./main.bbl) (./main.bbl) [6] [7]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     394.
+(LaTeX3)     390.
 
  (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 87D691E748DB57D39405B1CD0384B314;2495.
+(rerunfilecheck)             Checksum: DF969F76BD550B11830BFF9D6124B58F;2166.
  ) 
 Here is how much of TeX's memory you used:
  13968 strings out of 478907
- 213072 string characters out of 5866571
- 582564 words of memory out of 5000000
+ 213083 string characters out of 5866571
+ 583419 words of memory out of 5000000
  33550 multiletter control sequences out of 15000+600000
  470751 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

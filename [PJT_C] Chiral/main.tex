@@ -212,7 +212,7 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
     }
 \end{figure*}
 
-The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a. The estimation results of four states's real-time rotational centers are shown in Appendix \ref{sec:estimationCenter}.
+The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a. The estimation results of four states's real-time rotational centers are shown in Fig.~\ref{fig:etimateCenter} in Appendix.
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/centersPosition.png}
@@ -283,7 +283,6 @@ Quick Sync state is a simple state where total oscillators are synchronized quic
     }
 \end{figure*}
 
-\newpage
 \section{Order Parameter}
 
 Having described the four states of our system, we next discuss how to distinguish them. We use the order parameter $R$ to measure global synchronization. The order parameter $R$ is defined as:
@@ -301,12 +300,14 @@ Having realized that the order parameter $R$ is not enough to distinguish the st
 where $N_c$ is the number of clusters, $C_k$ is the $k$th cluster, and $\left| C_k \right|$ is the number of oscillators in the $k$th cluster. We can consider $R_s$ as an order parameter that studies the spatial position and internal phase simultaneously.
 To determine the classification of clusters, we use the following method: we first calculate the relative center distance matrix $D_{ij}=\left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$, where $\bar{\mathbf{c}}_j=\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator's rotational center calculated by Eq.~(\ref{eq:adj_pos1}), (\ref{eq:adj_pos2}) and (\ref{eq:linearEquations}). 
 The reason of using the distance between centers instead of the distance between oscillators' positions is that the oscillators in the Ring state are uniformly distributed on the circular trajectory, and the distance between them is much larger than the distance between the centers.
-Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). The number of clusters in the parameter plane is shown in Fig.~\ref{fig:clusterCounts}.We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
+Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). 
+One example of the classification of clusters is shown in Fig.~\ref{fig:classifyResult}.
+We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
 
 \begin{figure}[b]
-    \includegraphics[width=0.35\textwidth]{./figs/clusterCounts.png}
+    \includegraphics[width=0.48\textwidth]{./figs/classifyResult.pdf}
     \caption{
-        \label{fig:clusterCounts} The number of clusters heatmaps of ($\lambda$, $d_0$) plane. Calculated by DBSCAN ($\varepsilon=0.3$, $m=0$). Unless otherwise stated, the algorithm were run with $\varepsilon=0.3$ and $m=10$.
+        \label{fig:classifyResult} The example of the classification of clusters ($\lambda=0.02$, $d_0=0.4$).
     }
 \end{figure}
 
@@ -358,22 +359,6 @@ The key properties of the states are summarized in Table \ref{tab:orderParam}.
 
 All the simulations of the model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) were run on Python using Euler integration, with a time step $\Delta t=0.01$, and a total time of $T=60000$. 
 
-\section{\label{sec:estimationCenter} ESTIMATION RESULTS OF REAL-TIME ROTATIONAL CENTERS}
-
-The real-time rotational centers are estimated with method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}). The estimation results of four states are shown in Fig.~\ref{fig:etimateCenter}.
-
-\begin{figure}[H]
-    \includegraphics[width=0.48\textwidth]{./figs/etimateCenter.png}
-    \caption{
-        \label{fig:etimateCenter} Estimation results of real-time rotational centers. 
-        The centers of two types of chirality oscillators are represented by light yellow ($\omega_i > 0$) and light blue
-        ($\omega_i < 0$) points, respectively.
-        \textbf{(a)}, Disorder state ($\lambda=0.01,\ d_0=0.1$).
-        \textbf{(b)}, Swarm state, ($\lambda=0.01,\ d_0=2$).
-        \textbf{(c)}, Quick Sync stat ($\lambda=0.9,\ d_0=2$).
-        \textbf{(d)}, Ring state ($\lambda=0.02,\ d_0=0.4$).
-    }
-\end{figure}
 
 \section{\label{sec:DBSCAN_param} DETERMINATION OF DBSCAN'S PARAMETERS}
 
@@ -389,6 +374,17 @@ We traverse all values between $0.1$ and $0.5$ with a step length of $0.1$, and 
 \end{figure}
 As shown in Fig.~\ref{fig:DBSCANparam}, the minimum counts of clusters $2$ (corresponding to Double-Clusters state of Swarm) first appear at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$.Finally, we set $m$ to be $10$ which is $1\%$ of the population ($N=1000$) of the system.
 
-
+\begin{figure*}
+    \includegraphics[width=0.7\textwidth]{./figs/etimateCenter.png}
+    \caption{
+        \label{fig:etimateCenter} Estimation results of real-time rotational centers. 
+        The centers of two types of chirality oscillators are represented by light yellow ($\omega_i > 0$) and light blue
+        ($\omega_i < 0$) points, respectively.
+        \textbf{(a)}, Disorder state ($\lambda=0.01,\ d_0=0.1$).
+        \textbf{(b)}, Swarm state, ($\lambda=0.01,\ d_0=2$).
+        \textbf{(c)}, Quick Sync stat ($\lambda=0.9,\ d_0=2$).
+        \textbf{(d)}, Ring state ($\lambda=0.02,\ d_0=0.4$).
+    }
+\end{figure*}
 
 \end{document}
