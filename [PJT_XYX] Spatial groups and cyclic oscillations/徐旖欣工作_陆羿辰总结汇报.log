@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  20 MAR 2024 19:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  23 MAR 2024 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -677,12 +677,9 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-] [2]
+] [2] [3]
 File: ./figs/phaseDiagram.pdf Graphic file (type pdf)
 <use ./figs/phaseDiagram.pdf>
-File: ./figs/subjectivePhase.png Graphic file (type bmp)
-<./figs/subjectivePhase.png>
- [3]
 File: ./figs/orderParam.png Graphic file (type bmp)
 <./figs/orderParam.png>
  [4]
@@ -707,64 +704,64 @@ File: ./figs/swarmRadiusSimu.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 314.
+(hyperref)                removing `math shift' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 314.
+(hyperref)                removing `subscript' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 314.
+(hyperref)                removing `math shift' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 314.
+(hyperref)                removing `math shift' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 314.
+(hyperref)                removing `\lambda' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 314.
+(hyperref)                removing `subscript' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 314.
+(hyperref)                removing `math shift' on input line 311.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 315.
+(hyperref)                removing `math shift' on input line 312.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 315.
+(hyperref)                removing `\lambda' on input line 312.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 315.
+(hyperref)                removing `subscript' on input line 312.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 315.
+(hyperref)                removing `math shift' on input line 312.
 
 [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 374.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 377.
+(hyperref)                removing `\lambda' on input line 374.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 377.
+(hyperref)                removing `subscript' on input line 374.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 377.
+(hyperref)                removing `math shift' on input line 374.
 
 File: ./figs/circleSwarmEdges1.png Graphic file (type bmp)
 <./figs/circleSwarmEdges1.png>
@@ -774,36 +771,36 @@ File: ./figs/circleSwarmEdges2.png Graphic file (type bmp)
  [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 470.
+(hyperref)                removing `math shift' on input line 467.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 470.
+(hyperref)                removing `\lambda' on input line 467.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 470.
+(hyperref)                removing `subscript' on input line 467.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 470.
+(hyperref)                removing `math shift' on input line 467.
 
 [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 490.
+(hyperref)                removing `math shift' on input line 487.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 490.
+(hyperref)                removing `\lambda' on input line 487.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 490.
+(hyperref)                removing `subscript' on input line 487.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 490.
+(hyperref)                removing `math shift' on input line 487.
 
 File: ./figs/circleSwarmEdges3.png Graphic file (type bmp)
 <./figs/circleSwarmEdges3.png>
@@ -859,7 +856,7 @@ File: ./figs/subjectiveOp3.png Graphic file (type bmp)
 <./figs/subjectiveOp3.png>
 
 
-LaTeX Warning: Reference `fig:fig234c.6' on page 19 undefined on input line 742.
+LaTeX Warning: Reference `fig:fig234c.6' on page 19 undefined on input line 745.
 
 [19]
 File: ./figs/clusteringPhaseSync.png Graphic file (type bmp)
@@ -872,7 +869,7 @@ File: ./figs/subjectiveOp3.png Graphic file (type bmp)
 <./figs/subjectiveOp3.png>
 
 
-LaTeX Warning: Reference `weightedPhaseSync' on page 20 undefined on input line 859.
+LaTeX Warning: Reference `weightedPhaseSync' on page 20 undefined on input line 862.
 
 [20]
 File: ./figs/classNum1.png Graphic file (type bmp)
@@ -926,13 +923,13 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `徐旖欣工作_陆羿辰总结汇报.out' has not changed.
-(rerunfilecheck)             Checksum: 10610E55E7389AB28B1D139D48A557C3;2705.
+(rerunfilecheck)             Checksum: FFF05047C75FCE42665B067B6104D69E;2901.
  ) 
 Here is how much of TeX's memory you used:
- 16087 strings out of 478907
- 322275 string characters out of 5866571
- 694967 words of memory out of 5000000
- 35640 multiletter control sequences out of 15000+600000
+ 16103 strings out of 478907
+ 323775 string characters out of 5866571
+ 695181 words of memory out of 5000000
+ 35657 multiletter control sequences out of 15000+600000
  419568 words of font info for 124 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  82i,20n,107p,475b,852s stack positions out of 5000i,500n,10000p,200000b,80000s

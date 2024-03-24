@@ -207,7 +207,7 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
     \caption{
         \label{fig:radiusOmega} The real-time and analytical rotational radius.
         \textbf{(a)}, Radius for the Disorder ($d_0=0.1$, $\lambda=0.01:0.06$) and Ring ($d_0=0.1$, $\lambda=0.06:0.1$). The real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator. 
-        \textbf{(b)}, Radius for Swarm (Multi-Clusters, $d_0=0.15:0.25$, $\lambda=0.95$) and (Double-Clusters, $d_0=2$, $\lambda=0.02:0.05$). Line of Analytical is only for Double-Clusters.
+        \textbf{(b)}, Radius for Swarm (Multi-Clusters, $d_0=0.15:0.25$, $\lambda=0.95$) and (Double-Clusters, $d_0=2$, $\lambda=0.02:0.05$). Analytical line is only for Double-Clusters.
         All the above simulations are calculated at $t=60000$. 
     }
 \end{figure*}
@@ -299,15 +299,15 @@ Having realized that the order parameter $R$ is not enough to distinguish the st
 \end{equation}
 where $N_c$ is the number of clusters, $C_k$ is the $k$th cluster, and $\left| C_k \right|$ is the number of oscillators in the $k$th cluster. We can consider $R_s$ as an order parameter that studies the spatial position and internal phase simultaneously.
 To determine the classification of clusters, we use the following method: we first calculate the relative center distance matrix $D_{ij}=\left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$, where $\bar{\mathbf{c}}_j=\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator's rotational center calculated by Eq.~(\ref{eq:adj_pos1}), (\ref{eq:adj_pos2}) and (\ref{eq:linearEquations}). 
-The reason of using the distance between centers instead of the distance between oscillators' positions is that the oscillators in the Ring state are uniformly distributed on the circular trajectory, and the distance between them is much larger than the distance between the centers.
+The reason of using the distance between centers instead of the distance between oscillators' positions is that the oscillators in the Ring state are uniformly distributed on the circular trajectory, and the distance between them is much larger than the distance between their centers.
 Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). 
 One example of the classification of clusters is shown in Fig.~\ref{fig:classifyResult}.
-We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
+We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state ($R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters) and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
 
 \begin{figure}[b]
     \includegraphics[width=0.48\textwidth]{./figs/classifyResult.pdf}
     \caption{
-        \label{fig:classifyResult} The example of the classification of clusters ($\lambda=0.02$, $d_0=0.4$).
+        \label{fig:classifyResult} An example of classification results ($\lambda=0.02$, $d_0=0.4$).
     }
 \end{figure}
 
@@ -322,13 +322,13 @@ where $\left< \dot{\theta}_i \right>$ is the average of the phase velocity of th
 \end{equation}
 We estimate $\left< \dot{\theta}_i \right>$ by the average of the phase velocity of the oscillators in the $i$th cluster at the last $1000$ time steps. 
 The order parameter $\Delta \Omega > 0$ in the Disorder state, and $\Delta \Omega = 0$ in other states, as shown in Fig.~\ref{fig:orderParam}c.
+Therefore, the order parameter $\Delta \Omega$ can be used to distinguish the Ring state from the Disorder state.
 
 To sum up, using $R$, $R_s$ and $\Delta \Omega$ in combination allows us to discern all the equilibrium state of our system. 
 The key properties of the states are summarized in Table \ref{tab:orderParam}.
 
-\vspace{-0.7cm}
-\begin{table}[H]
-    \caption{\label{tab:orderParam} Key properties of the states. 
+\begin{table}
+    \caption{\label{tab:orderParam} Order parameter values in each state 
     }
     \begin{ruledtabular}
         \begin{tabular}{lccc}
@@ -336,17 +336,22 @@ The key properties of the states are summarized in Table \ref{tab:orderParam}.
         \hline
         Disorder&$\approx 0$&$\approx 0$&$> 0$\\
         Ring&$\approx 0$&$\approx 0$&$= 0$\\
-        Swarm (Multi-Clusters)&$> 0$&$\approx 1$&$= 0$\\
+        Swarm (Multi-Clusters)&$> 0$&$\approx 1$\footnotemark[1]&$= 0$\\
         Swarm (Double-Clusters)&$> 0$&$\approx 1$&$= 0$\\
         Quick Sync&$\approx 1$&$\approx 1$&$= 0$\\
         \end{tabular}
     \end{ruledtabular}
-    \vspace{0.1cm}
-
-    Note that the $R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters.
+    \footnotetext[1]{Note that the $R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters.}
 \end{table}
 
 \section{\label{analytical} analytical approximations}
+
+In this section we derive the analytical approximations of the boundaries between the states. 
+The boundaries between the states are determined by the critical lines $\lambda_{c1}$, $\lambda_{c2}$, $\lambda_{c3}$, and $\lambda_{c4}$, which are the critical values of $\lambda$ for the transitions between the states with given $d_0$.
+
+\subsection{$\lambda_{c1}$: Disorder to Ring}
+
+We first consider the transition between the Disorder and Ring states. The oscillators in the Ring state move in a circular trajectory with a constant rotational radius $r_i=v/\omega_i$. The oscillators in the Disorder state move in a circular trajectory with a constant rotational radius $r_i=v/\omega_s$, where $\omega_s$ is the average of the natural frequencies of the oscillators. The critical line $\lambda_{c1}$ is determined by the condition that the rotational radius of the oscillators in the Ring state is equal to the rotational radius of the oscillators in the Disorder state. We have:
 
 \section{CONCLUSIONS}
 

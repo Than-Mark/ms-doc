@@ -119,7 +119,6 @@ $$
 
 \section{相位-取向关联的集群振子系统的动力学研究}
 
-\textbf{$\Delta$ 聚焦点}
 \begin{enumerate}
     \item 环态及其相变——无序态、环态、集群态
     \item 环态的解域与相位同步的关系——局部锁相
@@ -127,6 +126,8 @@ $$
     \item 必要的理论分析与估计——四条临界耦合强度线的求解
 \end{enumerate}
 
+\newpage
+\section{不同取向（手征）耦合机制下的集群动力学}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
@@ -135,26 +136,22 @@ $$
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{./figs/subjectivePhase.png}
-	\caption{临界耦合强度与经验性相图}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
 	\includegraphics[width=\textwidth]{./figs/orderParam.png}
 	\caption{序参量与临界耦合强度}
 \end{figure}
 
+上图三张序参量热图分别对应下面三个公式
+
 $$
-R = \left| \frac{1}{N}\sum_{j=1}^N{e^{i\theta _j}} \right|
+\mathbf{(a)}: R = \left| \frac{1}{N}\sum_{j=1}^N{e^{i\theta _j}} \right|
 $$
 
 $$
-R_c = \frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left| \frac{1}{N_k}\sum_{i\in C_k}{e^{i\theta _i}} \right|}
+\mathbf{(b)}: R_c = \frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left| \frac{1}{N_k}\sum_{i\in C_k}{e^{i\theta _i}} \right|}
 $$
 
 $$
-\Delta \Omega =\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}
+\mathbf{(c)}: \Delta \Omega =\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}
 $$
 
 \newpage
@@ -178,7 +175,7 @@ $$
 
 $$
 \begin{cases}
-	x_i\left( t \right) =x_i\left( 0 \right) -\frac{v}{\omega _i}\sin \omega _it\\
+	x_i\left( t \right) =x_i\left( 0 \right) +\frac{v}{\omega _i}\sin \omega _it\\
 	y_i\left( t \right) =y_i\left( 0 \right) -\frac{v}{\omega _i}\cos \omega _it\\
 \end{cases}
 $$
@@ -363,7 +360,7 @@ $$
 \end{aligned}\;.
 $$
 
-当$\sin \alpha _1=\sin \alpha _2,\ \cos \alpha _1=\cos \alpha _2=0$时, 方程组(\ref{eq:l1.2})有不动点解, 即$\alpha _1=\alpha _2=\pi$, 这意味着振子1与振子2的径向方向(极角)与速度方向(相位)垂直, 且垂直方向相同, 即两种振子为同手性振子, 这从另一个角度上印证了同手性振子会聚集成环的结论. 已知系统的初始状态是均匀分布的, 因此可以假设振子的极角$\varphi_i$与极径$r_i$是均匀分布的, 此时假设$Delta \varphi=2\pi/N_c$, 其中$N_c$为单个手性的振子数, 另外假设振子振子仅由临近的同手性振子对其产生作用, 即$r_1=r_2=C_r$, 则有
+当且仅当$\sin \alpha _1=\sin \alpha _2, \cos \alpha _1=\cos \alpha _2=0, r_1-r_2$时, 方程组(\ref{eq:l1.2})有不动点解, 即$\alpha _1=\alpha _2=\pi$, 这意味着振子1与振子2的径向方向(极角)与速度方向(相位)垂直, 且垂直方向相同, 即两种振子为同手性振子, 这从另一个角度上印证了同手性振子会聚集成环的结论. 已知系统的初始状态是均匀分布的, 因此可以假设振子的极角$\varphi_i$与极径$r_i$是均匀分布的, 此时假设$\Delta \varphi=2\pi/N_c$, 其中$N_c$为单个手性的振子数, 则有
 
 $$
 d=C_r\sqrt{2-2\cos \Delta \varphi}
@@ -535,6 +532,12 @@ $$
 	\alpha =2\mathrm{arc}\cos \frac{r_{s}^{2}+r_{d}^{2}-d_{0}^{2}}{2r_sr_d}\\
 \end{cases}
 $$
+
+另外, 由上述求解过程可知，该不动点求解需满足
+$$
+d_0+2\left( r_c+r_s \right) \le \frac{L}{\sqrt{2}}, 
+$$
+否则，两集群团间不存在耦合(圆$C$与圆$B$无重叠面积), $\lambda _{c4}$无解.
 
 \newpage
 \subsubsection{数值模拟与理论推导结果的对比}

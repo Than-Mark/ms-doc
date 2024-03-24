@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  20 MAR 2024 22:34
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  24 MAR 2024 19:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -672,26 +672,39 @@ File: ./figs/orderParam.png Graphic file (type bmp)
 File: ./figs/classifyResult.pdf Graphic file (type pdf)
 <use ./figs/classifyResult.pdf>
  [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 352.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 352.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 352.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 352.
+
 File: ./figs/DBSCANparam.pdf Graphic file (type pdf)
 <use ./figs/DBSCANparam.pdf>
 File: ./figs/etimateCenter.png Graphic file (type bmp)
 <./figs/etimateCenter.png>
- (./main.bbl) (./main.bbl) [6] [7]
+(./main.bbl) (./main.bbl) [6] [7]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     390.
+(LaTeX3)     395.
 
  (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DF969F76BD550B11830BFF9D6124B58F;2166.
+(rerunfilecheck)             Checksum: F4AC74D0A8C9CB6F43C9A88733AFA686;2332.
  ) 
 Here is how much of TeX's memory you used:
  13968 strings out of 478907
- 213083 string characters out of 5866571
- 583419 words of memory out of 5000000
+ 213087 string characters out of 5866571
+ 582440 words of memory out of 5000000
  33550 multiletter control sequences out of 15000+600000
  470751 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
