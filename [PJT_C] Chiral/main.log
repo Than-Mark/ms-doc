@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  24 MAR 2024 19:34
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  25 MAR 2024 15:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -672,42 +672,95 @@ File: ./figs/orderParam.png Graphic file (type bmp)
 File: ./figs/classifyResult.pdf Graphic file (type pdf)
 <use ./figs/classifyResult.pdf>
  [5]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 352.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 352.
+File: ./figs/analyticalEps.pdf Graphic file (type pdf)
+<use ./figs/analyticalEps.pdf>
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 352.
+(hyperref)                removing `math shift' on input line 362.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 352.
+(hyperref)                removing `\lambda' on input line 362.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 362.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 362.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 405.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 405.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 405.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 405.
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 436.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 436.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 436.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 436.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 452.
+
+[7]
 File: ./figs/DBSCANparam.pdf Graphic file (type pdf)
 <use ./figs/DBSCANparam.pdf>
 File: ./figs/etimateCenter.png Graphic file (type bmp)
 <./figs/etimateCenter.png>
-(./main.bbl) (./main.bbl) [6] [7]
+ [8] (./main.bbl) (./main.bbl) [9] [10]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     395.
+(LaTeX3)     541.
 
  (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F4AC74D0A8C9CB6F43C9A88733AFA686;2332.
+(rerunfilecheck)             Checksum: 117F7D982D575363A933A88B892D0A53;4153.
  ) 
 Here is how much of TeX's memory you used:
- 13968 strings out of 478907
- 213087 string characters out of 5866571
- 582440 words of memory out of 5000000
- 33550 multiletter control sequences out of 15000+600000
+ 13985 strings out of 478907
+ 213409 string characters out of 5866571
+ 587412 words of memory out of 5000000
+ 33566 multiletter control sequences out of 15000+600000
  470751 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  97i,15n,102p,1068b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (7 pages).
+Output written on main.pdf (10 pages).

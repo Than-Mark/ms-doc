@@ -258,12 +258,12 @@ where $N_s$ is the number of oscillators in the cluster.
 As $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$ for two types of chirality, we can calculate $\theta_i$, $\omega_s$ and $r_i$ with $\omega_i$ for Double-Clusters state:
 
 \begin{equation}
-    \begin{aligned}
+    \begin{aligned}\label{eq:clusterState2}
         \theta _i&=\omega _s=\begin{cases}
         \left( \omega _{\max}+\omega _{\min} \right) /2,&		i=1,2,\dots ,N/2\\
         -\left( \omega _{\max}+\omega _{\min} \right) /2,&		i=N/2+1,\cdots ,N\\
     \end{cases}\,\,,\\
-        r_i&=\frac{v}{\omega _s}\;,\\
+        r_i&=\frac{v}{\left|\omega _s\right|}\;,\\
     \end{aligned}
 \end{equation}
 as shown in Fig.~\ref{fig:radiusOmega}b. But for Multi-Clusters, due to which oscillators are synchronized within each cluster is not accurately known, we can only calculate the real-time rotational radius of the them. As seen in Fig.~\ref{fig:radiusOmega}b, similar to Double-Clusters, some local platforms appear in the real-time rotational radius due to synchronization.
@@ -275,7 +275,7 @@ Quick Sync state is a simple state where total oscillators are synchronized quic
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/orderParam.png}
     \caption{
-        \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane. 
+        \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
         \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
         \textbf{(b)}, order parameter $R_s$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
         \textbf{(c)}, order parameter $\Delta \Omega$ and critical lines of $\lambda_{c1}$.
@@ -322,7 +322,6 @@ where $\left< \dot{\theta}_i \right>$ is the average of the phase velocity of th
 \end{equation}
 We estimate $\left< \dot{\theta}_i \right>$ by the average of the phase velocity of the oscillators in the $i$th cluster at the last $1000$ time steps. 
 The order parameter $\Delta \Omega > 0$ in the Disorder state, and $\Delta \Omega = 0$ in other states, as shown in Fig.~\ref{fig:orderParam}c.
-Therefore, the order parameter $\Delta \Omega$ can be used to distinguish the Ring state from the Disorder state.
 
 To sum up, using $R$, $R_s$ and $\Delta \Omega$ in combination allows us to discern all the equilibrium state of our system. 
 The key properties of the states are summarized in Table \ref{tab:orderParam}.
@@ -344,6 +343,17 @@ The key properties of the states are summarized in Table \ref{tab:orderParam}.
     \footnotetext[1]{Note that the $R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters.}
 \end{table}
 
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/analyticalEps.pdf}
+    \caption{
+        \label{fig:analyticalEps}
+        Schematic diagram of the analytical approximations.
+        \textbf{(a)}, The $1$st oscillator is at point $A$ which is on the outer edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_1\left( d_0 \right)$.
+        \textbf{(b)}, The $1$st oscillator is at point $A$ which is on the inner edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_2\left( d_0 \right)$.
+        \textbf{(c)}, The $1$st oscillator is at point $C$ which is on the edge of red circle, and the overlapping area of the yellow circle (action scope) and the blue circle is $S_3\left( d_0 \right)$.
+    }
+\end{figure*}
+
 \section{\label{analytical} analytical approximations}
 
 In this section we derive the analytical approximations of the boundaries between the states. 
@@ -351,7 +361,138 @@ The boundaries between the states are determined by the critical lines $\lambda_
 
 \subsection{$\lambda_{c1}$: Disorder to Ring}
 
-We first consider the transition between the Disorder and Ring states. The oscillators in the Ring state move in a circular trajectory with a constant rotational radius $r_i=v/\omega_i$. The oscillators in the Disorder state move in a circular trajectory with a constant rotational radius $r_i=v/\omega_s$, where $\omega_s$ is the average of the natural frequencies of the oscillators. The critical line $\lambda_{c1}$ is determined by the condition that the rotational radius of the oscillators in the Ring state is equal to the rotational radius of the oscillators in the Disorder state. We have:
+We first consider the transition between the Disorder and Ring states. The oscillators in both states move in a circular trajectory (cf. Fig.~\ref{fig:disorderState}b and \ref{fig:ringStateNum}a), and the difference between them is that the oscillators in the Ring state are phase-locked.
+Therefore, oscillators in Disorder state have a very small probability of being randomly distributed on the ring, but without phase locking.
+The critical coupling strength $\lambda_{c1}$ can be calculated as the critical value of $\lambda$ for the phase locking of oscillators on the same ring.
+We consider the following synchronous dynamics of oscillators on the same ring:
+\begin{eqnarray}
+    \dot{\theta}_1&=&\omega _1+\lambda \sum_{j=2}^{N_c}{A_{1j}\sin \left( \theta _j-\theta _1 \right)}\;,\label{eq:dotTheta1}
+    \\
+    \dot{\theta}_j&=&\omega _j\;,\label{eq:dotThetaj}
+\end{eqnarray}
+for $j=2,3,\ldots,N_c$, where $N_c$ is the number of oscillators on the same ring, and $\theta _1$ is the phase of the oscillator about to be phase-locked. Introducing the phase difference $\Delta \theta _j=\theta _j-\theta _1$ and $\Delta \omega _j=\omega _j-\omega _1$, we have:
+\begin{equation}
+    \label{eq:dotDeltaTheta}
+    \Delta\dot{\theta}_j=\Delta \omega _j+\lambda \sum_{k=2}^{N_c}{A_{jk}\sin \Delta \theta _k}\;.
+\end{equation}
+Each oscillator only needs to be phase-locked with neighboring oscillators (minimum $\left| \Delta \omega _j \right|$) to achieve phase locking of entire ring due to the symmetry.
+The minimum $\left| \Delta \omega _j \right|$ in a ring is $\left| \Delta \omega _j \right|=\left( \omega _{\max}-\omega _{\min} \right) /N_c$. When $\lambda \sum_{k=2}^{N_c}{A_{jk}} \geqslant \left| \Delta \omega _j \right|$, Eq.~(\ref{eq:dotDeltaTheta}) has fixed point solutions, and the oscillators are phase-locked. Therefore, the critical coupling strength $\lambda_{c1}$ is:
+\begin{equation}
+    \lambda _{c1}=\frac{\omega _{\max}-\omega _{\min}}{N_c\sum\nolimits_{j=2}^{N_c}{A_{1j}}}\;,
+\end{equation}
+where $\sum\nolimits_{j=2}^{N_c}{A_{1j}}$ is the number of oscillators within the action scope of the $1$st oscillator on the ring. Obviously, this is a function of $d_0$. We define it as
+\begin{equation}
+    N_1\left( d_0 \right) =N_c\frac{S_1\left( d_0 \right)}{S_R}=\frac{N_cS_1\left( d_0 \right)}{\pi \left( r_{\max}^{2}-r_{\min}^{2} \right)}\;,
+\end{equation}
+where $S_1$ is the overlapping area of the action scope of the $1$st oscillator and the ring, $S_R$ is the area of the ring, and $r_{\max}=v/\omega_{\min}$ and $r_{\min}=v/\omega_{\max}$ are the outer and inner radius of the ring, respectively. In order to achieve phase locking of all oscillators on the ring, we need to consider the minimum value of $N_1\left( d_0\right)$. As shown in Fig.~\ref{fig:analyticalEps}a, the $1$st oscillator is at point $A$ which is on the outer edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_1\left( d_0 \right)$.  Elementary geometry gives 
+\begin{equation}\label{eq:S1}
+    \begin{cases}
+        S_1\left( d_0 \right) =d_{0}^{2}\frac{\alpha}{2}+r_{\max}^{2}\frac{\beta}{2}-r_{\max}d_0\sin \frac{\alpha}{2}\\
+        \beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{\max}^{2}} \right)\\
+        \alpha =\pi -\frac{\beta}{2}\\
+    \end{cases}\;,
+\end{equation}
+where $\alpha$ and $\beta$ are the angles of sectors from two overlapping circles' centers. Overall, we have
+\begin{equation}
+    \begin{cases}
+        \lambda _{c1}=\frac{\pi \left( r_{\max}^{2}-r_{\min}^{2} \right) \left( \omega _{\max}-\omega _{\min} \right)}{N_{c}^{2}\left( d_{0}^{2}\frac{\alpha}{2}+r_{\max}^{2}\frac{\beta}{2}-r_{\max}d_0\sin \frac{\alpha}{2} \right)}\\
+        \beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{\max}^{2}} \right)\\
+        \alpha =\pi -\frac{\beta}{2}\\
+    \end{cases}\;.
+\end{equation}
+Then we can calculate the critical line $\lambda_{c1}$ in the $(\lambda$-$d_0)$ plane with $N_c=250$ (Ring state first appears as four rings, more details in Subsection \ref{sec:numRings}), as shown in Fig.~\ref{fig:orderParam}c, where the line accurately divides the phase-locked and non-phase-locked regions.
+
+\subsection{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters)}
+
+According to $R_s$ in Fig.~\ref{fig:orderParam}b, the oscillators in the cluster are synchronized, and the oscillators with different chirality are not synchronized. Therefore, $\lambda_{c2}$ is the critical value of $\lambda$ for the synchronization of oscillators in the same cluster. We still consider the synchronous dynamics in Eq.~(\ref{eq:dotTheta1}) and (\ref{eq:dotThetaj}). To achieve synchronization, the oscillators with the largest phase difference (maximum $\left| \Delta \omega _j \right|$) in the cluster need to be phase locked. The maximum $\left| \Delta \omega _j \right|$ in a cluster is $\left| \Delta \omega _j \right|=\omega _{\max}-\omega _{\min}$. Thus, the critical coupling strength $\lambda_{c2}$ is:
+\begin{equation}
+    \lambda _{c2}=\frac{\omega _{\max}-\omega _{\min}}{\sum\nolimits_{j=2}^{N_s}{A_{1j}}}\;,
+\end{equation}
+where $N_s$ is the number of oscillators in the cluster, and $\sum\nolimits_{j=2}^{N_s}{A_{1j}}$ is the number of oscillators within the action scope of the $1$st oscillator in the cluster, which is $N_2\left( d_0 \right)$. We define it as
+
+\begin{equation}
+    N_2\left( d_0 \right) =N_s\frac{S_2\left( d_0 \right)}{S_S}=\frac{N_sS_2\left( d_0 \right)}{\pi r_{s}^{2}}\;,
+\end{equation}
+where $S_2$ is the overlapping area of the action scope of the $1$st oscillator and the cluster, $S_S$ is the area of the cluster. Considering that this is a phase transition between ring and cluster states, The oscillator moves with a rotational radius in the ring state until it gathers into clusters, so the radius of the cluster $r_s$ is $(r_{\max}-r_{\min})/2$, as shown in Fig.~\ref{fig:analyticalEps}b. Similar to Eq.~(\ref{eq:S1}),the minimum overlapping area $S_2$ (overlapping area of two circles in Fig.~\ref{fig:analyticalEps}b) can be calculated as
+\begin{equation}
+    \begin{cases}
+        S_2\left( d_0 \right) =d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2}\\
+        \beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{s}^{2}} \right)\\
+        \alpha =\pi -\frac{\beta}{2}\\
+    \end{cases}\;.
+\end{equation}
+Therefore, we have
+
+\begin{equation}
+    \begin{cases}
+        \lambda _{c2}=\frac{\pi r_{s}^{2}\left( \omega _{\max}-\omega _{\min} \right)}{N_S\left( d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2} \right)}\\
+        \beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{s}^{2}} \right)\\
+        \alpha =\pi -\frac{\beta}{2}\\
+        r_s=\frac{r_{\max}-r_{\min}}{2}\\
+    \end{cases}\;.
+\end{equation}
+Then we can calculate the critical line $\lambda_{c2}$ in the $(\lambda$-$d_0)$ plane with $N_s=500$ (each chirality has half of the total population $N=1000$), as shown in Fig.~\ref{fig:orderParam}b, where the line divides whether local synchronization occurred.
+
+\subsection{$\lambda_{c3}$: Multi-Clusters to Double-Clusters}
+
+The derivation of $\lambda_{c3}$ is similar to that of $\lambda_{c2}$, but the difference is that the centers of oscillators in the Swarm (Double-Clusters) state converge quickly (cf Fig.~\ref{fig:centersPosition}b), which means oscillators do not require a long transient to form clusters. We consider that the oscillator density $\rho$ (Number of oscillators per unit area) under initial conditions can achieve synchronization of oscillators of the same chirality. $\rho$ can be calculated as 
+\begin{equation}
+    \rho =\frac{N}{L^2}\;.
+\end{equation}
+Then we have 
+\begin{eqnarray}
+    \sum_{j=2}^{N_c}{A_{1j}}=\rho \pi d_{0}^{2}=\frac{N\pi d_{0}^{2}}{L^2}\;.
+\end{eqnarray}
+The critical coupling strength $\lambda_{c3}$ is:
+\begin{equation}
+    \lambda _{c3}=\frac{L^2\left( \omega _{\max}-\omega _{\min} \right)}{N\pi d_{0}^{2}}\;.
+\end{equation}
+Similarly, we can calculate the critical line $\lambda_{c3}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}b, where the values of region above the line (Double-Clusters) is closer to $1$ than below the line (Multi-Clusters).
+
+\subsection{$\lambda_{c4}$: Swarm (Double-Clusters) to Quick Sync}
+
+The Quick Sync state can be considered as a special case of the Swarm state where the oscillators are globally synchronized. Our derivation approach comes from adiabatic parameter tuning (see Appendix \ref{sec:Adiabatic}). We assume that the oscillators of two chiralities have been synchronized in the Swarm (Double-Clusters) state, as is shown in Fig.~\ref{fig:analyticalEps}c. Next, we consider the synchronization of the two chiralities. According to Eq.~(\ref{eq:clusterState2}), two clusters with opposite chirality are moving on their respective circular trajectories with the same rotational radius
+\begin{equation}
+    r_c = \cfrac{2v}{\omega_{\max}+\omega_{\min}}\;.
+\end{equation}
+In numerical simulations, we observe that the radius $r_s$ of clusters in Swarm state increases with the increase of $\lambda$ and $d_0$. Thus, the radius of the clusters reach maximum value of $r_c$ (see proof in Appendix \ref{sec:maxRadius}) when the $\lambda$ and $d_0$ reach the critical values.
+
+Considering that the trajectories of two chiralities will repel each other before oscillators achieving global synchronization, let's take the maximum relative distance between the motion trajectories of two clusters in space, which is line $AB$ in Fig.~\ref{fig:analyticalEps}c. The distance $l_{AB}$ is
+\begin{equation}
+    l_{AB}=\frac{L}{\sqrt{2}}
+\end{equation}
+
+Similar to the derivation of $\lambda_{c2}$, we consider the synchronization dynamics between a single oscillator ($C$ in Fig.~\ref{fig:analyticalEps}c) and a cluster (blue circle in Fig.~\ref{fig:analyticalEps}c), the difference is that the single oscillator and cluster here belong to different chirality. When the centers of two clusters move onto line segment AB, their distance is the shortest. At this point, due to symmetry, if the oscillators at the edges of the two clusters are synchronized, global synchronization can be achieved. Obviously, when 
+
+\begin{equation}
+    d_0+2r_c+2r_s<l_{AB}\;,
+\end{equation}
+the action scope of oscillator as point $C$ does not overlap with the Neg-chirality Swarm Cluster (blue circle). Therefore, the critical coupling strength $\lambda_{c4}$ does not exist. When $d_0+2r_c+2r_s>l_{AB}$, the overlapping area can be calculated as
+\begin{equation}
+    \begin{cases}
+        S_3\left( d_0 \right) =r_{s}^{2}\frac{\alpha}{2}+d_{0}^{2}\frac{\beta}{2}-d_0r_d\sin \frac{\beta}{2}\\
+        r_d=\frac{L}{\sqrt{2}}-r_s-2r_c\\
+        \beta =2\mathrm{arc}\cos \frac{d_{0}^{2}+r_{d}^{2}-r_{s}^{2}}{2d_0r_d}\\
+        \alpha =2\mathrm{arc}\cos \frac{r_{s}^{2}+r_{d}^{2}-d_{0}^{2}}{2r_sr_d}\\
+    \end{cases}\;,
+\end{equation}
+where $r_s=r_c$. The global maximum value of $\left| \Delta \omega _j \right|$ is $\omega _{\max}-\left( -\omega _{\max} \right) =2\omega _{\max}$. Therefore, we have
+
+\begin{equation}
+    \begin{cases}
+        \lambda _{c4}=\frac{2\pi r_{s}^{2}\omega _{\max}}{N_c\left( \frac{\alpha}{2}r_{s}^{2}+\frac{\beta}{2}d_{0}^{2}-d_0r_d\sin \frac{\beta}{2} \right)}\\
+        r_d=\frac{L}{\sqrt{2}}-r_s-2r_c\\
+        \beta =2\mathrm{arc}\cos \frac{d_{0}^{2}+r_{d}^{2}-r_{s}^{2}}{2d_0r_d}\\
+        \alpha =2\mathrm{arc}\cos \frac{r_{s}^{2}+r_{d}^{2}-d_{0}^{2}}{2r_sr_d}\\
+    \end{cases}\;.
+\end{equation}
+Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}a, where the line divides whether global synchronization occurred.
+
+\section{stability and other analysis}
+
+\subsection{Stability Analysis}
+
+\subsection{Number of Rings \label{sec:numRings}}
 
 \section{CONCLUSIONS}
 
@@ -378,6 +519,11 @@ We traverse all values between $0.1$ and $0.5$ with a step length of $0.1$, and 
     }
 \end{figure}
 As shown in Fig.~\ref{fig:DBSCANparam}, the minimum counts of clusters $2$ (corresponding to Double-Clusters state of Swarm) first appear at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$.Finally, we set $m$ to be $10$ which is $1\%$ of the population ($N=1000$) of the system.
+
+\section{\label{sec:Adiabatic} ADIABATIC TUNING OF THE ACTION RADIUS}
+
+\section{\label{sec:maxRadius}
+    PROOF OF THE MAXIMUM RADIUS OF CLUSTERS}
 
 \begin{figure*}
     \includegraphics[width=0.7\textwidth]{./figs/etimateCenter.png}
