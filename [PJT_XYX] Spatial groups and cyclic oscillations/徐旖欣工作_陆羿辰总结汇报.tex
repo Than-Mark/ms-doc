@@ -309,92 +309,62 @@ $$
 可以看到,在均匀分布与高斯分布的情况下,集群态的相速度都接近于自然频率的算数平均.
 
 \subsection{给定作用半径$d_0$下临界耦合强度$\lambda_c$的求解}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./figs/analyticalEps.pdf}
+    \caption{
+        \label{fig:analyticalEps}临界耦合强度求解示意图
+    }
+\end{figure}
+
 \subsubsection{环态临界耦合强度$\lambda_{c1}$}
 
-由于环态的对称性,不妨考虑如下两振子的动力学方程
+我们首先考虑无序态和环态之间的过渡. 这两种状态下的振子都沿着一个圆形的轨迹运动，两者之间的区别是在环状态下的振子是锁相的. 因此，处于无序状态的振子在环上随机分布的概率很小，但没有锁相. 临界耦合强度λc1可以计算为同一环上振子锁相的临界值λ. 我们考虑以下在同一环上的振子的同步动力学：
 
-\begin{equation}\label{eq:l1.1}
-	\begin{cases}
-		\dot{x}_1=v\cos \theta _1\\
-		\dot{y}_1=v\sin \theta _1\\
-		\dot{\theta}_1=\omega _1+\lambda f_F\left( d_0-d \right) \sin \left( \theta _2-\theta _1 \right)\\
-		\dot{x}_2=v\cos \theta _2\\
-		\dot{y}_2=v\sin \theta _2\\
-		\dot{\theta}_2=\omega _2+\lambda f_F\left( d_0-d \right) \sin \left( \theta _1-\theta _2 \right)\\
-	\end{cases}
+\begin{equation}\label{eq:eq2}
+    \begin{aligned}
+        \dot{\theta}_1&=\omega _1+\lambda \sum_{j=2}^{N_c}{A_{1j}\sin \left( \theta _j-\theta _1 \right)}\;,\\
+        \dot{\theta}_j&=\omega _j\;,\\
+    \end{aligned}
 \end{equation}
-其中$f_{F}\left( x \right)$为原方程中Heaviside函数的近似函数,即
-$$
-f_F\left( x \right) =\frac{1}{e^{\left( d-d_0 \right) /\mu}+1}
-$$
-其中, $\mu>0$为参数, 当$\mu\rightarrow0^{+}$时, 有$f_{F}\left( x \right)\rightarrow f_H\left( x \right)$, 且$f_H(x)$在其定义域内连续. 显然系统(\ref{eq:l1.1})没有不动点解, 需要对其进行换元. 已知当系统处于环态时, 振子的运动轨迹与无耦合状态下的轨迹类似, 即以恒定的旋转半径围绕旋转中心做圆周运动, 此时振子由相位所决定的速度方向$(\cos\theta, \sin\theta)$与其径向方向垂直; 此外, 由图\ref{fig:fig2.5.cluster}中的聚类平均频率差$\Delta \Omega _{1}^{*}$与$\Delta \Omega _{2}^{*}$在相同上的取值可知, 系统在各个环内产生局部锁相, 综合以上两点, 考虑以粒子的旋转中心为原点, 对系统(\ref{eq:l1.1})做极坐标换元: 令
-$$
-\begin{array}{c}
-	x_i=r_i\cos \varphi _i\;,\\
-	y_i=r_i\sin \varphi _i\;,\\
-\end{array}
-$$
-从而有
-$$
-\begin{array}{c}
-	\dot{r}_i=v\cos \varphi _i\cos \theta _i+v\sin \varphi _i\sin \theta _i=v\cos \left( \varphi _i-\theta _i \right)\\
-	\dot{\varphi}_i=\frac{v}{r_i}\left( \sin \varphi _i\cos \theta _i-\cos \varphi _i\sin \theta _i \right) =\frac{v}{r_i}\sin \left( \varphi _i-\theta _i \right)\\
-\end{array}
-$$
-再引入新的变量$\alpha_i=\varphi_i-\theta_i$, $\Delta \theta =\theta _2-\theta _1$, $\Delta \varphi =\varphi _2-\varphi _1$, $\Delta \omega =\omega _2-\omega _1$, 则有
-\begin{equation}\label{eq:l1.2}
-	\begin{cases}
-        \dot{r}_1=v\cos \alpha _1\\
-        \dot{r}_2=v\cos \alpha _2\\
-        \dot{\alpha}_1=\frac{v}{r_1}\sin \alpha _1-\omega _1-\lambda f_F\left( d \right) \sin \Delta \theta\\
-        \dot{\alpha}_2=\frac{v}{r_2}\sin \alpha _2-\omega _2+\lambda f_F\left( d \right) \sin \Delta \theta\\
-        \Delta \dot{\varphi}=\frac{v}{r_2}\sin \alpha _2-\frac{v}{r_1}\sin \alpha _1\\
-        \Delta \dot{\theta}=\Delta \omega -2\lambda f_F\left( d \right) \sin \Delta \theta\\
-    \end{cases}
+
+其中，$N_c$为同一个环上的振子数，$\theta_1$为即将被锁相的振子的相位. 引入$\Delta\omega_j=\omega_j-\omega_1$, 得到
+
+\begin{equation}
+    \label{eq:dotDeltaTheta}
+    \Delta\dot{\theta}_j=\Delta \omega _j+\lambda \sum_{k=2}^{N_c}{A_{jk}\sin \Delta \theta _k}\;.
 \end{equation}
-其中
-$$
-\begin{aligned}
-	d&=\sqrt{\left( r_1\cos \varphi _1-r_2\cos \varphi _2 \right) ^2+\left( r_1\sin \varphi _1-r_2\sin \varphi _2 \right) ^2}\\
-	&=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_1r_2\cos \Delta \varphi}\\
-\end{aligned}\;.
-$$
 
-当且仅当$\sin \alpha _1=\sin \alpha _2, \cos \alpha _1=\cos \alpha _2=0, r_1-r_2$时, 方程组(\ref{eq:l1.2})有不动点解, 即$\alpha _1=\alpha _2=\pi$, 这意味着振子1与振子2的径向方向(极角)与速度方向(相位)垂直, 且垂直方向相同, 即两种振子为同手性振子, 这从另一个角度上印证了同手性振子会聚集成环的结论. 已知系统的初始状态是均匀分布的, 因此可以假设振子的极角$\varphi_i$与极径$r_i$是均匀分布的, 此时假设$\Delta \varphi=2\pi/N_c$, 其中$N_c$为单个手性的振子数, 则有
-
-$$
-d=C_r\sqrt{2-2\cos \Delta \varphi}
-$$
-其中, $C_r$为常数. 由无耦合状态下振子的运动方程可知, 自然频率约大的振子的运动半径约小, 即在空间当中, 自然频率约大的振子更难以与其他振子相遇, 所以在临界状态下, 可以假设$C_r=v/\omega _{\max}$, 其中$\omega_{\max}$为振子的最大自然频率. 另外, 方程组有不动点解需满足$2\lambda f_F\left( d \right) \sin \Delta \theta \geqslant |\Delta \omega |$. 因此,在给定的耦合强度下, $\left| \Delta \omega \right|$越大的振子越难以被同步到集群. 在同手性振子中, 当$\Delta \omega=\omega_{\max}-\omega_{\min}$时取得最大值. 综上可得临界耦合强度$\lambda _{c1}$与$d_0$的关系为
-
-$$
-\lambda _{c1}=\frac{1}{2}\left( \omega _{\max}-\omega _{\min} \right) \left\{ \exp \left[ \left( \frac{v}{\omega _{\max}}\sqrt{2-2\cos \Delta \varphi}-d_0 \right) /\mu \right] +1 \right\} 
-$$
+为了实现锁相，环上的每个粒子仅需要与其邻近($\Delta\omega_j$取得最小值)的振子锁相. 在一个环上$\Delta\omega_j$的最小值为$\left| \Delta \omega _j \right|=\left( \omega _{\max}-\omega _{\min} \right) /N_c$. 当$\lambda \sum_{k=2}^{N_c}{A_{jk}} \geqslant \left| \Delta \omega _j \right|$时，方程（\ref{eq:dotDeltaTheta}）有不动点解，振子相位锁定. 因此，临界耦合强度$\lambda_{c1}$为：
+\begin{equation}
+    \lambda _{c1}=\frac{\omega _{\max}-\omega _{\min}}{N_c\sum\nolimits_{j=2}^{N_c}{A_{1j}}}\;，
+\end{equation}
+其中$\sum\nolimits_{j=2}^{N_c}{A_{1j}}$是环上第1个振子作用范围内的振子数量. 显然，这是关于$d_0$的函数. 我们定义它为
+\begin{equation}
+    N_1\left( d_0 \right) =N_c\frac{S_1\left( d_0 \right)}{S_R}=\frac{N_cS_1\left( d_0 \right)}{\pi \left( r_{\max}^{2}-r_{\min}^{2} \right)}\;，
+\end{equation}
+其中$S_1$是第1个振子和环的作用范围的重叠面积，$S_R$是环的面积，$r_{\max}=v/\omega_{\min}$和$r_{\min}=v/\omega_{\max}$分别是环的外半径和内半径. 为了实现环上所有振子的相位锁定，我们需要考虑$N_1\left( d_0\right)$的最小值. 如图（图\ref{fig:analyticalEps}(a)）所示，第1个振子位于环的外边缘上的点$A$，黄色圆圈（作用范围）与红色环的重叠面积为$S_1\left( d_0 \right)$. 根据初等几何有
+\begin{equation}\label{eq:S1}
+    \begin{cases}
+        S_1\left( d_0 \right) =d_{0}^{2}\frac{\alpha}{2}+r_{\max}^{2}\frac{\beta}{2}-r_{\max}d_0\sin \frac{\alpha}{2}\\
+        \beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{\max}^{2}} \right)\\
+        \alpha =\pi -\frac{\beta}{2}\\
+    \end{cases}\;，
+\end{equation}
+其中$\alpha$和$\beta$是两个重叠圆心与交点构成的两个扇形的圆心角. 综上所述，我们有
+\begin{equation}
+    \begin{cases}
+        \lambda _{c1}=\frac{\pi \left( r_{\max}^{2}-r_{\min}^{2} \right) \left( \omega _{\max}-\omega _{\min} \right)}{N_{c}^{2}\left( d_{0}^{2}\frac{\alpha}{2}+r_{\max}^{2}\frac{\beta}{2}-r_{\max}d_0\sin \frac{\alpha}{2} \right)}\\
+        \beta =2\mathrm{arc}\cos \left( 1-\frac{d_{0}^{2}}{2r_{\max}^{2}} \right)\\
+        \alpha =\pi -\frac{\beta}{2}\\
+    \end{cases}\;. 
+\end{equation}
 
 \subsubsection{集群态临界耦合强度$\lambda_{c2}$}
 
-由于同手性振子的相互作用会导致振子的聚集现象, 因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下, 全体同手性振子会聚集成环, 如图\ref{fig:fig23.1}(a)所示. 假设在耦合强度与作用半径大于临界值且恰巧形成集群的情况下,同手性振子会在保持原转动半径的情况下聚集成群,如下图\ref{fig:fig23.1}(b)所示.
+由于同手性振子的相互作用会导致振子的聚集现象, 因此可以假设在耦合强度与作用半径小于且充分接近临界值的情况下, 全体同手性振子会聚集成环. 假设在耦合强度与作用半径大于临界值且恰巧形成集群的情况下,同手性振子会在保持原转动半径的情况下聚集成群,如图\ref{fig:analyticalEps}(b)所示.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/circleSwarmEdges1.png}
-	\vspace{-1cm}
-	\caption{\small \textbf{集群态与环态临界状态下的空间分布}. (a)环态. 其中$r_{\max}$为最外侧振子的转动半径,$r_{\min}$为最内侧振子的转动半径; (b)集群态. $A$、$B$分别为集群圆与环带内外边界的切点}
-	\label{fig:fig23.1}
-\end{figure}
-
-设振子$i$是最后一个即将被同步到集群的振子,其自然频率为$\omega _i$,在图\ref{fig:fig23.1}以$O$为圆心,$r_{\min}\leqslant r\leqslant r_{\max}$的环带上运动,其余振子$j$恰巧形成集群($j=1,\cdots ,i-1,i+1,\cdots ,N$),即$\dot{\theta}_j=\omega_s$. 由于该集群恰巧形成,此时其中振子仍保留原圆周运动的转动半径,因此集群圆内切环带外边界于点$B$,外切环带内边界于点$A$. 由于集群内的振子数远大于1,且原模型的振子耦合为加性耦合,因此这里忽略振子$i$对集群的作用. 下面考虑单振子与集群的同步动力学
-
-\begin{equation}\label{eq:eq2}
-	\begin{cases}
-		\dot{\theta}_i=\omega _i+\lambda \sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)}\\
-		\dot{\theta}_j=\omega _s\\
-	\end{cases}
-\end{equation}
-
-其中, $\omega _s$为集群的相速度.
-
-引入新的变量$\Delta \theta =\theta _i-\theta _j$, $\Delta \omega =\omega _i-\omega _s$,则由式\ref{eq:eq2}可得
+设振子$i$是最后一个即将被同步到集群的振子,其自然频率为$\omega _i$,在以$O$为圆心,$r_{\min}\leqslant r\leqslant r_{\max}$的环带上运动,其余振子$j$恰巧形成集群($j=1,\cdots ,i-1,i+1,\cdots ,N$),即$\dot{\theta}_j=\omega_s$. 由于该集群恰巧形成,此时其中振子仍保留原圆周运动的转动半径,因此集群圆内切环带外边界于点$B$,外切环带内边界于点$A$. 由于集群内的振子数远大于1,且原模型的振子耦合为加性耦合,因此这里忽略振子$i$对集群的作用. 考虑与\ref{eq:eq2}相图的同步动力学, 引入新的变量$\Delta \theta =\theta _i-\theta _j$, $\Delta \omega =\omega _i-\omega _s$,则由式\ref{eq:eq2}可得
 
 \begin{equation}\label{eq:eq3}
 	\begin{aligned}
@@ -412,14 +382,7 @@ $$
 从而当且仅当$\omega _i\in \left\{ \omega _{\max},\omega _{\min} \right\}$时, $\left| \Delta \omega \right|$取得最大值, 此时的振子$i$最难被同步到集群. 
 $\omega _{\min}$与$\omega _{\max}$分别为振子的最小自然频率与最大自然频率, 对应于最大转动半径$r_{\max}$与最小转动半径$r_{\min}$, 即振子$i$在以$O$为圆心,$r_{\min}$或$r_{\max}$为半径的圆周上运动. 
 由于振子在空间中并无直接的相互作用,振子需要自发运动到与集群中的振子接触,才能被同步到集群, 不妨设振子$i$相切于集群圆外侧, 即振子$i$当前位于点$A$或点$B$处.
-由于圆具有对称性, 且$\left| \omega _{\min}-\omega _s \right|=\left| \omega _{\max}-\omega _s \right|$, 不妨设振子$i$位于点$A$处, 如下图所示
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.45\textwidth]{./figs/circleSwarmEdges2.png}
-	\caption{\small \textbf{振子$i$与集群示意图}}
-	\label{fig:fig23.2}
-\end{figure}
+由于圆具有对称性, 且$\left| \omega _{\min}-\omega _s \right|=\left| \omega _{\max}-\omega _s \right|$, 不妨设振子$i$位于点$A$处, 如图\ref{fig:analyticalEps}(b)所示.
 
 由
 $$
@@ -488,14 +451,7 @@ $$
 
 瞬时同步态可以看作是集群态的一种特例, 即系统内的全体振子(包括同手性与异手性)完成了全局同步, 因此可以假设瞬时同步态的临界阈值等价于集群态两种手性的振子达成全局同步的临界阈值.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./figs/circleSwarmEdges3.png}
-	\caption{\small \textbf{双集群示意图}}
-	\label{fig:fig235.1}
-\end{figure}
-
-假设在两种手性振子在达成全局前已分别形成手性振子全同步且在手性内部取向一致, 且两种手性的振子在空间中相互排斥且已完成局部集群, 如上图\ref{fig:fig235.1}所示, 红色与蓝色圆分别代表两种手性的集群, 以相同的转动半径$r_c$分别围绕旋转中心$A$与$B$做圆周运动(此处转动半径为集群内各振子与其各自旋转中心的距离、或是集群几何中心与$A$、$B$的距离，而非各振子与$A$、$B$的距离). 两个集群圆的半径均为$r_s$, 由数值模拟结果可知, 集团圆的半径随耦合强度$\lambda$与作用半径$d_0$的增大而增大, 考虑到此时的耦合强度处于临界处, 因此$r_s$取集群态所能保持的集群圆大小的最大值.
+假设在两种手性振子在达成全局前已分别形成手性振子全同步且在手性内部取向一致, 且两种手性的振子在空间中相互排斥且已完成局部集群, 如图\ref{fig:analyticalEps} (c)所示, 红色与蓝色圆分别代表两种手性的集群, 以相同的转动半径$r_c$分别围绕旋转中心$A$与$B$做圆周运动(此处转动半径为集群内各振子与其各自旋转中心的距离、或是集群几何中心与$A$、$B$的距离，而非各振子与$A$、$B$的距离). 两个集群圆的半径均为$r_s$, 由数值模拟结果可知, 集团圆的半径随耦合强度$\lambda$与作用半径$d_0$的增大而增大, 考虑到此时的耦合强度处于临界处, 因此$r_s$取集群态所能保持的集群圆大小的最大值.
 
 由\ref{swarmPointTheta}中的推导可知
 $$
@@ -539,40 +495,86 @@ d_0+2\left( r_c+r_s \right) \le \frac{L}{\sqrt{2}},
 $$
 否则，两集群团间不存在耦合(圆$C$与圆$B$无重叠面积), $\lambda _{c4}$无解.
 
-\newpage
-\subsubsection{数值模拟与理论推导结果的对比}
+\subsection{稳定性分析}
+由于环态的对称性,不妨考虑如下两振子的动力学方程
 
-最后将理论推导结果与数值模拟结果进行对比,如下图\ref{fig:fig23.3}所示
+\begin{equation}\label{eq:l1.1}
+	\begin{cases}
+		\dot{x}_1=v\cos \theta _1\\
+		\dot{y}_1=v\sin \theta _1\\
+		\dot{\theta}_1=\omega _1+\lambda f_F\left( d_0-d \right) \sin \left( \theta _2-\theta _1 \right)\\
+		\dot{x}_2=v\cos \theta _2\\
+		\dot{y}_2=v\sin \theta _2\\
+		\dot{\theta}_2=\omega _2+\lambda f_F\left( d_0-d \right) \sin \left( \theta _1-\theta _2 \right)\\
+	\end{cases}
+\end{equation}
+其中$f_{F}\left( x \right)$为原方程中Heaviside函数的近似函数,即
+$$
+f_F\left( x \right) =\frac{1}{e^{\left( d-d_0 \right) /\mu}+1}
+$$
+其中, $\mu>0$为参数, 当$\mu\rightarrow0^{+}$时, 有$f_{F}\left( x \right)\rightarrow f_H\left( x \right)$, 且$f_H(x)$在其定义域内连续. 显然系统(\ref{eq:l1.1})没有不动点解, 需要对其进行换元. 已知当系统处于环态时, 振子的运动轨迹与无耦合状态下的轨迹类似, 即以恒定的旋转半径围绕旋转中心做圆周运动, 此时振子由相位所决定的速度方向$(\cos\theta, \sin\theta)$与其径向方向垂直; 此外, 由图\ref{fig:fig2.5.cluster}中的聚类平均频率差$\Delta \Omega _{1}^{*}$与$\Delta \Omega _{2}^{*}$在相同上的取值可知, 系统在各个环内产生局部锁相, 综合以上两点, 考虑以粒子的旋转中心为原点, 对系统(\ref{eq:l1.1})做极坐标换元: 令
+$$
+\begin{array}{c}
+	x_i=r_i\cos \varphi _i\;,\\
+	y_i=r_i\sin \varphi _i\;,\\
+\end{array}
+$$
+从而有
+$$
+\begin{array}{c}
+	\dot{r}_i=v\cos \varphi _i\cos \theta _i+v\sin \varphi _i\sin \theta _i=v\cos \left( \varphi _i-\theta _i \right)\\
+	\dot{\varphi}_i=\frac{v}{r_i}\left( \sin \varphi _i\cos \theta _i-\cos \varphi _i\sin \theta _i \right) =\frac{v}{r_i}\sin \left( \varphi _i-\theta _i \right)\\
+\end{array}
+$$
+再引入新的变量$\alpha_i=\varphi_i-\theta_i$, $\Delta \theta =\theta _2-\theta _1$, $\Delta \varphi =\varphi _2-\varphi _1$, $\Delta \omega =\omega _2-\omega _1$, 则有
+\begin{equation}\label{eq:l1.2}
+	\begin{cases}
+        \dot{r}_1=v\cos \alpha _1\\
+        \dot{r}_2=v\cos \alpha _2\\
+        \dot{\alpha}_1=\frac{v}{r_1}\sin \alpha _1-\omega _1-\lambda f_F\left( d \right) \sin \Delta \theta\\
+        \dot{\alpha}_2=\frac{v}{r_2}\sin \alpha _2-\omega _2+\lambda f_F\left( d \right) \sin \Delta \theta\\
+        \Delta \dot{\varphi}=\frac{v}{r_2}\sin \alpha _2-\frac{v}{r_1}\sin \alpha _1\\
+        \Delta \dot{\theta}=\Delta \omega -2\lambda f_F\left( d \right) \sin \Delta \theta\\
+    \end{cases}
+\end{equation}
+其中
+$$
+\begin{aligned}
+	d&=\sqrt{\left( r_1\cos \varphi _1-r_2\cos \varphi _2 \right) ^2+\left( r_1\sin \varphi _1-r_2\sin \varphi _2 \right) ^2}\\
+	&=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_1r_2\cos \Delta \varphi}\\
+\end{aligned}\;.
+$$
 
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/lambdaC1.png}
-		\vspace{-1cm}
-		\caption{聚类平均频率差$\Delta\Omega_2^{*}$与$\lambda_{c1}$临界线}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/lambdaC2_C3.png}
-		\vspace{-1cm}
-		\caption{聚类序参量与$\lambda_{c2}$、$\lambda_{c3}$临界线}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/lambdaC4.png}
-		\vspace{-1cm}
-		\caption{全局参量与$\lambda_{c3}$临界线}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-		\vspace{-1cm}
-		\caption{主观划分空间状态图}
-	\end{subfigure}
-	\vspace{-0.3cm}
-	\caption{\small\textbf{临界线理论值与数值模拟结果}. (a) ($N=500, \Delta \omega=1, r_s=1$) (b) ($N_c=500, \Delta \omega=2$) (c) ($N=1000, \Delta \bar{\omega}=6$)大于该临界值的终态序参量均接近于1, 即同手性振子全同步. (d)主观划分空间状态图.}
-	\label{fig:fig23.3}
-\end{figure}
+当且仅当$\sin \alpha _1=\sin \alpha _2, \cos \alpha _1=\cos \alpha _2=0, r_1=r_2$时, 方程组(\ref{eq:l1.2})有不动点解, 即$\alpha _1=\alpha _2=\pi$, 这意味着振子1与振子2的径向方向(极角)与速度方向(相位)垂直, 且垂直方向相同, 即两种振子为同手性振子, 这从另一个角度上印证了同手性振子会聚集成环的结论. 
+
+不妨设不动点处$f_F\left( d \right)=1$, 则线性化矩阵为
+
+$$
+\left[ \begin{matrix}
+	0&		0&		-v\sin \alpha _1&		0&		0&		0\\
+	0&		0&		0&		-v\sin \alpha _2&		0&		0\\
+	-\frac{v}{r_{1}^{2}}\sin \alpha _1&		0&		\frac{v}{r_1}\cos \alpha _1&		0&		0&		\lambda \cos \Delta \theta\\
+	0&		-\frac{v}{r_{2}^{2}}\sin \alpha _1&		0&		\frac{v}{r_2}\cos \alpha _2&		0&		\lambda \cos \Delta \theta\\
+	\frac{v}{r_{1}^{2}}\sin \alpha _1&		-\frac{v}{r_{2}^{2}}\sin \alpha _2&		-\frac{v}{r_1}\cos \alpha _1&		\frac{v}{r_2}\cos \alpha _2&		0&		0\\
+	0&		0&		0&		0&		0&		2\lambda \cos \Delta \theta\\
+\end{matrix} \right] 
+$$
+
+求解矩阵的特征值, 可得系统的特征值为
+
+$$
+\begin{array}{l}
+	\lambda _1=-2\lambda \cos \Delta \theta\\
+	\lambda _2=-\frac{v\sqrt{3\sin ^2\alpha _1+1}}{2r_1}+\frac{v\cos \alpha _1}{2r_1}\\
+	\lambda _3=\frac{v\sqrt{3\sin ^2\alpha _1+1}}{2r_1}+\frac{v\cos \alpha _1}{2r_1}\\
+	\lambda _4=-\frac{v\sqrt{3\sin ^2\alpha _2+1}}{2r_2}+\frac{v\cos \alpha _2}{2r_2}\\
+	\lambda _5=\frac{v\sqrt{3\sin ^2\alpha _2+1}}{2r_2}+\frac{v\cos \alpha _2}{2r_2}\\
+	\lambda _6=0\\
+\end{array}
+$$
+
+由于系统(\ref{eq:l1.2})的特征值均为实数, 且$\lambda _2,4<0$, $\lambda _1,3>0$, $\lambda _6=0$(来自环态的旋转不变性), $\lambda _1$符号不定, 因此系统(\ref{eq:l1.2})的不动点解是鞍点. 
+
 
 \newpage
 \subsection{序参量 Order Parameter}
@@ -1048,7 +1050,7 @@ $$
 	\label{fig:fig234c.7.1}
 \end{figure}
 
-% 关于环数的研究, 需注意观察对于各种不同的初值条件的差异。
+% 关于环数的研究, 需注意观察对于各种不同的初值条件的差异. 
 
 % Comments: 
 % \begin{itemize}

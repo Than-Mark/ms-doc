@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  25 MAR 2024 07:38
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  26 MAR 2024 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -730,105 +730,103 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 311.
 
+File: ./figs/analyticalEps.pdf Graphic file (type pdf)
+<use ./figs/analyticalEps.pdf>
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 312.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 312.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 312.
+(hyperref)                removing `math shift' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 312.
-
-[7] [8]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 374.
+(hyperref)                removing `\lambda' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 374.
+(hyperref)                removing `subscript' on input line 320.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 374.
+(hyperref)                removing `math shift' on input line 320.
+
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no λ (U+03BB) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+[8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 363.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 374.
+(hyperref)                removing `\lambda' on input line 363.
 
-File: ./figs/circleSwarmEdges1.png Graphic file (type bmp)
-<./figs/circleSwarmEdges1.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 363.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 363.
+
 [9]
-File: ./figs/circleSwarmEdges2.png Graphic file (type bmp)
-<./figs/circleSwarmEdges2.png>
- [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 467.
+(hyperref)                removing `math shift' on input line 430.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 467.
+(hyperref)                removing `\lambda' on input line 430.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 467.
+(hyperref)                removing `subscript' on input line 430.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 467.
+(hyperref)                removing `math shift' on input line 430.
 
-[11]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 487.
-
+[10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 487.
+(hyperref)                removing `math shift' on input line 450.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 487.
+(hyperref)                removing `\lambda' on input line 450.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 487.
+(hyperref)                removing `subscript' on input line 450.
 
-File: ./figs/circleSwarmEdges3.png Graphic file (type bmp)
-<./figs/circleSwarmEdges3.png>
-[12] [13]
-File: ./figs/lambdaC1.png Graphic file (type bmp)
-<./figs/lambdaC1.png>
-File: ./figs/lambdaC2_C3.png Graphic file (type bmp)
-<./figs/lambdaC2_C3.png>
-File: ./figs/lambdaC4.png Graphic file (type bmp)
-<./figs/lambdaC4.png>
-File: ./figs/subjectiveOp3.png Graphic file (type bmp)
-<./figs/subjectiveOp3.png>
- [14]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 450.
+
+
+LaTeX Warning: Reference `fig:fig235.1' on page 11 undefined on input line 461.
+
+
+LaTeX Warning: Reference `fig:fig235.1' on page 11 undefined on input line 469.
+
+[11] [12] [13]
 File: ./figs/CorrectCoupling_uniform_0.010_0.10.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.010_0.10.eps>
 File: ./figs/CorrectCoupling_uniform_0.020_0.30.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.020_0.30.eps>
 File: ./figs/CorrectCoupling_uniform_0.010_2.00.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.010_2.00.eps>
- [15]
+ [14]
 File: ./figs/CorrectCoupling_uniform_0.600_3.00.eps Graphic file (type eps)
 <./figs/CorrectCoupling_uniform_0.600_3.00.eps>
- [16]
+ [15]
 File: ./figs/CenterEps.pdf Graphic file (type pdf)
 <use ./figs/CenterEps.pdf>
 File: ./figs/centorsBigGraph_sub.png Graphic file (type bmp)
 <./figs/centorsBigGraph_sub.png>
- [17]
+ [16]
 
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
@@ -847,7 +845,7 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 
 File: ./figs/ClusteringResult.png Graphic file (type bmp)
 <./figs/ClusteringResult.png>
-[18]
+[17]
 File: ./figs/subjectiveOp3.png Graphic file (type bmp)
 <./figs/subjectiveOp3.png>
 File: ./figs/phaseSyncOp.png Graphic file (type bmp)
@@ -856,9 +854,9 @@ File: ./figs/subjectiveOp3.png Graphic file (type bmp)
 <./figs/subjectiveOp3.png>
 
 
-LaTeX Warning: Reference `fig:fig234c.6' on page 19 undefined on input line 745.
+LaTeX Warning: Reference `fig:fig234c.6' on page 18 undefined on input line 747.
 
-[19]
+[18]
 File: ./figs/clusteringPhaseSync.png Graphic file (type bmp)
 <./figs/clusteringPhaseSync.png>
 File: ./figs/subjectiveOp3.png Graphic file (type bmp)
@@ -869,9 +867,9 @@ File: ./figs/subjectiveOp3.png Graphic file (type bmp)
 <./figs/subjectiveOp3.png>
 
 
-LaTeX Warning: Reference `weightedPhaseSync' on page 20 undefined on input line 862.
+LaTeX Warning: Reference `weightedPhaseSync' on page 19 undefined on input line 864.
 
-[20]
+[19]
 File: ./figs/classNum1.png Graphic file (type bmp)
 <./figs/classNum1.png>
 File: ./figs/subjectiveOp3.png Graphic file (type bmp)
@@ -880,7 +878,7 @@ File: ./figs/nearbyNums.png Graphic file (type bmp)
 <./figs/nearbyNums.png>
 File: ./figs/subjectiveOp3.png Graphic file (type bmp)
 <./figs/subjectiveOp3.png>
- [21]
+ [20]
 File: ./figs/limitDisPhaseSyncRing.png Graphic file (type bmp)
 <./figs/limitDisPhaseSyncRing.png>
 File: ./figs/subjectiveOpRing.png Graphic file (type bmp)
@@ -889,15 +887,15 @@ File: ./figs/nearbyNumsRing.png Graphic file (type bmp)
 <./figs/nearbyNumsRing.png>
 File: ./figs/subjectiveOpRing.png Graphic file (type bmp)
 <./figs/subjectiveOpRing.png>
- [22]
+ [21]
 File: ./figs/totalXY.png Graphic file (type bmp)
 <./figs/totalXY.png>
- [23]
+ [22]
 File: ./figs/deltaOmega1.png Graphic file (type bmp)
 <./figs/deltaOmega1.png>
 File: ./figs/deltaOmega2.png Graphic file (type bmp)
 <./figs/deltaOmega2.png>
- [24]
+ [23]
 File: ./figs/clusterDeltaOmega1.png Graphic file (type bmp)
 <./figs/clusterDeltaOmega1.png>
 File: ./figs/clusterDeltaOmega2.png Graphic file (type bmp)
@@ -910,12 +908,12 @@ File: ./figs/diffChirInf.png Graphic file (type bmp)
 <./figs/diffChirInf.png>
 File: ./figs/sameChirInf.png Graphic file (type bmp)
 <./figs/sameChirInf.png>
- [25] [26]
+ [24] [25]
 File: ./figs/2particalDis.png Graphic file (type bmp)
 <./figs/2particalDis.png>
 File: ./figs/2particalCentersDis.png Graphic file (type bmp)
 <./figs/2particalCentersDis.png>
- [27] (./徐旖欣工作_陆羿辰总结汇报.aux)
+ [26] (./徐旖欣工作_陆羿辰总结汇报.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -923,15 +921,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `徐旖欣工作_陆羿辰总结汇报.out' has not changed.
-(rerunfilecheck)             Checksum: FFF05047C75FCE42665B067B6104D69E;2901.
+(rerunfilecheck)             Checksum: E83E425908D4F63365C824DC76F793ED;2819.
  ) 
 Here is how much of TeX's memory you used:
- 16103 strings out of 478907
- 323775 string characters out of 5866571
- 695181 words of memory out of 5000000
- 35657 multiletter control sequences out of 15000+600000
- 419568 words of font info for 124 fonts, out of 8000000 for 9000
+ 16056 strings out of 478907
+ 322079 string characters out of 5866571
+ 698825 words of memory out of 5000000
+ 35618 multiletter control sequences out of 15000+600000
+ 419552 words of font info for 122 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  82i,20n,107p,475b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (27 pages).
+Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (26 pages).
