@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  25 MAR 2024 17:11
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  28 MAR 2024 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -658,109 +658,109 @@ File: ./figs/phaseHist.pdf Graphic file (type pdf)
 <use ./figs/phaseHist.pdf>
 File: ./figs/CenterEps.pdf Graphic file (type pdf)
 <use ./figs/CenterEps.pdf>
-File: ./figs/radiusOmega.pdf Graphic file (type pdf)
-<use ./figs/radiusOmega.pdf>
+File: ./figs/radiusOmega.png Graphic file (type bmp)
+<./figs/radiusOmega.png>
  [2]
 File: ./figs/centersPosition.png Graphic file (type bmp)
 <./figs/centersPosition.png>
-File: ./figs/ringStateNum.pdf Graphic file (type pdf)
-<use ./figs/ringStateNum.pdf>
  [3]
 File: ./figs/orderParam.png Graphic file (type bmp)
 <./figs/orderParam.png>
  [4]
 File: ./figs/classifyResult.pdf Graphic file (type pdf)
 <use ./figs/classifyResult.pdf>
- [5]
 File: ./figs/analyticalEps.pdf Graphic file (type pdf)
 <use ./figs/analyticalEps.pdf>
+ [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 351.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 362.
+(hyperref)                removing `\lambda' on input line 351.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 362.
+(hyperref)                removing `subscript' on input line 351.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 362.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 362.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 405.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 405.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 405.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 405.
+(hyperref)                removing `math shift' on input line 351.
 
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 436.
+(hyperref)                removing `math shift' on input line 394.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 436.
+(hyperref)                removing `\lambda' on input line 394.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 436.
+(hyperref)                removing `subscript' on input line 394.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 436.
+(hyperref)                removing `math shift' on input line 394.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 452.
+(hyperref)                removing `math shift' on input line 425.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 452.
+(hyperref)                removing `\lambda' on input line 425.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 452.
+(hyperref)                removing `subscript' on input line 425.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 452.
+(hyperref)                removing `math shift' on input line 425.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 441.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 441.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 441.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 441.
 
 [7]
 File: ./figs/DBSCANparam.pdf Graphic file (type pdf)
 <use ./figs/DBSCANparam.pdf>
 File: ./figs/etimateCenter.png Graphic file (type bmp)
 <./figs/etimateCenter.png>
- [8] (./main.bbl) (./main.bbl) [9] [10]
+ (./main.bbl) (./main.bbl) [8] [9]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     541.
+(LaTeX3)     530.
 
  (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 117F7D982D575363A933A88B892D0A53;4153.
  ) 
 Here is how much of TeX's memory you used:
- 13985 strings out of 478907
- 213409 string characters out of 5866571
+ 13979 strings out of 478907
+ 213233 string characters out of 5866571
  587412 words of memory out of 5000000
- 33566 multiletter control sequences out of 15000+600000
+ 33561 multiletter control sequences out of 15000+600000
  470751 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  97i,15n,102p,1068b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (10 pages).
+Output written on main.pdf (9 pages).

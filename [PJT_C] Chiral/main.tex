@@ -203,7 +203,7 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
 \end{equation}
  
 \begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/radiusOmega.pdf}
+    \includegraphics[width=\textwidth]{./figs/radiusOmega.png}
     \caption{
         \label{fig:radiusOmega} The real-time and analytical rotational radius.
         \textbf{(a)}, Radius for the Disorder ($d_0=0.1$, $\lambda=0.01:0.06$) and Ring ($d_0=0.1$, $\lambda=0.06:0.1$). The real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator. 
@@ -224,23 +224,12 @@ The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t
     }
 \end{figure*}
 
-\begin{figure}
-    \includegraphics[width=0.48\textwidth]{./figs/ringStateNum.pdf}
-    \caption{
-        \label{fig:ringStateNum} Snapshots of the Ring state. 
-        \textbf{(a)}, Four rings ($\lambda=0.02$, $d_0=0.4$). 
-        \textbf{(b)}, Three rings ($\lambda=0.025$, $d_0=0.45$).
-        With $\lambda$ and $d_0$ increasing, the number of rings decreases and local swarms appear at high-frequency oscillators.
-    }
-\end{figure}
-
 \subsection{Ring State}
 
 The Ring state is characterized by the oscillators forming several rings with thickness, each of which is composed of oscillators with the same chirality, as is show in Fig.~\ref{fig:phaseDiagram}a. 
 Similar to Disorder state, the oscillators in the same ring cluster move in a circular trajectory with a constant rotational radius calculated in Fig.~\ref{fig:radiusOmega}a. 
 The oscillators' phase is uniformly distributed in the range $\left[ -\pi,\pi \right]$ (cf. Fig.~\ref{fig:phaseHist}a), which leads to oscillators uniformly located on the circular trajectory.
 Fig.~\ref{fig:centersPosition}a shows there is a long transient time before this state is reached, and in this transient time, the trajectories of oscillators with the same chirality aggregate slowly. Conversely, the oscillators with different chirality repel each other. 
-For parameter plane in Fig.~\ref{fig:phaseDiagram}, the number of ring decreases and local swarms appear at high-frequency ($\left|\omega_i\right|\rightarrow \omega_{\max}$) oscillators with $\lambda$ and $d_0$ increasing, as is shown in Fig.~\ref{fig:ringStateNum}a. 
 
 
 \subsection{Swarm State}
@@ -361,7 +350,7 @@ The boundaries between the states are determined by the critical lines $\lambda_
 
 \subsection{$\lambda_{c1}$: Disorder to Ring}
 
-We first consider the transition between the Disorder and Ring states. The oscillators in both states move in a circular trajectory (cf. Fig.~\ref{fig:disorderState}b and \ref{fig:ringStateNum}a), and the difference between them is that the oscillators in the Ring state are phase-locked.
+We first consider the transition between the Disorder and Ring states. The oscillators in both states move in a circular trajectory (cf. Fig.~\ref{fig:disorderState}b), and the difference between them is that the oscillators in the Ring state are phase-locked.
 Therefore, oscillators in Disorder state have a very small probability of being randomly distributed on the ring, but without phase locking.
 The critical coupling strength $\lambda_{c1}$ can be calculated as the critical value of $\lambda$ for the phase locking of oscillators on the same ring.
 We consider the following synchronous dynamics of oscillators on the same ring:
