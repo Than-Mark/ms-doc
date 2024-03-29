@@ -289,7 +289,7 @@ Having realized that the order parameter $R$ is not enough to distinguish the st
 where $N_c$ is the number of clusters, $C_k$ is the $k$th cluster, and $\left| C_k \right|$ is the number of oscillators in the $k$th cluster. We can consider $R_s$ as an order parameter that studies the spatial position and internal phase simultaneously.
 To determine the classification of clusters, we use the following method: we first calculate the relative center distance matrix $D_{ij}=\left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$, where $\bar{\mathbf{c}}_j=\left( \bar{x}_j,\bar{y}_j \right)$ is the adjusted position of the $j$th oscillator's rotational center calculated by Eq.~(\ref{eq:adj_pos1}), (\ref{eq:adj_pos2}) and (\ref{eq:linearEquations}). 
 The reason of using the distance between centers instead of the distance between oscillators' positions is that the oscillators in the Ring state are uniformly distributed on the circular trajectory, and the distance between them is much larger than the distance between their centers.
-Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). 
+Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $5$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). 
 One example of the classification of clusters is shown in Fig.~\ref{fig:classifyResult}.
 We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state ($R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters) and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
 
@@ -497,9 +497,9 @@ All the simulations of the model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) were 
 
 \section{\label{sec:DBSCAN_param} DETERMINATION OF DBSCAN'S PARAMETERS}
 
-DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the maximum distance between two samples for one to be considered as in the neighborhood of the other, and $m$ is the minimum number of samples in a neighborhood for a point to be considered as a core point. We set the minimum number of oscillators in a cluster to be $10$ and the maximum distance between two oscillators in the same cluster to be $0.3$. We determined these parameters as follows. 
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the maximum distance between two samples for one to be considered as in the neighborhood of the other, and $m$ is the minimum number of samples in a neighborhood for a point to be considered as a core point. 
 
-We traverse all values between $0.1$ and $0.5$ with a step length of $0.1$, and for each value of $\varepsilon$, we calculate the number of clusters with $m=0$. Then we record the minimum counts of clusters in total states. 
+We traverse all values between $0.15$ and $0.5$ with a step length of $0.05$, and for each value of $\varepsilon$, we calculate the number of clusters of Swarm state with $m=5$ (which is $0.5\%$ of the population $N=1000$ of the system). Then we record the minimum counts of clusters in total states. 
 
 \begin{figure}[H]
     \includegraphics[width=0.48\textwidth]{./figs/DBSCANparam.pdf}
@@ -507,9 +507,18 @@ We traverse all values between $0.1$ and $0.5$ with a step length of $0.1$, and 
         \label{fig:DBSCANparam} The minimum counts of clusters with $m=0$ and different $\varepsilon$. The number of clusters is calculated by DBSCAN algorithm. 
     }
 \end{figure}
-As shown in Fig.~\ref{fig:DBSCANparam}, the minimum counts of clusters $2$ (corresponding to Double-Clusters state of Swarm) first appear at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$.Finally, we set $m$ to be $10$ which is $1\%$ of the population ($N=1000$) of the system.
+As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$, and set $m$ to be $5$.
 
 \section{\label{sec:Adiabatic} ADIABATIC TUNING OF THE ACTION RADIUS}
+
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{./figs/aditionalTuning.pdf}
+    \caption{
+        \label{fig:adiabaticTuning} The adiabatic tuning of the action radius. 
+        \textbf{(a)}, The action radius $r_s$ of the clusters in the Swarm state with different $\lambda$ and $d_0$. 
+        \textbf{(b)}, The action radius $r_s$ of the clusters in the Swarm state with different $\lambda$ and $d_0$ in the adiabatic tuning. 
+    }
+\end{figure}
 
 \section{\label{sec:maxRadius}
     PROOF OF THE MAXIMUM RADIUS OF CLUSTERS}
