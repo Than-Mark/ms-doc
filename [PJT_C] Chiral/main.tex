@@ -23,6 +23,7 @@
 \usepackage{mathptmx}
 \usepackage{etoolbox}
 \usepackage{hyperref}
+\usepackage{amsthm}
 \usepackage{float}
 \usepackage{svg}
 
@@ -48,7 +49,7 @@
 
 \preprint{AIP/123-QED}
 
-\title[Sample title]{Sample Title:\\with Forced Linebreak}
+\title[Swarming dynamics under different orientation (chiral) coupling mechanisms]{Swarming dynamics under different orientation (chiral) coupling mechanisms\\ \;}
 % Force line breaks with \\
 \author{A. Author}
  \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
@@ -122,18 +123,18 @@ where $\Delta t$ is the discrete time step. When two oscillators are on opposite
     \bar{x}_j=\begin{cases}
         x_j,&		\left| x_i-x_j \right|\le L/2\\
         x_j+L,&		x_i-x_j>L/2\\
-        x_j-L,&		x_i-x_j>L/2\\
+        x_j-L,&		x_j-x_i>L/2\\
     \end{cases},
     \\
     \bar{y}_j=\begin{cases}\label{eq:adj_pos2}
         y_j,&		\left| y_i-y_j \right|\le L/2\\
         y_j+L,&		y_i-y_j>L/2\\
-        y_j-L,&		y_i-y_j>L/2\\
+        y_j-L,&		y_j-y_i>L/2\\
     \end{cases}.
 \end{eqnarray}
 $\left| \mathbf{r}_i-\bar{\mathbf{r}}_j \right|$ can be proved to be the minimum distance between $\mathbf{r}_i$ and $\mathbf{r}_j$ in the periodic boundary conditions (see the proof in Appendix \ref{sec:adj_pos}).
 
-Finally, we consider that the natural frequencies $\omega_i$ are distributed in two symmetric uniform distributions. Exactly half of the oscillators have natural frequencies in the range $\left[ \omega _{\min},\omega _{\max} \right]$ ($\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right), i=1,2,\ldots,N/2$) and the other half in the range $\left[ -\omega _{\max},-\omega _{\min} \right]$ ($\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right), i=N/2+1,N/2+2,\ldots,N$).
+Finally, we consider that the natural frequencies $\omega_i$ are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the oscillators have natural frequencies in the range $\left[ \omega _{\min},\omega _{\max} \right]$ ($\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right), i=1,2,\ldots,N/2$) and the other half in the range $\left[ -\omega _{\max},-\omega _{\min} \right]$ ($\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right), i=N/2+1,N/2+2,\ldots,N$).
 
 \section{behavior}
 
@@ -191,16 +192,18 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
 
 \begin{figure}[b]
     \includegraphics[width=0.25\textwidth]{./figs/CenterEps.pdf}
-    \caption{\label{fig:CenterEps} Estimation for real-time centers. $\mathbf{v}_i(t_1)$ and $\mathbf{r}_i(t_1)$ are the velocity and position of $i$th oscillator at $t_1$, respectively. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), we can calculate $\mathbf{v}_i(t_2)$ and $\mathbf{r}_i(t_2)$, ($t_2=t_1+\Delta t$). 
-    The line $\mathbf{c}_i(t)\mathbf{v}_i(t)$ is perpendicular to $\mathbf{v}_i(t)$.}
+    \caption{\label{fig:CenterEps} Estimation for real-time centers.
+    $\mathbf{c}_i(t_j)$, $\mathbf{r}_i(t_j)$ and $\mathbf{v}_i(t_j)$ are the center of the circular trajectory, the position and the velocity of the $i$th oscillator at time $t_j$, respectively.
+    The line from $\mathbf{c}_i(t_j)$ to $\mathbf{r}_i(t_j)$ is perpendicular to $\mathbf{v}_i(t_j)$.}
 \end{figure}
 
 \begin{equation}\label{eq:linearEquations}
     \begin{array}{c}
         \mathbf{c}_i\left( t_1 \right) \cdot \mathbf{v}_i\left( t_1 \right) =\mathbf{x}_i\left( t_1 \right) \cdot \mathbf{v}_i\left( t_1 \right)\;,\\
-        \mathbf{c}_i\left( t_2 \right) \cdot \mathbf{v}_i\left( t_2 \right) =\mathbf{x}_i\left( t_2 \right) \cdot \mathbf{v}_i\left( t_2 \right)\;.\\
+        \mathbf{c}_i\left( t_2 \right) \cdot \mathbf{v}_i\left( t_2 \right) =\mathbf{x}_i\left( t_2 \right) \cdot \mathbf{v}_i\left( t_2 \right)\;,\\
     \end{array}
 \end{equation}
+where $\mathbf{v}_i(t_1)=\left( x_i\left( t_1 \right) , y_i\left( t_1 \right) \right)$ is the velocity of $i$th oscillator at $t_1$, and $\mathbf{v}_i(t_1)=\left( \cos \theta _i\left( t_1 \right) , \sin \theta _i\left( t_1 \right) \right)$ is the unit vector of the velocity. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), we can calculate $\mathbf{v}_i(t_2)$ and $\mathbf{r}_i(t_2)$, ($t_2=t_1+\Delta t$). 
  
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/radiusOmega.png}
@@ -296,7 +299,7 @@ We then calculate the order parameter $R_s$ for each cluster. The order paramete
 \begin{figure}[b]
     \includegraphics[width=0.48\textwidth]{./figs/classifyResult.pdf}
     \caption{
-        \label{fig:classifyResult} An example of classification results ($\lambda=0.02$, $d_0=0.4$).
+        \label{fig:classifyResult} Two examples of classification results. \textbf{(a)}: ($\lambda=0.4$, $d_0=0.3$). \textbf{(b)}: ($\lambda=0.02$, $d_0=0.4$).
     }
 \end{figure}
 
@@ -322,21 +325,21 @@ The order parameter values in each state are summarized in Table \ref{tab:orderP
         \begin{tabular}{lccc}
         State& $R$ & $R_s$ & $\Delta\Omega$ \\
         \hline
-        Disorder&$\approx 0$&$\approx 0$&$> 0$\\
-        Ring&$\approx 0$&$\approx 0$&$= 0$\\
-        Swarm (Multi-Clusters)&$> 0$&$\approx 1$\footnotemark[1]&$= 0$\\
-        Swarm (Double-Clusters)&$> 0$&$\approx 1$&$= 0$\\
-        Quick Sync&$\approx 1$&$\approx 1$&$= 0$\\
+        Disorder&$=0$&$=0$&$> 0$\\
+        Ring&$=0$&$=0$&$=0$\\
+        Swarm (Multi-Clusters)&$> 0$&$\rightarrow 1$\footnotemark[1]&$=0$\\
+        Swarm (Double-Clusters)&$> 0$&$\rightrightarrows 1\footnotemark[1]$&$=0$\\
+        Quick Sync&$=1$&$=1$&$=0$\\
         \end{tabular}
     \end{ruledtabular}
-    \footnotetext[1]{Note that the $R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters.}
+    \footnotetext[1]{Note that the $R_s$ of Double-Clusters state is closer to $1$ than that of Multi-Clusters state.}
 \end{table}
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/analyticalEps.pdf}
     \caption{
         \label{fig:analyticalEps}
-        Schematic diagram of the analytical approximations.
+        The schematic plot of the analytical approximations.
         \textbf{(a)}, The $1$st oscillator is at point $A$ which is on the outer edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_1\left( d_0 \right)$.
         \textbf{(b)}, The $1$st oscillator is at point $A$ which is on the inner edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_2\left( d_0 \right)$.
         \textbf{(c)}, The $1$st oscillator is at point $C$ which is on the edge of red circle, and the overlapping area of the yellow circle (action scope) and the blue circle is $S_3\left( d_0 \right)$.
@@ -489,6 +492,37 @@ Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ 
 
 \section{\label{sec:adj_pos} PROOF OF THE ADJUSTED POSITION}
 
+In this section, we prove the distances between oscillators' adjusted position is the minimum distance in periodic boundary conditions. 
+
+\begin{proof}
+    To prove this, we only need to prove the adjusted distance $\left| \mathbf{r}_i-\bar{\mathbf{r}}_j \right|$ is not longer than the raw distance $\left| \mathbf{r}_i-\mathbf{r}_j \right|$.
+    
+    For $\left( x_i-x_j \right) ^2$ and $\left( x_i-\bar{x_j} \right) ^2$, if $x_j=\bar{x_j}$, we have $\left( x_i-x_j \right) ^2=\left( x_i-\bar{x_j} \right) ^2$. If $x_j\ne \bar{x_j}$, we have
+
+    \begin{equation}
+        \begin{aligned}
+            \left( x_i-\bar{x}_j \right) ^2-\left( x_i-x_j \right) ^2&=\left( x_j\pm L-x_i \right) ^2-\left( x_j-x_x \right) ^2\\
+            &=\begin{cases}
+            L^2+2L\left( x_j-x_x \right) ,&		x_i-x_j>L/2\\
+            L^2-2L\left( x_j-x_x \right) ,&		x_i-x_j<L/2\\
+        \end{cases}\\
+            &<L^2-L^2\\
+            &=0\\
+        \end{aligned}\;.
+    \end{equation}
+
+    Then, we have $\left( x_i-\bar{x}_j \right) ^2\leqslant \left( x_i-x_j \right) ^2$. Similarly, we have $\left( y_i-\bar{y}_j \right) ^2\leqslant \left( y_i-y_j \right) ^2$. Therefore, we have 
+
+    \begin{equation}
+        \begin{aligned}
+            \left| \mathbf{r}_i-\bar{\mathbf{r}}_j \right|&=\sqrt{\left( x_i-\bar{x}_j \right) ^2+\left( y_i-\bar{y}_j \right) ^2}\\
+            &\leqslant \sqrt{\left( x_i-x_j \right) ^2+\left( y_i-y_j \right) ^2}\\
+            &=\left| \mathbf{r}_i-\mathbf{r}_j \right|\;.
+        \end{aligned}
+    \end{equation}
+
+\end{proof}
+
 
 \section{\label{sec:numerics} NUMERICAL METHODS}
 
@@ -511,17 +545,31 @@ As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to
 
 \section{\label{sec:Adiabatic} ADIABATIC TUNING OF THE ACTION RADIUS}
 
-\begin{figure}
+\begin{figure}[h]
     \includegraphics[width=0.48\textwidth]{./figs/aditionalTuning.pdf}
     \caption{
-        \label{fig:adiabaticTuning} The adiabatic tuning of the action radius. 
-        \textbf{(a)}, The action radius $r_s$ of the clusters in the Swarm state with different $\lambda$ and $d_0$. 
-        \textbf{(b)}, The action radius $r_s$ of the clusters in the Swarm state with different $\lambda$ and $d_0$ in the adiabatic tuning. 
+        \label{fig:adiabaticTuning} The adiabatic tuning of the coupling strength $\lambda$ and the action radius $d_0$.
+        \textbf{(a)}, The coupling strength $\lambda$ is adiabatically tuned from $0.01$ to $0.95$ with fixed $d_0=1.5$.
+        \textbf{(b)}, The action radius $d_0$ is adiabatically tuned from $0.8$ to $2$ with fixed $\lambda=0.5$.
     }
 \end{figure}
 
-\section{\label{sec:maxRadius}
-    PROOF OF THE MAXIMUM RADIUS OF CLUSTERS}
+\section{\label{sec:maxRadius} PROOF OF THE MAXIMUM RADIUS OF CLUSTERS}
+
+In this section, we prove the maximum radiu of cluster in the Swarm state is $r_c$, which is the radius of its rotation trajectory. We prove this by contradiction.
+
+\begin{proof}
+    We assume that the maximum radius of the cluster is $r_s>r_c$. Then we have the case that the cluster's rotation center is inside the cluster circle with radius $r_s$. 
+    Fig.~\ref{fig:rsProofEps} shows the schematic plot of this case. $A$ and $B$ is the center of the cluster and trajectory circle, respectively. The cluster circle is divided into two parts by $B$: red solid and red // hatching. In order to enable clusters to move along trajectories, the oscillators in two parts must have contrary phase velocities. This contradicts the fact that the oscillators in the cluster are synchronized. Therefore, the maximum radius of the cluster is $r_c$.
+
+    \begin{figure}[h]
+        \includegraphics[width=0.25\textwidth]{./figs/rsProofEps.pdf}
+        \caption{
+            \label{fig:rsProofEps} The schematic plot of the proof of the maximum radius of clusters.
+        }
+    \end{figure}
+
+\end{proof}
 
 \begin{figure*}
     \includegraphics[width=0.7\textwidth]{./figs/etimateCenter.png}
