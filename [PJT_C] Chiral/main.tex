@@ -141,10 +141,10 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
     \caption{
-        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundaries between states are analytical approximations given by Section~\ref{analytical}. 
+        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundaries between states are analytical approximations given by Subsection~\ref{critical}. 
         For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-linear (For $\lambda$ in $\left[ 0.01, 0.1 \right]$ and $\left[ 0.1, 1 \right]$, step length is $0.1$ and $0.05$, respectively. For $d_0$ in $\left[ 0.1, 1 \right]$ and $\left[ 1, 2 \right]$, step length is $0.05$ and $0.5$, respectively).
         \textbf{(a)}, The snapshots of Ring ($\lambda=0.015,\ d_0=0.35$). 
-        \textbf{(b)}, Swarm (Multi-Clusters) ($\lambda=0.8,\ d_0=0.2$).
+        \textbf{(b)}, Swarm (Multi-Clusters) ($\lambda=0.4,\ d_0=0.3$).
         \textbf{(c)}, Swarm (Double-Clusters) ($\lambda=0.15,\ d_0=0.9$).
         \textbf{(d)}, Quick Sync ($\lambda=0.95,\ d_0=2$). Two types of chiral oscillators are represented by red ($\omega_i > 0$) and blue 
         ($\omega_i < 0$) arrows, respectively. 
@@ -181,12 +181,14 @@ We next discuss these five states.
 \subsection{Disorder State}
 
 Disorder state occurs when both $\lambda$ and $d_0$ are small. In this state, the oscillators are not asynchronous (phase histogram is uniform, like Fig.~\ref{fig:phaseHist}a) and move in a way which similar to uncoupled oscillators ($\lambda=0$), as shown in Fig.~\ref{fig:disorderState}a. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), when $\lambda=0$, the equations of oscillators' motion can be written as:
+\begin{eqnarray}
+    x_i\left( t \right) =x_{i}^{0}+\frac{v}{\omega _i}\sin \left[ \theta _i\left( 0 \right) +\omega _it \right] \;,\label{eq:circlemotionx}\\
+    y_i\left( t \right) =y_{i}^{0}-\frac{v}{\omega _i}\cos \left[ \theta _i\left( 0 \right) +\omega _it \right] \;.
+\end{eqnarray}
 
+Then we have
 \begin{equation}
-    \begin{array}{c}
-        x_i\left( t \right) =x_i\left( 0 \right) +\frac{v}{\omega _i}\sin \omega _it\;,\\
-        y_i\left( t \right) =y_i\left( 0 \right) -\frac{v}{\omega _i}\cos \omega _it\;.\\
-    \end{array}
+    \left( x_i -x_{i}^{0} \right) ^2+\left( y_i -y_{i}^{0} \right) ^2=\left( \frac{v}{\omega _i} \right) ^2\;.
 \end{equation}
 In such a setup, oscillators move in a circular trajectory with radius $v/\omega _i$ and the phases $\theta_i$ increase linearly with time, as show in Fig.~\ref{fig:disorderState}b. To calculate the real-time rotational radius, we first estimate real-time centers $\mathbf{c}(t)$ of the circular trajectory with method in Fig.~\ref{fig:CenterEps} and then solve the following linear equations:
 
@@ -346,12 +348,14 @@ The order parameter values in each state are summarized in Table \ref{tab:orderP
     }
 \end{figure*}
 
-\section{\label{analytical} analytical approximations}
+\section{Analysis}
+
+\subsection{\label{critical} Analytical approximations of the critical boundaries}
 
 In this section we derive the analytical approximations of the boundaries between the states. 
 The boundaries between the states are determined by the critical lines $\lambda_{c1}$, $\lambda_{c2}$, $\lambda_{c3}$, and $\lambda_{c4}$, which are the critical values of $\lambda$ for the transitions between the states with given $d_0$.
 
-\subsection{$\lambda_{c1}$: Disorder to Ring}
+\subsubsection{$\lambda_{c1}$: Disorder to Ring}
 
 We first consider the transition between the Disorder and Ring states. The oscillators in both states move in a circular trajectory (cf. Fig.~\ref{fig:disorderState}b), and the difference between them is that the oscillators in the Ring state are phase-locked.
 Therefore, oscillators in Disorder state have a very small probability of being randomly distributed on the ring, but without phase locking.
@@ -394,7 +398,7 @@ where $\alpha$ and $\beta$ are the angles of sectors from two overlapping circle
 \end{equation}
 Then we can calculate the critical line $\lambda_{c1}$ in the $(\lambda$-$d_0)$ plane with $N_c=250$ (Ring state first appears as four rings, more details in Subsection \ref{sec:numRings}), as shown in Fig.~\ref{fig:orderParam}c, where the line accurately divides the phase-locked and non-phase-locked regions.
 
-\subsection{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters)}
+\subsubsection{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters)}
 
 According to $R_s$ in Fig.~\ref{fig:orderParam}b, the oscillators in the cluster are synchronized, and the oscillators with different chirality are not synchronized. Therefore, $\lambda_{c2}$ is the critical value of $\lambda$ for the synchronization of oscillators in the same cluster. We still consider the synchronous dynamics in Eq.~(\ref{eq:dotTheta1}) and (\ref{eq:dotThetaj}). To achieve synchronization, the oscillators with the largest phase difference (maximum $\left| \Delta \omega _j \right|$) in the cluster need to be phase locked. The maximum $\left| \Delta \omega _j \right|$ in a cluster is $\left| \Delta \omega _j \right|=\omega _{\max}-\omega _{\min}$. Thus, the critical coupling strength $\lambda_{c2}$ is:
 \begin{equation}
@@ -425,7 +429,7 @@ Therefore, we have
 \end{equation}
 Then we can calculate the critical line $\lambda_{c2}$ in the $(\lambda$-$d_0)$ plane with $N_s=500$ (each chirality has half of the total population $N=1000$), as shown in Fig.~\ref{fig:orderParam}b, where the line divides whether local synchronization occurred.
 
-\subsection{$\lambda_{c3}$: Multi-Clusters to Double-Clusters}
+\subsubsection{$\lambda_{c3}$: Multi-Clusters to Double-Clusters}
 
 The derivation of $\lambda_{c3}$ is similar to that of $\lambda_{c2}$, but the difference is that the centers of oscillators in the Swarm (Double-Clusters) state converge quickly (cf Fig.~\ref{fig:centersPosition}b), which means oscillators do not require a long transient to form clusters. We consider that the oscillator density $\rho$ (Number of oscillators per unit area) under initial conditions can achieve synchronization of oscillators of the same chirality. $\rho$ can be calculated as 
 \begin{equation}
@@ -441,8 +445,7 @@ The critical coupling strength $\lambda_{c3}$ is:
 \end{equation}
 Similarly, we can calculate the critical line $\lambda_{c3}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}b, where the values of region above the line (Double-Clusters) is closer to $1$ than below the line (Multi-Clusters).
 
-\subsection{$\lambda_{c4}$: Swarm (Double-Clusters) to Quick Sync}
-
+\subsubsection{$\lambda_{c4}$: Swarm (Double-Clusters) to Quick Sync}
 The Quick Sync state can be considered as a special case of the Swarm state where the oscillators are globally synchronized. Our derivation approach comes from adiabatic parameter tuning (see Appendix \ref{sec:Adiabatic}). We assume that the oscillators of two chiralities have been synchronized in the Swarm (Double-Clusters) state, as is shown in Fig.~\ref{fig:analyticalEps}c. Next, we consider the synchronization of the two chiralities. According to Eq.~(\ref{eq:clusterState2}), two clusters with opposite chirality are moving on their respective circular trajectories with the same rotational radius
 \begin{equation}
     r_c = \cfrac{2v}{\omega_{\max}+\omega_{\min}}\;.
@@ -451,7 +454,7 @@ In numerical simulations, we observe that the radius $r_s$ of clusters in Swarm 
 
 Considering that the trajectories of two chiralities will repel each other before oscillators achieving global synchronization, let's take the maximum relative distance between the motion trajectories of two clusters in space, which is line $AB$ in Fig.~\ref{fig:analyticalEps}c. The distance $l_{AB}$ is
 \begin{equation}
-    l_{AB}=\frac{L}{\sqrt{2}}
+    l_{AB}=\frac{L}{\sqrt{2}}\;.
 \end{equation}
 
 Similar to the derivation of $\lambda_{c2}$, we consider the synchronization dynamics between a single oscillator ($C$ in Fig.~\ref{fig:analyticalEps}c) and a cluster (blue circle in Fig.~\ref{fig:analyticalEps}c), the difference is that the single oscillator and cluster here belong to different chirality. When the centers of two clusters move onto line segment AB, their distance is the shortest. At this point, due to symmetry, if the oscillators at the edges of the two clusters are synchronized, global synchronization can be achieved. Obviously, when 
@@ -480,9 +483,29 @@ where $r_s=r_c$. The global maximum value of $\left| \Delta \omega _j \right|$ i
 \end{equation}
 Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}a, where the line divides whether global synchronization occurred.
 
-\section{stability and other analysis}
+\subsection{Repulsion-attraction mechanism from chiralities}
 
-\subsection{Stability Analysis}
+Under the assumption of no coupling, the center $\mathbf{c}_i$ of the $i$th oscillator moves on a circular trajectory with radius $r_i=v/\omega_i$ and angular velocity $\omega_i$. 
+Therefore, the coordinates of the rotation center can be estimated as the coordinates of points on the trajectory.
+According to Eq.~(\ref{eq:circlemotionx}), the horizontal ordinate of the $i$th oscillator's rotation center is
+\begin{equation}
+    \begin{aligned}
+        C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
+        &=x_{i}^{0}\left( t_0 \right)\\
+        &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
+    \end{aligned}
+\end{equation}
+Similarly, the vertical ordinate of the $i$th oscillator's rotation center is
+\begin{equation}
+    C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
+\end{equation}
+
+\begin{equation}
+    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
+        \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
+        \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
+    \end{array}}
+\end{equation}
 
 \subsection{Number of Rings \label{sec:numRings}}
 
