@@ -31,6 +31,7 @@
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
+    citecolor=blue,
     linkbordercolor=white
 }
 
@@ -76,15 +77,20 @@ Second institution and/or address%\\This line break forced% with \\
 
 \maketitle
 
-\begin{quotation}
-    The ``lead paragraph'' is encapsulated with the \LaTeX\
-    %
-    The lead paragraph will only be found in an article being prepared for the journal \textit{XXX}.
-\end{quotation}
+% \begin{quotation}
+%     The ``lead paragraph'' is encapsulated with the \LaTeX\
+%     %
+%     The lead paragraph will only be found in an article being prepared for the journal \textit{XXX}.
+% \end{quotation}
 
-\section{\label{sec:level1}INTRODUCTION\protect\\ }
+\section{INTRODUCTION\protect\\ }
 % The line break was forced \lowercase{via} \textbackslash\textbackslash
-The color of the background represents the order parameter $r$ of the system. The color of the snapshots represents the phase of the oscillators. The color of the arrows represents the direction of the velocity of the oscillators. The size of the arrows represents the speed of the oscillators. 
+Synchronization and swarming are two typical self-organization behaviors representing the intrinsic dynamial and spatial ordering of units in complex systems.
+The study of self-organized coordination of intrinsic degrees of freedom/rhythms within complex systems has deepened our understanding of self-organization in complex systems, including various levels of synchronization, partial synchronization, extended states, and chimera states\cite{pikovsky2001universal,acebron2005kuramoto,rodrigues2016kuramoto,boccaletti2018synchronization,zou2021quenching,arenas2008synchronization}.
+In terms of synchronization theory, at the micro level, various analysis methods have been established, such as the master stability function (MSF) \cite{pecora1998master}, which has played an important role in the study of multi-oscillator synchronization problems. At the statistical and macro levels, successful approaches include the self-consistent equation method by Kuramoto et al. \cite{kuramoto1984chemical}, the Watanabe-Strogatz transformation \cite{watanabe1994constants,strogatz1988simple}, and the Ott-Antonsen ansatz proposed by Ott and Antonsen \cite{ott2009long}.
+Cluster behavior research focuses on the self-organized coordination of spatial movement in complex systems, contributing to our understanding of collective behavior. Spatial cluster behavior can emerge at different scales, such as animal clusters \cite{buhl2006disorder,niven2012honeybees}, bacterial directed motion \cite{wioland2016directed,lushi2014fluid}, and other phenomena \cite{zhang2010collective,shi2010understanding,debnath2016communication}. Numerous studies based on diverse cluster models and extensive experimental investigations \cite{vicsek1995novel,farrell2012pattern,nagai2015collective,grossmann2014vortex,chepizhko2013optimal,sumino2012large,yan2016reconfiguring} have revealed various collective spatial interactions and patterns in complex systems.
+
+The Kuramoto model and the Vicsek model are two well-known models that describe synchronization and swarming, respectively. The Kuramoto model describes the synchronization of oscillators with a phase variable, and the Vicsek model describes the alignment of self-propelled particles with a velocity variable. Both models have been widely studied and applied in various fields, such as physics \cite{pantaleone1998stability,wiesenfeld1996synchronization}, biology \cite{aihara2008mathematical,o2016dynamics,neda2000physics,majhi2019emergence}, and engineering[32,33,37].
 
 \section{model}
 Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evoleve according to equations:
@@ -136,8 +142,6 @@ $\left| \mathbf{r}_i-\bar{\mathbf{r}}_j \right|$ can be proved to be the minimum
 
 Finally, we consider that the natural frequencies $\omega_i$ are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the oscillators have natural frequencies in the range $\left[ \omega _{\min},\omega _{\max} \right]$ ($\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right), i=1,2,\ldots,N/2$) and the other half in the range $\left[ -\omega _{\max},-\omega _{\min} \right]$ ($\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right), i=N/2+1,N/2+2,\ldots,N$).
 
-\section{behavior}
-
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
     \caption{
@@ -150,6 +154,8 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
         ($\omega_i < 0$) arrows, respectively. 
     }
 \end{figure*}
+
+\section{behavior}
 
 \begin{figure}[b]
     \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
@@ -481,13 +487,15 @@ where $r_s=r_c$. The global maximum value of $\left| \Delta \omega _j \right|$ i
         \alpha =2\mathrm{arc}\cos \frac{r_{s}^{2}+r_{d}^{2}-d_{0}^{2}}{2r_sr_d}\\
     \end{cases}\;.
 \end{equation}
-Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}a, where the line divides whether global synchronization occurred.
+Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}a, where the line divides whether global synchronization occurred. 
 
 \subsection{Repulsion-attraction mechanism from chiralities}
 
-Under the assumption of no coupling, the center $\mathbf{c}_i$ of the $i$th oscillator moves on a circular trajectory with radius $r_i=v/\omega_i$ and angular velocity $\omega_i$. 
-Therefore, the coordinates of the rotation center can be estimated as the coordinates of points on the trajectory.
-According to Eq.~(\ref{eq:circlemotionx}), the horizontal ordinate of the $i$th oscillator's rotation center is
+In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of chiral oscillators of the same chirality are attracted to each other, while the motion trajectories of chiral oscillators of different chirality repel each other. Considering that the ring state occurs when the coupling strength $\lambda$ and the action radius $d_0$ are small and the trajectories of the oscillators in the Ring state are almost circular under uncoupled conditions, we can analyze the repulsion-attraction mechanism by considering the motion trajectories of the oscillators.
+
+Under the assumption of no coupling, the center $\mathbf{c}_i$ of the $i$th oscillator moves on a circular trajectory with radius $r_i=v/\omega_i$ and angular velocity $\omega_i$ according to Eq.~(\ref{eq:circlemotionx}).
+The coordinates of the rotation center can be estimated as the mean coordinates of points on the trajectory.
+the horizontal ordinate of the $i$th oscillator's rotation center is
 \begin{equation}
     \begin{aligned}
         C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
@@ -499,13 +507,50 @@ Similarly, the vertical ordinate of the $i$th oscillator's rotation center is
 \begin{equation}
     C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
 \end{equation}
-
-\begin{equation}
+Due to the symmetry of the ring, we can consider the interaction between only two oscillators. For the $i$th and $j$th oscillators, the distance between their rotation centers $\left| \mathbf{c}_j-\mathbf{c}_i \right|$ is
+\begin{equation}\label{eq:distanceCenter}
     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
         \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
         \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
-    \end{array}}
+    \end{array}}\;.
 \end{equation}
+Considering the action radius $d_0$ is small, the coordinates of the two oscillators are very close to each other when coupling occurs,which means $(x_i, y_i) \approx (x_j, y_j)$. Then we have
+\begin{equation}
+    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.
+\end{equation}
+Furthermore, due to the symmetry of coupling from Eq.~(\ref{eq:dotthetai}), The phase of the two oscillators after being coupled will have a pair of symmetrical angular offsets compared to those without coupling:
+\begin{equation}
+    \begin{array}{c}
+        \hat{\theta}_i=\theta _i+\lambda \sin \left( \theta _j-\theta _i \right) T\;,\\
+        \hat{\theta}_j=\theta _j+\lambda \sin \left( \theta _i-\theta _j \right) T\;.
+    \end{array}
+\end{equation}
+Let's set $\theta _s=\lambda \sin \left( \theta _j-\theta _i \right) T$ as the angular offset and $\theta _s$ clearly satisfies
+\begin{equation}\label{eq:theta_s}
+    \theta _s\in \begin{cases}
+        \left[ 0, \frac{\theta _i-\theta _j}{2} \right] ,&		\theta _j\geqslant \theta _i\\
+        \left[ \frac{\theta _i-\theta _j}{2}, 0 \right) ,&		\theta _j<\theta _i\\
+    \end{cases}
+\end{equation}
+Then we have the distance driven by the coupling $\left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|$ as
+\begin{equation}
+    \begin{aligned}\label{eq:distanceCoupling}
+        \left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|&=\sqrt{-\frac{2v^2\cos \left( \hat{\theta}_i-\hat{\theta}_j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\\
+        &=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j+2\theta _s \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.\\
+    \end{aligned}
+\end{equation}
+To compare Eq.~(\ref{eq:distanceCenter}) and Eq.~(\ref{eq:distanceCoupling}), we only need to compare the cosine term in the two equations. According to Inequality (\ref{eq:theta_s}), we have
+\begin{equation}
+    \theta _i-\theta _j+2\theta _s\in \begin{cases}
+        \left[ 0, \theta _i-\theta _j \right] ,&		\theta _i-\theta _j\geqslant 0\\
+        \left[ \theta _i-\theta _j, 0 \right) ,&		\theta _i-\theta _j<0\\
+    \end{cases}\;,
+\end{equation}
+which means
+\begin{equation}
+    \cos \left( \theta _i-\theta _j \right) \leqslant \cos \left( \theta _i-\theta _j+2\theta _s \right)\;.
+\end{equation}
+Therefore, when the coupling occurs, the distance between the rotation centers of two oscillators with the same signs of natural frequency $\omega$ (chirality) will decrease, which means the oscillators of the same chirality are attracted to each other, while the distance between the centers with opposite signs of $\omega$ (chirality) will increase, which means the oscillators of different chirality repel each other.
 
 \subsection{Number of Rings \label{sec:numRings}}
 
@@ -579,13 +624,13 @@ As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to
 
 \section{\label{sec:maxRadius} PROOF OF THE MAXIMUM RADIUS OF CLUSTERS}
 
-In this section, we prove the maximum radiu of cluster in the Swarm state is $r_c$, which is the radius of its rotation trajectory. We prove this by contradiction.
+In this section, we prove the maximum radius of cluster in the Swarm state is $r_c$, which is the radius of its rotation trajectory. We prove this by contradiction.
 
 \begin{proof}
     We assume that the maximum radius of the cluster is $r_s>r_c$. Then we have the case that the cluster's rotation center is inside the cluster circle with radius $r_s$. 
     Fig.~\ref{fig:rsProofEps} shows the schematic plot of this case. $A$ and $B$ is the center of the cluster and trajectory circle, respectively. The cluster circle is divided into two parts by $B$: red solid and red // hatching. In order to enable clusters to move along trajectories, the oscillators in two parts must have contrary phase velocities. This contradicts the fact that the oscillators in the cluster are synchronized. Therefore, the maximum radius of the cluster is $r_c$.
 
-    \begin{figure}[h]
+    \begin{figure}
         \includegraphics[width=0.25\textwidth]{./figs/rsProofEps.pdf}
         \caption{
             \label{fig:rsProofEps} The schematic plot of the proof of the maximum radius of clusters.
@@ -606,5 +651,8 @@ In this section, we prove the maximum radiu of cluster in the Swarm state is $r_
         \textbf{(d)}, Ring state ($\lambda=0.02,\ d_0=0.4$).
     }
 \end{figure*}
+
+\nocite{*}
+\bibliography{aipsamp}
 
 \end{document}
