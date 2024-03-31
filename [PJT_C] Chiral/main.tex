@@ -70,9 +70,7 @@ Second institution and/or address%\\This line break forced% with \\
              %  but any date may be explicitly specified
 
 \begin{abstract}
-    An article usually includes an abstract, a concise summary of the work
-    covered at length in the main body of the article. It is used for
-    secondary publications and for information retrieval purposes. 
+    Synchronization and swarming are two typical self-organization behaviors representing the intrinsic dynamial and spatial ordering of units in complex systems. Here, we introduce a model that combines the Kuramoto and Vicsek models, which describes the synchronization and swarming of oscillators with different natural frequencies, chiral properties, and local coupling. The model exhibits five states: Disorder, Ring, Swarm (Multi-Clusters), Swarm (Double-Clusters), and Quick Sync. We obtain the analytic solutions of the model, explore the phase diagram of it and analytically explain the diverse emergence behaviors driven by the model. This study provides a more comprehensive exploration and integration of the interdisciplinary field encompassing synchronization dynamics and cluster dynamics.
 \end{abstract}
 
 \maketitle
@@ -88,11 +86,31 @@ Second institution and/or address%\\This line break forced% with \\
 Synchronization and swarming are two typical self-organization behaviors representing the intrinsic dynamial and spatial ordering of units in complex systems.
 The study of self-organized coordination of intrinsic degrees of freedom/rhythms within complex systems has deepened our understanding of self-organization in complex systems, including various levels of synchronization, partial synchronization, extended states, and chimera states\cite{pikovsky2001universal,acebron2005kuramoto,rodrigues2016kuramoto,boccaletti2018synchronization,zou2021quenching,arenas2008synchronization}.
 In terms of synchronization theory, at the micro level, various analysis methods have been established, such as the master stability function (MSF) \cite{pecora1998master}, which has played an important role in the study of multi-oscillator synchronization problems. At the statistical and macro levels, successful approaches include the self-consistent equation method by Kuramoto et al. \cite{kuramoto1984chemical}, the Watanabe-Strogatz transformation \cite{watanabe1994constants,strogatz1988simple}, and the Ott-Antonsen ansatz proposed by Ott and Antonsen \cite{ott2009long}.
-Cluster behavior research focuses on the self-organized coordination of spatial movement in complex systems, contributing to our understanding of collective behavior. Spatial cluster behavior can emerge at different scales, such as animal clusters \cite{buhl2006disorder,niven2012honeybees}, bacterial directed motion \cite{wioland2016directed,lushi2014fluid}, and other phenomena \cite{zhang2010collective,shi2010understanding,debnath2016communication}. Numerous studies based on diverse cluster models and extensive experimental investigations \cite{vicsek1995novel,farrell2012pattern,nagai2015collective,grossmann2014vortex,chepizhko2013optimal,sumino2012large,yan2016reconfiguring} have revealed various collective spatial interactions and patterns in complex systems.
+Cluster behavior research focuses on the self-organized coordination of spatial movement in complex systems, contributing to our understanding of collective behavior. Spatial cluster behavior can emerge at different scales, such as animal clusters \cite{buhl2006disorder,niven2012honeybees,bazazi2008collective}, bacterial directed motion \cite{wioland2016directed,lushi2014fluid}, and other phenomena \cite{zhang2010collective,shi2010understanding,debnath2016communication}. Numerous studies based on diverse cluster models and extensive experimental investigations \cite{vicsek1995novel,farrell2012pattern,nagai2015collective,grossmann2014vortex,chepizhko2013optimal,sumino2012large,yan2016reconfiguring} have revealed various collective spatial interactions and patterns in complex systems.
 
-The Kuramoto model and the Vicsek model are two well-known models that describe synchronization and swarming, respectively. The Kuramoto model describes the synchronization of oscillators with a phase variable, and the Vicsek model describes the alignment of self-propelled particles with a velocity variable. Both models have been widely studied and applied in various fields, such as physics \cite{pantaleone1998stability,wiesenfeld1996synchronization}, biology \cite{aihara2008mathematical,o2016dynamics,neda2000physics,majhi2019emergence}, and engineering[32,33,37].
+The Kuramoto model\cite{kuramoto1975international} and the Vicsek model\cite{vicsek1995novel} are two well-known models that describe synchronization and swarming, respectively. The Kuramoto model describes the synchronization of oscillators with a phase variable, and the Vicsek model describes the alignment of self-propelled particles with a velocity variable. Both models have been widely studied and applied in various fields, such as physics \cite{pantaleone1998stability,wiesenfeld1996synchronization}, biology \cite{aihara2008mathematical,o2016dynamics,neda2000physics,majhi2019emergence}, and engineering\cite{motter2019author,strogatz2005crowd,rohden2012self}.
+In recent years, there has been a notable surge in the research progress concerning the interplay between synchronization dynamics and cluster dynamics \cite{o2017oscillators,kruk2018self,levis2019activity,ceron2023diverse,ling2022spatial}, which has led to the development of models that combine the Kuramoto and Vicsek models. 
 
-\section{model}
+This paper continues this line of research by proposing a model that combines the Kuramoto and Vicsek models, aiming to to undertake a more comprehensive exploration and integration of the interdisciplinary field encompassing synchronization dynamics and cluster dynamics. In Ceron et al.'s \cite{ceron2023diverse} and Levis et al.'s \cite{levis2019activity} studies, the behavior of oscillators which are non-identical (oscillators have different natural frequencies), chiral
+(oscillators have inherent clockwise and counterclockwise circular orbits), and locally coupled (oscillators can only couple to motion and phase of neighbors within a given radius) was numerically investigated. Here, we introduce a model that combines these three characteristics and study the synchronization and cluster behaviors of it. We obtain the analytic solutions of the model and explore the phase diagram. 
+
+The paper is organized as follows. In Section \ref{sec:model}, we introduce the model and the numerical methods used to study it. In Section \ref{sec:behavior}, we present the behavior of the model and discuss the states it exhibits. In Section \ref{sec:orderParam}, we introduce order parameters to distinguish the states and present the phase diagram of the model. In Section \ref{sec:analysis}, we derive the critical lines of the transitions between states and analytically explain diverse emergence behaviors driven by the model. Finally, in Section \ref{sec:conclusions}, we summarize the results and discuss the implications of the model.
+
+\section{\label{sec:model} model}
+
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
+    \caption{
+        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundaries between states are analytical approximations given by Subsection~\ref{critical}. 
+        For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-linear (For $\lambda$ in $\left[ 0.01, 0.1 \right]$ and $\left[ 0.1, 1 \right]$, step length is $0.1$ and $0.05$, respectively. For $d_0$ in $\left[ 0.1, 1 \right]$ and $\left[ 1, 2 \right]$, step length is $0.05$ and $0.5$, respectively).
+        \textbf{(a)}, The snapshots of Ring ($\lambda=0.015,\ d_0=0.35$). 
+        \textbf{(b)}, Swarm (Multi-Clusters) ($\lambda=0.4,\ d_0=0.3$).
+        \textbf{(c)}, Swarm (Double-Clusters) ($\lambda=0.15,\ d_0=0.9$).
+        \textbf{(d)}, Quick Sync ($\lambda=0.95,\ d_0=2$). Two types of chiral oscillators are represented by red ($\omega_i > 0$) and blue 
+        ($\omega_i < 0$) arrows, respectively. 
+    }
+\end{figure*}
+
 Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evoleve according to equations:
 
 \begin{eqnarray}
@@ -114,7 +132,7 @@ action radius $d_0$ of its position. The adjacency matrix $A$ is defined as:
         0,&		\left| \mathbf{r}_i-\mathbf{r}_j \right|>d_0\\
     \end{cases}
 \end{equation}
-where $\left| \mathbf{r}_i-\mathbf{r}_j \right|$ is the Euclidean distance between the $i$th and $j$th oscillators. 
+where $\left| \mathbf{r}_i-\mathbf{r}_j \right|$ is the Euclidean distance between oscillators. 
 
 For simplicity, we consider oscillators are initially distributed uniformly in a two-dimensional square with side length $L$ and periodic boundary conditions. Their positions $\mathbf{r}_i\left( t \right) =\left( x_i\left( t \right) ,y_i\left( t \right) \right) $ at given time $t$ are given by:
 
@@ -143,35 +161,6 @@ $\left| \mathbf{r}_i-\bar{\mathbf{r}}_j \right|$ can be proved to be the minimum
 Finally, we consider that the natural frequencies $\omega_i$ are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the oscillators have natural frequencies in the range $\left[ \omega _{\min},\omega _{\max} \right]$ ($\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right), i=1,2,\ldots,N/2$) and the other half in the range $\left[ -\omega _{\max},-\omega _{\min} \right]$ ($\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right), i=N/2+1,N/2+2,\ldots,N$).
 
 \begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
-    \caption{
-        \label{fig:phaseDiagram} Phase diagram of model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) in the $(\lambda$-$d_0)$ plane. The boundaries between states are analytical approximations given by Subsection~\ref{critical}. 
-        For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-linear (For $\lambda$ in $\left[ 0.01, 0.1 \right]$ and $\left[ 0.1, 1 \right]$, step length is $0.1$ and $0.05$, respectively. For $d_0$ in $\left[ 0.1, 1 \right]$ and $\left[ 1, 2 \right]$, step length is $0.05$ and $0.5$, respectively).
-        \textbf{(a)}, The snapshots of Ring ($\lambda=0.015,\ d_0=0.35$). 
-        \textbf{(b)}, Swarm (Multi-Clusters) ($\lambda=0.4,\ d_0=0.3$).
-        \textbf{(c)}, Swarm (Double-Clusters) ($\lambda=0.15,\ d_0=0.9$).
-        \textbf{(d)}, Quick Sync ($\lambda=0.95,\ d_0=2$). Two types of chiral oscillators are represented by red ($\omega_i > 0$) and blue 
-        ($\omega_i < 0$) arrows, respectively. 
-    }
-\end{figure*}
-
-\section{behavior}
-
-\begin{figure}[b]
-    \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
-    \caption{
-        \label{fig:disorderState} Key properties of the Disorder state. 
-        \textbf{(a)}, The snapshot of the Disorder state ($\lambda=0.01,\ d_0=0.1, T=60000$). 
-        \textbf{(b)}, The scatter plot of last 100 time steps of 20 positive chirality oscillators and 20 negative chirality oscillators.
-    }
-\end{figure}
-
-We performed numerical simulations of the model to probe the behavior of its solutions (see Appendix \ref{sec:numerics} for details on the numerical methods). 
-$N=1000$ oscillators were distributed uniformly in the square of length $L=10$ and their natural frequencies were distributed in the range $\left[ \omega _{\min},\omega _{\max} \right]=\left[ 1,3 \right]$ and $\left[ -\omega _{\max},-\omega _{\min} \right]=\left[ -3,-1 \right]$.
-Two-parameter of coupling strength $\lambda$ and action radius $d_0$ are presented in the phase diagram in Fig.~\ref{fig:phaseDiagram}. We found the system settles into five states: \textbf{Disorder}, \textbf{Ring}, \textbf{Swarm} (which can be further divided into \textbf{Multi-Clusters} and \textbf{Double-Clusters}), and \textbf{Quick Sync}. In Fig.~\ref{fig:phaseDiagram} we show the snapshots of the last three states and where these states are located in the phase diagram. The Disorder state is shown in Fig.~\ref{fig:disorderState}a.
-We next discuss these five states.
-
-\begin{figure*}
     \includegraphics[width=\textwidth]{./figs/phaseHist.pdf}
     \caption{
         \label{fig:phaseHist} Histogram of the oscillators' phases.
@@ -182,7 +171,41 @@ We next discuss these five states.
     }
 \end{figure*}
 
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/radiusOmega.png}
+    \caption{
+        \label{fig:radiusOmega} The real-time and analytical rotational radius.
+        \textbf{(a)}, Radius for the Disorder ($d_0=0.1$, $\lambda=0.01:0.06$) and Ring ($d_0=0.1$, $\lambda=0.06:0.1$). The real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator. 
+        \textbf{(b)}, Radius for Swarm (Multi-Clusters, $d_0=0.15:0.25$, $\lambda=0.95$) and (Double-Clusters, $d_0=2$, $\lambda=0.02:0.05$). Analytical line is only for Double-Clusters.
+        All the above simulations are calculated at $t=60000$. 
+    }
+\end{figure*}
 
+\section{\label{sec:behavior}behavior}
+
+We performed numerical simulations of the model to probe the behavior of its solutions (see Appendix \ref{sec:numerics} for details on the numerical methods). 
+$N=1000$ oscillators were distributed uniformly in the square of length $L=10$ and their natural frequencies were distributed in the range $\left[ \omega _{\min},\omega _{\max} \right]=\left[ 1,3 \right]$ and $\left[ -\omega _{\max},-\omega _{\min} \right]=\left[ -3,-1 \right]$.
+Two-parameter of coupling strength $\lambda$ and action radius $d_0$ are presented in the phase diagram in Fig.~\ref{fig:phaseDiagram}. We found the system settles into five states: \textbf{Disorder}, \textbf{Ring}, \textbf{Swarm} (which can be further divided into \textbf{Multi-Clusters} and \textbf{Double-Clusters}), and \textbf{Quick Sync}. In Fig.~\ref{fig:phaseDiagram} we show the snapshots of the last three states and where these states are located in the phase diagram. The Disorder state is shown in Fig.~\ref{fig:disorderState}a.
+We next discuss these five states.
+
+\begin{figure}[b]
+    \includegraphics[width=0.48\textwidth]{./figs/disorderState.pdf}
+    \caption{
+        \label{fig:disorderState} Key properties of the Disorder state. 
+        \textbf{(a)}, The snapshot of the Disorder state ($\lambda=0.01,\ d_0=0.1, T=60000$). 
+        \textbf{(b)}, The scatter plot of last 100 time steps of 20 positive chirality oscillators and 20 negative chirality oscillators.
+    }
+\end{figure}
+
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/centersPosition.png}
+    \caption{
+        \label{fig:centersPosition} Scatter plot of the real-time centers position. 
+        \textbf{(a)}, centers position of Ring ($\lambda=0.02$, $d_0=0.4$). As time goes on, the centers of oscillators with the same chirality converge.
+        \textbf{(b)}, centers position of Swarm ($\lambda=0.01$, $d_0=2$). Unlike Ring, the centers converge quickly.
+        The centers position are estimated with method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}).
+    }
+\end{figure*}
 
 \subsection{Disorder State}
 
@@ -212,28 +235,8 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
     \end{array}
 \end{equation}
 where $\mathbf{v}_i(t_1)=\left( x_i\left( t_1 \right) , y_i\left( t_1 \right) \right)$ is the velocity of $i$th oscillator at $t_1$, and $\mathbf{v}_i(t_1)=\left( \cos \theta _i\left( t_1 \right) , \sin \theta _i\left( t_1 \right) \right)$ is the unit vector of the velocity. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), we can calculate $\mathbf{v}_i(t_2)$ and $\mathbf{r}_i(t_2)$, ($t_2=t_1+\Delta t$). 
- 
-\begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/radiusOmega.png}
-    \caption{
-        \label{fig:radiusOmega} The real-time and analytical rotational radius.
-        \textbf{(a)}, Radius for the Disorder ($d_0=0.1$, $\lambda=0.01:0.06$) and Ring ($d_0=0.1$, $\lambda=0.06:0.1$). The real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator. 
-        \textbf{(b)}, Radius for Swarm (Multi-Clusters, $d_0=0.15:0.25$, $\lambda=0.95$) and (Double-Clusters, $d_0=2$, $\lambda=0.02:0.05$). Analytical line is only for Double-Clusters.
-        All the above simulations are calculated at $t=60000$. 
-    }
-\end{figure*}
 
 The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a. The estimation results of four states's real-time rotational centers are shown in Fig.~\ref{fig:etimateCenter} in Appendix.
-
-\begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/centersPosition.png}
-    \caption{
-        \label{fig:centersPosition} Scatter plot of the real-time centers position. 
-        \textbf{(a)}, centers position of Ring ($\lambda=0.02$, $d_0=0.4$). As time goes on, the centers of oscillators with the same chirality converge.
-        \textbf{(b)}, centers position of Swarm ($\lambda=0.01$, $d_0=2$). Unlike Ring, the centers converge quickly.
-        The centers position are estimated with method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}).
-    }
-\end{figure*}
 
 \subsection{Ring State}
 
@@ -242,6 +245,16 @@ Similar to Disorder state, the oscillators in the same ring cluster move in a ci
 The oscillators' phase is uniformly distributed in the range $\left[ -\pi,\pi \right]$ (cf. Fig.~\ref{fig:phaseHist}a), which leads to oscillators uniformly located on the circular trajectory.
 Fig.~\ref{fig:centersPosition}a shows there is a long transient time before this state is reached, and in this transient time, the trajectories of oscillators with the same chirality aggregate slowly. Conversely, the oscillators with different chirality repel each other. 
 
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/orderParam.png}
+    \caption{
+        \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
+        \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
+        \textbf{(b)}, order parameter $R_s$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
+        \textbf{(c)}, order parameter $\Delta \Omega$ and critical lines of $\lambda_{c1}$.
+        All order parameters are calculated at $t=60000$.
+    }
+\end{figure*}
 
 \subsection{Swarm State}
 
@@ -272,18 +285,7 @@ as shown in Fig.~\ref{fig:radiusOmega}b. But for Multi-Clusters, due to which os
 
 Quick Sync state is a simple state where total oscillators are synchronized quickly, as shown in Fig.~\ref{fig:phaseDiagram}d. and \ref{fig:phaseHist}d. The oscillators are synchronized in an extremely short time, which leads them have no time to form clusters (can also be considered as a special case of Swarm state). Due to the two types of chirality oscillators are synchronized and the distributions of them is symmetric, the phase velocities of total oscillators are close to zero according to Eq.~(\ref{eq:clusterState}).
 
-\begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/orderParam.png}
-    \caption{
-        \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
-        \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
-        \textbf{(b)}, order parameter $R_s$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
-        \textbf{(c)}, order parameter $\Delta \Omega$ and critical lines of $\lambda_{c1}$.
-        All order parameters are calculated at $t=60000$.
-    }
-\end{figure*}
-
-\section{Order Parameter}
+\section{\label{sec:orderParam}Order Parameter}
 
 Having described the four states of our system, we next discuss how to distinguish them. We use the order parameter $R$ to measure global synchronization. The order parameter $R$ is defined as:
 
@@ -294,6 +296,13 @@ The order parameter $R$ is the absolute value of the mean of the complex numbers
 
 Having realized that the order parameter $R$ is not enough to distinguish the states with clusters, we next define the following order parameter $R_s$ to metric the local synchronization,
 
+\begin{figure}[b]
+    \includegraphics[width=0.48\textwidth]{./figs/classifyResult.pdf}
+    \caption{
+        \label{fig:classifyResult} Two examples of classification results. \textbf{(a)}: ($\lambda=0.4$, $d_0=0.3$). \textbf{(b)}: ($\lambda=0.02$, $d_0=0.4$).
+    }
+\end{figure}
+
 \begin{equation}
     R_s=\frac{1}{N_c}\sum_{k=1}^{N_c}{\left| \frac{1}{\left| C_k \right|}\sum_{j\in C_k}{e^{i\theta _j}} \right|}\;,
 \end{equation}
@@ -303,13 +312,6 @@ The reason of using the distance between centers instead of the distance between
 Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorithm is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. We set the minimum number of oscillators in a cluster to be $5$ and the maximum distance between two oscillators in the same cluster to be $0.3$ (see Appendix \ref{sec:DBSCAN_param} for details on the determination of these parameters). 
 One example of the classification of clusters is shown in Fig.~\ref{fig:classifyResult}.
 We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state ($R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters) and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
-
-\begin{figure}[b]
-    \includegraphics[width=0.48\textwidth]{./figs/classifyResult.pdf}
-    \caption{
-        \label{fig:classifyResult} Two examples of classification results. \textbf{(a)}: ($\lambda=0.4$, $d_0=0.3$). \textbf{(b)}: ($\lambda=0.02$, $d_0=0.4$).
-    }
-\end{figure}
 
 Combining the order parameter $R$ and $R_s$, we can find only the distinction between Ring and Disorder states has not been resolved. Except the study for synchronization, we alse define an order parameter $\Delta \Omega$ to metric the phase locking of the oscillators:
 
@@ -354,7 +356,7 @@ The order parameter values in each state are summarized in Table \ref{tab:orderP
     }
 \end{figure*}
 
-\section{Analysis}
+\section{\label{sec:analysis}Analysis}
 
 \subsection{\label{critical} Analytical approximations of the critical boundaries}
 
@@ -489,7 +491,7 @@ where $r_s=r_c$. The global maximum value of $\left| \Delta \omega _j \right|$ i
 \end{equation}
 Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}a, where the line divides whether global synchronization occurred. 
 
-\subsection{Repulsion-attraction mechanism from chiralities}
+\subsection{Repulsion-attraction mechanism}
 
 In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of chiral oscillators of the same chirality are attracted to each other, while the motion trajectories of chiral oscillators of different chirality repel each other. Considering that the ring state occurs when the coupling strength $\lambda$ and the action radius $d_0$ are small and the trajectories of the oscillators in the Ring state are almost circular under uncoupled conditions, we can analyze the repulsion-attraction mechanism by considering the motion trajectories of the oscillators.
 
@@ -554,7 +556,7 @@ Therefore, when the coupling occurs, the distance between the rotation centers o
 
 \subsection{Number of Rings \label{sec:numRings}}
 
-\section{CONCLUSIONS}
+\section{\label{sec:conclusions}CONCLUSIONS}
 
 \appendix
 

@@ -6,7 +6,7 @@
 %Control: page (1) range
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{31}%
+\begin{thebibliography}{41}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -195,6 +195,22 @@
   break a decision-making deadlock},}\ }\href@noop {} {\bibfield  {journal}
   {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo {volume} {335}},\ \bibinfo
   {pages} {43--44} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bazazi}\ \emph {et~al.}(2008)\citenamefont {Bazazi},
+  \citenamefont {Buhl}, \citenamefont {Hale}, \citenamefont {Anstey},
+  \citenamefont {Sword}, \citenamefont {Simpson},\ and\ \citenamefont
+  {Couzin}}]{bazazi2008collective}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Bazazi}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Buhl}},
+  \bibinfo {author} {\bibfnamefont {J.~J.}\ \bibnamefont {Hale}}, \bibinfo
+  {author} {\bibfnamefont {M.~L.}\ \bibnamefont {Anstey}}, \bibinfo {author}
+  {\bibfnamefont {G.~A.}\ \bibnamefont {Sword}}, \bibinfo {author}
+  {\bibfnamefont {S.~J.}\ \bibnamefont {Simpson}}, \ and\ \bibinfo {author}
+  {\bibfnamefont {I.~D.}\ \bibnamefont {Couzin}},\ }\bibfield  {title}
+  {\enquote {\bibinfo {title} {Collective motion and cannibalism in locust
+  migratory bands},}\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Current biology}\ }\textbf {\bibinfo {volume} {18}},\ \bibinfo {pages}
+  {735--739} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Wioland}, \citenamefont {Lushi},\ and\ \citenamefont
   {Goldstein}(2016)}]{wioland2016directed}%
   \BibitemOpen
@@ -346,6 +362,14 @@
   }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Nature materials}\
   }\textbf {\bibinfo {volume} {15}},\ \bibinfo {pages} {1095--1099} (\bibinfo
   {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kuramoto}(1975)}]{kuramoto1975international}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Kuramoto}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {International
+  symposium on mathematical problems in theoretical physics},}\ }\href@noop {}
+  {\bibfield  {journal} {\bibinfo  {journal} {Lecture notes in Physics}\
+  }\textbf {\bibinfo {volume} {30}},\ \bibinfo {pages} {420} (\bibinfo {year}
+  {1975})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Pantaleone}(1998)}]{pantaleone1998stability}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
@@ -412,4 +436,101 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Physical Review E}\ }\textbf
   {\bibinfo {volume} {99}},\ \bibinfo {pages} {012308} (\bibinfo {year}
   {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Motter}\ \emph {et~al.}(2019)\citenamefont {Motter},
+  \citenamefont {Myers}, \citenamefont {Anghel},\ and\ \citenamefont
+  {Nishikawa}}]{motter2019author}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~E.}\ \bibnamefont
+  {Motter}}, \bibinfo {author} {\bibfnamefont {S.~A.}\ \bibnamefont {Myers}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Anghel}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {T.}~\bibnamefont {Nishikawa}},\ }\bibfield  {title}
+  {\enquote {\bibinfo {title} {Author correction: Spontaneous synchrony in
+  power-grid networks},}\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature Physics}\ }\textbf {\bibinfo {volume} {15}},\ \bibinfo
+  {pages} {103--103} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Strogatz}\ \emph {et~al.}(2005)\citenamefont
+  {Strogatz}, \citenamefont {Abrams}, \citenamefont {McRobie}, \citenamefont
+  {Eckhardt},\ and\ \citenamefont {Ott}}]{strogatz2005crowd}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~H.}\ \bibnamefont
+  {Strogatz}}, \bibinfo {author} {\bibfnamefont {D.~M.}\ \bibnamefont
+  {Abrams}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {McRobie}},
+  \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Eckhardt}}, \ and\
+  \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Ott}},\ }\bibfield
+  {title} {\enquote {\bibinfo {title} {Crowd synchrony on the millennium
+  bridge},}\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Nature}\ }\textbf {\bibinfo {volume} {438}},\ \bibinfo {pages} {43--44}
+  (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rohden}\ \emph {et~al.}(2012)\citenamefont {Rohden},
+  \citenamefont {Sorge}, \citenamefont {Timme},\ and\ \citenamefont
+  {Witthaut}}]{rohden2012self}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Rohden}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Sorge}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Timme}}, \ and\ \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Witthaut}},\ }\bibfield  {title}
+  {\enquote {\bibinfo {title} {Self-organized synchronization in decentralized
+  power grids},}\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physical review letters}\ }\textbf {\bibinfo {volume} {109}},\ \bibinfo
+  {pages} {064101} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {O’Keeffe}, \citenamefont {Hong},\ and\
+  \citenamefont {Strogatz}(2017)}]{o2017oscillators}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~P.}\ \bibnamefont
+  {O’Keeffe}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Hong}}, \
+  and\ \bibinfo {author} {\bibfnamefont {S.~H.}\ \bibnamefont {Strogatz}},\
+  }\bibfield  {title} {\enquote {\bibinfo {title} {Oscillators that sync and
+  swarm},}\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Nature
+  communications}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo {pages} {1504}
+  (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kruk}, \citenamefont {Maistrenko},\ and\
+  \citenamefont {Koeppl}(2018)}]{kruk2018self}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Kruk}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Maistrenko}}, \
+  and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Koeppl}},\
+  }\bibfield  {title} {\enquote {\bibinfo {title} {Self-propelled chimeras},}\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review
+  E}\ }\textbf {\bibinfo {volume} {98}},\ \bibinfo {pages} {032219} (\bibinfo
+  {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Levis}, \citenamefont {Pagonabarraga},\ and\
+  \citenamefont {Liebchen}(2019)}]{levis2019activity}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Levis}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Pagonabarraga}}, \ and\ \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Liebchen}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {Activity
+  induced synchronization: Mutual flocking and chiral self-sorting},}\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Physical Review
+  Research}\ }\textbf {\bibinfo {volume} {1}},\ \bibinfo {pages} {023026}
+  (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ceron}, \citenamefont {O’Keeffe},\ and\
+  \citenamefont {Petersen}(2023)}]{ceron2023diverse}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Ceron}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {O’Keeffe}}, \
+  and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Petersen}},\
+  }\bibfield  {title} {\enquote {\bibinfo {title} {Diverse behaviors in
+  non-uniform chiral and non-chiral swarmalators},}\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature Communications}\ }\textbf {\bibinfo
+  {volume} {14}},\ \bibinfo {pages} {940} (\bibinfo {year} {2023})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ling}\ \emph {et~al.}(2022)\citenamefont {Ling},
+  \citenamefont {Liu}, \citenamefont {Hua}, \citenamefont {Zhu}, \citenamefont
+  {Guo}, \citenamefont {Li}, \citenamefont {Chen}, \citenamefont {Wu},\ and\
+  \citenamefont {Hao}}]{ling2022spatial}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {X.}~\bibnamefont
+  {Ling}}, \bibinfo {author} {\bibfnamefont {Q.-Y.}\ \bibnamefont {Liu}},
+  \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Hua}}, \bibinfo {author}
+  {\bibfnamefont {K.-J.}\ \bibnamefont {Zhu}}, \bibinfo {author} {\bibfnamefont
+  {N.}~\bibnamefont {Guo}}, \bibinfo {author} {\bibfnamefont {L.-L.}\
+  \bibnamefont {Li}}, \bibinfo {author} {\bibfnamefont {J.-J.}\ \bibnamefont
+  {Chen}}, \bibinfo {author} {\bibfnamefont {C.-Y.}\ \bibnamefont {Wu}}, \ and\
+  \bibinfo {author} {\bibfnamefont {Q.-Y.}\ \bibnamefont {Hao}},\ }\bibfield
+  {title} {\enquote {\bibinfo {title} {Spatial groups and cyclic oscillations
+  induced by positive correlation between moving direction and phase of mobile
+  oscillators},}\ }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal}
+  {Physics Letters A}\ }\textbf {\bibinfo {volume} {452}},\ \bibinfo {pages}
+  {128428} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
 \end{thebibliography}%
