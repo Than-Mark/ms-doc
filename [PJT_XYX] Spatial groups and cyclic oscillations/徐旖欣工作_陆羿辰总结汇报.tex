@@ -25,8 +25,36 @@
 
 \begin{document}
 
+\section{模型}
 
-\section{局部耦合中跨边界坐标的调整}\label{positionAdj}
+\begin{eqnarray}
+    \dot{x}_i&=&v\cos \theta _i\;,\label{eq:dotxi}
+  \\
+    \dot{y}_i&=&v\sin \theta _i\;,\label{eq:dotyi}
+  \\
+    \dot{\theta}_i&=&\omega _i+\lambda \sum_{j=1}^N{A_{ij}\sin \left( \theta _j-\theta _i \right)}
+    \label{eq:dotthetai}
+\end{eqnarray}
+其中
+\begin{equation}
+    A_{ij}=\begin{cases}
+        1,&		\left| \mathbf{r}_i-\mathbf{r}_j \right|\le d_0\\
+        0,&		\left| \mathbf{r}_i-\mathbf{r}_j \right|>d_0\\
+    \end{cases}
+\end{equation}
+$\left| \mathbf{r}_i-\mathbf{r}_j \right|$为振子$i$与振子$j$之间的欧氏距禂, $d_0$为振子的作用半径. $\omega _i$为振子$i$的自然频率, $\lambda$为耦合强度, $v$为振子的运动速度.
+
+为方便研究，考虑到周期性边界条件
+
+\begin{equation}
+    \begin{array}{c}
+        x_i\left( t+\Delta t \right) =x_i\left( t \right) +v\cos \theta _i\left( t \right) \Delta t\,\,\mathrm{mod}\ L,\\
+        x_i\left( t+\Delta t \right) =x_i\left( t \right) +v\cos \theta _i\left( t \right) \Delta t\,\,\mathrm{mod}\ L,\\
+    \end{array}
+\end{equation}
+考虑周期性边界后，原始的欧氏距离对边界两侧的振子(如\ref{fig:fig1}中A,B,C,D点)失真，因此需要对跨边界的坐标进行调整. 
+
+\subsection{局部耦合中跨边界坐标的调整}\label{positionAdj}
 
 \begin{figure}[htbp]
     \centering
@@ -116,24 +144,107 @@ $$
 $$
 
 \newpage
-
-\section{相位-取向关联的集群振子系统的动力学研究}
-
-\begin{enumerate}
-    \item 环态及其相变——无序态、环态、集群态
-    \item 环态的解域与相位同步的关系——局部锁相
-    \item 数值结果的细致讨论, 分类——序参量、旋转半径和中心、聚集与排斥
-    \item 必要的理论分析与估计——四条临界耦合强度线的求解
-\end{enumerate}
-
-\newpage
-\section{不同取向（手征）耦合机制下的集群动力学}
+\section{数值模拟结果}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
 	\caption{相图}
 \end{figure}
 
+\subsubsection{相位单位圆}
+
+由于振子数较多,为了更清晰地刻画振子相位的同步情况,绘制三维空间中的单位圆. 将单位圆等分为$M$个区间,每个区间的大小为$\frac{2\pi}{M}$,$z$轴表示单位圆上相位处于该区间的振子数,类似于分布.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_0.10.eps}
+	\vspace{-1cm}
+	\caption{无序态 ($\lambda=0.01, d_0=0.1, random seed=10$)}
+	\label{fig:fig231.1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.020_0.30.eps}
+	\vspace{-1cm}
+	\caption{环态 ($\lambda=0.02, d_0=0.3, random seed=10$)}
+	\label{fig:fig231.2}
+\end{figure}
+
+当振子处于无序态或环态时,相位单位圆的分布如图\ref{fig:fig231.1}和图\ref{fig:fig231.2}所示. 此时,单位圆分布较为平滑,单位圆上的振子数分布较为均匀, 相位同步的程度较低.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_2.00.eps}
+	\vspace{-1cm}
+	\caption{集群态 ($\lambda=0.01, d_0=2, random seed=10$)}
+	\label{fig:fig231.3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.600_3.00.eps}
+	\vspace{-1cm}
+	\caption{瞬时同步态 ($\lambda=0.6, d_0=3, random seed=10$)}
+	\label{fig:fig231.4}
+\end{figure}
+
+当振子处于集群态或瞬时同步态时,相位单位圆的分布如图\ref{fig:fig231.3}和图\ref{fig:fig231.4}所示. 这两种状态的相位同步的程度较高.
+
+% \begin{enumerate}
+%     \item 环态及其相变——无序态、环态、集群态
+%     \item 环态的解域与相位同步的关系——局部锁相
+%     \item 数值结果的细致讨论, 分类——序参量、旋转半径和中心、聚集与排斥
+%     \item 必要的理论分析与估计——四条临界耦合强度线的求解
+% \end{enumerate}
+
+\subsubsection{振子旋转中心的坐标}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./figs/CenterEps.pdf}
+	\vspace{-0.2cm}
+	\caption{旋转圆心示意图}
+	\label{fig:fig232.1}
+\end{figure}
+
+如图 \ref{fig:fig232.1} 所示,对于任意振子$i$, 其当前坐标为$\mathbf{X}_i\left( t_1 \right)$, 速度为$\mathbf{V}_i\left( t_1 \right)$, 下一时刻的坐标为$\mathbf{X}_i\left( t_2 \right)$, 速度为$\mathbf{V}_i\left( t_2 \right)$, 则其旋转中心坐标为两个时刻法向量所在直线的交点, 假设旋转中心坐标为$\mathbf{C}_i\left( t_1 \right)$, 则有
+
+\vspace{-0.5cm}
+
+$$
+\begin{cases}
+	\mathbf{C}_i\left( t_1 \right) \cdot \mathbf{V}_i\left( t_1 \right) =\mathbf{X}_i\left( t_1 \right) \cdot \mathbf{V}_i\left( t_1 \right) \\
+	\mathbf{C}_i\left( t_1 \right) \cdot \mathbf{V}_i\left( t_2 \right) =\mathbf{X}_i\left( t_2 \right) \cdot \mathbf{V}_i\left( t_2 \right) \\
+\end{cases}
+$$
+
+求解上述方程组,可以得到每个振子的旋转中心坐标,如下图\ref{fig:fig232.2}:% \ref{fig:fig2}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/centorsBigGraph_sub.png}
+	\vspace{-0.2cm}
+	\caption{旋转中心求解结果示例}
+	\label{fig:fig232.2}
+\end{figure}
+
+上图中,带有箭头的半透明色点表示振子,光滑实心色点表示振子的旋转中心,其中,橙色点为正手性振子(半透明红色箭头)的旋转中心,蓝色点为负手性振子(半透明蓝色箭头)的旋转中心. 从图中可以看出,形成清晰的环态后,环上振子的旋转中心较为集中,说明同一环上振子的运动规律较为接近,且近似圆周运动.
+
+\newpage
+\noindent\textbf{旋转中心空间分布}
+
+考虑到振子在二维平面上运动,因此该序参量分为$x$坐标和$y$坐标两个分量,将各振子旋转中心坐标以散点图形式分别绘制得到图下图像：
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/totalXY.png}
+	\caption{旋转中心空间分布}
+	\label{fig:fig234t.1}
+\end{figure}
+
+\newpage
+\section{序参量}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{./figs/orderParam.png}
@@ -154,7 +265,191 @@ $$
 \mathbf{(c)}: \Delta \Omega =\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}
 $$
 
+其中团簇与环的分类由算法\ref{clustering}得到
+
 \newpage
+\subsubsection{基于调整耦合距离的聚类算法}\label{clustering}
+
+考虑到振子在形成环态或集群态时,会形成多个环或集群,因此可以对振子进行聚类从而计算各环或群的局部序参量. 由于环在欧氏空间中的分布较为特殊（中空,环与环相邻）,因此改为对振子的旋转中心进行聚类. 此外,周期性边界条件会导致振子的旋转中心跨边界,这里采样式\ref{eq:eq1}对旋转中心坐标进行调整.
+
+\begin{algorithm}
+	\SetKw{in}{in}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+	\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+	\BlankLine
+	\KwData{A set $S=\left\{(\bar{x}_i, \bar{y}_i)\right\}$ of particles' circular center coordinates}
+	\KwIn{cluster distance $d_{th}$}
+	\KwResult{A cluster set $C=\left\{
+		\left\{ 1 \right\}
+	 \right\}$}
+	% \BlankLine
+	\emph{$C$ $\leftarrow$ $\left\{(\bar{x}_1, \bar{y}_1)\right\}$}\;
+	\For{$i\leftarrow 2$ \KwTo $N$}{\label{forins}
+		\For{class set $C_k$ \in $C$}{
+			\For{$j$ \in $C_k$}{
+				\If(\tcp*[f]{belong to $C_k$}){$\bar{d}_{ij} < d_{th}$}{
+					$C_j \leftarrow C_j \cup \left\{i\right\}$\;
+					go to line \ref{forins}\;
+				}
+			}
+		}
+		$C \leftarrow C \cup \left\{\left\{i\right\}\right\}$; \tcp*[f]{create new class}
+	}
+	\caption{Clustering algorithm based on adjusted distance}\label{algo_disjdecomp}
+\end{algorithm}\DecMargin{1em}
+
+取$d_{th}=1, \lambda=0.02, d_0=0.4, random seed=80$并对模型终态执行算法,可得到如下图\ref{fig:fig233.1}所示的聚类结果. 对比左侧子图与右侧子图,可以发现,算法可以较好地将多个环分开.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/ClusteringResult.png}
+	\vspace{-0.4cm}
+	\caption{聚类结果 ($d_{th}=1, \lambda=0.02, d_0=0.4, random seed=80$)}
+	\label{fig:fig233.1}
+\end{figure}
+
+\subsubsection{序参量的思考过程}
+
+为了评估截面序参量对相图的刻画能力,这里根据终态的拓扑结构绘制了主观划分的相图,以提供对比,如下图\ref{fig:fig234.1}所示. 从左至右,从上至下,分别为无序态、环态、集群态、瞬时同步态. 图\ref{fig:fig232.2}中的四种状态分别对应图\ref{fig:fig234.1}中的四个区域,对比观察可以发现,环态与集群态在空间上的聚集程度较高,而无序态与瞬时同步态在空间上分布较为均匀,聚集程度低; 此外,集群态与瞬时同步态在相位(速度方向)上的同步程度较高,而环态与无序态较低.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/subjectiveOp3.png}
+	\vspace{-0.5cm}
+	\caption{主观划分空间状态图}
+	\label{fig:fig234.1}
+\end{figure}
+\vspace{-0.5cm}
+
+\noindent\textbf{相位(速度方向)同步率}
+
+$$
+r e^{i\psi}=\frac{1}{N}\sum_{j=1}^{N}{e^{i\theta _j}}
+$$
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/phaseSyncOp.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
+		\vspace{-1cm}
+		\caption{主观划分空间状态图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{相位(速度方向)同步率}
+	\label{fig:fig234c.1}
+\end{figure}
+
+\vspace{-0.5cm}
+该序参量可以将代表全局同步的快速同步态区分. 由于部分集群态存在分裂现象,因此某些集群态的全局相位同步程度较低,导致该序参量过渡不均匀,不易区分环态与集群态. 
+
+\newpage
+\noindent\textbf{聚类平均相位同步程度}
+
+这里基于方法\ref{clustering}($d_{th}=0.3$)对振子旋转中心进行聚类,然后计算每一类(振子数不足5个的分类剔除)中振子的相位同步程度,最后取所有类的相位同步程度的算数平均,即
+
+$$\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}\left|\cfrac{1}{N_{k}}\sum_{i\in C_{k}}e^{i\theta_i}\right|$$
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/clusteringPhaseSync.png}
+		\vspace{-1cm}
+		\caption{计算结果}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
+		\vspace{-1cm}
+		\caption{主观划分空间状态图}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{聚类平均相位同步程度}
+	\label{fig:fig234c.5}
+\end{figure}
+
+\vspace{-0.5cm}
+对比图\ref{fig:fig234c.1}可以发现,图\ref{fig:fig234c.5}能够更好地刻画环态与集群态的相位同步程度. 
+
+\noindent\textbf{全局平均频率差}
+
+集群行为的讨论既要分析各种不同的空间集群态,也应研究对同步的影响. 除了计算系统序参量以外, 还需要计算振子之间的锁相.
+
+定义平均频率差
+$$
+\begin{aligned}
+	\Delta \Omega _1&=\overline{\left( \left< \dot{\theta}_i \right> -\bar{\Omega} \right) ^2}\\
+	\Delta \Omega _2&=\frac{1}{N^2}\sum_{i,j=1}^N{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2}\\
+\end{aligned}
+$$
+
+其中,$\left< \cdot \right>$为长时平均,$\overline{\,\,\cdot \,\,}$为系统平均. $\bar{A}=\frac{1}{N^2}\sum\nolimits_i^{}{A_i}$, $\left< A \right> =\lim_{T\rightarrow \infty} \frac{1}{T}\int_{t_0}^{t_0+T}{A\left( t \right) dt}$
+
+这里取$t_0=500$ (50000次迭代, $\mathrm{d}t=0.01$), $T=100$ (10000次迭代, $shotsnaps=5$, 2000个样本点)进行计算.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/deltaOmega1.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _1$}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/deltaOmega2.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _2$}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{全局平均频率差}
+	\label{fig:fig2.5.global}
+\end{figure}
+
+观察图\ref{fig:fig2.5.global}可以发现,$\Delta \Omega _1$与$\Delta \Omega _2$的取值分布基本一致,并且都在瞬时同步态与集群态之间有明显的差异. 处于瞬时同步态或单集群的集群态时,系统发生整体锁相,$\Delta\Omega_1$与$\Delta\Omega_2$趋于0. 考虑到集群态在各个集群内部的同步程度较高,因此下面对集群的平均频率差进行讨论.
+
+\noindent\textbf{聚类平均频率差}
+
+除了对全局平均频率差的讨论,还可以对各个集群的平均频率差进行讨论. 这里对集群的定义采用方法\ref{clustering}($d_{th}=0.3$)进行聚类,然后计算每一类(振子数不足5个的分类剔除)中振子的平均频率差,最后取所有类的平均频率差的算数平均.
+
+$$
+\begin{array}{l}
+	\Delta \Omega _{1}^{*}=\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\overline{\left( \left< \dot{\theta}_i \right> -\bar{\Omega} \right) ^2}}\\
+	\Delta \Omega _{2}^{*}=\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}\\
+\end{array}
+$$
+
+其中,$N_{class}$为集群数,$N_k$为第$k$个集群的振子数. $\overline{\,\,\cdot \,\,}$为集群内平均, 即$\bar{x}=\frac{1}{N_k}\sum_{i\in C_k}{x_i}$
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/clusterDeltaOmega1.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _{1}^{*}$}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/clusterDeltaOmega2.png}
+		\vspace{-1cm}
+		\caption{$\Delta \Omega _{2}^{*}$}
+	\end{subfigure}
+	\vspace{-0.5cm}
+	\caption{聚类平均频率差}
+	\label{fig:fig2.5.cluster}
+\end{figure}
+
+
+
+\newpage
+\section{理论分析}
 \subsection{单个振子的运动问题（无相互作用）}
 
 $$
@@ -173,13 +468,12 @@ $$
 
 \textbf{无耦合情况下振子转动半径的求解}
 
-$$
-\begin{cases}
-	x_i\left( t \right) =x_i\left( 0 \right) +\frac{v}{\omega _i}\sin \omega _it\\
-	y_i\left( t \right) =y_i\left( 0 \right) -\frac{v}{\omega _i}\cos \omega _it\\
-\end{cases}
-$$
-
+\begin{equation}
+    \begin{cases}\label{eq:circle}
+        x_i\left( t \right) =x_i\left( 0 \right) +\frac{v}{\omega _i}\sin \omega _it\\
+        y_i\left( t \right) =y_i\left( 0 \right) -\frac{v}{\omega _i}\cos \omega _it\\
+    \end{cases}
+\end{equation}
 $$
 \Rightarrow \left( x_i-x_{i}^{0} \right) ^2+\left( y_i-y_{i}^{0} \right) ^2=\left( \frac{v}{\omega _i} \right) ^2
 $$
@@ -227,24 +521,6 @@ $$
 	\vspace{-0.5cm}
 	\caption{集群态旋转半径的近似 ($\lambda=0.1, d_0=0.3, random seed=10$, Single Chirality)}
 	\label{fig:fig21.4}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/SwarmStateRadius.png}
-		\vspace{-1cm}
-		\caption{$\omega_i = \left| \mathbf{X}_i - \mathbf{C}_i\right|$}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/wgtOmegaRadius.png}
-		\vspace{-1cm}
-		\caption{$\bar{\omega}_i = (\sum\nolimits_{j\ne i}^N{\omega _j/\bar{d}_{ij}}) / (\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}})$}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{集群态旋转半径的近似 ($\lambda=0.1, d_0=0.3, random seed=10$, Single Chirality)}
-	\label{fig:fig21.3}
 \end{figure}
 
 \subsection{集群态相速度的推导}\label{swarmPointTheta}
@@ -495,7 +771,7 @@ d_0+2\left( r_c+r_s \right) \le \frac{L}{\sqrt{2}},
 $$
 否则，两集群团间不存在耦合(圆$C$与圆$B$无重叠面积), $\lambda _{c4}$无解.
 
-\subsection{稳定性分析}
+\subsection{稳定性分析 (意义待定)}
 由于环态的对称性,不妨考虑如下两振子的动力学方程
 
 \begin{equation}\label{eq:l1.1}
@@ -575,432 +851,126 @@ $$
 
 由于系统(\ref{eq:l1.2})的特征值均为实数, 且$\lambda _2,4<0$, $\lambda _1,3>0$, $\lambda _6=0$(来自环态的旋转不变性), $\lambda _1$符号不定, 因此系统(\ref{eq:l1.2})的不动点解是鞍点. 
 
+\subsection{同异手性振子间的相互作用}
 
-\newpage
-\subsection{序参量 Order Parameter}
+在环态中，两种手性的振子通过相位耦合展现出空间上的吸引-排斥机制.具体而言，相同手性的手性振子的运动轨迹相互吸引，而不同手性的手性振子的运动轨迹相互排斥.考虑到环态在耦合强度$\lambda$和作用半径$d_0$较小时出现，并且，环态中振子的轨迹近似无耦合状态中的圆周运动，我们可以通过考虑振子运动轨迹的距离来分析吸引-排斥机制.
 
-\subsubsection{相位单位圆}
+根据式\ref{eq:circle}可知, 在无耦合的假设下，第$i$个振子在以$\mathbf{c}_i$为中心, $v/\omega_i$为半径的圆形轨迹上运动. 旋转中心的坐标可以通过轨迹上点的坐标的平均值来估计.
+第$i$个振子的旋转中心的横坐标为
+\begin{equation}
+    \begin{aligned}
+        C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
+        &=x_{i}^{0}\left( t_0 \right)\\
+        &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
+    \end{aligned}
+\end{equation}
+类似地，第$i$个振子的旋转中心的纵坐标为
+\begin{equation}
+    C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
+\end{equation}
+由于环的对称性，我们只考虑两个振子之间的相互作用.对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
+\begin{equation}\label{eq:distanceCenter}
+    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
+        \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
+        \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
+    \end{array}}\;.
+\end{equation}
+考虑到作用半径$d_0$很小，当发生耦合时，两个振子的坐标非常接近，即$(x_i, y_i) \approx (x_j, y_j)$.然后我们有
+\begin{equation}
+    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.
+\end{equation}
 
-由于振子数较多,为了更清晰地刻画振子相位的同步情况,绘制三维空间中的单位圆. 将单位圆等分为$M$个区间,每个区间的大小为$\frac{2\pi}{M}$,$z$轴表示单位圆上相位处于该区间的振子数,类似于分布.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_0.10.eps}
-	\vspace{-1cm}
-	\caption{无序态 ($\lambda=0.01, d_0=0.1, random seed=10$)}
-	\label{fig:fig231.1}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.020_0.30.eps}
-	\vspace{-1cm}
-	\caption{环态 ($\lambda=0.02, d_0=0.3, random seed=10$)}
-	\label{fig:fig231.2}
-\end{figure}
-
-当振子处于无序态或环态时,相位单位圆的分布如图\ref{fig:fig231.1}和图\ref{fig:fig231.2}所示. 此时,单位圆分布较为平滑,单位圆上的振子数分布较为均匀, 相位同步的程度较低.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.010_2.00.eps}
-	\vspace{-1cm}
-	\caption{集群态 ($\lambda=0.01, d_0=2, random seed=10$)}
-	\label{fig:fig231.3}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/CorrectCoupling_uniform_0.600_3.00.eps}
-	\vspace{-1cm}
-	\caption{瞬时同步态 ($\lambda=0.6, d_0=3, random seed=10$)}
-	\label{fig:fig231.4}
-\end{figure}
-
-当振子处于集群态或瞬时同步态时,相位单位圆的分布如图\ref{fig:fig231.3}和图\ref{fig:fig231.4}所示. 这两种状态的相位同步的程度较高.
-
-\newpage
-\subsubsection{振子旋转中心的坐标}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.3\textwidth]{./figs/CenterEps.pdf}
-	\vspace{-0.2cm}
-	\caption{旋转圆心示意图}
-	\label{fig:fig232.1}
-\end{figure}
-
-如图 \ref{fig:fig232.1} 所示,对于任意振子$i$, 其当前坐标为$\mathbf{X}_i\left( t_1 \right)$, 速度为$\mathbf{V}_i\left( t_1 \right)$, 下一时刻的坐标为$\mathbf{X}_i\left( t_2 \right)$, 速度为$\mathbf{V}_i\left( t_2 \right)$, 则其旋转中心坐标为两个时刻法向量所在直线的交点, 假设旋转中心坐标为$\mathbf{C}_i\left( t_1 \right)$, 则有
-
-\vspace{-0.5cm}
-
-$$
-\begin{cases}
-	\mathbf{C}_i\left( t_1 \right) \cdot \mathbf{V}_i\left( t_1 \right) =\mathbf{X}_i\left( t_1 \right) \cdot \mathbf{V}_i\left( t_1 \right) \\
-	\mathbf{C}_i\left( t_1 \right) \cdot \mathbf{V}_i\left( t_2 \right) =\mathbf{X}_i\left( t_2 \right) \cdot \mathbf{V}_i\left( t_2 \right) \\
-\end{cases}
-$$
-
-% 对于任意的振子$i$,其当前坐标为$\left( x_i,y_i \right)$,相速度为$\dot{\theta}_i$,假设从当前时刻开始,其相速度不变,即$\dot{\theta}_i$为常数,记录该振子在一个周期($2\pi$)内的运动轨迹,即$2\pi / \dot{\theta}_i$时间内,以当前坐标$\left( x_i,y_i \right)$为起点,以$\left\{ v\cos \theta _i,v\sin \theta _i \right\} $为速度,运动得到的轨迹,以轨迹上点坐标的算数平均作为该振子的旋转中心坐标,即
-
-% $$
-% \begin{cases}
-% 	\bar{x}_i=\frac{1}{2\pi / \dot{\theta}_i}\int_{0}^{2\pi / \dot{\theta}_i}{\left[ x_i+v\cos\left( \theta_i + \dot{\theta}_i \cdot t \right)\right] dt}\\
-% 	\bar{y}_i=\frac{1}{2\pi / \dot{\theta}_i}\int_{0}^{2\pi / \dot{\theta}_i}{\left[ x_i+v\sin\left( \theta_i + \dot{\theta}_i \cdot t \right)\right] dt}\\
-% \end{cases}
-% $$
-
-求解上述方程组,可以得到每个振子的旋转中心坐标,如下图\ref{fig:fig232.2}:% \ref{fig:fig2}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{./figs/centorsBigGraph_sub.png}
-	\vspace{-0.2cm}
-	\caption{旋转中心求解结果示例}
-	\label{fig:fig232.2}
-\end{figure}
-
-上图中,带有箭头的半透明色点表示振子,光滑实心色点表示振子的旋转中心,其中,橙色点为正手性振子(半透明红色箭头)的旋转中心,蓝色点为负手性振子(半透明蓝色箭头)的旋转中心. 从图中可以看出,形成清晰的环态后,环上振子的旋转中心较为集中,说明同一环上振子的运动规律较为接近,且近似圆周运动.
-
-
-
-\subsubsection{基于调整耦合距离的聚类算法}\label{clustering}
-
-考虑到振子在形成环态或集群态时,会形成多个环或集群,因此可以对振子进行聚类从而计算各环或群的局部序参量. 由于环在欧氏空间中的分布较为特殊（中空,环与环相邻）,因此改为对振子的旋转中心进行聚类. 此外,周期性边界条件会导致振子的旋转中心跨边界,这里采样式\ref{eq:eq1}对旋转中心坐标进行调整.
-
-\begin{algorithm}
-	\SetKw{in}{in}
-	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-	\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
-	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-
-	\BlankLine
-	\KwData{A set $S=\left\{(\bar{x}_i, \bar{y}_i)\right\}$ of particles' circular center coordinates}
-	\KwIn{cluster distance $d_{th}$}
-	\KwResult{A cluster set $C=\left\{
-		\left\{ 1 \right\}
-	 \right\}$}
-	% \BlankLine
-	\emph{$C$ $\leftarrow$ $\left\{(\bar{x}_1, \bar{y}_1)\right\}$}\;
-	\For{$i\leftarrow 2$ \KwTo $N$}{\label{forins}
-		\For{class set $C_k$ \in $C$}{
-			\For{$j$ \in $C_k$}{
-				\If(\tcp*[f]{belong to $C_k$}){$\bar{d}_{ij} < d_{th}$}{
-					$C_j \leftarrow C_j \cup \left\{i\right\}$\;
-					go to line \ref{forins}\;
-				}
-			}
-		}
-		$C \leftarrow C \cup \left\{\left\{i\right\}\right\}$; \tcp*[f]{create new class}
-	}
-	\caption{Clustering algorithm based on adjusted distance}\label{algo_disjdecomp}
-\end{algorithm}\DecMargin{1em}
-
-取$d_{th}=1, \lambda=0.02, d_0=0.4, random seed=80$并对模型终态执行算法,可得到如下图\ref{fig:fig233.1}所示的聚类结果. 对比左侧子图与右侧子图,可以发现,算法可以较好地将多个环分开.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/ClusteringResult.png}
-	\vspace{-0.4cm}
-	\caption{聚类结果 ($d_{th}=1, \lambda=0.02, d_0=0.4, random seed=80$)}
-	\label{fig:fig233.1}
-\end{figure}
-
-\subsubsection{序参量的定义与计算}
-
-为了评估截面序参量对相图的刻画能力,这里根据终态的拓扑结构绘制了主观划分的相图,以提供对比,如下图\ref{fig:fig234.1}所示. 从左至右,从上至下,分别为无序态、环态、集群态、瞬时同步态. 图\ref{fig:fig232.2}中的四种状态分别对应图\ref{fig:fig234.1}中的四个区域,对比观察可以发现,环态与集群态在空间上的聚集程度较高,而无序态与瞬时同步态在空间上分布较为均匀,聚集程度低; 此外,集群态与瞬时同步态在相位(速度方向)上的同步程度较高,而环态与无序态较低.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{./figs/subjectiveOp3.png}
-	\vspace{-0.5cm}
-	\caption{主观划分空间状态图}
-	\label{fig:fig234.1}
-\end{figure}
-\vspace{-0.5cm}
-
-\noindent\textbf{相位(速度方向)同步率(截面序参量)}
-
-$$
-r e^{i\psi}=\frac{1}{N}\sum_{j=1}^{N}{e^{i\theta _j}}
-$$
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/phaseSyncOp.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-		\vspace{-1cm}
-		\caption{主观划分空间状态图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{相位(速度方向)同步率}
-	\label{fig:fig234c.1}
-\end{figure}
-
-\vspace{-0.5cm}
-由于部分集群态存在分裂现象,因此某些集群态的全局相位同步程度较低,导致该序参量过渡不均匀,不易区分环态与集群态. 针对这个问题的改进见\ref{fig:fig234c.5}和\ref{fig:fig234c.6}
-
-% 观察图\ref{fig:fig234.2},可以发现,该序参量可以较好地将空间当中的聚集情况反映出来.左上角与右下角深色区域的振子在空间上没有形成聚集,而中间部分的振子在空间上形成了聚集.此外,集群态的序参量取值比环态的序参量取值小,这是因为集群态的旋转中心集中度较低,导致与原点距离的标准差更小.
-
-% \newpage
-% \noindent\textbf{旋转中心空间聚集程度1(截面序参量)}
-
-% 这里以振子旋转中心间的距离来刻画中心的空间聚集程度,考虑到周期性边界条件,这里采用式\ref{eq:eq1}对旋转中心坐标进行调整,然后计算所有振子旋转中心间距离的算数平均,即
-
-% $$
-% \frac{1}{N}\sum_{i=1}^N{\left( \frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}} \right)}
-% $$
-
-% 其中,$\bar{d}_{ij}$为调整后的振子$i$与振子$j$的旋转中心距离.
-
-% \begin{figure}[H]
-% 	\centering
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/centerAggOp1.png}
-% 		\vspace{-1cm}
-% 		\caption{计算结果}
-% 	\end{subfigure}
-% 	% \hfill
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-% 		\vspace{-1cm}
-% 		\caption{主观划分空间状态图}
-% 	\end{subfigure}
-% 	\vspace{-0.5cm}
-% 	\caption{旋转中心空间聚集程度1}
-% 	\vspace{-0.5cm}
-% 	\label{fig:fig234c.3}
-% \end{figure}
-
-% \noindent\textbf{旋转中心空间聚集程度2(截面序参量)}
-
-% $$
-% \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j=1}^N{\mathbf{C}_i-\bar{\mathbf{C}}_j}}{N} \right|}
-% $$
-
-% 其中,$\bar{\mathbf{C}}_j$为第$j$个振子旋转中心以第$i$个振子旋转中心为基准,根据方法\ref{positionAdj}调整后的坐标.
-
-% \begin{figure}[H]
-% 	\centering
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/centerAggOp2.png}
-% 		\vspace{-1cm}
-% 		\caption{计算结果}
-% 	\end{subfigure}
-% 	% \hfill
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-% 		\vspace{-1cm}
-% 		\caption{主观划分空间状态图}
-% 	\end{subfigure}
-% 	\vspace{-0.5cm}
-% 	\caption{旋转中心空间聚集程度2}
-% 	\label{fig:fig234c.4}
-% \end{figure}
-
-\newpage
-\noindent\textbf{聚类平均相位同步程度(截面序参量)}
-
-这里基于方法\ref{clustering}($d_{th}=1$)对振子旋转中心进行聚类,然后计算每一类(振子数不足5个的分类剔除)中振子的相位同步程度,最后取所有类的相位同步程度的算数平均,即
-
-$$\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}\left|\cfrac{1}{N_{k}}\sum_{i\in C_{k}}e^{i\theta_i}\right|$$
-
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/clusteringPhaseSync.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-		\vspace{-1cm}
-		\caption{主观划分空间状态图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{聚类平均相位同步程度}
-	\label{fig:fig234c.5}
-\end{figure}
-
-\vspace{-0.5cm}
-对比图\ref{fig:fig234c.1}可以发现,图\ref{fig:fig234c.5}能够更好地刻画环态与集群态的相位同步程度, 从而将它们区分, 但算法\ref{clustering}的计算复杂度较高,且不易区分集群态与瞬时同步态,因此做出如下改进:
-
-\noindent\textbf{旋转中心邻域内相位同步程度(截面序参量)}
-
-\vspace{-0.5cm}
-$$
-S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
-$$
-
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/limitDisPhaseSync.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-		\vspace{-1cm}
-		\caption{主观划分空间状态图}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{旋转中心邻域内相位同步程度(Two Chiralities)}
-	\label{fig:fig234c.5.1}
-\end{figure}
-
-\vspace{-0.5cm}
-这里计算各振子中心半径$d_{th}=1$的邻域内振子的相位序参量.
-对比图\ref{fig:fig234c.5}发现两序参量的刻画能力相近,此外,式\ref{weightedPhaseSync}的计算复杂度更低.
-
-% \noindent\textbf{中心距离倒数加权相位同步程度(截面序参量)}
-
-% \begin{equation}\label{weightedPhaseSync}
-% 	S = \frac{1}{N}\sum_{i=1}^N{\left| \frac{\sum\nolimits_{j\ne i}^N{e^{i\theta _j}/\bar{d}_{ij}}}{\sum\nolimits_{j\ne i}^N{1/\bar{d}_{ij}}} \right|}
-% \end{equation}
-
-% \vspace{-0.5cm}
-% \begin{figure}[H]
-% 	\centering
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/weightedPhaseSync.png}
-% 		\vspace{-1cm}
-% 		\caption{计算结果}
-		
-% 	\end{subfigure}
-% 	% \hfill
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-% 		\vspace{-1cm}
-% 		\caption{主观划分空间状态图}
-% 	\end{subfigure}
-% 	\vspace{-0.5cm}
-% 	\caption{中心距离倒数加权相位同步程度}
-% 	\label{fig:fig234c.6}
-% \end{figure}
-
-% \vspace{-0.5cm}
-% 图\ref{fig:fig234c.6}能够将四种态大致区分,但分界并不明显.
-
-% \noindent\textbf{真实半径与无耦合理论半径差异(截面序参量)}
-
-% $$
-% \frac{1}{N}\sum_{i=1}^N{\left| \frac{\left| \mathbf{X}_i-\mathbf{C}_i \right|}{r_i}-1 \right|}
-% $$
-
-
-% \vspace{-0.5cm}
-% \begin{figure}[H]
-% 	\centering
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/radiusTheryDiff.png}
-% 		\vspace{-1cm}
-% 		\caption{计算结果}
-		
-% 	\end{subfigure}
-% 	% \hfill
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-% 		\vspace{-1cm}
-% 		\caption{主观划分空间状态图}
-% 	\end{subfigure}
-% 	\vspace{-0.5cm}
-% 	\caption{真实半径与无耦合理论半径差异}
-% 	\label{fig:fig234c.9}
-% \end{figure}
-
-\newpage
-\noindent\textbf{聚类数(截面时序序参量)}
+此外，由于方程~(\ref{eq:dotthetai}) 中的耦合具有对称性，两个振荡器在耦合之后的相位将相对于没有耦合时具有一对相反的角度偏移：
+\begin{equation}
+    \begin{array}{c}
+        \hat{\theta}_i=\theta _i+\lambda \sin \left( \theta _j-\theta _i \right) T\;,\\
+        \hat{\theta}_j=\theta _j+\lambda \sin \left( \theta _i-\theta _j \right) T\;.
+    \end{array}
+\end{equation}
+让我们将 $\theta _s=\lambda \sin \left( \theta _j-\theta _i \right) T$ 设置为角度偏移，并且很明显 $\theta _s$ 满足以下条件：
+\begin{equation}\label{eq:theta_s}
+    \theta _s\in \begin{cases}
+        \left[ 0, \frac{\theta _i-\theta _j}{2} \right] ,&		\theta _j\geqslant \theta _i\\
+        \left[ \frac{\theta _i-\theta _j}{2}, 0 \right) ,&		\theta _j<\theta _i\\
+    \end{cases}
+\end{equation}
+然后我们可以得到由耦合驱动的距离 $\left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|$：
+\begin{equation}
+    \begin{aligned}\label{eq:distanceCoupling}
+        \left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|&=\sqrt{-\frac{2v^2\cos \left( \hat{\theta}_i-\hat{\theta}_j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\\
+        &=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j+2\theta _s \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.\\
+    \end{aligned}
+\end{equation}
+要比较方程~(\ref{eq:distanceCenter}) 和方程~(\ref{eq:distanceCoupling})，我们只需要比较两个方程中的余弦项。根据不等式~(\ref{eq:theta_s})，我们有
+\begin{equation}
+    \theta _i-\theta _j+2\theta _s\in \begin{cases}
+        \left[ 0, \theta _i-\theta _j \right] ,&		\theta _i-\theta _j\geqslant 0\\
+        \left[ \theta _i-\theta _j, 0 \right) ,&		\theta _i-\theta _j<0\\
+    \end{cases}\;,
+\end{equation}
+这意味着
+\begin{equation}
+    \cos \left( \theta _i-\theta _j \right) \leqslant \cos \left( \theta _i-\theta _j+2\theta _s \right)\;.
+\end{equation}
+因此，在发生耦合时，具有相同自然频率 $\omega$（手性）符号的两个振荡器的旋转中心之间的距离将减小，这意味着相同手性的振荡器相互吸引，而具有相反 $\omega$（手性）符号的中心之间的距离将增加，这意味着不同手性的振荡器相互排斥。
 
 \begin{figure}[H]
 	\centering
 	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/classNum0.1.png}
+	% 	\includegraphics[width=\textwidth]{./figs/noCoupling2particals.png}
 	% 	\vspace{-1cm}
-	% 	\caption{$d_{th}=0.1$}
+	% 	\caption{无耦合}
 	% \end{subfigure}
-	% % \hfill
-	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/classNum0.3.png}
-	% 	\vspace{-1cm}
-	% 	\caption{$d_{th}=0.3$}
-	% \end{subfigure}
-	% % 
-	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/classNum0.5.png}
-	% 	\vspace{-1cm}
-	% 	\caption{$d_{th}=0.5$}
-	% \end{subfigure}
-	% % 
-	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/classNum0.8.png}
-	% 	\vspace{-1cm}
-	% 	\caption{$d_{th}=0.8$}
-	% \end{subfigure}
-	% 
+
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/classNum1.png}
+		\includegraphics[width=\textwidth]{./figs/diffChir.png}
 		\vspace{-1cm}
-		\caption{$d_{th}=0.25$}
-	\end{subfigure}
-	% 
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-		\vspace{-1cm}
-		\caption{主观划分空间状态图}
-	\end{subfigure}
-
-	\vspace{-0.5cm}
-	\caption{聚类数}
-	\label{fig:fig234c.7}
-\end{figure}
-
-聚类数能够比较好地将无序态与环态、集群态与瞬时同步态区分开来,但在环态与集群态之间的区分能力不明显.
-
-\noindent\textbf{旋转中心邻域内中心数(截面时序序参量)}
-
-类似的,考虑到聚类算法的复杂度较高,因此这里计算各振子中心半径$d_{th}=1$的邻域内振子的数量,并取算数平均,即
-
-$$
-\frac{1}{N}\sum_{i=1}^N{\frac{H\left( d_{th}-\bar{d}_{ij} \right)}{N/2}}=\frac{2}{N^2}\sum_{i=1}^N{H\left( d_{th}-\bar{d}_{ij} \right)}
-$$
-
-\vspace{-0.5cm}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/nearbyNums.png}
-		\vspace{-1cm}
-		\caption{计算结果}
-		
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=2$)}
 	\end{subfigure}
 	% \hfill
 	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
+		\includegraphics[width=\textwidth]{./figs/sameChir.png}
 		\vspace{-1cm}
-		\caption{主观划分空间状态图}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=2$)}
 	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{旋转中心邻域内中心数}
-	\label{fig:fig234c.7.1}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/diffChirInf.png}
+		\vspace{-1cm}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=+\infty$)}
+	\end{subfigure}
+	% \hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{./figs/sameChirInf.png}
+		\vspace{-1cm}
+		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=+\infty$)}
+	\end{subfigure}
+	\caption{同异手性在相同初值条件下的演化结果($\lambda=0.5$)}
+	\label{fig:fig2.6.chir}
 \end{figure}
 
-观察上图可以发现,该序参量对四种态的刻画能力与聚类数接近,此外,在集群太内部还能够对不同的集群数进行区分,集群数越小的集群态在该序参量上的取值越大.
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/2particalDis.png}
+	\vspace{-0.5cm}
+	\caption{两振子距离的时序变化}
+	\label{fig:fig2.6.dis}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{./figs/2particalCentersDis.png}
+	\vspace{-0.5cm}
+	\caption{两振子旋转中心距离的时序变化}
+	\label{fig:fig2.6.centerDis}
+\end{figure}
 
 \newpage
-\noindent\textbf{\large 单手性模型环态的细致刻画}
+\section{单手性模型环态的细致刻画}
 
-\noindent\textbf{旋转中心邻域内相位同步程度(截面序参量)}
+\noindent\textbf{旋转中心邻域内相位同步程度}
 $$
 S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
 $$
@@ -1059,312 +1029,6 @@ $$
 % 	\item 但密度较低时,初值configuration可能影响较大.
 % \end{itemize}
 
-% \newpage
-% \noindent\textbf{聚类平均距离方差(截面序参量)}
-% $$
-% \frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_k}\sum_{i,j\in C_k,i\ne j}{\left( d_{ij}-\left< d_{ij} \right> \right) ^2} \right]}
-% $$
-% \vspace{-0.5cm}
-% \begin{figure}[H]
-% 	\centering
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/classVarDis0.1.png}
-% 		\vspace{-1cm}
-% 		\caption{$d_{th}=0.1$}
-		
-% 	\end{subfigure}
-% 	% \hfill
-% 	% \begin{subfigure}[b]{0.49\textwidth}
-% 	% 	\includegraphics[width=\textwidth]{./figs/classVarDis0.3.png}
-% 	% 	\vspace{-1cm}
-% 	% 	\caption{$d_{th}=0.3$}
-% 	% \end{subfigure}
-% 	% 
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/classVarDis0.5.png}
-% 		\vspace{-1cm}
-% 		\caption{$d_{th}=0.5$}
-% 	\end{subfigure}
-% 	% 
-% 	% \begin{subfigure}[b]{0.49\textwidth}
-% 	% 	\includegraphics[width=\textwidth]{./figs/classVarDis0.8.png}
-% 	% 	\vspace{-1cm}
-% 	% 	\caption{$d_{th}=0.8$}
-% 	% \end{subfigure}
-% 	% 
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/classVarDis1.png}
-% 		\vspace{-1cm}
-% 		\caption{$d_{th}=1$}
-% 	\end{subfigure}
-% 	% 
-% 	\begin{subfigure}[b]{0.49\textwidth}
-% 		\includegraphics[width=\textwidth]{./figs/subjectiveOp3.png}
-% 		\vspace{-1cm}
-% 		\caption{主观划分空间状态图}
-% 	\end{subfigure}
-
-% 	\vspace{-0.5cm}
-% 	\caption{聚类平均距离方差}
-% 	\label{fig:fig234c.8}
-% \end{figure}
-
-\newpage
-\noindent\textbf{旋转中心空间分布(时序序参量)}
-
-考虑到振子在二维平面上运动,因此该序参量分为$x$坐标和$y$坐标两个分量,将各振子旋转中心坐标以散点图形式分别绘制得到图下图像：
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{./figs/totalXY.png}
-	\caption{旋转中心空间分布}
-	\label{fig:fig234t.1}
-\end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心邻域内相位同步程度(各振子/时序序参量)}
-
-% $$S_{i}=\left|\frac{1}{N_{i}}\sum_{j\in C_{i}}e^{i\theta_{j}}\right|,C_{i}=\{j|\bar{d}_{ij}\leq d_{th}\}$$
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/limitDisPhaseSync_ts.png}
-% 	\caption{旋转中心邻域内相位同步程度(各振子)}
-% 	\label{fig:fig234t.2}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心邻域内相位同步程度(算数平均/时序序参量)}
-
-% $$
-% S=\frac{1}{N}\sum_{i=1}^N{\left| \frac{1}{N_i}\sum_{j\in C_i}{e^{i\theta _j}} \right|}, C_i=\left\{ j|\bar{d}_{ij}\le d_{th} \right\} 
-% $$
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/limitDisPhaseSyncOp_ts.png}
-% 	\caption{旋转中心邻域内相位同步程度(算数平均)}
-% 	\label{fig:fig234t.3}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{聚类数(时序序参量)}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/classCountsOp.png}
-% 	\caption{聚类数}
-% 	\label{fig:fig234t.4}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心邻域内中心数(各振子/时序序参量)}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/centerNearbyCounts.png}
-% 	\caption{旋转中心邻域内中心数(各振子)}
-% 	\label{fig:fig234t.4.1}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心邻域内中心数(算术平均/时序序参量)}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/centerNearbyCountsOp.png}
-% 	\caption{旋转中心邻域内中心数(算术平均)}
-% 	\label{fig:fig234t.4.2}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心空间聚集程度1(时序序参量)}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp1_ts.png}
-% 	\vspace{-0.5cm}
-% 	\caption{旋转中心空间聚集程度1}
-% 	\label{fig:fig234t.4}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心空间聚集程度2(时序序参量)}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/centerAggOp2_ts.png}
-% 	\vspace{-0.5cm}
-% 	\caption{旋转中心空间聚集程度2}
-% 	\label{fig:fig234t.5}
-% \end{figure}
-
-% \newpage
-% \noindent\textbf{旋转中心平均距离分布(时序序参量)}
-
-% 将各振子旋转中心与其余旋转中心的距离求平均,得到旋转中心平均距离分布,如下图所示：
-
-% $$
-% \bar{D}_i=\frac{1}{N}\sum_{j=1}^N{\bar{d}_{ij}}
-% $$
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=0.9\textwidth]{./figs/centerAgg1_ts.png}
-% 	\vspace{-0.5cm}
-% 	\caption{旋转中心平均距离分布}
-% 	\label{fig:fig234t.6}
-% \end{figure}
-
-% \newpage
-
-% \section{附录}\label{sec:appendix}
-
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{./figs/centorsBigGraph.png}
-% 	\caption{旋转中心}
-% 	\label{fig:fig2}
-% \end{figure}
-
-% \title{Swarm dynamics for oscillators with Phase Orientation Correlation}
-% \maketitle
-
-% \section{Introduction}
-
-% \section{Results}
-% \subsection{The Model}
-% \subsection{Numerics}
-% \subsection{Theoretical Analysis}
-
-\newpage
-\subsection{集群行为对同步的影响}
-
-集群行为的讨论既要分析各种不同的空间集群态,也应研究对同步的影响. 除了计算系统序参量以外,要计算振子之间的锁相.
-
-定义平均频率差
-
-$$
-\begin{aligned}
-	\Delta \Omega _1&=\overline{\left( \left< \dot{\theta}_i \right> -\bar{\Omega} \right) ^2}\\
-	\Delta \Omega _2&=\frac{1}{N^2}\sum_{i,j=1}^N{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2}\\
-\end{aligned}
-$$
-
-其中,$\left< \cdot \right>$为长时平均,$\overline{\,\,\cdot \,\,}$为系统平均. $\bar{A}=\frac{1}{N^2}\sum\nolimits_i^{}{A_i}$, $\left< A \right> =\lim_{T\rightarrow \infty} \frac{1}{T}\int_{t_0}^{t_0+T}{A\left( t \right) dt}$
-
-$ $
-
-\noindent\textbf{全局平均频率差}
-
-这里取$t_0=500$ (50000次迭代, $\mathrm{d}t=0.01$), $T=100$ (10000次迭代, $shotsnaps=5$, 2000个样本点)进行计算.
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/deltaOmega1.png}
-		\vspace{-1cm}
-		\caption{$\Delta \Omega _1$}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/deltaOmega2.png}
-		\vspace{-1cm}
-		\caption{$\Delta \Omega _2$}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{全局平均频率差}
-	\label{fig:fig2.5.global}
-\end{figure}
-
-观察图\ref{fig:fig2.5.global}可以发现,$\Delta \Omega _1$与$\Delta \Omega _2$的取值分布基本一致,并且都在瞬时同步态与集群态之间有明显的差异. 处于瞬时同步态或单集群的集群态时,系统发生整体锁相,$\Delta\Omega_1$与$\Delta\Omega_2$趋于0. 考虑到集群态在各个集群内部的同步程度较高,因此下面对集群的平均频率差进行讨论.
-
-\newpage
-\noindent\textbf{聚类平均频率差}
-
-除了对全局平均频率差的讨论,还可以对各个集群的平均频率差进行讨论. 这里对集群的定义采用方法\ref{clustering}($d_{th}=0.3$)进行聚类,然后计算每一类(振子数不足5个的分类剔除)中振子的平均频率差,最后取所有类的平均频率差的算数平均.
-
-$$
-\begin{array}{l}
-	\Delta \Omega _{1}^{*}=\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\overline{\left( \left< \dot{\theta}_i \right> -\bar{\Omega} \right) ^2}}\\
-	\Delta \Omega _{2}^{*}=\frac{1}{N_{class}}\sum_{k=1}^{N_{class}}{\left[ \frac{1}{N_{k}^{2}}\sum_{i,j=1}^{N_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}\\
-\end{array}
-$$
-
-其中,$N_{class}$为集群数,$N_k$为第$k$个集群的振子数. $\overline{\,\,\cdot \,\,}$为集群内平均, 即$\bar{x}=\frac{1}{N_k}\sum_{i\in C_k}{x_i}$
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/clusterDeltaOmega1.png}
-		\vspace{-1cm}
-		\caption{$\Delta \Omega _{1}^{*}$}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/clusterDeltaOmega2.png}
-		\vspace{-1cm}
-		\caption{$\Delta \Omega _{2}^{*}$}
-	\end{subfigure}
-	\vspace{-0.5cm}
-	\caption{聚类平均频率差}
-	\label{fig:fig2.5.cluster}
-\end{figure}
-
-\subsection{同异手性振子间的相互作用}
-
-\begin{figure}[H]
-	\centering
-	% \begin{subfigure}[b]{0.49\textwidth}
-	% 	\includegraphics[width=\textwidth]{./figs/noCoupling2particals.png}
-	% 	\vspace{-1cm}
-	% 	\caption{无耦合}
-	% \end{subfigure}
-
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/diffChir.png}
-		\vspace{-1cm}
-		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=2$)}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/sameChir.png}
-		\vspace{-1cm}
-		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=2$)}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/diffChirInf.png}
-		\vspace{-1cm}
-		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=+\infty$)}
-	\end{subfigure}
-	% \hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\includegraphics[width=\textwidth]{./figs/sameChirInf.png}
-		\vspace{-1cm}
-		\caption{$\omega_1 \cdot \omega_2 < 0$ ($d_0=+\infty$)}
-	\end{subfigure}
-	\caption{同异手性在相同初值条件下的演化结果($\lambda=0.5$)}
-	\label{fig:fig2.6.chir}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/2particalDis.png}
-	\vspace{-0.5cm}
-	\caption{两振子距离的时序变化}
-	\label{fig:fig2.6.dis}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/2particalCentersDis.png}
-	\vspace{-0.5cm}
-	\caption{两振子旋转中心距离的时序变化}
-	\label{fig:fig2.6.centerDis}
-\end{figure}
 
 
 \end{document}
