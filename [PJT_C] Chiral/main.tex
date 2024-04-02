@@ -23,10 +23,12 @@
 \usepackage{mathptmx}
 \usepackage{etoolbox}
 \usepackage{hyperref}
-\usepackage{amsthm}
 \usepackage{float}
 \usepackage{svg}
 
+
+
+\newenvironment{proof}{\noindent\textbf{Proof.}}{\hfill $\square$\par}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -363,8 +365,8 @@ The order parameter values in each state are summarized in Table \ref{tab:orderP
 In this section we derive the analytical approximations of the boundaries between the states. 
 The boundaries between the states are determined by the critical lines $\lambda_{c1}$, $\lambda_{c2}$, $\lambda_{c3}$, and $\lambda_{c4}$, which are the critical values of $\lambda$ for the transitions between the states with given $d_0$.
 
-\subsubsection{$\lambda_{c1}$: Disorder to Ring}
-
+\vspace{0.25cm}
+\noindent\textbf{$\lambda_{c1}$: Disorder to Ring.}
 We first consider the transition between the Disorder and Ring states. The oscillators in both states move in a circular trajectory (cf. Fig.~\ref{fig:disorderState}b), and the difference between them is that the oscillators in the Ring state are phase-locked.
 Therefore, oscillators in Disorder state have a very small probability of being randomly distributed on the ring, but without phase locking.
 The critical coupling strength $\lambda_{c1}$ can be calculated as the critical value of $\lambda$ for the phase locking of oscillators on the same ring.
@@ -388,7 +390,7 @@ where $\sum\nolimits_{j=2}^{N_c}{A_{1j}}$ is the number of oscillators within th
 \begin{equation}
     N_1\left( d_0 \right) =N_c\frac{S_1\left( d_0 \right)}{S_R}=\frac{N_cS_1\left( d_0 \right)}{\pi \left( r_{\max}^{2}-r_{\min}^{2} \right)}\;,
 \end{equation}
-where $S_1$ is the overlapping area of the action scope of the $1$st oscillator and the ring, $S_R$ is the area of the ring, and $r_{\max}=v/\omega_{\min}$ and $r_{\min}=v/\omega_{\max}$ are the outer and inner radius of the ring, respectively. In order to achieve phase locking of all oscillators on the ring, we need to consider the minimum value of $N_1\left( d_0\right)$. As shown in Fig.~\ref{fig:analyticalEps}a, the $1$st oscillator is at point $A$ which is on the outer edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_1\left( d_0 \right)$.  Elementary geometry gives 
+where $S_1$ is the overlapping area of the action scope of the $1$st oscillator and the ring, $S_R$ is the area of the ring, $N_c$ is the number of oscillators in the ring and $r_{\max}=v/\omega_{\min}$, $r_{\min}=v/\omega_{\max}$ are the outer, inner radius of the ring, respectively. In order to achieve phase locking of all oscillators on the ring, we need to consider the minimum value of $N_1\left( d_0\right)$. As shown in Fig.~\ref{fig:analyticalEps}a, the $1$st oscillator is at point $A$ which is on the outer edge of the ring, and the overlapping area of the yellow circle (action scope) and the red ring is $S_1\left( d_0 \right)$.  Elementary geometry gives 
 \begin{equation}\label{eq:S1}
     \begin{cases}
         S_1\left( d_0 \right) =d_{0}^{2}\frac{\alpha}{2}+r_{\max}^{2}\frac{\beta}{2}-r_{\max}d_0\sin \frac{\alpha}{2}\\
@@ -404,11 +406,14 @@ where $\alpha$ and $\beta$ are the angles of sectors from two overlapping circle
         \alpha =\pi -\frac{\beta}{2}\\
     \end{cases}\;.
 \end{equation}
-Then we can calculate the critical line $\lambda_{c1}$ in the $(\lambda$-$d_0)$ plane with $N_c=250$ (Ring state first appears as four rings, more details in Subsection \ref{sec:numRings}), as shown in Fig.~\ref{fig:orderParam}c, where the line accurately divides the phase-locked and non-phase-locked regions.
+Then we can calculate the critical line $\lambda_{c1}$ in the $(\lambda$-$d_0)$ plane with $N_c=250$ ($1/4$ of the total population $N=1000$), as shown in Fig.~\ref{fig:orderParam}c, where the line accurately divides the phase-locked and non-phase-locked regions, which is the critical line of the transition between the Disorder and Ring states. Here we set the number of oscillators in a ring $N_c=N/4$ because the maximum number of rings that a $L\times L$ box can accommodate is approximately
+\begin{equation}
+    \frac{L^2}{\pi r_{\max}^{2}}=3.54\;,
+\end{equation}
+which is $4$ after rounding.
 
-\subsubsection{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters)}
-
-According to $R_s$ in Fig.~\ref{fig:orderParam}b, the oscillators in the cluster are synchronized, and the oscillators with different chirality are not synchronized. Therefore, $\lambda_{c2}$ is the critical value of $\lambda$ for the synchronization of oscillators in the same cluster. We still consider the synchronous dynamics in Eq.~(\ref{eq:dotTheta1}) and (\ref{eq:dotThetaj}). To achieve synchronization, the oscillators with the largest phase difference (maximum $\left| \Delta \omega _j \right|$) in the cluster need to be phase locked. The maximum $\left| \Delta \omega _j \right|$ in a cluster is $\left| \Delta \omega _j \right|=\omega _{\max}-\omega _{\min}$. Thus, the critical coupling strength $\lambda_{c2}$ is:
+\vspace{0.25cm}
+\noindent\textbf{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters).} According to $R_s$ in Fig.~\ref{fig:orderParam}b, the oscillators in the cluster are synchronized, and the oscillators with different chirality are not synchronized. Therefore, $\lambda_{c2}$ is the critical value of $\lambda$ for the synchronization of oscillators in the same cluster. We still consider the synchronous dynamics in Eq.~(\ref{eq:dotTheta1}) and (\ref{eq:dotThetaj}). To achieve synchronization, the oscillators with the largest phase difference (maximum $\left| \Delta \omega _j \right|$) in the cluster need to be phase locked. The maximum $\left| \Delta \omega _j \right|$ in a cluster is $\left| \Delta \omega _j \right|=\omega _{\max}-\omega _{\min}$. Thus, the critical coupling strength $\lambda_{c2}$ is:
 \begin{equation}
     \lambda _{c2}=\frac{\omega _{\max}-\omega _{\min}}{\sum\nolimits_{j=2}^{N_s}{A_{1j}}}\;,
 \end{equation}
@@ -437,8 +442,8 @@ Therefore, we have
 \end{equation}
 Then we can calculate the critical line $\lambda_{c2}$ in the $(\lambda$-$d_0)$ plane with $N_s=500$ (each chirality has half of the total population $N=1000$), as shown in Fig.~\ref{fig:orderParam}b, where the line divides whether local synchronization occurred.
 
-\subsubsection{$\lambda_{c3}$: Multi-Clusters to Double-Clusters}
-
+\vspace{0.25cm}
+\noindent\textbf{$\lambda_{c3}$: Multi-Clusters to Double-Clusters.} 
 The derivation of $\lambda_{c3}$ is similar to that of $\lambda_{c2}$, but the difference is that the centers of oscillators in the Swarm (Double-Clusters) state converge quickly (cf Fig.~\ref{fig:centersPosition}b), which means oscillators do not require a long transient to form clusters. We consider that the oscillator density $\rho$ (Number of oscillators per unit area) under initial conditions can achieve synchronization of oscillators of the same chirality. $\rho$ can be calculated as 
 \begin{equation}
     \rho =\frac{N}{L^2}\;.
@@ -453,7 +458,8 @@ The critical coupling strength $\lambda_{c3}$ is:
 \end{equation}
 Similarly, we can calculate the critical line $\lambda_{c3}$ in the $(\lambda$-$d_0)$ plane, as shown in Fig.~\ref{fig:orderParam}b, where the values of region above the line (Double-Clusters) is closer to $1$ than below the line (Multi-Clusters).
 
-\subsubsection{$\lambda_{c4}$: Swarm (Double-Clusters) to Quick Sync}
+\vspace{0.25cm}
+\noindent\textbf{$\lambda_{c4}$: Swarm (Double-Clusters) to Quick Sync.}
 The Quick Sync state can be considered as a special case of the Swarm state where the oscillators are globally synchronized. Our derivation approach comes from adiabatic parameter tuning (see Appendix \ref{sec:Adiabatic}). We assume that the oscillators of two chiralities have been synchronized in the Swarm (Double-Clusters) state, as is shown in Fig.~\ref{fig:analyticalEps}c. Next, we consider the synchronization of the two chiralities. According to Eq.~(\ref{eq:clusterState2}), two clusters with opposite chirality are moving on their respective circular trajectories with the same rotational radius
 \begin{equation}
     r_c = \cfrac{2v}{\omega_{\max}+\omega_{\min}}\;.
@@ -493,7 +499,16 @@ Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ 
 
 \subsection{Repulsion-attraction mechanism}
 
-In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of chiral oscillators of the same chirality are attracted to each other, while the motion trajectories of chiral oscillators of different chirality repel each other. Considering that the ring state occurs when the coupling strength $\lambda$ and the action radius $d_0$ are small and the trajectories of the oscillators in the Ring state are almost circular under uncoupled conditions, we can analyze the repulsion-attraction mechanism by considering the motion trajectories of the oscillators.
+\begin{figure}[b]
+    \includegraphics[width=0.48\textwidth]{./figs/2OsCenterDistance.pdf}
+    \caption{
+        \label{fig:2OsCenterDistance} The distance between the centers of two oscillators ($\lambda=4$). 
+        \textbf{(a)}, The distance between the centers of two oscillators with the different chirality. The dashed line is the theoretical maximum distance of Eq~(\ref{eq:maxDistance}).
+        \textbf{(b)}, The distance between the centers of two oscillators with the same chirality.
+    }
+\end{figure}
+
+In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of chiral oscillators of the same chirality are attracted to each other, while the motion trajectories of chiral oscillators of different chirality repel each other (cf. Fig.~\ref{fig:centersPosition}). Considering that the ring state occurs when the coupling strength $\lambda$ and the action radius $d_0$ are small and the trajectories of the oscillators in the Ring state are almost circular under uncoupled conditions, we can analyze the repulsion-attraction mechanism by considering the centers of oscillators' motion trajectories.
 
 Under the assumption of no coupling, the $i$th oscillator moves on a circular trajectory with $\mathbf{c}_i$ as the center and $v/\omega_i$ as radius, according to Eq.~(\ref{eq:circlemotionx}).
 The coordinates of the rotation center can be estimated as the mean coordinates of points on the trajectory.
@@ -505,7 +520,7 @@ the horizontal ordinate of the $i$th oscillator's rotation center is
         &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
     \end{aligned}
 \end{equation}
-Similarly, the vertical ordinate of the $i$th oscillator's rotation center is
+Similarly, the vertical ordinate of the rotation center is
 \begin{equation}
     C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
 \end{equation}
@@ -552,11 +567,30 @@ which means
 \begin{equation}
     \cos \left( \theta _i-\theta _j \right) \leqslant \cos \left( \theta _i-\theta _j+2\theta _s \right)\;.
 \end{equation}
+
 Therefore, when the coupling occurs, the distance between the rotation centers of two oscillators with the same signs of natural frequency $\omega$ (chirality) will decrease, which means the oscillators of the same chirality are attracted to each other, while the distance between the centers with opposite signs of $\omega$ (chirality) will increase, which means the oscillators of different chirality repel each other.
 
-\subsection{Number of Rings \label{sec:numRings}}
+Affected by this repulsive force, the distance between the centers of oscillators with different chiralities will repel each other to a maximum distance. It's not difficult to imagine that the farthest distance is the distance where two oscillators happen to be unable to couple, which is 
+\begin{equation}\label{eq:maxDistance}
+    d_0+v/\left| \omega _1 \right|+v/\left| \omega _2 \right|\;.
+\end{equation}
+Moreover, the distance between the centers of oscillators with the same chirality will be attracted to each other to a minimum distance of $0$. In this case, the radius of action cannot be too large to avoid two oscillators locking phase, otherwise the centers will not be able to reach $0$.
+In Fig.~\ref{fig:2OsCenterDistance}, we show the distance between the centers of two oscillators with same or different chirality. They eventually converged to their theoretical maximum or minimum values.
 
 \section{\label{sec:conclusions}CONCLUSIONS}
+
+In summary, we have studied the collective dynamics of a system of coupled oscillators with diverse topologies. 
+Most previous work on collective behavior directly defined the interaction forces between oscillators in space. Our research has introduced a simple model that couples the oscillators in phase space and the govering equations of space only indirectly affect the phase coupling. We found that even this simple model can exhibit rich collective dynamics.
+We have identified five distinct states: Disorder, Ring, Swarm (which can be further divided into Multi-Clusters and Double-Clusters), and Quick Sync. 
+We have shown that the transitions between these states are driven by the coupling strength $\lambda$ and the action radius $d_0$. 
+To distinguish these states, we have introduced three order parameters according to the collective behavior of the system: $R$ for the global synchronization of the system, $R_s$ for the synchronization of oscillators within the cluster and $\Delta\Omega$ for the phase-locking of oscillators on the same ring.
+Furthermore, We have derived the analytical approximations of the critical boundaries between the states, which are found to be in good agreement with the numerical results and order parameters. Based on this, we constructed the phase diagram of the system in the $(\lambda$-$d_0)$ plane.
+We have also shown and theoretically explained that the oscillators in the Ring state emerge a spatial repulsion-attraction mechanism driven by phase coupling, which is not clearly observed from the definition of the system.
+Our results provide insights into the collective dynamics of coupled oscillators on a ring topology and may have implications for the design of self-organizing systems.
+
+\section{ACKNOWLEDGMENTS}
+
+This work is supported by the XXX
 
 \appendix
 
@@ -605,7 +639,7 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a densit
 
 We traverse all values between $0.15$ and $0.5$ with a step length of $0.05$, and for each value of $\varepsilon$, we calculate the number of clusters of Swarm state with $m=5$ (which is $0.5\%$ of the population $N=1000$ of the system). Then we record the minimum counts of clusters in total states. 
 
-\begin{figure}[H]
+\begin{figure}
     \includegraphics[width=0.48\textwidth]{./figs/DBSCANparam.pdf}
     \caption{
         \label{fig:DBSCANparam} The minimum counts of clusters with $m=0$ and different $\varepsilon$. The number of clusters is calculated by DBSCAN algorithm. 
@@ -629,13 +663,14 @@ As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to
 In this section, we prove the maximum radius of cluster in the Swarm state is $r_c$, which is the radius of its rotation trajectory. We prove this by contradiction.
 
 \begin{proof}
-    We assume that the maximum radius of the cluster is $r_s>r_c$. Then we have the case that the cluster's rotation center is inside the cluster circle with radius $r_s$. 
-    Fig.~\ref{fig:rsProofEps} shows the schematic plot of this case. $A$ and $B$ is the center of the cluster and trajectory circle, respectively. The cluster circle is divided into two parts by $B$: red solid and red // hatching. In order to enable clusters to move along trajectories, the oscillators in two parts must have contrary phase velocities. This contradicts the fact that the oscillators in the cluster are synchronized. Therefore, the maximum radius of the cluster is $r_c$.
+    We assume that the maximum radius of the cluster is $r_s>r_c$. Then we have the case that the center of cluster's rotation trajectory is inside the cluster circle with radius $r_s$. 
+    Fig.~\ref{fig:rsProofEps} shows the schematic plot of this case. $A$ and $B$ 
+    are the centers of the cluster and trajectory circle, respectively. The cluster circle is divided into two parts by $B$: red solid and red // hatching. In order to enable cluster to move along the trajectory, the oscillators in two parts must have contrary phase velocities. This contradicts the fact that the oscillators in the cluster are synchronized. Therefore, the maximum radius of the cluster is $r_c$.
 
     \begin{figure}
         \includegraphics[width=0.25\textwidth]{./figs/rsProofEps.pdf}
         \caption{
-            \label{fig:rsProofEps} The schematic plot of the proof of the maximum radius of clusters.
+            \label{fig:rsProofEps} The schematic plot of $r_s>r_c$.
         }
     \end{figure}
 
