@@ -855,64 +855,114 @@ $$
 
 在环态中，两种手性的振子通过相位耦合展现出空间上的吸引-排斥机制.具体而言，相同手性的手性振子的运动轨迹相互吸引，而不同手性的手性振子的运动轨迹相互排斥.考虑到环态在耦合强度$\lambda$和作用半径$d_0$较小时出现，并且，环态中振子的轨迹近似无耦合状态中的圆周运动，我们可以通过考虑振子运动轨迹的距离来分析吸引-排斥机制.
 
-根据式\ref{eq:circle}可知, 在无耦合的假设下，第$i$个振子在以$\mathbf{c}_i$为中心, $v/\omega_i$为半径的圆形轨迹上运动. 旋转中心的坐标可以通过轨迹上点的坐标的平均值来估计.
-第$i$个振子的旋转中心的横坐标为
-\begin{equation}
-    \begin{aligned}
-        C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
-        &=x_{i}^{0}\left( t_0 \right)\\
-        &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
-    \end{aligned}
-\end{equation}
-类似地，第$i$个振子的旋转中心的纵坐标为
-\begin{equation}
-    C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
-\end{equation}
-由于环的对称性，我们只考虑两个振子之间的相互作用.对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
-\begin{equation}\label{eq:distanceCenter}
-    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
-        \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
-        \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
-    \end{array}}\;.
-\end{equation}
-考虑到作用半径$d_0$很小，当发生耦合时，两个振子的坐标非常接近，即$(x_i, y_i) \approx (x_j, y_j)$.然后我们有
-\begin{equation}
-    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.
-\end{equation}
+设置振子的运动速度$\mathbf{r}=\dot{\mathbf{r}}=\left( \dot{x}, \dot{y} \right)$, 考虑$t$与$t+\mathrm{d}t(\mathrm{d}t\rightarrow0)$时刻, 在每一时刻，振子的位置$\mathbf{r}=(xm=, y)$和转动中心$\mathbf{c}=(X, Y)$的连线垂直于速度方向，于是有
 
-此外，由于方程~(\ref{eq:dotthetai}) 中的耦合具有对称性，两个振荡器在耦合之后的相位将相对于没有耦合时具有一对相反的角度偏移：
-\begin{equation}
-    \begin{array}{c}
-        \hat{\theta}_i=\theta _i+\lambda \sin \left( \theta _j-\theta _i \right) T\;,\\
-        \hat{\theta}_j=\theta _j+\lambda \sin \left( \theta _i-\theta _j \right) T\;.
-    \end{array}
-\end{equation}
-让我们将 $\theta _s=\lambda \sin \left( \theta _j-\theta _i \right) T$ 设置为角度偏移，并且很明显 $\theta _s$ 满足以下条件：
-\begin{equation}\label{eq:theta_s}
-    \theta _s\in \begin{cases}
-        \left[ 0, \frac{\theta _i-\theta _j}{2} \right] ,&		\theta _j\geqslant \theta _i\\
-        \left[ \frac{\theta _i-\theta _j}{2}, 0 \right) ,&		\theta _j<\theta _i\\
-    \end{cases}
-\end{equation}
-然后我们可以得到由耦合驱动的距离 $\left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|$：
-\begin{equation}
-    \begin{aligned}\label{eq:distanceCoupling}
-        \left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|&=\sqrt{-\frac{2v^2\cos \left( \hat{\theta}_i-\hat{\theta}_j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\\
-        &=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j+2\theta _s \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.\\
-    \end{aligned}
-\end{equation}
-要比较方程~(\ref{eq:distanceCenter}) 和方程~(\ref{eq:distanceCoupling})，我们只需要比较两个方程中的余弦项。根据不等式~(\ref{eq:theta_s})，我们有
-\begin{equation}
-    \theta _i-\theta _j+2\theta _s\in \begin{cases}
-        \left[ 0, \theta _i-\theta _j \right] ,&		\theta _i-\theta _j\geqslant 0\\
-        \left[ \theta _i-\theta _j, 0 \right) ,&		\theta _i-\theta _j<0\\
-    \end{cases}\;,
-\end{equation}
-这意味着
-\begin{equation}
-    \cos \left( \theta _i-\theta _j \right) \leqslant \cos \left( \theta _i-\theta _j+2\theta _s \right)\;.
-\end{equation}
-因此，在发生耦合时，具有相同自然频率 $\omega$（手性）符号的两个振荡器的旋转中心之间的距离将减小，这意味着相同手性的振荡器相互吸引，而具有相反 $\omega$（手性）符号的中心之间的距离将增加，这意味着不同手性的振荡器相互排斥。
+$$
+\begin{array}{l}
+	\mathbf{v}\left( t \right) \cdot \left[ \mathbf{r}\left( t \right) -\mathbf{R} \right] =0\\
+	\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \left[ \mathbf{r}\left( t+\mathrm{d}t \right) -\mathbf{R} \right] =0\\
+\end{array}
+$$
+
+从而有
+
+$$
+\begin{aligned}
+	\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \mathbf{r}\left( t+\mathrm{d}t \right) &=\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \mathbf{R}\\
+	\left[ \mathbf{v}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \mathrm{d}t \right] \cdot \left[ \mathbf{r}\left( t \right) +\dot{\mathbf{r}}\left( t \right) \mathrm{d}t \right] &=\left[ \mathbf{v}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \mathrm{d}t \right] \cdot \mathbf{R}\\
+	\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) +\left[ \mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) \right] \mathrm{d}t+\dot{\mathbf{v}}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) \mathrm{d}t^2&=\mathbf{v}\left( t \right) \cdot \mathbf{R}+\dot{\mathbf{v}}\left( t \right) \mathrm{d}t\cdot \mathbf{R}\\
+	\mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) &=\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{R}\\
+\end{aligned}
+$$
+
+设$P=\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right)$, 则$\dot{P}=\mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) 
+$, 连列方程组
+
+$$
+\begin{cases}
+	P=\dot{x}X+\dot{y}Y\\
+	\dot{P}=\ddot{x}X+\ddot{y}Y\\
+\end{cases}
+$$
+
+解得
+
+$$
+\begin{cases}
+	X=\frac{P\ddot{y}-\dot{P}\dot{y}}{\dot{x}\ddot{y}-\ddot{x}\dot{y}}\\
+	Y=\frac{\dot{P}\dot{x}-P\ddot{x}}{\dot{x}\ddot{y}-\ddot{x}\dot{y}}\\
+\end{cases}
+$$
+
+其中，
+
+$$
+\begin{array}{l}
+	P=\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) =\dot{x}x+\dot{y}y=\frac{1}{2}\cdot \frac{\mathrm{d}\left( r^2 \right)}{\mathrm{d}t}\\
+	\dot{P}=\ddot{x}x+\left( \dot{x} \right) ^2+\ddot{y}y+\left( \dot{y} \right) ^2\\
+\end{array}
+$$
+
+
+
+% 根据式\ref{eq:circle}可知, 在无耦合的假设下，第$i$个振子在以$\mathbf{c}_i$为中心, $v/\omega_i$为半径的圆形轨迹上运动. 旋转中心的坐标可以通过轨迹上点的坐标的平均值来估计.
+% 第$i$个振子的旋转中心的横坐标为
+% \begin{equation}
+%     \begin{aligned}
+%         C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
+%         &=x_{i}^{0}\left( t_0 \right)\\
+%         &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
+%     \end{aligned}
+% \end{equation}
+% 类似地，第$i$个振子的旋转中心的纵坐标为
+% \begin{equation}
+%     C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
+% \end{equation}
+% 由于环的对称性，我们只考虑两个振子之间的相互作用.对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
+% \begin{equation}\label{eq:distanceCenter}
+%     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
+%         \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
+%         \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
+%     \end{array}}\;.
+% \end{equation}
+% 考虑到作用半径$d_0$很小，当发生耦合时，两个振子的坐标非常接近，即$(x_i, y_i) \approx (x_j, y_j)$.然后我们有
+% \begin{equation}
+%     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.
+% \end{equation}
+
+% 此外，由于方程~(\ref{eq:dotthetai}) 中的耦合具有对称性，两个振荡器在耦合之后的相位将相对于没有耦合时具有一对相反的角度偏移：
+% \begin{equation}
+%     \begin{array}{c}
+%         \hat{\theta}_i=\theta _i+\lambda \sin \left( \theta _j-\theta _i \right) T\;,\\
+%         \hat{\theta}_j=\theta _j+\lambda \sin \left( \theta _i-\theta _j \right) T\;.
+%     \end{array}
+% \end{equation}
+% 让我们将 $\theta _s=\lambda \sin \left( \theta _j-\theta _i \right) T$ 设置为角度偏移，并且很明显 $\theta _s$ 满足以下条件：
+% \begin{equation}\label{eq:theta_s}
+%     \theta _s\in \begin{cases}
+%         \left[ 0, \frac{\theta _i-\theta _j}{2} \right] ,&		\theta _j\geqslant \theta _i\\
+%         \left[ \frac{\theta _i-\theta _j}{2}, 0 \right) ,&		\theta _j<\theta _i\\
+%     \end{cases}
+% \end{equation}
+% 然后我们可以得到由耦合驱动的距离 $\left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|$：
+% \begin{equation}
+%     \begin{aligned}\label{eq:distanceCoupling}
+%         \left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|&=\sqrt{-\frac{2v^2\cos \left( \hat{\theta}_i-\hat{\theta}_j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\\
+%         &=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j+2\theta _s \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.\\
+%     \end{aligned}
+% \end{equation}
+% 要比较方程~(\ref{eq:distanceCenter}) 和方程~(\ref{eq:distanceCoupling})，我们只需要比较两个方程中的余弦项。根据不等式~(\ref{eq:theta_s})，我们有
+% \begin{equation}
+%     \theta _i-\theta _j+2\theta _s\in \begin{cases}
+%         \left[ 0, \theta _i-\theta _j \right] ,&		\theta _i-\theta _j\geqslant 0\\
+%         \left[ \theta _i-\theta _j, 0 \right) ,&		\theta _i-\theta _j<0\\
+%     \end{cases}\;,
+% \end{equation}
+% 这意味着
+% \begin{equation}
+%     \cos \left( \theta _i-\theta _j \right) \leqslant \cos \left( \theta _i-\theta _j+2\theta _s \right)\;.
+% \end{equation}
+% 因此，在发生耦合时，具有相同自然频率 $\omega$（手性）符号的两个振荡器的旋转中心之间的距离将减小，这意味着相同手性的振荡器相互吸引，而具有相反 $\omega$（手性）符号的中心之间的距离将增加，这意味着不同手性的振荡器相互排斥。
 
 \begin{figure}[H]
 	\centering
