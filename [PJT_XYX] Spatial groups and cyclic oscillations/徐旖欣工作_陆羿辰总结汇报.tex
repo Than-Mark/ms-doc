@@ -851,6 +851,7 @@ $$
 
 由于系统(\ref{eq:l1.2})的特征值均为实数, 且$\lambda _2,4<0$, $\lambda _1,3>0$, $\lambda _6=0$(来自环态的旋转不变性), $\lambda _1$符号不定, 因此系统(\ref{eq:l1.2})的不动点解是鞍点. 
 
+\newpage
 \subsection{同异手性振子间的相互作用}
 
 在环态中，两种手性的振子通过相位耦合展现出空间上的吸引-排斥机制.具体而言，相同手性的手性振子的运动轨迹相互吸引，而不同手性的手性振子的运动轨迹相互排斥.考虑到环态在耦合强度$\lambda$和作用半径$d_0$较小时出现，并且，环态中振子的轨迹近似无耦合状态中的圆周运动，我们可以通过考虑振子运动轨迹的距离来分析吸引-排斥机制.
@@ -859,8 +860,8 @@ $$
 
 $$
 \begin{array}{l}
-	\mathbf{v}\left( t \right) \cdot \left[ \mathbf{r}\left( t \right) -\mathbf{R} \right] =0\\
-	\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \left[ \mathbf{r}\left( t+\mathrm{d}t \right) -\mathbf{R} \right] =0\\
+	\mathbf{v}\left( t \right) \cdot \left[ \mathbf{r}\left( t \right) -\mathbf{c} \right] =0\\
+	\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \left[ \mathbf{r}\left( t+\mathrm{d}t \right) -\mathbf{c} \right] =0\\
 \end{array}
 $$
 
@@ -868,10 +869,10 @@ $$
 
 $$
 \begin{aligned}
-	\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \mathbf{r}\left( t+\mathrm{d}t \right) &=\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \mathbf{R}\\
-	\left[ \mathbf{v}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \mathrm{d}t \right] \cdot \left[ \mathbf{r}\left( t \right) +\dot{\mathbf{r}}\left( t \right) \mathrm{d}t \right] &=\left[ \mathbf{v}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \mathrm{d}t \right] \cdot \mathbf{R}\\
-	\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) +\left[ \mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) \right] \mathrm{d}t+\dot{\mathbf{v}}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) \mathrm{d}t^2&=\mathbf{v}\left( t \right) \cdot \mathbf{R}+\dot{\mathbf{v}}\left( t \right) \mathrm{d}t\cdot \mathbf{R}\\
-	\mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) &=\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{R}\\
+	\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \mathbf{r}\left( t+\mathrm{d}t \right) &=\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \mathbf{c}\\
+	\left[ \mathbf{v}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \mathrm{d}t \right] \cdot \left[ \mathbf{r}\left( t \right) +\dot{\mathbf{r}}\left( t \right) \mathrm{d}t \right] &=\left[ \mathbf{v}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \mathrm{d}t \right] \cdot \mathbf{c}\\
+	\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) +\left[ \mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) \right] \mathrm{d}t+\dot{\mathbf{v}}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) \mathrm{d}t^2&=\mathbf{v}\left( t \right) \cdot \mathbf{c}+\dot{\mathbf{v}}\left( t \right) \mathrm{d}t\cdot \mathbf{c}\\
+	\mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) &=\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{c}\\
 \end{aligned}
 $$
 
@@ -903,32 +904,134 @@ $$
 \end{array}
 $$
 
+$$
+\begin{cases}
+	\dot{x}=v\cos \theta\\
+	\dot{y}=v\sin \theta\\
+	\ddot{x}=-v\dot{\theta}\sin \theta\\
+	\ddot{y}=v\dot{\theta}\cos \theta\\
+\end{cases}
+$$
+
+$$
+\begin{aligned}
+	P&=\dot{x}x+\dot{y}y\\
+	&=vx\cos \theta +vy\sin \theta\\
+	\dot{P}&=\ddot{x}x+\left( \dot{x} \right) ^2+\ddot{y}y+\left( \dot{y} \right) ^2\\
+	&=-xv\dot{\theta}\sin \theta +v^2\cos ^2\theta +vy\dot{\theta}\cos \theta +v^2\sin ^2\theta\\
+	&=v^2+v\dot{\theta}\left( y\cos \theta -x\sin \theta \right)\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+	X&=\frac{P\ddot{y}-\dot{P}\dot{y}}{\dot{x}\ddot{y}-\ddot{x}\dot{y}}\\
+	&=\frac{v\dot{\theta}\left( vx\cos \theta +vy\sin \theta \right) \cos \theta -v\left[ v^2+v\dot{\theta}\left( y\cos \theta -x\sin \theta \right) \right] \sin \theta}{v^2\dot{\theta}}\\
+	&=\frac{xv^2\dot{\theta}\cos ^2\theta +yv^2\dot{\theta}\sin \theta \cos \theta -v^3\sin \theta -yv^2\dot{\theta}\sin \theta \cos \theta +xv^2\dot{\theta}\sin ^2\theta}{v^2\dot{\theta}}\\
+	&=\frac{xv^2\dot{\theta}-v^3\sin \theta}{v^2\dot{\theta}}\\
+	Y&=\frac{\dot{P}\dot{x}-P\ddot{x}}{\dot{x}\ddot{y}-\ddot{x}\dot{y}}\\
+	&=\frac{v\left[ v^2+v\dot{\theta}\left( y\cos \theta -x\sin \theta \right) \right] \cos \theta +v\dot{\theta}\left( vx\cos \theta +vy\sin \theta \right) \sin \theta}{v^2\dot{\theta}}\\
+	&=\frac{v^3\cos \theta +yv^2\dot{\theta}\cos ^2\theta -xv^2\dot{\theta}\sin \theta \cos \theta +xv^2\dot{\theta}\sin \theta \cos \theta +yv^2\dot{\theta}\sin ^2\theta}{v^2\dot{\theta}}\\
+	&=\frac{v^3\cos \theta +yv^2\dot{\theta}}{v^2\dot{\theta}}\\
+\end{aligned}
+$$
+
+即
+
+$$
+\begin{cases}
+	X=x-\frac{v}{\dot{\theta}}\sin \theta\\
+	Y=y+\frac{v}{\dot{\theta}}\cos \theta\\
+\end{cases}
+$$
+
+从而有
+
+$$
+\left\{ \begin{aligned}
+	\dot{X}&=-\frac{v\ddot{\theta}}{\left( \dot{\theta} \right) ^2}\sin \theta\\
+	\dot{Y}&=\frac{v\ddot{\theta}}{\left( \dot{\theta} \right) ^2}\cos \theta\\
+\end{aligned} \right. 
+$$
+
+当且仅当$\ddot{\theta}=0$时, 有不动点解$\dot{X}=\dot{Y}=0$. 即
+
+$$
+\ddot{\theta}_i=\lambda \sum_{j=1}^N{A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) \cos \left( \theta _j-\theta _i \right)}=0
+$$
+
+上式的解有三种情况，分别为$\dot{\theta}_i=\dot{\theta}_j$，$\theta _i-\theta _j=\pm\cfrac{\pi}{2}$和$A_{ij}=0$
+
+首先考虑排斥作用. 在环态的参数取值下，异手性振子间满足$\left|\Delta\omega\right|\geqslant 2\lambda$, 显然第一种情况不存在，第二种情况不稳定，下面考虑第三种情况的稳定性，即$A_{ij}=0$，两振子在空间中的距离大于作用半径. 为了分析其稳定性, 考虑两振子在作用半径内的情况. 对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
+\begin{equation}\label{eq:distanceCenter}
+    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
+        \left( x_j-\frac{v}{\dot{\theta}_j}\sin \theta _j-x_i+\frac{v}{\dot{\theta}_i}\sin \theta _i \right) ^2+\\
+        \left( y_j+\frac{v}{\dot{\theta}_j}\cos \theta _j-y_i-\frac{v}{\dot{\theta}_i}\cos \theta _i \right) ^2\\
+    \end{array}}\;.
+\end{equation}
+
+设$\Delta X=X_i-X_i$, $\Delta Y=Y_j-Y_i$, 则有
+
+$$
+\begin{aligned}
+	\Delta X&=\left( x_i-x_j \right) -\left( \frac{v}{\dot{\theta}_i}\sin \theta _i-\frac{v}{\dot{\theta}_j}\sin \theta _j \right)\\
+	\Delta \dot{X}&=-\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j\\
+	\Delta Y&=\left( y_i-y_j \right) +\left( \frac{v}{\dot{\theta}_i}\cos \theta _i-\frac{v}{\dot{\theta}_j}\cos \theta _j \right)\\
+	\Delta \dot{Y}&=\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j\\
+\end{aligned}
+$$
+
+另外，由
+
+$$
+\left| \mathbf{c}_i-\mathbf{c}_j \right|^2=\Delta X^2+\Delta Y^2
+$$
+
+从而有
+
+\begin{equation}\label{eq:distanceCenterSquare}
+    \begin{aligned}
+        \frac{\mathrm{d}\left| \mathbf{c}_i-\mathbf{c}_j \right|^2}{\mathrm{dt}}&=2\Delta X\Delta \dot{X}+2\Delta Y\Delta \dot{Y}\\
+        &=2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left[ \left( x_i-x_j \right) -\left( \frac{v}{\dot{\theta}_i}\sin \theta _i-\frac{v}{\dot{\theta}_j}\sin \theta _j \right) \right]\\
+        &+2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left[ \left( y_i-y_j \right) +\left( \frac{v}{\dot{\theta}_i}\cos \theta _i-\frac{v}{\dot{\theta}_j}\cos \theta _j \right) \right]\\
+        &=2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( x_i-x_j \right) -2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( \frac{v}{\dot{\theta}_i}\sin \theta _i-\frac{v}{\dot{\theta}_j}\sin \theta _j \right)\\
+        &+2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( y_i-y_j \right) +2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( \frac{v}{\dot{\theta}_i}\cos \theta _i-\frac{v}{\dot{\theta}_j}\cos \theta _j \right)\\
+        &=2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( x_i-x_j \right) +2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( y_i-y_j \right)\\
+        &+2\frac{v^2\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^3}\sin ^2\theta _i+2\frac{v^2\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^3}\sin ^2\theta _j-2\frac{v^2\ddot{\theta}_i}{\dot{\theta}_j\left( \dot{\theta}_i \right) ^2}\sin \theta _i\sin \theta _j-2\frac{v^2\ddot{\theta}_j}{\dot{\theta}_i\left( \dot{\theta}_j \right) ^2}\sin \theta _i\sin \theta _j\\
+        &+2\frac{v^2\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^3}\cos ^2\theta _i+2\frac{v^2\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^3}\cos ^2\theta _j-2\frac{v^2\ddot{\theta}_i}{\dot{\theta}_j\left( \dot{\theta}_i \right) ^2}\cos \theta _i\cos \theta _j-2\frac{v^2\ddot{\theta}_j}{\dot{\theta}_i\left( \dot{\theta}_j \right) ^2}\cos \theta _i\cos \theta _j\\
+        &=2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( x_i-x_j \right) +2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( y_i-y_j \right)\\
+        &+2\frac{v^2\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^3}+2\frac{v^2\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^3}-2\frac{v^2}{\dot{\theta}_i\dot{\theta}_j}\left( \frac{\ddot{\theta}_i}{\dot{\theta}_i}+\frac{\ddot{\theta}_j}{\dot{\theta}_j} \right) \cos \left( \theta _i-\theta _j \right)\\
+    \end{aligned}
+\end{equation}
+
+其中，
+$$
+\begin{cases}
+	\ddot{\theta}_i=\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) \cos \left( \theta _j-\theta _i \right) =0\\
+	\ddot{\theta}_j=\lambda A_{ij}\left( \dot{\theta}_i-\dot{\theta}_j \right) \cos \left( \theta _i-\theta _j \right) =0\\
+\end{cases}
+$$
 
 
-% 根据式\ref{eq:circle}可知, 在无耦合的假设下，第$i$个振子在以$\mathbf{c}_i$为中心, $v/\omega_i$为半径的圆形轨迹上运动. 旋转中心的坐标可以通过轨迹上点的坐标的平均值来估计.
-% 第$i$个振子的旋转中心的横坐标为
-% \begin{equation}
-%     \begin{aligned}
-%         C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
-%         &=x_{i}^{0}\left( t_0 \right)\\
-%         &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
-%     \end{aligned}
-% \end{equation}
-% 类似地，第$i$个振子的旋转中心的纵坐标为
-% \begin{equation}
-%     C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
-% \end{equation}
-% 由于环的对称性，我们只考虑两个振子之间的相互作用.对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
-% \begin{equation}\label{eq:distanceCenter}
-%     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
-%         \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
-%         \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
-%     \end{array}}\;.
-% \end{equation}
-% 考虑到作用半径$d_0$很小，当发生耦合时，两个振子的坐标非常接近，即$(x_i, y_i) \approx (x_j, y_j)$.然后我们有
-% \begin{equation}
-%     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.
-% \end{equation}
+显然$\ddot{\theta}_i=-\ddot{\theta}_j$. 另外，由于$\left|\omega_i\right|> \lambda$, 因此有
+
+$$
+\begin{cases}
+	\text{sgn} \dot{\theta}_i=\text{sgn} \omega _i\\
+	\text{sgn} \dot{\theta}_j=\text{sgn} \omega _j\\
+\end{cases}
+$$
+
+\subsubsection{异手性振子间的排斥作用}
+
+当两振子间不存在耦合是，显然\ref{eq:distanceCenterSquare}为0，即两振子的旋转中心之间的距离保持不变. 当两振子间存在耦合时，考虑到环态的作用半径$d_0$较小，此时两振子坐标相近，因此将\ref{eq:distanceCenterSquare}中的第一项和第二项视为0，只需要考虑后三项. 不妨设$\dot{theta}_i>0$, $\dot{\theta}_j<0$, 当两相反的异手性振子在同心轨迹上相遇时，他们相位差的绝对值大于$\pi/2$, 则有$\cos(\theta_j-\theta_i)=\cos(\theta_i-\theta_j)<0$, 从而有$\ddot{\theta}_i>0$, $\ddot{\theta}_j<0$, 所以\ref{eq:distanceCenterSquare}的第三和第四项为正. 在考虑最后一项，
+
+即两振子的旋转中心之间的距离增大，这意味着异手性振子相互排斥.
+
+\subsubsection{同手性振子间的吸引作用}
+
+
+
 
 % 此外，由于方程~(\ref{eq:dotthetai}) 中的耦合具有对称性，两个振荡器在耦合之后的相位将相对于没有耦合时具有一对相反的角度偏移：
 % \begin{equation}
