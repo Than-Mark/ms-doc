@@ -1004,28 +1004,58 @@ $$
 \end{equation}
 
 其中，
+\begin{equation}\label{eq:ddotTheta}
+    \begin{cases}
+        \ddot{\theta}_i=\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) \cos \left( \theta _j-\theta _i \right)\\
+        \ddot{\theta}_j=\lambda A_{ij}\left( \dot{\theta}_i-\dot{\theta}_j \right) \cos \left( \theta _i-\theta _j \right)\\
+    \end{cases}
+\end{equation}
+
+令$$
+\begin{aligned}
+	A&=2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( x_i-x_j \right) +2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( y_i-y_j \right)\\
+	B&=-2v^2\left[ \frac{\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^3}+\frac{\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^3} \right]\\
+	C&=\frac{2v^2}{\dot{\theta}_j\dot{\theta}_i}\left( \frac{\ddot{\theta}_i}{\dot{\theta}_i}+\frac{\ddot{\theta}_j}{\dot{\theta}_j} \right) \cos \left( \theta _i-\theta _j \right)\\
+\end{aligned}
 $$
-\begin{cases}
-	\ddot{\theta}_i=\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) \cos \left( \theta _j-\theta _i \right) =0\\
-	\ddot{\theta}_j=\lambda A_{ij}\left( \dot{\theta}_i-\dot{\theta}_j \right) \cos \left( \theta _i-\theta _j \right) =0\\
+
+
+
+则
+
+$$
+\frac{\mathrm{d}\left| \mathbf{c}_i-\mathbf{c}_j \right|^2}{\mathrm{dt}}=A+B+C
+$$
+
+对于$A$,
+
+对于$B$, 由式(\ref{eq:ddotTheta})得$\ddot{\theta}_i=-\ddot{\theta}_j$，从而$B$可以写作
+$$
+\begin{aligned}
+	B&=-2v^2\frac{\left( \dot{\theta}_j \right) ^3\ddot{\theta}_i-\left( \dot{\theta}_i \right) ^3\ddot{\theta}_j}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^3}\\
+	&=-2v^2\frac{\left[ \left( \dot{\theta}_j \right) ^3-\left( \dot{\theta}_i \right) ^3 \right] \ddot{\theta}_i}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^3}\\
+	&=-\frac{2v^2\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) ^2}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\left( 1+\frac{\dot{\theta}_j}{\dot{\theta}_i}+\frac{\dot{\theta}_i}{\dot{\theta}_j} \right) \cos \left( \theta _j-\theta _i \right)\\
+\end{aligned}
+$$
+显然, 当两振子相位差小于$\cfrac{\pi}{2}$时, 对于同手信振子, $B\leqslant0$; 对于异手性振子, $B\geqslant0$.
+
+对于$C$, 类似地可写作
+$$
+\begin{aligned}
+	C&=2v^2\frac{\left( \dot{\theta}_j-\dot{\theta}_i \right) \ddot{\theta}_i}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\\
+	&=2v^2\frac{\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) ^2\cos ^2\left( \theta _j-\theta _i \right)}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\\
+\end{aligned}
+$$
+该项恒为正. 
+由$$
+\left| \dot{\theta}_j-\dot{\theta}_i \right|=\begin{cases}
+	\dot{\theta}_{\max}-\dot{\theta}_{\min},&		\dot{\theta}_j\dot{\theta}_i\geqslant 0\\
+	\left| \dot{\theta}_j \right|+\left| \dot{\theta}_i \right|,&		\dot{\theta}_j\dot{\theta}_i<0\\
 \end{cases}
-$$
+$$和$
+\dot{\theta}_{\max}-\dot{\theta}_{\min}\leqslant \left| \dot{\theta}_j \right|+\left| \dot{\theta}_i \right|
+$可知，同手性振子下的该项绝对值小于异手性下的该项绝对值.
 
-
-显然$\ddot{\theta}_i=-\ddot{\theta}_j$. 另外，由于$\left|\omega_i\right|> \lambda$, 因此有
-
-$$
-\begin{cases}
-	\text{sgn} \dot{\theta}_i=\text{sgn} \omega _i\\
-	\text{sgn} \dot{\theta}_j=\text{sgn} \omega _j\\
-\end{cases}
-$$
-
-\subsubsection{异手性振子间的排斥作用}
-
-当两振子间不存在耦合是，显然\ref{eq:distanceCenterSquare}为0，即两振子的旋转中心之间的距离保持不变. 当两振子间存在耦合时，考虑到环态的作用半径$d_0$较小，此时两振子坐标相近，因此将\ref{eq:distanceCenterSquare}中的第一项和第二项视为0，只需要考虑后三项. 不妨设$\dot{theta}_i>0$, $\dot{\theta}_j<0$, 当两相反的异手性振子在同心轨迹上相遇时，他们相位差的绝对值大于$\pi/2$, 则有$\cos(\theta_j-\theta_i)=\cos(\theta_i-\theta_j)<0$, 从而有$\ddot{\theta}_i>0$, $\ddot{\theta}_j<0$, 所以\ref{eq:distanceCenterSquare}的第三和第四项为正. 在考虑最后一项，
-
-即两振子的旋转中心之间的距离增大，这意味着异手性振子相互排斥.
 
 \subsubsection{同手性振子间的吸引作用}
 
