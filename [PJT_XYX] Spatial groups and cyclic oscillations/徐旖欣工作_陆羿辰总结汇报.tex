@@ -854,7 +854,14 @@ $$
 \newpage
 \subsection{同异手性振子间的相互作用}
 
-在环态中，两种手性的振子通过相位耦合展现出空间上的吸引-排斥机制.具体而言，相同手性的手性振子的运动轨迹相互吸引，而不同手性的手性振子的运动轨迹相互排斥.考虑到环态在耦合强度$\lambda$和作用半径$d_0$较小时出现，并且，环态中振子的轨迹近似无耦合状态中的圆周运动，我们可以通过考虑振子运动轨迹的距离来分析吸引-排斥机制.
+在环态中，两种手性的振子通过相位耦合展现出空间上的吸引-排斥机制. 具体而言，相同手性的手性振子的运动轨迹相互吸引，而不同手性的手性振子的运动轨迹相互排斥, 如图\ref{fig:2OsCenterDistance}所示. 我们通过考虑振子运动轨迹的距离来分析吸引-排斥机制.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figs/2OsCenterDistance.pdf}
+    \caption{振子旋转中心间距}
+    \label{fig:2OsCenterDistance}
+\end{figure}
 
 设置振子的运动速度$\mathbf{r}=\dot{\mathbf{r}}=\left( \dot{x}, \dot{y} \right)$, 考虑$t$与$t+\mathrm{d}t(\mathrm{d}t\rightarrow0)$时刻, 在每一时刻，振子的位置$\mathbf{r}=(xm=, y)$和转动中心$\mathbf{c}=(X, Y)$的连线垂直于速度方向，于是有
 
@@ -928,11 +935,11 @@ $$
 	X&=\frac{P\ddot{y}-\dot{P}\dot{y}}{\dot{x}\ddot{y}-\ddot{x}\dot{y}}\\
 	&=\frac{v\dot{\theta}\left( vx\cos \theta +vy\sin \theta \right) \cos \theta -v\left[ v^2+v\dot{\theta}\left( y\cos \theta -x\sin \theta \right) \right] \sin \theta}{v^2\dot{\theta}}\\
 	&=\frac{xv^2\dot{\theta}\cos ^2\theta +yv^2\dot{\theta}\sin \theta \cos \theta -v^3\sin \theta -yv^2\dot{\theta}\sin \theta \cos \theta +xv^2\dot{\theta}\sin ^2\theta}{v^2\dot{\theta}}\\
-	&=\frac{xv^2\dot{\theta}-v^3\sin \theta}{v^2\dot{\theta}}\\
+	&=x-\frac{v}{\dot{\theta}}\sin\theta\\
 	Y&=\frac{\dot{P}\dot{x}-P\ddot{x}}{\dot{x}\ddot{y}-\ddot{x}\dot{y}}\\
 	&=\frac{v\left[ v^2+v\dot{\theta}\left( y\cos \theta -x\sin \theta \right) \right] \cos \theta +v\dot{\theta}\left( vx\cos \theta +vy\sin \theta \right) \sin \theta}{v^2\dot{\theta}}\\
 	&=\frac{v^3\cos \theta +yv^2\dot{\theta}\cos ^2\theta -xv^2\dot{\theta}\sin \theta \cos \theta +xv^2\dot{\theta}\sin \theta \cos \theta +yv^2\dot{\theta}\sin ^2\theta}{v^2\dot{\theta}}\\
-	&=\frac{v^3\cos \theta +yv^2\dot{\theta}}{v^2\dot{\theta}}\\
+	&=y+\frac{v}{\dot{\theta}}\cos \theta\\
 \end{aligned}
 $$
 
@@ -963,7 +970,12 @@ $$
 
 上式的解有三种情况，分别为$\dot{\theta}_i=\dot{\theta}_j$，$\theta _i-\theta _j=\pm\cfrac{\pi}{2}$和$A_{ij}=0$
 
-首先考虑排斥作用. 在环态的参数取值下，异手性振子间满足$\left|\Delta\omega\right|\geqslant 2\lambda$, 显然第一种情况不存在，第二种情况不稳定，下面考虑第三种情况的稳定性，即$A_{ij}=0$，两振子在空间中的距离大于作用半径. 为了分析其稳定性, 考虑两振子在作用半径内的情况. 对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
+\begin{itemize}
+    \item 对于异手性振子, 满足$\left|\Delta\omega\right|> 2\lambda$, 显然解的第一种情况不存在，第二种情况不稳定 (耦合强度不足以达成锁相, 两振子的相速度由自然频率主导)，第三种情况意味着两振子在空间中的距离大于作用半径，此时两振子之间没有相互作用.
+    \item 对于同手性振子, 满足$\left|\Delta\omega\right|\leqslant 2\lambda$, 此时两振子可达成锁相, 即第一种情况. 第二种情况不稳定 (两振子相位差最终会趋于0). 第三种情况同上.
+\end{itemize}
+
+下面考虑两振子旋转中心的距离, 对于第$i$个和第$j$个振子，它们旋转中心之间的距离$\left| \mathbf{c}_j-\mathbf{c}_i \right|$为
 \begin{equation}\label{eq:distanceCenter}
     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
         \left( x_j-\frac{v}{\dot{\theta}_j}\sin \theta _j-x_i+\frac{v}{\dot{\theta}_i}\sin \theta _i \right) ^2+\\
@@ -971,7 +983,7 @@ $$
     \end{array}}\;.
 \end{equation}
 
-设$\Delta X=X_i-X_i$, $\Delta Y=Y_j-Y_i$, 则有
+设$\Delta X=X_j-X_i$, $\Delta Y=Y_j-Y_i$, 则有
 
 $$
 \begin{aligned}
@@ -1011,6 +1023,15 @@ $$
     \end{cases}
 \end{equation}
 
+$\frac{\mathrm{d}\left| \mathbf{c}_i-\mathbf{c}_j \right|^2}{\mathrm{dt}}$在$A_{ij}=1$时的图像如图\ref{fig:2OsDotDistance}所示.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{./figs/2OsDotDistance.pdf}
+    \caption{$\frac{\mathrm{d}\left| \mathbf{c}_i-\mathbf{c}_j \right|^2}{\mathrm{dt}}$}
+    \label{fig:2OsDotDistance}
+\end{figure}
+
 令$$
 \begin{aligned}
 	A&=2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( x_i-x_j \right) +2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( y_i-y_j \right)\\
@@ -1018,16 +1039,19 @@ $$
 	C&=\frac{2v^2}{\dot{\theta}_j\dot{\theta}_i}\left( \frac{\ddot{\theta}_i}{\dot{\theta}_i}+\frac{\ddot{\theta}_j}{\dot{\theta}_j} \right) \cos \left( \theta _i-\theta _j \right)\\
 \end{aligned}
 $$
-
-
-
 则
-
 $$
 \frac{\mathrm{d}\left| \mathbf{c}_i-\mathbf{c}_j \right|^2}{\mathrm{dt}}=A+B+C
 $$
 
-对于$A$,
+对于$A$, 由于两振子仅在空间距离小于$d_0$时才有相互作用，而环态对应的参数$d_0$较小，因此$A$的绝对值较小. 为了验证这一点, 图\ref{fig:2OsBCsubA}展示了在不同参数下$|B+C|-|A|$的取值. 可以看到, $|B+C|-|A|$大部分情况都大于0, 即使小于0也是略小于0的情况, 说明$\frac{\mathrm{d}\left| \mathbf{c}_i-\mathbf{c}_j \right|^2}{\mathrm{dt}}$主要由$B$和$C$项决定.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figs/2OsBCsubA.pdf}
+    \caption{$|B+C|-|A|$}
+    \label{fig:2OsBCsubA}
+\end{figure}
 
 对于$B$, 由式(\ref{eq:ddotTheta})得$\ddot{\theta}_i=-\ddot{\theta}_j$，从而$B$可以写作
 $$
@@ -1037,9 +1061,32 @@ $$
 	&=-\frac{2v^2\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) ^2}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\left( 1+\frac{\dot{\theta}_j}{\dot{\theta}_i}+\frac{\dot{\theta}_i}{\dot{\theta}_j} \right) \cos \left( \theta _j-\theta _i \right)\\
 \end{aligned}
 $$
-显然, 当两振子相位差小于$\cfrac{\pi}{2}$时, 对于同手信振子, $B\leqslant0$; 对于异手性振子, $B\geqslant0$.
+显然有
+$$
+\left( 1+\frac{\dot{\theta}_j}{\dot{\theta}_i}+\frac{\dot{\theta}_i}{\dot{\theta}_j} \right) \in \begin{cases}
+	\left( 2,+\infty \right) ,&		\dot{\theta}_j\dot{\theta}_i>0\\
+	\left( -\infty , 0 \right) ,&		\dot{\theta}_j\dot{\theta}_i<0\\
+\end{cases}
+$$
+因此
+$$
+\text{sgn} \left( B \right) =\begin{cases}
+	-\text{sgn} \left( \cos \left( \theta _j-\theta _i \right) \right) ,&		\dot{\theta}_j\dot{\theta}_i\geqslant 0\\
+	\text{sgn} \left( \cos \left( \theta _j-\theta _i \right) \right), &		\dot{\theta}_j\dot{\theta}_i<0\\
+\end{cases}
+$$
+所以, 该项的符号由$\cos \left( \theta _j-\theta _i \right)$决定. 图\ref{fig:2OsCosDeltaTheta}展示了在不同参数下$A_{ij}=1$时$\cos \left( \theta _j-\theta _i \right)$的取值
 
-对于$C$, 类似地可写作
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figs/2OsCosDeltaTheta.pdf}
+    \caption{$\cos \left( \theta _j-\theta _i \right),\;A_{ij}=1$}
+    \label{fig:2OsCosDeltaTheta}
+\end{figure}
+
+随着时间$t$的增加, $A_{ij}=1$时的$\cos \left( \theta _j-\theta _i \right)$逐渐趋向于1, 这是由于耦合的作用使得两振子的相位差逐渐减小. 因此, 随着相位差的绝对值逐渐减小到$\pi/2$以内, $B$项的符号在同手性振子下为负, 异手性振子下为正.
+
+对于$C$, 可写作
 $$
 \begin{aligned}
 	C&=2v^2\frac{\left( \dot{\theta}_j-\dot{\theta}_i \right) \ddot{\theta}_i}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\\
@@ -1055,7 +1102,6 @@ $$
 $$和$
 \dot{\theta}_{\max}-\dot{\theta}_{\min}\leqslant \left| \dot{\theta}_j \right|+\left| \dot{\theta}_i \right|
 $可知，同手性振子下的该项绝对值小于异手性下的该项绝对值.
-
 
 \subsubsection{同手性振子间的吸引作用}
 
@@ -1129,24 +1175,6 @@ $可知，同手性振子下的该项绝对值小于异手性下的该项绝对�
 	\end{subfigure}
 	\caption{同异手性在相同初值条件下的演化结果($\lambda=0.5$)}
 	\label{fig:fig2.6.chir}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/2particalDis.png}
-	\vspace{-0.5cm}
-	\caption{两振子距离的时序变化}
-	\label{fig:fig2.6.dis}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{./figs/2particalCentersDis.png}
-	\vspace{-0.5cm}
-	\caption{两振子旋转中心距离的时序变化}
-	\label{fig:fig2.6.centerDis}
 \end{figure}
 
 \newpage

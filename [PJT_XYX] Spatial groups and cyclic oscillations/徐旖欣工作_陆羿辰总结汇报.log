@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  10 APR 2024 00:29
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  10 APR 2024 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -872,7 +872,19 @@ LaTeX Warning: Reference `fig:fig235.1' on page 19 undefined on input line 737.
 
 LaTeX Warning: Reference `fig:fig235.1' on page 19 undefined on input line 745.
 
-[19] [20] [21] [22] [23] [24]
+[19] [20] [21]
+File: ./figs/2OsCenterDistance.pdf Graphic file (type pdf)
+<use ./figs/2OsCenterDistance.pdf>
+ [22] [23] [24]
+File: ./figs/2OsDotDistance.pdf Graphic file (type pdf)
+<use ./figs/2OsDotDistance.pdf>
+ [25]
+File: ./figs/2OsBCsubA.pdf Graphic file (type pdf)
+<use ./figs/2OsBCsubA.pdf>
+ [26]
+File: ./figs/2OsCosDeltaTheta.pdf Graphic file (type pdf)
+<use ./figs/2OsCosDeltaTheta.pdf>
+ [27]
 File: ./figs/diffChir.png Graphic file (type bmp)
 <./figs/diffChir.png>
 File: ./figs/sameChir.png Graphic file (type bmp)
@@ -881,12 +893,7 @@ File: ./figs/diffChirInf.png Graphic file (type bmp)
 <./figs/diffChirInf.png>
 File: ./figs/sameChirInf.png Graphic file (type bmp)
 <./figs/sameChirInf.png>
- [25] [26]
-File: ./figs/2particalDis.png Graphic file (type bmp)
-<./figs/2particalDis.png>
-File: ./figs/2particalCentersDis.png Graphic file (type bmp)
-<./figs/2particalCentersDis.png>
- [27]
+ [28] [29]
 File: ./figs/limitDisPhaseSyncRing.png Graphic file (type bmp)
 <./figs/limitDisPhaseSyncRing.png>
 File: ./figs/subjectiveOpRing.png Graphic file (type bmp)
@@ -895,7 +902,7 @@ File: ./figs/nearbyNumsRing.png Graphic file (type bmp)
 <./figs/nearbyNumsRing.png>
 File: ./figs/subjectiveOpRing.png Graphic file (type bmp)
 <./figs/subjectiveOpRing.png>
- [28] (./徐旖欣工作_陆羿辰总结汇报.aux)
+ [30] (./徐旖欣工作_陆羿辰总结汇报.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -903,12 +910,12 @@ Package rerunfilecheck Info: File `徐旖欣工作_陆羿辰总结汇报.out' ha
 (rerunfilecheck)             Checksum: 54E9C74D9663314E3A922F25CAF50BBF;2770.
  ) 
 Here is how much of TeX's memory you used:
- 15997 strings out of 478907
- 318461 string characters out of 5866571
- 702860 words of memory out of 5000000
- 35563 multiletter control sequences out of 15000+600000
+ 16011 strings out of 478907
+ 318859 string characters out of 5866571
+ 698986 words of memory out of 5000000
+ 35575 multiletter control sequences out of 15000+600000
  419552 words of font info for 122 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  82i,20n,107p,475b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (28 pages).
+Output written on 徐旖欣工作_陆羿辰总结汇报.pdf (30 pages).
