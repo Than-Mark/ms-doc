@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  16 APR 2024 21:43
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 APR 2024 00:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -685,16 +685,22 @@ LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] 
 File: ./figs/analyticalEps.pdf Graphic file (type pdf)
 <use ./figs/analyticalEps.pdf>
 [6] [7]
-
-LaTeX Warning: Reference `sec:Adiabatic' on page 8 undefined on input line 463.
-
 File: ./figs/2OsCenterDistance.pdf Graphic file (type pdf)
 <use ./figs/2OsCenterDistance.pdf>
-[8]
+ [8]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 513.
 
-[9] [10]
+[9]
+File: ./figs/2OsBCsubA.pdf Graphic file (type pdf)
+<use ./figs/2OsBCsubA.pdf>
+File: ./figs/2OsDotDistance.pdf Graphic file (type pdf)
+<use ./figs/2OsDotDistance.pdf>
+ [10]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 665.
+
+[11]
 File: ./algorithm/algo.pdf Graphic file (type pdf)
 <use ./algorithm/algo.pdf>
 File: ./figs/DBSCANparam.pdf Graphic file (type pdf)
@@ -703,31 +709,28 @@ File: ./figs/rsProofEps.pdf Graphic file (type pdf)
 <use ./figs/rsProofEps.pdf>
 File: ./figs/etimateCenter.png Graphic file (type bmp)
 <./figs/etimateCenter.png>
- (./main.bbl [11]
+ (./main.bbl [12]
 Missing character: There is no ’ ("2019) in font ptmr8t!
- [12]
+ [13]
 Missing character: There is no ’ ("2019) in font ptmr8t!
 Missing character: There is no ’ ("2019) in font ptmr8t!
 Missing character: There is no ’ ("2019) in font ptmr8t!
-) [13]
+) [14]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     724.
+(LaTeX3)     790.
 
  (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5153E4A3A9A00A94681AF1A3777C07EA;3376.
+(rerunfilecheck)             Checksum: EE1EF8E1D06FF394A85AE8825A48A72F;3376.
  ) 
 Here is how much of TeX's memory you used:
- 14143 strings out of 478907
- 217339 string characters out of 5866571
- 595518 words of memory out of 5000000
- 33724 multiletter control sequences out of 15000+600000
+ 14158 strings out of 478907
+ 217710 string characters out of 5866571
+ 598901 words of memory out of 5000000
+ 33737 multiletter control sequences out of 15000+600000
  470791 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 97i,16n,102p,1069b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,16n,102p,1069b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (13 pages).
+Output written on main.pdf (14 pages).

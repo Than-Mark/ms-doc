@@ -72,7 +72,7 @@ Second institution and/or address%\\This line break forced% with \\
              %  but any date may be explicitly specified
 
 \begin{abstract}
-    Synchronization and swarming are two typical self-organization behaviors representing the intrinsic dynamial and spatial ordering of units in complex systems. Here, we introduce a model that combines the Kuramoto and Vicsek models, which describes the synchronization and swarming of oscillators with different natural frequencies, chiral properties, and local coupling. The model exhibits five states: Disorder, Ring, Swarm (Multi-Clusters), Swarm (Double-Clusters), and Quick Sync. We obtain the analytic solutions of the model, explore the phase diagram of it and analytically explain the diverse emergence behaviors driven by the model. This study provides a more comprehensive exploration and integration of the interdisciplinary field encompassing synchronization dynamics and cluster dynamics.
+    abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract 
 \end{abstract}
 
 \maketitle
@@ -93,12 +93,12 @@ Cluster behavior research focuses on the self-organized coordination of spatial 
 The Kuramoto model\cite{kuramoto1975international} and the Vicsek model\cite{vicsek1995novel} are two well-known models that describe synchronization and swarming, respectively. The Kuramoto model describes the synchronization of oscillators with a phase variable, and the Vicsek model describes the alignment of self-propelled particles with a velocity variable. Both models have been widely studied and applied in various fields, such as physics \cite{pantaleone1998stability,wiesenfeld1996synchronization}, biology \cite{aihara2008mathematical,o2016dynamics,neda2000physics,majhi2019emergence}, and engineering\cite{motter2019author,strogatz2005crowd,rohden2012self}.
 In recent years, there has been a notable surge in the research progress concerning the interplay between synchronization dynamics and cluster dynamics \cite{o2017oscillators,kruk2018self,levis2019activity,ceron2023diverse,ling2022spatial}, which has led to the development of models that combine the Kuramoto and Vicsek models. 
 
-This paper continues this line of research by proposing a model that combines the Kuramoto and Vicsek models, aiming to to undertake a more comprehensive exploration and integration of the interdisciplinary field encompassing synchronization dynamics and cluster dynamics. In Ceron et al.'s \cite{ceron2023diverse} and Levis et al.'s \cite{levis2019activity} studies, the behavior of oscillators which are non-identical (oscillators have different natural frequencies), chiral
+This paper continues this line of research by proposing a model that combines the Kuramoto and Vicsek models, aiming to undertake a more comprehensive exploration and integration of the interdisciplinary field encompassing synchronization dynamics and cluster dynamics. In Ceron et al.'s \cite{ceron2023diverse} and Levis et al.'s \cite{levis2019activity} studies, the behavior of oscillators which are non-identical (oscillators have different natural frequencies), chiral
 (oscillators have inherent clockwise and counterclockwise circular orbits), and locally coupled (oscillators can only couple to motion and phase of neighbors within a given radius) was numerically investigated. Here, we introduce a model that combines these three characteristics and study the synchronization and cluster behaviors of it. We obtain the analytic solutions of the model and explore the phase diagram. 
 
 The paper is organized as follows. In Section \ref{sec:model}, we introduce the model and the numerical methods used to study it. In Section \ref{sec:behavior}, we present the behavior of the model and discuss the states it exhibits. In Section \ref{sec:orderParam}, we introduce order parameters to distinguish the states and present the phase diagram of the model. In Section \ref{sec:analysis}, we derive the critical lines of the transitions between states and analytically explain diverse emergence behaviors driven by the model. Finally, in Section \ref{sec:conclusions}, we summarize the results and discuss the implications of the model.
 
-\section{\label{sec:model} model}
+\section{\label{sec:model} Model}
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/phaseDiagram.pdf}
@@ -113,7 +113,7 @@ The paper is organized as follows. In Section \ref{sec:model}, we introduce the 
     }
 \end{figure*}
 
-Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evoleve according to equations:
+Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
 
 \begin{eqnarray}
     \dot{x}_i&=&v\cos \theta _i\;,\label{eq:dotxi}
@@ -125,7 +125,7 @@ Oscillators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and a
 \end{eqnarray}
 for $i=1,2,\ldots,N$, where $N$ is the number of oscillators. As per Eq.~(\ref{eq:dotxi}) and (\ref{eq:dotyi}), each oscillator moves with a constant speed $v$ in the direction of its current phase $\theta_i$. The phase $\theta_i$ evolves according to Eq.~(\ref{eq:dotthetai}), where $\omega_i$ is the natural frequency of the $i$th oscillator, $\lambda$ is the coupling strength, and $A$ is the adjacency matrix of the network, with $A_{ij}=1$ if there is a connection from $i$th to $j$th oscillator, and $A_{ij}=0$ otherwise. We can consider Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) as a generalization of the Kuramoto model and the Vicsek model in the sense that it includes both the phase and the spatial position of the oscillators.
 
-Each oscillator $i$ is connected to all the oscillators within a
+Each oscillator $i$ is connected to all the oscillators within an
 action radius $d_0$ of its position. The adjacency matrix $A$ is defined as:
 
 \begin{equation}
@@ -183,7 +183,7 @@ Finally, we consider that the natural frequencies $\omega_i$ are distributed in 
     }
 \end{figure*}
 
-\section{\label{sec:behavior}behavior}
+\section{\label{sec:behavior}Behavior}
 
 We performed numerical simulations of the model to probe the behavior of its solutions (see Appendix \ref{sec:numerics} for details on the numerical methods). 
 $N=1000$ oscillators were distributed uniformly in the square of length $L=10$ and their natural frequencies were distributed in the range $\left[ \omega _{\min},\omega _{\max} \right]=\left[ 1,3 \right]$ and $\left[ -\omega _{\max},-\omega _{\min} \right]=\left[ -3,-1 \right]$.
@@ -238,7 +238,7 @@ In such a setup, oscillators move in a circular trajectory with radius $v/\omega
 \end{equation}
 where $\mathbf{v}_i(t_1)=\left( x_i\left( t_1 \right) , y_i\left( t_1 \right) \right)$ is the velocity of $i$th oscillator at $t_1$, and $\mathbf{v}_i(t_1)=\left( \cos \theta _i\left( t_1 \right) , \sin \theta _i\left( t_1 \right) \right)$ is the unit vector of the velocity. According to Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}), we can calculate $\mathbf{v}_i(t_2)$ and $\mathbf{r}_i(t_2)$, ($t_2=t_1+\Delta t$). 
 
-The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a. The estimation results of four states's real-time rotational centers are shown in Fig.~\ref{fig:etimateCenter} in Appendix.
+The real-time rotational radius is $r_i(t)=\left| \mathbf{c}_i(t)-\mathbf{r}_i(t) \right|$. We found that the real-time rotational radius is almost constant and close to $v/\omega_i$ for each oscillator in the Disorder state, as shown in Fig.~\ref{fig:radiusOmega}a. The estimation results of four states' real-time rotational centers are shown in Fig.~\ref{fig:etimateCenter} in Appendix.
 
 \subsection{Ring State}
 
@@ -281,7 +281,7 @@ As $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and $\omega_i \
         r_i&=\frac{v}{\left|\omega _s\right|}\;,\\
     \end{aligned}
 \end{equation}
-as shown in Fig.~\ref{fig:radiusOmega}b. But for Multi-Clusters, due to which oscillators are synchronized within each cluster is not accurately known, we can only calculate the real-time rotational radius of the them. As seen in Fig.~\ref{fig:radiusOmega}b, similar to Double-Clusters, some local platforms appear in the real-time rotational radius due to synchronization.
+as shown in Fig.~\ref{fig:radiusOmega}b. But for Multi-Clusters, due to which oscillators are synchronized within each cluster is not accurately known, we can only calculate the real-time rotational radius of them. As seen in Fig.~\ref{fig:radiusOmega}b, similar to Double-Clusters, some local platforms appear in the real-time rotational radius due to synchronization.
 
 \subsection{Quick Sync State}
 
@@ -315,7 +315,7 @@ Then we use the DBSCAN algorithm to cluster the oscillators. The DBSCAN algorith
 One example of the classification of clusters is shown in Fig.~\ref{fig:classifyResult}.
 We then calculate the order parameter $R_s$ for each cluster. The order parameter $R_s$ is close to $1$ in the Swarm state ($R_s$ of Double-Clusters state is closer to $1$ than Multi-Clusters) and Quick Sync state, and close to $0$ in Disorder state and most of the Ring state, between $0$ and $1$ in other Ring states with local clusters, as shown in Fig.~\ref{fig:orderParam}b.
 
-Combining the order parameter $R$ and $R_s$, we can find only the distinction between Ring and Disorder states has not been resolved. Except the study for synchronization, we alse define an order parameter $\Delta \Omega$ to metric the phase locking of the oscillators:
+Combining the order parameter $R$ and $R_s$, we can find only the distinction between Ring and Disorder states has not been resolved. Except the study for synchronization, we also define an order parameter $\Delta \Omega$ to metric the phase locking of the oscillators:
 
 \begin{equation}
     \Delta \Omega =\frac{1}{N_c}\sum_{k=1}^{N_c}{\left[ \frac{1}{\left| C_k \right|^2}\sum_{i,j\in C_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}\;,
@@ -406,14 +406,14 @@ where $\alpha$ and $\beta$ are the angles of sectors from two overlapping circle
         \alpha =\pi -\frac{\beta}{2}\\
     \end{cases}\;.
 \end{equation}
-Then we can calculate the critical line $\lambda_{c1}$ in the $(\lambda$-$d_0)$ plane with $N_c=250$ ($1/4$ of the total population $N=1000$), as shown in Fig.~\ref{fig:orderParam}c, where the line accurately divides the phase-locked and non-phase-locked regions, which is the critical line of the transition between the Disorder and Ring states. Here we set the number of oscillators in a ring $N_c=N/4$ because the maximum number of rings that a $L\times L$ box can accommodate is approximately
+Then we can calculate the critical line $\lambda_{c1}$ in the $(\lambda$-$d_0)$ plane with $N_c=250$ ($1/4$ of the total population $N=1000$), as shown in Fig.~\ref{fig:orderParam}c, where the line accurately divides the phase-locked and non-phase-locked regions, which is the critical line of the transition between the Disorder and Ring states. Here we set the number of oscillators in a ring $N_c=N/4$ because the maximum number of rings that an $L\times L$ box can accommodate is approximately
 \begin{equation}
     \frac{L^2}{\pi r_{\max}^{2}}=3.54\;,
 \end{equation}
 which is $4$ after rounding.
 
 \vspace{0.25cm}
-\noindent\textbf{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters).} According to $R_s$ in Fig.~\ref{fig:orderParam}b, the oscillators in the cluster are synchronized, and the oscillators with different chirality are not synchronized. Therefore, $\lambda_{c2}$ is the critical value of $\lambda$ for the synchronization of oscillators in the same cluster. We still consider the synchronous dynamics in Eq.~(\ref{eq:dotTheta1}) and (\ref{eq:dotThetaj}). To achieve synchronization, the oscillators with the largest phase difference (maximum $\left| \Delta \omega _j \right|$) in the cluster need to be phase locked. The maximum $\left| \Delta \omega _j \right|$ in a cluster is $\left| \Delta \omega _j \right|=\omega _{\max}-\omega _{\min}$. Thus, the critical coupling strength $\lambda_{c2}$ is:
+\noindent\textbf{$\lambda_{c2}$: Ring to Swarm (Multi-Clusters).} According to $R_s$ in Fig.~\ref{fig:orderParam}b, the oscillators in the cluster are synchronized, and the oscillators with different chirality are not synchronized. Therefore, $\lambda_{c2}$ is the critical value of $\lambda$ for the synchronization of oscillators in the same cluster. We still consider the synchronous dynamics in Eq.~(\ref{eq:dotTheta1}) and (\ref{eq:dotThetaj}). To achieve synchronization, the oscillators with the largest phase difference (maximum $\left| \Delta \omega _j \right|$) in the cluster need to be phase-locked. The maximum $\left| \Delta \omega _j \right|$ in a cluster is $\left| \Delta \omega _j \right|=\omega _{\max}-\omega _{\min}$. Thus, the critical coupling strength $\lambda_{c2}$ is:
 \begin{equation}
     \lambda _{c2}=\frac{\omega _{\max}-\omega _{\min}}{\sum\nolimits_{j=2}^{N_s}{A_{1j}}}\;,
 \end{equation}
@@ -422,7 +422,7 @@ where $N_s$ is the number of oscillators in the cluster, and $\sum\nolimits_{j=2
 \begin{equation}
     N_2\left( d_0 \right) =N_s\frac{S_2\left( d_0 \right)}{S_S}=\frac{N_sS_2\left( d_0 \right)}{\pi r_{s}^{2}}\;,
 \end{equation}
-where $S_2$ is the overlapping area of the action scope of the $1$st oscillator and the cluster, $S_S$ is the area of the cluster. Considering that this is a phase transition between ring and cluster states, the oscillator moves with a rotational radius in the ring state until it gathers into clusters, so the radius of the cluster $r_s$ is $(r_{\max}-r_{\min})/2$, as shown in Fig.~\ref{fig:analyticalEps}b. Similar to Eq.~(\ref{eq:S1}),the minimum overlapping area $S_2$ (overlapping area of two circles in Fig.~\ref{fig:analyticalEps}b) can be calculated as
+where $S_2$ is the overlapping area of the action scope of the $1$st oscillator and the cluster, $S_S$ is the area of the cluster. Considering that this is a phase transition between ring and cluster states, the oscillator moves with a rotational radius in the ring state until it gathers into clusters, so the radius of the cluster $r_s$ is $(r_{\max}-r_{\min})/2$, as shown in Fig.~\ref{fig:analyticalEps}b. Similar to Eq.~(\ref{eq:S1}), the minimum overlapping area $S_2$ (overlapping area of two circles in Fig.~\ref{fig:analyticalEps}b) can be calculated as
 \begin{equation}
     \begin{cases}
         S_2\left( d_0 \right) =d_{0}^{2}\frac{\alpha}{2}+r_{s}^{2}\frac{\beta}{2}-r_sd_0\sin \frac{\alpha}{2}\\
@@ -460,13 +460,13 @@ Similarly, we can calculate the critical line $\lambda_{c3}$ in the $(\lambda$-$
 
 \vspace{0.25cm}
 \noindent\textbf{$\lambda_{c4}$: Swarm (Double-Clusters) to Quick Sync.}
-The Quick Sync state can be considered as a special case of the Swarm state where the oscillators are globally synchronized. Our derivation approach comes from adiabatic parameter tuning (see Appendix \ref{sec:Adiabatic}). We assume that the oscillators of two chiralities have been synchronized in the Swarm (Double-Clusters) state, as is shown in Fig.~\ref{fig:analyticalEps}c. Next, we consider the synchronization of the two chiralities. According to Eq.~(\ref{eq:clusterState2}), two clusters with opposite chirality are moving on their respective circular trajectories with the same rotational radius
+The Quick Sync state can be considered as a special case of the Swarm state where the oscillators are globally synchronized. We assume that the oscillators of two chirality have been synchronized in the Swarm (Double-Clusters) state, as is shown in Fig.~\ref{fig:analyticalEps}c. Next, we consider the synchronization of the two chirality. According to Eq.~(\ref{eq:clusterState2}), two clusters with opposite chirality are moving on their respective circular trajectories with the same rotational radius
 \begin{equation}
     r_c = \cfrac{2v}{\omega_{\max}+\omega_{\min}}\;.
 \end{equation}
 In numerical simulations, we observe that the radius $r_s$ of clusters in Swarm state increases with the increase of $\lambda$ and $d_0$. Thus, the radius of the clusters reach maximum value of $r_c$ (see proof in Appendix \ref{sec:maxRadius}) when the $\lambda$ and $d_0$ reach the critical values.
 
-Considering that the trajectories of two chiralities will repel each other before oscillators achieving global synchronization, let's take the maximum relative distance between the motion trajectories of two clusters in space, which is line $AB$ in Fig.~\ref{fig:analyticalEps}c. The distance $l_{AB}$ is
+Considering that the trajectories of two chirality will repel each other before oscillators achieving global synchronization, let's take the maximum relative distance between the motion trajectories of two clusters in space, which is line $AB$ in Fig.~\ref{fig:analyticalEps}c. The distance $l_{AB}$ is
 \begin{equation}
     l_{AB}=\frac{L}{\sqrt{2}}\;.
 \end{equation}
@@ -502,14 +502,14 @@ Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ 
 \begin{figure}[b]
     \includegraphics[width=0.48\textwidth]{./figs/2OsCenterDistance.pdf}
     \caption{
-        \label{fig:2OsCenterDistance} The distance between the centers of two oscillators ($\lambda=4$). 
+        \label{fig:2OsCenterDistance} The distance between the centers of two oscillators ($\lambda=1$). 
         \textbf{(a)}, The distance between the centers of two oscillators with the different chirality. The dashed line is the theoretical maximum distance of Eq~(\ref{eq:maxDistance}).
         \textbf{(b)}, The distance between the centers of two oscillators with the same chirality.
     }
 \end{figure}
 
-In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of oscillators with the same chirality are attracted to each other, while the motion trajectories of oscillators with different chiralities repel each other (cf. Fig.~\ref{fig:centersPosition}a). 
-In this subsection, We analyze the repulsion-attraction dynamics by considering the centers of oscillators' motion trajectories with a a semi-analytic approximation.
+In the Ring state, the oscillators of two chirality exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of oscillators with the same chirality are attracted to each other, while the motion trajectories of oscillators with different chirality repel each other (cf. Fig.~\ref{fig:centersPosition}a). 
+In this subsection, We analyze the repulsion-attraction dynamics by considering the centers of oscillators' motion trajectories with a semi-analytic approximation.
 
 According to the estimation method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}), for the time of $t$ and $t+\mathrm{d}t, \mathrm{d}t\rightarrow 0$, the line connecting the rotational center $\mathbf{c}=(X,Y)$ and position $\mathbf{r}=(x,y)$ of the oscillator is perpendicular to the direction of velocity $\mathbf{v}$, then we have
 \begin{eqnarray}
@@ -560,14 +560,11 @@ According to the behaviors of the Ring state, the centers are ultimately static.
 \end{equation}
 the centers will be static. $\dot{\theta}_i=\dot{\theta}_j$, $\theta _i-\theta _j=\pm\pi/2$ and $A_{ij}=0$ are the solutions of the Eq.~(\ref{eq:staticCenter}).
 
-For the oscillators with the different chirality, the conditions of $\dot{\theta}_i=\dot{\theta}_j$ and $\theta _i-\theta _j=\pm\pi/2$ are not satisfied, due to $2\omega _{\min}>2\lambda $ (the coupling strength is not strong enough to lock the phase, even for the smallest natural frequency difference). Therefore, only when $A_{ij}=0$, which means the oscillators are not within the action scope of each other at any time, the centers of oscillators with different chirality will be static. In this case, the distance between the centers of oscillators with different chirality will converge to a maximum distance. The maximum distance is the distance where the oscillators happen to be unable to couple, which is
-\begin{equation}\label{eq:maxDistance}
-    d_0+v/\left| \omega _1 \right|+v/\left| \omega _2 \right|\;.
-\end{equation} 
+For the oscillators with the different chirality, the conditions of $\dot{\theta}_i=\dot{\theta}_j$ and $\theta _i-\theta _j=\pm\pi/2$ are not satisfied, due to $2\omega _{\min}>2\lambda $ (the coupling strength is not strong enough to lock the phase, even for the smallest natural frequency difference). Therefore, only when $A_{ij}=0$, which means the oscillators are not within the action scope of each other at any time, the centers of oscillators with different chirality will be static. 
 
 For the oscillators with the same chirality, the conditions of $\dot{\theta}_i=\dot{\theta}_j$ and $\theta _i-\theta _j=\pm\pi/2$ can be satisfied when $\left| \Delta \omega \right|\leqslant 2\lambda$. The condition of $A_{ij}=0$ is only satisfied when two oscillators are not within the action scope of each other for beginning, otherwise the attraction of the same chirality will make the centers of oscillators converge to a minimum distance of $0$. In this case, $A_{ij}$ will not be zero at any time. 
 
-Next, we analysis the reasons why the centers of oscillators with the same/ different chirality will converge to the two static states mentioned above.
+Next, we analyze the reasons why the centers of oscillators with the same/ different chirality will converge to the two static states mentioned above.
 For the $i$th and $j$th oscillators, the distance between their rotation centers is
 \begin{equation}\label{eq:distanceCenter}
     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
@@ -577,7 +574,7 @@ For the $i$th and $j$th oscillators, the distance between their rotation centers
 \end{equation}
 Then we can calculate the derivative of $\left| \mathbf{c}_j-\mathbf{c}_i \right|^2$
 
-\begin{equation}
+\begin{equation}\label{eq:distanceCenterDerivative}
     \frac{\mathrm{d}}{\mathrm{d}t}\left| \mathbf{c}_j-\mathbf{c}_i \right|^2=A+B+C\;,
 \end{equation}
 where 
@@ -590,23 +587,88 @@ where
 	&&C=\frac{2v^2}{\dot{\theta}_j\dot{\theta}_i}\left( \frac{\ddot{\theta}_i}{\dot{\theta}_i}+\frac{\ddot{\theta}_j}{\dot{\theta}_j} \right) \cos \left( \theta _i-\theta _j \right)
 \end{eqnarray}
 
-For $A$, since the coupling occurs only when the spatial distance is less than $d_0$, and the $d_0$ of the Ring state is small, the absolute value of $A$ is very small. To verify this, 
+For $A$, since the coupling occurs only when the spatial distance is less than $d_0$, and the $d_0$ of the Ring state is small, the absolute value of $A$ is very small. To verify this, we calculate the value of $|B+C|-|A|$ in the Ring state. As shown in Fig.~\ref{fig:2OsBCsubA}, the value of $|B+C|-|A|>0$ for most of the time. Even if $|B+C|-|A|<0$, the absolute value is very small. Therefore, the Eq.~(\ref{eq:distanceCenterDerivative}) is mainly determined by $B$ and $C$.
 
-% due to the fact that the oscillators only couples when the spatial distance is less than d, and the d0 of the ring state is small, the absolute value of A is very small
+\begin{figure}[b]
+    \includegraphics[width=0.48\textwidth]{./figs/2OsBCsubA.pdf}
+    \caption{
+        \label{fig:2OsBCsubA} The value of $|B+C|-|A|$ of two oscillators when $A_{ij}=1$ and $\lambda=1$.
+        \textbf{(a)}, oscillators with the different chirality.
+        \textbf{(b)}, oscillators with the same chirality.
+    }
+\end{figure}
 
-Therefore, when the coupling occurs, the distance between the rotation centers of two oscillators with the same signs of natural frequency $\omega$ (chirality) will decrease, which means the oscillators of the same chirality are attracted to each other, while the distance between the centers with opposite signs of $\omega$ (chirality) will increase, which means the oscillators of different chirality repel each other.
+For $B$, we can get $\ddot{\theta}_i=-\ddot{\theta}_j$ from Eq.~(\ref{eq:staticCenter}). Then $B$ can be written as
+\begin{equation}
+    B=-\frac{2v^2\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) ^2}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\left( 1+\frac{\dot{\theta}_j}{\dot{\theta}_i}+\frac{\dot{\theta}_i}{\dot{\theta}_j} \right) \cos \left( \theta _j-\theta _i \right)\;.
+\end{equation}
+Since $\lambda<|\omega_{\min}|$, we have $\text{sgn}\dot{\theta}_i=\text{sgn}\omega_i$, which means $\dot{\theta}_i$ and $\dot{\theta}_j$ have the same sign. So it is easy to see that
+\begin{equation}
+    \left( 1+\frac{\dot{\theta}_j}{\dot{\theta}_i}+\frac{\dot{\theta}_i}{\dot{\theta}_j} \right) \in \begin{cases}
+        \left( 2,+\infty \right) ,&		\dot{\theta}_j\dot{\theta}_i>0\\
+        \left( -\infty , 0 \right) ,&		\dot{\theta}_j\dot{\theta}_i<0\\
+    \end{cases}\;.
+\end{equation}
+Therefore, we have
+\begin{equation}
+    \text{sgn} B =\begin{cases}
+        -\text{sgn} \left( \cos \left( \theta _j-\theta _i \right) \right) ,&		\dot{\theta}_j\dot{\theta}_i\geqslant 0\\
+        \text{sgn} \left( \cos \left( \theta _j-\theta _i \right) \right) ,&		\dot{\theta}_j\dot{\theta}_i<0\\
+    \end{cases}\;.
+\end{equation}
+As time $t$ increases, the coupling causes the decrease of $\left| \theta _j-\theta _i \right|$. Therefore, as the absolute value of phase difference gradually decreases to within $\pi/2$, the sign of $B$ is negative for the oscillators with same chirality, and positive for different chirality.
 
-Affected by this repulsive force, the distance between the centers of oscillators with different chiralities will repel each other to a maximum distance. It's not difficult to imagine that the farthest distance is the distance where two oscillators happen to be unable to couple, which is 
+For $C$, it can be written as
+\begin{equation}
+    C=2v^2\frac{\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) ^2\cos ^2\left( \theta _j-\theta _i \right)}{\left( \dot{\theta}_i\dot{\theta}_j \right) ^2}\;.
+\end{equation}
+This term is always positive. Since
+\begin{equation}
+    \left| \dot{\theta}_j-\dot{\theta}_i \right|=\begin{cases}
+        \max \left\{ \dot{\theta}_i,\dot{\theta}_i \right\} -\min \left\{ \dot{\theta}_i,\dot{\theta}_i \right\} ,&		\dot{\theta}_j\dot{\theta}_i\geqslant 0\\
+        \left| \dot{\theta}_j \right|+\left| \dot{\theta}_i \right|,&		\dot{\theta}_j\dot{\theta}_i<0\\
+    \end{cases}\;,
+\end{equation}
+and $\left| \dot{\theta}_j \right|+\left| \dot{\theta}_i \right|\geqslant \max \left\{ \dot{\theta}_i,\dot{\theta}_i \right\} -\min \left\{ \dot{\theta}_i,\dot{\theta}_i \right\}$, the absolute value of $C$ for the oscillators with the different chirality is always larger than that for the same chirality.
 
+In summary, when the coupling occurs, the distance between the rotation centers of two oscillators with the same signs of natural frequency $\omega$ (chirality) will decrease, which means the oscillators of the same chirality are attracted to each other, while the distance between the centers with opposite signs of $\omega$ (chirality) will increase, which means the oscillators of different chirality repel each other. 
+
+\begin{figure}[b]
+    \includegraphics[width=0.48\textwidth]{./figs/2OsDotDistance.pdf}
+    \caption{
+        \label{fig:2OsDotDistance} The derivative of $\left| \mathbf{c}_j-\mathbf{c}_i \right|^2$ ($\lambda=1$).
+        \textbf{(a)}, oscillators with the different chirality.
+        \textbf{(b)}, oscillators with the same chirality.
+    }
+\end{figure}
+
+Affected by this repulsive force, the distance between the centers of oscillators with different chirality will repel each other to a maximum distance. It is not difficult to imagine that the farthest distance is the distance where two oscillators happen to be unable to couple, so we assume that 
+\begin{equation}
+    \begin{array}{c}
+        \lim_{t\rightarrow \infty ,A_{ij}=1} \left( \dot{\theta}_i-\dot{\theta}_j \right) =0\\
+        \lim_{t\rightarrow \infty ,A_{ij}=1} \left( \theta _i-\theta _j \right) =0\\
+    \end{array}\;.
+\end{equation} 
+Therefore, the long time solutions of $\left| \mathbf{c}_j-\mathbf{c}_i \right|^2$ is 
+\begin{equation}
+    \begin{aligned}
+        \lim_{t\rightarrow \infty} \left| \mathbf{c}_j-\mathbf{c}_i \right|^2&=d_{ij}^{2}+\left( \frac{v}{\dot{\theta}_i}-\frac{v}{\dot{\theta}_j} \right) ^2\pm 2d_{ij}\left( \frac{v}{\dot{\theta}_i}-\frac{v}{\dot{\theta}_j} \right)\\
+        &=\left[ \frac{v}{\dot{\theta}_i}-\frac{v}{\dot{\theta}_j}\pm d_{ij} \right] ^2\\
+    \end{aligned}\;,
+\end{equation}
+For the oscillators with the different chirality, the maximum distance is 
+\begin{equation}\label{eq:maxDistance}
+    d_0+v/\left| \omega _1 \right|+v/\left| \omega _2 \right|\;.
+\end{equation} 
 Moreover, the distance between the centers of oscillators with the same chirality will be attracted to each other to a minimum distance of $0$. In this case, the radius of action cannot be too large to avoid two oscillators locking phase, otherwise the centers will not be able to reach $0$.
 In Fig.~\ref{fig:2OsCenterDistance}, we show the distance between the centers of two oscillators with same or different chirality. They eventually converged to their theoretical maximum or minimum values.
 
 \section{\label{sec:conclusions}CONCLUSIONS}
 
 In summary, we have studied the collective dynamics of a system of coupled oscillators with diverse topologies. 
-Most previous work on collective behavior directly defined the interaction forces between oscillators in space. Our research has introduced a simple model that couples the oscillators in phase space and the govering equations of space only indirectly affect the phase coupling. We found that even this simple model can exhibit rich collective dynamics.
+Most previous work on collective behavior directly defined the interaction forces between oscillators in space. Our research has introduced a simple model that couples the oscillators in phase space and the governing equations of space only indirectly affect the phase coupling. We found that even this simple model can exhibit rich collective dynamics.
 We have identified five distinct states: Disorder, Ring, Swarm (which can be further divided into Multi-Clusters and Double-Clusters), and Quick Sync. 
-We have shown that the transitions between these states are driven by the coupling strength $\lambda$ and the action radius $d_0$. 
+The transitions between these states were shown driven by the coupling strength $\lambda$ and the action radius $d_0$. 
 To distinguish these states, we have introduced three order parameters according to the collective behavior of the system: $R$ for the global synchronization of the system, $R_s$ for the synchronization of oscillators within the cluster and $\Delta\Omega$ for the phase-locking of oscillators on the same ring.
 Furthermore, We have derived the analytical approximations of the critical boundaries between the states, which are found to be in good agreement with the numerical results and order parameters. Based on this, we constructed the phase diagram of the system in the $(\lambda$-$d_0)$ plane.
 We have also shown and theoretically explained that the oscillators in the Ring state emerge a spatial repulsion-attraction mechanism driven by phase coupling, which is not clearly observed from the definition of the system.
@@ -667,6 +729,7 @@ The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the ma
 \end{figure}
 
 We traverse all values between $0.15$ and $0.5$ with a step length of $0.05$, and for each value of $\varepsilon$, we calculate the number of clusters of Swarm state with $m=5$ (which is $0.5\%$ of the population $N=1000$ of the system). Then we record the minimum counts of clusters in total states. 
+As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$, and set $m$ to be $5$.
 
 \begin{figure}
     \includegraphics[width=0.48\textwidth]{./figs/DBSCANparam.pdf}
@@ -674,7 +737,6 @@ We traverse all values between $0.15$ and $0.5$ with a step length of $0.05$, an
         \label{fig:DBSCANparam} The minimum counts of clusters with $m=0$ and different $\varepsilon$. The number of clusters is calculated by DBSCAN algorithm. 
     }
 \end{figure}
-As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to at $\varepsilon=0.3$. Then we set $\varepsilon$ to be $0.3$, and set $m$ to be $5$.
 
 % \section{\label{sec:Adiabatic} ADIABATIC TUNING OF THE ACTION RADIUS}
 
@@ -689,21 +751,20 @@ As shown in Fig.~\ref{fig:DBSCANparam}, the mean counts of clusters converges to
 
 \section{\label{sec:maxRadius} PROOF OF THE MAXIMUM RADIUS OF CLUSTERS}
 
-In this section, we prove the maximum radius of cluster in the Swarm state is $r_c$, which is the radius of its rotation trajectory. We prove this by contradiction.
+In this section, we prove the maximum radius of cluster in the Swarm state is $r_c$, which is the radius of its rotation trajectory. We prove this by contradiction method.
 
 \begin{proof}
     We assume that the maximum radius of the cluster is $r_s>r_c$. Then we have the case that the center of cluster's rotation trajectory is inside the cluster circle with radius $r_s$. 
     Fig.~\ref{fig:rsProofEps} shows the schematic plot of this case. $A$ and $B$ 
     are the centers of the cluster and trajectory circle, respectively. The cluster circle is divided into two parts by $B$: red solid and red // hatching. In order to enable cluster to move along the trajectory, the oscillators in two parts must have contrary phase velocities. This contradicts the fact that the oscillators in the cluster are synchronized. Therefore, the maximum radius of the cluster is $r_c$.
-
-    \begin{figure}
-        \includegraphics[width=0.25\textwidth]{./figs/rsProofEps.pdf}
-        \caption{
-            \label{fig:rsProofEps} The schematic plot of $r_s>r_c$.
-        }
-    \end{figure}
-
 \end{proof}
+
+\begin{figure}
+    \includegraphics[width=0.25\textwidth]{./figs/rsProofEps.pdf}
+    \caption{
+        \label{fig:rsProofEps} The schematic plot of $r_s>r_c$.
+    }
+\end{figure}
 
 \begin{figure*}
     \includegraphics[width=0.7\textwidth]{./figs/etimateCenter.png}
@@ -718,6 +779,11 @@ In this section, we prove the maximum radius of cluster in the Swarm state is $r
     }
 \end{figure*}
 
+$$
+$$
+$$
+$$
+\hrulefill
 \nocite{*}
 \bibliography{aipsamp}
 
