@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}  
+\usepackage[ruled,linesnumbered]{algorithm2e} 
+\usepackage{amsmath} 
+\usepackage[margin=0pt,paperwidth=11cm,paperheight=20cm]{geometry}
+
+\begin{document} 
+
+\begin{algorithm}
+	\SetKw{in}{in}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+	\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+	\BlankLine
+	\KwData{A set $S=\left\{\mathbf{c}_i\right\}$ with $N$ elements}
+	\KwIn{parameters: $\varepsilon$, $m$}
+	\KwResult{A cluster set $C=\left\{ \bar{C}_k \right\}$}
+	% \BlankLine
+	\emph{$C_1\gets \left\{ 1 \right\} , C\gets \left\{ C_1 \right\} $}\;
+	\For{$i\leftarrow 2$ \KwTo $N$}{\label{forins}
+		\For{class set $C_k$ \in $C$}{
+			\For{$j$ \in $C_k$}{
+                \emph{$D_{ij}\gets \left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$}\;
+				\If(\tcp*[f]{belong to $C_k$}){$\bar{d}_{ij} < \varepsilon$}{
+					$C_k \leftarrow C_k \cup \left\{i\right\}$\;
+					go to line \ref{forins}\;
+				}
+			}
+		}
+		$C_{|C|+1}\gets \left\{ i \right\},C\gets C\cup \left\{ C_{|C|+1} \right\} $; \tcp*[f]{new class}
+	}
+    \BlankLine
+    \emph{$\bar{C}\gets \left\{ C_1\right\}$}\;
+    \For{$i\leftarrow 2$ \KwTo $|C|$}{\label{forins2}
+        \For{class set $C_k$ \in $C$}{
+            \For{class set $\bar{C}_l$ \in $\bar{C}$}{
+                \emph{$\bar{D}_{kl}=\min \left\{ D_{ij} \text{ for i in } C_k, \text{j in } \bar{C}_l \right\}$}\;
+                \eIf(\tcp*[f]{merge classes}){$\bar{D}_{kl} \le \varepsilon$}{
+                    $\bar{C}_l\gets \bar{C}_l \cup C_k$\;
+                }(
+                    \tcp*[f]{create new class}
+                ){
+                    $\bar{C}\gets \bar{C}\cup \left\{ C_k \right\}$\;
+                }
+            }
+        }
+        $\bar{C}\gets \bar{C}\cup \left\{ C_i \right\}$\;
+    }
+    \For{class set $C_k$ \in $\bar{C}$}{
+        \If(\tcp*[f]{ 
+            remove small classes
+        }){$\left| C_k \right| < m$}{
+            $\bar{C}\gets \bar{C}\backslash \left\{ C_k \right\}$\;
+        }
+    }
+
+	\caption{DBSCAN}
+\end{algorithm}\DecMargin{1em}
+
+\end{document}

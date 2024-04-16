@@ -1,0 +1,233 @@
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  16 APR 2024 08:44
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**algo
+(./algo.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (e:/texlive/2021/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(e:/texlive/2021/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (e:/texlive/2021/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count183
+ (e:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip49
+ (e:/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count184
+) (e:/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (e:/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip50
+\skiplinenumber=\skip51
+\skiprule=\skip52
+\skiphlne=\skip53
+\skiptext=\skip54
+\skiplength=\skip55
+\algomargin=\skip56
+\skipalgocfslide=\skip57
+\algowidth=\dimen139
+\inoutsize=\dimen140
+\inoutindent=\dimen141
+\interspacetitleruled=\dimen142
+\interspacealgoruled=\dimen143
+\interspacetitleboxruled=\dimen144
+\algocf@ruledwidth=\skip58
+\algocf@inoutbox=\box47
+\algocf@inputbox=\box48
+\AlCapSkip=\skip59
+\AlCapHSkip=\skip60
+\algoskipindent=\skip61
+\algocf@nlbox=\box49
+\algocf@hangingbox=\box50
+\algocf@untilbox=\box51
+\algocf@skipuntil=\skip62
+\algocf@capbox=\box52
+\algocf@lcaptionbox=\skip63
+\algoheightruledefault=\skip64
+\algoheightrule=\skip65
+\algotitleheightruledefault=\skip66
+\algotitleheightrule=\skip67
+\c@algocfline=\count185
+\c@algocfproc=\count186
+\c@algocf=\count187
+\algocf@algoframe=\box53
+\algocf@algobox=\box54
+) (e:/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip68
+
+For additional information on amsmath, use the `?' option.
+(e:/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (e:/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen145
+)) (e:/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen146
+) (e:/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count188
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count189
+\leftroot@=\count190
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count191
+\DOTSCASE@=\count192
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+\big@size=\dimen147
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count193
+\c@MaxMatrixCols=\count194
+\dotsspace@=\muskip16
+\c@parentequation=\count195
+\dspbrk@lvl=\count196
+\tag@help=\toks16
+\row@=\count197
+\column@=\count198
+\maxfields@=\count199
+\andhelp@=\toks17
+\eqnshift@=\dimen148
+\alignsep@=\dimen149
+\tagshift@=\dimen150
+\tagwidth@=\dimen151
+\totwidth@=\dimen152
+\lineht@=\dimen153
+\@envbody=\toks18
+\multlinegap=\skip69
+\multlinetaggap=\skip70
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) (e:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (e:/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+) (e:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (e:/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count266
+\Gm@cntv=\count267
+\c@Gm@tempcnt=\count268
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks21
+) (e:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
+ (|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count269
+\l__color_backend_stack_int=\count270
+\g__color_backend_stack_int=\count271
+\g__graphics_track_int=\count272
+\l__pdf_internal_box=\box57
+\g__pdf_backend_object_int=\count273
+\g__pdf_backend_annotation_int=\count274
+\g__pdf_backend_link_int=\count275
+) (./algo.aux)
+\openout1 = `algo.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6.
+ (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(0.0pt, 312.9803pt, 0.0pt)
+* v-part:(T,H,B)=(0.0pt, 569.05511pt, 0.0pt)
+* \paperwidth=312.9803pt
+* \paperheight=569.05511pt
+* \textwidth=312.9803pt
+* \textheight=569.05511pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-109.26999pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[1] (./algo.aux) ) 
+Here is how much of TeX's memory you used:
+ 2689 strings out of 478907
+ 40831 string characters out of 5866571
+ 357934 words of memory out of 5000000
+ 22563 multiletter control sequences out of 15000+600000
+ 407824 words of font info for 49 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 68i,20n,74p,300b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on algo.pdf (1 page).
