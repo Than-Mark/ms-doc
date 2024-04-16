@@ -21,7 +21,7 @@
 		\For{class set $C_k$ \in $C$}{
 			\For{$j$ \in $C_k$}{
                 \emph{$D_{ij}\gets \left| \mathbf{c}_i-\bar{\mathbf{c}}_j \right|$}\;
-				\If(\tcp*[f]{belong to $C_k$}){$\bar{d}_{ij} < \varepsilon$}{
+				\If(\tcp*[f]{belong to $C_k$}){$D_{ij} < \varepsilon$}{
 					$C_k \leftarrow C_k \cup \left\{i\right\}$\;
 					go to line \ref{forins}\;
 				}

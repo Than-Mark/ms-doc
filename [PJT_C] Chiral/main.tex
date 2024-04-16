@@ -358,9 +358,9 @@ The order parameter values in each state are summarized in Table \ref{tab:orderP
     }
 \end{figure*}
 
-\section{\label{sec:analysis}Analysis}
+\section{\label{sec:analysis}Analytical approximations}
 
-\subsection{\label{critical} Analytical approximations of the critical boundaries}
+\subsection{\label{critical} Derivation of the critical boundaries}
 
 In this section we derive the analytical approximations of the boundaries between the states. 
 The boundaries between the states are determined by the critical lines $\lambda_{c1}$, $\lambda_{c2}$, $\lambda_{c3}$, and $\lambda_{c4}$, which are the critical values of $\lambda$ for the transitions between the states with given $d_0$.
@@ -508,72 +508,96 @@ Then we can calculate the critical line $\lambda_{c4}$ in the $(\lambda$-$d_0)$ 
     }
 \end{figure}
 
-In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of chiral oscillators of the same chirality are attracted to each other, while the motion trajectories of chiral oscillators of different chirality repel each other (cf. Fig.~\ref{fig:centersPosition}a). Considering that the ring state occurs when the coupling strength $\lambda$ and the action radius $d_0$ are small and the trajectories of the oscillators in the Ring state are almost circular under uncoupled conditions, we can analyze the repulsion-attraction mechanism by considering the centers of oscillators' motion trajectories.
+In the Ring state, the oscillators of two chiralities exhibit a spatial repulsion-attraction mechanism driven by phase coupling. Specifically, the motion trajectories of oscillators with the same chirality are attracted to each other, while the motion trajectories of oscillators with different chiralities repel each other (cf. Fig.~\ref{fig:centersPosition}a). 
+In this subsection, We analyze the repulsion-attraction dynamics by considering the centers of oscillators' motion trajectories with a a semi-analytic approximation.
 
-Under the assumption of no coupling, the $i$th oscillator moves on a circular trajectory with $\mathbf{c}_i$ as the center and $v/\omega_i$ as radius, according to Eq.~(\ref{eq:circlemotionx}).
-The coordinates of the rotation center can be estimated as the mean coordinates of points on the trajectory.
-the horizontal ordinate of the $i$th oscillator's rotation center is
+According to the estimation method in Fig.~\ref{fig:CenterEps} and Eq.~(\ref{eq:linearEquations}), for the time of $t$ and $t+\mathrm{d}t, \mathrm{d}t\rightarrow 0$, the line connecting the rotational center $\mathbf{c}=(X,Y)$ and position $\mathbf{r}=(x,y)$ of the oscillator is perpendicular to the direction of velocity $\mathbf{v}$, then we have
+\begin{eqnarray}
+        &&\mathbf{v}\left( t \right) \cdot \left[ \mathbf{r}\left( t \right) -\mathbf{c} \right] =0\;,\label{eq:linearEquations1}
+        \\
+        &&\mathbf{v}\left( t+\mathrm{d}t \right) \cdot \left[ \mathbf{r}\left( t+\mathrm{d}t \right) -\mathbf{c} \right] =0\;.\label{eq:linearEquations2}
+\end{eqnarray}
+The Eq.~(\ref{eq:linearEquations2}) can be expanded as
+\begin{equation}\label{eq:linearEquations2Exp}
+    \begin{aligned}
+        &\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) +\left[ \mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) \right] \mathrm{d}t+\dot{\mathbf{v}}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) \mathrm{d}t^2 \\
+        &=\mathbf{v}\left( t \right) \cdot \mathbf{c}+\dot{\mathbf{v}}\left( t \right) \mathrm{d}t\cdot \mathbf{c}\;.
+    \end{aligned}
+\end{equation}
+Introduce Eq.~(\ref{eq:linearEquations1}) into Eq.~(\ref{eq:linearEquations2Exp}) and neglect the higher-order terms of $\mathrm{d}t$, we have
+\begin{equation}
+    \mathbf{v}\left( t \right) \cdot \dot{\mathbf{r}}\left( t \right) +\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{r}\left( t \right) =\dot{\mathbf{v}}\left( t \right) \cdot \mathbf{c}
+\end{equation}
+Therefore, the linear equations can be written as
 \begin{equation}
     \begin{aligned}
-        C_{xi}\left( t_0 \right) &=\frac{\omega _i}{2\pi}\int_{t_0}^{t_0+2\pi /\omega _i}{\left\{ x_{i}^{0}\left( t_0 \right) +\frac{v}{\omega _i}\sin \left[ \theta _i\left( t_0 \right) +\omega _it \right] \right\} \mathrm{d}t}\\
-        &=x_{i}^{0}\left( t_0 \right)\\
-        &=x_i\left( t_0 \right) -\frac{v}{\omega _i}\sin \theta _i\left( t_0 \right)\;.\\
+        &\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) =\dot{x}\left( t \right) X\left( t \right) +\dot{y}\left( t \right) Y\left( t \right) \;,\\
+        \frac{\mathrm{d}}{\mathrm{d}t}&\mathbf{v}\left( t \right) \cdot \mathbf{r}\left( t \right) =\ddot{x}\left( t \right) X\left( t \right) +\ddot{y}\left( t \right) Y\left( t \right)\;.\\
     \end{aligned}
 \end{equation}
-Similarly, the vertical ordinate of the rotation center is
-\begin{equation}
-    C_{yi}\left( t_0 \right) =y_i\left( t_0 \right) +\frac{v}{\omega _i}\cos \theta _i\left( t_0 \right)\;.
+Solve the linear equations, we have
+\begin{equation}\label{eq:linearSolve}
+    \begin{aligned}
+        X\left( t \right) &=x\left( t \right) -\frac{v}{\dot{\theta}\left( t \right)}\sin \theta \left( t \right)\;,\\
+        Y\left( t \right) &=y\left( t \right) +\frac{v}{\dot{\theta}\left( t \right)}\cos \theta \left( t \right)\;.\\
+    \end{aligned}
 \end{equation}
-Due to the symmetry of the ring, we can consider the interaction between only two oscillators. For the $i$th and $j$th oscillators, the distance between their rotation centers is
+Taking the derivative of Eq.~(\ref{eq:linearSolve}), we can get the velocity of the center
+\begin{equation}
+    \begin{aligned}
+        \dot{X}\left( t \right) &=\frac{v\ddot{\theta}\left( t \right)}{\dot{\theta}^2\left( t \right)}\sin \theta \left( t \right)\;,\\
+        \dot{Y}\left( t \right) &=-\frac{v\ddot{\theta}\left( t \right)}{\dot{\theta}^2\left( t \right)}\cos \theta \left( t \right)\;.\\
+    \end{aligned}
+\end{equation}
+
+Due to the symmetry of the ring, we can consider the interaction between only two oscillators. 
+According to the behaviors of the Ring state, the centers are ultimately static. Therefore, the distance between the centers of two oscillators will converge to a certain value. Only when $\ddot{\theta}_i$ and $\ddot{\theta}_j$ are zero
+\begin{equation}\label{eq:staticCenter}
+    \begin{aligned}
+        \ddot{\theta}_i&=\lambda A_{ij}\left( \dot{\theta}_j-\dot{\theta}_i \right) \cos \left( \theta _j-\theta _i \right) =0\;,\\
+        \ddot{\theta}_j&=\lambda A_{ij}\left( \dot{\theta}_i-\dot{\theta}_j \right) \cos \left( \theta _i-\theta _j \right) =0\;,\\
+    \end{aligned}
+\end{equation}
+the centers will be static. $\dot{\theta}_i=\dot{\theta}_j$, $\theta _i-\theta _j=\pm\pi/2$ and $A_{ij}=0$ are the solutions of the Eq.~(\ref{eq:staticCenter}).
+
+For the oscillators with the different chirality, the conditions of $\dot{\theta}_i=\dot{\theta}_j$ and $\theta _i-\theta _j=\pm\pi/2$ are not satisfied, due to $2\omega _{\min}>2\lambda $ (the coupling strength is not strong enough to lock the phase, even for the smallest natural frequency difference). Therefore, only when $A_{ij}=0$, which means the oscillators are not within the action scope of each other at any time, the centers of oscillators with different chirality will be static. In this case, the distance between the centers of oscillators with different chirality will converge to a maximum distance. The maximum distance is the distance where the oscillators happen to be unable to couple, which is
+\begin{equation}\label{eq:maxDistance}
+    d_0+v/\left| \omega _1 \right|+v/\left| \omega _2 \right|\;.
+\end{equation} 
+
+For the oscillators with the same chirality, the conditions of $\dot{\theta}_i=\dot{\theta}_j$ and $\theta _i-\theta _j=\pm\pi/2$ can be satisfied when $\left| \Delta \omega \right|\leqslant 2\lambda$. The condition of $A_{ij}=0$ is only satisfied when two oscillators are not within the action scope of each other for beginning, otherwise the attraction of the same chirality will make the centers of oscillators converge to a minimum distance of $0$. In this case, $A_{ij}$ will not be zero at any time. 
+
+Next, we analysis the reasons why the centers of oscillators with the same/ different chirality will converge to the two static states mentioned above.
+For the $i$th and $j$th oscillators, the distance between their rotation centers is
 \begin{equation}\label{eq:distanceCenter}
     \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{\begin{array}{l}
-        \left( x_j-\frac{v}{\omega _j}\sin \theta _j-x_i+\frac{v}{\omega _i}\sin \theta _i \right) ^2+\\
-        \left( y_j+\frac{v}{\omega _j}\cos \theta _j-y_i-\frac{v}{\omega _i}\cos \theta _i \right) ^2\\
+        \left( x_j-\frac{v}{\dot{\theta}_j}\sin \theta _j-x_i+\frac{v}{\dot{\theta}_i}\sin \theta _i \right) ^2+\\
+        \left( y_j+\frac{v}{\dot{\theta}_j}\cos \theta _j-y_i-\frac{v}{\dot{\theta}_i}\cos \theta _i \right) ^2\\
     \end{array}}\;.
 \end{equation}
-Considering the action radius $d_0$ is small, the coordinates of the two oscillators are very close to each other when coupling occurs,which means $(x_i, y_i) \approx (x_j, y_j)$. Then we have
+Then we can calculate the derivative of $\left| \mathbf{c}_j-\mathbf{c}_i \right|^2$
+
 \begin{equation}
-    \left| \mathbf{c}_j-\mathbf{c}_i \right|=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.
+    \frac{\mathrm{d}}{\mathrm{d}t}\left| \mathbf{c}_j-\mathbf{c}_i \right|^2=A+B+C\;,
 \end{equation}
-Furthermore, due to the symmetry of coupling from Eq.~(\ref{eq:dotthetai}), The phase of the two oscillators after being coupled will have a pair of angular offsets with opposite sign compared to those without coupling:
-\begin{equation}
-    \begin{array}{c}
-        \hat{\theta}_i=\theta _i+\lambda \sin \left( \theta _j-\theta _i \right) T\;,\\
-        \hat{\theta}_j=\theta _j+\lambda \sin \left( \theta _i-\theta _j \right) T\;.
-    \end{array}
-\end{equation}
-Let's set $\theta _s=\lambda \sin \left( \theta _j-\theta _i \right) T$ as the angular offset and $\theta _s$ clearly satisfies
-\begin{equation}\label{eq:theta_s}
-    \theta _s\in \begin{cases}
-        \left[ 0, \frac{\theta _i-\theta _j}{2} \right] ,&		\theta _j\geqslant \theta _i\\
-        \left[ \frac{\theta _i-\theta _j}{2}, 0 \right) ,&		\theta _j<\theta _i\\
-    \end{cases}
-\end{equation}
-Then we have the distance driven by the coupling $\left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|$ as
-\begin{equation}
-    \begin{aligned}\label{eq:distanceCoupling}
-        \left| \hat{\mathbf{c}}_j-\hat{\mathbf{c}}_i \right|&=\sqrt{-\frac{2v^2\cos \left( \hat{\theta}_i-\hat{\theta}_j \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\\
-        &=\sqrt{-\frac{2v^2\cos \left( \theta _i-\theta _j+2\theta _s \right)}{\omega _i\omega _j}+\frac{v^2}{\omega _{i}^{2}}+\frac{v^2}{\omega _{j}^{2}}}\;.\\
-    \end{aligned}
-\end{equation}
-To compare Eq.~(\ref{eq:distanceCenter}) and Eq.~(\ref{eq:distanceCoupling}), we only need to compare the cosine term in the two equations. According to Inequality (\ref{eq:theta_s}), we have
-\begin{equation}
-    \theta _i-\theta _j+2\theta _s\in \begin{cases}
-        \left[ 0, \theta _i-\theta _j \right] ,&		\theta _i-\theta _j\geqslant 0\\
-        \left[ \theta _i-\theta _j, 0 \right) ,&		\theta _i-\theta _j<0\\
-    \end{cases}\;,
-\end{equation}
-which means
-\begin{equation}
-    \cos \left( \theta _i-\theta _j \right) \leqslant \cos \left( \theta _i-\theta _j+2\theta _s \right)\;.
-\end{equation}
+where 
+\begin{eqnarray}
+    &&\begin{aligned}
+        A&=2\left[ \frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\sin \theta _i-\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\sin \theta _j \right] \left( x_i-x_j \right)\\
+        &\;+2\left[ -\frac{v\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^2}\cos \theta _i+\frac{v\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^2}\cos \theta _j \right] \left( y_i-y_j \right)\\
+    \end{aligned}\\
+	&&B=-2v^2\left[ \frac{\ddot{\theta}_i}{\left( \dot{\theta}_i \right) ^3}+\frac{\ddot{\theta}_j}{\left( \dot{\theta}_j \right) ^3} \right]\\
+	&&C=\frac{2v^2}{\dot{\theta}_j\dot{\theta}_i}\left( \frac{\ddot{\theta}_i}{\dot{\theta}_i}+\frac{\ddot{\theta}_j}{\dot{\theta}_j} \right) \cos \left( \theta _i-\theta _j \right)
+\end{eqnarray}
+
+For $A$, since the coupling occurs only when the spatial distance is less than $d_0$, and the $d_0$ of the Ring state is small, the absolute value of $A$ is very small. To verify this, 
+
+% due to the fact that the oscillators only couples when the spatial distance is less than d, and the d0 of the ring state is small, the absolute value of A is very small
 
 Therefore, when the coupling occurs, the distance between the rotation centers of two oscillators with the same signs of natural frequency $\omega$ (chirality) will decrease, which means the oscillators of the same chirality are attracted to each other, while the distance between the centers with opposite signs of $\omega$ (chirality) will increase, which means the oscillators of different chirality repel each other.
 
 Affected by this repulsive force, the distance between the centers of oscillators with different chiralities will repel each other to a maximum distance. It's not difficult to imagine that the farthest distance is the distance where two oscillators happen to be unable to couple, which is 
-\begin{equation}\label{eq:maxDistance}
-    d_0+v/\left| \omega _1 \right|+v/\left| \omega _2 \right|\;.
-\end{equation}
+
 Moreover, the distance between the centers of oscillators with the same chirality will be attracted to each other to a minimum distance of $0$. In this case, the radius of action cannot be too large to avoid two oscillators locking phase, otherwise the centers will not be able to reach $0$.
 In Fig.~\ref{fig:2OsCenterDistance}, we show the distance between the centers of two oscillators with same or different chirality. They eventually converged to their theoretical maximum or minimum values.
 
@@ -635,7 +659,12 @@ All the simulations of the model Eq.~(\ref{eq:dotxi})-(\ref{eq:dotthetai}) were 
 
 \section{\label{sec:DBSCAN_param} DETERMINATION OF DBSCAN'S PARAMETERS}
 
-DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the maximum distance between two samples for one to be considered as in the neighborhood of the other, and $m$ is the minimum number of samples in a neighborhood for a point to be considered as a core point. 
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm, which can find clusters of arbitrary shapes and sizes. The algorithm used in this work is introduced in Algorithm 1.
+The algorithm has two parameters: $\varepsilon$ and $m$. $\varepsilon$ is the maximum distance between two samples for one to be considered as in the neighborhood of the other, and $m$ is the minimum number of samples in a neighborhood for a point to be considered as a core point. 
+
+\begin{figure}
+    \includegraphics[width=0.48\textwidth]{./algorithm/algo.pdf}\label{algo:DBSCAN}
+\end{figure}
 
 We traverse all values between $0.15$ and $0.5$ with a step length of $0.05$, and for each value of $\varepsilon$, we calculate the number of clusters of Swarm state with $m=5$ (which is $0.5\%$ of the population $N=1000$ of the system). Then we record the minimum counts of clusters in total states. 
 
