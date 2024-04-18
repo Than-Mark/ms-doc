@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 APR 2024 00:19
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 APR 2024 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -527,16 +527,16 @@ File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ) (e:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 38.
-Class revtex4-1 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 51.
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
+Class revtex4-1 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 52.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 51.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 51.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 51.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 51.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 52.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 52.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 52.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 52.
 (e:/texlive/2021/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (e:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
@@ -553,31 +553,31 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 52.
  (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-Package hyperref Info: Link coloring ON on input line 51.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+Package hyperref Info: Link coloring ON on input line 52.
  (e:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -587,74 +587,74 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count300
 )
-LaTeX Info: Redefining \ref on input line 51.
-LaTeX Info: Redefining \pageref on input line 51.
-LaTeX Info: Redefining \nameref on input line 51.
+LaTeX Info: Redefining \ref on input line 52.
+LaTeX Info: Redefining \pageref on input line 52.
+LaTeX Info: Redefining \nameref on input line 52.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 51.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 52.
 \openout3 = `mainNotes.bib'.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 78.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 79.
  (e:/texlive/2021/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 78.
+(hyperref)                removing `\\' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 78.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 4.39868pt
-(hyperref)                removed on input line 78.
+(hyperref)                removed on input line 79.
 
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 78.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 79.
 (e:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 78.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 79.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 78.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 79.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 78.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 79.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 78.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 79.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 86.
+(hyperref)                removing `\\' on input line 87.
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 88--92
+Underfull \hbox (badness 3536) in paragraph at lines 89--93
 []\T1/ptm/m/n/10 Synchronization and swarm-ing are two typ-i-cal self-
  []
 
@@ -680,7 +680,7 @@ File: ./figs/classifyResult.pdf Graphic file (type pdf)
 <use ./figs/classifyResult.pdf>
  [5]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 317.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 318.
 
 File: ./figs/analyticalEps.pdf Graphic file (type pdf)
 <use ./figs/analyticalEps.pdf>
@@ -689,7 +689,7 @@ File: ./figs/2OsCenterDistance.pdf Graphic file (type pdf)
 <use ./figs/2OsCenterDistance.pdf>
  [8]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 513.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 514.
 
 [9]
 File: ./figs/2OsBCsubA.pdf Graphic file (type pdf)
@@ -698,7 +698,7 @@ File: ./figs/2OsDotDistance.pdf Graphic file (type pdf)
 <use ./figs/2OsDotDistance.pdf>
  [10]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 665.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 666.
 
 [11]
 File: ./algorithm/algo.pdf Graphic file (type pdf)
@@ -718,19 +718,22 @@ Missing character: There is no ’ ("2019) in font ptmr8t!
 ) [14]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     790.
+(LaTeX3)     791.
 
  (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: EE1EF8E1D06FF394A85AE8825A48A72F;3376.
  ) 
 Here is how much of TeX's memory you used:
- 14158 strings out of 478907
- 217710 string characters out of 5866571
- 598901 words of memory out of 5000000
- 33737 multiletter control sequences out of 15000+600000
+ 14163 strings out of 478907
+ 217756 string characters out of 5866571
+ 598933 words of memory out of 5000000
+ 33742 multiletter control sequences out of 15000+600000
  470791 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 97i,16n,102p,1069b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,16n,102p,1091b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (14 pages).
