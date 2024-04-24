@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\setlength{\parindent}{2em}
+\usepackage{geometry}
+\geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+
+% 设置文章行距
+\renewcommand{\baselinestretch}{1.5}
+
+% 定义引用格式
+% \newcommand{\myeqref}[1]{\eqref{#1}式}
+% \newcommand{\figref}[1]{图\ref{#1}}
+% \newcommand{\tabref}[1]{表\ref{#1}}
+\title{\textbf{Two Coupled Oscillators with Chirality}}
+
+\begin{document}
+
+\maketitle
+
+\section{The Model}
+
+\subsection{Raw model}
+
+$$
+\begin{cases}
+	\dot{x}_1=v\cos \theta _1\\
+	\dot{y}_1=v\sin \theta _1\\
+	\dot{\theta}_1=\omega _1+\lambda A\sin \left( \theta _2-\theta _1 \right)\\
+	\dot{x}_2=v\cos \theta _2\\
+	\dot{y}_2=v\sin \theta _2\\
+	\dot{\theta}_2=\omega _2+\lambda A\sin \left( \theta _1-\theta _2 \right)\\
+\end{cases}
+$$
+
+where 
+
+$$
+A=\begin{cases}
+	1,&		\left| \mathbf{r}_1-\mathbf{r}_2 \right|\leqslant d_0\\
+	0,&		\left| \mathbf{r}_1-\mathbf{r}_2 \right|>d_0\\
+\end{cases}
+$$
+
+\subsection{Model under polar coordinates}
+
+Let
+$$
+\begin{aligned}
+	x_i&=r_i\cos \varphi _i\;,\\
+	y_i&=r_i\sin \varphi _i\;,\\
+\end{aligned}
+$$
+then we have
+$$
+\begin{aligned}
+	\dot{r}_i&=\frac{1}{r_i}\left( x_i\dot{x}_i+y_i\dot{y}_i \right)\\
+	&=v\cos \varphi _i\cos \theta _i+v\sin \varphi _i\sin \theta _i\\
+	&=v\cos \left( \varphi _i-\theta _i \right)\;,\\
+	\dot{\varphi}&=\frac{1}{r_{i}^{2}}\left( x\dot{y}-y\dot{x} \right)\\
+	&=\frac{v}{r_i}\left( \sin \varphi _i\cos \theta _i-\cos \varphi _i\sin \theta _i \right)\\
+	&=\frac{v}{r_i}\sin \left( \varphi _i-\theta _i \right)\;.\\
+\end{aligned}
+$$
+Introduce $\alpha_i=\varphi_i-\theta_i$, $\Delta \theta =\theta _2-\theta _1$, $\Delta \varphi =\varphi _2-\varphi _1$, $\Delta \omega =\omega _2-\omega _1$, then we have
+
+\begin{equation}\label{eq:l1.2}
+    \begin{cases}
+        \dot{r}_1=v\cos \alpha _1\\
+        \dot{r}_2=v\cos \alpha _2\\
+        \dot{\alpha}_1=\frac{v}{r_1}\sin \alpha _1-\omega _1-\lambda A\sin \Delta \theta\\
+        \dot{\alpha}_2=\frac{v}{r_2}\sin \alpha _2-\omega _2+\lambda A\sin \Delta \theta\\
+        \Delta \dot{\varphi}=\frac{v}{r_2}\sin \alpha _2-\frac{v}{r_1}\sin \alpha _1\\
+        \Delta \dot{\theta}=\Delta \omega -2\lambda A \sin \Delta \theta\\
+    \end{cases}\;,
+\end{equation}
+where
+$$
+\begin{aligned}
+	d&=\sqrt{\left( r_1\cos \varphi _1-r_2\cos \varphi _2 \right) ^2+\left( r_1\sin \varphi _1-r_2\sin \varphi _2 \right) ^2}\\
+	&=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_1r_2\cos \Delta \varphi}\\
+\end{aligned}\;.
+$$
+
+\subsection{Single direction driving}
+
+Assuming that $\dot{\theta}_2=\omega _2$, the model becomes
+$$
+\begin{cases}
+	\dot{r}_1=v\cos \alpha _1\\
+	\dot{\alpha}_1=\frac{v}{r_1}\sin \alpha -\omega _i-\lambda \sin \Delta \theta\\
+	\Delta \dot{\theta}=\Delta \omega -\lambda \sin \Delta \theta\\
+\end{cases}\;,
+$$
+
+
+
+\end{document}
