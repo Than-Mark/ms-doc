@@ -32,13 +32,11 @@
 
 \subsection{Raw model}
 
-$$
-\begin{cases}
-	\dot{x}_{1,2}=v\cos \theta _{1,2}\\
-	\dot{y}_{1,2}=v\sin \theta _{1,2}\\
-	\dot{\theta}_{1,2}=\omega _{1,2}+\lambda f\left( r \right) \sin \left( \theta _{2,1}-\theta _{1,2} \right)\\
-\end{cases}
-$$
+\begin{eqnarray}
+    &&\dot{x}_{1,2}=v\cos \theta _{1,2}\;,\\
+    &&\dot{y}_{1,2}=v\sin \theta _{1,2}\;,\\
+    &&\dot{\theta}_{1,2}=\omega _{1,2}+\lambda f\left( r \right) \sin \left( \theta _{2,1}-\theta _{1,2} \right)\;,
+\end{eqnarray}
 where $f\left( r \right)$ is a function of $r=\left| \mathbf{r}_1-\mathbf{r}_2 \right|$, and $\lambda$ is the coupling strength. The function $f\left( r \right)$ can be defined as
 
 \begin{enumerate}
@@ -50,80 +48,100 @@ where $f\left( r \right)$ is a function of $r=\left| \mathbf{r}_1-\mathbf{r}_2 \
 \subsection{Model under polar coordinates}
 
 Let
-$$
-\begin{aligned}
-	x_i&=r_i\cos \varphi _i\;,\\
-	y_i&=r_i\sin \varphi _i\;,\\
-\end{aligned}
-$$
+\begin{eqnarray}
+    &&x_i=r_i\cos \varphi _i\;,\\
+	&&y_i=r_i\sin \varphi _i\;,
+\end{eqnarray}
 then we have
-$$
-\begin{aligned}
-	\dot{r}_i&=\frac{1}{r_i}\left( x_i\dot{x}_i+y_i\dot{y}_i \right)\\
-	&=v\cos \varphi _i\cos \theta _i+v\sin \varphi _i\sin \theta _i\\
-	&=v\cos \left( \varphi _i-\theta _i \right)\;,\\
-	\dot{\varphi}_i&=\frac{1}{r_{i}^{2}}\left( x\dot{y}-y\dot{x} \right)\\
-	&=\frac{v}{r_i}\left( \sin \varphi _i\cos \theta _i-\cos \varphi _i\sin \theta _i \right)\\
-	&=\frac{v}{r_i}\sin \left( \varphi _i-\theta _i \right)\;.\\
-\end{aligned}
-$$
-Introduce $\alpha_i=\varphi_i-\theta_i$, $\Delta \theta =\theta _2-\theta _1$, $\Delta \varphi =\varphi _2-\varphi _1$, $\Delta \omega =\omega _2-\omega _1$, then we have
+\begin{eqnarray}
+    &&\dot{r}_i=\frac{1}{r_i}\left( x_i\dot{x}_i+y_i\dot{y}_i \right) =v\cos \varphi _i\cos \theta _i+v\sin \varphi _i\sin \theta _i=v\cos \left( \varphi _i-\theta _i \right) \;,\\
+	&&\dot{\varphi}_i=\frac{1}{r_{i}^{2}}\left( x\dot{y}-y\dot{x} \right) =\frac{v}{r_i}\left( \sin \varphi _i\cos \theta _i-\cos \varphi _i\sin \theta _i \right) =\frac{v}{r_i}\sin \left( \varphi _i-\theta _i \right) \;.
+\end{eqnarray}
+Introduce $\alpha_i=\varphi_i-\theta_i$, $\Delta \theta =\theta _2-\theta _1$, $\Delta \varphi =\varphi _1-\varphi _2$, $\Delta \omega =\omega _2-\omega _1$, then the model becomes
 
-\begin{equation}\label{eq:l1.2}
-    \begin{cases}
-        \dot{r}_{1,2}=v\cos \alpha _{1,2}\\
-        \dot{\alpha}_{1,2}=\frac{v}{r_{1,2}}\sin \alpha _{1,2}-\omega _{1,2}\mp \lambda f\left( r \right) \sin \Delta \theta\\
-        \Delta \dot{\varphi}=\frac{v}{r_2}\sin \alpha _2-\frac{v}{r_1}\sin \alpha _1\\
-        \Delta \dot{\theta}=\Delta \omega -2\lambda f\left( r \right) \sin \Delta \theta\\
-    \end{cases}
-\end{equation}
+\begin{eqnarray}
+    &&\dot{r}_{1,2}=v\cos \alpha _{1,2}\;,\\
+    &&\dot{\alpha}_{1,2}=\frac{v}{r_{1,2}}\sin \alpha _{1,2}-\omega _{1,2}\mp \lambda f\left( r \right) \sin \Delta \theta\;,\\
+    &&\Delta \dot{\varphi}=\frac{v}{r_1}\sin \alpha _1-\frac{v}{r_2}\sin \alpha _2\;,\\
+    &&\Delta \dot{\theta}=\Delta \omega -2\lambda f\left( r \right) \sin \Delta \theta\;,
+\end{eqnarray}
 where
-$$
-\begin{aligned}
-	r&=\sqrt{\left( r_1\cos \varphi _1-r_2\cos \varphi _2 \right) ^2+\left( r_1\sin \varphi _1-r_2\sin \varphi _2 \right) ^2}\\
-	&=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_1r_2\cos \Delta \varphi}\\
-\end{aligned}\;.
-$$
+\begin{equation}
+    \begin{aligned}
+        r&=\sqrt{\left( r_1\cos \varphi _1-r_2\cos \varphi _2 \right) ^2+\left( r_1\sin \varphi _1-r_2\sin \varphi _2 \right) ^2}\\
+        &=\sqrt{r_{1}^{2}+r_{2}^{2}-2r_1r_2\cos \Delta \varphi}\\
+    \end{aligned}\;.
+\end{equation}
 So the function $f\left( r \right)$ can be defined as $f\left( r_1,r_2,\Delta \varphi \right)$.
 
 \subsection{Single direction driving}
 
 Assuming that $\dot{\theta}_2=\omega _2, \alpha_2=\cfrac{\pi\text{sgn}\omega_2}{2}$, which means that the second oscillator is rotating around the origin with a constant angular velocity $\omega_2$, and the first oscillator is driven by the second one. Then the model becomes
-$$
-\begin{cases}
-    \dot{r}_1=v\cos \alpha _1\\
-    \dot{\alpha}_1=\frac{v}{r_1}\sin \alpha _1-\omega _1-\lambda f\left( r \right) \sin \Delta \theta\\
-    \Delta \dot{\varphi}=\omega _2-\frac{v}{r_1}\sin \alpha _1\\
-    \Delta \dot{\theta}=\Delta \omega -\lambda f\left( r \right) \sin \Delta \theta\\
-\end{cases}\;.
-$$
+\begin{eqnarray}
+    &&\dot{r}_1=v\cos \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)\;,\\
+    &&\Delta \dot{\varphi}=\omega _2-\frac{v}{r_1}\sin \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)\;,\\
+    &&\Delta \dot{\theta}=\Delta \omega -\lambda f\left( r_1,\Delta \varphi \right) \sin \Delta \theta\;.
+\end{eqnarray}
 When $2\lambda f\left( r \right) \geqslant \left| \Delta \omega \right|$, the system has fixed points $\mathbf{x}$, which are
-$$
-\begin{aligned}
-	r_1&=\frac{v}{\omega _2}\;,\\
-	\alpha _1&=\frac{\pi \text{sgn} \omega _2}{2}\;,\\
-	\Delta \varphi &=C_{\varphi}\;,\\
-	\Delta \theta &=C_{\theta}\;,\\
-\end{aligned}
-$$
+\begin{eqnarray}
+    &&r_1=\frac{v}{\omega _2}\;,\\
+	&&\Delta \varphi =C_{\Delta\varphi}\;,\\
+	&&\Delta \theta =C_{\Delta\theta}\;,
+\end{eqnarray}
 where $C_{\varphi}$ and $C_{\theta}$ are constants determined by the initial conditions. Linearizing the governing equations yields
-$$
-M=\left[ \begin{matrix}
-	0&		-v\sin \alpha _1&		0&		0\\
-	-\frac{v}{r_{1}^{2}}\sin \alpha _1-\lambda f_{r_1}\sin \Delta \theta&		\frac{v}{r_1}\cos \alpha _1&		-\lambda f_{\Delta \varphi}\sin \Delta \theta&		-\lambda f\cos \Delta \theta\\
-	\frac{v}{r_{1}^{2}}\sin \alpha _1&		-\frac{v}{r_1}\cos \alpha _1&		0&		0\\
-	-\lambda f_{r_1}\sin \Delta \theta&		0&		-\lambda f_{\Delta \varphi}\sin \Delta \theta&		-\lambda f\cos \Delta \theta\\
-\end{matrix} \right] 
-$$
-where $f_{r_1}=\cfrac{\partial f}{\partial r_1}$, $f_{\Delta \varphi}=\cfrac{\partial f}{\partial \Delta \varphi}$, and $f_{\Delta \theta}=\cfrac{\partial f}{\partial \Delta \theta}$. Evaluating $M$ at the fixed points results in
-$$
-M=\left[ \begin{matrix}
-	0&		-v\text{sgn} \omega _2&		0&		0\\
-	-\frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2-\lambda f_{r_1}\left( \mathbf{x} \right) \sin C_{\theta}&		0&		-\lambda f_{\Delta \varphi}\left( \mathbf{x} \right) \sin C_{\theta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\theta}\\
-	\frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
-	-\lambda f_{r_1}\left( \mathbf{x} \right) \sin C_{\theta}&		0&		-\lambda f_{\Delta \varphi}\left( \mathbf{x} \right) \sin C_{\theta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\theta}\\
-\end{matrix} \right] 
-$$
+\begin{equation}
+    M=\left[ \begin{matrix}
+        0&		-v\sin \alpha _1&		0&		0\\
+        -\frac{v}{r_{1}^{2}}\sin \alpha _1&		\frac{v}{r_1}\cos \alpha _1&		0&		0\\
+        \frac{v}{r_{1}^{2}}\sin \alpha _1&		-\frac{v}{r_1}\cos \alpha _1&		0&		0\\
+        -\lambda f_{r_1}\sin \Delta \theta&		0&		-\lambda f_{\Delta \varphi}\sin \Delta \theta&		-\lambda f\cos \Delta \theta\\
+    \end{matrix} \right] 
+\end{equation}
+where $f_{r_1}=\cfrac{\partial f}{\partial r_1}$ and $f_{\Delta \varphi}=\cfrac{\partial f}{\partial \Delta \varphi}$. Evaluating $M$ at the fixed points results in
+\begin{equation}
+    M=\left[ \begin{matrix}
+        0&		-v\text{sgn} \omega _2&		0&		0\\
+        -\frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
+        \frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
+        -\lambda f_{r_1}\left( \mathbf{x} \right) \sin C_{\theta}&		0&		-\lambda f_{\Delta \varphi}\left( \mathbf{x} \right) \sin C_{\theta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\theta}\\
+    \end{matrix} \right] 
+\end{equation}
 
+\subsection{For $f\left( r \right) = f\left( r \right) _P$}
+
+When $f\left( r \right) = f\left( r \right) _P$, the partial derivatives of $f\left( r \right)$ are
+\begin{eqnarray}
+    &&\frac{\partial f}{\partial r_1}=r_1g\left( r_1,\Delta \varphi \right)\;,
+    \\
+    &&\frac{\partial f}{\partial \Delta \varphi}=\frac{v^2}{\omega _{2}^{2}}g\left( r_1,\Delta \varphi \right) \sin \Delta \varphi\;,
+\end{eqnarray}
+where
+\begin{eqnarray}
+    &&g\left( r_1,\Delta \varphi \right) =-\frac{f^{1+r_0}\left( r_1,\Delta \varphi \right)}{r_{0}^{2}\sqrt{r_{1}^{2}-\frac{2v^2\cos \Delta \varphi}{\omega _{2}^{2}}+\frac{v^2}{\omega _{2}^{2}}}}\;,
+    \\
+    &&f\left( r_1,\Delta \varphi \right) =\left( 1+\frac{\sqrt{r_{1}^{2}-2v^2\cos \Delta \varphi /\omega _{2}^{2}+v^2/\omega _{2}^{2}}}{r_0} \right) ^{-\frac{1}{r_0}}\;.
+\end{eqnarray}
+At the fixed points, the matrix $M$ becomes
+\begin{equation}
+    M=\left[ \begin{matrix}
+        0&		-v\text{sgn} \omega _2&		0&		0\\
+        -\frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
+        \frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
+        -\lambda \frac{v}{\omega _2}g\left( \mathbf{x} \right) \sin C_{\theta}&		0&		-\lambda \frac{v^2}{\omega _{2}^{2}}g\left( \mathbf{x} \right) \sin C_{\Delta \varphi}\sin C_{\theta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\theta}\\
+    \end{matrix} \right] 
+\end{equation}
+where
+\begin{eqnarray}
+    &&g\left( \mathbf{x} \right) =-\frac{\left| \omega _2 \right|f^{1+r_0}\left( \frac{v}{\omega _2},C_{\Delta \varphi} \right)}{vr_{0}^{2}\sqrt{2-2\cos C_{\Delta \varphi}}}\;,\\
+    &&f\left( \mathbf{x} \right) =\left( 1+\frac{v\sqrt{2-2\cos C_{\Delta \varphi}}}{\left| \omega _2 \right|r_0} \right) ^{-\frac{1}{r_0}}\;.
+\end{eqnarray}
+The eigenvalues of $M$ are
+\begin{eqnarray}
+    &&\lambda _{1,2}=\pm \sqrt{\frac{g\left( \mathbf{x} \right)\lambda v^2\sin C_{\Delta \theta}}{\left| \omega _2 \right|}-\frac{\omega _{2}^{4}}{\left| \omega _2 \right|^2}}\;,
+    \\
+    &&\lambda _3=-f\left( \mathbf{x} \right)\lambda \cos C_{\Delta \theta}\;,
+    \\
+    &&\lambda _4=0\;.
+\end{eqnarray}
 
 \end{document}
