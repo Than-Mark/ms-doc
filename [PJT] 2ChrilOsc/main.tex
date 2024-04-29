@@ -76,36 +76,35 @@ So the function $f\left( r \right)$ can be defined as $f\left( r_1,r_2,\Delta \v
 
 \subsection{Single direction driving}
 
-Assuming that $\dot{\theta}_2=\omega _2, \alpha_2=\cfrac{\pi\text{sgn}\omega_2}{2}$, which means that the second oscillator is rotating around the origin with a constant angular velocity $\omega_2$, and the first oscillator is driven by the second one. Then the model becomes
+Assuming that $\dot{\theta}_2=\omega _2, \alpha_2=-\cfrac{\pi\text{sgn}\omega_2}{2}$, which means that the second oscillator is rotating around the origin with a constant angular velocity $\omega_2$, and the first oscillator is driven by the second one. Then the model becomes
 \begin{eqnarray}
     &&\dot{r}_1=v\cos \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)\;,\\
     &&\Delta \dot{\varphi}=\omega _2-\frac{v}{r_1}\sin \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)\;,\\
     &&\Delta \dot{\theta}=\Delta \omega -\lambda f\left( r_1,\Delta \varphi \right) \sin \Delta \theta\;.
 \end{eqnarray}
-When $2\lambda f\left( r \right) \geqslant \left| \Delta \omega \right|$, the system has fixed points $\mathbf{x}$, which are
+When $\lambda f\left( r \right) \geqslant \left| \Delta \omega \right|$, the system has fixed points $\mathbf{x}$, which are
 \begin{eqnarray}
-    &&r_1=\frac{v}{\omega _2}\;,\\
-	&&\Delta \varphi =C_{\Delta\varphi}\;,\\
-	&&\Delta \theta =C_{\Delta\theta}\;,
+    &&r_1=\frac{v}{|\omega _2|}\;,\\
+	&&\Delta \varphi =-\Delta \theta =C_{\Delta}\;,
 \end{eqnarray}
-where $C_{\varphi}$ and $C_{\theta}$ are constants determined by the initial conditions. Linearizing the governing equations yields
+where $C_{\Delta}$ is a constant determined by the initial conditions. Linearizing the governing equations yields
 \begin{equation}
     M=\left[ \begin{matrix}
-        0&		-v\sin \alpha _1&		0&		0\\
-        -\frac{v}{r_{1}^{2}}\sin \alpha _1&		\frac{v}{r_1}\cos \alpha _1&		0&		0\\
-        \frac{v}{r_{1}^{2}}\sin \alpha _1&		-\frac{v}{r_1}\cos \alpha _1&		0&		0\\
-        -\lambda f_{r_1}\sin \Delta \theta&		0&		-\lambda f_{\Delta \varphi}\sin \Delta \theta&		-\lambda f\cos \Delta \theta\\
-    \end{matrix} \right] 
+        0&		-v\sin \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)&		-v\sin \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)\\
+        \frac{v\sin \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)}{r_{1}^{2}}&		-\frac{v\cos \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)}{r_1}&		-\frac{v\cos \left( \Delta \varphi +\Delta \theta +\alpha _2 \right)}{r_1}\\
+        -\lambda f_{r_1}\sin \Delta \theta&		-\lambda f_{\Delta \varphi}\sin \Delta \theta&		-\lambda f\cos \Delta \theta\\
+    \end{matrix} \right]
 \end{equation}
-where $f_{r_1}=\cfrac{\partial f}{\partial r_1}$ and $f_{\Delta \varphi}=\cfrac{\partial f}{\partial \Delta \varphi}$. Evaluating $M$ at the fixed points results in
+where $f_{r_1}=\cfrac{\partial f}{\partial r_1}$ and $f_{\Delta \varphi}=\cfrac{\partial f}{\partial \Delta \varphi}$. Evaluating $M$ at the fixed points $\mathbf{x}$ results in
 \begin{equation}
     M=\left[ \begin{matrix}
-        0&		-v\text{sgn} \omega _2&		0&		0\\
-        -\frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
-        \frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
-        -\lambda f_{r_1}\left( \mathbf{x} \right) \sin C_{\theta}&		0&		-\lambda f_{\Delta \varphi}\left( \mathbf{x} \right) \sin C_{\theta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\theta}\\
-    \end{matrix} \right] 
+        0&		v\text{sgn} \omega _2&		v\text{sgn} \omega _2\\
+        -\frac{\omega _{2}^{2}\text{sgn} \omega _2}{v}&		0&		0\\
+        -\lambda f_{r_1}\left( \mathbf{x} \right) \sin C_{\Delta}&		-\lambda f_{\Delta \varphi}\left( \mathbf{x} \right) \sin C_{\Delta}&		-\lambda f\left( \mathbf{x} \right)\cos C_{\Delta}\\
+    \end{matrix} \right]
 \end{equation}
+The eigenvalues of $M$ are
+
 
 \subsection{For $f\left( r \right) = f\left( r \right) _P$}
 
@@ -121,27 +120,26 @@ where
     \\
     &&f\left( r_1,\Delta \varphi \right) =\left( 1+\frac{\sqrt{r_{1}^{2}-2v^2\cos \Delta \varphi /\omega _{2}^{2}+v^2/\omega _{2}^{2}}}{r_0} \right) ^{-\frac{1}{r_0}}\;.
 \end{eqnarray}
-At the fixed points, the matrix $M$ becomes
+At the fixed points $\mathbf{x}$, the matrix $M$ becomes
 \begin{equation}
     M=\left[ \begin{matrix}
-        0&		-v\text{sgn} \omega _2&		0&		0\\
-        -\frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
-        \frac{\omega _{2}^{2}}{v}\text{sgn} \omega _2&		0&		0&		0\\
-        -\lambda \frac{v}{\omega _2}g\left( \mathbf{x} \right) \sin C_{\theta}&		0&		-\lambda \frac{v^2}{\omega _{2}^{2}}g\left( \mathbf{x} \right) \sin C_{\Delta \varphi}\sin C_{\theta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\theta}\\
+        0&		v\text{sgn} \omega _2&		v\text{sgn} \omega _2\\
+        -\frac{\omega _{2}^{2}\text{sgn} \omega _2}{v}&		0&		0\\
+        -\frac{\lambda v}{|\omega _2|}g\left( \mathbf{x} \right) \sin C_{\Delta}&		\frac{\lambda v^2}{\omega _{2}^{2}}g\left( \mathbf{x} \right) \sin ^2C_{\Delta}&		-\lambda f\left( \mathbf{x} \right) \cos C_{\Delta}\\
     \end{matrix} \right] 
 \end{equation}
 where
 \begin{eqnarray}
-    &&g\left( \mathbf{x} \right) =-\frac{\left| \omega _2 \right|f^{1+r_0}\left( \frac{v}{\omega _2},C_{\Delta \varphi} \right)}{vr_{0}^{2}\sqrt{2-2\cos C_{\Delta \varphi}}}\;,\\
-    &&f\left( \mathbf{x} \right) =\left( 1+\frac{v\sqrt{2-2\cos C_{\Delta \varphi}}}{\left| \omega _2 \right|r_0} \right) ^{-\frac{1}{r_0}}\;.
+    &&g\left( \mathbf{x} \right) =-\frac{\left| \omega _2 \right|f^{1+r_0}\left( \mathbf{x} \right)}{vr_{0}^{2}\sqrt{2-2\cos C_{\Delta}}}\;,\\
+    &&f\left( \mathbf{x} \right) =\left( 1+\frac{v\sqrt{2-2\cos C_{\Delta}}}{\left| \omega _2 \right|r_0} \right) ^{-\frac{1}{r_0}}\;.
 \end{eqnarray}
-The eigenvalues of $M$ are
-\begin{eqnarray}
-    &&\lambda _{1,2}=\pm \sqrt{\frac{g\left( \mathbf{x} \right)\lambda v^2\sin C_{\Delta \theta}}{\left| \omega _2 \right|}-\frac{\omega _{2}^{4}}{\left| \omega _2 \right|^2}}\;,
-    \\
-    &&\lambda _3=-f\left( \mathbf{x} \right)\lambda \cos C_{\Delta \theta}\;,
-    \\
-    &&\lambda _4=0\;.
-\end{eqnarray}
+
+% \begin{eqnarray}
+%     &&\lambda _{1,2}=\pm \sqrt{\frac{g\left( \mathbf{x} \right)\lambda v^2\sin C_{\Delta \theta}}{\left| \omega _2 \right|}-\frac{\omega _{2}^{4}}{\left| \omega _2 \right|^2}}\;,
+%     \\
+%     &&\lambda _3=-f\left( \mathbf{x} \right)\lambda \cos C_{\Delta \theta}\;,
+%     \\
+%     &&\lambda _4=0\;.
+% \end{eqnarray}
 
 \end{document}
