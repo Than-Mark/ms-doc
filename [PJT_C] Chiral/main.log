@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 APR 2024 19:01
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  4 MAY 2024 09:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,30 +6,32 @@ entering extended mode
 **main
 (./main.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> (e:/texlive/2021/texmf-dist/tex/latex/revtex4-1/revtex4-1.cls
-Document Class: revtex4-1 2020/09/30 4.1s (http://publish.aps.org/revtex4/ for documentation)
- Copyright (c) 2009 The American Physical Society.
+L3 programming layer <2021-02-18> (e:/texlive/2021/texmf-dist/tex/latex/revtex/revtex4-2.cls
+Document Class: revtex4-2 2020/10/03 4.2e (https://journals.aps.org/revtex/ for documentation)
+ Copyright (c) 2019 American Physical Society.
  mailto:revtex@aps.org
  Licensed under the LPPL:
 http://www.ctan.org/tex-archive/macros/latex/base/lppl.txt
  Arthur Ogawa <arthur_ogawa at sbcglobal dot net>
- Based on work by David Carlisle <david at dcarlisle.demon.co.uk>.
-ltxutil[2020/09/30 4.1s utilities package (portions licensed from W. E. Baxter web at superscript.com)]
-LaTeX Info: Redefining \@centercr on input line 346.
-Class revtex4-1 Info: Repairing broken LaTeX eqnarray on input line 396.
+ Based on work by David Carlisle <david at dcarlisle.demon.co.uk>
+ Version (4.2d,4.2e): Modified by Mark Doyle and Phelype Oleinik
+ .
+ltxutil[2020/10/03 4.2e utilities package (portions licensed from W. E. Baxter web at superscript.com)]
+LaTeX Info: Redefining \@centercr on input line 356.
+Class revtex4-2 Info: Repairing broken LaTeX eqnarray on input line 406.
 \eqncolsep=\skip47
-Class revtex4-1 Info: Repairing hyperref-unfriendly LaTeX definition of \mpfootnote on input line 471.
-Class revtex4-1 Info: Repairing broken LateX \@sect on input line 793.
+Class revtex4-2 Info: Repairing hyperref-unfriendly LaTeX definition of \mpfootnote on input line 481.
+Class revtex4-2 Info: Repairing broken LateX \@sect on input line 803.
 \intertabularlinepenalty=\count175
 \@tbpen=\count176
 \@arstrutbox@hline=\box47
-Class revtex4-1 Info: Repairing broken LaTeX \@xbitor on input line 1824.
-Class revtex4-1 Info: Making \typeout \long on input line 2089.
-ltxfront[2020/09/30 4.1s frontmatter package (AO,DPC)]
+Class revtex4-2 Info: Repairing broken LaTeX \@xbitor on input line 1834.
+Class revtex4-2 Info: Making \typeout \long on input line 2099.
+ltxfront[2020/10/03 4.2e frontmatter package (AO,DPC,MD)]
 \c@affil=\count177
 \c@collab=\count178
 \absbox=\box48
-ltxgrid[2020/09/30 4.1s page grid package (portions licensed from W. E. Baxter web at superscript.com)]
+ltxgrid[2020/10/03 4.2e page grid package (portions licensed from W. E. Baxter web at superscript.com)]
 \c@linecount=\count179
 \output@latex=\toks15
 \box@size@1=\box49
@@ -42,7 +44,7 @@ ltxgrid[2020/09/30 4.1s page grid package (portions licensed from W. E. Baxter w
 \pagesofar=\box55
 \footsofar=\box56
 \pagegrid@col=\count180
-Class revtex4-1 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and \\  on input line 5655.
+Class revtex4-2 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and \\  on input line 5665.
 \c@part=\count181
 \c@section=\count182
 \c@subsection=\count183
@@ -60,26 +62,23 @@ Class revtex4-1 Info: Overriding \@vspace, \@vspacer, \@no@pgbk, \@newline, and 
 \@bibdataout=\write3
 \widetext@top=\box60
 \widetext@bot=\box61
-Class revtex4-1 Info: Selecting society aip on input line 7616.
-(e:/texlive/2021/texmf-dist/tex/latex/revtex4-1/aip4-1.rtx
-File: aip4-1.rtx 2020/09/30 4.1s AIP substyle for REVTeX
-Class revtex4-1 Info: RevTeX society AIP selected on input line 64.
+
+Class revtex4-2 Warning: No Society specified, using default society aps.
+
+(e:/texlive/2021/texmf-dist/tex/latex/revtex/aps4-2.rtx
+File: aps4-2 2020/10/03 4.2e (https://journals.aps.org/revtex/ for documentation)
+Class revtex4-2 Info: RevTeX society APS selected on input line 40.
 )
 
-Class revtex4-1 Warning: No journal specified, using default cha.
+Class revtex4-2 Warning: No journal specified, using default pra.
 
-Using journal substyle cha.
-Class revtex4-1 Info: Reading file aps10pt4-1.rtx on input line 7621.
-(e:/texlive/2021/texmf-dist/tex/latex/revtex4-1/aps10pt4-1.rtx
-File: aps10pt4-1 2020/09/30 4.1s (http://publish.aps.org/revtex4/ for documentation)
-Class revtex4-1 Info: RevTeX pointsize 10pt selected on input line 30.
-)
-Class revtex4-1 Info: Overriding 10pt on input line 7621.
- (e:/texlive/2021/texmf-dist/tex/latex/textcase/textcase.sty
+Class revtex4-2 Info: APS journal PRA selected on input line 7661.
+(e:/texlive/2021/texmf-dist/tex/latex/revtex/aps10pt4-2.rtx
+File: aps10pt4-2 2020/10/03 4.2e (https://journals.aps.org/revtex/ for documentation)
+Class revtex4-2 Info: RevTeX pointsize 10pt selected on input line 39.
+) (e:/texlive/2021/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
-) (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+) (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup4
@@ -87,7 +86,9 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (e:/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (e:/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip50
 
@@ -153,12 +154,12 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count268
 )
-Class revtex4-1 Info: Repairing natbib's \BibitemShut on input line 7623.
- (e:/texlive/2021/texmf-dist/tex/latex/revtex4-1/revsymb4-1.sty
-Package: revsymb4-1 2020/09/30 4.1s (http://publish.aps.org/revtex4/ for documentation)
-LaTeX Info: Redefining \frak on input line 95.
-LaTeX Info: Redefining \Bbb on input line 111.
-LaTeX Info: Redefining \REV@mathfrak on input line 119.
+Class revtex4-2 Info: Repairing natbib's \BibitemShut on input line 7665.
+ (e:/texlive/2021/texmf-dist/tex/latex/revtex/revsymb4-2.sty
+Package: revsymb4-2 2020/10/03 4.2e (https://journals.aps.org/revtex/ for documentation)
+LaTeX Info: Redefining \frak on input line 104.
+LaTeX Info: Redefining \Bbb on input line 120.
+LaTeX Info: Redefining \REV@mathfrak on input line 128.
 )) (e:/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
  (e:/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
@@ -527,16 +528,16 @@ File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ) (e:/texlive/2021/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 39.
-Class revtex4-1 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 52.
+Package hyperref Info: Option `colorlinks' set `true' on input line 40.
+Class revtex4-2 Info: Unrecognized array package. Please update this document class! (Proceeding with fingers crossed.) on input line 53.
 
 
-Class revtex4-1 Warning: Repair the float package.
+Class revtex4-2 Warning: Repair the float package.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 52.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 52.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 52.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 52.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 53.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 53.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 53.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 53.
 (e:/texlive/2021/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (e:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
@@ -553,31 +554,31 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 53.
  (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-Package hyperref Info: Link coloring ON on input line 52.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+Package hyperref Info: Link coloring ON on input line 53.
  (e:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -587,118 +588,135 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count300
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 52.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 53.
 \openout3 = `mainNotes.bib'.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 79.
- (e:/texlive/2021/texmf-dist/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 79.
+(hyperref)                removing `\\' on input line 80.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 4.39868pt
-(hyperref)                removed on input line 79.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 80.
 
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 79.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.33234pt
+(hyperref)                removed on input line 80.
+
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 80.
 (e:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 79.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 80.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 79.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 80.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 79.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 80.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 79.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 80.
  (e:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Calculating math sizes for size <7.4> on input line 80.
 
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <5.47603> not available
+(Font)              size <5> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.44003> not available
+(Font)              size <5> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <5.47603> not available
+(Font)              size <5> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <4.44003> not available
+(Font)              size <5> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.47603> not available
+(Font)              size <5> substituted on input line 80.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.44003> not available
+(Font)              size <5> substituted on input line 80.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.47603> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <4.44003> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 87.
+(hyperref)                removing `\\' on input line 88.
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 89--93
+Underfull \hbox (badness 3536) in paragraph at lines 90--94
 []\T1/ptm/m/n/10 Synchronization and swarm-ing are two typ-i-cal self-
  []
 
 File: ./figs/phaseDiagram.pdf Graphic file (type pdf)
 <use ./figs/phaseDiagram.pdf>
-[1]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
+[1] [2]
 File: ./figs/phaseHist.pdf Graphic file (type pdf)
 <use ./figs/phaseHist.pdf>
 File: ./figs/radiusOmega.png Graphic file (type bmp)
 <./figs/radiusOmega.png>
- [2]
 File: ./figs/disorderState.pdf Graphic file (type pdf)
 <use ./figs/disorderState.pdf>
 File: ./figs/centersPosition.png Graphic file (type bmp)
 <./figs/centersPosition.png>
- [3]
 File: ./figs/CenterEps.pdf Graphic file (type pdf)
 <use ./figs/CenterEps.pdf>
 File: ./figs/orderParam.png Graphic file (type bmp)
 <./figs/orderParam.png>
- [4]
+ [3] [4]
 File: ./figs/classifyResult.pdf Graphic file (type pdf)
 <use ./figs/classifyResult.pdf>
  [5]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 318.
-
 File: ./figs/analyticalEps.pdf Graphic file (type pdf)
 <use ./figs/analyticalEps.pdf>
-[6] [7]
+ [6] [7] [8]
 File: ./figs/2OsCenterDistance.pdf Graphic file (type pdf)
 <use ./figs/2OsCenterDistance.pdf>
- [8]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 514.
-
-[9]
+ [9]
 File: ./figs/2OsBCsubA.pdf Graphic file (type pdf)
 <use ./figs/2OsBCsubA.pdf>
 File: ./figs/2OsDotDistance.pdf Graphic file (type pdf)
 <use ./figs/2OsDotDistance.pdf>
  [10]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 666.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 648.
 
 [11]
 File: ./algorithm/algo.pdf Graphic file (type pdf)
@@ -709,31 +727,56 @@ File: ./figs/rsProofEps.pdf Graphic file (type pdf)
 <use ./figs/rsProofEps.pdf>
 File: ./figs/etimateCenter.png Graphic file (type bmp)
 <./figs/etimateCenter.png>
- (./main.bbl [12]
+ [12]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 787.
+
+(./main.bbl
 Missing character: There is no ’ ("2019) in font ptmr8t!
- [13]
+
+Underfull \hbox (badness 2512) in paragraph at lines 292--300
+ \T1/ptm/m/n/9 dependent motil-ity,'' Phys-i-cal re-view let-ters \T1/ptm/b/n/9 108\T1/ptm/m/n/9 , 248101
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 319--325
+ \T1/ptm/m/n/9 Geier, ``Vor-tex ar-rays and mesoscale tur-bu-lence of self-
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 319--325
+ \T1/ptm/m/n/9 propelled par-ti-cles,'' Phys-i-cal re-view let-ters \T1/ptm/b/n/9 113\T1/ptm/m/n/9 , 258104
+ []
+
+[13]
 Missing character: There is no ’ ("2019) in font ptmr8t!
 Missing character: There is no ’ ("2019) in font ptmr8t!
+
+Underfull \hbox (badness 1418) in paragraph at lines 502--508
+ \T1/ptm/m/n/9 syn-chro-niza-tion: Mu-tual flock-ing and chi-ral self-sorting,''
+ []
+
 Missing character: There is no ’ ("2019) in font ptmr8t!
 ) [14]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     791.
+(LaTeX3)     792.
 
  (./main.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.55997pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EE1EF8E1D06FF394A85AE8825A48A72F;3376.
+(rerunfilecheck)             Checksum: 308899B37111456E4D1E3845C7B90F25;3482.
  ) 
 Here is how much of TeX's memory you used:
- 14163 strings out of 478907
- 217756 string characters out of 5866571
- 598933 words of memory out of 5000000
- 33742 multiletter control sequences out of 15000+600000
- 470791 words of font info for 121 fonts, out of 8000000 for 9000
+ 14187 strings out of 478907
+ 217617 string characters out of 5866571
+ 598459 words of memory out of 5000000
+ 33773 multiletter control sequences out of 15000+600000
+ 458685 words of font info for 131 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 97i,16n,102p,1091b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,16n,102p,1069b,566s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (14 pages).
