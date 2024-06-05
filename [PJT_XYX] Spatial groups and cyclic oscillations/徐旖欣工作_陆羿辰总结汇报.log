@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 APR 2024 19:25
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  5 JUN 2024 17:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,7 +670,6 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 30.
  (e:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Missing character: There is no 禂 (U+7982) in font [FandolSong-Regular.otf]/OT:language=dflt;!
 File: ./figs/fig1.jpg Graphic file (type bmp)
 <./figs/fig1.jpg>
  [1
