@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\setlength{\parindent}{2em}
+\usepackage{geometry}
+\geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+
+% \twocolumn
+
+% 设置文章行距
+\renewcommand{\baselinestretch}{1.5}
+
+% 定义引用格式
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    linkbordercolor=white
+}
+
+\title{\textbf{Two Coupled Swarmalators with Chirality}}
+
+\begin{document}
+
+\maketitle
+
+\section{Reference}
+\subsection{Farrell F D C, Marchetti M C, Marenduzzo D, et al. Pattern formation in self-propelled particles with density-dependent motility[J]. Physical review letters, 2012, 108(24): 248101.}
+Microscopic dynamics:
+\begin{equation}
+    \label{eq:microscopicEq}
+    \begin{aligned}
+        \dot{\mathbf{r}}_i&=v\mathbf{e}_{\theta _i}\;,\\
+        \dot{\theta}_i&=\gamma \sum_{j=1}^N{F\left( \theta _j-\theta _i,\mathbf{r}_j-\mathbf{r}_i \right)}+\sqrt{2\epsilon}\tilde{\eta}_i\left( t \right)\;.\\
+    \end{aligned}
+\end{equation}
+The microscopic density of particles at position $\mathbf{r}$ with angle $\theta$ is given by
+\begin{equation}
+    \label{eq:localDensity}
+    f \left( \mathbf{r},\theta\right)=\sum_{i=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_i \right)\delta \left( \theta-\theta _i \right)}\;.
+\end{equation}
+Using It\^{o}'s formula, a stochastic dynamical equation for the density Eq.~\eqref{eq:localDensity} can be derived:
+\begin{equation}
+    \label{eq:localDensityDynamics}
+    \begin{array}{l}
+        \partial _tf\left( \mathbf{r},\theta \right) +\mathbf{e}_{\theta}\cdot \nabla \left[ vf \right]\\
+        =\epsilon \frac{\partial ^2f}{\partial \theta ^2}-\frac{\partial}{\partial \theta}\sqrt{2\epsilon f}\eta -\gamma \frac{\partial}{\partial \theta}\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime} f\left( \mathbf{r}^{\prime},\theta ^{\prime} \right)}\times f\left( \mathbf{r},\theta \right) F\left( \theta ^{\prime}-\theta ,\mathbf{r}-\mathbf{r}^{\prime} \right)\;.\\
+    \end{array}
+\end{equation}
+Drop the noise term, and Fourier transform Eq.~\eqref{eq:localDensityDynamics} to get equations of motion for
+\begin{equation}
+    \label{eq:FourierDensity}
+    f_k\equiv \int{f\left( \mathbf{r},\theta \right) e^{ik\theta}\mathrm{d}\theta}\;.
+\end{equation}
+
+\section{Our Work}
+We replace the finite range alignment interaction by a pseudopotential ($\delta$-interaction) in the model:
+\begin{equation}
+    \label{eq:ourModel}
+    \begin{aligned}
+        \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
+        \dot{\theta}_i&=\omega _i+g \sum_{j\ne i}{\delta}\left( \mathbf{r}_j-\mathbf{r}_i \right) \sin \left( \theta _j-\theta _i \right)\\
+    \end{aligned}
+\end{equation}
+where $\mathbf{p}_i=(\cos\theta_i, \sin\theta_i)$ and $g=\lambda/\pi d_0^{2}$. The combined probability density of finding a particle at position $\mathbf{r}$ with angle $\theta$ of the $i$th swarmalator is given by
+\begin{equation}
+    f_i\left( \mathbf{r},\theta \right) =\delta \left( \mathbf{r}-\mathbf{r}_i \right) \delta \left( \theta -\theta _i \right)\;.
+\end{equation}
+For the disorder state, which is a uniform incoherent state, the frequency $\omega_i$ is spatiotemporal independent. Therefore, we assume frequency $\omega(\mathbf{x}, t)$ to represent spatiotemporal white noise following the distribution given by the definition of the mono-chiral and chiral swarmalators.
+
+With above assumptions, we obtain
+\begin{equation}
+    \label{eq:ourLocalDensity}
+    f\left( \mathbf{r},\theta \right)=\sum_{i=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_i \right)\delta \left( \theta-\theta _i \right)}\;.
+\end{equation}
+Using It\^{o}'s Lemma, a stochastic dynamical equation for the density Eq.~\eqref{eq:ourLocalDensity} can be derived:
+\begin{equation}
+    \dot{f}(\mathbf{r},\theta ,t)=-v\mathbf{p}\cdot \nabla f-\omega \partial _{\theta}f-g\partial _{\theta}\int{\mathrm{d}}\theta ^{\prime}f\left( \mathbf{r},\theta ^{\prime} \right) \sin \left( \theta ^{\prime}-\theta \right) f(\mathbf{r},\theta )+\partial _{\theta}^{2}f
+\end{equation}
+where $\omega=\omega\left(\mathbf{r}, t\right)$ is the spatiotemporal white noise.
+
+\end{document}
