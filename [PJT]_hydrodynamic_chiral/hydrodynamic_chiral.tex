@@ -71,24 +71,56 @@ We replace the finite range alignment interaction by a pseudopotential ($\delta$
     \label{eq:ourModel}
     \begin{aligned}
         \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
-        \dot{\theta}_i&=\omega _i+g \sum_{j\ne i}{\delta}\left( \mathbf{r}_j-\mathbf{r}_i \right) \sin \left( \theta _j-\theta _i \right)\\
+        \dot{\theta}_i&=\omega _i+\lambda \sum_{j\ne i}{\delta}\left( \mathbf{r}_j-\mathbf{r}_i \right) \sin \left( \theta _j-\theta _i \right)\\
     \end{aligned}
 \end{equation}
-where $\mathbf{p}_i=(\cos\theta_i, \sin\theta_i)$ and $g=\lambda/\pi d_0^{2}$. The combined probability density of finding a particle at position $\mathbf{r}$ with angle $\theta$ of the $i$th swarmalator is given by
+where $\mathbf{p}_i=(\cos\theta_i, \sin\theta_i)$. The combined probability density of finding a particle at position $\mathbf{r}_i$ with angle $\theta_i$ is given by
 \begin{equation}
     f_i\left( \mathbf{r},\theta \right) =\delta \left( \mathbf{r}-\mathbf{r}_i \right) \delta \left( \theta -\theta _i \right)\;.
 \end{equation}
-For the disorder state, which is a uniform incoherent state, the frequency $\omega_i$ is spatiotemporal independent. Therefore, we assume frequency $\omega(\mathbf{x}, t)$ to represent spatiotemporal white noise following the distribution given by the definition of the mono-chiral and chiral swarmalators.
+The basic idea is to replace $f_i\omega_i$ by its mean plus a typical fluctuation
+\begin{equation}
+    \label{eq:ourNoise}
+    \omega _if_i\longrightarrow \bar{\omega}f+\sqrt{\Delta _{\omega}f}\eta\;,
+\end{equation}
+where $\eta$ describes Gaussian random numbers with zero mean and unit variance 
+\begin{equation}
+    \left\langle\eta(\mathbf{r}, \theta, t) \eta\left(\mathbf{r}^{\prime} \theta^{\prime}, t\right)\right\rangle=\delta\left(\mathbf{r}-\mathbf{r}^{\prime}\right) \delta\left(\theta-\theta^{\prime}\right)\;,
+\end{equation}
+and $\bar{\omega}, \Delta\omega$ are defined by
+\begin{equation}
+    \left \langle \omega _i\omega _j \right \rangle =\bar{\omega}^2+\Delta _{\omega}\delta _{ij}
+\end{equation}
+Physically, we should understand Eq.\eqref{eq:ourNoise} as a local replacement and interpret the above averages as \textbf{mesoscopic} ones
+over all particles within the interaction range around a given point $\textrm{x}$ rather than a global average over the whole rotor
+ensemble. Accordingly, we allow $\bar{\omega}$ and $\eta$ to fluctuate in space and time. We now define a field $\omega(\mathbf{x}, t)$ representing the deviation from the global (time-independent) average rotation frequency $\bar{\omega}_0=\left< \omega _i \right>$.
+\begin{equation}
+    \bar{\omega}=\bar{\omega}_0+\omega \left( \mathbf{x},t \right)
+\end{equation}
 
-With above assumptions, we obtain
+We now expand $\sqrt{f}$ for modest deviations from isotropy as follows
 \begin{equation}
-    \label{eq:ourLocalDensity}
-    f\left( \mathbf{r},\theta \right)=\sum_{i=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_i \right)\delta \left( \theta-\theta _i \right)}\;.
+    \sqrt{f}=\sqrt{\sum_{k=-\infty}^{\infty}{f_k}\mathrm{e}^{-\mathrm{i}k\theta}}\approx \frac{\sqrt{f_0}}{2}+\frac{1}{2\sqrt{f_0}}\sum_{k=-\infty}^{\infty}{f_k}\mathrm{e}^{-\mathrm{i}k\theta}\;.
 \end{equation}
-Using It\^{o}'s Lemma, a stochastic dynamical equation for the density Eq.~\eqref{eq:ourLocalDensity} can be derived:
+
+After a long calculation, we find the following equations
 \begin{equation}
-    \dot{f}(\mathbf{r},\theta ,t)=-v\mathbf{p}\cdot \nabla f-\omega \partial _{\theta}f-g\partial _{\theta}\int{\mathrm{d}}\theta ^{\prime}f\left( \mathbf{r},\theta ^{\prime} \right) \sin \left( \theta ^{\prime}-\theta \right) f(\mathbf{r},\theta )+\partial _{\theta}^{2}f
+    \begin{aligned}
+        \dot{\rho}&=-v\nabla \cdot \mathbf{w}\\
+        \dot{\mathbf{w}}&=(\lambda \rho -2)\frac{\mathbf{w}}{2}-\frac{v}{2}\nabla \rho +\frac{v^2}{2b}\nabla ^2\mathbf{w}-\frac{\lambda ^2}{b}|\mathbf{w}|^2\mathbf{w}\\
+        &+\frac{\lambda v}{4b}\left[ 5\nabla \mathbf{w}^2-10\mathbf{w}(\nabla \cdot \mathbf{w})-6(\mathbf{w}\cdot \nabla )\mathbf{w} \right]\\
+        &+\omega \mathbf{w}_{\bot}+\frac{v^2\omega}{4b}\nabla ^2\mathbf{w}_{\bot}-\frac{\lambda ^2\omega}{2b}|\mathbf{w}|^2\mathbf{w}_{\bot}\\
+        &-\frac{\lambda v\omega}{8b}\left[ 3\nabla _{\bot}\mathbf{w}^2-6\mathbf{w}\left( \nabla _{\bot}\cdot \mathbf{w} \right) -10\left( \mathbf{w}\cdot \nabla _{\bot} \right) \mathbf{w} \right]\\
+    \end{aligned}
 \end{equation}
-where $\omega=\omega\left(\mathbf{r}, t\right)$ is the spatiotemporal white noise.
+where 
+\begin{equation}
+    \begin{aligned}
+        \omega &=\left< \omega _i \right> +\omega \left( \mathbf{x},t \right) +\sqrt{\frac{\Delta _{\omega}}{f}}\eta\\
+        b&=2\left( 4+\omega ^2 \right)\\
+        \mathbf{w}_{\bot}&=\left( -w_y,w_x \right)\\
+        \nabla _{\bot}&=\left( -\partial _y,\partial _x \right)\\
+    \end{aligned}
+\end{equation}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  29 JUN 2024 21:34
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  3 JUL 2024 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -697,12 +697,12 @@ Package rerunfilecheck Info: File `hydrodynamic_chiral.out' has not changed.
 (rerunfilecheck)             Checksum: 5C12D3A05B92D2AB5CD8D94CCD49F874;1209.
  ) 
 Here is how much of TeX's memory you used:
- 16025 strings out of 478907
- 310183 string characters out of 5866571
- 691696 words of memory out of 5000000
- 35648 multiletter control sequences out of 15000+600000
+ 16028 strings out of 478907
+ 310207 string characters out of 5866571
+ 692696 words of memory out of 5000000
+ 35651 multiletter control sequences out of 15000+600000
  416809 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 82i,9n,88p,1085b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 82i,9n,88p,1085b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on hydrodynamic_chiral.pdf (2 pages).
