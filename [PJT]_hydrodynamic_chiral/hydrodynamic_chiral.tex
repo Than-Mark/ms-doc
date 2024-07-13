@@ -74,37 +74,45 @@ We replace the finite range alignment interaction by a pseudopotential ($\delta$
         \dot{\theta}_i&=\omega _i+\lambda \sum_{j\ne i}{\delta}\left( \mathbf{r}_j-\mathbf{r}_i \right) \sin \left( \theta _j-\theta _i \right)\\
     \end{aligned}
 \end{equation}
-where $\mathbf{p}_i=(\cos\theta_i, \sin\theta_i)$. The combined probability density of finding a particle at position $\mathbf{r}_i$ with angle $\theta_i$ is given by
+where $\mathbf{p}_i=(\cos\theta_i, \sin\theta_i)$. 
+Assuming that we have $M$ species, consisting of $N_1, \dots, N_M$ particles with identical frequencies $\tilde{\Omega}_1, \dots, \tilde{\Omega}_M$ respectively, and that $N_1, \dots, N_M$ are all macroscopic in an area element over which macroscopic quantities (density, polarization) vary significantly, allows us to derive a continuum theory for the particle dynamics.
+The combined probability density to find a particle of given species $j$ at position $\mathbf{r}$ with angle $\theta$ at time $t$ is given by
 \begin{equation}
-    f_i\left( \mathbf{r},\theta \right) =\delta \left( \mathbf{r}-\mathbf{r}_i \right) \delta \left( \theta -\theta _i \right)\;.
+    \label{eq:combinedDensity}
+    f^{\left( j \right)}\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right) \delta \left( \theta -\theta _i\left( t \right) \right) \delta _{\Omega _i,\tilde{\Omega}_j}}\;.
 \end{equation}
-The basic idea is to replace $f_i\omega_i$ by its mean plus a typical fluctuation
+A Boltzmann-like equation for the combined density $f^{\left( j \right)}$ can be derived:
 \begin{equation}
-    \label{eq:ourNoise}
-    \omega _if_i\longrightarrow \bar{\omega}f+\sqrt{\Delta _{\omega}f}\eta\;,
+    \label{eq:combinedDensityDynamics}
+    \begin{aligned}
+        \dot{f}^{(j)}(\mathbf{r},\theta,t)& = -\mathrm{Pe} \mathbf{p}\cdot\left[\nabla_\mathbf{r}f^{(j)}(\mathbf{r},\theta,t)\right]-\Omega_j\partial_\theta f^{(j)}(\mathbf{r},\theta,t)+\partial_\theta^2f^{(j)}(\mathbf{r},\theta,t) 
+        \\
+        &- g\partial_\theta\left[f^{(j)}(\mathbf{r},\theta,t)\int\mathrm{d}\theta^{\prime}\sin(\theta^{\prime}-\theta)\sum_{i=1}^Mf^{(i)}(\mathbf{r},\theta^{\prime},t)\right]-\partial_\theta\sqrt{2f^{(j)}(\mathbf{r},\theta,t)}\eta_j(\mathbf{r},\theta,t)
+    \end{aligned}
 \end{equation}
-where $\eta$ describes Gaussian random numbers with zero mean and unit variance 
+where $\eta_j$ represents spatiotemporal white noise with zero mean and unit-variance (the subscript $j$ denotes that the noise-realization of a given ensemble is individual for each species).
+
+In the following, we focus on a mean-field description and neglect the (multiplicative) noise term in Eq.~\eqref{eq:combinedDensityDynamics}. 
+Now transforming Eq.~\eqref{eq:combinedDensityDynamics} to Fourier space yields a hierarchy of dynamical equations for the Fourier modes
+$
+f_k^{(j)}(\mathbf{r}, t)=\int\mathrm{d}\theta f^{(j)}(\mathbf{r},\theta,t)\mathrm{e}^{\mathrm{i}k\theta}
+$
+and
+$
+2\pi f^{(j)}(\mathbf{r},\theta ,t)=\sum_{k=-\infty}^{\infty}{f_{k}^{(j)}}(\mathbf{r},t)\mathrm{e}^{-\mathrm{i}k\theta}
+$,
+reading
 \begin{equation}
-    \left\langle\eta(\mathbf{r}, \theta, t) \eta\left(\mathbf{r}^{\prime} \theta^{\prime}, t\right)\right\rangle=\delta\left(\mathbf{r}-\mathbf{r}^{\prime}\right) \delta\left(\theta-\theta^{\prime}\right)\;,
-\end{equation}
-and $\bar{\omega}, \Delta\omega$ are defined by
-\begin{equation}
-    \left \langle \omega _i\omega _j \right \rangle =\bar{\omega}^2+\Delta _{\omega}\delta _{ij}
-\end{equation}
-Physically, we should understand Eq.\eqref{eq:ourNoise} as a local replacement and interpret the above averages as \textbf{mesoscopic} ones
-over all particles within the interaction range around a given point $\textrm{x}$ rather than a global average over the whole rotor
-ensemble. Accordingly, we allow $\bar{\omega}$ and $\eta$ to fluctuate in space and time. We now define a field $\omega(\mathbf{x}, t)$ representing the deviation from the global (time-independent) average rotation frequency $\bar{\omega}_0=\left< \omega _i \right>$.
-\begin{equation}
-    \bar{\omega}=\bar{\omega}_0+\omega \left( \mathbf{x},t \right)
+    \begin{aligned}
+        \dot{f}_k^{(j)}(\mathbf{r},t)&=-\frac{\mathrm{Pe}}{2}\left[\partial_x\left(f_{k+1}^{(j)}+f_{k-1}^{(j)}\right)-\mathrm{i}\partial_y\left(f_{k+1}^{(j)}-f_{k-1}^{(j)}\right)\right]\\
+        &+ \left(\mathrm{i}k\Omega_j-k^2\right)f_k^{(j)}+\frac{\mathrm{i}gk}{2\pi}\sum_{m=-\infty}^\infty f_{k-m}^{(j)}F_{-m}\sum_{i=1}^Mf_m^{(i)}
+    \end{aligned}
 \end{equation}
 
-We now expand $\sqrt{f}$ for modest deviations from isotropy as follows
-\begin{equation}
-    \sqrt{f}=\sqrt{\sum_{k=-\infty}^{\infty}{f_k}\mathrm{e}^{-\mathrm{i}k\theta}}\approx \frac{\sqrt{f_0}}{2}+\frac{1}{2\sqrt{f_0}}\sum_{k=-\infty}^{\infty}{f_k}\mathrm{e}^{-\mathrm{i}k\theta}\;.
-\end{equation}
 
 After a long calculation, we find the following equations
 \begin{equation}
+    \label{eq:hydrodynamicEq}
     \begin{aligned}
         \dot{\rho}&=-v\nabla \cdot \mathbf{w}\\
         \dot{\mathbf{w}}&=(\lambda \rho -2)\frac{\mathbf{w}}{2}-\frac{v}{2}\nabla \rho +\frac{v^2}{2b}\nabla ^2\mathbf{w}-\frac{\lambda ^2}{b}|\mathbf{w}|^2\mathbf{w}\\
