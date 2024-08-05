@@ -28,7 +28,7 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Chiral Swarmalators}}
+\title{\textbf{Self-organized Chiral Swarmalators}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -55,10 +55,12 @@
 \begin{itemize}
     \item Additive coupling: 
     \begin{equation}
+        \label{eq:additionalCouplingDotTheta}
         \dot{\theta}_i=\omega _i+K\sum_{j=1}^{N}f\left( r_{ij} \right)\sin \left( \theta _j-\theta _i+\alpha \right)\;,
     \end{equation}
     \item Mean-field coupling by oscillator number:
     \begin{equation}
+        \label{eq:swarmalatorDotTheta}
         \dot{\theta}_i=\omega _i+\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
     \end{equation}
     which is similar to the swarmalator model.
@@ -98,18 +100,51 @@ $N_c$ is the number of clusters, $C_k$ is the $k$-th cluster, and $\left| C_k \r
 \end{equation}
 As the swarmalators within the $k$-th cluster are fully synchronized, $R_c^k\approx 1$, and therefore also globally $R_c\approx 1$.
 
-Except the study for phase coherence, another order parameter can be defined to further describe the locking of the frequencies of swarmalators under the chiral condition:
+Except the study for phase coherence, other order parameters can be defined to further describe the locking of the frequencies of swarmalators under the chiral condition. One first introduce a cluster frequency difference to measure the synchronizability of swarmalators within a cluster as
 \begin{equation}
-    \Delta \Omega =\frac{1}{N_c}\sum_{k=1}^{N_c}{\left[ \frac{1}{\left| C_k \right|^2}\sum_{i,j\in C_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} \right]}\;,
-    \label{eq:frequencydifference}
+    \Delta \Omega_c^k = \frac{1}{\left| C_k \right|^2}\sum_{i,j\in C_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} ,
+    \label{eq:clusterfrequency}
 \end{equation}
 where $\left< \dot{\theta}_i \right>$ is the average phase velocity of the $i$-th cluster, which can be defined by
 \begin{equation}
     \left< \dot{\theta}_i \right> =\lim_{T\rightarrow \infty} \frac{1}{T}\int_{t_0}^{t_0+T}{\dot{\theta}_i\left( t \right) \mathrm{d}t}\;.
     \label{eq:frequency}
 \end{equation}
-When $\Delta \Omega\approx 0$, the swarmalators will organize to form several clusters, within each cluster swarmalators are frequency-locked. Note that frequency locking is different from phase locking, as the frequency-locked swarmalators can have different phase velocities, which also means that they can have different rotational radii. Obviously, frequency locking is a more loose condition than phase locking. 
+Then a global frequency difference of clusters is
+\begin{equation}
+    \Delta \Omega_c =\frac{1}{N_c}\sum_{k=1}^{N_c} {\Delta \Omega_c^k}\;.
+    \label{eq:globalcluster}
+\end{equation}
+Of course it is natural to introduce a global frequency difference without the identification of multiple clusters as
+\begin{equation}
+    \Delta \Omega =\frac{1}{N^2}\sum_{i,j=1}^{N}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2 }\;.
+    \label{eq:frequencydifference}
+\end{equation}
+For any cluster $k$, one can assume that $\left< \dot{\theta}_i \right>\in \left[a, b\right]$. Then the expectation of $\Delta \Omega_c^k$ can be calculated as
+\begin{equation}
+    E\left( \Delta \Omega _{c}^{k} \right) =2E\left( \left< \dot{\theta}_i \right> ^2 \right) -2E\left( \left< \dot{\theta}_i \right> \left< \dot{\theta}_j \right> \right)\;.
+\end{equation}
+For different cases of bounds, the value is
+\begin{equation}
+    E\left( \Delta \Omega _{c}^{k} \right) \begin{cases}
+        =0,&		ab\ge 0\\
+        >0,&		ab<0\\
+    \end{cases}
+\end{equation}
+Therefore, if $n\rightarrow\infty$ and the average phase velocities of swarmalators within the cluster are all positive, all negative or all zero (locally synchronized), $\Delta \Omega _{c}^{k}\approx0$, and we name this case as the \textit{frequency-locked cluster}. Otherwise, $\Delta \Omega _{c}^{k}>0$. 
+When $\Delta\Omega_c \approx 0$, the swarmalators will organize to form several clusters, within each cluster swarmalators are frequency-locked. When $\Delta\Omega \approx 0$, all swarmalators are frequency locked. Note that frequency locking is different from phase locking, as the frequency-locked swarmalators can have different phase velocities, which also means that they can have different rotational radii. 
+Obviously, frequency locking is a more loose condition than phase locking. 
 
+All the above order parameters measure different aspects of coordination in the phases of swarmalators. Because the phase variable describes the alignment of a swarmalator, various synchrony states imply the motion alignment of swarmalators in the swarming dynamics. 
+% In the following discussions, we will further define more order parameters that are necessary to depict the spatial swarming ordering. 
+In the following discussions, we further define an order parameter to depict the spatial swarming ordering:
+\begin{equation}
+    \label{eq:relativeNumber}
+    N_r\left( t \right) =\frac{1}{N}\frac{1}{N_c\left( t \right)}\sum_{k=1}^{N_c\left( t \right)}{\left| C_k\left( t \right) \right|}\;.
+\end{equation}
+$N_r$ is the relative number of swarmalators in the clusters, which measures the spatial condensation of swarmalators. When $N_r\approx 1$, swarmalators are fully spatially condensed, and when $N_r\approx 0$, swarmalators are spatially dispersed. 
+
+\newpage
 \section{Results}
 \subsection{Signle-chiral Swarmalators}
 \begin{figure}[H]
@@ -163,6 +198,17 @@ where
         \bar{X}_i\\
     \end{array} \right] =\frac{1}{\left| C_k \right|}\sum_{i\in C_k}{\mathbf{c}_i}\;.
 \end{equation}
+
+\subsubsection{The Clustering State}
+Swarmalators in a cluster are phase synchronized and exhibit a spatial rotation at a unified synchronous frequency $\omega_s$. By summing over Eq.~(\ref{eq:additionalCouplingDotTheta}), one gets the aligned frequency as
+\begin{equation}
+    \label{eq:clusterState}
+    \begin{aligned}
+        \omega _s&=\frac{1}{N_c}\sum_{i=1}^{N_c}{\omega _i}+\frac{\lambda}{N_c}\sum_{i=1}^{N_c}{\sum_{j=1}^{N_c}{A_{ij}\sin \left( \theta _j-\theta _i \right)}}\\
+        &=\frac{1}{N_c}\sum_{i=1}^{N_c}{\omega _i}\;,\\
+    \end{aligned}
+\end{equation}
+where $N_c$ is the number of swarmalators in the cluster.
 
 % \begin{figure}[H]
 %     \centering
@@ -252,25 +298,26 @@ where
 % \newpage
 % \section{Phase Diagrams and Critical Thresholds\label{sec:phaseDiagrams}}
 
-% \begin{figure}[H]
-%     \includegraphics[width=\textwidth]{./figs/monoOrderParam.png}
-%     \caption{
-%         \label{fig:monoOrderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
-%         \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
-%         \textbf{(b)}, order parameter $R_c$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
-%         \textbf{(c)}, order parameter $\Delta \Omega$ and critical lines of $\lambda_{c1}$.
-%     }
-% \end{figure}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figs/monoOrderParam.png}
+    \caption{
+        \label{fig:monoOrderParam} Heatmaps for different order parameters of single-chiral swarmalators across the ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
+        \textbf{(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega_c$ and $N_r$, respectively.
+        Different colors describe the amplitudes of different order parameters.
+    }
+\end{figure}
 
-% \begin{figure}[H]
-%     \includegraphics[width=\textwidth]{./figs/orderParam.png}
-%     \caption{
-%         \label{fig:orderParam} Order parameter heatmaps of ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
-%         \textbf{(a)}, order parameter $R$ and critical line of $\lambda_{c4}$.
-%         \textbf{(b)}, order parameter $R_c$ and critical lines of $\lambda_{c2}$, $\lambda_{c3}$.
-%         \textbf{(c)}, order parameter $\Delta \Omega$ and critical lines of $\lambda_{c1}$.
-%     }
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./figs/orderParam.png}
+    \caption{
+        \label{fig:orderParam} Heatmaps for different order parameters of double-chiral swarmalators across the ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
+        \textbf{(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega_c$ and $N_r$, respectively.
+        Different colors describe the amplitudes of various order parameters.
+    }
+\end{figure}
 
 % \begin{figure}[H]
 %     \includegraphics[width=\textwidth]{./figs/analyticalEps.pdf}
@@ -369,6 +416,35 @@ From here, some lengthy algebra leads us to the following closed set of equation
 \end{equation}
 
 where $b=2\left( 4+\Omega ^2 \right)$, $\mathbf{w}_{\bot}=\left( -w_y,w_x \right)$ and $\mathcal{O}\left(\nabla\mathbf{w}^2\right)$ represents all terms involving both derivatives and nonlinear terms in w of arbitrary species and are therefore irrelevant for both the set of possible uniform solutions and for the linear stability of unpolarized (disordered) phases and can therefore be neglected for our purposes.
+
+\newpage
+\section{Self-consistency Equation}
+
+Inspired by global order parameter $R$, one can define the local order parameter $R_i$:
+\begin{equation}
+    \label{eq:localOrderParameter}
+    R_{c}^{i}\mathrm{e}^{\mathrm{i}\psi _{c}^{i}}=\frac{1}{\left| C_i \right|}\sum_{j\in C_i}{\mathrm{e}^{\mathrm{i}\theta _j}}\;,
+\end{equation}
+where $C_i=\left\{ j\mid \Delta r_{ij}\le d_0 \right\}$. If the swarmalators in set $C_i$ are the initial to entry the coherent state, and other swarmalators are still in the incoherent state, then the $R_i$ will bifurcate from zero simultaneously with $R$ and $R_c$. Then the Eq.~\eqref{eq:swarmalatorDotTheta} can be rewritten as
+\begin{equation}
+    \label{eq:localDotTheta}
+    \dot{\theta}_i=\omega _i+\frac{K}{N} \sum_{j\in C_i}{\sin \left( \theta _j-\theta _i \right)}\;.
+\end{equation}
+By introducing $\Sigma _2\left( d_0 \right) =\sum\nolimits_{j\in C_i}^{}{A_{ij}}=\left|C_i\right|$, Eq.~\eqref{eq:localOrderParameter} becomes 
+\begin{equation}
+    \frac{K\Sigma _2R_{c}^{i}}{N} \sin \left( \psi _{c}^{i}-\theta _i \right) =\frac{K}{N} \sum_{j\in C_k}{\sin \left( \theta _j-\theta _i \right)}
+;.
+\end{equation}
+Then by introducing $\varphi _i=\theta _i-\bar{\omega}t=\theta_i-\psi _{c}^{i}$, where $\bar{\omega}=\sum_{j\in C_i}{\omega _j}/\left| C_i \right|$ is synchronous frequency of the swarmalators in $C_i$ given by Eq.~(\ref{eq:clusterState}), Eq.~(\ref{eq:localDotTheta}) can be recast as
+\begin{equation}
+    \label{eq:dotphi}
+    \dot{\varphi}_i=\dot{\theta}_i-\bar{\omega}-\frac{K\Sigma _2R_{c}^{i}}{N} \sin \varphi _i\;.
+\end{equation}
+
+When $N\rightarrow \infty$, the mean field can be expressed by the distribution function as
+\begin{equation}
+    R_{c}^{i}\mathrm{e}^{\mathrm{i}\psi _{c}^{i}}=\mathrm{e}^{\mathrm{i}\bar{\omega}t}\int_0^{2\pi}{\int_{-\infty}^{\infty}{\mathrm{e}^{\mathrm{i}\varphi}}}P(\varphi ,\omega ,t)g(\omega )\mathrm{d}\omega \mathrm{d}\varphi\;.
+\end{equation}
 
 % \newpage
 % \section{Appendix}

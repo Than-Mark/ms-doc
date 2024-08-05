@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  15 JUL 2024 19:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  5 AUG 2024 20:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -513,25 +513,38 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [1
 
-] [2]
+] [2] [3] [4]
 File: ./figs/MonoChiralPhaseDiagram.pdf Graphic file (type pdf)
 <use ./figs/MonoChiralPhaseDiagram.pdf>
- [3]
 File: ./figs/mono-DS.pdf Graphic file (type pdf)
 <use ./figs/mono-DS.pdf>
 File: ./figs/mono_CS_Aij.png Graphic file (type bmp)
 <./figs/mono_CS_Aij.png>
- [4] [5] [6] (./chiral_swarmalators.aux)
-Package rerunfilecheck Info: File `chiral_swarmalators.out' has not changed.
-(rerunfilecheck)             Checksum: 3BDC8F89D2D4F5E10A36D31B06C02228;1376.
+ [5] [6]
+File: ./figs/monoOrderParam.png Graphic file (type bmp)
+<./figs/monoOrderParam.png>
+File: ./figs/orderParam.png Graphic file (type bmp)
+<./figs/orderParam.png>
+ [7] [8] [9] (./chiral_swarmalators.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `chiral_swarmalators.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `chiral_swarmalators.out':
+(rerunfilecheck)             Before: EA4EED3A1D8D95143E5E86FF52DE7F31;1722
+(rerunfilecheck)             After:  8BFC86A7B45E6AC09AAB348DBF28637D;1722.
  ) 
 Here is how much of TeX's memory you used:
- 12213 strings out of 478907
- 183821 string characters out of 5866571
- 516752 words of memory out of 5000000
- 31883 multiletter control sequences out of 15000+600000
- 416729 words of font info for 88 fonts, out of 8000000 for 9000
+ 12239 strings out of 478907
+ 184412 string characters out of 5866571
+ 521276 words of memory out of 5000000
+ 31905 multiletter control sequences out of 15000+600000
+ 416737 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,9n,77p,776b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,9n,77p,776b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on chiral_swarmalators.pdf (6 pages).
+Output written on chiral_swarmalators.pdf (9 pages).
