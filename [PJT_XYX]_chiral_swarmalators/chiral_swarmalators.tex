@@ -100,7 +100,7 @@ $N_c$ is the number of clusters, $C_k$ is the $k$-th cluster, and $\left| C_k \r
 \end{equation}
 As the swarmalators within the $k$-th cluster are fully synchronized, $R_c^k\approx 1$, and therefore also globally $R_c\approx 1$.
 
-Except the study for phase coherence, other order parameters can be defined to further describe the locking of the frequencies of swarmalators under the chiral condition. One first introduce a cluster frequency difference to measure the synchronizability of swarmalators within a cluster as
+Except the study for phase coherence, other order parameters can be defined to further describe the locking of the frequencies of swarmalators under the chiral condition. One first introduce a cluster frequency difference to measure the chiral synchronizability of swarmalators within a cluster as
 \begin{equation}
     \Delta \Omega_c^k = \frac{1}{\left| C_k \right|^2}\sum_{i,j\in C_k}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2} ,
     \label{eq:clusterfrequency}
@@ -115,11 +115,12 @@ Then a global frequency difference of clusters is
     \Delta \Omega_c =\frac{1}{N_c}\sum_{k=1}^{N_c} {\Delta \Omega_c^k}\;.
     \label{eq:globalcluster}
 \end{equation}
-Of course it is natural to introduce a global frequency difference without the identification of multiple clusters as
-\begin{equation}
-    \Delta \Omega =\frac{1}{N^2}\sum_{i,j=1}^{N}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2 }\;.
-    \label{eq:frequencydifference}
-\end{equation}
+% Yichen: 暂时没有用到这个\Delta\Omega，所以先注释掉
+% Of course it is natural to introduce a global frequency difference without the identification of multiple clusters as
+% \begin{equation}
+%     \Delta \Omega =\frac{1}{N^2}\sum_{i,j=1}^{N}{\left( \left< \dot{\theta}_i \right> -\left< \dot{\theta}_j \right> \right) ^2 }\;.
+%     \label{eq:frequencydifference}
+% \end{equation}
 For any cluster $k$, one can assume that $\left< \dot{\theta}_i \right>\in \left[a, b\right]$. Then the expectation of $\Delta \Omega_c^k$ can be calculated as
 \begin{equation}
     E\left( \Delta \Omega _{c}^{k} \right) =2E\left( \left< \dot{\theta}_i \right> ^2 \right) -2E\left( \left< \dot{\theta}_i \right> \left< \dot{\theta}_j \right> \right)\;.
@@ -127,13 +128,15 @@ For any cluster $k$, one can assume that $\left< \dot{\theta}_i \right>\in \left
 For different cases of bounds, the value is
 \begin{equation}
     E\left( \Delta \Omega _{c}^{k} \right) \begin{cases}
-        =0,&		ab\ge 0\\
+        =0,&		ab\geqslant 0\\
         >0,&		ab<0\\
     \end{cases}
 \end{equation}
-Therefore, if $n\rightarrow\infty$ and the average phase velocities of swarmalators within the cluster are all positive, all negative or all zero (locally synchronized), $\Delta \Omega _{c}^{k}\approx0$, and we name this case as the \textit{frequency-locked cluster}. Otherwise, $\Delta \Omega _{c}^{k}>0$. 
-When $\Delta\Omega_c \approx 0$, the swarmalators will organize to form several clusters, within each cluster swarmalators are frequency-locked. When $\Delta\Omega \approx 0$, all swarmalators are frequency locked. Note that frequency locking is different from phase locking, as the frequency-locked swarmalators can have different phase velocities, which also means that they can have different rotational radii. 
-Obviously, frequency locking is a more loose condition than phase locking. 
+Therefore, if $n\rightarrow\infty$ and the average phase velocities of swarmalators within the cluster are all positive, all negative, $\Delta \Omega _{c}^{k}\approx0$, and we name this case as the \textit{chirality-locked cluster}. Otherwise, $\Delta \Omega _{c}^{k}>0$. 
+When $\Delta\Omega_c \approx 0$, the swarmalators will organize to form several clusters, within each cluster swarmalators are chirality-locked. 
+% When $\Delta\Omega \approx 0$, all swarmalators are frequency locked. 
+Note that chirality locking is different from phase locking, as the chirality-locked swarmalators can have different phase velocities, which also means that they can have different rotational radii. 
+Obviously, chirality locking is a more loose condition than phase locking. 
 
 All the above order parameters measure different aspects of coordination in the phases of swarmalators. Because the phase variable describes the alignment of a swarmalator, various synchrony states imply the motion alignment of swarmalators in the swarming dynamics. 
 % In the following discussions, we will further define more order parameters that are necessary to depict the spatial swarming ordering. 
