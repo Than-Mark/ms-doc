@@ -64,11 +64,11 @@
         \dot{\theta}_i=\omega _i+\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
     \end{equation}
     which is similar to the swarmalator model.
-    \item Mean-field coupling by oscillator density:
-    \begin{equation}
-        \dot{\theta}_i=\omega _i+\frac{KL^2}{\pi d_{0}^{2}N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
-    \end{equation}
-    where $d_0$ is the radius of the interaction circle.
+    % \item Mean-field coupling by oscillator density:
+    % \begin{equation}
+    %     \dot{\theta}_i=\omega _i+\frac{KL^2}{\pi d_{0}^{2}N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
+    % \end{equation}
+    % where $d_0$ is the radius of the interaction circle.
 \end{itemize}
 Here,  $f\left( r_{ij} \right)$ is a function of $r=\left| \mathbf{r}_i-\mathbf{r}_j \right|$, and $K$ is the coupling strength. 
 The function $f\left( r \right)$ can be defined as
@@ -82,6 +82,18 @@ The natural frequencies $\omega_i$ are distributed with following two cases:
     
     \item \textbf{Double-chiral swarmalators:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the swarmalators have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
 \end{enumerate}
+
+\subsubsection{Chemical field}
+Consider a chemical field $c\left( \mathbf{r},t \right)$ that is produced by the ensemble of ‘signalling’ rotors. Swarmalators interact with the chemical field and move towards the regions with higher concentration, which can be described by the following equation:
+\begin{equation}
+    \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla c+\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
+\end{equation}
+where $\beta _R$ denotes the ‘chemotactic’ coupling strength and $\mathbf{p}_i=(\cos \theta _i,\sin \theta _i)$ is the unit vector pointing in the direction of the $i$-th swarmalator. Here, we used the notation $\mathbf{a}\times\mathbf{b}=a_1 b_2-a_2 b_1$.
+This field evolves as
+\begin{equation}
+    \dot{c}=\frac{k_0}{N}\sum_{j=1}^N{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-k_dc+D_c\nabla ^2c+\varepsilon \left( c_0-c \right) ^3\;,
+\end{equation}
+where $k_0$ is the production rate, $k_d$ is the decay rate, $D_c$ is the diffusion coefficient, and the term proportional to $\varepsilon$ prevents unlimited growth of $c$ in case of linear instability.
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
