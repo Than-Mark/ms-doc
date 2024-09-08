@@ -84,7 +84,9 @@ The natural frequencies $\omega_i$ are distributed with following two cases:
 \end{enumerate}
 
 \subsubsection{Chemical field}
-Consider a chemical field $c\left( \mathbf{r},t \right)$ that is produced by the ensemble of ‘signalling’ rotors. Swarmalators interact with the chemical field and move towards the regions with higher concentration, which can be described by the following equation:
+\noindent{\textbf{Same chemical product}}
+
+\noindent Consider a chemical field $c\left( \mathbf{r},t \right)$ that is produced by the ensemble of ‘signalling’ rotors. Swarmalators interact with the chemical field and move towards the regions with higher concentration, which can be described by the following equation:
 \begin{equation}
     \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla c+\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
 \end{equation}
@@ -94,6 +96,22 @@ This field evolves as
     \dot{c}=\frac{k_0}{N}\sum_{j=1}^N{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-k_dc+D_c\nabla ^2c+\varepsilon \left( c_0-c \right) ^3\;,
 \end{equation}
 where $k_0$ is the production rate, $k_d$ is the decay rate, $D_c$ is the diffusion coefficient, and the term proportional to $\varepsilon$ prevents unlimited growth of $c$ in case of linear instability.
+
+\noindent{\textbf{Activator \& inhibitor chemical products}}
+
+Inspired by \textit{Gray-Scott}
+
+\begin{equation}
+    \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla \left( u+v \right) +\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i \right) \;,
+\end{equation}
+
+\begin{subequations}
+    \begin{align}
+        \dot{u}&=\frac{k_0}{N}\sum_{j\in C_+}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-uv^2-k_du+D_u\nabla ^2u+\varepsilon \left( u_0-u \right) ^3\;,
+        \\
+        \dot{v}&=\frac{k_0}{N}\sum_{j\in C_-}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}+uv^2-k_dv+D_v\nabla ^2v+\varepsilon \left( v_0-v \right) ^3\;,
+    \end{align}
+\end{subequations}
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
