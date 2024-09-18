@@ -97,23 +97,32 @@ This field evolves as
 \end{equation}
 where $k_0$ is the production rate, $k_d$ is the decay rate, $D_c$ is the diffusion coefficient, and the term proportional to $\varepsilon$ prevents unlimited growth of $c$ in case of linear instability.
 
-\noindent{\textbf{Activator \& inhibitor chemical products}}
+% \noindent{\textbf{Activator \& inhibitor chemical products}}
 
-Inspired by \textit{Gray-Scott}
+% Inspired by \textit{Gray-Scott}
 
-\begin{equation}
-    \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla \left( u+v \right) +\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i \right) \;,
-\end{equation}
+% \begin{equation}
+%     \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla \left( u+v \right) +\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i \right) \;,
+% \end{equation}
+
+% \begin{subequations}
+%     \begin{align}
+%         \dot{u}&=\frac{k_0}{N}\sum_{j\in C_+}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-uv^2-k_du+D_u\nabla ^2u+\varepsilon \left( u_0-u \right) ^3\;,
+%         \\
+%         \dot{v}&=\frac{k_0}{N}\sum_{j\in C_-}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}+uv^2-k_dv+D_v\nabla ^2v+\varepsilon \left( v_0-v \right) ^3\;,
+%     \end{align}
+% \end{subequations}
+
+\noindent{\textbf{Two Species}}
 
 \begin{subequations}
     \begin{align}
-        \dot{u}&=\frac{k_0}{N}\sum_{j\in C_+}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-uv^2-k_du+D_u\nabla ^2u+\varepsilon \left( u_0-u \right) ^3\;,
-        \\
-        \dot{v}&=\frac{k_0}{N}\sum_{j\in C_-}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}+uv^2-k_dv+D_v\nabla ^2v+\varepsilon \left( v_0-v \right) ^3\;,
+        \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
+        \dot{\theta}_i&=\omega _i+\beta _{i}^{u}\mathbf{p}_i\times \nabla u+\beta _{i}^{v}\mathbf{p}_i\times \nabla v+\frac{K}{N}\sum_{j=1}^N{f}\left( \left| \mathbf{r}_j-\mathbf{r}_i \right| \right) \sin \left( \theta _j-\theta _i \right) \;,\\
+        \dot{u}&=k_0\sum_{j\in S_+}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_du+D_u\nabla ^2u\;,\\
+        \dot{v}&=k_0\sum_{j\in S_-}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_dv+D_v\nabla ^2v\;,
     \end{align}
 \end{subequations}
-
-\noindent{\textbf{Two Species}}
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
