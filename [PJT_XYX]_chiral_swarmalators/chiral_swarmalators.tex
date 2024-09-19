@@ -83,46 +83,25 @@ The natural frequencies $\omega_i$ are distributed with following two cases:
     \item \textbf{Double-chiral swarmalators:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the swarmalators have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
 \end{enumerate}
 
-\subsubsection{Chemical field}
-\noindent{\textbf{Same chemical product}}
+\subsubsection{Chemotactic Dynamics}
 
-\noindent Consider a chemical field $c\left( \mathbf{r},t \right)$ that is produced by the ensemble of ‘signalling’ rotors. Swarmalators interact with the chemical field and move towards the regions with higher concentration, which can be described by the following equation:
-\begin{equation}
-    \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla c+\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
-\end{equation}
-where $\beta _R$ denotes the ‘chemotactic’ coupling strength and $\mathbf{p}_i=(\cos \theta _i,\sin \theta _i)$ is the unit vector pointing in the direction of the $i$-th swarmalator. Here, we used the notation $\mathbf{a}\times\mathbf{b}=a_1 b_2-a_2 b_1$.
-This field evolves as
-\begin{equation}
-    \dot{c}=\frac{k_0}{N}\sum_{j=1}^N{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-k_dc+D_c\nabla ^2c+\varepsilon \left( c_0-c \right) ^3\;,
-\end{equation}
-where $k_0$ is the production rate, $k_d$ is the decay rate, $D_c$ is the diffusion coefficient, and the term proportional to $\varepsilon$ prevents unlimited growth of $c$ in case of linear instability.
-
-% \noindent{\textbf{Activator \& inhibitor chemical products}}
-
-% Inspired by \textit{Gray-Scott}
-
-% \begin{equation}
-%     \dot{\theta}_i=\omega _i+\beta _R\mathbf{p}_i\times \nabla \left( u+v \right) +\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i \right) \;,
-% \end{equation}
-
-% \begin{subequations}
-%     \begin{align}
-%         \dot{u}&=\frac{k_0}{N}\sum_{j\in C_+}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}-uv^2-k_du+D_u\nabla ^2u+\varepsilon \left( u_0-u \right) ^3\;,
-%         \\
-%         \dot{v}&=\frac{k_0}{N}\sum_{j\in C_-}{f\left( \left| \mathbf{r}-\mathbf{r}_j \right| \right)}+uv^2-k_dv+D_v\nabla ^2v+\varepsilon \left( v_0-v \right) ^3\;,
-%     \end{align}
-% \end{subequations}
-
-\noindent{\textbf{Two Species}}
-
+Consider two chemical fields $u\left( \mathbf{r},t \right), v\left( \mathbf{r},t \right)$ that are produced by the ensemble of two symmetrically chiral swarmalators. Swarmalators interact with the chemical field and move towards/against the regions with higher concentration, which can be described by the following equation:
 \begin{subequations}
     \begin{align}
         \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
-        \dot{\theta}_i&=\omega _i+\beta _{i}^{u}\mathbf{p}_i\times \nabla u+\beta _{i}^{v}\mathbf{p}_i\times \nabla v+\frac{K}{N}\sum_{j=1}^N{f}\left( \left| \mathbf{r}_j-\mathbf{r}_i \right| \right) \sin \left( \theta _j-\theta _i \right) \;,\\
-        \dot{u}&=k_0\sum_{j\in S_+}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_du+D_u\nabla ^2u\;,\\
-        \dot{v}&=k_0\sum_{j\in S_-}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_dv+D_v\nabla ^2v\;,
+        \dot{\theta}_i&=\omega _i+\beta _{i}^{u}\mathbf{p}_i\times \nabla u+\beta _{i}^{v}\mathbf{p}_i\times \nabla v+\frac{K}{N}\sum_{j=1}^N{f}\left( \left| \mathbf{r}_j-\mathbf{r}_i \right| \right) \sin \left( \theta _j-\theta _i \right) \;,
     \end{align}
 \end{subequations}
+where $\beta _{i}^{u,v}$ denote the ‘chemotactic’ coupling strength and $\mathbf{p}_i=(\cos \theta _i,\sin \theta _i)$ is the unit vector pointing in the direction of the $i$-th swarmalator. Here, we used the notation $\mathbf{a}\times\mathbf{b}=a_1 b_2-a_2 b_1$.
+
+These two fields evolve as
+\begin{subequations}
+    \begin{align}
+    \dot{u}&=k_0\sum_{j\in S_+}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_du+D_u\nabla ^2u\;,\\
+    \dot{v}&=k_0\sum_{j\in S_-}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_dv+D_v\nabla ^2v\;,
+    \end{align}
+\end{subequations}
+where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the production rate, $k_d$ is the decay rate, $D_{u,v}$ are the diffusion coefficients.
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
