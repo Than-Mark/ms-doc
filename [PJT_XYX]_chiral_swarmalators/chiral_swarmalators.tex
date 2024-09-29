@@ -12,6 +12,7 @@
 \usepackage{multicol}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 
+\bibliographystyle{plain}
 \setlength{\parindent}{2em}
 \usepackage{geometry}
 \geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
@@ -83,7 +84,7 @@ The natural frequencies $\omega_i$ are distributed with following two cases:
     \item \textbf{Double-chiral swarmalators:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the swarmalators have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
 \end{enumerate}
 
-\subsubsection{Chemotactic Dynamics}
+\subsubsection{Chemotactic dynamics}
 
 Consider two chemical fields $u\left( \mathbf{r},t \right), v\left( \mathbf{r},t \right)$ that are produced by the ensemble of two symmetrically chiral swarmalators. Swarmalators interact with the chemical field and move towards/against the regions with higher concentration, which can be described by the following equation:
 \begin{subequations}
@@ -108,6 +109,56 @@ where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the prod
     \item For $i=N/2+1, \cdots, N$, $\omega_i < 0$, $\beta_i^u = -\beta$, $\beta_i^v = 0$.
     \item $D_u = D_v = 0.002$, $k_0 = 1$, $k_d = 0.001$.
 \end{itemize}
+
+\subsubsection{Coarse graining}
+We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for a single particle
+\begin{equation}
+    \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) \delta \left( \omega _i-\omega \right)\;, 
+\end{equation}
+and we shall then demonstrate how one may write a closed Langevin equation for the global density
+\begin{equation}
+    \rho \left( \mathbf{r},\theta ,\omega ,t \right) =\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;.
+\end{equation}
+The derivation follows a well known argument. Consider an arbitrary function $f$ defined on the coordinate space of the system. Using the definition of the density it is a tautology
+that
+\begin{equation}
+    \label{eq:arbitraryFunction}
+    f\left( \mathbf{r}_i\left( t \right) ,\theta _i\left( t \right) ,\omega _i \right) =\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) f\left( \mathbf{r},\theta ,\omega \right)}\;.
+\end{equation}
+Expanding the differential equation over the next time step $\delta t$ one obtains
+\begin{equation}
+    \begin{aligned}
+        \frac{\text{d}f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\text{d}t}&=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \left( \frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \mathbf{r}}\cdot \frac{\partial \mathbf{r}}{\partial t}+\frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \theta}\frac{\partial \theta}{\partial t}+\frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \omega}\frac{\partial \omega}{\partial t} \right)}\\
+        &=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}}\cdot \nabla f\left( \mathbf{r},\theta ,\omega \right) +\rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta}\frac{\partial}{\partial \theta}f\left( \mathbf{r},\theta ,\omega \right) \right)}\;.
+    \end{aligned}
+\end{equation}
+Re-arranging the above integral by integration by parts we obtain
+\begin{equation}
+    \label{eq:arbitraryFunctionDt1}
+    \frac{\text{d}f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\text{d}t}=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega f\left( \mathbf{r},\theta ,\omega \right) \left( -\nabla \cdot \left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right) \right)}\;.
+\end{equation}
+However, from \eqref{eq:arbitraryFunction} we may also deduce
+\begin{equation}
+    \label{eq:arbitraryFunctionDt2}
+    \frac{\text{d}f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\text{d}t}=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega f\left( \mathbf{r},\theta ,\omega \right) \frac{\partial \rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}}\;.
+\end{equation}
+Comparing equations \eqref{eq:arbitraryFunctionDt1} and \eqref{eq:arbitraryFunctionDt2} we find (using the fact that $f$ is an arbitrary function) that
+\begin{equation}
+    \label{eq:continuityEquation}
+    \frac{\partial \rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right)\;.
+\end{equation}
+We emphasize that this argument is standard and the only subtlety is that we have not carried out any thermal averaging at this point. Summing equation \eqref{eq:continuityEquation} over the $i$ and using the definition of the density $\rho$ we obtain
+\begin{equation}
+    \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right);.
+\end{equation}
+For the case of the phase coupling dynamics, the equation for the density $\rho$ is
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \left( \Omega +G\sum_{j=1}^N{\sin \left( \theta _j-\theta \right) \delta \left( \mathbf{r}_j-\mathbf{r} \right)} \right) \right)\\
+        &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho \left( \mathbf{r},\theta ,\omega ,t \right) -\Omega \frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \\
+        &-G\frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \int{\text{d}\mathbf{r}'\text{d}\theta '\text{d}\omega '\rho \left( \mathbf{r}',\theta ',\omega ',t \right) \sin \left( \theta '-\theta \right) \delta \left( \mathbf{r}'-\mathbf{r} \right)}\\
+    \end{aligned}
+\end{equation}
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
@@ -389,63 +440,6 @@ where $N_c$ is the number of swarmalators in the cluster.
 %     \end{cases}\;.
 % \end{equation}
 
-\section{Hydrodynamic Theory}
-
-We replace the finite range alignment interaction by a pseudopotential ($\delta$-interaction) in the model:
-\begin{equation}
-    \label{eq:ourModel}
-    \begin{aligned}
-        \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
-        \dot{\theta}_i&=\Omega _i+\lambda \sum_{j\ne i}{\delta}\left( \mathbf{r}_j-\mathbf{r}_i \right) \sin \left( \theta _j-\theta _i \right)\\
-    \end{aligned}
-\end{equation}
-where $\mathbf{p}_i=(\cos\theta_i, \sin\theta_i)$. 
-Assuming that we have $M$ species, consisting of $N_1, \dots, N_M$ particles with identical frequencies $\tilde{\Omega}_1, \dots, \tilde{\Omega}_M$ respectively, and that $N_1, \dots, N_M$ are all macroscopic in an area element over which macroscopic quantities (density, polarization) vary significantly, allows us to derive a continuum theory for the particle dynamics.
-The combined probability density to find a particle of given species $j$ at position $\mathbf{r}$ with angle $\theta$ at time $t$ is given by
-\begin{equation}
-    \label{eq:combinedDensity}
-    f^{\left( j \right)}\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right) \delta \left( \theta -\theta _i\left( t \right) \right) \delta _{\Omega _i,\tilde{\Omega}_j}}\;.
-\end{equation}
-A Boltzmann-like equation for the combined density $f^{\left( j \right)}$ can be derived:
-\begin{equation}
-    \label{eq:combinedDensityDynamics}
-    \begin{aligned}
-        \dot{f}^{(j)}(\mathbf{r},\theta,t)& = -\mathrm{Pe} \mathbf{p}\cdot\left[\nabla_\mathbf{r}f^{(j)}(\mathbf{r},\theta,t)\right]-\Omega_j\partial_\theta f^{(j)}(\mathbf{r},\theta,t)+\partial_\theta^2f^{(j)}(\mathbf{r},\theta,t) 
-        \\
-        &- g\partial_\theta\left[f^{(j)}(\mathbf{r},\theta,t)\int\mathrm{d}\theta^{\prime}\sin(\theta^{\prime}-\theta)\sum_{i=1}^Mf^{(i)}(\mathbf{r},\theta^{\prime},t)\right]-\partial_\theta\sqrt{2f^{(j)}(\mathbf{r},\theta,t)}\eta_j(\mathbf{r},\theta,t)
-    \end{aligned}
-\end{equation}
-where $\eta_j$ represents spatiotemporal white noise with zero mean and unit-variance (the subscript $j$ denotes that the noise-realization of a given ensemble is individual for each species).
-
-In the following, we focus on a mean-field description and neglect the (multiplicative) noise term in Eq.~\eqref{eq:combinedDensityDynamics}. 
-Now transforming Eq.~\eqref{eq:combinedDensityDynamics} to Fourier space yields a hierarchy of dynamical equations for the Fourier modes
-$
-f_k^{(j)}(\mathbf{r}, t)=\int\mathrm{d}\theta f^{(j)}(\mathbf{r},\theta,t)\mathrm{e}^{\mathrm{i}k\theta}
-$
-and
-$
-2\pi f^{(j)}(\mathbf{r},\theta ,t)=\sum_{k=-\infty}^{\infty}{f_{k}^{(j)}}(\mathbf{r},t)\mathrm{e}^{-\mathrm{i}k\theta}
-$,
-reading
-\begin{equation}
-    \begin{aligned}
-        \dot{f}_k^{(j)}(\mathbf{r},t)&=-\frac{\mathrm{Pe}}{2}\left[\partial_x\left(f_{k+1}^{(j)}+f_{k-1}^{(j)}\right)-\mathrm{i}\partial_y\left(f_{k+1}^{(j)}-f_{k-1}^{(j)}\right)\right]\\
-        &+ \left(\mathrm{i}k\Omega_j-k^2\right)f_k^{(j)}+\frac{\mathrm{i}gk}{2\pi}\sum_{m=-\infty}^\infty f_{k-m}^{(j)}F_{-m}\sum_{i=1}^Mf_m^{(i)}
-    \end{aligned}
-\end{equation}
-
-From here, some lengthy algebra leads us to the following closed set of equations of motion for the fields $\rho:=\rho^{(j)};\mathbf{w}:=\mathbf{w}^{(j)};\Omega:=\Omega_j$
-\begin{equation}
-    \label{eq:hydrodynamicEq}
-    \begin{aligned}
-        \dot{\rho} &= -\mathrm{Pe}\nabla\cdot\mathbf{w}\\
-        \dot{\mathbf{w}} &= -\mathbf{w}+\sum_{i=1}^M\frac{g\rho}2\mathbf{w}^{(i)}-\frac{\mathrm{Pe}}2\nabla\rho+\frac{\mathrm{Pe}^2}{2b}\nabla^2\mathbf{w}-\frac{g^2}b\mathbf{w}\left(\sum_{i=1}^M\mathbf{w}^{(i)}\right)^2\\
-        &+ \Omega\mathbf{w}_\perp+\frac{\mathrm{Pe}^2\Omega}{4b}\nabla^2\mathbf{w}_\perp-\frac{g^2\Omega\mathbf{w}_\perp}{2b}\left(\sum_{i=1}^M\mathbf{w}^{(i)}\right)^2+\mathcal{O}\left(\nabla\mathbf{w}^2\right)
-    \end{aligned}
-\end{equation}
-
-where $b=2\left( 4+\Omega ^2 \right)$, $\mathbf{w}_{\bot}=\left( -w_y,w_x \right)$ and $\mathcal{O}\left(\nabla\mathbf{w}^2\right)$ represents all terms involving both derivatives and nonlinear terms in w of arbitrary species and are therefore irrelevant for both the set of possible uniform solutions and for the linear stability of unpolarized (disordered) phases and can therefore be neglected for our purposes.
-
 \newpage
 \section{Self-consistency Equation}
 
@@ -493,5 +487,7 @@ When $N\rightarrow \infty$, the mean field can be expressed by the distribution 
 %         \label{fig:rsProofEps} The schematic plot of $r_s>r_c$.
 %     }
 % \end{figure}
+
+\bibliography{ref}
 
 \end{document}
