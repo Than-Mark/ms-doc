@@ -151,14 +151,18 @@ We emphasize that this argument is standard and the only subtlety is that we hav
 \begin{equation}
     \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right);.
 \end{equation}
-For the case of the phase coupling dynamics, the equation for the density $\rho$ is
-\begin{equation}
-    \begin{aligned}
-        \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \left( \Omega +G\sum_{j=1}^N{\sin \left( \theta _j-\theta \right) \delta \left( \mathbf{r}_j-\mathbf{r} \right)} \right) \right)\\
-        &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho \left( \mathbf{r},\theta ,\omega ,t \right) -\Omega \frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \\
-        &-G\frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \iiint{\text{d}\mathbf{r}'\text{d}\theta '\text{d}\omega '\rho \left( \mathbf{r}',\theta ',\omega ',t \right) \sin \left( \theta '-\theta \right) \delta \left( \mathbf{r}'-\mathbf{r} \right)}\\
-    \end{aligned}
-\end{equation}
+\begin{enumerate}
+    \item[(1)] For the case of the phase coupling dynamics, the equation for the density $\rho$ is
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \left( \Omega +G\sum_{j=1}^N{\sin \left( \theta _j-\theta \right) \delta \left( \mathbf{r}_j-\mathbf{r} \right)} \right) \right)\\
+            &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho \left( \mathbf{r},\theta ,\omega ,t \right) -\Omega \frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \\
+            &-G\frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \iiint{\text{d}\mathbf{r}'\text{d}\theta '\text{d}\omega '\rho \left( \mathbf{r}',\theta ',\omega ',t \right) \sin \left( \theta '-\theta \right) \delta \left( \mathbf{r}'-\mathbf{r} \right)}\\
+        \end{aligned}
+    \end{equation}
+    \item[(2)] For the case of the chemotactic dynamics, the equation for the density $\rho$ is
+\end{enumerate}
+
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
