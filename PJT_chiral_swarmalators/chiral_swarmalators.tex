@@ -163,6 +163,16 @@ We emphasize that this argument is standard and the only subtlety is that we hav
     \item[(2)] For the case of the chemotactic dynamics, the equation for the density $\rho$ is
 \end{enumerate}
 
+\subsubsection{Angular Fourier expansion of the phase-space distribution}
+The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. As $\rho(\mathbf{r},\theta,\omega,t)$ is a periodic function of $\theta$, it can be expanded in a Fourier series, defined as
+\begin{equation}
+    \hat{\rho}_k(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \rho(\mathbf{r},\theta,t) \mathrm{e}^{\mathrm{i}k\theta}.
+\end{equation}
+The inverse Fourier transform is
+\begin{equation}
+    \rho(\mathbf{r},\theta,\omega,t)=\cfrac{1}{2\pi}\sum_{k=-\infty}^{\infty}{\hat{\rho}_k(\mathbf{r},\omega,t)\mathrm{e}^{\textrm{i}k\theta}}\;.
+\end{equation}
+In this framework, the uniform distribution $\rho _0(\mathbf{r},\theta ,\omega ,t)=\left( 2\pi \right) ^{-1}\rho_{0}^{*}$ corresponds to $\hat{\rho}_k(\mathbf{r},\omega,t)=\left( 2\pi \right) ^{-1}\rho_{0}^{*}\delta_{k,0}$.
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
