@@ -115,7 +115,7 @@ We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution o
 \begin{equation}
     \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) \delta \left( \omega _i-\omega \right)\;, 
 \end{equation}
-and we shall then demonstrate how one may write a closed Langevin equation for the global density
+which denotes the probability of finding a particle at position $\mathbf{r}$, with orientation $\theta$ and natural frequency $\omega$, and we shall then demonstrate how one may write a closed equation for the global density
 \begin{equation}
     \rho \left( \mathbf{r},\theta ,\omega ,t \right) =\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;.
 \end{equation}
@@ -128,8 +128,9 @@ that
 Expanding the differential equation over the next time step $\delta t$ one obtains
 \begin{equation}
     \begin{aligned}
-        \frac{\text{d}f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\text{d}t}&=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \left( \frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \mathbf{r}}\cdot \frac{\partial \mathbf{r}}{\partial t}+\frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \theta}\frac{\partial \theta}{\partial t}+\frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \omega}\frac{\partial \omega}{\partial t} \right)}\\
-        &=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}}\cdot \nabla f\left( \mathbf{r},\theta ,\omega \right) +\rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta}\frac{\partial}{\partial \theta}f\left( \mathbf{r},\theta ,\omega \right) \right)}\;.
+        \frac{\text{d}f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\text{d}t}&=\frac{\partial f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\partial \mathbf{r}_i}\cdot \frac{\text{d}\mathbf{r}_i}{\text{d}t}+\frac{\partial f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\partial \theta _i}\frac{\text{d}\theta _i}{\text{d}t}+\frac{\partial f\left( \mathbf{r}_i,\theta _i,\omega _i \right)}{\partial \omega _i}\frac{\partial \omega _i}{\partial t}\\
+        &=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \left( \frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \mathbf{r}}\cdot \frac{\text{d}\mathbf{r}}{\text{d}t}+\frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \theta}\frac{\text{d}\theta}{\text{d}t}+\frac{\partial f\left( \mathbf{r},\theta ,\omega \right)}{\partial \omega}\frac{\text{d}\omega}{\text{d}t} \right)}\\
+        &=\iiint{\text{d}\mathbf{r}\text{d}\theta \text{d}\omega \left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}}\cdot \nabla f\left( \mathbf{r},\theta ,\omega \right) +\rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta}\frac{\partial}{\partial \theta}f\left( \mathbf{r},\theta ,\omega \right) \right)}\;.\\
     \end{aligned}
 \end{equation}
 Re-arranging the above integral by integration by parts we obtain
