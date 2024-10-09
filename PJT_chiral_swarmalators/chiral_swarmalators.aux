@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -31,10 +34,10 @@
 \newlabel{eq:continuityEquation}{{12}{3}{Coarse graining}{equation.1.12}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.5}Angular Fourier expansion of the phase-space distribution}{4}{subsubsection.1.1.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.6}Order Parameters}{4}{subsubsection.1.1.6}\protected@file@percent }
-\newlabel{eq:clusterfrequency}{{20}{5}{Order Parameters}{equation.1.20}{}}
-\newlabel{eq:frequency}{{21}{5}{Order Parameters}{equation.1.21}{}}
-\newlabel{eq:globalcluster}{{22}{5}{Order Parameters}{equation.1.22}{}}
-\newlabel{eq:relativeNumber}{{25}{5}{Order Parameters}{equation.1.25}{}}
+\newlabel{eq:clusterfrequency}{{22}{5}{Order Parameters}{equation.1.22}{}}
+\newlabel{eq:frequency}{{23}{5}{Order Parameters}{equation.1.23}{}}
+\newlabel{eq:globalcluster}{{24}{5}{Order Parameters}{equation.1.24}{}}
+\newlabel{eq:relativeNumber}{{27}{5}{Order Parameters}{equation.1.27}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Results}{6}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Signle-chiral Swarmalators}{6}{subsection.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces   Phase diagram and snapshots of mono-chiral swarmalators. \textbf  {(a)} Phase diagram in the $(d_0$-$\lambda )$ plane. For the sake of clarity, the scale of $\lambda $ and $d_0$ is non-uniform. \textbf  {(b)}, The snapshots of CS ($\lambda =0.08,\ d_0=0.1$). \textbf  {(c)}, DS ($\lambda =0.01,\ d_0=0.1$). \textbf  {(d)}, CLS ($\lambda =0.3,\ d_0=1$). \textbf  {(e)}, CLS ($\lambda =0.02,\ d_0=2$). The position and direction of each arrow are the instantaneous spatial position and phase of a swarmalator, respectively, and the color of the arrow denotes the corresponding natural frequency. \relax }}{6}{figure.caption.2}\protected@file@percent }
@@ -46,7 +49,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces   Spatial clustering in the circling state of single-chiral swarmalators. Top row: snapshots of the spatial distribution of swarmalators. Bottom row: the adjacency matrix $A_{ij}$ of the network. \textbf  {(a, d)}: $(\lambda , d_0)=(0.01, 0.35)$. \textbf  {(b, e)}: $(\lambda , d_0)=(0.01, 0.65)$. \textbf  {(c, f)}: $(\lambda , d_0)=(0.01, 1.05)$. In \textbf  {(d-f)}, only those elements $A_{ij}=1$ are plotted. The color of the matrix elements denotes different clusters, the gray elements represent the connections of the drifting swarmalators, and the white area represents the non-interacting region. \relax }}{7}{figure.caption.4}\protected@file@percent }
 \newlabel{fig:mono_CS_Aij}{{3}{7}{Spatial clustering in the circling state of single-chiral swarmalators. Top row: snapshots of the spatial distribution of swarmalators. Bottom row: the adjacency matrix $A_{ij}$ of the network. \textbf {(a, d)}: $(\lambda , d_0)=(0.01, 0.35)$. \textbf {(b, e)}: $(\lambda , d_0)=(0.01, 0.65)$. \textbf {(c, f)}: $(\lambda , d_0)=(0.01, 1.05)$. In \textbf {(d-f)}, only those elements $A_{ij}=1$ are plotted. The color of the matrix elements denotes different clusters, the gray elements represent the connections of the drifting swarmalators, and the white area represents the non-interacting region. \relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}The Clustering State}{7}{subsubsection.2.1.2}\protected@file@percent }
-\newlabel{eq:clusterState}{{28}{7}{The Clustering State}{equation.2.28}{}}
+\newlabel{eq:clusterState}{{30}{7}{The Clustering State}{equation.2.30}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces   Heatmaps for different order parameters of single-chiral swarmalators across the ($\lambda $, $d_0$) plane and the critical lines of the transitions between states. \textbf  {(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega _c$ and $N_r$, respectively. Different colors describe the amplitudes of different order parameters. \relax }}{8}{figure.caption.5}\protected@file@percent }
 \newlabel{fig:monoOrderParam}{{4}{8}{Heatmaps for different order parameters of single-chiral swarmalators across the ($\lambda $, $d_0$) plane and the critical lines of the transitions between states. \textbf {(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega _c$ and $N_r$, respectively. Different colors describe the amplitudes of different order parameters. \relax }{figure.caption.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces   Heatmaps for different order parameters of double-chiral swarmalators across the ($\lambda $, $d_0$) plane and the critical lines of the transitions between states. \textbf  {(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega _c$ and $N_r$, respectively. Different colors describe the amplitudes of various order parameters. \relax }}{8}{figure.caption.6}\protected@file@percent }
@@ -54,7 +57,7 @@
 \bibdata{ref}
 \bibcite{DavidSDean_1996}{1}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Self-consistency Equation}{9}{section.3}\protected@file@percent }
-\newlabel{eq:localOrderParameter}{{29}{9}{Self-consistency Equation}{equation.3.29}{}}
-\newlabel{eq:localDotTheta}{{30}{9}{Self-consistency Equation}{equation.3.30}{}}
-\newlabel{eq:dotphi}{{32}{9}{Self-consistency Equation}{equation.3.32}{}}
+\newlabel{eq:localOrderParameter}{{31}{9}{Self-consistency Equation}{equation.3.31}{}}
+\newlabel{eq:localDotTheta}{{32}{9}{Self-consistency Equation}{equation.3.32}{}}
+\newlabel{eq:dotphi}{{34}{9}{Self-consistency Equation}{equation.3.34}{}}
 \gdef \@abspage@last{9}

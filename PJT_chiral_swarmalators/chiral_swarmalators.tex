@@ -104,11 +104,12 @@ These two fields evolve as
 \end{subequations}
 where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the production rate, $k_d$ is the decay rate, $D_{u,v}$ are the diffusion coefficients.
 
-\begin{itemize}
-    \item For $i=1, \cdots, N/2$, $\omega_i > 0$, $\beta_i^u = 0$, $\beta_i^v = \beta > 0$.
-    \item For $i=N/2+1, \cdots, N$, $\omega_i < 0$, $\beta_i^u = -\beta$, $\beta_i^v = 0$.
-    \item $D_u = D_v = 0.002$, $k_0 = 1$, $k_d = 0.001$.
-\end{itemize}
+When $K=0$, the swarmalators are uncoupled and the system is reduced to the chemotactic dynamics.
+% \begin{itemize}
+%     \item For $i=1, \cdots, N/2$, $\omega_i > 0$, $\beta_i^u = 0$, $\beta_i^v = \beta > 0$.
+%     \item For $i=N/2+1, \cdots, N$, $\omega_i < 0$, $\beta_i^u = -\beta$, $\beta_i^v = 0$.
+%     \item $D_u = D_v = 0.002$, $k_0 = 1$, $k_d = 0.001$.
+% \end{itemize}
 
 \subsubsection{Coarse graining}
 We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for a single particle
@@ -116,9 +117,13 @@ We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution o
     \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) \delta \left( \omega _i-\omega \right)\;, 
 \end{equation}
 which denotes the probability of finding a particle at position $\mathbf{r}$, with orientation $\theta$ and natural frequency $\omega$, and we shall then demonstrate how one may write a closed equation for the global density
-\begin{equation}
-    \rho \left( \mathbf{r},\theta ,\omega ,t \right) =\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;.
-\end{equation}
+\begin{subequations}
+    \begin{align}
+        \rho \left( \mathbf{r},\theta ,\omega ,t \right) &=\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;,\\
+        \varrho \left( \mathbf{r},\theta ,t \right) &=\int_{-\infty}^{+\infty}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}
+        % =\int_{-\omega _{\max}}^{-\omega _{\min}}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}+\int_{\omega _{\min}}^{\omega _{\max}}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}
+    \end{align}
+\end{subequations}
 The derivation follows a well known argument. Consider an arbitrary function $f$ defined on the coordinate space of the system. Using the definition of the density it is a tautology
 that
 \begin{equation}
@@ -150,19 +155,35 @@ Comparing equations \eqref{eq:arbitraryFunctionDt1} and \eqref{eq:arbitraryFunct
 \end{equation}
 We emphasize that this argument is standard and the only subtlety is that we have not carried out any thermal averaging at this point. Summing equation \eqref{eq:continuityEquation} over the $i$ and using the definition of the density $\rho$ we obtain
 \begin{equation}
-    \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right);.
+    \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right)\;.
 \end{equation}
 \begin{enumerate}
     \item[(1)] For the case of the phase coupling dynamics, the equation for the density $\rho$ is
     \begin{equation}
         \begin{aligned}
-            \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \left( \Omega +G\sum_{j=1}^N{\sin \left( \theta _j-\theta \right) \delta \left( \mathbf{r}_j-\mathbf{r} \right)} \right) \right)\\
-            &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho \left( \mathbf{r},\theta ,\omega ,t \right) -\Omega \frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \\
-            &-G\frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \iiint{\text{d}\mathbf{r}'\text{d}\theta '\text{d}\omega '\rho \left( \mathbf{r}',\theta ',\omega ',t \right) \sin \left( \theta '-\theta \right) \delta \left( \mathbf{r}'-\mathbf{r} \right)}\\
+            \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \left( \omega +G\sum_{j=1}^N{\sin \left( \theta _j-\theta \right) \delta \left( \mathbf{r}_j-\mathbf{r} \right)} \right) \right)\\
+            &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho \left( \mathbf{r},\theta ,\omega ,t \right) -\omega \frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \\
+            &-G\frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \iiint{\text{d}\mathbf{r}'\text{d}\theta '\text{d}\omega '\rho \left( \mathbf{r}',\theta ',\omega ',t \right) \sin \left( \theta '-\theta \right) \delta \left( \mathbf{r}'-\mathbf{r} \right)}\;,
+        \end{aligned}
+    \end{equation}
+    where $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$. Then for the density $\varrho$ we have
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial \varrho \left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho \left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\\
+            &-G\frac{\partial}{\partial \theta}\varrho \left( \mathbf{r},\theta ,t \right) \iint{\mathrm{d}\mathbf{r}^{\prime}\mathrm{d}\theta^{\prime}\varrho \left( \mathbf{r}^{\prime},\theta^{\prime},t \right) \sin \left( \theta^{\prime}-\theta \right) \delta \left( \mathbf{r}^{\prime}-\mathbf{r} \right)}\\
         \end{aligned}
     \end{equation}
     \item[(2)] For the case of the chemotactic dynamics, the equation for the density $\rho$ is
+    \begin{equation}
+        \cdots
+    \end{equation}
 \end{enumerate}
+
+% The density function $\rho$ is positive, $2\pi$-periodic in $\theta$ and $L$-periodic in $x, y$ that satisfies the normalization condition,
+% \begin{equation}
+%     \int_{-\pi}^{\pi}{\int_{\mathbb{L} ^2}{\rho \left( \mathbf{r},\theta ,\omega ,t \right)}}\mathrm{d}\mathbf{r}\mathrm{d}\theta =g\left( \omega \right) \;,
+% \end{equation}
+% where $g\left( \omega \right)$ is time independent swarmalator frequency distribution, $\mathbb{L}^2$ is the area of the $L\times L$ square with periodic boundary conditions.
 
 \subsubsection{Angular Fourier expansion of the phase-space distribution}
 The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. As $\rho(\mathbf{r},\theta,\omega,t)$ is a periodic function of $\theta$, it can be expanded in a Fourier series, defined as
