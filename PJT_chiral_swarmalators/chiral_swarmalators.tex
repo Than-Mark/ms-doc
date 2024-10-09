@@ -114,9 +114,9 @@ When $K=0$, the swarmalators are uncoupled and the system is reduced to the chem
 \subsubsection{Coarse graining}
 We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for a single particle
 \begin{equation}
-    \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) \delta \left( \omega _i-\omega \right)\;, 
+    \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) g \left( \omega \right)\;, 
 \end{equation}
-which denotes the probability of finding a particle at position $\mathbf{r}$, with orientation $\theta$ and natural frequency $\omega$, and we shall then demonstrate how one may write a closed equation for the global density
+which denotes the probability of finding a particle at position $\mathbf{r}$, with orientation $\theta$ and natural frequency $\omega$, where $g\left( \omega \right)$ is the frequency distribution. The density function $\rho _i$ satisfies the continuity equation, and we shall then demonstrate how one may write a closed equation for the global density
 \begin{subequations}
     \begin{align}
         \rho \left( \mathbf{r},\theta ,\omega ,t \right) &=\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;,\\
@@ -186,15 +186,16 @@ We emphasize that this argument is standard and the only subtlety is that we hav
 % where $g\left( \omega \right)$ is time independent swarmalator frequency distribution, $\mathbb{L}^2$ is the area of the $L\times L$ square with periodic boundary conditions.
 
 \subsubsection{Angular Fourier expansion of the phase-space distribution}
-The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. As $\rho(\mathbf{r},\theta,\omega,t)$ is a periodic function of $\theta$, it can be expanded in a Fourier series, defined as
+% The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. 
+As $\varrho(\mathbf{r},\theta,t)$ is a periodic function of $\theta$, it can be expanded in a Fourier series, defined as
 \begin{equation}
-    \hat{\rho}_k(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \rho(\mathbf{r},\theta,t) \mathrm{e}^{\mathrm{i}k\theta}.
+    \hat{\varrho}_k(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \varrho(\mathbf{r},\theta,t) \mathrm{e}^{\mathrm{i}k\theta}.
 \end{equation}
 The inverse Fourier transform is
 \begin{equation}
-    \rho(\mathbf{r},\theta,\omega,t)=\cfrac{1}{2\pi}\sum_{k=-\infty}^{\infty}{\hat{\rho}_k(\mathbf{r},\omega,t)\mathrm{e}^{\textrm{i}k\theta}}\;.
+    \varrho(\mathbf{r},\theta,\omega,t)=\cfrac{1}{2\pi}\sum_{k=-\infty}^{\infty}{\hat{\varrho}_k(\mathbf{r},\omega,t)\mathrm{e}^{\textrm{i}k\theta}}\;.
 \end{equation}
-In this framework, the uniform distribution $\rho _0(\mathbf{r},\theta ,\omega ,t)=\left( 2\pi \right) ^{-1}\rho_{0}^{*}$ corresponds to $\hat{\rho}_k(\mathbf{r},\omega,t)=\left( 2\pi \right) ^{-1}\rho_{0}^{*}\delta_{k,0}$.
+In this framework, the uniform distribution $\varrho _0(\mathbf{r},\theta ,\omega ,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}$ corresponds to $\hat{\varrho}_k(\mathbf{r},\omega,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}\delta_{k,0}$.
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
