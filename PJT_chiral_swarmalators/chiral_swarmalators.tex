@@ -86,30 +86,31 @@ The natural frequencies $\omega_i$ are distributed with following two cases:
 
 \subsubsection{Chemotactic dynamics}
 
-Consider two chemical fields $u\left( \mathbf{r},t \right), v\left( \mathbf{r},t \right)$ that are produced by the ensemble of two symmetrically chiral swarmalators. Swarmalators interact with the chemical field and move towards/against the regions with higher concentration, which can be described by the following equation:
+Consider two chemical fields $u\left( \mathbf{r},t \right), v\left( \mathbf{r},t \right)$ that are produced by the ensemble of two symmetrically chiral swarmalators. Swarmalators interact with the chemical field and move towards/against the regions with higher concentration, which can be described by the following equation ($i=1, 2, \dots, N$):
+\begin{subequations}
+    \begin{align}
+        \dot{\mathbf{r}}_{i}^{s}&=v\mathbf{p}_{i}^{s}\\
+        \dot{\theta}_{i}^{s}&=\omega _{i}^{s}+\alpha ^{s}\mathbf{p}_{i}^{s}\times \nabla u+\beta ^{s}\mathbf{p}_{i}^{s}\times \nabla v
+    \end{align}
+\end{subequations}
+where $\alpha, \beta _{i}^{s}$ denote the ‘chemotactic’ coupling strength and $\mathbf{p}_i^{s}=(\cos \theta^{s} _i,\sin \theta _i^{s})$ is the unit vector pointing in the direction of the $i$-th swarmalator, $s\in\{p, n\}$ denotes the two chiral species. Here, we used the notation $\mathbf{a}\times\mathbf{b}=a_1 b_2-a_2 b_1$.
+
+These two fields evolve as
+\begin{subequations}
+    \begin{align}
+    \dot{u}&=k_0\sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{p} \right)}-k_du+D_u\nabla ^2u\;,\\
+    \dot{v}&=k_0\sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{n} \right)}-k_dv+D_v\nabla ^2v\;,
+    \end{align}
+\end{subequations}
+where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the production rate, $k_d$ is the decay rate, $D_{u,v}$ are the diffusion coefficients.
+
+\subsubsection{Mixed phase dynamics}
 \begin{subequations}
     \begin{align}
         \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
         \dot{\theta}_i&=\omega _i+\beta _{i}^{u}\mathbf{p}_i\times \nabla u+\beta _{i}^{v}\mathbf{p}_i\times \nabla v+\frac{K}{N}\sum_{j=1}^N{f}\left( \left| \mathbf{r}_j-\mathbf{r}_i \right| \right) \sin \left( \theta _j-\theta _i \right) \;,
     \end{align}
 \end{subequations}
-where $\beta _{i}^{u,v}$ denote the ‘chemotactic’ coupling strength and $\mathbf{p}_i=(\cos \theta _i,\sin \theta _i)$ is the unit vector pointing in the direction of the $i$-th swarmalator. Here, we used the notation $\mathbf{a}\times\mathbf{b}=a_1 b_2-a_2 b_1$.
-
-These two fields evolve as
-\begin{subequations}
-    \begin{align}
-    \dot{u}&=k_0\sum_{j\in S_+}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_du+D_u\nabla ^2u\;,\\
-    \dot{v}&=k_0\sum_{j\in S_-}{\delta \left( \mathbf{r}-\mathbf{r}_{j} \right)}-k_dv+D_v\nabla ^2v\;,
-    \end{align}
-\end{subequations}
-where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the production rate, $k_d$ is the decay rate, $D_{u,v}$ are the diffusion coefficients.
-
-When $K=0$, the swarmalators are uncoupled and the system is reduced to the chemotactic dynamics.
-% \begin{itemize}
-%     \item For $i=1, \cdots, N/2$, $\omega_i > 0$, $\beta_i^u = 0$, $\beta_i^v = \beta > 0$.
-%     \item For $i=N/2+1, \cdots, N$, $\omega_i < 0$, $\beta_i^u = -\beta$, $\beta_i^v = 0$.
-%     \item $D_u = D_v = 0.002$, $k_0 = 1$, $k_d = 0.001$.
-% \end{itemize}
 
 \subsubsection{Coarse graining}
 We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for a single particle
@@ -173,9 +174,20 @@ We emphasize that this argument is standard and the only subtlety is that we hav
             &-G\frac{\partial}{\partial \theta}\varrho \left( \mathbf{r},\theta ,t \right) \iint{\mathrm{d}\mathbf{r}^{\prime}\mathrm{d}\theta^{\prime}\varrho \left( \mathbf{r}^{\prime},\theta^{\prime},t \right) \sin \left( \theta^{\prime}-\theta \right) \delta \left( \mathbf{r}^{\prime}-\mathbf{r} \right)}\\
         \end{aligned}
     \end{equation}
-    \item[(2)] For the case of the chemotactic dynamics, the equation for the density $\rho$ is
+    \item[(2)] For the case of the chemotactic dynamics, the equation for the density $\rho^s$ is
     \begin{equation}
-        \cdots
+        \begin{aligned}
+            \frac{\partial \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \left( \omega +\alpha ^s\mathbf{p}\left( \theta \right) \times \nabla u+\beta ^s\mathbf{p}\left( \theta \right) \times \nabla v \right) \right)\\
+            &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) -\omega \frac{\partial}{\partial \theta}\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right)\\
+            &-\frac{\partial}{\partial \theta}\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]
+        \end{aligned}
+    \end{equation}
+    where $\varphi _c=\mathrm{arg}\left( -\partial _yc+\mathrm{i}\partial _xc \right) , c=u, v$. Then for the density $\varrho ^s$ we have
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial \varrho ^s\left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho ^s\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \varrho ^s\left( \mathbf{r},\theta ,t \right) \mathrm{d}\omega}\\
+            &-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\\
+        \end{aligned}
     \end{equation}
 \end{enumerate}
 

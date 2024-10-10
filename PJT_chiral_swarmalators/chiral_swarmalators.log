@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  9 OCT 2024 23:26
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  10 OCT 2024 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -514,33 +514,33 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [1
 
 ] [2] [3]
-Overfull \hbox (20.55751pt too wide) in paragraph at lines 197--199
+Overfull \hbox (20.55751pt too wide) in paragraph at lines 209--211
 \TU/lmr/m/n/10 In this framework, the uniform distribution $\OML/cmm/m/it/10 %[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OML/cmm/m/it/10 ; ^^R; !; t\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 %[]$ \TU/lmr/m/n/10 corresponds to $[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OML/cmm/m/it/10 ; !; t\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 %[]^^N[]$\TU/lmr/m/n/10 . 
  []
 
-[4] [5]
+[4] [5] [6]
 File: ./figs/MonoChiralPhaseDiagram.pdf Graphic file (type pdf)
 <use ./figs/MonoChiralPhaseDiagram.pdf>
 File: ./figs/mono-DS.pdf Graphic file (type pdf)
 <use ./figs/mono-DS.pdf>
 File: ./figs/mono_CS_Aij.png Graphic file (type bmp)
 <./figs/mono_CS_Aij.png>
- [6] [7]
+ [7] [8]
 File: ./figs/monoOrderParam.png Graphic file (type bmp)
 <./figs/monoOrderParam.png>
 File: ./figs/orderParam.png Graphic file (type bmp)
 <./figs/orderParam.png>
- [8] (./chiral_swarmalators.bbl) [9] (./chiral_swarmalators.aux)
+ [9] (./chiral_swarmalators.bbl) [10] (./chiral_swarmalators.aux)
 Package rerunfilecheck Info: File `chiral_swarmalators.out' has not changed.
-(rerunfilecheck)             Checksum: 1AA0136F01BDA6CC074D50F27BAD349F;2268.
+(rerunfilecheck)             Checksum: D6A767CF11E95425286A2F6DC83D834A;2442.
  ) 
 Here is how much of TeX's memory you used:
  12243 strings out of 478907
  184495 string characters out of 5866571
- 527815 words of memory out of 5000000
+ 530000 words of memory out of 5000000
  31906 multiletter control sequences out of 15000+600000
  416737 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,12n,77p,776b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on chiral_swarmalators.pdf (9 pages).
+Output written on chiral_swarmalators.pdf (10 pages).
