@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  10 OCT 2024 23:10
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  12 OCT 2024 21:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -414,7 +414,8 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count300
 \g__pdf_backend_annotation_int=\count301
 \g__pdf_backend_link_int=\count302
-) (./chiral_swarmalators.aux)
+)
+No file chiral_swarmalators.aux.
 \openout1 = `chiral_swarmalators.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -427,7 +428,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 35.
- (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
+(e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 35.
@@ -454,14 +455,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 35.
 LaTeX Info: Redefining \pageref on input line 35.
 LaTeX Info: Redefining \nameref on input line 35.
- (./chiral_swarmalators.out) (./chiral_swarmalators.out)
 \@outlinefile=\write3
 \openout3 = `chiral_swarmalators.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -507,13 +510,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
  (e:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./chiral_swarmalators.toc)
+)
 \tf@toc=\write4
 \openout4 = `chiral_swarmalators.toc'.
 
  [1
 
-] [2] [3]
+] [2]
+
+LaTeX Warning: Citation `DavidSDean_1996' on page 3 undefined on input line 116.
+
+
+LaTeX Warning: Reference `eq:arbitraryFunction' on page 3 undefined on input line 147.
+
+
+LaTeX Warning: Reference `eq:arbitraryFunctionDt1' on page 3 undefined on input line 152.
+
+
+LaTeX Warning: Reference `eq:arbitraryFunctionDt2' on page 3 undefined on input line 152.
+
+
+LaTeX Warning: Reference `eq:continuityEquation' on page 3 undefined on input line 157.
+
+[3]
 Overfull \hbox (20.55751pt too wide) in paragraph at lines 209--211
 \TU/lmr/m/n/10 In this framework, the uniform distribution $\OML/cmm/m/it/10 %[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OML/cmm/m/it/10 ; ^^R; !; t\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 %[]$ \TU/lmr/m/n/10 corresponds to $[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 r\OML/cmm/m/it/10 ; !; t\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 %[]^^N[]$\TU/lmr/m/n/10 . 
  []
@@ -525,20 +544,49 @@ File: ./figs/mono-DS.pdf Graphic file (type pdf)
 <use ./figs/mono-DS.pdf>
 File: ./figs/mono_CS_Aij.png Graphic file (type bmp)
 <./figs/mono_CS_Aij.png>
- [7] [8]
+ [7]
+
+LaTeX Warning: Reference `eq:additionalCouplingDotTheta' on page 8 undefined on input line 332.
+
+[8]
 File: ./figs/monoOrderParam.png Graphic file (type bmp)
 <./figs/monoOrderParam.png>
 File: ./figs/orderParam.png Graphic file (type bmp)
 <./figs/orderParam.png>
- [9] (./chiral_swarmalators.bbl) [10] (./chiral_swarmalators.aux)
-Package rerunfilecheck Info: File `chiral_swarmalators.out' has not changed.
-(rerunfilecheck)             Checksum: D6A767CF11E95425286A2F6DC83D834A;2442.
+ [9]
+
+LaTeX Warning: Reference `eq:swarmalatorDotTheta' on page 10 undefined on input line 500.
+
+
+LaTeX Warning: Reference `eq:localOrderParameter' on page 10 undefined on input line 505.
+
+
+LaTeX Warning: Reference `eq:clusterState' on page 10 undefined on input line 510.
+
+
+LaTeX Warning: Reference `eq:localDotTheta' on page 10 undefined on input line 510.
+
+(./chiral_swarmalators.bbl) [10] (./chiral_swarmalators.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `chiral_swarmalators.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `chiral_swarmalators.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D6A767CF11E95425286A2F6DC83D834A;2442.
  ) 
 Here is how much of TeX's memory you used:
- 12243 strings out of 478907
- 184495 string characters out of 5866571
- 530000 words of memory out of 5000000
- 31906 multiletter control sequences out of 15000+600000
+ 12230 strings out of 478907
+ 184247 string characters out of 5866571
+ 524142 words of memory out of 5000000
+ 31901 multiletter control sequences out of 15000+600000
  416737 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,12n,77p,776b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
