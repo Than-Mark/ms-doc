@@ -52,7 +52,7 @@
     \label{eq:dotxy}
 \end{subequations}
 
-\subsubsection{Phase coupling dynamics}
+\subsubsection{Polar alignment dynamics}
 \begin{itemize}
     \item Additive coupling: 
     \begin{equation}
@@ -169,6 +169,7 @@ We emphasize that this argument is standard and the only subtlety is that we hav
     \end{equation}
     where $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$. Then for the density $\varrho$ we have
     \begin{equation}
+        \label{eq:coarseDensityAlign}
         \begin{aligned}
             \frac{\partial \varrho \left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho \left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\\
             &-G\frac{\partial}{\partial \theta}\varrho \left( \mathbf{r},\theta ,t \right) \iint{\mathrm{d}\mathbf{r}^{\prime}\mathrm{d}\theta^{\prime}\varrho \left( \mathbf{r}^{\prime},\theta^{\prime},t \right) \sin \left( \theta^{\prime}-\theta \right) \delta \left( \mathbf{r}^{\prime}-\mathbf{r} \right)}\\
@@ -184,6 +185,7 @@ We emphasize that this argument is standard and the only subtlety is that we hav
     \end{equation}
     where $\varphi _c=\mathrm{arg}\left( -\partial _yc+\mathrm{i}\partial _xc \right) , c=u, v$. Then for the density $\varrho ^s$ we have
     \begin{equation}
+        \label{eq:coarseDensityChemotactic}
         \begin{aligned}
             \frac{\partial \varrho ^s\left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho ^s\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \varrho ^s\left( \mathbf{r},\theta ,t \right) \mathrm{d}\omega}\\
             &-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\\
@@ -201,13 +203,51 @@ We emphasize that this argument is standard and the only subtlety is that we hav
 % The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. 
 As $\varrho(\mathbf{r},\theta,t)$ is a periodic function of $\theta$, it can be expanded in a Fourier series, defined as
 \begin{equation}
-    \hat{\varrho}_k(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \varrho(\mathbf{r},\theta,t) \mathrm{e}^{\mathrm{i}k\theta}.
+    \hat{\varrho}_k(\mathbf{r},t)=\int_{-\pi}^\pi \varrho(\mathbf{r},\theta,t) \mathrm{e}^{\mathrm{i}k\theta}\mathrm{d}\theta\;.
 \end{equation}
 The inverse Fourier transform is
 \begin{equation}
-    \varrho(\mathbf{r},\theta,\omega,t)=\cfrac{1}{2\pi}\sum_{k=-\infty}^{\infty}{\hat{\varrho}_k(\mathbf{r},\omega,t)\mathrm{e}^{\textrm{i}k\theta}}\;.
+    \label{eq:inverseFourier}
+    \varrho (\mathbf{r},\theta ,t)=\frac{1}{2\pi}\sum_{k=-\infty}^{\infty}{\hat{\varrho}_k(\mathbf{r},t)\mathrm{e}^{\mathrm{i}k\theta}\;.}
 \end{equation}
-In this framework, the uniform distribution $\varrho _0(\mathbf{r},\theta ,\omega ,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}$ corresponds to $\hat{\varrho}_k(\mathbf{r},\omega,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}\delta_{k,0}$.
+In this framework, the uniform distribution $\varrho _0(\mathbf{r},\theta ,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}$ corresponds to $\hat{\varrho}_k(\mathbf{r},\omega,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}$ for $k=0$.
+
+Let us use as a basis of the plane the two orthogonal vectors $\mathbf{p}_1=(1,0)$ and $\mathbf{p}_2=(0,1)$. In order to obtain an evolution equation for the velocity field, we multiply equations \eqref{eq:coarseDensityAlign} and \eqref{eq:coarseDensityChemotactic} by $\mathrm{e}\left(\theta\right)$ and integrate over $\theta$ from $-\pi$ to $\pi$. For equation \eqref{eq:coarseDensityChemotactic}, we obtain ($j=1,2$)
+\begin{equation}
+    \label{eq:angularFourierInt}
+    \frac{\partial}{\partial t}\int_{-\pi}^{\pi}{\mathbf{e}_j\left( \theta \right) \varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}+v\sum_{l=1}^2{\frac{\partial}{\partial \mathbf{r}_l}\int_{-\pi}^{\pi}{\mathbf{e}_j\left( \theta \right) \mathbf{e}_l\left( \theta \right) \varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}}=\int_{-\pi}^{\pi}{\mathbf{e}_j\left( \theta \right) \left( I_{\mathrm{freq}}+I_{\mathrm{chem}} \right) \mathrm{d}\theta}\;,
+\end{equation}
+where 
+\begin{subequations}
+    \label{eq:angularFourierIntSub}
+    \begin{align}
+        &I_{\mathrm{freq}}=-\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \varrho ^s\left( \mathbf{r},\theta ,t \right) \mathrm{d}\omega}\;,\\
+        &I_{\mathrm{chem}}=-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\;.
+    \end{align}
+\end{subequations}
+To proceed further, it is convenient to identify complex numbers with two-dimensional vectors, in such a way that $\mathbf{e}(\theta)$ is mapped onto $\mathrm{e}^{\mathrm{i}\theta}$. Then, in the same way, $v\hat{\varrho}_1\left( \mathbf{r},t \right) $ is associated with the momentum field $\mathbf{w}\left( \mathbf{r},t \right) =\rho \left( \mathbf{r},t \right) \mathbf{u}\left( \mathbf{r},t \right) $. Hence, we wish to rewrite equation \eqref{eq:angularFourierInt} in such complex notations. For later use, we shall write it in a slightly more general form, replacing $\mathrm{e}^{\mathrm{i}\theta}$ by $\mathrm{e}^{\mathrm{i}k \theta}$:
+\begin{equation}
+    \label{eq:angularFourierIntComplex}
+    \frac{\partial}{\partial t}\int_{-\pi}^{\pi}{\mathrm{e}^{\mathrm{i}k\theta}\varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}+v\sum_{l=1}^2{\frac{\partial}{\partial \mathbf{r}_l}\int_{-\pi}^{\pi}{\mathrm{e}^{\mathrm{i}k\theta}\mathbf{e}_l\left( \theta \right) \varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}}=\int_{-\pi}^{\pi}{\mathrm{e}^{\mathrm{i}k\theta}\left( I_{\mathrm{freq}}+I_{\mathrm{chem}} \right) \mathrm{d}\theta}\;.
+\end{equation}
+Equation \eqref{eq:angularFourierInt} is recovered for $k = 1$, up to the mapping between complex numbers and two-dimensional vectors. The first term on the left-hand side is simply $\partial \hat{\varrho}_k/\partial t$. The second term on the left-hand side can be evaluated as follows: For $l=1,2$ and $k$ integer, let us define the complex quantity $Q_{l}^{\left( k \right)}\left( \mathbf{r},t \right)$ as 
+\begin{equation}
+    Q_l^{(k)}(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \mathrm{e}^{\mathrm{i}k\theta}\mathrm{e}_l(\theta)f(\mathbf{r},\theta,t).
+\end{equation}
+The following relations are then easily obtained:
+\begin{equation}
+    \begin{aligned}
+        Q_{1}^{(k)}(\mathbf{r},t)&=\frac{1}{2}[\hat{f}_{k+1}(\mathbf{r},t)+\hat{f}_{k-1}(\mathbf{r},t)],\\
+        Q_{2}^{(k)}(\mathbf{r},t)&=\frac{1}{2\mathrm{i}}[\hat{f}_{k+1}(\mathbf{r},t)-\hat{f}_{k-1}(\mathbf{r},t)].
+    \end{aligned}
+\end{equation}
+
+
+The right-hand side of equation \eqref{eq:angularFourierIntComplex} is computed by inserting the Fourier series expansion \eqref{eq:inverseFourier} into equations \eqref{eq:angularFourierIntSub}. After a rather straightforward calculation, one finds
+\begin{equation}
+    Q_1^{(k)}(\mathbf{r},t)=\frac{1}{2}[\hat{f}_{k+1}(\mathbf{r},t)+\hat{f}_{k-1}(\mathbf{r},t)],\\Q_2^{(k)}(\mathbf{r},t)=\frac{1}{2\mathrm{i}}[\hat{f}_{k+1}(\mathbf{r},t)-\hat{f}_{k-1}(\mathbf{r},t)].
+\end{equation}
+
 
 \subsubsection{Order Parameters}
 Some order parameters can be introduced to measure the level of spatiotemporal coordinations among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the global phase synchronization among swarmalators can be defined as the following complex function:
