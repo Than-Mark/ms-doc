@@ -29,7 +29,7 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Self-organized Chiral Swarmalators}}
+\title{\textbf{Chemotactic Chiral Active Matter}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -187,7 +187,7 @@ We emphasize that this argument is standard and the only subtlety is that we hav
     \begin{equation}
         \label{eq:coarseDensityChemotactic}
         \begin{aligned}
-            \frac{\partial \varrho ^s\left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho ^s\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \varrho ^s\left( \mathbf{r},\theta ,t \right) \mathrm{d}\omega}\\
+            \frac{\partial \varrho ^s\left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho ^s\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\\
             &-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\\
         \end{aligned}
     \end{equation}
@@ -221,7 +221,7 @@ where
 \begin{subequations}
     \label{eq:angularFourierIntSub}
     \begin{align}
-        &I_{\mathrm{freq}}=-\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \varrho ^s\left( \mathbf{r},\theta ,t \right) \mathrm{d}\omega}\;,\\
+        &I_{\mathrm{freq}}=-\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\;,\\
         &I_{\mathrm{chem}}=-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\;.
     \end{align}
 \end{subequations}
@@ -244,9 +244,9 @@ The following relations are then easily obtained:
 
 
 The right-hand side of equation \eqref{eq:angularFourierIntComplex} is computed by inserting the Fourier series expansion \eqref{eq:inverseFourier} into equations \eqref{eq:angularFourierIntSub}. After a rather straightforward calculation, one finds
-\begin{equation}
-    Q_1^{(k)}(\mathbf{r},t)=\frac{1}{2}[\hat{f}_{k+1}(\mathbf{r},t)+\hat{f}_{k-1}(\mathbf{r},t)],\\Q_2^{(k)}(\mathbf{r},t)=\frac{1}{2\mathrm{i}}[\hat{f}_{k+1}(\mathbf{r},t)-\hat{f}_{k-1}(\mathbf{r},t)].
-\end{equation}
+% \begin{equation}
+%     Q_1^{(k)}(\mathbf{r},t)=\frac{1}{2}[\hat{f}_{k+1}(\mathbf{r},t)+\hat{f}_{k-1}(\mathbf{r},t)],\\Q_2^{(k)}(\mathbf{r},t)=\frac{1}{2\mathrm{i}}[\hat{f}_{k+1}(\mathbf{r},t)-\hat{f}_{k-1}(\mathbf{r},t)].
+% \end{equation}
 
 
 \subsubsection{Order Parameters}
@@ -313,71 +313,71 @@ In the following discussions, we further define an order parameter to depict the
 \end{equation}
 $N_r$ is the relative number of swarmalators in the clusters, which measures the spatial condensation of swarmalators. When $N_r\approx 1$, swarmalators are fully spatially condensed, and when $N_r\approx 0$, swarmalators are spatially dispersed. 
 
-\newpage
-\section{Results}
-\subsection{Signle-chiral Swarmalators}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{./figs/MonoChiralPhaseDiagram.pdf}
-    \caption{
-        \label{fig:MonoPhaseDiagram} 
-        Phase diagram and snapshots of mono-chiral swarmalators.
-        \textbf{(a)} Phase diagram in the $(d_0$-$\lambda)$ plane. 
-        % The boundaries between states are analytical approximations given by Section~\ref{sec:phaseDiagrams}.
-        For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-uniform.
-        \textbf{(b)}, The snapshots of CS ($\lambda=0.08,\ d_0=0.1$). 
-        \textbf{(c)}, DS ($\lambda=0.01,\ d_0=0.1$).
-        \textbf{(d)}, CLS ($\lambda=0.3,\ d_0=1$).
-        \textbf{(e)}, CLS ($\lambda=0.02,\ d_0=2$). The position and direction of each arrow are the instantaneous spatial position and phase of a swarmalator, respectively, and the color of the arrow denotes the corresponding natural frequency.
-    }
-\end{figure}
+% \newpage
+% \section{Results}
+% \subsection{Signle-chiral Swarmalators}
+% \begin{figure}[H]
+%     \includegraphics[width=\textwidth]{./figs/MonoChiralPhaseDiagram.pdf}
+%     \caption{
+%         \label{fig:MonoPhaseDiagram} 
+%         Phase diagram and snapshots of mono-chiral swarmalators.
+%         \textbf{(a)} Phase diagram in the $(d_0$-$\lambda)$ plane. 
+%         % The boundaries between states are analytical approximations given by Section~\ref{sec:phaseDiagrams}.
+%         For the sake of clarity, the scale of $\lambda$ and $d_0$ is non-uniform.
+%         \textbf{(b)}, The snapshots of CS ($\lambda=0.08,\ d_0=0.1$). 
+%         \textbf{(c)}, DS ($\lambda=0.01,\ d_0=0.1$).
+%         \textbf{(d)}, CLS ($\lambda=0.3,\ d_0=1$).
+%         \textbf{(e)}, CLS ($\lambda=0.02,\ d_0=2$). The position and direction of each arrow are the instantaneous spatial position and phase of a swarmalator, respectively, and the color of the arrow denotes the corresponding natural frequency.
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{./figs/mono-DS.pdf}
-    \caption{
-        \label{fig:mono-DS} Swarming properties of DS for $\lambda =0.01$, $d_0 =0.1$. 
-        \textbf{(a)}: The orbits and the instantaneous rotation centers $\left\{ \mathbf{c}_i (t)\right\}$ of swarmalators. The color denotes the natural frequency.
-        \textbf{(b)}: The profile of the averaged frequencies $\langle \dot{\theta}_i \rangle$.
-        \textbf{(c)}: The instantaneous rotation radii $ r_i^{eff}$ and the average rotation radii $v/\langle \dot{\theta}_i \rangle$ against the natural frequencies $\omega_i$. The black dashed line is the relation $r_i^0 = v/\omega_i$ for the uncoupled case.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \includegraphics[width=\textwidth]{./figs/mono-DS.pdf}
+%     \caption{
+%         \label{fig:mono-DS} Swarming properties of DS for $\lambda =0.01$, $d_0 =0.1$. 
+%         \textbf{(a)}: The orbits and the instantaneous rotation centers $\left\{ \mathbf{c}_i (t)\right\}$ of swarmalators. The color denotes the natural frequency.
+%         \textbf{(b)}: The profile of the averaged frequencies $\langle \dot{\theta}_i \rangle$.
+%         \textbf{(c)}: The instantaneous rotation radii $ r_i^{eff}$ and the average rotation radii $v/\langle \dot{\theta}_i \rangle$ against the natural frequencies $\omega_i$. The black dashed line is the relation $r_i^0 = v/\omega_i$ for the uncoupled case.
+%     }
+% \end{figure}
 
-\subsubsection{Spatial Clustering in Circling State}
+% \subsubsection{Spatial Clustering in Circling State}
 
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{./figs/mono_CS_Aij.png}
-    \caption{
-        \label{fig:mono_CS_Aij}
-        Spatial clustering in the circling state of single-chiral swarmalators. 
-        Top row: snapshots of the spatial distribution of swarmalators. Bottom row: the adjacency matrix $A_{ij}$ of the network. 
-        \textbf{(a, d)}: $(\lambda, d_0)=(0.01, 0.35)$.
-        \textbf{(b, e)}: $(\lambda, d_0)=(0.01, 0.65)$.
-        \textbf{(c, f)}: $(\lambda, d_0)=(0.01, 1.05)$.
-        In \textbf{(d-f)}, only those elements $A_{ij}=1$ are plotted. The color of the matrix elements denotes different clusters, the gray elements represent the connections of the drifting swarmalators, and the white area represents the non-interacting region.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \includegraphics[width=\textwidth]{./figs/mono_CS_Aij.png}
+%     \caption{
+%         \label{fig:mono_CS_Aij}
+%         Spatial clustering in the circling state of single-chiral swarmalators. 
+%         Top row: snapshots of the spatial distribution of swarmalators. Bottom row: the adjacency matrix $A_{ij}$ of the network. 
+%         \textbf{(a, d)}: $(\lambda, d_0)=(0.01, 0.35)$.
+%         \textbf{(b, e)}: $(\lambda, d_0)=(0.01, 0.65)$.
+%         \textbf{(c, f)}: $(\lambda, d_0)=(0.01, 1.05)$.
+%         In \textbf{(d-f)}, only those elements $A_{ij}=1$ are plotted. The color of the matrix elements denotes different clusters, the gray elements represent the connections of the drifting swarmalators, and the white area represents the non-interacting region.
+%     }
+% \end{figure}
 
-Sorting the swarmalators within each cluster by their standardized spatial angles, which are defined as
-\begin{equation}
-    \arctan \left( \frac{y_i-\bar{Y}_i}{x_i-\bar{X}_i} \right)\;,
-\end{equation}
-where 
-\begin{equation}
-    \left[ \begin{array}{c}
-        \bar{Y}_i\\
-        \bar{X}_i\\
-    \end{array} \right] =\frac{1}{\left| C_k \right|}\sum_{i\in C_k}{\mathbf{c}_i}\;.
-\end{equation}
+% Sorting the swarmalators within each cluster by their standardized spatial angles, which are defined as
+% \begin{equation}
+%     \arctan \left( \frac{y_i-\bar{Y}_i}{x_i-\bar{X}_i} \right)\;,
+% \end{equation}
+% where 
+% \begin{equation}
+%     \left[ \begin{array}{c}
+%         \bar{Y}_i\\
+%         \bar{X}_i\\
+%     \end{array} \right] =\frac{1}{\left| C_k \right|}\sum_{i\in C_k}{\mathbf{c}_i}\;.
+% \end{equation}
 
-\subsubsection{The Clustering State}
-Swarmalators in a cluster are phase synchronized and exhibit a spatial rotation at a unified synchronous frequency $\omega_s$. By summing over Eq.~(\ref{eq:additionalCouplingDotTheta}), one gets the aligned frequency as
-\begin{equation}
-    \label{eq:clusterState}
-    \begin{aligned}
-        \omega _s&=\frac{1}{N_c}\sum_{i=1}^{N_c}{\omega _i}+\frac{\lambda}{N_c}\sum_{i=1}^{N_c}{\sum_{j=1}^{N_c}{A_{ij}\sin \left( \theta _j-\theta _i \right)}}\\
-        &=\frac{1}{N_c}\sum_{i=1}^{N_c}{\omega _i}\;,\\
-    \end{aligned}
-\end{equation}
-where $N_c$ is the number of swarmalators in the cluster.
+% \subsubsection{The Clustering State}
+% Swarmalators in a cluster are phase synchronized and exhibit a spatial rotation at a unified synchronous frequency $\omega_s$. By summing over Eq.~(\ref{eq:additionalCouplingDotTheta}), one gets the aligned frequency as
+% \begin{equation}
+%     \label{eq:clusterState}
+%     \begin{aligned}
+%         \omega _s&=\frac{1}{N_c}\sum_{i=1}^{N_c}{\omega _i}+\frac{\lambda}{N_c}\sum_{i=1}^{N_c}{\sum_{j=1}^{N_c}{A_{ij}\sin \left( \theta _j-\theta _i \right)}}\\
+%         &=\frac{1}{N_c}\sum_{i=1}^{N_c}{\omega _i}\;,\\
+%     \end{aligned}
+% \end{equation}
+% where $N_c$ is the number of swarmalators in the cluster.
 
 % \begin{figure}[H]
 %     \centering
@@ -467,26 +467,26 @@ where $N_c$ is the number of swarmalators in the cluster.
 % \newpage
 % \section{Phase Diagrams and Critical Thresholds\label{sec:phaseDiagrams}}
 
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{./figs/monoOrderParam.png}
-    \caption{
-        \label{fig:monoOrderParam} Heatmaps for different order parameters of single-chiral swarmalators across the ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
-        \textbf{(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega_c$ and $N_r$, respectively.
-        Different colors describe the amplitudes of different order parameters.
-    }
-\end{figure}
+% \newpage
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{./figs/monoOrderParam.png}
+%     \caption{
+%         \label{fig:monoOrderParam} Heatmaps for different order parameters of single-chiral swarmalators across the ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
+%         \textbf{(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega_c$ and $N_r$, respectively.
+%         Different colors describe the amplitudes of different order parameters.
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{./figs/orderParam.png}
-    \caption{
-        \label{fig:orderParam} Heatmaps for different order parameters of double-chiral swarmalators across the ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
-        \textbf{(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega_c$ and $N_r$, respectively.
-        Different colors describe the amplitudes of various order parameters.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{./figs/orderParam.png}
+%     \caption{
+%         \label{fig:orderParam} Heatmaps for different order parameters of double-chiral swarmalators across the ($\lambda$, $d_0$) plane and the critical lines of the transitions between states.
+%         \textbf{(a)-(d)} correspond to the order parameters $R$, $R_c$, $\Delta \Omega_c$ and $N_r$, respectively.
+%         Different colors describe the amplitudes of various order parameters.
+%     }
+% \end{figure}
 
 % \begin{figure}[H]
 %     \includegraphics[width=\textwidth]{./figs/analyticalEps.pdf}
@@ -529,34 +529,34 @@ where $N_c$ is the number of swarmalators in the cluster.
 %     \end{cases}\;.
 % \end{equation}
 
-\newpage
-\section{Self-consistency Equation}
+% \newpage
+% \section{Self-consistency Equation}
 
-Inspired by global order parameter $R$, one can define the local order parameter $R_i$:
-\begin{equation}
-    \label{eq:localOrderParameter}
-    R_{c}^{i}\mathrm{e}^{\mathrm{i}\psi _{c}^{i}}=\frac{1}{\left| C_i \right|}\sum_{j\in C_i}{\mathrm{e}^{\mathrm{i}\theta _j}}\;,
-\end{equation}
-where $C_i=\left\{ j\mid \Delta r_{ij}\le d_0 \right\}$. If the swarmalators in set $C_i$ are the initial to entry the coherent state, and other swarmalators are still in the incoherent state, then the $R_i$ will bifurcate from zero simultaneously with $R$ and $R_c$. Then the Eq.~\eqref{eq:swarmalatorDotTheta} can be rewritten as
-\begin{equation}
-    \label{eq:localDotTheta}
-    \dot{\theta}_i=\omega _i+\frac{K}{N} \sum_{j\in C_i}{\sin \left( \theta _j-\theta _i \right)}\;.
-\end{equation}
-By introducing $\Sigma _2\left( d_0 \right) =\sum\nolimits_{j\in C_i}^{}{A_{ij}}=\left|C_i\right|$, Eq.~\eqref{eq:localOrderParameter} becomes 
-\begin{equation}
-    \frac{K\Sigma _2R_{c}^{i}}{N} \sin \left( \psi _{c}^{i}-\theta _i \right) =\frac{K}{N} \sum_{j\in C_k}{\sin \left( \theta _j-\theta _i \right)}
-;.
-\end{equation}
-Then by introducing $\varphi _i=\theta _i-\bar{\omega}t=\theta_i-\psi _{c}^{i}$, where $\bar{\omega}=\sum_{j\in C_i}{\omega _j}/\left| C_i \right|$ is synchronous frequency of the swarmalators in $C_i$ given by Eq.~(\ref{eq:clusterState}), Eq.~(\ref{eq:localDotTheta}) can be recast as
-\begin{equation}
-    \label{eq:dotphi}
-    \dot{\varphi}_i=\dot{\theta}_i-\bar{\omega}-\frac{K\Sigma _2R_{c}^{i}}{N} \sin \varphi _i\;.
-\end{equation}
+% Inspired by global order parameter $R$, one can define the local order parameter $R_i$:
+% \begin{equation}
+%     \label{eq:localOrderParameter}
+%     R_{c}^{i}\mathrm{e}^{\mathrm{i}\psi _{c}^{i}}=\frac{1}{\left| C_i \right|}\sum_{j\in C_i}{\mathrm{e}^{\mathrm{i}\theta _j}}\;,
+% \end{equation}
+% where $C_i=\left\{ j\mid \Delta r_{ij}\le d_0 \right\}$. If the swarmalators in set $C_i$ are the initial to entry the coherent state, and other swarmalators are still in the incoherent state, then the $R_i$ will bifurcate from zero simultaneously with $R$ and $R_c$. Then the Eq.~\eqref{eq:swarmalatorDotTheta} can be rewritten as
+% \begin{equation}
+%     \label{eq:localDotTheta}
+%     \dot{\theta}_i=\omega _i+\frac{K}{N} \sum_{j\in C_i}{\sin \left( \theta _j-\theta _i \right)}\;.
+% \end{equation}
+% By introducing $\Sigma _2\left( d_0 \right) =\sum\nolimits_{j\in C_i}^{}{A_{ij}}=\left|C_i\right|$, Eq.~\eqref{eq:localOrderParameter} becomes 
+% \begin{equation}
+%     \frac{K\Sigma _2R_{c}^{i}}{N} \sin \left( \psi _{c}^{i}-\theta _i \right) =\frac{K}{N} \sum_{j\in C_k}{\sin \left( \theta _j-\theta _i \right)}
+% ;.
+% \end{equation}
+% Then by introducing $\varphi _i=\theta _i-\bar{\omega}t=\theta_i-\psi _{c}^{i}$, where $\bar{\omega}=\sum_{j\in C_i}{\omega _j}/\left| C_i \right|$ is synchronous frequency of the swarmalators in $C_i$ given by Eq.~(\ref{eq:clusterState}), Eq.~(\ref{eq:localDotTheta}) can be recast as
+% \begin{equation}
+%     \label{eq:dotphi}
+%     \dot{\varphi}_i=\dot{\theta}_i-\bar{\omega}-\frac{K\Sigma _2R_{c}^{i}}{N} \sin \varphi _i\;.
+% \end{equation}
 
-When $N\rightarrow \infty$, the mean field can be expressed by the distribution function as
-\begin{equation}
-    R_{c}^{i}\mathrm{e}^{\mathrm{i}\psi _{c}^{i}}=\mathrm{e}^{\mathrm{i}\bar{\omega}t}\int_0^{2\pi}{\int_{-\infty}^{\infty}{\mathrm{e}^{\mathrm{i}\varphi}}}P(\varphi ,\omega ,t)g(\omega )\mathrm{d}\omega \mathrm{d}\varphi\;.
-\end{equation}
+% When $N\rightarrow \infty$, the mean field can be expressed by the distribution function as
+% \begin{equation}
+%     R_{c}^{i}\mathrm{e}^{\mathrm{i}\psi _{c}^{i}}=\mathrm{e}^{\mathrm{i}\bar{\omega}t}\int_0^{2\pi}{\int_{-\infty}^{\infty}{\mathrm{e}^{\mathrm{i}\varphi}}}P(\varphi ,\omega ,t)g(\omega )\mathrm{d}\omega \mathrm{d}\varphi\;.
+% \end{equation}
 
 % \newpage
 % \section{Appendix}

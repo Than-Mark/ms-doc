@@ -7,8 +7,3 @@
 \contentsline {subsubsection}{\numberline {1.1.5}Coarse graining}{3}{subsubsection.1.1.5}%
 \contentsline {subsubsection}{\numberline {1.1.6}Angular Fourier expansion of the phase-space distribution}{4}{subsubsection.1.1.6}%
 \contentsline {subsubsection}{\numberline {1.1.7}Order Parameters}{5}{subsubsection.1.1.7}%
-\contentsline {section}{\numberline {2}Results}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Signle-chiral Swarmalators}{7}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Spatial Clustering in Circling State}{8}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}The Clustering State}{8}{subsubsection.2.1.2}%
-\contentsline {section}{\numberline {3}Self-consistency Equation}{10}{section.3}%
