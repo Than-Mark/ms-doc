@@ -117,12 +117,12 @@ We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution o
 \begin{equation}
     \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) g \left( \omega \right)\;, 
 \end{equation}
-which denotes the probability of finding a particle at position $\mathbf{r}$, with orientation $\theta$ and natural frequency $\omega$, where $g\left( \omega \right)$ is the frequency distribution. The density function $\rho _i$ satisfies the continuity equation, and we shall then demonstrate how one may write a closed equation for the global density
+which denotes the probability of finding a particle at position $\mathbf{r}$, with orientation $\theta$ and natural frequency $\omega$, where $g\left( \omega \right)$ is the time independent swarmalator frequency distribution. The density function $\rho _i$ satisfies the continuity equation, and we shall then demonstrate how one may write a closed equation for the global density
 \begin{subequations}
     \begin{align}
         \rho \left( \mathbf{r},\theta ,\omega ,t \right) &=\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;,\\
-        \varrho \left( \mathbf{r},\theta ,t \right) &=\int_{-\infty}^{+\infty}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}
-        % =\int_{-\omega _{\max}}^{-\omega _{\min}}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}+\int_{\omega _{\min}}^{\omega _{\max}}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}
+        \varrho \left( \mathbf{r},\theta ,t \right) &=\int_{-\infty}^{+\infty}{\rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\;.
+        \label{eq:coarseDensitySub2}
     \end{align}
 \end{subequations}
 The derivation follows a well known argument. Consider an arbitrary function $f$ defined on the coordinate space of the system. Using the definition of the density it is a tautology
@@ -192,12 +192,27 @@ We emphasize that this argument is standard and the only subtlety is that we hav
         \end{aligned}
     \end{equation}
 \end{enumerate}
-
-% The density function $\rho$ is positive, $2\pi$-periodic in $\theta$ and $L$-periodic in $x, y$ that satisfies the normalization condition,
-% \begin{equation}
-%     \int_{-\pi}^{\pi}{\int_{\mathbb{L} ^2}{\rho \left( \mathbf{r},\theta ,\omega ,t \right)}}\mathrm{d}\mathbf{r}\mathrm{d}\theta =g\left( \omega \right) \;,
-% \end{equation}
-% where $g\left( \omega \right)$ is time independent swarmalator frequency distribution, $\mathbb{L}^2$ is the area of the $L\times L$ square with periodic boundary conditions.
+Next, let's determine the value of item
+\begin{equation}
+    \int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \text{d}\omega}\;.
+\end{equation}
+The uniform distribution of disorder state indicates $g\left( \omega \right) =\left[ 2\left( \omega _{\max}-\omega _{\min} \right) \right] ^{-1}$, which is an $\omega$-independent constant. Then we have
+\begin{equation}
+    \label{eq:omegaMulInt}
+    \int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \text{d}\omega}=\begin{cases}
+        \frac{1}{2}\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \left( \omega _{\max}^{2}-\omega _{\min}^{2} \right) ,&		\text{Single} \text{Chirality}\\
+        0,&		\text{Double} \text{Chirality}\\
+    \end{cases}\;.
+\end{equation}
+Similarly, equation \eqref{eq:coarseDensitySub2} can be rewritten as
+\begin{equation}
+    \label{eq:coarseDensitySub2Rewrite}
+    \varrho ^s\left( \mathbf{r},\theta ,t \right) =\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \int_{-\infty}^{+\infty}{\text{d}\omega}=\begin{cases}
+        2\left( \omega _{\max}-\omega _{\min} \right) \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) ,&		\text{Single} \text{Chirality}\\
+        0,&		\text{Double} \text{Chirality}\\
+    \end{cases}\;.
+\end{equation}
+Substituting equations \eqref{eq:coarseDensitySub2Rewrite} into \eqref{eq:omegaMulInt}, we obtain 
 
 \subsubsection{Angular Fourier expansion of the phase-space distribution}
 % The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. 
@@ -243,7 +258,9 @@ The following relations are then easily obtained:
 \end{equation}
 
 
-The right-hand side of equation \eqref{eq:angularFourierIntComplex} is computed by inserting the Fourier series expansion \eqref{eq:inverseFourier} into equations \eqref{eq:angularFourierIntSub}. After a rather straightforward calculation, one finds
+The right-hand side of equation \eqref{eq:angularFourierIntComplex} is computed by inserting the Fourier series expansion \eqref{eq:inverseFourier} into equations \eqref{eq:angularFourierIntSub}. 
+After a rather straightforward calculation, one finds
+
 % \begin{equation}
 %     Q_1^{(k)}(\mathbf{r},t)=\frac{1}{2}[\hat{f}_{k+1}(\mathbf{r},t)+\hat{f}_{k-1}(\mathbf{r},t)],\\Q_2^{(k)}(\mathbf{r},t)=\frac{1}{2\mathrm{i}}[\hat{f}_{k+1}(\mathbf{r},t)-\hat{f}_{k-1}(\mathbf{r},t)].
 % \end{equation}
