@@ -11,6 +11,7 @@
 \usepackage{float}
 \usepackage{multicol}
 \usepackage{enumitem}
+\usepackage{xcolor}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 
 \bibliographystyle{plain}
@@ -30,35 +31,49 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Response to the Reviewers}}
-\author{Authors}
-
 \begin{document}
 
-\maketitle
+% \maketitle
+We thank the reviewers for their helpful comments, which have helped us improve the paper. Our reply is structured as follows. We first discuss general changes to the manuscript, and then respond to the reviewers’ comments one-by-one. 
 
-Reviewer \#1: The authors have considered the simplified model for chiral swarmalators [1] by neglecting the attractive and repulsive spatial interactions and studied the swarming behaviors in populations of chiral swarmalators. The swarmalators move with constant velocity v along the direction governed by the phase , and the time evolution of phase dynamics is described by the Kuramoto model with local spatial interactions. The authors report various collective states formed by circling and clustering of swarmalators for distinct coupling strength and interaction radius.
-
-The significant contribution of this paper is the detailed analysis and analytical investigation of collective states. However, some issues need to be addressed.
+\section{General Changes}
 
 \begin{enumerate}
-    \item $\omega_{\max}$ and $\omega_{\min}$ are chosen as 3 and 1, respectively. How do the results change for different choices of $\omega_{\max}$ and $\omega_{\min}$?
-    
-    (Outter/Inner) Radius of circling state \& clustering state vs. $\omega_{\max}$ and $\omega_{\min}$.
+    \item We
+\end{enumerate}
 
-    \item Whether the results are independent of the nature of the frequency distributions such as Lorentzian, and Gaussian? These will illustrate the generic nature of the results.
+\section{Response to Reviewer \#1}
+
+% Reviewer \#1: The authors have considered the simplified model for chiral swarmalators [1] by neglecting the attractive and repulsive spatial interactions and studied the swarming behaviors in populations of chiral swarmalators. The swarmalators move with constant velocity v along the direction governed by the phase , and the time evolution of phase dynamics is described by the Kuramoto model with local spatial interactions. The authors report various collective states formed by circling and clustering of swarmalators for distinct coupling strength and interaction radius.
+
+% The significant contribution of this paper is the detailed analysis and analytical investigation of collective states. However, some issues need to be addressed.
+
+\begin{enumerate}
+    \item \textcolor{blue}{\textit{$\omega_{\max}$ and $\omega_{\min}$ are chosen as 3 and 1, respectively. How do the results change for different choices of $\omega_{\max}$ and $\omega_{\min}$?}}
+    
+    (Outer/Inner) Radius of circling state \& clustering state vs. $\omega_{\max}$ and $\omega_{\min}$.
+
+    \item \textcolor{blue}{\textit{Whether the results are independent of the nature of the frequency distributions such as Lorentzian, and Gaussian? These will illustrate the generic nature of the results.}}
+    
     \begin{itemize}
         \item Gaussian (Running)
         \item Lorentzian
     \end{itemize}
-    \item Similar collective states that involve circling and clustering behavior and hybrid states have already been reported in the literature [1, 2]. Hence the novel collective behavior particular to this model should be clearly stated to appreciate the merit of the manuscript.
-    
-    \item Since the additive type of coupling is considered, How does the number of swarmalators (N) influence the collective dynamics?
-    
-    \item Noise plays a crucial role in swarming models [3]. Are the observed collective states robust with respect to noise? It would be interesting to know how noise reshapes collective behavior.
-\end{enumerate}
 
-These concerns should be addressed before considering the manuscript for publication.
+    \item \textcolor{blue}{\textit{Similar collective states that involve circling and clustering behavior and hybrid states have already been reported in the literature [1, 2]. Hence, the novel collective behavior particular to this model should be clearly stated to appreciate the merit of the manuscript.}}
+    
+    \item \textcolor{blue}{\textit{Since the additive type of coupling is considered, How does the number of swarmalators (N) influence the collective dynamics?}}
+
+    The derivation results of the critical conditions between states have already included population (N).
+
+    \item \textcolor{blue}{\textit{Noise plays a crucial role in swarming models [3]. Are the observed collective states robust with respect to noise? It would be interesting to know how noise reshapes collective behavior.}}
+
+    \begin{itemize}
+        \item Let a system containing noise evolve from a uniform initial state, then observe its long-term behavior.
+        \item Using the long-term solutions obtained from a noiseless system as the initial condition for a system containing noise, test the robustness of the Collective states with respect to noise.
+    \end{itemize}
+
+\end{enumerate}
 
 \begin{enumerate}
     \renewcommand{\theenumi}{[\arabic{enumi}]}
