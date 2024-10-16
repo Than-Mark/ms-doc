@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  14 OCT 2024 16:03
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  16 OCT 2024 14:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**chiral_swarmalators
-(./chiral_swarmalators.tex
+**chemo_chiral_activematter
+(./chemo_chiral_activematter.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (d:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -429,8 +429,8 @@ File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count304
 \g__pdf_backend_annotation_int=\count305
 \g__pdf_backend_link_int=\count306
-) (./chiral_swarmalators.aux)
-\openout1 = `chiral_swarmalators.aux'.
+) (./chemo_chiral_activematter.aux)
+\openout1 = `chemo_chiral_activematter.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
@@ -457,9 +457,9 @@ LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 Package hyperref Info: Link coloring ON on input line 35.
- (./chiral_swarmalators.out) (./chiral_swarmalators.out)
+ (./chemo_chiral_activematter.out) (./chemo_chiral_activematter.out)
 \@outlinefile=\write3
-\openout3 = `chiral_swarmalators.out'.
+\openout3 = `chemo_chiral_activematter.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -510,9 +510,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
  (d:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./chiral_swarmalators.toc)
+) (./chemo_chiral_activematter.toc)
 \tf@toc=\write4
-\openout4 = `chiral_swarmalators.toc'.
+\openout4 = `chemo_chiral_activematter.toc'.
 
  [1
 
@@ -521,17 +521,17 @@ Overfull \hbox (4.56094pt too wide) in paragraph at lines 198--200
 \TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
  []
 
-[4] [5] [6] (./chiral_swarmalators.bbl) [7] (./chiral_swarmalators.aux)
-Package rerunfilecheck Info: File `chiral_swarmalators.out' has not changed.
+[4] [5] [6] (./chemo_chiral_activematter.bbl) [7] (./chemo_chiral_activematter.aux)
+Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not changed.
 (rerunfilecheck)             Checksum: E022D62DE527B9B29A076C3B18631FF3;1571.
  ) 
 Here is how much of TeX's memory you used:
  12996 strings out of 476683
- 209010 string characters out of 5807574
+ 209160 string characters out of 5807574
  1869012 words of memory out of 5000000
  33044 multiletter control sequences out of 15000+600000
  525594 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,12n,77p,686b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,77p,692b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chiral_swarmalators.pdf (7 pages).
+Output written on chemo_chiral_activematter.pdf (7 pages).
