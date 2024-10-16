@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  16 OCT 2024 14:13
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  16 OCT 2024 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**chemo_chiral_activematter
-(./chemo_chiral_activematter.tex
+**comments_&_response
+(./comments_&_response.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (d:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -350,116 +350,124 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \mult@nat@firstbox=\box99
 \colbreak@box=\box100
 \mc@col@check@num=\count294
+) (d:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip56
+\enit@outerparindent=\dimen173
+\enit@toks=\toks24
+\enit@inbox=\box101
+\enit@count@id=\count295
+\enitdp@description=\count296
 ) (d:/texlive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count295
+\c@AlgoLine=\count297
  (d:/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip56
+\algocf@hangindent=\skip57
  (d:/texlive/2023/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count296
+\c@checkoddpage=\count298
 ) (d:/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (d:/texlive/2023/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip57
-\skiplinenumber=\skip58
-\skiprule=\skip59
-\skiphlne=\skip60
-\skiptext=\skip61
-\skiplength=\skip62
-\algomargin=\skip63
-\skipalgocfslide=\skip64
-\algowidth=\dimen173
-\inoutsize=\dimen174
-\inoutindent=\dimen175
-\interspacetitleruled=\dimen176
-\interspacealgoruled=\dimen177
-\interspacetitleboxruled=\dimen178
-\algocf@ruledwidth=\skip65
-\algocf@inoutbox=\box101
-\algocf@inputbox=\box102
-\AlCapSkip=\skip66
-\AlCapHSkip=\skip67
-\algoskipindent=\skip68
-\algocf@nlbox=\box103
-\algocf@hangingbox=\box104
-\algocf@untilbox=\box105
-\algocf@skipuntil=\skip69
-\algocf@capbox=\box106
-\algocf@lcaptionbox=\skip70
-\algoheightruledefault=\skip71
-\algoheightrule=\skip72
-\algotitleheightruledefault=\skip73
-\algotitleheightrule=\skip74
-\c@algocfline=\count297
-\c@algocfproc=\count298
-\c@algocf=\count299
-\algocf@algoframe=\box107
-\algocf@algobox=\box108
+\skiptotal=\skip58
+\skiplinenumber=\skip59
+\skiprule=\skip60
+\skiphlne=\skip61
+\skiptext=\skip62
+\skiplength=\skip63
+\algomargin=\skip64
+\skipalgocfslide=\skip65
+\algowidth=\dimen174
+\inoutsize=\dimen175
+\inoutindent=\dimen176
+\interspacetitleruled=\dimen177
+\interspacealgoruled=\dimen178
+\interspacetitleboxruled=\dimen179
+\algocf@ruledwidth=\skip66
+\algocf@inoutbox=\box102
+\algocf@inputbox=\box103
+\AlCapSkip=\skip67
+\AlCapHSkip=\skip68
+\algoskipindent=\skip69
+\algocf@nlbox=\box104
+\algocf@hangingbox=\box105
+\algocf@untilbox=\box106
+\algocf@skipuntil=\skip70
+\algocf@capbox=\box107
+\algocf@lcaptionbox=\skip71
+\algoheightruledefault=\skip72
+\algoheightrule=\skip73
+\algotitleheightruledefault=\skip74
+\algotitleheightrule=\skip75
+\c@algocfline=\count299
+\c@algocfproc=\count300
+\c@algocf=\count301
+\algocf@algoframe=\box108
+\algocf@algobox=\box109
 ) (d:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (d:/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count300
-\Gm@cntv=\count301
-\c@Gm@tempcnt=\count302
-\Gm@bindingoffset=\dimen179
-\Gm@wd@mp=\dimen180
-\Gm@odd@mp=\dimen181
-\Gm@even@mp=\dimen182
-\Gm@layoutwidth=\dimen183
-\Gm@layoutheight=\dimen184
-\Gm@layouthoffset=\dimen185
-\Gm@layoutvoffset=\dimen186
-\Gm@dimlist=\toks24
+\Gm@cnth=\count302
+\Gm@cntv=\count303
+\c@Gm@tempcnt=\count304
+\Gm@bindingoffset=\dimen180
+\Gm@wd@mp=\dimen181
+\Gm@odd@mp=\dimen182
+\Gm@even@mp=\dimen183
+\Gm@layoutwidth=\dimen184
+\Gm@layoutheight=\dimen185
+\Gm@layouthoffset=\dimen186
+\Gm@layoutvoffset=\dimen187
+\Gm@dimlist=\toks25
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 30.
+Package hyperref Info: Option `colorlinks' set `true' on input line 31.
  (d:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2023-01-16 L3 backend support: XeTeX
-\g__graphics_track_int=\count303
-\l__pdf_internal_box=\box109
-\g__pdf_backend_object_int=\count304
-\g__pdf_backend_annotation_int=\count305
-\g__pdf_backend_link_int=\count306
-) (./chemo_chiral_activematter.aux)
-\openout1 = `chemo_chiral_activematter.aux'.
+\g__graphics_track_int=\count305
+\l__pdf_internal_box=\box110
+\g__pdf_backend_object_int=\count306
+\g__pdf_backend_annotation_int=\count307
+\g__pdf_backend_link_int=\count308
+) (./comments_&_response.aux)
+\openout1 = `comments_&_response.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 36.
  (d:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-Package hyperref Info: Link coloring ON on input line 35.
- (./chemo_chiral_activematter.out) (./chemo_chiral_activematter.out)
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+Package hyperref Info: Link coloring ON on input line 36.
+ (./comments_&_response.out) (./comments_&_response.out)
 \@outlinefile=\write3
-\openout3 = `chemo_chiral_activematter.out'.
+\openout3 = `comments_&_response.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -499,39 +507,30 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
 (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (d:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39.
  (d:/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) (./chemo_chiral_activematter.toc)
-\tf@toc=\write4
-\openout4 = `chemo_chiral_activematter.toc'.
+) [1
 
- [1
-
-] [2] [3]
-Overfull \hbox (4.56094pt too wide) in paragraph at lines 198--200
-\TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
- []
-
-[4] [5] [6] (./chemo_chiral_activematter.bbl) [7] (./chemo_chiral_activematter.aux)
-Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not changed.
-(rerunfilecheck)             Checksum: E022D62DE527B9B29A076C3B18631FF3;1571.
+] (./comments_&_response.aux)
+Package rerunfilecheck Info: File `comments_&_response.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12996 strings out of 476683
- 209160 string characters out of 5807574
- 1869012 words of memory out of 5000000
- 33044 multiletter control sequences out of 15000+600000
- 525594 words of font info for 94 fonts, out of 8000000 for 9000
+ 13271 strings out of 476683
+ 213567 string characters out of 5807574
+ 1859012 words of memory out of 5000000
+ 33332 multiletter control sequences out of 15000+600000
+ 525538 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,12n,77p,692b,398s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,6n,77p,619b,322s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chemo_chiral_activematter.pdf (7 pages).
+Output written on comments_&_response.pdf (1 page).
