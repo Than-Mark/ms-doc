@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  23 OCT 2024 07:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  23 OCT 2024 07:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**comments_&_response
-(./comments_&_response.tex
+**Frustration-Enchanced_Seperation
+(./Frustration-Enchanced_Seperation.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (e:/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -331,125 +331,117 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \mult@nat@firstbox=\box96
 \colbreak@box=\box97
 \mc@col@check@num=\count287
-) (e:/texlive/2021/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip55
-\enit@outerparindent=\dimen170
-\enit@toks=\toks23
-\enit@inbox=\box98
-\enit@count@id=\count288
-\enitdp@description=\count289
 ) (e:/texlive/2021/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count290
+\c@AlgoLine=\count288
  (e:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip56
+\algocf@hangindent=\skip55
  (e:/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count291
+\c@checkoddpage=\count289
 ) (e:/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (e:/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip57
-\skiplinenumber=\skip58
-\skiprule=\skip59
-\skiphlne=\skip60
-\skiptext=\skip61
-\skiplength=\skip62
-\algomargin=\skip63
-\skipalgocfslide=\skip64
-\algowidth=\dimen171
-\inoutsize=\dimen172
-\inoutindent=\dimen173
-\interspacetitleruled=\dimen174
-\interspacealgoruled=\dimen175
-\interspacetitleboxruled=\dimen176
-\algocf@ruledwidth=\skip65
-\algocf@inoutbox=\box99
-\algocf@inputbox=\box100
-\AlCapSkip=\skip66
-\AlCapHSkip=\skip67
-\algoskipindent=\skip68
-\algocf@nlbox=\box101
-\algocf@hangingbox=\box102
-\algocf@untilbox=\box103
-\algocf@skipuntil=\skip69
-\algocf@capbox=\box104
-\algocf@lcaptionbox=\skip70
-\algoheightruledefault=\skip71
-\algoheightrule=\skip72
-\algotitleheightruledefault=\skip73
-\algotitleheightrule=\skip74
-\c@algocfline=\count292
-\c@algocfproc=\count293
-\c@algocf=\count294
-\algocf@algoframe=\box105
-\algocf@algobox=\box106
+\skiptotal=\skip56
+\skiplinenumber=\skip57
+\skiprule=\skip58
+\skiphlne=\skip59
+\skiptext=\skip60
+\skiplength=\skip61
+\algomargin=\skip62
+\skipalgocfslide=\skip63
+\algowidth=\dimen170
+\inoutsize=\dimen171
+\inoutindent=\dimen172
+\interspacetitleruled=\dimen173
+\interspacealgoruled=\dimen174
+\interspacetitleboxruled=\dimen175
+\algocf@ruledwidth=\skip64
+\algocf@inoutbox=\box98
+\algocf@inputbox=\box99
+\AlCapSkip=\skip65
+\AlCapHSkip=\skip66
+\algoskipindent=\skip67
+\algocf@nlbox=\box100
+\algocf@hangingbox=\box101
+\algocf@untilbox=\box102
+\algocf@skipuntil=\skip68
+\algocf@capbox=\box103
+\algocf@lcaptionbox=\skip69
+\algoheightruledefault=\skip70
+\algoheightrule=\skip71
+\algotitleheightruledefault=\skip72
+\algotitleheightrule=\skip73
+\c@algocfline=\count290
+\c@algocfproc=\count291
+\c@algocf=\count292
+\algocf@algoframe=\box104
+\algocf@algobox=\box105
 ) (e:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (e:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count295
-\Gm@cntv=\count296
-\c@Gm@tempcnt=\count297
-\Gm@bindingoffset=\dimen177
-\Gm@wd@mp=\dimen178
-\Gm@odd@mp=\dimen179
-\Gm@even@mp=\dimen180
-\Gm@layoutwidth=\dimen181
-\Gm@layoutheight=\dimen182
-\Gm@layouthoffset=\dimen183
-\Gm@layoutvoffset=\dimen184
-\Gm@dimlist=\toks24
+\Gm@cnth=\count293
+\Gm@cntv=\count294
+\c@Gm@tempcnt=\count295
+\Gm@bindingoffset=\dimen176
+\Gm@wd@mp=\dimen177
+\Gm@odd@mp=\dimen178
+\Gm@even@mp=\dimen179
+\Gm@layoutwidth=\dimen180
+\Gm@layoutheight=\dimen181
+\Gm@layouthoffset=\dimen182
+\Gm@layoutvoffset=\dimen183
+\Gm@dimlist=\toks23
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 32.
+Package hyperref Info: Option `colorlinks' set `true' on input line 30.
  (e:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
  (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count298
-\l__color_backend_stack_int=\count299
-\g__color_backend_stack_int=\count300
-\g__graphics_track_int=\count301
-\l__pdf_internal_box=\box107
-\g__pdf_backend_object_int=\count302
-\g__pdf_backend_annotation_int=\count303
-\g__pdf_backend_link_int=\count304
-) (./comments_&_response.aux)
-\openout1 = `comments_&_response.aux'.
+\c__kernel_sys_dvipdfmx_version_int=\count296
+\l__color_backend_stack_int=\count297
+\g__color_backend_stack_int=\count298
+\g__graphics_track_int=\count299
+\l__pdf_internal_box=\box106
+\g__pdf_backend_object_int=\count300
+\g__pdf_backend_annotation_int=\count301
+\g__pdf_backend_link_int=\count302
+) (./Frustration-Enchanced_Seperation.aux)
+\openout1 = `Frustration-Enchanced_Seperation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 35.
  (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-Package hyperref Info: Link coloring ON on input line 34.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+Package hyperref Info: Link coloring ON on input line 35.
  (e:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -457,14 +449,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (e:/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count305
+\c@section@level=\count303
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
- (./comments_&_response.out) (./comments_&_response.out)
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
+ (./Frustration-Enchanced_Seperation.out) (./Frustration-Enchanced_Seperation.out)
 \@outlinefile=\write3
-\openout3 = `comments_&_response.out'.
+\openout3 = `Frustration-Enchanced_Seperation.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -504,30 +496,39 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
  (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 52.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
  (e:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+) (./Frustration-Enchanced_Seperation.toc)
+\tf@toc=\write4
+\openout4 = `Frustration-Enchanced_Seperation.toc'.
 
-] (./comments_&_response.aux)
-Package rerunfilecheck Info: File `comments_&_response.out' has not changed.
-(rerunfilecheck)             Checksum: BB94F1D7BA15A6CE4085AB7EDEE1F670;291.
+ [1
+
+] [2]
+Overfull \hbox (4.56094pt too wide) in paragraph at lines 148--150
+\TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
+ []
+
+[3] (./Frustration-Enchanced_Seperation.bbl [4]) [5] (./Frustration-Enchanced_Seperation.aux)
+Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not changed.
+(rerunfilecheck)             Checksum: BB823A22B2B9E1F9E0D6F6C6E39E6592;1103.
  ) 
 Here is how much of TeX's memory you used:
- 12421 strings out of 478907
- 187327 string characters out of 5866571
- 517159 words of memory out of 5000000
- 32122 multiletter control sequences out of 15000+600000
- 408773 words of font info for 52 fonts, out of 8000000 for 9000
+ 12196 strings out of 478907
+ 183782 string characters out of 5866571
+ 525613 words of memory out of 5000000
+ 31868 multiletter control sequences out of 15000+600000
+ 416737 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,5n,77p,602b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,11n,77p,1320b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on comments_&_response.pdf (1 page).
+Output written on Frustration-Enchanced_Seperation.pdf (5 pages).
