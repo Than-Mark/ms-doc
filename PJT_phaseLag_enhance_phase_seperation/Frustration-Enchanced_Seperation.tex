@@ -197,13 +197,13 @@ To proceed further, it is convenient to identify complex numbers with two-dimens
 \end{equation}
 Equation \eqref{eq:angularFourierInt} is recovered for $k = 1$, up to the mapping between complex numbers and two-dimensional vectors. The first term on the left-hand side is simply $\partial \hat{\varrho}_k/\partial t$. The second term on the left-hand side can be evaluated as follows: For $l=1,2$ and $k$ integer, let us define the complex quantity $Q_{l}^{\left( k \right)}\left( \mathbf{r},t \right)$ as 
 \begin{equation}
-    Q_l^{(k)}(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \mathrm{e}^{\mathrm{i}k\theta}\mathrm{e}_l(\theta)f(\mathbf{r},\theta,t).
+    Q_l^{(k)}(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \mathrm{e}^{\mathrm{i}k\theta}\mathrm{e}_l(\theta)\varrho(\mathbf{r},\theta,t).
 \end{equation}
 The following relations are then easily obtained:
 \begin{equation}
     \begin{aligned}
-        Q_{1}^{(k)}(\mathbf{r},t)&=\frac{1}{2}[\hat{f}_{k+1}(\mathbf{r},t)+\hat{f}_{k-1}(\mathbf{r},t)],\\
-        Q_{2}^{(k)}(\mathbf{r},t)&=\frac{1}{2\mathrm{i}}[\hat{f}_{k+1}(\mathbf{r},t)-\hat{f}_{k-1}(\mathbf{r},t)].
+        Q_{1}^{(k)}(\mathbf{r},t)&=\frac{1}{2}[\hat{\varrho}_{k+1}(\mathbf{r},t)+\hat{\varrho}_{k-1}(\mathbf{r},t)],\\
+        Q_{2}^{(k)}(\mathbf{r},t)&=\frac{1}{2\mathrm{i}}[\hat{\varrho}_{k+1}(\mathbf{r},t)-\hat{\varrho}_{k-1}(\mathbf{r},t)].
     \end{aligned}
 \end{equation}
 
