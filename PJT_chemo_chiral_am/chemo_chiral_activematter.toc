@@ -4,6 +4,7 @@
 \contentsline {subsubsection}{\numberline {1.1.2}Polar alignment dynamics}{2}{subsubsection.1.1.2}%
 \contentsline {subsubsection}{\numberline {1.1.3}Chemotactic dynamics}{2}{subsubsection.1.1.3}%
 \contentsline {subsubsection}{\numberline {1.1.4}Mixed phase dynamics}{3}{subsubsection.1.1.4}%
-\contentsline {subsubsection}{\numberline {1.1.5}Coarse graining}{3}{subsubsection.1.1.5}%
-\contentsline {subsubsection}{\numberline {1.1.6}Angular Fourier expansion of the phase-space distribution}{4}{subsubsection.1.1.6}%
-\contentsline {subsubsection}{\numberline {1.1.7}Order Parameters}{5}{subsubsection.1.1.7}%
+\contentsline {subsubsection}{\numberline {1.1.5}Short format coarse graining}{3}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Coarse graining}{4}{subsubsection.1.1.6}%
+\contentsline {subsubsection}{\numberline {1.1.7}Angular Fourier expansion of the phase-space distribution}{5}{subsubsection.1.1.7}%
+\contentsline {subsubsection}{\numberline {1.1.8}Order Parameters}{6}{subsubsection.1.1.8}%

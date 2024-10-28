@@ -112,6 +112,59 @@ where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the prod
     \end{align}
 \end{subequations}
 
+\subsubsection{Short format coarse graining}
+We begin with Eq.~(\ref{eq:additionalCouplingDotTheta}), replacing the finite coupling distance alignment interaction with a pseudopotential (the '$\delta$'-interaction). This substitution is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. The pseudopotential is defined as:
+\begin{subequations}
+    \begin{align}
+        &\mathbf{\dot{r}}_{i}^{c}=v\mathbf{p}\left( \theta _{i}^{c} \right) \;,\\
+        &\dot{\theta}_{i}^{c}=\omega _{i}^{c}+K\sum_{j=1}{\delta \left( \mathbf{r}_{j}^{c}-\mathbf{r}_{i}^{c} \right) \sin \left( \theta _{j}^{c}-\theta _{i}^{c} \right)}\notag\\
+        &+K\sum_{j=1}{\delta \left( \mathbf{r}_{j}^{b}-\mathbf{r}_{i}^{b} \right) \left[ \sin \left( \theta _{j}^{b}-\theta _{i}^{b}+\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+    \end{align}
+\end{subequations}
+where $c\in\left\{+,-\right\}$ is the chirality of the swarmalator $i$ and $b=+$ if $c=-$ and vice versa.  
+Then following \cite{DavidSDean_1996} we derive a continuum equation of motion for the combined $N$-swarmalator probability density
+\begin{equation}
+    \label{eq:globalContinuityDef}
+    \rho ^c\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right)}\;,
+\end{equation}
+where $\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) =\delta \left( \mathbf{r}_{i}^{c}\left( t \right) -\mathbf{r} \right) \delta \left( \theta _{i}^{c}\left( t \right) -\theta \right)$ is the probability density of finding $i$-th swarmalator at position $\mathbf{r}$ with phase $\theta$ and chirality $c$ at time $t$.
+Since the deterministic dynamical equation Eq.~ (\ref{eq:totalDynamics}) conserves the number of oscillators with a given natural frequency over time, the distribution function evolves according to a continuity equation of the following form:
+\begin{equation}
+    \frac{\partial \rho _{i}^{c}}{\partial t}=-\nabla \cdot \left( \rho _{i}^{c}v_{\mathbf{r}} \right) -\frac{\partial }{\partial \theta}\left( \rho _{i}^{c}v_{\theta}^{c,i} \right)\;.
+    \label{eq:singleContinuity}
+\end{equation}
+Here, the velocity fields read
+\begin{subequations}
+    \begin{align}
+        &v_{\mathbf{r}}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) \;,\\
+        &v_{\theta}^{c,i}\left( \mathbf{r},\theta ,t \right) =\omega _{i}^{c}+K\int{\text{d}\phi \rho^{c}\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right)}\notag\\
+        &+K\int{\text{d}\phi \rho ^{b}\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right]}\;.
+    \end{align}
+\end{subequations}
+Summing Eq.~(\ref{eq:singleContinuity}) over the $i$ and $c$ indices, and using the definition of the density $\rho ^c$ in Eq.~(\ref{eq:globalContinuityDef}), we obtain  
+\begin{equation}
+    \label{eq:globalContinuity}
+    \begin{aligned}
+        &\frac{\partial \rho ^c\left( \mathbf{r},\theta ,t \right)}{\partial t}=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^c\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\Omega \left( \mathbf{r},\theta ,t \right)\\
+        &+K\frac{\partial}{\partial \theta}\rho ^c\int{\text{d}\phi \rho ^c\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right)}\\
+        &+K\frac{\partial}{\partial \theta}\rho ^c\int{\text{d}\phi \rho ^b\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+    \end{aligned}
+\end{equation}
+where $\Omega \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) \omega _{i}^{c}}$.
+Spatiotemporal dynamics of the ISS indicates $\forall i,c$, $\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) \equiv \rho _{\text{ISS}}\left( \mathbf{r},\theta ,t \right)$, which yields
+\begin{equation}
+    \Omega \left( \mathbf{r},\theta ,t \right) =\rho ^c\left( \mathbf{r},\theta ,t \right) \frac{\left( \omega _{\max}+\omega _{\min} \right)}{2}\;.
+\end{equation} 
+
+Transforming Eq.~(\ref{eq:globalContinuity}) to Fourier space, yields an equation of motion for the Fourier modes $\varrho _{k}^{c}\left( \mathbf{r},t \right) =\int{\rho ^c\left( \mathbf{r},\theta ,t \right) \text{e}^{\text{i}k\theta}\text{d}\theta}$ of $\rho^c$:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \varrho _{k}^{c}}{\partial t}&=-\frac{v}{2}\left[ \frac{\partial}{\partial x}\left( \varrho _{k+1}^{c}+\varrho _{k-1}^{c} \right) -\mathrm{i}\frac{\partial}{\partial y}\left( \varrho _{k+1}^{c}-\varrho _{k-1}^{c} \right) \right]\\
+        &-\left[ \frac{\mathrm{i}k\left( \omega _{\max}+\omega _{\min} \right)}{2}\varrho _{k}^{c}-k^2 \right] \varrho _{k}^{c}\\
+        &+\frac{\mathrm{i}Kk}{2\pi}\sum_{m=-\infty}^{\infty}{\varrho _{k-m}^{c}F_{-m}\varrho _{m}^{c}}\\
+    \end{aligned}
+\end{equation}
+
 \subsubsection{Coarse graining}
 We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for a single particle
 \begin{equation}

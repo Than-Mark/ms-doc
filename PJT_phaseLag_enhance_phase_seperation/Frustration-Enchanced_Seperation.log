@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  23 OCT 2024 14:27
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  28 OCT 2024 16:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -516,22 +516,30 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [1
 
-] [2]
-Overfull \hbox (4.56094pt too wide) in paragraph at lines 148--150
+]
+File: figs/pd1.png Graphic file (type bmp)
+<figs/pd1.png>
+File: figs/pd2.png Graphic file (type bmp)
+<figs/pd2.png>
+ [2] [3] [4]
+Overfull \hbox (4.56094pt too wide) in paragraph at lines 231--233
 \TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
  []
 
-[3] (./Frustration-Enchanced_Seperation.bbl [4]) [5] (./Frustration-Enchanced_Seperation.aux)
+[5] (./Frustration-Enchanced_Seperation.bbl [6]) [7] (./Frustration-Enchanced_Seperation.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not changed.
 (rerunfilecheck)             Checksum: BB823A22B2B9E1F9E0D6F6C6E39E6592;1103.
  ) 
 Here is how much of TeX's memory you used:
- 12992 strings out of 476683
- 209247 string characters out of 5807574
- 1868012 words of memory out of 5000000
- 33040 multiletter control sequences out of 15000+600000
- 525594 words of font info for 94 fonts, out of 8000000 for 9000
+ 13052 strings out of 476683
+ 210258 string characters out of 5807574
+ 1867012 words of memory out of 5000000
+ 33086 multiletter control sequences out of 15000+600000
+ 528233 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,11n,77p,1320b,333s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,11n,77p,964b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Frustration-Enchanced_Seperation.pdf (5 pages).
+Output written on Frustration-Enchanced_Seperation.pdf (7 pages).

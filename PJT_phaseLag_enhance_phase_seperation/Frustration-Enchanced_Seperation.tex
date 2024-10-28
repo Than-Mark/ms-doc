@@ -41,17 +41,21 @@
 \newpage
 \section{\label{sec:model}The Model}
 
-Particles have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
+Swarmalators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
 \begin{subequations}
     \label{eq:totalDynamics}
     \begin{align}
         \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\label{eq:dotR}\;,\\
-        \dot{\theta}_i&=\omega _i+K\sum_{j\in N_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\label{eq:dotTheta}\;,
+        \dot{\theta}_i&=\omega _i+K\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\label{eq:dotTheta}\;,
     \end{align}
 \end{subequations}
-for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$, which means each particle rotates with a constant speed $v$ in the direction of its instantaneous phase $\theta_i (t)$. As per Eq.~(\ref{eq:dotTheta}), the sum runs over neighbors within a coupling radius $d_0$ around particle $i$, $\lambda$ is the coupling strength, and $\omega_i$ is the natural frequency of the $i$-th particle. This means that a particle will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th particle. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the particle in space. Here, we consider parallels with two types of chiralities with both positive and negative natural frequencies uniformly distributed in two symmetric regimes, namely, half of the swarmalators possess positive natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have negative natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$, where $\omega _{\min, \max}>0$.
+for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$, which means each swarmalator rotates with a constant speed $v$ in the direction of its instantaneous phase $\theta_i (t)$. As per Eq.~(\ref{eq:dotTheta}), the sum runs over neighbors within a coupling radius $d_0$ around swarmalator $i$:
+\begin{equation}
+    A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
+\end{equation}
+$\lambda$ is the coupling strength, and $\omega_i$ is the natural frequency of the $i$-th swarmalator. This means that a swarmalator will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th swarmalator. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the swarmalator in space. Here, we consider parallels with two types of chiralities with both positive and negative natural frequencies uniformly distributed in two symmetric regimes, namely, half of the swarmalators possess positive natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have negative natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$, where $\omega _{\min, \max}>0$.
 
-Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring particles, which is defined as:
+Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring swarmalators, which is defined as:
 \begin{equation}
     \alpha _{ij}=\begin{cases}
         \alpha _0,&		\omega _i\omega _j<0\\
@@ -60,10 +64,89 @@ Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring par
 \end{equation}
 When $\alpha_0=0$, the dynamics reduces to the normal chiral model.
 
-\section{\label{sec:behaviors}Frustration-enhanced phase separation}
+For simplicity, we assume that swarmalators are initially distributed uniformly in a two-dimensional $L\times L$ square with periodic boundary conditions. When two swarmalators are on opposite sides of the square, the absolute value of the difference between at least one of their coordinates is larger than $L/2$. In this case, we take the minimum distance between them, which is the relative distance between the two points in the periodic boundary conditions.
 
+Some order parameters can be introduced to measure the level of spatiotemporal coordination among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the chiral phase separation among swarmalators can be defined as:
+\begin{equation}
+    S\left( t \right) =\frac{1}{N}\sum_{i=1}^N{\frac{\sum_{j\in A_i}{H\left( \omega _i\omega _j \right)}}{\left| A_i\left( t \right) \right|}}\;,
+\end{equation}
+where $H\left( x \right) =\left( x>0 \right)$ is the Heaviside step function. $S\left( t \right)$ is the fraction of the pairs of neighboring swarmalators with the same chirality. When $S\left( t \right)=1$, all the neighboring pairs of swarmalators have the same chirality, and the system is in a completely phase-separated state. When $S\left( t \right)< 1$, the system is in a mixed state.
+
+We conducted numerical simulations to investigate the performance and characteristics of our system under various conditions.
+All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run on Python using Euler integration with box size of $L=10$, population sizes of $N=500, 1000$ for single/double-chiral swarmalators, respectively, maximum and minimum absolute values of natural frequencies $\omega_{\max}=3$, $\omega_{\min}=1$, coupling strength $\lambda$ in $\left[ 0.01, 0.1 \right] \cup \left[ 0.1, 1 \right]$ with step length $0.1$, $0.05$, respectively, action radius of $d_0$ in $\left[ 0.1, 1 \right] \cup \left[ 1, 2 \right]$ with step length $0.05$, $0.5$, respectively, a time step $\Delta t=0.01$, and total number of iterations of $T=60000$. Unless otherwise stated, each data point of order parameters $R$, $R_c$ and $N_r$ was collected by averaging last 1000 time steps of the simulation to discard the transients.
+
+\section{\label{sec:behaviors}Frustration-enhanced phase separation}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{figs/pd1.png}
+        \caption{$\Delta \omega=1$}
+        \label{fig:phaseSeparation_singleChirality}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{figs/pd2.png}
+        \caption{$\Delta \omega=2$}
+        \label{fig:phaseSeparation_doubleChirality}
+    \end{subfigure}
+    \caption{Phase diagrams of the system with different natural frequency differences $\Delta \omega$. The color represents the order parameter $S$ of the system.}
+    \label{fig:phaseSeparation}
+\end{figure}
 
 \section{\label{sec:analysis}Coarse grained equations and phase diagrams}
+
+We begin with Eq.~(\ref{eq:totalDynamics}), replacing the finite coupling distance alignment interaction with a pseudopotential (the '$\delta$'-interaction). This substitution is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. The pseudopotential is defined as:
+\begin{subequations}
+    \begin{align}
+        &\mathbf{\dot{r}}_{i}^{c}=v\mathbf{p}\left( \theta _{i}^{c} \right) \;,\\
+        &\dot{\theta}_{i}^{c}=\omega _{i}^{c}+K\sum_{j=1}{\delta \left( \mathbf{r}_{j}^{c}-\mathbf{r}_{i}^{c} \right) \sin \left( \theta _{j}^{c}-\theta _{i}^{c} \right)}\notag\\
+        &+K\sum_{j=1}{\delta \left( \mathbf{r}_{j}^{b}-\mathbf{r}_{i}^{b} \right) \left[ \sin \left( \theta _{j}^{b}-\theta _{i}^{b}+\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+    \end{align}
+\end{subequations}
+where $c\in\left\{+,-\right\}$ is the chirality of the swarmalator $i$ and $b=+$ if $c=-$ and vice versa.  
+Then following \cite{DavidSDean_1996} we derive a continuum equation of motion for the combined $N$-swarmalator probability density
+\begin{equation}
+    \label{eq:globalContinuityDef}
+    \rho ^c\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right)}\;,
+\end{equation}
+where $\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) =\delta \left( \mathbf{r}_{i}^{c}\left( t \right) -\mathbf{r} \right) \delta \left( \theta _{i}^{c}\left( t \right) -\theta \right)$ is the probability density of finding $i$-th swarmalator at position $\mathbf{r}$ with phase $\theta$ and chirality $c$ at time $t$.
+Since the deterministic dynamical equation Eq.~ (\ref{eq:totalDynamics}) conserves the number of oscillators with a given natural frequency over time, the distribution function evolves according to a continuity equation of the following form:
+\begin{equation}
+    \frac{\partial \rho _{i}^{c}}{\partial t}=-\nabla \cdot \left( \rho _{i}^{c}v_{\mathbf{r}} \right) -\frac{\partial }{\partial \theta}\left( \rho _{i}^{c}v_{\theta}^{c,i} \right)\;.
+    \label{eq:singleContinuity}
+\end{equation}
+Here, the velocity fields read
+\begin{subequations}
+    \begin{align}
+        &v_{\mathbf{r}}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) \;,\\
+        &v_{\theta}^{c,i}\left( \mathbf{r},\theta ,t \right) =\omega _{i}^{c}+K\int{\text{d}\phi \rho^{c}\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right)}\notag\\
+        &+K\int{\text{d}\phi \rho ^{b}\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right]}\;.
+    \end{align}
+\end{subequations}
+Summing Eq.~(\ref{eq:singleContinuity}) over the $i$ and $c$ indices, and using the definition of the density $\rho ^c$ in Eq.~(\ref{eq:globalContinuityDef}), we obtain  
+\begin{equation}
+    \label{eq:globalContinuity}
+    \begin{aligned}
+        &\frac{\partial \rho ^c\left( \mathbf{r},\theta ,t \right)}{\partial t}=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^c\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\Omega \left( \mathbf{r},\theta ,t \right)\\
+        &+K\frac{\partial}{\partial \theta}\rho ^c\int{\text{d}\phi \rho ^c\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right)}\\
+        &+K\frac{\partial}{\partial \theta}\rho ^c\int{\text{d}\phi \rho ^b\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+    \end{aligned}
+\end{equation}
+where $\Omega \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) \omega _{i}^{c}}$.
+Spatiotemporal dynamics of the ISS indicates $\forall i,c$, $\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) \equiv \rho _{\text{ISS}}\left( \mathbf{r},\theta ,t \right)$, which yields
+\begin{equation}
+    \Omega \left( \mathbf{r},\theta ,t \right) =\rho ^c\left( \mathbf{r},\theta ,t \right) \frac{\left( \omega _{\max}+\omega _{\min} \right)}{2}\;.
+\end{equation} 
+
+Transforming Eq.~(\ref{eq:globalContinuity}) to Fourier space, yields an equation of motion for the Fourier modes $\varrho _{k}^{c}\left( \mathbf{r},t \right) =\int{\rho ^c\left( \mathbf{r},\theta ,t \right) \text{e}^{\text{i}k\theta}\text{d}\theta}$ of $\rho^c$:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial \varrho _{k}^{c}}{\partial t}&=-\frac{v}{2}\left[ \frac{\partial}{\partial x}\left( \varrho _{k+1}^{c}+\varrho _{k-1}^{c} \right) -\mathrm{i}\frac{\partial}{\partial y}\left( \varrho _{k+1}^{c}-\varrho _{k-1}^{c} \right) \right]\\
+        &-\left[ \frac{\mathrm{i}k\left( \omega _{\max}+\omega _{\min} \right)}{2}\varrho _{k}^{c}-k^2 \right] \varrho _{k}^{c}\\
+        &+\frac{\mathrm{i}Kk}{2\pi}\sum_{m=-\infty}^{\infty}{\varrho _{k-m}^{c}F_{-m}\varrho _{m}^{c}}\\
+    \end{aligned}
+\end{equation}
 
 \subsection{Coarse graining}
 We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for $i$-th particle
@@ -72,7 +155,7 @@ We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution o
 \end{equation}
 which denotes the probability of finding $i$-th particle at position $\mathbf{r}$, with orientation $\theta$. The density function $\rho _i$ satisfies the continuity equation, and we shall then demonstrate how one may write a closed equation for the global density
 \begin{equation}
-    \rho \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}\;,
+    \rho \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,t \right)}\;,
     \label{eq:coarseDensitySub2}
 \end{equation}
 The derivation follows a well known argument. Consider an arbitrary function $f$ defined on the coordinate space of the system. Using the definition of the density it is a tautology
