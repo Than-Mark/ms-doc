@@ -2,4 +2,4 @@
 \contentsline {section}{\numberline {2}Frustration-enhanced phase separation}{2}{section.2}%
 \contentsline {section}{\numberline {3}Coarse grained equations and phase diagrams}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Coarse graining}{5}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Angular Fourier expansion of the phase-space distribution}{6}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Angular Fourier expansion of the phase-space distribution}{7}{subsubsection.3.1.1}%

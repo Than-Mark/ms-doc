@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  30 OCT 2024 19:09
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  6 NOV 2024 20:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -522,22 +522,29 @@ File: figs/S_l0.15_d0.5_dO1_S.pdf Graphic file (type pdf)
 <use figs/S_l0.15_d0.5_dO1_S.pdf>
 File: figs/S_l0.15_d0.5_dO2_S.pdf Graphic file (type pdf)
 <use figs/S_l0.15_d0.5_dO2_S.pdf>
- [2] [3] [4] [5]
-Overfull \hbox (4.56094pt too wide) in paragraph at lines 249--251
+ [2] [3]
+
+LaTeX Warning: Citation `David_S_Dean_1996' on page 4 undefined on input line 126.
+
+[4] [5]
+Overfull \hbox (4.56094pt too wide) in paragraph at lines 280--282
 \TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
  []
 
-[6] (./Frustration-Enchanced_Seperation.bbl) [7] (./Frustration-Enchanced_Seperation.aux)
+[6] (./Frustration-Enchanced_Seperation.bbl [7]) [8] (./Frustration-Enchanced_Seperation.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not changed.
 (rerunfilecheck)             Checksum: BB823A22B2B9E1F9E0D6F6C6E39E6592;1103.
  ) 
 Here is how much of TeX's memory you used:
- 12264 strings out of 478907
- 185035 string characters out of 5866571
- 525150 words of memory out of 5000000
- 31920 multiletter control sequences out of 15000+600000
+ 12265 strings out of 478907
+ 185052 string characters out of 5866571
+ 525221 words of memory out of 5000000
+ 31921 multiletter control sequences out of 15000+600000
  419376 words of font info for 100 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,11n,77p,964b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Frustration-Enchanced_Seperation.pdf (7 pages).
+Output written on Frustration-Enchanced_Seperation.pdf (8 pages).

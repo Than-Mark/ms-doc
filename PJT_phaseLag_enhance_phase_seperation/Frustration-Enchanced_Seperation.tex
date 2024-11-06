@@ -117,54 +117,85 @@ All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run
 We begin with Eq.~(\ref{eq:totalDynamics}), replacing the finite coupling distance alignment interaction with a pseudopotential (the '$\delta$'-interaction). This substitution is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. The pseudopotential is defined as:
 \begin{subequations}
     \begin{align}
-        &\mathbf{\dot{r}}_{i}^{c}=v\mathbf{p}\left( \theta _{i}^{c} \right) \;,\\
-        &\dot{\theta}_{i}^{c}=\omega _{i}^{c}+K\sum_{j=1}{\delta \left( \mathbf{r}_{j}^{c}-\mathbf{r}_{i}^{c} \right) \sin \left( \theta _{j}^{c}-\theta _{i}^{c} \right)}\notag\\
-        &+K\sum_{j=1}{\delta \left( \mathbf{r}_{j}^{b}-\mathbf{r}_{i}^{b} \right) \left[ \sin \left( \theta _{j}^{b}-\theta _{i}^{b}+\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+        &\dot{\mathbf{r}}_{i}^{\pm}=v\mathbf{p}\left( \theta _{i}^{c} \right) \;,\\
+        &\dot{\theta}_{i}^{\pm}=\omega _{i}^{\pm}+K\sum_{j=1}{\left\{ \delta \left( \mathbf{r}_{j}^{\pm}-\mathbf{r}_{i}^{\pm} \right) \sin \left( \theta _{j}^{\pm}-\theta _{i}^{\pm} \right) \right.}\notag\\
+        &\left. +\delta \left( \mathbf{r}_{j}^{\mp}-\mathbf{r}_{i}^{\pm} \right) \left[ \sin \left( \theta _{j}^{\mp}-\theta _{i}^{\pm}+\alpha _0 \right) -\sin \alpha _0 \right] \right\} \;,
     \end{align}
 \end{subequations}
 where $c\in\left\{+,-\right\}$ is the chirality of the swarmalator $i$ and $b=+$ if $c=-$ and vice versa.  
-Then following \cite{DavidSDean_1996} we derive a continuum equation of motion for the combined $N$-swarmalator probability density
+Then following \cite{David_S_Dean_1996} we derive a continuum equation of motion for the combined $N$-swarmalator probability density
 \begin{equation}
     \label{eq:globalContinuityDef}
-    \rho ^c\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right)}\;,
+    \rho ^{\pm}\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{\pm}\left( \mathbf{r},\theta ,t \right)}\;,
 \end{equation}
-where $\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) =\delta \left( \mathbf{r}_{i}^{c}\left( t \right) -\mathbf{r} \right) \delta \left( \theta _{i}^{c}\left( t \right) -\theta \right)$ is the probability density of finding $i$-th swarmalator at position $\mathbf{r}$ with phase $\theta$ and chirality $c$ at time $t$.
+where $\rho _{i}^{\pm}\left( \mathbf{r},\theta ,t \right) =\delta \left( \mathbf{r}_{i}^{\pm}\left( t \right) -\mathbf{r} \right) \delta \left( \theta _{i}^{\pm}\left( t \right) -\theta \right)$ is the probability density of finding $i$-th swarmalator at position $\mathbf{r}$ with phase $\theta$ and chirality $+$ or $-$ at time $t$.
 Since the deterministic dynamical equation Eq.~ (\ref{eq:totalDynamics}) conserves the number of oscillators with a given natural frequency over time, the distribution function evolves according to a continuity equation of the following form:
 \begin{equation}
-    \frac{\partial \rho _{i}^{c}}{\partial t}=-\nabla \cdot \left( \rho _{i}^{c}v_{\mathbf{r}} \right) -\frac{\partial }{\partial \theta}\left( \rho _{i}^{c}v_{\theta}^{c,i} \right)\;.
+    \frac{\partial \rho _{i}^{\pm}}{\partial t}=-\nabla \cdot \left( \rho _{i}^{\pm}v_{\mathbf{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _{i}^{\pm}v_{\theta}^{\pm ,i} \right) \;.
     \label{eq:singleContinuity}
 \end{equation}
 Here, the velocity fields read
 \begin{subequations}
     \begin{align}
         &v_{\mathbf{r}}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) \;,\\
-        &v_{\theta}^{c,i}\left( \mathbf{r},\theta ,t \right) =\omega _{i}^{c}+K\int{\text{d}\phi \rho^{c}\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right)}\notag\\
-        &+K\int{\text{d}\phi \rho ^{b}\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right]}\;.
+        &v_{\theta}^{\pm ,i}\left( \mathbf{r},\theta ,t \right) =\omega _{i}^{\pm}+K\int_{-\pi}^{\pi}{\mathrm{d}\phi \left\{ \rho ^{\pm}\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right) \right.}\notag\\
+        &\left. +\rho ^{\mp}\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right] \right\} \;.
     \end{align}
 \end{subequations}
-Summing Eq.~(\ref{eq:singleContinuity}) over the $i$ and $c$ indices, and using the definition of the density $\rho ^c$ in Eq.~(\ref{eq:globalContinuityDef}), we obtain  
+Summing Eq.~(\ref{eq:singleContinuity}) over the $i$ and $\pm$ indices, and using the definition of the density $\rho ^\pm$ in Eq.~(\ref{eq:globalContinuityDef}), we obtain  
 \begin{equation}
     \label{eq:globalContinuity}
     \begin{aligned}
-        &\frac{\partial \rho ^c\left( \mathbf{r},\theta ,t \right)}{\partial t}=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^c\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\Omega \left( \mathbf{r},\theta ,t \right)\\
-        &+K\frac{\partial}{\partial \theta}\rho ^c\int{\text{d}\phi \rho ^c\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right)}\\
-        &+K\frac{\partial}{\partial \theta}\rho ^c\int{\text{d}\phi \rho ^b\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+        &\frac{\partial}{\partial t}\rho ^{\pm}\left( \mathbf{r},\theta ,t \right) =-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^{\pm}\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\Omega^{\pm}\\
+        &-K\frac{\partial}{\partial \theta}\rho ^{\pm}\left( \mathbf{r},\theta ,t \right) \int_{-\pi}^{\pi}{\mathrm{d}\phi}\left\{ \rho ^{\pm}\left( \mathbf{r},\phi ,t \right) \sin \left( \phi -\theta \right) \right.\\
+        &\left. +\rho ^{\mp}\left( \mathbf{r},\phi ,t \right) \left[ \sin \left( \phi -\theta +\alpha _0 \right) -\sin \alpha _0 \right] \right\} \;,\\
     \end{aligned}
 \end{equation}
-where $\Omega \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) \omega _{i}^{c}}$.
-Spatiotemporal dynamics of the ISS indicates $\forall i,c$, $\rho _{i}^{c}\left( \mathbf{r},\theta ,t \right) \equiv \rho _{\text{ISS}}\left( \mathbf{r},\theta ,t \right)$, which yields
+where $\Omega^{\pm} \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{\pm}\left( \mathbf{r},\theta ,t \right) \omega _{i}^{\pm}}$.
+Spatial homogeneity and phase synchronization of the ISS indicates
+ $\forall i$, $\rho _{i}^{\pm}\left( \mathbf{r},\theta ,t \right) \equiv \rho _{\text{ISS}}\left( \mathbf{r},\theta ,t \right)$, which yields
 \begin{equation}
-    \Omega \left( \mathbf{r},\theta ,t \right) =\rho ^c\left( \mathbf{r},\theta ,t \right) \frac{\left( \omega _{\max}+\omega _{\min} \right)}{2}\;.
+    \Omega ^{\pm}\left( \mathbf{r},\theta ,t \right) =\rho ^{\pm}\left( \mathbf{r},\theta ,t \right) \bar{\omega}^{\pm}\;,
 \end{equation} 
+where $\bar{\omega}^{\pm}=\left< \omega _{i}^{\pm} \right>$.
 
-Transforming Eq.~(\ref{eq:globalContinuity}) to Fourier space, yields an equation of motion for the Fourier modes $\varrho _{k}^{c}\left( \mathbf{r},t \right) =\int{\rho ^c\left( \mathbf{r},\theta ,t \right) \text{e}^{\text{i}k\theta}\text{d}\theta}$ of $\rho^c$:
+Transforming $\rho^{\pm}$ in a Fourier series in $\theta$, we have 
 \begin{equation}
+    \rho ^{\pm}\left( \mathbf{r},\theta ,t \right) =\frac{1}{2\pi}\sum_{k=-\infty}^{+\infty}{\varrho _{k}^{\pm}\left( \mathbf{r},t \right)}\mathrm{e}^{-\mathrm{i}k\theta}\;,
+\end{equation}
+where $\varrho _{k}^{\pm}$ is the $k$-th Fourier coefficient of $\rho^{\pm}$, defined as
+\begin{equation}
+    \varrho _{k}^{\pm}\left( \mathbf{r},t \right) =\int{\rho ^{\pm}\left( \mathbf{r},\theta ,t \right) \text{e}^{\text{i}k\theta}\text{d}\theta}\;.
+\end{equation}
+To streamline the analysis, we express Eq.~(\ref{eq:globalContinuity}) in its complex form by multiplying both sides by $\mathrm{e}^{\mathrm{i}k\theta}$ and then integrating with respect to $\theta$:
+\begin{equation}
+    \label{eq:hierarchyEqs}
     \begin{aligned}
-        \frac{\partial \varrho _{k}^{c}}{\partial t}&=-\frac{v}{2}\left[ \frac{\partial}{\partial x}\left( \varrho _{k+1}^{c}+\varrho _{k-1}^{c} \right) -\mathrm{i}\frac{\partial}{\partial y}\left( \varrho _{k+1}^{c}-\varrho _{k-1}^{c} \right) \right]\\
-        &-\left[ \frac{\mathrm{i}k\left( \omega _{\max}+\omega _{\min} \right)}{2}\varrho _{k}^{c}-k^2 \right] \varrho _{k}^{c}\\
-        &+\frac{\mathrm{i}Kk}{2\pi}\sum_{m=-\infty}^{\infty}{\varrho _{k-m}^{c}F_{-m}\varrho _{m}^{c}}\\
+        \dot{\varrho}_{k}^{\pm}&=-\frac{v}{2}\left[ \partial _x\left( \varrho _{k+1}^{\pm}+\varrho _{k-1}^{\pm} \right) -\mathrm{i}\partial _y\left( \varrho _{k+1}^{\pm}-\varrho _{k-1}^{\pm} \right) \right]\\
+        &+\mathrm{i}k\bar{\omega}^{\pm}\varrho _{k}^{\pm}\\
+        &+\frac{\mathrm{i}kK}{2\pi}\sum_{m=-\infty}^{\infty}{\varrho _{k-m}^{\pm}F_{-m}\varrho _{m}^{\pm}}\\
+        &+\frac{\mathrm{i}kK}{2\pi}\sum_{m=-\infty}^{\infty}{\mathrm{e}^{\mathrm{i}m\alpha _0}\varrho _{k-m}^{\pm}F_{-m}\varrho _{m}^{\mp}}\\
+        &-\mathrm{i}kK\varrho _{0}^{\mp}\varrho _{k}^{\pm}\sin \alpha _0\;,
     \end{aligned}
 \end{equation}
+where $F_m$ is the $m$-th Fourier coefficient of $\sin \theta$. Evaluating Eq.~(\ref{eq:hierarchyEqs}) for $k=0, 1, \dots$ leads to a hierarchy of equations for $\left\{f_k\right\}$ with 
+\begin{equation}
+    \varrho_0^{\pm}\left(\mathbf{r}, t\right) = \rho^{\pm} \left(\mathbf{r}, t\right)=\int_{-\pi}^{\pi}{\rho^{\pm}\left(\mathbf{r}, \theta, t\right)\mathrm{d}\theta}
+\end{equation}
+being the probability density of finding a swarmalator at position $\mathbf{r}$ at time $t$ and 
+\begin{equation}
+    \left( \mathrm{Re}\varrho _1^{\pm},\mathrm{Im}\varrho _1^{\pm} \right) =\mathbf{w}^{\pm}\left( \mathbf{r},t \right) =\int_{-\pi}^{\pi}{\mathbf{p}\left( \theta \right) \rho^{\pm} \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}
+\end{equation}
+being the momentum field at position $\mathbf{r}$ at time $t$.
+The degree modulus $R^{\pm}\left( \mathbf{r},t \right) =\left| \mathbf{w}^{\pm}\left( \mathbf{r},t \right) \right|$ is the absolute value of the mean normalized velocity of local swarmalators, which can be used as a measure of the local degree of synchronization. 
+
+To close the hierarchy of equations Eq.~(\ref{eq:hierarchyEqs}), we truncate the series at a finite order $K$ and neglect the higher-order terms. This truncation is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. Specifically, we assume that $\varrho_2^{\pm}\left(\mathbf{r},t\right)$ follows changes in $\varrho_0^{\pm}\left(\mathbf{r},t\right)$ and $\varrho_1^{\pm}\left(\mathbf{r},t\right)$ adiabatically ($\dot{\varrho}_2^{\pm}\left( \mathbf{r},t \right) \approx 0$) and neglect the higher-order terms ($\varrho _{k\geqslant 3}^{\pm}\left( \mathbf{r},t \right) \approx 0$).
+\begin{subequations}
+    \begin{align}
+        \dot{\rho}^{\pm}&=-v\nabla \cdot \mathbf{w}^{\pm}\\
+        \dot{\mathbf{w}}^{\pm}&=
+    \end{align}
+\end{subequations}
 
 \subsection{Coarse graining}
 We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for $i$-th particle
