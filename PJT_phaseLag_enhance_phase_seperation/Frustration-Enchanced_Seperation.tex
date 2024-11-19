@@ -29,7 +29,7 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Chemotactic Chiral Active Matter}}
+\title{\textbf{Enhancement of Phase Separation in Swarmalators with Chirality-induced Frustration}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -53,7 +53,8 @@ for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \rig
 \begin{equation}
     A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
 \end{equation}
-$\lambda$ is the coupling strength, and $\omega_i$ is the natural frequency of the $i$-th swarmalator. This means that a swarmalator will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th swarmalator. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the swarmalator in space. Here, we consider parallels with two types of chiralities with both positive and negative natural frequencies uniformly distributed in two symmetric regimes, namely, half of the swarmalators possess positive natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have negative natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$, where $\omega _{\min, \max}>0$.
+$K$ is the coupling strength, and $\omega_i$ is the natural frequency of the $i$-th swarmalator. 
+This means that a swarmalator will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K=0$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th swarmalator. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the swarmalator in space. Here, we consider parallels with two types of chiralities with both positive and negative natural frequencies uniformly distributed in two symmetric regimes, namely, half of the swarmalators possess positive natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have negative natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$, where $\omega _{\min, \max}>0$.
 
 Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring swarmalators, which is defined as:
 \begin{equation}
@@ -178,172 +179,44 @@ To streamline the analysis, we express Eq.~(\ref{eq:globalContinuity}) in its co
         &-\mathrm{i}kK\varrho _{0}^{\mp}\varrho _{k}^{\pm}\sin \alpha _0\;,
     \end{aligned}
 \end{equation}
-where $F_m$ is the $m$-th Fourier coefficient of $\sin \theta$. Evaluating Eq.~(\ref{eq:hierarchyEqs}) for $k=0, 1, \dots$ leads to a hierarchy of equations for $\left\{f_k\right\}$ with 
+where $F_m$ is the $m$-th Fourier coefficient of $\sin \theta$. Evaluating Eq.~(\ref{eq:hierarchyEqs}) for $k=0, 1, \dots$ leads to a hierarchy of equations for $\left\{\varrho_k^{\pm}\right\}$ with 
 \begin{equation}
-    \varrho_0^{\pm}\left(\mathbf{r}, t\right) = \rho^{\pm} \left(\mathbf{r}, t\right)=\int_{-\pi}^{\pi}{\rho^{\pm}\left(\mathbf{r}, \theta, t\right)\mathrm{d}\theta}
+    \rho^{\pm} \left(\mathbf{r}, t\right)=\varrho_0^{\pm}\left(\mathbf{r}, t\right) = \int_{-\pi}^{\pi}{\rho^{\pm}\left(\mathbf{r}, \theta, t\right)\mathrm{d}\theta}
 \end{equation}
 being the probability density of finding a swarmalator at position $\mathbf{r}$ at time $t$ and 
 \begin{equation}
-    \left( \mathrm{Re}\varrho _1^{\pm},\mathrm{Im}\varrho _1^{\pm} \right) =\mathbf{w}^{\pm}\left( \mathbf{r},t \right) =\int_{-\pi}^{\pi}{\mathbf{p}\left( \theta \right) \rho^{\pm} \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}
+    \mathbf{w}^{\pm}\left( \mathbf{r},t \right) =\left( \mathrm{Re}\varrho _1^{\pm},\mathrm{Im}\varrho _1^{\pm} \right) =\int_{-\pi}^{\pi}{\mathbf{p}\left( \theta \right) \rho^{\pm} \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}
 \end{equation}
 being the momentum field at position $\mathbf{r}$ at time $t$.
 The degree modulus $R^{\pm}\left( \mathbf{r},t \right) =\left| \mathbf{w}^{\pm}\left( \mathbf{r},t \right) \right|$ is the absolute value of the mean normalized velocity of local swarmalators, which can be used as a measure of the local degree of synchronization. 
 
 To close the hierarchy of equations Eq.~(\ref{eq:hierarchyEqs}), we truncate the series at a finite order $K$ and neglect the higher-order terms. This truncation is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. Specifically, we assume that $\varrho_2^{\pm}\left(\mathbf{r},t\right)$ follows changes in $\varrho_0^{\pm}\left(\mathbf{r},t\right)$ and $\varrho_1^{\pm}\left(\mathbf{r},t\right)$ adiabatically ($\dot{\varrho}_2^{\pm}\left( \mathbf{r},t \right) \approx 0$) and neglect the higher-order terms ($\varrho _{k\geqslant 3}^{\pm}\left( \mathbf{r},t \right) \approx 0$).
+% For $k=0$, Eq.~(\ref{eq:hierarchyEqs}) gives the continuity equation
+% \begin{equation}
+%     \dot{\rho}^{\pm}=\dot{\varrho}_{0}^{\pm}=-v\left( \partial _x\mathrm{Re}\varrho _{1}^{\pm}+\partial _y\mathrm{Im}\varrho _{1}^{\pm} \right) =-v\nabla \cdot \mathbf{w} \;.
+% \end{equation}
+Truncating at order 3, we are left with
 \begin{subequations}
     \begin{align}
-        \dot{\rho}^{\pm}&=-v\nabla \cdot \mathbf{w}^{\pm}\\
-        \dot{\mathbf{w}}^{\pm}&=
+        &\dot{\varrho}_{0}^{\pm}=-\mathrm{Re}\bar{\nabla}\varrho _{1}^{\pm}\\
+        &\dot{\varrho}_{1}^{\pm}=-\frac{v}{2}\left( \nabla \varrho _{0}^{\pm}+\bar{\nabla}\varrho _{2}^{\pm} \right)+\mathrm{i}\varrho _{1}^{\pm}\left( \bar{\omega}^{\pm}-K\varrho _{0}^{\mp}\sin \alpha _0 \right)\notag\\
+        &+\frac{K}{2}\varrho _{0}^{\pm}\left( \varrho _{1}^{\pm}+\mathrm{e}^{\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right) \;,\label{eq:secondOrder}\\
+        &\dot{\varrho}_{2}^{\pm}=-\frac{v}{2}\nabla \varrho _{1}^{\pm}+\mathrm{i}2\varrho _{k}^{\pm}\left( \bar{\omega}^{\pm}-K\varrho _{0}^{\mp}\sin \alpha _0 \right)\notag\\
+	    &+K\varrho _{1}^{\pm}\left( \varrho _{1}^{\pm}+\mathrm{e}^{\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right)\;,\label{eq:thirdOrder}
     \end{align}
 \end{subequations}
-
-\subsection{Coarse graining}
-We now follow the strategy in \cite{DavidSDean_1996} to consider the evolution of the density function for $i$-th particle
+where $\nabla =\partial _x+\mathrm{i}\partial _y$ denotes the gradient operator in the complex plane, and $\bar{\nabla}=\partial _x-\mathrm{i}\partial _y$ is the complex conjugate of $\nabla$. Let $\dot{\varrho}_2^{\pm}=0$, then $\varrho_2^{\pm}$ can be solved as
 \begin{equation}
-    \rho _i\left( \mathbf{r},\theta ,t \right) =\delta \left( \mathbf{r}_i\left( t \right) -\mathbf{r} \right) \delta \left( \theta _i\left( t \right) -\theta \right) \;, 
+    \varrho _{2}^{\pm}=-\frac{\mathrm{i}K\varrho _{1}^{\pm}}{a^{\pm}}\left( \varrho _{1}^{\pm}+\mathrm{e}^{-\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right) +\frac{\mathrm{i}\nabla \varrho _{1}^{\pm}v}{2a^{\pm}}
 \end{equation}
-which denotes the probability of finding $i$-th particle at position $\mathbf{r}$, with orientation $\theta$. The density function $\rho _i$ satisfies the continuity equation, and we shall then demonstrate how one may write a closed equation for the global density
-\begin{equation}
-    \rho \left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\rho _i\left( \mathbf{r},\theta ,t \right)}\;,
-    \label{eq:coarseDensitySub2}
-\end{equation}
-The derivation follows a well known argument. Consider an arbitrary function $f$ defined on the coordinate space of the system. Using the definition of the density it is a tautology
-that
-\begin{equation}
-    \label{eq:arbitraryFunction}
-    f\left( \mathbf{r}_i\left( t \right) ,\theta _i\left( t \right) \right) =\int{\mathrm{d}\mathbf{r}\mathrm{d}\theta \rho _i\left( \mathbf{r},\theta ,t \right) f\left( \mathbf{r},\theta \right)}\;.
-\end{equation}
-Expanding the differential equation over the next time step $\delta t$ one obtains
+where $a^{\pm}=2\left( K\rho ^{\mp}\sin \alpha _0-\bar{\omega}^{\pm} \right) $. Substituting $\varrho_2^{\pm}$ into Eq.~(\ref{eq:secondOrder}), we have
 \begin{equation}
     \begin{aligned}
-        \frac{\mathrm{d}f\left( \mathbf{r}_i,\theta _i \right)}{\mathrm{d}t}&=\frac{\partial f\left( \mathbf{r}_i,\theta _i \right)}{\partial \mathbf{r}_i}\cdot \frac{\mathrm{d}\mathbf{r}_i}{\mathrm{d}t}+\frac{\partial f\left( \mathbf{r}_i,\theta _i \right)}{\partial \theta _i}\frac{\mathrm{d}\theta _i}{\mathrm{d}t}\\
-        &=\int{\mathrm{d}\mathbf{r}\mathrm{d}\theta \rho _i\left( \mathbf{r},\theta ,t \right) \left( \frac{\partial f\left( \mathbf{r},\theta \right)}{\partial \mathbf{r}}\cdot \frac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}+\frac{\partial f\left( \mathbf{r},\theta \right)}{\partial \theta}\frac{\mathrm{d}\theta}{\mathrm{d}t} \right)}\\
-        &=\iiint{\mathrm{d}\mathbf{r}\mathrm{d}\theta \left( \rho _i\left( \mathbf{r},\theta ,t \right) \dot{\mathbf{r}}\cdot \nabla f\left( \mathbf{r},\theta \right) +\rho _i\left( \mathbf{r},\theta ,t \right) \dot{\theta}\frac{\partial}{\partial \theta}f\left( \mathbf{r},\theta \right) \right) \;.}\\
+        \dot{\varrho}_{1}^{\pm}&=-\frac{v}{2}\nabla \varrho _{0}^{\pm}+\frac{\mathrm{i}vK\bar{\nabla}\varrho _{1}^{\pm}}{2a^{\pm}}\left( \varrho _{1}^{\pm}+\mathrm{e}^{-\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right)\\
+        &+\frac{\mathrm{i}vK\varrho _{1}^{\pm}}{2a^{\pm}}\left( \bar{\nabla}\varrho _{1}^{\pm}+\mathrm{e}^{-\mathrm{i}\alpha _0}\bar{\nabla}\varrho _{1}^{\mp} \right) -\frac{\mathrm{i}v^2\Delta \varrho _{1}^{\pm}}{4a^{\pm}}\\
+        &+\mathrm{i}\varrho _{1}^{\pm}\left( \bar{\omega}^{\pm}-K\varrho _{0}^{\mp}\sin \alpha _0 \right) +\\
+        &\frac{K}{2}\varrho _{0}^{\pm}\left( \varrho _{1}^{\pm}+\mathrm{e}^{\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right)\\
     \end{aligned}
 \end{equation}
-Re-arranging the above integral by integration by parts we obtain
-\begin{equation}
-    \label{eq:arbitraryFunctionDt1}
-    \frac{\mathrm{d}f\left( \mathbf{r}_i,\theta _i \right)}{\mathrm{d}t}=\int{\mathrm{d}\mathbf{r}\mathrm{d}\theta f\left( \mathbf{r},\theta \right) \left( -\nabla \cdot \left( \rho _i\left( \mathbf{r},\theta ,t \right) \dot{\mathbf{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _i\left( \mathbf{r},\theta ,t \right) \dot{\theta} \right) \right)}\;,
-\end{equation}
-However, from \eqref{eq:arbitraryFunction} we may also deduce
-\begin{equation}
-    \label{eq:arbitraryFunctionDt2}
-    \frac{\mathrm{d}f\left( \mathbf{r}_i,\theta _i \right)}{\mathrm{d}t}=\iiint{\mathrm{d}\mathbf{r}\mathrm{d}\theta f\left( \mathbf{r},\theta \right) \frac{\partial \rho _i\left( \mathbf{r},\theta ,t \right)}{\partial t}}\;.
-\end{equation}
-Comparing equations \eqref{eq:arbitraryFunctionDt1} and \eqref{eq:arbitraryFunctionDt2} we find (using the fact that $f$ is an arbitrary function) that
-\begin{equation}
-    \label{eq:continuityEquation}
-    \frac{\partial \rho _i\left( \mathbf{r},\theta ,t \right)}{\partial t}=-\nabla \cdot \left( \rho _i\left( \mathbf{r},\theta ,t \right) \dot{\mathbf{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _i\left( \mathbf{r},\theta ,t \right) \dot{\theta} \right) \;.
-\end{equation}
-We emphasize that this argument is standard and the only subtlety is that we have not carried out any thermal averaging at this point. Summing equation \eqref{eq:continuityEquation} over the $i$ and using the definition of the density $\rho$ we obtain
-\begin{equation}
-    \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right)\;.
-\end{equation}
-\begin{enumerate}
-    \item[(1)] For the case of the phase coupling dynamics, the equation for the density $\rho$ is
-    \begin{equation}
-        \begin{aligned}
-            \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \left( \omega +G\sum_{j=1}^N{\sin \left( \theta _j-\theta \right) \delta \left( \mathbf{r}_j-\mathbf{r} \right)} \right) \right)\\
-            &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho \left( \mathbf{r},\theta ,\omega ,t \right) -\omega \frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \\
-            &-G\frac{\partial}{\partial \theta}\rho \left( \mathbf{r},\theta ,\omega ,t \right) \iiint{\text{d}\mathbf{r}'\text{d}\theta '\text{d}\omega '\rho \left( \mathbf{r}',\theta ',\omega ',t \right) \sin \left( \theta '-\theta \right) \delta \left( \mathbf{r}'-\mathbf{r} \right)}\;,
-        \end{aligned}
-    \end{equation}
-    where $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$. Then for the density $\varrho$ we have
-    \begin{equation}
-        \label{eq:coarseDensityAlign}
-        \begin{aligned}
-            \frac{\partial \varrho \left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho \left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\\
-            &-G\frac{\partial}{\partial \theta}\varrho \left( \mathbf{r},\theta ,t \right) \iint{\mathrm{d}\mathbf{r}^{\prime}\mathrm{d}\theta^{\prime}\varrho \left( \mathbf{r}^{\prime},\theta^{\prime},t \right) \sin \left( \theta^{\prime}-\theta \right) \delta \left( \mathbf{r}^{\prime}-\mathbf{r} \right)}\\
-        \end{aligned}
-    \end{equation}
-    \item[(2)] For the case of the chemotactic dynamics, the equation for the density $\rho^s$ is
-    \begin{equation}
-        \begin{aligned}
-            \frac{\partial \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}&=-\nabla \cdot \left( \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) v\mathbf{p}\left( \theta \right) \right) -\frac{\partial}{\partial \theta}\left( \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \left( \omega +\alpha ^s\mathbf{p}\left( \theta \right) \times \nabla u+\beta ^s\mathbf{p}\left( \theta \right) \times \nabla v \right) \right)\\
-            &=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) -\omega \frac{\partial}{\partial \theta}\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right)\\
-            &-\frac{\partial}{\partial \theta}\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]
-        \end{aligned}
-    \end{equation}
-    where $\varphi _c=\mathrm{arg}\left( -\partial _yc+\mathrm{i}\partial _xc \right) , c=u, v$. Then for the density $\varrho ^s$ we have
-    \begin{equation}
-        \label{eq:coarseDensityChemotactic}
-        \begin{aligned}
-            \frac{\partial \varrho ^s\left( \mathbf{r},\theta ,t \right)}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \varrho ^s\left( \mathbf{r},\theta ,t \right) -\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\\
-            &-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\\
-        \end{aligned}
-    \end{equation}
-\end{enumerate}
-Next, let's determine the value of item
-\begin{equation}
-    \int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \text{d}\omega}\;.
-\end{equation}
-The uniform distribution of disorder state indicates $g\left( \omega \right) =\left[ 2\left( \omega _{\max}-\omega _{\min} \right) \right] ^{-1}$, which is an $\omega$-independent constant. Then we have
-\begin{equation}
-    \label{eq:omegaMulInt}
-    \int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \text{d}\omega}=\begin{cases}
-        \frac{1}{2}\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \left( \omega _{\max}^{2}-\omega _{\min}^{2} \right) ,&		\text{Single} \text{Chirality}\\
-        0,&		\text{Double} \text{Chirality}\\
-    \end{cases}\;.
-\end{equation}
-Similarly, equation \eqref{eq:coarseDensitySub2} can be rewritten as
-\begin{equation}
-    \label{eq:coarseDensitySub2Rewrite}
-    \varrho ^s\left( \mathbf{r},\theta ,t \right) =\rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \int_{-\infty}^{+\infty}{\text{d}\omega}=\begin{cases}
-        2\left( \omega _{\max}-\omega _{\min} \right) \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) ,&		\text{Single} \text{Chirality}\\
-        0,&		\text{Double} \text{Chirality}\\
-    \end{cases}\;.
-\end{equation}
-Substituting equations \eqref{eq:coarseDensitySub2Rewrite} into \eqref{eq:omegaMulInt}, we obtain 
-
-\subsubsection{Angular Fourier expansion of the phase-space distribution}
-% The derivation of the evolution equation for the velocity field is actually much more complicated, and one has to resort to approximation schemes. 
-As $\varrho(\mathbf{r},\theta,t)$ is a periodic function of $\theta$, it can be expanded in a Fourier series, defined as
-\begin{equation}
-    \hat{\varrho}_k(\mathbf{r},t)=\int_{-\pi}^\pi \varrho(\mathbf{r},\theta,t) \mathrm{e}^{\mathrm{i}k\theta}\mathrm{d}\theta\;.
-\end{equation}
-The inverse Fourier transform is
-\begin{equation}
-    \label{eq:inverseFourier}
-    \varrho (\mathbf{r},\theta ,t)=\frac{1}{2\pi}\sum_{k=-\infty}^{\infty}{\hat{\varrho}_k(\mathbf{r},t)\mathrm{e}^{\mathrm{i}k\theta}\;.}
-\end{equation}
-In this framework, the uniform distribution $\varrho _0(\mathbf{r},\theta ,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}$ corresponds to $\hat{\varrho}_k(\mathbf{r},\omega,t)=\left( 2\pi \right) ^{-1}\varrho _{0}^{*}$ for $k=0$.
-
-Let us use as a basis of the plane the two orthogonal vectors $\mathbf{p}_1=(1,0)$ and $\mathbf{p}_2=(0,1)$. In order to obtain an evolution equation for the velocity field, we multiply equations \eqref{eq:coarseDensityAlign} and \eqref{eq:coarseDensityChemotactic} by $\mathrm{e}\left(\theta\right)$ and integrate over $\theta$ from $-\pi$ to $\pi$. For equation \eqref{eq:coarseDensityChemotactic}, we obtain ($j=1,2$)
-\begin{equation}
-    \label{eq:angularFourierInt}
-    \frac{\partial}{\partial t}\int_{-\pi}^{\pi}{\mathbf{e}_j\left( \theta \right) \varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}+v\sum_{l=1}^2{\frac{\partial}{\partial \mathbf{r}_l}\int_{-\pi}^{\pi}{\mathbf{e}_j\left( \theta \right) \mathbf{e}_l\left( \theta \right) \varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}}=\int_{-\pi}^{\pi}{\mathbf{e}_j\left( \theta \right) \left( I_{\mathrm{freq}}+I_{\mathrm{chem}} \right) \mathrm{d}\theta}\;,
-\end{equation}
-where 
-\begin{subequations}
-    \label{eq:angularFourierIntSub}
-    \begin{align}
-        &I_{\mathrm{freq}}=-\frac{\partial}{\partial \theta}\int_{-\infty}^{+\infty}{\omega \rho ^s\left( \mathbf{r},\theta ,\omega ,t \right) \mathrm{d}\omega}\;,\\
-        &I_{\mathrm{chem}}=-\frac{\partial}{\partial \theta}\varrho ^s\left( \mathbf{r},\theta ,t \right) \alpha ^s\left[ \left| \nabla u \right|\sin \left( \theta +\varphi _u \right) +\left| \nabla v \right|\sin \left( \theta +\varphi _v \right) \right]\;.
-    \end{align}
-\end{subequations}
-To proceed further, it is convenient to identify complex numbers with two-dimensional vectors, in such a way that $\mathbf{e}(\theta)$ is mapped onto $\mathrm{e}^{\mathrm{i}\theta}$. Then, in the same way, $v\hat{\varrho}_1\left( \mathbf{r},t \right) $ is associated with the momentum field $\mathbf{w}\left( \mathbf{r},t \right) =\rho \left( \mathbf{r},t \right) \mathbf{u}\left( \mathbf{r},t \right) $. Hence, we wish to rewrite equation \eqref{eq:angularFourierInt} in such complex notations. For later use, we shall write it in a slightly more general form, replacing $\mathrm{e}^{\mathrm{i}\theta}$ by $\mathrm{e}^{\mathrm{i}k \theta}$:
-\begin{equation}
-    \label{eq:angularFourierIntComplex}
-    \frac{\partial}{\partial t}\int_{-\pi}^{\pi}{\mathrm{e}^{\mathrm{i}k\theta}\varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}+v\sum_{l=1}^2{\frac{\partial}{\partial \mathbf{r}_l}\int_{-\pi}^{\pi}{\mathrm{e}^{\mathrm{i}k\theta}\mathbf{e}_l\left( \theta \right) \varrho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}}=\int_{-\pi}^{\pi}{\mathrm{e}^{\mathrm{i}k\theta}\left( I_{\mathrm{freq}}+I_{\mathrm{chem}} \right) \mathrm{d}\theta}\;.
-\end{equation}
-Equation \eqref{eq:angularFourierInt} is recovered for $k = 1$, up to the mapping between complex numbers and two-dimensional vectors. The first term on the left-hand side is simply $\partial \hat{\varrho}_k/\partial t$. The second term on the left-hand side can be evaluated as follows: For $l=1,2$ and $k$ integer, let us define the complex quantity $Q_{l}^{\left( k \right)}\left( \mathbf{r},t \right)$ as 
-\begin{equation}
-    Q_l^{(k)}(\mathbf{r},t)=\int_{-\pi}^\pi\mathrm{d}\theta \mathrm{e}^{\mathrm{i}k\theta}\mathrm{e}_l(\theta)\varrho(\mathbf{r},\theta,t).
-\end{equation}
-The following relations are then easily obtained:
-\begin{equation}
-    \begin{aligned}
-        Q_{1}^{(k)}(\mathbf{r},t)&=\frac{1}{2}[\hat{\varrho}_{k+1}(\mathbf{r},t)+\hat{\varrho}_{k-1}(\mathbf{r},t)],\\
-        Q_{2}^{(k)}(\mathbf{r},t)&=\frac{1}{2\mathrm{i}}[\hat{\varrho}_{k+1}(\mathbf{r},t)-\hat{\varrho}_{k-1}(\mathbf{r},t)].
-    \end{aligned}
-\end{equation}
-
-
-The right-hand side of equation \eqref{eq:angularFourierIntComplex} is computed by inserting the Fourier series expansion \eqref{eq:inverseFourier} into equations \eqref{eq:angularFourierIntSub}. 
-After a rather straightforward calculation, one finds
-
-
-\bibliography{ref}
 
 \end{document}
