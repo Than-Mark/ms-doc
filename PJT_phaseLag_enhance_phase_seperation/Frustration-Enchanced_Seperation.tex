@@ -49,6 +49,16 @@ Swarmalators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and 
         \dot{\theta}_i&=\omega _i+K\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\label{eq:dotTheta}\;,
     \end{align}
 \end{subequations}
+\color{blue}
+Mean-field definition:
+\begin{subequations}
+    \label{eq:totalDynamicsMeanField}
+    \begin{align}
+        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\label{eq:dotR}\;,\\
+        \dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\label{eq:dotTheta}\;,
+    \end{align}
+\end{subequations}
+\color{black}
 for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$, which means each swarmalator rotates with a constant speed $v$ in the direction of its instantaneous phase $\theta_i (t)$. As per Eq.~(\ref{eq:dotTheta}), the sum runs over neighbors within a coupling radius $d_0$ around swarmalator $i$:
 \begin{equation}
     A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
@@ -77,7 +87,7 @@ We conducted numerical simulations to investigate the performance and characteri
 All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run on Python using Euler integration with box size of $L=10$, population sizes of $N=500, 1000$ for single/double-chiral swarmalators, respectively, maximum and minimum absolute values of natural frequencies $\omega_{\max}=3$, $\omega_{\min}=1$, coupling strength $\lambda$ in $\left[ 0.01, 0.1 \right] \cup \left[ 0.1, 1 \right]$ with step length $0.1$, $0.05$, respectively, action radius of $d_0$ in $\left[ 0.1, 1 \right] \cup \left[ 1, 2 \right]$ with step length $0.05$, $0.5$, respectively, a time step $\Delta t=0.01$, and total number of iterations of $T=60000$. Unless otherwise stated, each data point of order parameters $R$, $R_c$ and $N_r$ was collected by averaging last 1000 time steps of the simulation to discard the transients.
 
 \section{\label{sec:behaviors}Frustration-enhanced phase separation}
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
@@ -95,7 +105,7 @@ All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run
     \label{fig:phaseDiagrams}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
@@ -112,6 +122,61 @@ All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run
     \caption{The order parameter $S$ v.s. time of the system with different natural frequency differences $\Delta \omega$ and $\omega_{\min}=0.1$}
     % \label{fig:phaseSeparation}
 \end{figure}
+
+\newpage
+\section{Abstracted to a synchronization problem}
+
+The dynamics of the system (\ref{eq:totalDynamicsMeanField}) can be abstracted as a synchronization problem in multilayer networks. The system can be described by the following equations:
+\begin{subequations}
+    \begin{align}
+        \dot{\theta}_{i}^{+}&=\omega _{i}^{+}+\frac{K}{N^+}\sum_{j=1}^{_N}{\sin \left( \theta _{j}^{+}-\theta _{i}^{+} \right)}+\frac{K}{N^-}\sum_{j=1}^{_N}{\left[ \sin \left( \theta _{j}^{-}-\theta _{i}^{+}+\alpha _0 \right) -\sin\alpha _0 \right]}\;,\\
+        \dot{\theta}_{i}^{-}&=\omega _{i}^{-}+\frac{K}{N^+}\sum_{j=1}^{_N}{\sin \left( \theta _{j}^{-}-\theta _{i}^{-} \right)}+\frac{K}{N^-}\sum_{j=1}^{_N}{\left[ \sin \left( \theta _{j}^{+}-\theta _{i}^{-}+\alpha _0 \right) -\sin\alpha _0 \right]}\;.
+    \end{align}
+\end{subequations}
+\begin{subequations}
+    \begin{align}
+        R_{\max}&=\max_{t\in \left[ T,T+h \right]} \left\{ R\left( t \right) \right\} 
+        \\
+        R_{\min}&=\min_{t\in \left[ T,T+h \right]} \left\{ R\left( t \right) \right\} 
+    \end{align}
+\end{subequations}
+
+% \begin{figure}[H]
+%     \centering
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_d1_dO1_rS9.png}
+%         \caption{randomSeed$=9$}
+%         % \label{fig:phaseSeparation_singleChirality}
+%     \end{subfigure}
+%     \begin{subfigure}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_d1_dO1_rS10.png}
+%         \caption{randomSeed$=10$}
+%         % \label{fig:phaseSeparation_doubleChirality}
+%     \end{subfigure}
+%     \caption{The order parameter $S$ v.s. time of the swarmalators system with different natural frequency differences $\Delta \omega=1$ and $\omega_{\min}=0.1$}
+%     % \label{fig:phaseSeparation}
+% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO2.png}
+    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta \omega=2$ and $\omega_{\min}=0.1$}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figs/OrderParameter_R_l9.6_d1_dO2_rS10.png}
+    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the swarmalator system with $\Delta \omega=2$ and $\omega_{\min}=0.1$}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO1.png}
+    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta \omega=1$ and $\omega_{\min}=0.1$}
+\end{figure}
+
 
 \section{\label{sec:analysis}Coarse grained equations and phase diagrams}
 

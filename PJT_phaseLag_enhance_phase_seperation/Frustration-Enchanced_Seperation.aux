@@ -2,10 +2,13 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
 \global\let\oldnewlabel\newlabel
 \gdef\newlabel#1#2{\newlabelxx{#1}#2}
 \gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
 \AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
 \let\newlabel\oldnewlabel
 \fi}
 \fi}
@@ -20,6 +23,11 @@
 \newlabel{eq:totalDynamics}{{1}{2}{The Model}{equation.1.1}{}}
 \newlabel{eq:dotR}{{1a}{2}{The Model}{equation.1.1a}{}}
 \newlabel{eq:dotTheta}{{1b}{2}{The Model}{equation.1.1b}{}}
+\newlabel{eq:totalDynamicsMeanField}{{2}{2}{The Model}{equation.1.2}{}}
+\newlabel{eq:dotR}{{2a}{2}{The Model}{equation.1.2a}{}}
+\newlabel{eq:dotTheta}{{2b}{2}{The Model}{equation.1.2b}{}}
+\newlabel{sec:behaviors}{{2}{3}{Frustration-enhanced phase separation}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Frustration-enhanced phase separation}{3}{section.2}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:phaseDiagramDeltaOmega1}{{1a}{3}{$\Delta \omega =1$\relax }{figure.caption.2}{}}
 \newlabel{sub@fig:phaseDiagramDeltaOmega1}{{a}{3}{$\Delta \omega =1$\relax }{figure.caption.2}{}}
@@ -27,16 +35,18 @@
 \newlabel{sub@fig:phaseDiagramDeltaOmega2}{{b}{3}{$\Delta \omega =2$\relax }{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Phase diagrams of the system with different natural frequency differences $\Delta \omega $. The color represents the order parameter $S$ of the system.\relax }}{3}{figure.caption.2}\protected@file@percent }
 \newlabel{fig:phaseDiagrams}{{1}{3}{Phase diagrams of the system with different natural frequency differences $\Delta \omega $. The color represents the order parameter $S$ of the system.\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The order parameter $S$ v.s. time of the system with different natural frequency differences $\Delta \omega $ and $\omega _{\min }=0.1$\relax }}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The order parameter $S$ v.s. time of the system with different natural frequency differences $\Delta \omega $ and $\omega _{\qopname  \relax m{min}}=0.1$\relax }}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Abstracted to a synchronization problem}{4}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The order parameter $R$ v.s. $\alpha _0$ and effective frequency $\left <\dot  {\theta }_i\right >$ of the oscillator system with $\Delta \omega =2$ and $\omega _{\qopname  \relax m{min}}=0.1$\relax }}{4}{figure.caption.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The order parameter $R$ v.s. $\alpha _0$ and effective frequency $\left <\dot  {\theta }_i\right >$ of the swarmalator system with $\Delta \omega =2$ and $\omega _{\qopname  \relax m{min}}=0.1$\relax }}{4}{figure.caption.5}\protected@file@percent }
 \citation{David_S_Dean_1996}
-\newlabel{sec:behaviors}{{2}{4}{Frustration-enhanced phase separation}{section.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Frustration-enhanced phase separation}{4}{section.2}\protected@file@percent }
-\newlabel{sec:analysis}{{3}{4}{Coarse grained equations and phase diagrams}{section.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Coarse grained equations and phase diagrams}{4}{section.3}\protected@file@percent }
-\newlabel{eq:globalContinuityDef}{{6}{4}{Coarse grained equations and phase diagrams}{equation.3.6}{}}
-\newlabel{eq:singleContinuity}{{7}{4}{Coarse grained equations and phase diagrams}{equation.3.7}{}}
-\newlabel{eq:globalContinuity}{{9}{4}{Coarse grained equations and phase diagrams}{equation.3.9}{}}
-\newlabel{eq:hierarchyEqs}{{13}{5}{Coarse grained equations and phase diagrams}{equation.3.13}{}}
-\newlabel{eq:secondOrder}{{16b}{5}{Coarse grained equations and phase diagrams}{equation.3.16b}{}}
-\newlabel{eq:thirdOrder}{{16c}{5}{Coarse grained equations and phase diagrams}{equation.3.16c}{}}
-\gdef \@abspage@last{5}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The order parameter $R$ v.s. $\alpha _0$ and effective frequency $\left <\dot  {\theta }_i\right >$ of the oscillator system with $\Delta \omega =1$ and $\omega _{\qopname  \relax m{min}}=0.1$\relax }}{5}{figure.caption.6}\protected@file@percent }
+\newlabel{sec:analysis}{{4}{5}{Coarse grained equations and phase diagrams}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Coarse grained equations and phase diagrams}{5}{section.4}\protected@file@percent }
+\newlabel{eq:globalContinuityDef}{{9}{5}{Coarse grained equations and phase diagrams}{equation.4.9}{}}
+\newlabel{eq:singleContinuity}{{10}{5}{Coarse grained equations and phase diagrams}{equation.4.10}{}}
+\newlabel{eq:globalContinuity}{{12}{5}{Coarse grained equations and phase diagrams}{equation.4.12}{}}
+\newlabel{eq:hierarchyEqs}{{16}{6}{Coarse grained equations and phase diagrams}{equation.4.16}{}}
+\newlabel{eq:secondOrder}{{19b}{6}{Coarse grained equations and phase diagrams}{equation.4.19b}{}}
+\newlabel{eq:thirdOrder}{{19c}{6}{Coarse grained equations and phase diagrams}{equation.4.19c}{}}
+\gdef \@abspage@last{7}
