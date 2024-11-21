@@ -129,8 +129,8 @@ All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run
 The dynamics of the system (\ref{eq:totalDynamicsMeanField}) can be abstracted as a synchronization problem in multilayer networks. The system can be described by the following equations:
 \begin{subequations}
     \begin{align}
-        \dot{\theta}_{i}^{+}&=\omega _{i}^{+}+\frac{K}{N^+}\sum_{j=1}^{_N}{\sin \left( \theta _{j}^{+}-\theta _{i}^{+} \right)}+\frac{K}{N^-}\sum_{j=1}^{_N}{\left[ \sin \left( \theta _{j}^{-}-\theta _{i}^{+}+\alpha _0 \right) -\sin\alpha _0 \right]}\;,\\
-        \dot{\theta}_{i}^{-}&=\omega _{i}^{-}+\frac{K}{N^+}\sum_{j=1}^{_N}{\sin \left( \theta _{j}^{-}-\theta _{i}^{-} \right)}+\frac{K}{N^-}\sum_{j=1}^{_N}{\left[ \sin \left( \theta _{j}^{+}-\theta _{i}^{-}+\alpha _0 \right) -\sin\alpha _0 \right]}\;.
+        \dot{\theta}_{i}^{+}&=\omega _{i}^{+}+\frac{K}{N}\sum_{j=1}^{_{N^+}}{\sin \left( \theta _{j}^{+}-\theta _{i}^{+} \right)}+\frac{K}{N}\sum_{j=1}^{_{N^{-}}}{\left[ \sin \left( \theta _{j}^{-}-\theta _{i}^{+}+\alpha _0 \right) -\sin\alpha _0 \right]}\;,\\
+        \dot{\theta}_{i}^{-}&=\omega _{i}^{-}+\frac{K}{N}\sum_{j=1}^{_{N^-}}{\sin \left( \theta _{j}^{-}-\theta _{i}^{-} \right)}+\frac{K}{N}\sum_{j=1}^{_{N^{+}}}{\left[ \sin \left( \theta _{j}^{+}-\theta _{i}^{-}+\alpha _0 \right) -\sin\alpha _0 \right]}\;.
     \end{align}
 \end{subequations}
 \begin{subequations}
