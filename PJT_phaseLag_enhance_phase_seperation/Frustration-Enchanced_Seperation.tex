@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{csquotes}
 \usepackage{multicol}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 
@@ -64,7 +65,13 @@ for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \rig
     A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
 \end{equation}
 $K$ is the coupling strength, and $\omega_i$ is the natural frequency of the $i$-th swarmalator. 
-This means that a swarmalator will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K=0$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th swarmalator. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the swarmalator in space. Here, we consider parallels with two types of chiralities with both positive and negative natural frequencies uniformly distributed in two symmetric regimes, namely, half of the swarmalators possess positive natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have negative natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$, where $\omega _{\min, \max}>0$.
+This means that a swarmalator will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K=0$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th swarmalator. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the swarmalator in space. 
+Here, we consider the natural frequencies of swarmalators to be distributed in a standard Lorentzian form:
+\begin{equation}
+    \label{eq:lorentzian}
+    g\left( \omega \right) =\frac{1}{\pi}\frac{\Delta}{\omega ^2+\Delta ^2}\;,
+\end{equation}
+where $\Delta$ is the half-width at half-maximum of the distribution. The max density of the distribution is at $\omega=0$, and the distribution is symmetric about it, which is the most prone situation to chiral mixing.
 
 Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring swarmalators, which is defined as:
 \begin{equation}
@@ -125,14 +132,38 @@ All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run
 
 \newpage
 \section{Abstracted to a synchronization problem}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO1.png}
+%     \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta \omega=1$ and $\omega_{\min}=0.1$}
+% \end{figure}
 
-The dynamics of the system (\ref{eq:totalDynamicsMeanField}) can be abstracted as a synchronization problem in multilayer networks. The system can be described by the following equations:
-\begin{subequations}
-    \begin{align}
-        \dot{\theta}_{i}^{+}&=\omega _{i}^{+}+\frac{K}{N}\sum_{j=1}^{_{N^+}}{\sin \left( \theta _{j}^{+}-\theta _{i}^{+} \right)}+\frac{K}{N}\sum_{j=1}^{_{N^{-}}}{\left[ \sin \left( \theta _{j}^{-}-\theta _{i}^{+}+\alpha _0 \right) -\sin\alpha _0 \right]}\;,\\
-        \dot{\theta}_{i}^{-}&=\omega _{i}^{-}+\frac{K}{N}\sum_{j=1}^{_{N^-}}{\sin \left( \theta _{j}^{-}-\theta _{i}^{-} \right)}+\frac{K}{N}\sum_{j=1}^{_{N^{+}}}{\left[ \sin \left( \theta _{j}^{+}-\theta _{i}^{-}+\alpha _0 \right) -\sin\alpha _0 \right]}\;.
-    \end{align}
-\end{subequations}
+The dynamics of the system (\ref{eq:totalDynamics}) in the ISS can be abstracted as a synchronization problem in multilayer networks. This problem can be described by the following equations:
+\begin{equation}
+    \label{eq:multiLayer}
+    \begin{aligned}
+        \dot{\theta}_{i}^{\pm}=&\omega _{i}^{\pm}+\frac{K}{N}\sum_{j=1}^{_{N^{\pm}}}{\sin \left( \theta _{j}^{\pm}-\theta _{i}^{\pm} \right)}\\
+        &+\frac{K}{N}\sum_{j=1}^{_{N^{\mp}}}{\left[ \sin \left( \theta _{j}^{\mp}-\theta _{i}^{\pm}+\alpha _0 \right) -\sin \alpha _0 \right]}\;,
+    \end{aligned}
+\end{equation}
+where $N^{\pm}=N/2$ is the numbers of swarmalators with positive and negative chirality, respectively. The first term in Eq.~(\ref{eq:multiLayer}) represents the intra-layer coupling between swarmalators with the same chirality, and the second term represents the inter-layer coupling between swarmalators with different chiralities. According to the definition of $g\left(\omega\right)$ in Eq.~(\ref{eq:lorentzian}), $\omega^{\pm}_i$ here follows the half-Lorentzian distribution:
+\begin{equation}
+    g^{+}\left( \omega \right) =\begin{cases}
+        \frac{2}{\pi}\frac{\Delta}{\omega ^2+\Delta ^2},&		\omega \geqslant 0\\
+        0,&		\mathrm{otherwise}\\
+    \end{cases}
+\end{equation}
+and similarly for $g^{-}\left( \omega \right)$, replacing \enquote{$\omega \geqslant 0$} with \enquote{$< 0$}.
+
+To quantify the inter-layer coherence of the system, it is convenient to define the generalized complex-valued
+order parameters, i.e.,
+\begin{equation}
+    \label{eq:orderParameter}
+    z_{n}^{\pm}\left( t \right) =r_{n}^{\pm}\left( t \right) \text{e}^{\text{i}\psi _{n}^{\pm}\left( t \right)}=\frac{1}{N}\sum_{j=1}^N{\text{e}^{\text{i}n\theta _{j}^{\pm}\left( t \right)}}\;,
+\end{equation}
+where $n=1,2,\dots, N$, and $r_{n}^{\pm}\left( t \right)$, $\psi _{n}^{\pm}\left( t \right)$ are the amplitudes and arguments of the $n$-order parameter.
+
+% #####################################################
 \begin{subequations}
     \begin{align}
         R_{\max}&=\max_{t\in \left[ T,T+h \right]} \left\{ R\left( t \right) \right\} 
@@ -141,42 +172,108 @@ The dynamics of the system (\ref{eq:totalDynamicsMeanField}) can be abstracted a
     \end{align}
 \end{subequations}
 
-% \begin{figure}[H]
-%     \centering
-%     \begin{subfigure}{0.45\textwidth}
-%         \centering
-%         \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_d1_dO1_rS9.png}
-%         \caption{randomSeed$=9$}
-%         % \label{fig:phaseSeparation_singleChirality}
-%     \end{subfigure}
-%     \begin{subfigure}{0.45\textwidth}
-%         \centering
-%         \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_d1_dO1_rS10.png}
-%         \caption{randomSeed$=10$}
-%         % \label{fig:phaseSeparation_doubleChirality}
-%     \end{subfigure}
-%     \caption{The order parameter $S$ v.s. time of the swarmalators system with different natural frequency differences $\Delta \omega=1$ and $\omega_{\min}=0.1$}
-%     % \label{fig:phaseSeparation}
-% \end{figure}
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO2.png}
-    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta \omega=2$ and $\omega_{\min}=0.1$}
+    \includegraphics[width=1\textwidth]{figs/PurePhase_OrderParameter_R_l9.6_dO1.png}
+    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta =1$}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.45\textwidth]{figs/OrderParameter_R_l9.6_d1_dO2_rS10.png}
-    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the swarmalator system with $\Delta \omega=2$ and $\omega_{\min}=0.1$}
+    \includegraphics[width=0.45\textwidth]{figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png}
+    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the swarmalator system with $\Delta =1$}
 \end{figure}
+% #####################################################
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO1.png}
-    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta \omega=1$ and $\omega_{\min}=0.1$}
-\end{figure}
+Our starting point is to analyze the critical point for the pulsation of the order parameter.
+In the thermodynamic limit $N\rightarrow \infty$, where $N^{\pm}\rightarrow \infty$. Then
+Eq.~(\ref{eq:multiLayer}) gives rise to the continuity equations
+\begin{equation}
+    \label{eq:continuity}
+    \frac{\partial \rho ^{\pm}}{\partial t}+\frac{\partial}{\partial \theta}\left( \rho ^{\pm}v^{\pm} \right) =0
+\end{equation}
+where $\rho ^{\pm}\left( \theta ,\omega ,t \right)$ is the probability density of oscillators in layer $\pm$ with phase $\theta$ at fixed frequency $\omega$ and $t$, it satisfies the normalization condition
+\begin{equation}
+    \label{eq:normalization}
+    \int_{0}^{2\pi}{\rho ^{\pm}\left( \theta ,\omega ,t \right) \text{d}\theta} =1\;.
+\end{equation}
+Here, $v^{\pm}\left( \theta ,\omega ,t \right)$ is the velocity field, given by
+\begin{equation}
+    \begin{aligned}
+        &v^{\pm}\left( \theta ,\omega ,t \right) =\omega +\frac{K}{2}\sin \alpha _0\\
+        &+\frac{K}{2}\int{\sin \left( \theta ^{\prime}-\theta \right) \rho ^{\pm}\left( \theta ^{\prime},\omega ^{\prime},t \right) \text{d}\theta ^{\prime}\text{d}\omega ^{\prime}}\\
+        &+\frac{K}{2}\int{\sin \left( \theta ^{\prime}-\theta +\alpha _0 \right) \rho ^{\mp}\left( \theta ^{\prime},\omega ^{\prime},t \right) \text{d}\theta ^{\prime}\text{d}\omega ^{\prime}}\;.\\
+    \end{aligned}
+\end{equation}
+Correspondingly, the 1-order parameter defined in Eq.~(\ref{eq:orderParameter}) in the thermodynamic limit reads
+\begin{equation}
+    \label{eq:continuityZ}
+    z^{\pm}\left( t \right) =\int_{-\infty}^{+\infty}{g^{\pm}(\omega)\int_0^{2\pi}{\text{e}^{\text{i}\theta}\rho ^{\pm}\left( \theta ,\omega ,t \right) \text{d}\theta \text{d}\omega}}\;,
+\end{equation}
+then $v^{\pm}\left( \theta ,\omega ,t \right)$ simplifies to
+\begin{equation}
+v^{\pm}=\omega +\frac{K}{2}\sin \alpha _0+\frac{K}{2}\mathrm{Im}\left[ Z^{\pm}\left( t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] 
+\end{equation}
+with the mean-field being
+\begin{equation}
+    Z^{\pm}\left( t \right) =z^{\pm}\left( t \right) +z^{\mp}\left( t \right) \mathrm{e}^{\mathrm{i}\alpha _0}
+\end{equation}
 
+To proceed, the probability $\rho ^{\pm}\left( \theta ,\omega ,t \right)$ can be expressed as a Fourier series of the following form
+\begin{equation}
+    \rho ^{\pm}\left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{-\infty}^{+\infty}{a^{\pm} _n\left( \omega ,t \right) \mathrm{e}^{-\mathrm{i}n\theta}}\;,
+\end{equation}
+where $a^{\pm} _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient.
+
+According to Ott and Antonsen ansatz \cite{10.1063/1.2930766, 10.1063/1.3136851}, the dynamics of the system can be reduced to a set of ordinary differential equations for the 1st Fourier coefficients $a^{\pm}\left( \omega ,t \right)$:
+\begin{equation}
+    \rho ^{\pm}=\frac{1}{2\pi}\left\{ 1+\sum_{n=1}^{\infty}{\left[ a^{\pm} \left( \omega ,t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] ^n+\mathrm{c}.\mathrm{c}.} \right\} \;.
+\end{equation}
+To streamline the analysis, we express Eq.~(\ref{eq:continuity}) in its complex form by multiplying both sides by $\mathrm{e}^{\mathrm{i}\theta}$ and then integrating with respect to $\theta$:
+\begin{equation}
+    \label{eq:aDynamics}
+    \begin{aligned}
+        \dot{a}^{\pm}\left( \omega ,t \right) =&\mathrm{i}a^{\pm}\left( \omega ,t \right) \left( \omega +\frac{K}{2}\sin \alpha _0 \right)\\
+        &+\frac{K}{4}\left[ Z^{\pm}\left( t \right) -\left( a^{\pm}\left( \omega ,t \right) \right) ^2\bar{Z}^{\pm}\left( t \right) \right] \;.
+    \end{aligned}
+\end{equation}
+Herein, \enquote{$\bar{\cdot}$} denotes the complex conjugate.
+
+To close the system, we express the complex order parameter $z^{\pm}\left( t \right)$ in Eq.~(\ref{eq:continuityZ}) by using Cauchy’s residue theorem with analytical continuation of $a^{\pm}\left( \omega ,t \right)$ into the right/left half complex plane for $g^{+}\left(\omega\right)$ and $g^{-}\left(\omega\right)$, respectively. Then we have
+\begin{equation}
+    \label{eq:zEqs2a}
+    \begin{aligned}
+        z^+\left( t \right) &=\int_0^{+\infty}{a^+\left( \omega ,t \right) g^+\left( \omega \right) \mathrm{d}\omega}\\
+        &=\lim_{R\rightarrow \infty} \frac{1}{2}\int_{-\mathrm{i}R}^{\mathrm{i}R}{\frac{2}{\pi}\frac{\Delta a^+\left( \mathrm{i}\omega ,t \right)}{\left( \mathrm{i}\omega \right) ^2+\Delta ^2}\mathrm{d}\left( \mathrm{i}\omega \right)}\\
+        &=a^+\left( \mathrm{i}\Delta ,t \right) \;,
+    \end{aligned}
+\end{equation}
+and similarly, $z^-\left( t \right)=a^-\left( \mathrm{i}\Delta ,t \right)$.
+
+As a result, the low-dimensional evolution of the order parameter can be obtained by letting $\omega =\mathrm{i}\Delta$ and substituting Eq.~(\ref{eq:zEqs2a}) into Eq.~(\ref{eq:aDynamics}), which yields
+\begin{equation}
+    \label{eq:zDynamics}
+    \begin{aligned}
+        \dot{z}^{\pm}=&z^{\pm}\left( \frac{\text{i}K}{2}\sin \alpha _0 - \Delta \right) +\frac{K}{4}\left( z^{\pm}+z^{\mp}\text{e}^{\text{i}\alpha _0} \right)-\frac{K}{4}\left( z^{\pm} \right) ^2\left( \bar{z}^{\pm}+\bar{z}^{\mp}\text{e}^{-\text{i}\alpha _0} \right) \;.\\
+    \end{aligned}
+\end{equation}
+Then we rewrite the above equation using polar coordinates $z^{\pm}=r^{\pm}\mathrm{e}^{-\mathrm{i}\phi ^{\pm}}$. (The negative sign in the exponent is chosen to ensure that $\rho^{\pm}$ converges to $\delta\left(\theta-\phi^{\pm}\right)$, not $\delta\left(\theta+\phi^{\pm}\right)$ as $t\rightarrow\infty$.) Thus, $\phi^{\pm}$ can be interpreted as the phase of the chirality $\pm$, and $r^{\pm}$ measures the degree of synchronization of the chirality $\pm$. 
+Then Eq.~(\ref{eq:zDynamics}) becomes
+\begin{subequations}
+    \small
+    \begin{align}
+        \dot{r}^{\pm}&=-r^{\pm}\Delta +K\frac{1 -\left( r^{\pm} \right) ^2}{4}\left[ r^{\pm}+r^{\mp}\cos \left( \phi ^{\pm}-\phi ^{\mp}+\alpha _0 \right) \right] ,\\
+        \dot{\phi}^{\pm}&=-\frac{K}{2}\sin \alpha _0-Kr^{\mp}\frac{1+\left( r^{\pm} \right) ^2}{4r^{\pm}}\sin \left( \phi ^{\pm}-\phi ^{\mp}+\alpha _0 \right) .
+    \end{align}
+\end{subequations}
+Introducing $\varphi=\phi^+-\phi^-$, the dynamics of the system can be further simplified to
+\begin{subequations}
+    \begin{align}
+        \dot{r}^+=&-r^+\Delta +K\frac{1-\left( r^+ \right) ^2}{4}\left[ r^++r^-\cos \left( \varphi +\alpha _0 \right) \right] \;,\\
+        \dot{r}^-=&-r^-\Delta +K\frac{1-\left( r^- \right) ^2}{4}\left[ r^-+r^+\cos \left( \varphi -\alpha _0 \right) \right] \;,\\
+        \dot{\varphi}=&-Kr^-\frac{1+\left( r^+ \right) ^2}{4r^+}\sin \left( \varphi +\alpha _0 \right)-Kr^+\frac{1+\left( r^- \right) ^2}{4r^-}\sin \left( \varphi -\alpha _0 \right)
+    \end{align}
+\end{subequations}
 
 \section{\label{sec:analysis}Coarse grained equations and phase diagrams}
 
@@ -283,5 +380,7 @@ where $a^{\pm}=2\left( K\rho ^{\mp}\sin \alpha _0-\bar{\omega}^{\pm} \right) $. 
         &\frac{K}{2}\varrho _{0}^{\pm}\left( \varrho _{1}^{\pm}+\mathrm{e}^{\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right)\\
     \end{aligned}
 \end{equation}
+
+\bibliography{ref}
 
 \end{document}

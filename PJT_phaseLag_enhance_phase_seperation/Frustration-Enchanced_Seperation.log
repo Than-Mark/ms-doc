@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  21 NOV 2024 21:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  27 NOV 2024 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,16 +262,36 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box50
 \@float@everytoks=\toks22
 \@floatcapt=\box51
-) (e:/texlive/2021/texmf-dist/tex/latex/tools/multicol.sty
+) (e:/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+ (e:/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count278
+)
+\csq@reset=\count279
+\csq@gtype=\count280
+\csq@glevel=\count281
+\csq@qlevel=\count282
+\csq@maxlvl=\count283
+\csq@tshold=\count284
+\csq@ltx@everypar=\toks23
+ (e:/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (e:/texlive/2021/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (e:/texlive/2021/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count278
+\c@tracingmulticols=\count285
 \mult@box=\box52
 \multicol@leftmargin=\dimen161
-\c@unbalance=\count279
-\c@collectmore=\count280
-\doublecol@number=\count281
-\multicoltolerance=\count282
-\multicolpretolerance=\count283
+\c@unbalance=\count286
+\c@collectmore=\count287
+\doublecol@number=\count288
+\multicoltolerance=\count289
+\multicolpretolerance=\count290
 \full@width=\dimen162
 \page@free=\dimen163
 \premulticols=\dimen164
@@ -322,28 +342,28 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box93
 \@tempa=\box94
 \@tempa=\box95
-\c@minrows=\count284
-\c@columnbadness=\count285
-\c@finalcolumnbadness=\count286
+\c@minrows=\count291
+\c@columnbadness=\count292
+\c@finalcolumnbadness=\count293
 \last@try=\dimen167
 \multicolovershoot=\dimen168
 \multicolundershoot=\dimen169
 \mult@nat@firstbox=\box96
 \colbreak@box=\box97
-\mc@col@check@num=\count287
+\mc@col@check@num=\count294
 ) (e:/texlive/2021/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count288
+\c@AlgoLine=\count295
  (e:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip55
  (e:/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count289
+\c@checkoddpage=\count296
 ) (e:/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (e:/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
@@ -379,9 +399,9 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip71
 \algotitleheightruledefault=\skip72
 \algotitleheightrule=\skip73
-\c@algocfline=\count290
-\c@algocfproc=\count291
-\c@algocf=\count292
+\c@algocfline=\count297
+\c@algocfproc=\count298
+\c@algocf=\count299
 \algocf@algoframe=\box104
 \algocf@algobox=\box105
 ) (e:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
@@ -389,9 +409,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (e:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count293
-\Gm@cntv=\count294
-\c@Gm@tempcnt=\count295
+\Gm@cnth=\count300
+\Gm@cntv=\count301
+\c@Gm@tempcnt=\count302
 \Gm@bindingoffset=\dimen176
 \Gm@wd@mp=\dimen177
 \Gm@odd@mp=\dimen178
@@ -400,20 +420,22 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen181
 \Gm@layouthoffset=\dimen182
 \Gm@layoutvoffset=\dimen183
-\Gm@dimlist=\toks23
+\Gm@dimlist=\toks24
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 30.
+Package hyperref Info: Option `colorlinks' set `true' on input line 31.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
  (e:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
  (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count296
-\l__color_backend_stack_int=\count297
-\g__color_backend_stack_int=\count298
-\g__graphics_track_int=\count299
+\c__kernel_sys_dvipdfmx_version_int=\count303
+\l__color_backend_stack_int=\count304
+\g__color_backend_stack_int=\count305
+\g__graphics_track_int=\count306
 \l__pdf_internal_box=\box106
-\g__pdf_backend_object_int=\count300
-\g__pdf_backend_annotation_int=\count301
-\g__pdf_backend_link_int=\count302
+\g__pdf_backend_object_int=\count307
+\g__pdf_backend_annotation_int=\count308
+\g__pdf_backend_link_int=\count309
 ) (./Frustration-Enchanced_Seperation.aux
 
 LaTeX Warning: Label `eq:dotR' multiply defined.
@@ -424,31 +446,31 @@ LaTeX Warning: Label `eq:dotTheta' multiply defined.
 )
 \openout1 = `Frustration-Enchanced_Seperation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 36.
  (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-Package hyperref Info: Link coloring ON on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+Package hyperref Info: Link coloring ON on input line 36.
  (e:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -456,11 +478,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (e:/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count310
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
  (./Frustration-Enchanced_Seperation.out) (./Frustration-Enchanced_Seperation.out)
 \@outlinefile=\write3
 \openout3 = `Frustration-Enchanced_Seperation.out'.
@@ -503,15 +525,15 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39.
  (e:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (./Frustration-Enchanced_Seperation.toc)
@@ -520,28 +542,24 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [1
 
-]
+] [2]
 File: figs/pd1.png Graphic file (type bmp)
 <figs/pd1.png>
 File: figs/pd2.png Graphic file (type bmp)
 <figs/pd2.png>
- [2]
 File: figs/S_l0.15_d0.5_dO1_S.pdf Graphic file (type pdf)
 <use figs/S_l0.15_d0.5_dO1_S.pdf>
 File: figs/S_l0.15_d0.5_dO2_S.pdf Graphic file (type pdf)
 <use figs/S_l0.15_d0.5_dO2_S.pdf>
  [3]
-File: figs/OrderParameter_R_l9.6_dO2.png Graphic file (type bmp)
-<figs/OrderParameter_R_l9.6_dO2.png>
-File: figs/OrderParameter_R_l9.6_d1_dO2_rS10.png Graphic file (type bmp)
-<figs/OrderParameter_R_l9.6_d1_dO2_rS10.png>
-File: figs/OrderParameter_R_l9.6_dO1.png Graphic file (type bmp)
-<figs/OrderParameter_R_l9.6_dO1.png>
- [4]
 
-LaTeX Warning: Citation `David_S_Dean_1996' on page 5 undefined on input line 192.
+LaTeX Warning: Reference `eq:lorentzian' on page 4 undefined on input line 149.
 
-[5] [6] [7] (./Frustration-Enchanced_Seperation.aux)
+File: figs/PurePhase_OrderParameter_R_l9.6_dO1.png Graphic file (type bmp)
+<figs/PurePhase_OrderParameter_R_l9.6_dO1.png>
+File: figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png Graphic file (type bmp)
+<figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png>
+[4] [5] [6] [7] (./Frustration-Enchanced_Seperation.bbl [8]) [9] (./Frustration-Enchanced_Seperation.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -552,12 +570,12 @@ Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not
 (rerunfilecheck)             Checksum: C8419567C5E313D74F4D5261F3B1FF0D;848.
  ) 
 Here is how much of TeX's memory you used:
- 12262 strings out of 478907
- 185200 string characters out of 5866571
- 523475 words of memory out of 5000000
- 31921 multiletter control sequences out of 15000+600000
- 419360 words of font info for 98 fonts, out of 8000000 for 9000
+ 13160 strings out of 478907
+ 198659 string characters out of 5866571
+ 552497 words of memory out of 5000000
+ 32803 multiletter control sequences out of 15000+600000
+ 419368 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,11n,77p,878b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,11n,77p,878b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Frustration-Enchanced_Seperation.pdf (7 pages).
+Output written on Frustration-Enchanced_Seperation.pdf (9 pages).
