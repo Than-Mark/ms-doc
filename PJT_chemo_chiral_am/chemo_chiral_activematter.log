@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  19 NOV 2024 18:35
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.17)  3 DEC 2024 10:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,27 +518,38 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ] [2]
 
-LaTeX Warning: Reference `eq:totalDynamics' on page 3 undefined on input line 131.
+LaTeX Warning: Reference `eq:totalDynamics' on page 3 undefined on input line 142.
 
 [3] [4]
-Overfull \hbox (4.56094pt too wide) in paragraph at lines 251--253
+Overfull \hbox (4.56094pt too wide) in paragraph at lines 262--264
 \TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
  []
 
-[5] [6] [7] (./chemo_chiral_activematter.bbl) [8] (./chemo_chiral_activematter.aux)
+[5]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 281.
+
+(./chemo_chiral_activematter.bbl [6]) [7] (./chemo_chiral_activematter.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not changed.
-(rerunfilecheck)             Checksum: 4974C58E1020F1A624561C1E5C15408B;1788.
+
+Package rerunfilecheck Warning: File `chemo_chiral_activematter.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `chemo_chiral_activematter.out':
+(rerunfilecheck)             Before: B895ACB9CB9FD8CB237B28D1B5635443;1989
+(rerunfilecheck)             After:  9642401FB3383915D669893634AD5190;1833.
  ) 
 Here is how much of TeX's memory you used:
- 13000 strings out of 476683
- 209244 string characters out of 5807574
- 1871012 words of memory out of 5000000
- 33048 multiletter control sequences out of 15000+600000
+ 12999 strings out of 476683
+ 209245 string characters out of 5807574
+ 1869012 words of memory out of 5000000
+ 33047 multiletter control sequences out of 15000+600000
  525594 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,12n,77p,692b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,77p,692b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chemo_chiral_activematter.pdf (8 pages).
+Output written on chemo_chiral_activematter.pdf (7 pages).
