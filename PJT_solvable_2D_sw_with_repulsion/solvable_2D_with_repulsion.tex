@@ -1,0 +1,57 @@
+\documentclass{article}
+% \usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{multicol}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\bibliographystyle{plain}
+\setlength{\parindent}{2em}
+\usepackage{geometry}
+\geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+
+% 设置文章行距
+% \renewcommand{\baselinestretch}{1.5}
+
+% define reference format
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    linkbordercolor=white
+}
+
+\title{\textbf{A Solvable Two-dimensional Swarmalator Model with Realistic Spatial Interactions}}
+\author{Yichen Lu}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\section{\label{sec:model}The Model}
+
+Swarmalators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
+\begin{subequations}
+    \label{eq:totalDynamics}
+    \begin{align}
+        \dot{x}_i&=\frac{1}{N}\sum_{j=1}^N{\left[ \sin \left( x_j-x_i \right) \left( 1+J\cos \left( \theta _j-\theta _i \right) \right) -P\sin 2\left( x_j-x_i \right) \right]}\;,\\
+        \dot{y}_i&=\frac{1}{N}\sum_{j=1}^N{\left[ \sin \left( y_j-y_i \right) \left( 1+J\cos \left( \theta _j-\theta _i \right) \right) -P\sin 2\left( y_j-y_i \right) \right]}\;,\\
+        \dot{\theta}_i&=\frac{K}{N}\sum_{j=1}^N{\sin \left( \theta _j-\theta _i \right) \left( \cos \left( x_j-x_i \right) +\cos \left( y_j-y_i \right) \right)}\;,
+    \end{align}
+\end{subequations}
+
+
+
+\end{document}
