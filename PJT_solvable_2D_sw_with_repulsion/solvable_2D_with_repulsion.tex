@@ -30,7 +30,7 @@
     linkbordercolor=white
 }
 
-\title{\textbf{A Solvable Two-dimensional Swarmalator Model with Realistic Spatial Interactions}}
+\title{\textbf{Solvable Two-dimensional Swarmalator Model for Realistic Spatial Interactions}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -41,6 +41,17 @@
 
 \newpage
 \section{\label{sec:model}The Model}
+
+O'Keeffe et al. proposed a solvable 2D swarmalator model with periodic boundary conditions:
+\begin{subequations}
+    \label{eq:totalDynamics}
+    \begin{align}
+        \dot{x}_i&=\frac{J}{N}\sum_{j=1}^N{\sin \left( x_j-x_i \right) \cos \left( \theta _j-\theta _i \right) \;,}\\
+        \dot{y}_i&=\frac{J}{N}\sum_{j=1}^N{\sin \left( y_j-y_i \right) \cos \left( \theta _j-\theta _i \right) \;,}\\
+        \dot{\theta}_i&=\frac{K}{N}\sum_{j=1}^N{\sin \left( \theta _j-\theta _i \right) \left( \cos \left( x_j-x_i \right) +\cos \left( y_j-y_i \right) \right) \;,}
+    \end{align}
+\end{subequations}
+which loses the spatial repulsion term. 
 
 Swarmalators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
 \begin{subequations}

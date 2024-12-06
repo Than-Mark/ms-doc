@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  6 DEC 2024 22:52
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  6 DEC 2024 23:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -436,7 +436,11 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count307
 \g__pdf_backend_annotation_int=\count308
 \g__pdf_backend_link_int=\count309
-) (./solvable_2D_with_repulsion.aux)
+) (./solvable_2D_with_repulsion.aux
+
+LaTeX Warning: Label `eq:totalDynamics' multiply defined.
+
+)
 \openout1 = `solvable_2D_with_repulsion.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -536,16 +540,19 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [1
 
 ] [2] (./solvable_2D_with_repulsion.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `solvable_2D_with_repulsion.out' has not changed.
 (rerunfilecheck)             Checksum: 2D0AB42E52344A7491F433FA502F433E;91.
  ) 
 Here is how much of TeX's memory you used:
  13046 strings out of 478907
  195884 string characters out of 5866571
- 530971 words of memory out of 5000000
+ 536007 words of memory out of 5000000
  32716 multiletter control sequences out of 15000+600000
  416705 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,11n,77p,387b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,11n,77p,387b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on solvable_2D_with_repulsion.pdf (2 pages).
