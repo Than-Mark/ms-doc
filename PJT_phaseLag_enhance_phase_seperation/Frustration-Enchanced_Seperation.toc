@@ -1,4 +1,5 @@
 \contentsline {section}{\numberline {1}The Model}{2}{section.1}%
 \contentsline {section}{\numberline {2}Frustration-enhanced phase separation}{3}{section.2}%
 \contentsline {section}{\numberline {3}Abstracted to a synchronization problem}{4}{section.3}%
-\contentsline {section}{\numberline {4}Coarse grained equations and phase diagrams}{6}{section.4}%
+\contentsline {subsection}{\numberline {3.1}OA Reduction}{5}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Coarse grained equations and phase diagrams}{8}{section.4}%

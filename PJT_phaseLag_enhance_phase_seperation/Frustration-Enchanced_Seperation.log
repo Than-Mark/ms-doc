@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  27 NOV 2024 19:29
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  18 DEC 2024 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -436,14 +436,7 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count307
 \g__pdf_backend_annotation_int=\count308
 \g__pdf_backend_link_int=\count309
-) (./Frustration-Enchanced_Seperation.aux
-
-LaTeX Warning: Label `eq:dotR' multiply defined.
-
-
-LaTeX Warning: Label `eq:dotTheta' multiply defined.
-
-)
+) (./Frustration-Enchanced_Seperation.aux)
 \openout1 = `Frustration-Enchanced_Seperation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -552,30 +545,21 @@ File: figs/S_l0.15_d0.5_dO1_S.pdf Graphic file (type pdf)
 File: figs/S_l0.15_d0.5_dO2_S.pdf Graphic file (type pdf)
 <use figs/S_l0.15_d0.5_dO2_S.pdf>
  [3]
-
-LaTeX Warning: Reference `eq:lorentzian' on page 4 undefined on input line 149.
-
 File: figs/PurePhase_OrderParameter_R_l9.6_dO1.png Graphic file (type bmp)
 <figs/PurePhase_OrderParameter_R_l9.6_dO1.png>
 File: figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png Graphic file (type bmp)
 <figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png>
-[4] [5] [6] [7] (./Frustration-Enchanced_Seperation.bbl [8]) [9] (./Frustration-Enchanced_Seperation.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+ [4] [5] [6] [7] [8] (./Frustration-Enchanced_Seperation.bbl [9]) [10] (./Frustration-Enchanced_Seperation.aux)
 Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not changed.
-(rerunfilecheck)             Checksum: C8419567C5E313D74F4D5261F3B1FF0D;848.
+(rerunfilecheck)             Checksum: 227244CEC3934FB20D0779312FB729AD;968.
  ) 
 Here is how much of TeX's memory you used:
- 13160 strings out of 478907
- 198659 string characters out of 5866571
- 552497 words of memory out of 5000000
- 32803 multiletter control sequences out of 15000+600000
- 419368 words of font info for 99 fonts, out of 8000000 for 9000
+ 13166 strings out of 478907
+ 198767 string characters out of 5866571
+ 551588 words of memory out of 5000000
+ 32808 multiletter control sequences out of 15000+600000
+ 419376 words of font info for 100 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,11n,77p,878b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Frustration-Enchanced_Seperation.pdf (9 pages).
+Output written on Frustration-Enchanced_Seperation.pdf (10 pages).

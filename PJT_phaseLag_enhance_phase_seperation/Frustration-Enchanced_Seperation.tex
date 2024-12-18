@@ -52,11 +52,12 @@ Swarmalators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and 
 \end{subequations}
 \color{blue}
 Mean-field definition:
-\begin{subequations}
+\begin{subequations} 
     \label{eq:totalDynamicsMeanField}
     \begin{align}
-        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\label{eq:dotR}\;,\\
-        \dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\label{eq:dotTheta}\;,
+        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\;,
+        \\
+        \dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\;,
     \end{align}
 \end{subequations}
 \color{black}
@@ -185,6 +186,8 @@ where $n=1,2,\dots, N$, and $r_{n}^{\pm}\left( t \right)$, $\psi _{n}^{\pm}\left
 \end{figure}
 % #####################################################
 
+\subsection{OA Reduction}
+
 Our starting point is to analyze the critical point for the pulsation of the order parameter.
 In the thermodynamic limit $N\rightarrow \infty$, where $N^{\pm}\rightarrow \infty$. Then
 Eq.~(\ref{eq:multiLayer}) gives rise to the continuity equations
@@ -238,10 +241,91 @@ To streamline the analysis, we express Eq.~(\ref{eq:continuity}) in its complex 
     \end{aligned}
 \end{equation}
 Herein, \enquote{$\bar{\cdot}$} denotes the complex conjugate.
+It is closed by the order parameter,
+\begin{equation}
+    \label{eq:zEqs2a}
+    z^{\pm}\left( t \right) =\int_{-\infty}^{+\infty}{a^{\pm}\left( \omega ,t \right) g^{\pm}\left( \omega \right) \mathrm{d}\omega =}\hat{g}a^{\pm} \left( \omega ,t \right)\;,
+\end{equation}
+where the integral operator $\hat{g}$ is introduced to ease notation.
+
+We aim to obtain the steady solutions to Eq.~(\ref{eq:aDynamics}), specifically where $\dot{a}^{\pm}\left(\omega, t\right)=0$ and $z^{\pm}\left(t\right)=r^{\pm}$. 
+Some calculations give
+\begin{equation}
+    a_{0}^{\pm}\left( \omega \right) =\begin{cases}
+        \frac{\mathrm{i}\Omega +\sqrt{\left( KR^{\pm} \right) ^2-\Omega ^2}}{KR^{\pm}},&		\left| \Omega \right|\leqslant KR^{\pm},\;\\
+        \mathrm{i}\frac{\Omega -\text{sgn} \left( \Omega \right) \sqrt{\Omega ^2-\left( KR^{\pm} \right) ^2}}{KR^{\pm}},&		\left| \Omega \right|>KR^{\pm}\;,
+    \end{cases}
+\end{equation}
+where $R^{\pm}=r^{\pm}+r^{\mp}\mathrm{e}^{\mathrm{i}\alpha_0}$ and $\Omega=\frac{1}{2}K\sin\alpha_0$.  
+In fact, the first part of the resulting expression corresponds to the locked oscillators, and the second one accounts for drafting populations.
+
+We next explore the stability of $a_{0}^{\pm}\left( \omega \right)$ by linearizing Eq.~(\ref{eq:aDynamics}).
+To this end, we introduce the perturbation $a^{\pm}\left( \omega ,t \right) =a_{0}^{\pm}\left( \omega \right) +\varepsilon \eta^{\pm} \left( \omega ,t \right)$, where $0 < \varepsilon \ll 1$ denotes the magnitude of the weak perturbation, and $\eta^{\pm} \left( \omega ,t \right)$ is the perturbed function.
+As a result, the order parameter under the perturbation now becomes
+\begin{equation}
+    z^{\pm}\left( t \right) =r^{\pm}+\varepsilon \hat{g}\eta^{\pm} \left( \omega ,t \right)\;.
+\end{equation}
+Substituting all these terms into Eq.~(\ref{eq:aDynamics}) and neglecting higher-order terms of $\varepsilon$, we obtain
+\begin{equation}
+    \label{eq:etaDynamics}
+    \frac{\partial \eta ^{\pm}}{\partial t}=\nu^{\pm} \left( \omega \right) \eta ^{\pm}+\frac{K}{4}\left[ \hat{g}\eta^{\pm} -\left( a_{0}^{\pm}\left( \omega \right) \right) ^2\hat{g}\bar{\eta}^{\pm} \right] \;,
+\end{equation}
+where the coefficient $\nu \left( \omega \right)$ is
+\begin{equation}
+    \nu ^{\pm}\left( \omega \right) =\text{i}\left( \omega +\frac{K}{2}\sin \alpha _0 \right) -\frac{1}{2}KR^{\pm}a_{0}^{\pm}\left( \omega \right) \;.
+\end{equation}
+
+To ensure clarity and thoroughness, we define the vector $\mathbf{v}=\left( \eta ^+,\bar{\eta}^+,\eta ^-,\bar{\eta}^- \right)^{\top} $. 
+We can then express Eq.~\eqref{eq:etaDynamics} in a compact matrix form.
+\begin{equation}
+    \label{eq:matrixDynamics}
+    \frac{\partial \mathbf{v}}{\partial t}=\mathbf{M}\mathbf{v}+\frac{K}{4}\mathbf{P}\hat{g}\mathbf{v}\;,
+\end{equation}
+where the multiplication matrix is
+\begin{equation}
+    \mathbf{M}=\left[ \begin{matrix}
+        \nu ^+\left( \omega \right)&		0&		0&		0\\
+        0&		\bar{\nu}^+\left( \omega \right)&		0&		0\\
+        0&		0&		\nu ^-\left( \omega \right)&		0\\
+        0&		0&		0&		\bar{\nu}^-\left( \omega \right)\\
+    \end{matrix} \right] \;,
+\end{equation}
+and the coefficient matrix is
+\begin{equation}
+    \mathbf{P}=\left[ \begin{matrix}
+        1&		-\left( a_{0}^{+} \right) ^2&		0&		0\\
+        \left( a_{0}^{+} \right) ^2&		1&		0&		0\\
+        0&		0&		1&		-\left( a_{0}^{-} \right) ^2\\
+        0&		0&		\left( a_{0}^{-} \right) ^2&		1\\
+    \end{matrix} \right] \;.
+\end{equation}
+
+To determine the stability of the fixed point, we let $
+\frac{\partial \mathbf{v}}{\partial t}=\lambda \mathbf{v}
+$ and analyze the eigenvectors of the matrix, which are given by
+\begin{equation}
+    \mathbf{v}=\frac{K}{4}\left( \lambda \mathbf{I}-\mathbf{M} \right) ^{-1}\mathbf{P}\hat{g}\mathbf{v}\;.
+\end{equation}
+Applying the operator $\hat{g}$ to both sides of the equation, we have
+\begin{equation}
+    \label{eq:stability}
+    \left( \mathbf{I}-K\mathbf{J} \right) \hat{g}\mathbf{v}=0\;,
+\end{equation}
+where the matrix $\mathbf{J}$ is defined as
+\begin{equation}
+    \mathbf{J}=\frac{1}{4}\hat{g}\left[ \left( \lambda \mathbf{I}-\mathbf{M} \right) ^{-1}\mathbf{P} \right]\;.
+\end{equation}
+A nontrivial solution to Eq.~(\ref{eq:stability}) is equivalent to the condition $\det \left( \mathbf{I}-K\mathbf{J} \right) =0$. Straightforward calculations yield a group of eigenvalue equations, which are
+
+
+
+
+
+\color{blue}
 
 To close the system, we express the complex order parameter $z^{\pm}\left( t \right)$ in Eq.~(\ref{eq:continuityZ}) by using Cauchy’s residue theorem with analytical continuation of $a^{\pm}\left( \omega ,t \right)$ into the right/left half complex plane for $g^{+}\left(\omega\right)$ and $g^{-}\left(\omega\right)$, respectively. Then we have
 \begin{equation}
-    \label{eq:zEqs2a}
+    % \label{eq:zEqs2a}
     \begin{aligned}
         z^+\left( t \right) &=\int_0^{+\infty}{a^+\left( \omega ,t \right) g^+\left( \omega \right) \mathrm{d}\omega}\\
         &=\lim_{R\rightarrow \infty} \frac{1}{2}\int_{-\mathrm{i}R}^{\mathrm{i}R}{\frac{2}{\pi}\frac{\Delta a^+\left( \mathrm{i}\omega ,t \right)}{\left( \mathrm{i}\omega \right) ^2+\Delta ^2}\mathrm{d}\left( \mathrm{i}\omega \right)}\\
@@ -254,9 +338,11 @@ As a result, the low-dimensional evolution of the order parameter can be obtaine
 \begin{equation}
     \label{eq:zDynamics}
     \begin{aligned}
-        \dot{z}^{\pm}=&z^{\pm}\left( \frac{\text{i}K}{2}\sin \alpha _0 - \Delta \right) +\frac{K}{4}\left( z^{\pm}+z^{\mp}\text{e}^{\text{i}\alpha _0} \right)-\frac{K}{4}\left( z^{\pm} \right) ^2\left( \bar{z}^{\pm}+\bar{z}^{\mp}\text{e}^{-\text{i}\alpha _0} \right) \;.\\
+        \dot{z}^{\pm}=&z^{\pm}\left( \frac{\text{i}K}{2}\sin \alpha _0 - \Delta \right) +\frac{K}{4}\left( z^{\pm}+z^{\mp}\text{e}^{\text{i}\alpha _0} \right)\\
+        &-\frac{K}{4}\left( z^{\pm} \right) ^2\left( \bar{z}^{\pm}+\bar{z}^{\mp}\text{e}^{-\text{i}\alpha _0} \right) \;.\\
     \end{aligned}
 \end{equation}
+
 Then we rewrite the above equation using polar coordinates $z^{\pm}=r^{\pm}\mathrm{e}^{-\mathrm{i}\phi ^{\pm}}$. (The negative sign in the exponent is chosen to ensure that $\rho^{\pm}$ converges to $\delta\left(\theta-\phi^{\pm}\right)$, not $\delta\left(\theta+\phi^{\pm}\right)$ as $t\rightarrow\infty$.) Thus, $\phi^{\pm}$ can be interpreted as the phase of the chirality $\pm$, and $r^{\pm}$ measures the degree of synchronization of the chirality $\pm$. 
 Then Eq.~(\ref{eq:zDynamics}) becomes
 \begin{subequations}
@@ -271,9 +357,12 @@ Introducing $\varphi=\phi^+-\phi^-$, the dynamics of the system can be further s
     \begin{align}
         \dot{r}^+=&-r^+\Delta +K\frac{1-\left( r^+ \right) ^2}{4}\left[ r^++r^-\cos \left( \varphi +\alpha _0 \right) \right] \;,\\
         \dot{r}^-=&-r^-\Delta +K\frac{1-\left( r^- \right) ^2}{4}\left[ r^-+r^+\cos \left( \varphi -\alpha _0 \right) \right] \;,\\
-        \dot{\varphi}=&-Kr^-\frac{1+\left( r^+ \right) ^2}{4r^+}\sin \left( \varphi +\alpha _0 \right)-Kr^+\frac{1+\left( r^- \right) ^2}{4r^-}\sin \left( \varphi -\alpha _0 \right)
+        \dot{\varphi}=&-Kr^-\frac{1+\left( r^+ \right) ^2}{4r^+}\sin \left( \varphi +\alpha _0 \right)\notag\\
+        &-Kr^+\frac{1+\left( r^- \right) ^2}{4r^-}\sin \left( \varphi -\alpha _0 \right)
     \end{align}
 \end{subequations}
+
+\color{black}
 
 \section{\label{sec:analysis}Coarse grained equations and phase diagrams}
 
