@@ -203,7 +203,7 @@ where $\rho ^{\pm}\left( \theta ,\omega ,t \right)$ is the probability density o
 Here, $v^{\pm}\left( \theta ,\omega ,t \right)$ is the velocity field, given by
 \begin{equation}
     \begin{aligned}
-        &v^{\pm}\left( \theta ,\omega ,t \right) =\omega +\frac{K}{2}\sin \alpha _0\\
+        &v^{\pm}\left( \theta ,\omega ,t \right) =\omega -\frac{K}{2}\sin \alpha _0\\
         &+\frac{K}{2}\int{\sin \left( \theta ^{\prime}-\theta \right) \rho ^{\pm}\left( \theta ^{\prime},\omega ^{\prime},t \right) \text{d}\theta ^{\prime}\text{d}\omega ^{\prime}}\\
         &+\frac{K}{2}\int{\sin \left( \theta ^{\prime}-\theta +\alpha _0 \right) \rho ^{\mp}\left( \theta ^{\prime},\omega ^{\prime},t \right) \text{d}\theta ^{\prime}\text{d}\omega ^{\prime}}\;.\\
     \end{aligned}
@@ -215,7 +215,7 @@ Correspondingly, the 1-order parameter defined in Eq.~(\ref{eq:orderParameter}) 
 \end{equation}
 then $v^{\pm}\left( \theta ,\omega ,t \right)$ simplifies to
 \begin{equation}
-v^{\pm}=\omega +\frac{K}{2}\sin \alpha _0+\frac{K}{2}\mathrm{Im}\left[ Z^{\pm}\left( t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] 
+v^{\pm}=\omega -\frac{K}{2}\sin \alpha _0+\frac{K}{2}\mathrm{Im}\left[ Z^{\pm}\left( t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] 
 \end{equation}
 with the mean-field being
 \begin{equation}
@@ -224,7 +224,7 @@ with the mean-field being
 
 To proceed, the probability $\rho ^{\pm}\left( \theta ,\omega ,t \right)$ can be expressed as a Fourier series of the following form
 \begin{equation}
-    \rho ^{\pm}\left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{-\infty}^{+\infty}{a^{\pm} _n\left( \omega ,t \right) \mathrm{e}^{-\mathrm{i}n\theta}}\;,
+    \rho ^{\pm}\left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{-\infty}^{+\infty}{a^{\pm} _n\left( \omega ,t \right) \mathrm{e}^{\mathrm{i}n\theta}}\;,
 \end{equation}
 where $a^{\pm} _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient.
 
@@ -236,8 +236,8 @@ To streamline the analysis, we express Eq.~(\ref{eq:continuity}) in its complex 
 \begin{equation}
     \label{eq:aDynamics}
     \begin{aligned}
-        \dot{a}^{\pm}\left( \omega ,t \right) =&\mathrm{i}a^{\pm}\left( \omega ,t \right) \left( \omega +\frac{K}{2}\sin \alpha _0 \right)\\
-        &+\frac{K}{4}\left[ Z^{\pm}\left( t \right) -\left( a^{\pm}\left( \omega ,t \right) \right) ^2\bar{Z}^{\pm}\left( t \right) \right] \;.
+        \dot{a}^{\pm}\left( \omega ,t \right) =&\mathrm{i}a^{\pm}\left( \omega ,t \right) \left( \omega -\frac{K}{2}\sin \alpha _0 \right)\\
+        &+\frac{K}{4}\left[ Z^{\pm}\left( t \right) -\bar{Z}^{\pm}\left( a^{\pm}\left( \omega ,t \right) \right) ^2\left( t \right) \right] \;.
     \end{aligned}
 \end{equation}
 Herein, \enquote{$\bar{\cdot}$} denotes the complex conjugate.
@@ -251,12 +251,13 @@ where the integral operator $\hat{g}$ is introduced to ease notation.
 We aim to obtain the steady solutions to Eq.~(\ref{eq:aDynamics}), specifically where $\dot{a}^{\pm}\left(\omega, t\right)=0$ and $z^{\pm}\left(t\right)=r^{\pm}$. 
 Some calculations give
 \begin{equation}
+    \label{eq:steadyState}
     a_{0}^{\pm}\left( \omega \right) =\begin{cases}
-        \frac{\mathrm{i}\Omega +\sqrt{\left( KR^{\pm} \right) ^2-\Omega ^2}}{KR^{\pm}},&		\left| \Omega \right|\leqslant KR^{\pm},\;\\
-        \mathrm{i}\frac{\Omega -\text{sgn} \left( \Omega \right) \sqrt{\Omega ^2-\left( KR^{\pm} \right) ^2}}{KR^{\pm}},&		\left| \Omega \right|>KR^{\pm}\;,
+        \frac{\mathrm{i}\Omega +\sqrt{\left( R^{\pm} \right) ^2-\Omega ^2}}{R^{\pm}},&		\left| \Omega \right|\leqslant R^{\pm},\;\\
+        \mathrm{i}\frac{\Omega -\text{sgn} \left( \Omega \right) \sqrt{\Omega ^2-\left( R^{\pm} \right) ^2}}{R^{\pm}},&		\left| \Omega \right|>R^{\pm}\;,\\
     \end{cases}
 \end{equation}
-where $R^{\pm}=r^{\pm}+r^{\mp}\mathrm{e}^{\mathrm{i}\alpha_0}$ and $\Omega=\frac{1}{2}K\sin\alpha_0$.  
+where $R^{\pm}=K\left(r^{\pm}+r^{\mp}\mathrm{e}^{\mathrm{i}\alpha_0}\right)$ and $\Omega=\omega-\frac{1}{2}K\sin\alpha_0$.  
 In fact, the first part of the resulting expression corresponds to the locked oscillators, and the second one accounts for drafting populations.
 
 We next explore the stability of $a_{0}^{\pm}\left( \omega \right)$ by linearizing Eq.~(\ref{eq:aDynamics}).
@@ -316,30 +317,47 @@ where the matrix $\mathbf{J}$ is defined as
     \mathbf{J}=\frac{1}{4}\hat{g}\left[ \left( \lambda \mathbf{I}-\mathbf{M} \right) ^{-1}\mathbf{P} \right]\;.
 \end{equation}
 A nontrivial solution to Eq.~(\ref{eq:stability}) is equivalent to the condition $\det \left( \mathbf{I}-K\mathbf{J} \right) =0$. Straightforward calculations yield a group of eigenvalue equations, which are
+\begin{subequations}
+    \label{eq:eigenvalue}
+    \begin{align}
+        \frac{1}{K}=h_{c}^{\pm}\left( \lambda \right) =\frac{1}{2}\hat{g}\frac{1-\left( \alpha _{0}^{\pm} \right) ^2}{\lambda -\eta \left( \omega \right)}\;,\\
+        \frac{1}{K}=h_{s}^{\pm}\left( \lambda \right) =\frac{1}{2}\hat{g}\frac{1+\left( \alpha _{0}^{\pm} \right) ^2}{\lambda -\eta \left( \omega \right)}\;.
+    \end{align}
+\end{subequations}
 
-
-
-
+The sign of eigenvalue ($\lambda+in \mathbb{R}$) symbols the stability property of partial locking. In other words, it is stable for $\lambda<0$; otherwise, it is unstable. Determining the exact solution of the eigenvalue equation is challenging, nevertheless, some qualitative features of $\lambda$ with respect to $R^{\pm}$ can be inferred from Eqs.~(\ref{eq:eigenvalue}). The first observation is that $h_c^{\pm}(\lambda) > 0$ for $\lambda > 0$ and $\lim_{\lambda \rightarrow +\infty} h_{c}^{\pm}\left( \lambda \right) =0$. Second, it follows from Eq.~(\ref{eq:steadyState}) that
+{
+\small
+\begin{equation}
+    \frac{\mathrm{d} a_{0}^{\pm}}{\mathrm{d}R^{\pm}}=\begin{cases}
+        \frac{1}{\sqrt{\left( R^{\pm} \right) ^2-\omega ^2}}-\frac{\mathrm{i}\Omega +\sqrt{\left( R^{\pm} \right) ^2-\Omega ^2}}{\left( R^{\pm} \right) ^2},&		|\Omega |<R^{\pm},\\
+        \frac{\mathrm{i}\text{sgn}\left(\Omega \right)}{\sqrt{\Omega ^2-\left( R^{\pm} \right) ^2}}-\mathrm{i}\frac{(\Omega +\text{sgn}\left(\Omega \right)\sqrt{\Omega ^2-\left( R^{\pm} \right) ^2})}{\left( R^{\pm} \right) ^2},&		|\Omega |>R^{\pm}.
+    \end{cases}
+\end{equation} 
+}
+It can be verified that
+\begin{equation}
+    \lim_{\lambda \rightarrow 0^+} h_{c}^{\pm}\left( \lambda \right)=\hat{g}\left( \frac{\mathrm{d}a_{0}^{\pm}}{\mathrm{d}R^{\pm}} \right) =\frac{\mathrm{d}}{\mathrm{d}R^{\pm}}\left( \hat{g}a_{0}^{\pm} \right) \;.
+\end{equation}
+Therefore, we have the identity
+\begin{equation}
+    h_{c}^{\pm}\left( 0^+ \right) -\frac{1}{K}=R^{\pm}\frac{\mathrm{d}Q\left( R^{\pm} \right)}{\mathrm{d}R^{\pm}}\;,
+\end{equation}
+where $Q\left( R^{\pm} \right)$ given by the self-consistent equation
+\begin{equation}
+    \frac{1}{K}=Q\left( R^{\pm} \right) =\frac{1}{R^{\pm}}\int_{\left| \Omega \right|<R^{\pm}}{\sqrt{1-\frac{\Omega ^2}{\left( R^{\pm} \right) ^2}}g\left( \omega \right) \mathrm{d}\omega}\;.
+\end{equation}
 
 \color{blue}
 
-To close the system, we express the complex order parameter $z^{\pm}\left( t \right)$ in Eq.~(\ref{eq:continuityZ}) by using Cauchy’s residue theorem with analytical continuation of $a^{\pm}\left( \omega ,t \right)$ into the right/left half complex plane for $g^{+}\left(\omega\right)$ and $g^{-}\left(\omega\right)$, respectively. Then we have
-\begin{equation}
-    % \label{eq:zEqs2a}
-    \begin{aligned}
-        z^+\left( t \right) &=\int_0^{+\infty}{a^+\left( \omega ,t \right) g^+\left( \omega \right) \mathrm{d}\omega}\\
-        &=\lim_{R\rightarrow \infty} \frac{1}{2}\int_{-\mathrm{i}R}^{\mathrm{i}R}{\frac{2}{\pi}\frac{\Delta a^+\left( \mathrm{i}\omega ,t \right)}{\left( \mathrm{i}\omega \right) ^2+\Delta ^2}\mathrm{d}\left( \mathrm{i}\omega \right)}\\
-        &=a^+\left( \mathrm{i}\Delta ,t \right) \;,
-    \end{aligned}
-\end{equation}
-and similarly, $z^-\left( t \right)=a^-\left( \mathrm{i}\Delta ,t \right)$.
+To close the system, we express the complex order parameter $z^{\pm}\left( t \right)$ in Eq.~(\ref{eq:continuityZ}) by using Cauchy’s residue theorem with analytical continuation of $a^{\pm}\left( \omega ,t \right)$ into the right/left half complex plane for $g^{+}\left(\omega\right)$ and $g^{-}\left(\omega\right)$, respectively. Then we have $z^{\pm}=\bar{a}^{\pm}\left( \pm\omega _0+\mathrm{i}\Delta ,t \right) $.
 
 As a result, the low-dimensional evolution of the order parameter can be obtained by letting $\omega =\mathrm{i}\Delta$ and substituting Eq.~(\ref{eq:zEqs2a}) into Eq.~(\ref{eq:aDynamics}), which yields
 \begin{equation}
     \label{eq:zDynamics}
     \begin{aligned}
-        \dot{z}^{\pm}=&z^{\pm}\left( \frac{\text{i}K}{2}\sin \alpha _0 - \Delta \right) +\frac{K}{4}\left( z^{\pm}+z^{\mp}\text{e}^{\text{i}\alpha _0} \right)\\
-        &-\frac{K}{4}\left( z^{\pm} \right) ^2\left( \bar{z}^{\pm}+\bar{z}^{\mp}\text{e}^{-\text{i}\alpha _0} \right) \;.\\
+        \dot{z}^{\pm}=&z^{\pm}\left( \pm \omega _0-\frac{\mathrm{i}K}{2}\sin \alpha _0-\Delta \right)+\frac{K}{4}\left( z^{\pm}+z^{\mp}\mathrm{e}^{-\mathrm{i}\alpha _0} \right)\\
+        &-\frac{K}{4}\left( z^{\pm} \right) ^2\left( \bar{z}^{\pm}+\bar{z}^{\mp}\mathrm{e}^{\mathrm{i}\alpha _0} \right) \;.\\
     \end{aligned}
 \end{equation}
 
@@ -348,17 +366,17 @@ Then Eq.~(\ref{eq:zDynamics}) becomes
 \begin{subequations}
     \small
     \begin{align}
-        \dot{r}^{\pm}&=-r^{\pm}\Delta +K\frac{1 -\left( r^{\pm} \right) ^2}{4}\left[ r^{\pm}+r^{\mp}\cos \left( \phi ^{\pm}-\phi ^{\mp}+\alpha _0 \right) \right] ,\\
-        \dot{\phi}^{\pm}&=-\frac{K}{2}\sin \alpha _0-Kr^{\mp}\frac{1+\left( r^{\pm} \right) ^2}{4r^{\pm}}\sin \left( \phi ^{\pm}-\phi ^{\mp}+\alpha _0 \right) .
+        \dot{r}^{\pm}&=-r^{\pm}\Delta +K\frac{1 -\left( r^{\pm} \right) ^2}{4}\left[ r^{\pm}+r^{\mp}\cos \left( \phi ^{\pm}-\phi ^{\mp}-\alpha _0 \right) \right] ,\\
+        \dot{\phi}^{\pm}&=\pm\omega_0+\frac{K}{2}\sin \alpha _0-Kr^{\mp}\frac{1+\left( r^{\pm} \right) ^2}{4r^{\pm}}\sin \left( \phi ^{\pm}-\phi ^{\mp}-\alpha _0 \right) .
     \end{align}
 \end{subequations}
 Introducing $\varphi=\phi^+-\phi^-$, the dynamics of the system can be further simplified to
 \begin{subequations}
     \begin{align}
-        \dot{r}^+=&-r^+\Delta +K\frac{1-\left( r^+ \right) ^2}{4}\left[ r^++r^-\cos \left( \varphi +\alpha _0 \right) \right] \;,\\
-        \dot{r}^-=&-r^-\Delta +K\frac{1-\left( r^- \right) ^2}{4}\left[ r^-+r^+\cos \left( \varphi -\alpha _0 \right) \right] \;,\\
-        \dot{\varphi}=&-Kr^-\frac{1+\left( r^+ \right) ^2}{4r^+}\sin \left( \varphi +\alpha _0 \right)\notag\\
-        &-Kr^+\frac{1+\left( r^- \right) ^2}{4r^-}\sin \left( \varphi -\alpha _0 \right)
+        \dot{r}^+=&-r^+\Delta +K\frac{1-\left( r^+ \right) ^2}{4}\left[ r^++r^-\cos \left( \varphi -\alpha _0 \right) \right] \;,\\
+        \dot{r}^-=&-r^-\Delta +K\frac{1-\left( r^- \right) ^2}{4}\left[ r^-+r^+\cos \left( \varphi +\alpha _0 \right) \right] \;,\\
+        \dot{\varphi}=&2\omega_0-Kr^-\frac{1+\left( r^+ \right) ^2}{4r^+}\sin \left( \varphi -\alpha _0 \right)\notag\\
+        &-Kr^+\frac{1+\left( r^- \right) ^2}{4r^-}\sin \left( \varphi +\alpha _0 \right)
     \end{align}
 \end{subequations}
 

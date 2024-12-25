@@ -115,10 +115,10 @@ where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the prod
 \subsubsection{Chemotactic Lotka-Volterra dynamics}
 \begin{subequations}
     \begin{align}
-        \dot{\mathbf{r}}_{i}^{s}&=v\mathbf{p}\left( \theta _{i}^{s} \right)\;,\\
-        \dot{\theta}_{i}^{s}&=\alpha _s\mathbf{p}\left( \theta _{i}^{s} \right) \times \nabla c_s\;,\\
-        \dot{c}_1&=D_1\nabla ^2c_1+c_1\left( k_1-k_2c \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\dot{\mathbf{r}}_{i}^{1} \right)}\;,\\
-        \dot{c}_2&=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\dot{\mathbf{r}}_{i}^{2} \right)}\;.
+        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{s\in \left\{ 1,2 \right\}}{\sum_{j=1}^N{\frac{H\left( r_c - \left| \mathbf{r}_{j}^{s}-\mathbf{r}_{i}^{1,2} \right| \right)}{\left| \mathbf{r}_{j}^{s}-\mathbf{r}_{i}^{1,2} \right|^{\beta}}}}\;,\\
+        &\dot{\theta}_{i}^{1,2}=\alpha _{1,2}\mathbf{p}\left( \theta _{i}^{1,2} \right) \times \nabla c_{1,2}\;,\\
+        &\dot{c}_1=D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
+        &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;.}
     \end{align}
 \end{subequations}
 
