@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  25 DEC 2024 19:49
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  29 DEC 2024 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,27 +549,14 @@ File: figs/PurePhase_OrderParameter_R_l9.6_dO1.png Graphic file (type bmp)
 <figs/PurePhase_OrderParameter_R_l9.6_dO1.png>
 File: figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png Graphic file (type bmp)
 <figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png>
- [4] [5] [6]
-
-LaTeX Warning: Reference `eq:eigenvalue' on page 7 undefined on input line 328.
-
-
-LaTeX Warning: Reference `eq:steadyState' on page 7 undefined on input line 328.
-
-[7] [8] [9] (./Frustration-Enchanced_Seperation.bbl) [10] (./Frustration-Enchanced_Seperation.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+ [4] [5] [6] [7] [8] [9] (./Frustration-Enchanced_Seperation.bbl) [10] (./Frustration-Enchanced_Seperation.aux)
 Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not changed.
 (rerunfilecheck)             Checksum: 227244CEC3934FB20D0779312FB729AD;968.
  ) 
 Here is how much of TeX's memory you used:
  13171 strings out of 478907
  198882 string characters out of 5866571
- 552588 words of memory out of 5000000
+ 551670 words of memory out of 5000000
  32811 multiletter control sequences out of 15000+600000
  419384 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
