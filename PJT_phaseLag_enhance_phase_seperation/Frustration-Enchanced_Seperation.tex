@@ -30,7 +30,9 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Enhancement of Phase Separation in Swarmalators with Chirality-induced Frustration}}
+\definecolor{darkGreen}{RGB}{0, 176, 80}
+
+\title{\textbf{Enhancement of Demixing in Swarmalators with Chirality-induced Frustration}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -39,40 +41,46 @@
 
 \tableofcontents
 
-\newpage
+\ \newline
+\color{darkGreen}
+    
+    * All green parts are the parts are the parts that were tired but did not work.
+\color{black}
+
 \section{\label{sec:model}The Model}
 
 Swarmalators have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
-\begin{subequations}
-    \label{eq:totalDynamics}
-    \begin{align}
-        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\label{eq:dotR}\;,\\
-        \dot{\theta}_i&=\omega _i+K\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\label{eq:dotTheta}\;,
-    \end{align}
-\end{subequations}
-\color{blue}
-Mean-field definition:
 \begin{subequations} 
     \label{eq:totalDynamicsMeanField}
     \begin{align}
-        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\;,
+        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\;\label{eq:dotR},
         \\
-        \dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\;,
+        \dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha _{ij} \right) -\sin \alpha _{ij} \right]}\;\label{eq:dotTheta},
     \end{align}
 \end{subequations}
-\color{black}
 for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$, which means each swarmalator rotates with a constant speed $v$ in the direction of its instantaneous phase $\theta_i (t)$. As per Eq.~(\ref{eq:dotTheta}), the sum runs over neighbors within a coupling radius $d_0$ around swarmalator $i$:
 \begin{equation}
     A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
 \end{equation}
 $K$ is the coupling strength, and $\omega_i$ is the natural frequency of the $i$-th swarmalator. 
 This means that a swarmalator will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K=0$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th swarmalator. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the swarmalator in space. 
-Here, we consider the natural frequencies of swarmalators to be distributed in a standard Lorentzian form:
+We will study swarmalators including two types of chiralities with both positive and negative natural frequencies uniformly distributed in two symmetric regimes as 
 \begin{equation}
-    \label{eq:lorentzian}
-    g\left( \omega \right) =\frac{1}{\pi}\frac{\Delta}{\omega ^2+\Delta ^2}\;,
+    g_U^{D}\left( \omega ;\mu,\sigma\right) 
+    =\frac{1}{2}\left [
+    g_U\left( \omega ;-\mu,\sigma\right) + 
+    g_U\left( \omega ; \mu,\sigma\right) \right ].
+    \label{eq:uniform2}
 \end{equation}
-where $\Delta$ is the half-width at half-maximum of the distribution. The max density of the distribution is at $\omega=0$, and the distribution is symmetric about it, which is the most prone situation to chiral mixing.
+where $g_U\left( \omega ;\mu ,\sigma \right)$ is the uniform distribution:
+\begin{equation}
+    g_U\left( \omega ;\mu ,\sigma \right) =\begin{cases}
+	\frac{1}{\sigma},&		\omega _{\min}\leqslant \omega \leqslant \omega _{\max}\\
+	0,&		\mathrm{otherwise}\\
+\end{cases}\;.
+\label{eq:uniform}
+\end{equation}
+Here $\sigma = \omega_{\max}-\omega _{\min}$ is the natural-frequency span, and $\mu = (\omega_{\max}+\omega _{\min})/2$ is the average.
 
 Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring swarmalators, which is defined as:
 \begin{equation}
@@ -83,8 +91,6 @@ Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring swa
 \end{equation}
 When $\alpha_0=0$, the dynamics reduces to the normal chiral model.
 
-For simplicity, we assume that swarmalators are initially distributed uniformly in a two-dimensional $L\times L$ square with periodic boundary conditions. When two swarmalators are on opposite sides of the square, the absolute value of the difference between at least one of their coordinates is larger than $L/2$. In this case, we take the minimum distance between them, which is the relative distance between the two points in the periodic boundary conditions.
-
 Some order parameters can be introduced to measure the level of spatiotemporal coordination among swarmalators and distinguish the different collective states of the system. Firstly, the usual order parameter to measure the chiral phase separation among swarmalators can be defined as:
 \begin{equation}
     S\left( t \right) =\frac{1}{N}\sum_{i=1}^N{\frac{\sum_{j\in A_i}{H\left( \omega _i\omega _j \right)}}{\left| A_i\left( t \right) \right|}}\;,
@@ -92,54 +98,49 @@ Some order parameters can be introduced to measure the level of spatiotemporal c
 where $H\left( x \right) =\left( x>0 \right)$ is the Heaviside step function. $S\left( t \right)$ is the fraction of the pairs of neighboring swarmalators with the same chirality. When $S\left( t \right)=1$, all the neighboring pairs of swarmalators have the same chirality, and the system is in a completely phase-separated state. When $S\left( t \right)< 1$, the system is in a mixed state.
 
 We conducted numerical simulations to investigate the performance and characteristics of our system under various conditions.
-All the numerical simulations of the model Eq.~(\ref{eq:totalDynamics}) were run on Python using Euler integration with box size of $L=10$, population sizes of $N=500, 1000$ for single/double-chiral swarmalators, respectively, maximum and minimum absolute values of natural frequencies $\omega_{\max}=3$, $\omega_{\min}=1$, coupling strength $\lambda$ in $\left[ 0.01, 0.1 \right] \cup \left[ 0.1, 1 \right]$ with step length $0.1$, $0.05$, respectively, action radius of $d_0$ in $\left[ 0.1, 1 \right] \cup \left[ 1, 2 \right]$ with step length $0.05$, $0.5$, respectively, a time step $\Delta t=0.01$, and total number of iterations of $T=60000$. Unless otherwise stated, each data point of order parameters $R$, $R_c$ and $N_r$ was collected by averaging last 1000 time steps of the simulation to discard the transients.
+For simplicity, we assume that swarmalators are initially distributed uniformly in a two-dimensional $L\times L$ square with periodic boundary conditions.
+All the numerical simulations of the model Eq.~(\ref{eq:totalDynamicsMeanField}) were run on Python using Euler integration with box size of $L=10$, population sizes of $N=1000$, natural-frequency span $\sigma=1, 2$, minimal absolute value of frequencies $\omega_{\min}$ in $\left[ 0.1, 5 \right]$, action radius of $d_0=1$, a time step $\Delta t=0.01$, and total number of iterations of $T=30000$. 
+Unless otherwise stated, each data point of order parameters $R$ and $S$ was collected by averaging last 1000 time steps of the simulation to discard the transients.
 
-\section{\label{sec:behaviors}Frustration-enhanced phase separation}
+\newpage
+\section{\label{sec:behaviors}Frustration-enhanced demixing}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/S_l0.15_d0.5_dO2_S.pdf}
+    \caption{The order parameter $S$ v.s. time of the system with different natural frequency differences $\Delta \omega$ and $\omega_{\min}=0.1$}
+    % \label{fig:phaseSeparation}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figs/centersX.png}
+    \includegraphics[width=1\textwidth]{figs/centersY.png}
+    \includegraphics[width=1\textwidth]{figs/3d2.png}
+    \caption{The spatial distribution of real rotation centers}
+\end{figure}
+
+\newpage
+\section{Phase diagrams and critical frustration}
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{figs/pd1.png}
+        \includegraphics[width=1\textwidth]{figs/phaseDiagram1.png}
         \caption{$\Delta \omega=1$}
         \label{fig:phaseDiagramDeltaOmega1}
     \end{subfigure}
     \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=1\textwidth]{figs/pd2.png}
+        \includegraphics[width=1\textwidth]{figs/phaseDiagram2.png}
         \caption{$\Delta \omega=2$}
         \label{fig:phaseDiagramDeltaOmega2}
     \end{subfigure}
-    \caption{Phase diagrams of the system with different natural frequency differences $\Delta \omega$. The color represents the order parameter $S$ of the system.}
+    \caption{Phase diagrams of the system. The color represents the order parameter $S$ of the system.}
     \label{fig:phaseDiagrams}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{figs/S_l0.15_d0.5_dO1_S.pdf}
-        \caption{$\Delta \omega=1$}
-        % \label{fig:phaseSeparation_singleChirality}
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=1\textwidth]{figs/S_l0.15_d0.5_dO2_S.pdf}
-        \caption{$\Delta \omega=2$}
-        % \label{fig:phaseSeparation_doubleChirality}
-    \end{subfigure}
-    \caption{The order parameter $S$ v.s. time of the system with different natural frequency differences $\Delta \omega$ and $\omega_{\min}=0.1$}
-    % \label{fig:phaseSeparation}
-\end{figure}
-
-\newpage
-\section{Abstracted to a synchronization problem}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO1.png}
-%     \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta \omega=1$ and $\omega_{\min}=0.1$}
-% \end{figure}
-
-The dynamics of the system (\ref{eq:totalDynamics}) in the ISS can be abstracted as a synchronization problem in multilayer networks. This problem can be described by the following equations:
+The dynamics of the system (\ref{eq:totalDynamicsMeanField}) in the ISS can be abstracted as a synchronization problem in multilayer networks. This problem can be described by the following equations:
 \begin{equation}
     \label{eq:multiLayer}
     \begin{aligned}
@@ -147,22 +148,16 @@ The dynamics of the system (\ref{eq:totalDynamics}) in the ISS can be abstracted
         &+\frac{K}{N}\sum_{j=1}^{_{N^{\mp}}}{\left[ \sin \left( \theta _{j}^{\mp}-\theta _{i}^{\pm}+\alpha _0 \right) -\sin \alpha _0 \right]}\;,
     \end{aligned}
 \end{equation}
-where $N^{\pm}=N/2$ is the numbers of swarmalators with positive and negative chirality, respectively. The first term in Eq.~(\ref{eq:multiLayer}) represents the intra-layer coupling between swarmalators with the same chirality, and the second term represents the inter-layer coupling between swarmalators with different chiralities. According to the definition of $g\left(\omega\right)$ in Eq.~(\ref{eq:lorentzian}), $\omega^{\pm}_i$ here follows the half-Lorentzian distribution:
-\begin{equation}
-    g^{+}\left( \omega \right) =\begin{cases}
-        \frac{2}{\pi}\frac{\Delta}{\omega ^2+\Delta ^2},&		\omega \geqslant 0\\
-        0,&		\mathrm{otherwise}\\
-    \end{cases}
-\end{equation}
-and similarly for $g^{-}\left( \omega \right)$, replacing \enquote{$\omega \geqslant 0$} with \enquote{$< 0$}.
+where $N^{\pm}=N/2$ is the numbers of swarmalators with positive and negative chirality, respectively. 
+Each layer $\pm$ represents the swarmalators with the same chirality, and the second, third terms in Eq.~(\ref{eq:multiLayer}) describe the intralayer and interlayer interactions, respectively.
 
 To quantify the inter-layer coherence of the system, it is convenient to define the generalized complex-valued
 order parameters, i.e.,
 \begin{equation}
     \label{eq:orderParameter}
-    z_{n}^{\pm}\left( t \right) =r_{n}^{\pm}\left( t \right) \text{e}^{\text{i}\psi _{n}^{\pm}\left( t \right)}=\frac{1}{N}\sum_{j=1}^N{\text{e}^{\text{i}n\theta _{j}^{\pm}\left( t \right)}}\;,
+    Z^{\pm}\left( t \right) =R^{\pm}\left( t \right) \text{e}^{\text{i}\psi^{\pm}\left( t \right)}=\frac{1}{N}\sum_{j=1}^N{\text{e}^{\text{i}\theta _{j}^{\pm}\left( t \right)}}\;,
 \end{equation}
-where $n=1,2,\dots, N$, and $r_{n}^{\pm}\left( t \right)$, $\psi _{n}^{\pm}\left( t \right)$ are the amplitudes and arguments of the $n$-order parameter.
+where $n=1,2,\dots, N$, and $r^{\pm}\left( t \right)$, $\psi ^{\pm}\left( t \right)$ are the amplitudes and arguments of the $n$-order parameter.
 
 % #####################################################
 \begin{subequations}
@@ -175,17 +170,27 @@ where $n=1,2,\dots, N$, and $r_{n}^{\pm}\left( t \right)$, $\psi _{n}^{\pm}\left
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figs/PurePhase_OrderParameter_R_l9.6_dO1.png}
-    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\Delta =1$}
+    \includegraphics[width=1\textwidth]{figs/OrderParameter_R_l9.6_dO2.png}
+    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the oscillator system with $\sigma =2$}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.45\textwidth]{figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png}
-    \caption{The order parameter $R$ v.s. $\alpha_0$ and effective frequency $\left<\dot{\theta}_i\right>$ of the swarmalator system with $\Delta =1$}
-\end{figure}
+Let $\theta _{i}^{\pm}\left( t \right) =\theta ^{\pm}$ and introduce $\Delta \theta=\theta^{+}-\theta^{-}$, $\Delta \omega=\mu^{+}-\mu^{-}$, the phase locking dynamics of two layers can be described by the following equations:
+\begin{equation}
+    \label{eq:phaseLocking}
+    \Delta \dot{\theta}=\Delta \omega -K\sin \left( \theta ^+-\theta ^- \right) \cos \alpha _0\;.
+\end{equation}
+When $K^{-1}\Delta \omega \leqslant 1$, Eq.~(\ref{eq:phaseLocking}) has fixed points solutions $\Delta \theta =\arcsin \left( K\sin \alpha _0\Delta \omega \right)$, which means the two layers are phase-locked. 
+When $K^{-1}\Delta \omega > 1$, the two layers are not phase-locked, and the phase difference $\Delta \theta$ will drift with time. Therefore, the critical frustration $\alpha _0$ can be driven by the natural frequency difference $\Delta \omega$ and coupling strength $K$ as
+\begin{equation}
+    \label{eq:criticalFrustration}
+    \alpha _0=\arccos \frac{\left| \Delta \omega \right|}{K}\;.
+\end{equation}
+The critical line of the phase separation is shown in Fig.~\ref{fig:phaseDiagrams}. The critical frustration $\alpha _0$ descends with the minimal natural frequency $\Delta \omega$ increasing until the fixed point solution of Eq.~(\ref{eq:phaseLocking}) is absent.
+
+
 % #####################################################
 
+\color{darkGreen}
 \subsection{OA Reduction}
 
 Our starting point is to analyze the critical point for the pulsation of the order parameter.
@@ -348,8 +353,6 @@ where $Q\left( R^{\pm} \right)$ given by the self-consistent equation
     \frac{1}{K}=Q\left( R^{\pm} \right) =\frac{1}{R^{\pm}}\int_{\left| \Omega \right|<R^{\pm}}{\sqrt{1-\frac{\Omega ^2}{\left( R^{\pm} \right) ^2}}g\left( \omega \right) \mathrm{d}\omega}\;.
 \end{equation}
 
-\color{blue}
-
 To close the system, we express the complex order parameter $z^{\pm}\left( t \right)$ in Eq.~(\ref{eq:continuityZ}) by using Cauchy’s residue theorem with analytical continuation of $a^{\pm}\left( \omega ,t \right)$ into the right/left half complex plane for $g^{+}\left(\omega\right)$ and $g^{-}\left(\omega\right)$, respectively. Then we have $z^{\pm}=\bar{a}^{\pm}\left( \pm\omega _0+\mathrm{i}\Delta ,t \right) $.
 
 As a result, the low-dimensional evolution of the order parameter can be obtained by letting $\omega =\mathrm{i}\Delta$ and substituting Eq.~(\ref{eq:zEqs2a}) into Eq.~(\ref{eq:aDynamics}), which yields
@@ -380,11 +383,9 @@ Introducing $\varphi=\phi^+-\phi^-$, the dynamics of the system can be further s
     \end{align}
 \end{subequations}
 
-\color{black}
-
 \section{\label{sec:analysis}Coarse grained equations and phase diagrams}
 
-We begin with Eq.~(\ref{eq:totalDynamics}), replacing the finite coupling distance alignment interaction with a pseudopotential (the '$\delta$'-interaction). This substitution is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. The pseudopotential is defined as:
+We begin with Eq.~(\ref{eq:totalDynamicsMeanField}), replacing the finite coupling distance alignment interaction with a pseudopotential (the '$\delta$'-interaction). This substitution is justified when the interaction is sufficiently short-ranged, making the specific shape of the associated interaction potential irrelevant to the dynamics of many swarmalators. The pseudopotential is defined as:
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{\pm}=v\mathbf{p}\left( \theta _{i}^{c} \right) \;,\\
@@ -399,7 +400,7 @@ Then following \cite{David_S_Dean_1996} we derive a continuum equation of motion
     \rho ^{\pm}\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}{\rho _{i}^{\pm}\left( \mathbf{r},\theta ,t \right)}\;,
 \end{equation}
 where $\rho _{i}^{\pm}\left( \mathbf{r},\theta ,t \right) =\delta \left( \mathbf{r}_{i}^{\pm}\left( t \right) -\mathbf{r} \right) \delta \left( \theta _{i}^{\pm}\left( t \right) -\theta \right)$ is the probability density of finding $i$-th swarmalator at position $\mathbf{r}$ with phase $\theta$ and chirality $+$ or $-$ at time $t$.
-Since the deterministic dynamical equation Eq.~ (\ref{eq:totalDynamics}) conserves the number of oscillators with a given natural frequency over time, the distribution function evolves according to a continuity equation of the following form:
+Since the deterministic dynamical equation Eq.~ (\ref{eq:totalDynamicsMeanField}) conserves the number of oscillators with a given natural frequency over time, the distribution function evolves according to a continuity equation of the following form:
 \begin{equation}
     \frac{\partial \rho _{i}^{\pm}}{\partial t}=-\nabla \cdot \left( \rho _{i}^{\pm}v_{\mathbf{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _{i}^{\pm}v_{\theta}^{\pm ,i} \right) \;.
     \label{eq:singleContinuity}
@@ -487,6 +488,8 @@ where $a^{\pm}=2\left( K\rho ^{\mp}\sin \alpha _0-\bar{\omega}^{\pm} \right) $. 
         &\frac{K}{2}\varrho _{0}^{\pm}\left( \varrho _{1}^{\pm}+\mathrm{e}^{\mathrm{i}\alpha _0}\varrho _{1}^{\mp} \right)\\
     \end{aligned}
 \end{equation}
+
+\color{black}
 
 \bibliography{ref}
 

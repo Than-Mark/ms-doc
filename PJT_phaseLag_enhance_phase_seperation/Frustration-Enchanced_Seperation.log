@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  29 DEC 2024 10:25
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  2 JAN 2025 21:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -439,31 +439,31 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 ) (./Frustration-Enchanced_Seperation.aux)
 \openout1 = `Frustration-Enchanced_Seperation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 38.
  (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-Package hyperref Info: Link coloring ON on input line 36.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+Package hyperref Info: Link coloring ON on input line 38.
  (e:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -473,9 +473,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count310
 )
-LaTeX Info: Redefining \ref on input line 36.
-LaTeX Info: Redefining \pageref on input line 36.
-LaTeX Info: Redefining \nameref on input line 36.
+LaTeX Info: Redefining \ref on input line 38.
+LaTeX Info: Redefining \pageref on input line 38.
+LaTeX Info: Redefining \nameref on input line 38.
  (./Frustration-Enchanced_Seperation.out) (./Frustration-Enchanced_Seperation.out)
 \@outlinefile=\write3
 \openout3 = `Frustration-Enchanced_Seperation.out'.
@@ -518,15 +518,15 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
  (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 41.
  (e:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (./Frustration-Enchanced_Seperation.toc)
@@ -536,30 +536,32 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [1
 
 ] [2]
-File: figs/pd1.png Graphic file (type bmp)
-<figs/pd1.png>
-File: figs/pd2.png Graphic file (type bmp)
-<figs/pd2.png>
-File: figs/S_l0.15_d0.5_dO1_S.pdf Graphic file (type pdf)
-<use figs/S_l0.15_d0.5_dO1_S.pdf>
 File: figs/S_l0.15_d0.5_dO2_S.pdf Graphic file (type pdf)
 <use figs/S_l0.15_d0.5_dO2_S.pdf>
- [3]
-File: figs/PurePhase_OrderParameter_R_l9.6_dO1.png Graphic file (type bmp)
-<figs/PurePhase_OrderParameter_R_l9.6_dO1.png>
-File: figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png Graphic file (type bmp)
-<figs/MeanFieldChiralInducedPhaseLag_OrderParameter_R_l9.6_d1_dO1_rS10.png>
- [4] [5] [6] [7] [8] [9] (./Frustration-Enchanced_Seperation.bbl) [10] (./Frustration-Enchanced_Seperation.aux)
+File: figs/centersX.png Graphic file (type bmp)
+<figs/centersX.png>
+File: figs/centersY.png Graphic file (type bmp)
+<figs/centersY.png>
+File: figs/3d2.png Graphic file (type bmp)
+<figs/3d2.png>
+ [3] [4]
+File: figs/phaseDiagram1.png Graphic file (type bmp)
+<figs/phaseDiagram1.png>
+File: figs/phaseDiagram2.png Graphic file (type bmp)
+<figs/phaseDiagram2.png>
+File: figs/OrderParameter_R_l9.6_dO2.png Graphic file (type bmp)
+<figs/OrderParameter_R_l9.6_dO2.png>
+ [5] [6] [7] [8] [9] [10] (./Frustration-Enchanced_Seperation.bbl) [11] (./Frustration-Enchanced_Seperation.aux)
 Package rerunfilecheck Info: File `Frustration-Enchanced_Seperation.out' has not changed.
-(rerunfilecheck)             Checksum: 227244CEC3934FB20D0779312FB729AD;968.
+(rerunfilecheck)             Checksum: 6845E5333C67CFD7C8EC79A94862C934;925.
  ) 
 Here is how much of TeX's memory you used:
- 13171 strings out of 478907
- 198882 string characters out of 5866571
- 551670 words of memory out of 5000000
- 32811 multiletter control sequences out of 15000+600000
+ 13180 strings out of 478907
+ 198658 string characters out of 5866571
+ 553747 words of memory out of 5000000
+ 32819 multiletter control sequences out of 15000+600000
  419384 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,11n,77p,878b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,11n,77p,759b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Frustration-Enchanced_Seperation.pdf (10 pages).
+Output written on Frustration-Enchanced_Seperation.pdf (11 pages).
