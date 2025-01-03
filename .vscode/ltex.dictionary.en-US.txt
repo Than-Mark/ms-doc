@@ -2,3 +2,5 @@ Chemotactic
 Lotka-Volterra
 swarmalators
 chiralities
+chemotactic
+Eq
