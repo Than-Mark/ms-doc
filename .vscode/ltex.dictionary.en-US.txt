@@ -4,3 +4,6 @@ swarmalators
 chiralities
 chemotactic
 Eq
+spatiotemporal
+demixing
+Swarmalators
