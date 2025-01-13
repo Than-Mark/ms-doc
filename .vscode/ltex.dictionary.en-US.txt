@@ -7,3 +7,5 @@ Eq
 spatiotemporal
 demixing
 Swarmalators
+Yichen
+swarmalator

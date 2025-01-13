@@ -115,13 +115,13 @@ where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the prod
 \subsubsection{Chemotactic Lotka-Volterra dynamics}
 \begin{subequations}
     \begin{align}
-        &\mathbf{\dot{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{s\in \left\{ 1,2 \right\}}{\sum_{j=1}^N{\frac{H\left( r_c-\left| \mathbf{r}_{j}^{s}-\mathbf{r}_{i}^{1,2} \right| \right)}{\left| \mathbf{r}_{j}^{s}-\mathbf{r}_{i}^{1,2} \right|^{\beta}}}}\;,\\
+        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\frac{1}{\left| \mathbf{r}_j-\mathbf{r}_{i}^{1,2} \right|^{\beta}}\;,}\\
         &\dot{\theta}_{i}^{1,2}=\alpha _{1,2}\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) \;,\\
         &\dot{c}_1=D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right)}\;,\\
-        &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right)}\;,\\
+        &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right)}\;,
     \end{align}
 \end{subequations}
-where $\varphi _{c_{1,2}}=\arctan \left( \frac{\partial _yc_{1,2}}{\partial _xc_{1,2}} \right) $
+where $\varphi _{c_{1,2}}=\arctan \left( \frac{\partial _yc_{1,2}}{\partial _xc_{1,2}} \right) $ and $A_{i}^{1,2}=\left\{ j\mid r_c\geqslant \left| \mathbf{r}_j-\mathbf{r}_{i}^{1,2} \right| \right\}$.
 
 
 \section{Short format coarse graining}
@@ -219,7 +219,7 @@ Comparing equations \eqref{eq:arbitraryFunctionDt1} and \eqref{eq:arbitraryFunct
     \label{eq:continuityEquation}
     \frac{\partial \rho _i\left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho _i\left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right)\;.
 \end{equation}
-We emphasize that this argument is standard and the only subtlety is that we have not carried out any thermal averaging at this point. Summing equation \eqref{eq:continuityEquation} over the $i$ and using the definition of the density $\rho$ we obtain
+We emphasize that this argument is standard, and the only subtlety is that we have not carried out any thermal averaging at this point. Summing equation \eqref{eq:continuityEquation} over the $i$ and using the definition of the density $\rho$ we obtain
 \begin{equation}
     \frac{\partial \rho \left( \mathbf{r},\theta ,\omega ,t \right)}{\partial t}=-\nabla \cdot \left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \mathbf{\dot{r}} \right) -\frac{\partial}{\partial \theta}\left( \rho \left( \mathbf{r},\theta ,\omega ,t \right) \dot{\theta} \right)\;.
 \end{equation}
