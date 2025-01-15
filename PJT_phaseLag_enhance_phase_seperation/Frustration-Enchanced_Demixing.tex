@@ -87,7 +87,7 @@ Additionally, $\alpha_{ij}$ is the phase frustration between two neighboring swa
     \end{cases}
 \end{equation}
 When $\alpha_0=0$, the dynamics reduces to the normal chiral model \cite{LU2025115794}. 
-The counter term $\sin\alpha_{ij}$ is introduced to ensure that frustration only interferes with the inter-chiral coupling without changing the symbol of natural frequency. 
+The counter term $\sin\alpha_{ij}$ is introduced to ensure that frustration only interferes with the inter-chiral coupling without changing the sign of natural frequency. 
 
 Some order parameters can be introduced to measure the level of spatiotemporal coordination among swarmalators and distinguish the different collective states of the system. 
 Firstly, an order parameter to measure the chiral demixing among swarmalators can be defined as:
@@ -123,21 +123,49 @@ For simplicity, we assume that swarmalators are initially distributed uniformly 
 All the numerical simulations of the model Eq.~(\ref{eq:totalDynamicsMeanField}) were run on Python using Euler integration with box size of $L=7$, population sizes of $N=1000$, natural-frequency span $\sigma=1$, minimal absolute value of frequencies $\omega_{\min}$ in $\left[ 10^{-3}, 3 \right]$, and coupling radius of $d_0=1$. 
 Unless otherwise stated, each data point of order parameters was collected by averaging last 1000 time steps of the simulation to discard the transients.
 
-\section{\label{sec:behaviors}Frustration-enhanced demixing}
-
-Swarmalators with inter-chiral frustration can significantly enhance the chiral demixing of the system, both during the transient and in the steady state. 
-The spatial distribution of the swarmalators is shown in Fig.~\ref{fig:snapshots} by modulating the minimal frequencies $\omega_{\min}$ and phase frustrations $\alpha_0$.
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/snapshots.pdf}
     \caption{
         \label{fig:snapshots} Snapshots of the spatial distribution for different minimal frequency $\omega_{\min}$ and phase frustration $\alpha_0$. 
-        Two types of chiral swarmalators are represented by red ($\omega_i>0$) and blue ($\omega_i<0$) arrows, respectively.
-        The position and direction of the arrows represent the spatial position and phase of the swarmalators, respectively.
+        Two types of chiral swarmalators are represented by red ($\omega_i$>0) and blue ($\omega_i$<0) arrows, respectively.
+        The position and direction of the arrows represent the spatial position and phase of the swarmalators, respectively. The swarmalators with neighbors of opposite chirality are marked with a gray background.
     }
 \end{figure*}
 
-To further investigate the chiral demixing of the system, we calculated the instantaneous rotational centers $\mathbf{c}_i\left(t\right)=\left(X_i\left(t\right), Y_i\left(t\right)\right)$, which is given by
+\begin{figure*}
+    \includegraphics[width=\textwidth]{./figs/centersScatterXY.png}
+    \caption{
+        \label{fig:centersScatterXY} 
+        Demixing behaviors of the system with different phase frustrations $\alpha_0$: \textbf{(a, c, e)}, $\alpha_0=0$; \textbf{(b, d, f)}, $\alpha_0=-0.5\pi$ and $\omega_{\min}=1.1$.
+        \textbf{(a, b)}, scatter plot of the instantaneous rotational centers of swarmalators. The color of the dots denotes the corresponding natural frequency.
+        \textbf{(c, d)}, the time evolution of the distance between like/opposite chirality centers.
+        \textbf{(e, f)}, the time evolution of the standard deviation of the distance between like chirality centers. 
+    }
+\end{figure*}
+
+\begin{figure*}
+    \includegraphics[width=0.85\textwidth]{./figs/distancesVsAlpha.pdf}
+    \caption{
+        \label{fig:distancesVsAlpha} 
+        The mean and standard deviation of the distance between centers versus phase frustration $\alpha_0$.
+        \textbf{(a)}, the distance between centers of neighboring swarmalators versus $\alpha_0$.
+        \textbf{(b)}, the standard deviation of distance between centers of neighboring swarmalators versus $\alpha_0$.
+        All data points are averaged over different initial conditions for $\omega_{\min}=10^{-3}$. (error-bars representing the standard deviation).
+    }
+\end{figure*}
+
+\section{\label{sec:behaviors}Frustration-enhanced demixing}
+
+Swarmalators with inter-chiral frustration can significantly enhance the chiral demixing of the system, both during the transient and in the steady state. 
+The spatial distribution of the swarmalators is shown in Fig.~\ref{fig:snapshots} by modulating the minimal frequencies $\omega_{\min}$ and phase frustrations $\alpha_0$.
+Mixing state is observed when the minimal frequency $\omega_{\min}l\ll1$ and phase frustration $\left|\alpha_0\right|\ll 1$ (see the snapshots (b-d, h) of Fig.~\ref{fig:snapshots}), as the phase frustration is not strong enough to interfere with the inter-chiral coupling. 
+When the minimal frequency $\omega_{\min}$ is increased, the difference in natural frequencies between two chiral substances becomes significant, and the system will phase separate into two clusters with the same chirality, which can be regarded as the self-organized phase separation of the system. 
+As an external interference, the phase separation is more pronounced when the phase frustration $\alpha_0$ is increased, as shown in the snapshots (a, e, f, j), and this effect can also be observed for extremely small frequency differences, which is illustrated in the first row of Fig.~\ref{fig:snapshots}. Additionally, the sign of the frustration, $\text{sgn}\alpha_0$, can also affect the spatial scale of the clusters.
+When the phase frustration $\alpha_0$ is positive, clusters with positive chirality are more compact, whereas clusters with negative chirality tend to be more dispersed, as illustrated in snapshots (a, f). In contrast, when the phase frustration $\alpha_0$ is negative, the scale of two chirality clusters is reversed, as shown in snapshots (e, j).
+
+
+To further investigate the chiral demixing of the system, we introduced the instantaneous rotational centers $\mathbf{c}_i\left(t\right)=\left(X_i\left(t\right), Y_i\left(t\right)\right)$, which is given by
 \begin{equation}
     \begin{aligned}
         X_i\left( t \right) &=x_i\left( t \right) -\frac{\upsilon}{\dot{\theta}_i\left( t \right)}\sin \theta _i\left( t \right) ,\\
@@ -145,52 +173,75 @@ To further investigate the chiral demixing of the system, we calculated the inst
     \end{aligned}
 \end{equation}
 By starting from uniform initial conditions, the instantaneous rotational centers of the swarmalators are shown in Fig.~\ref{fig:centersScatterXY}(a, b) for the minimal frequency $\omega_{\min}=1.1$ and phase frustrations $\alpha_0=0, -0.5\pi$, respectively.
-
-\begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/centersScatterXY.png}
-    \caption{
-        \label{fig:centersScatterXY} Scatter plot of the instantaneous rotational centers of swarmalators for $\omega_{\min}=1.1$ and different $\alpha_0$: 
-        \textbf{(a)}, $\alpha_0=0$; \textbf{(b)}, $\alpha_0=-0.5\pi$.
-        The color of the dots denotes the corresponding natural frequency.
-    }
-\end{figure*}
-
-To quantify the level of chiral demixing, we introduce the order parameters $S$ and $M$ to measure the fraction of neighboring pairs of swarmalators with the same chirality and the fraction of swarmalators that have neighbors with different chirality, respectively. 
+When $\alpha_0=0$, the two chiralities are mixed together, and the centers are distributed uniformly in the space, as demonstrated in Fig.~\ref{fig:centersScatterXY}(a). 
+When $\alpha_0=-0.5\pi$, it is clearly shown that swarmalators with the same chirality converge into one cluster with increasing time, while swarmalators with opposite chirality exhibit a clear separating effect, i.e., centers with dual chiralities labeled in red and blue approach to different ranges, and the scale of the positive and negative chirality clusters is relatively dispersed and compact, as illustrated in Fig.~\ref{fig:centersScatterXY}(b), which is consistent with the snapshots in Fig.~\ref{fig:snapshots}(a, f).
+Some further quantitative analysis is conducted to describe the demixing process of the system. Firstly, the most intuitive metric is the distance between mean centers of two chiralities:
+\begin{equation}
+    \left| \mathbf{c}^+-\mathbf{c}^- \right|=\left| \frac{1}{N_c}\sum_{i=1}^{N_c}{\mathbf{c}_{i}^{+}}-\frac{1}{N_c}\sum_{i=1}^{N_c}{\mathbf{c}_{i}^{-}} \right|\;,
+\end{equation}
+where the notation $\pm$ denotes the positive and negative chiralities, respectively. From the opposite perspective, the mean distance between the centers of the same chirality can describe the compactness of the clusters:
+\begin{equation}
+     \langle \left| \mathbf{c} \right|_{ij}^{\pm} \rangle =\frac{2}{N_{c}^{2}}\sum_{i=1}^{N_c}{\sum_{j=1}^i{\left| \mathbf{c}_{i}^{\pm}-\mathbf{c}_{i}^{\pm} \right|}}\;,
+\end{equation}
+where $N_c=N/2$ is the number of swarmalators with the same chirality. 
+As illustrated in Fig.~\ref{fig:centersScatterXY}(c, d), when $\alpha_0 = 0$, the distance between centers of both like and opposite chirality remains nearly constant. However, for $\alpha_0 = -0.5\pi$, there is a notable decrease in the distance between centers of negative chirality, while the distance between centers of different chiralities increases. This observation suggests a phase separation within the system. Furthermore, the standard deviation of the distances between centers of the same chirality,
+\begin{equation}
+    \sigma ( \left| \mathbf{c} \right|_{ij}^{\pm} ) =\sqrt{\frac{2}{N_{c}^{2}}\sum_{i=1}^{N_c}{\sum_{j=1}^i{\left( \left| \mathbf{c}_{i}^{\pm}-\mathbf{c}_{i}^{\pm} \right|-\left< \left| \mathbf{c} \right|_{ij}^{\pm} \right> \right) ^2}}}\;,
+\end{equation}
+can serve as a measure of cluster compactness, as depicted in Fig.~\ref{fig:centersScatterXY}(e, f). At $\alpha_0 = -0.5\pi$, the standard deviation of the distances between centers within negative chirality is significantly lower, indicating that these clusters are more compact.
 
 \begin{figure*}
     \includegraphics[width=\textwidth]{./figs/orderParameters.pdf}
     \caption{
         \label{fig:orderParameters} 
-        \textbf{(a--b)}, time evolution of the order parameters $S$ and $M$ for different phase frustration $\alpha_0$, where \enquote{$\langle\cdot\rangle$} denotes the average over the minimal frequency $\omega_{\min}\in\left[0.1, 0.5\right]$.
+        \textbf{(a--b)}, time evolution of the order parameters $S$ and $M$ for different phase frustration $\alpha_0$, where \enquote{$\langle\cdot\rangle$} denotes the average taken over the minimal frequency $\omega_{\min}\in\left[0.1, 0.5\right]$.
         \textbf{(c)}, order parameters $S$, $M$, $R_{\max}$ and $R_{\min}$ versus $\alpha_0$ averaged over different initial conditions for $\omega_{\min}=10^{-3}$.
         (translucent bond and error-bars representing the standard deviation).
     }
 \end{figure*}
 
+In addition to characterizing the time-varying spatial distribution of the swarmalators, frustration-varying behaviors can also be observed in the distance between the centers, as shown in Fig.~\ref{fig:distancesVsAlpha} with $\omega_{\min}=10^{-3}$. Considering the symmetry in how $\text{sgn}\alpha_0$ influences model behavior, we only present the results for $\alpha_0\in\left[ -\pi, 0 \right]$. 
+As evident in Fig.~\ref{fig:distancesVsAlpha}(a), with the increase of frustration strength $\left|\alpha_0\right|$, the distance between the centers of different chiralities initially is close to zero in the mixed state, and then bifurcates from zero and increases rapidly at $\alpha_0\approx -0.4\pi$, indicating the demixing of the system. Around $\alpha_0\approx -0.5\pi$, the distance between the centers of different chiralities reaches a maximum, and then decreases slightly with further increase of $\left|\alpha_0\right|$ until it reaches $-\pi$, where the demixing degree increases again for the phase coupling turning to the exact opposite direction. 
+The distances between the centers of the same chirality also exhibits an opposite trend, which is consistent with the compactness of the clusters, where the negative cluster is more compact than the positive cluster. This is further confirmed by the standard deviation of the distances between the centers of the same chirality, as shown in Fig.~\ref{fig:distancesVsAlpha}(b). The standard deviation of the negative chirality decreases with the increase of $\left|\alpha_0\right|$, and reaches a minimum at $\alpha_0\approx -0.5\pi$, which is clearly lower than that of the positive chirality.
+
+To quantify the level of chiral demixing, we calculated the order parameters $S$, $M$ to measure the fraction of neighboring pairs of swarmalators with the same chirality and the fraction of swarmalators that have neighbors with different chirality, respectively. Fig.~\ref{fig:orderParameters}(a, b) shows the time evolution of the order parameters $S$ and $M$ for different phase frustrations $\alpha_0$, where \enquote{$\langle\cdot\rangle$} denotes the average taken over the minimal frequency $\omega_{\min}\in\left[0.1, 0.5\right]$. 
+When $\alpha_0=0$, the system is in a mixed state, and the order parameters $S$ and $M$ decreases and increases slightly over time, respectively. 
+For $\alpha_0=-0.4\pi$, the system undergoes a phase transition from the mixed state to the demixing state, where the order parameters $S$ and $M$ exhibit a significant increase and decrease, respectively.
+While for the most effective frustration $\alpha_0=-0.5\pi$, the order parameters $S$ and $M$ vary rapidly and achieve a steady state quickly, indicating that the system is in a completely phase-separated state, where the order parameters $S$ and $M$ reaches their maximum and minimum values, respectively.
+
+Homoplastically, the order parameters $S$, $M$, $R_{\max}$ and $R_{\min}$ versus $\alpha_0$ are shown in Fig.~\ref{fig:orderParameters}(c). The trend of the order parameters $S$ and $M$ is consistent with the results of the time evolution, where the order parameter $S$ increases and $M$ decreases with the increase of $\left|\alpha_0\right|$ until they reach their maximum and minimum values, respectively. After that, the order parameters $S$ and $M$ decrease and increase slightly, respectively, as the degree of demixing weakens. On the other hand, the order parameters $R_{\max}$ and $R_{\min}$ provide an ultrasound confirmation with $S$ and $M$, where $R_{\max}$ and $R_{\min}$ are equal to 1 for the weak frustration, and then bifurcate to different values for the stronger frustration, which indicates the partial locking of the phases in the system.
+Consistent with the trend of $S$ and $M$, the difference between $R_{\max}$ and $R_{\min}$ decreases with the increase of $\left|\alpha_0\right|$ after passing the maximum point, and then increases again when $\alpha_0$ touches $-\pi$.
+
 \begin{figure*}
-    \includegraphics[width=0.7\textwidth]{./figs/distancesVsAlpha.pdf}
+    \includegraphics[width=\textwidth]{./figs/phaseDiagram.png}
     \caption{
-        \label{fig:distancesVsAlpha} 
-        \textbf{(a)}, the distance between centers of neighboring swarmalators versus $\alpha_0$.
-        \textbf{(b)}, the standard deviation of distance between centers of neighboring swarmalators versus $\alpha_0$.
-        All data points are averaged over different initial conditions for $\omega_{\min}=10^{-3}$.
+        \label{fig:phaseDiagram} 
+        Heatmaps for order parameters $S$, $M$ across the phase diagram of $(\alpha_0, \omega_{\min})$ with the critical demixing frustration $\alpha_{c}$ (black dashed line) and the critical swarming frustration $\alpha_{s}$ (white dashed line).
+        Different colors describe the amplitudes of different order parameters.
     }
 \end{figure*}
 
-\section{\label{sec:} Phase diagrams and theoretical approximation}
+\section{\label{sec:phaseDiagram}Phase diagrams and theoretical approximation}
 
-The dynamics of the system (\ref{eq:totalDynamicsMeanField}) in the ISS can be abstracted as a synchronization problem in double layer networks. This problem can be described by the following equations:
+To construct the phase diagram of the system, we calculated the order parameters $S$, $M$ across the phase diagram of $(\alpha_0, \omega_{\min})$ and drive the critical frustrations for the enhancement of chiral demixing, as shown in Fig.~\ref{fig:phaseDiagram}.
+The order parameters $S$ and $M$ are color-coded to represent the amplitudes of the order parameters.
+The dashed lines labeled I and II represent the critical frustrations $\alpha_{c}$ and $\alpha_{s}$, respectively. Line I is the critical frustration for the enhancement of swarming,  and line II is for the chiral demixing. It can be seen that the two critical lines can be well manifested in the phase diagram, where the order parameters $S$ and $M$ exhibit a significant change across the critical lines.
+
+The phase diagram shows that the system is in a mixed state when $\omega_{\min}\ll1$ and $\left|\alpha_0\right|\ll1$, where the order parameters $S$ and $M$ are close to 0.7 and 1, respectively, corresponding to the region A in Fig.~\ref{fig:phaseDiagram}.  
+When the minimal frequency $\omega_{\min}$ surmounts the critical line $\alpha_s^{-1}(\omega_{\min})$ (white dashed line), the system will phase separate into two clusters with the same chirality, and the order parameters $S$ increase obviously, while the order parameters $M$ decrease but remain close to 1, which can be seen by comparing the regions B in sub-figures (a) and (b) of Fig.~\ref{fig:phaseDiagram}, because the phase separation strengthens the demixing degree, but the coupling between the two chiralities is still strong. 
+When the phase frustration $\alpha_0$ exceeds the critical line $\alpha_c(\omega_{\min})$ (black dashed line), the system will achieve the complete demixing state, where the order parameters $S$ and $M$ reach their maximum and minimum values, respectively, as shown in the region C in Fig.~\ref{fig:phaseDiagram}. As the frustration continues to increase, the order parameters $S$ and $M$ decrease and increase slightly, respectively, as the degree of demixing weakens.
+
+The dynamics of the system (\ref{eq:totalDynamicsMeanField}) in the mixing state can be abstracted as a synchronization problem in multilayer networks for its spatially uniform distribution. Therefore, for the symmetry of the spatial distribution and the mean-field coupling, each local subset of connected swarmalators can be regarded equivalently as a group of swarmalators in mean-field coupling.
+This problem can be described by the following equations:
 \begin{equation}
     \label{eq:multiLayer}
     \begin{aligned}
-        \dot{\theta}_{i}^{\pm}=&\omega _{i}^{\pm}+\frac{K}{N}\sum_{j=1}^{_{N^{\pm}}}{\sin \left( \theta _{j}^{\pm}-\theta _{i}^{\pm} \right)}\\
+        \dot{\theta}_{i}^{\pm}=&\omega _{i}^{\pm}+\frac{K}{N}\sum_{j=1}^{_{N_c}}{\sin \left( \theta _{j}^{\pm}-\theta _{i}^{\pm} \right)}\\
         &+\frac{K}{N}\sum_{j=1}^{_{N^{\mp}}}{\left[ \sin \left( \theta _{j}^{\mp}-\theta _{i}^{\pm}+\alpha _0 \right) -\sin \alpha _0 \right]}\;,
     \end{aligned}
 \end{equation}
-where $N^{\pm}=N/2$ is the numbers of swarmalators with positive and negative chirality, respectively. 
+where $N_c=N/2$ is the numbers of swarmalators with positive and negative chirality, respectively. 
 Each layer $\pm$ represents the swarmalators with the same chirality, and the second, third terms in Eq.~(\ref{eq:multiLayer}) describe the intralayer and interlayer interactions, respectively.
-
-% #####################################################
 
 Let $\theta _{i}^{\pm}\left( t \right) =\theta ^{\pm}$ and introduce $\Delta \theta=\theta^{+}-\theta^{-}$, $\Delta \omega=\mu^{+}-\mu^{-}$, the phase locking dynamics of two layers can be described by the following equations:
 \begin{equation}
@@ -219,20 +270,12 @@ with the terms being
     \end{aligned}
 \end{equation}
 
-\begin{figure*}
-    \includegraphics[width=\textwidth]{./figs/phaseDiagram.png}
-    \caption{
-        \label{fig:phaseDiagram} 
-        Heatmaps for order parameters $S$, $M$ across the phase diagram of $(\alpha_0, \omega_{\min})$ with the critical demixing frustration $\alpha_{c}$ (black dashed line) and the critical swarming frustration $\alpha_{s}$ (white dashed line).
-        Different colors describe the amplitudes of different order parameters.
-    }
-\end{figure*}
 
 \begin{figure}
     \includegraphics[width=0.49\textwidth]{./figs/SyncOPsAndRealFreq.png}
     \caption{
         \label{fig:SyncOPsAndRealFreq} 
-        Order parameters $R_{\max}$ and $R_{\min}$ versus $\alpha_0$ for abstracted synchronization model Eq.~(\ref{eq:multiLayer}) with $\omega_{\min}=10^{-3}$.
+        Heatmaps for order parameters $S$, $M$ across the phase diagram of $(\alpha_0, \omega_{\min})$ and the critical frustration $\alpha_{0c}$ (black dashed line). Different colors describe the amplitudes of different order parameters.
     }
 \end{figure}
 

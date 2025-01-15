@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}The Model}{1}{section.1}%
+\contentsline {section}{\numberline {2}Frustration-enhanced demixing}{4}{section.2}%
+\contentsline {section}{\numberline {3}Phase diagrams and theoretical approximation}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}OA Reduction}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Linear Stability Analysis}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Coarse graining}{11}{subsection.3.3}%
