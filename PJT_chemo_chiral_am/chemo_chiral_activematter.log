@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  15 JAN 2025 17:36
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  31 JAN 2025 16:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -513,34 +513,33 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [1
 
-] [2]
+] [2] [3]
 
-LaTeX Warning: Reference `eq:totalDynamics' on page 3 undefined on input line 143.
+LaTeX Warning: Reference `eq:totalDynamics' on page 4 undefined on input line 166.
 
-[3] [4]
-Overfull \hbox (4.56094pt too wide) in paragraph at lines 263--265
+[4] [5]
+Overfull \hbox (4.56094pt too wide) in paragraph at lines 286--288
 \TU/lmr/m/n/10 The uniform distribution of disorder state indicates $\OML/cmm/m/it/10 g [] \OT1/cmr/m/n/10 = [][]$\TU/lmr/m/n/10 , which is an $\OML/cmm/m/it/10 !$\TU/lmr/m/n/10 -independent
  []
 
-[5]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 282.
+(hyperref)                than one, level fixed on input line 305.
 
-(./chemo_chiral_activematter.bbl [6]) [7] (./chemo_chiral_activematter.aux)
+[6] (./chemo_chiral_activematter.bbl) [7] (./chemo_chiral_activematter.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not changed.
-(rerunfilecheck)             Checksum: 9642401FB3383915D669893634AD5190;1833.
+(rerunfilecheck)             Checksum: 37CC1F2313364F0608BE34F22DD8061D;2187.
  ) 
 Here is how much of TeX's memory you used:
  12198 strings out of 478907
  183715 string characters out of 5866571
- 526411 words of memory out of 5000000
+ 528773 words of memory out of 5000000
  31870 multiletter control sequences out of 15000+600000
  416737 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,12n,77p,692b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,77p,692b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on chemo_chiral_activematter.pdf (7 pages).

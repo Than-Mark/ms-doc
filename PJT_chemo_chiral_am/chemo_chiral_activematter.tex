@@ -112,7 +112,30 @@ where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the prod
     \end{align}
 \end{subequations}
 
-\subsubsection{Chemotactic Lotka-Volterra dynamics}
+\subsubsection{General Chemotactic Model For Two Species}
+Type 1:
+\begin{subequations}
+    \begin{align}
+        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\frac{1}{|\mathbf{r}_j-\mathbf{r}_{i}^{1,2}|^{\beta}}\;,}\\
+        &\dot{\theta}_{i}^{1,2}=\alpha _{1,2}\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) \;,\\
+        &\dot{c}_1=D_1\nabla ^2c_1+F_1\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
+        &\dot{c}_2=D_2\nabla ^2c_2+F_2\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
+    \end{align}
+\end{subequations}
+
+\noindent Type 2:
+\begin{subequations}
+    \begin{align}
+        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) +\alpha _{1,2}\nabla c_{1,2}-\sum_{j\in A_{i}^{1,2}}{\frac{1}{|\mathbf{r}_j-\mathbf{r}_{i}^{1,2}|^{\beta}}\;,}\\
+        &\dot{\theta}_{i}^{1,2}=KX\left( \theta ,\mathbf{r} \right) \;,\\
+        &\dot{c}_1=D_1\nabla ^2c_1+F_1\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
+        &\dot{c}_2=D_2\nabla ^2c_2+F_2\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
+    \end{align}
+\end{subequations}
+
+\subsubsection{Chemotactic Model with Lotka-Volterra Functions}
+Let $F_1\left( c_1,c_2 \right)=c_1\left( k_1-k_2c_2 \right)$ and $F_2\left( c_1,c_2 \right)=c_2\left( k_3c_1-k_4 \right)$, where $k_1,k_2,k_3,k_4$ are constants.
+
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\frac{1}{| \mathbf{r}_j-\mathbf{r}_{i}^{1,2} |^{\beta}}\;,}\\
