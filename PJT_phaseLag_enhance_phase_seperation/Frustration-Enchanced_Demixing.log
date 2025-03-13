@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  15 JAN 2025 14:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  13 MAR 2025 19:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -552,23 +552,14 @@ File: ./figs/phaseDiagram.png Graphic file (type bmp)
 File: ./figs/SyncOPsAndRealFreq.png Graphic file (type bmp)
 <./figs/SyncOPsAndRealFreq.png>
  [7] [8] [9] [10] [11] [12] (./Frustration-Enchanced_Demixing.bbl) [13] (./Frustration-Enchanced_Demixing.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Frustration-Enchanced_Demixing.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Frustration-Enchanced_Demixing.out':
-(rerunfilecheck)             Before: B9B92811889EABBCFC01E75E9928D4E7;1008
-(rerunfilecheck)             After:  E8A25DF82B058F2AB7AE0028328CF3F7;1000.
+Package rerunfilecheck Info: File `Frustration-Enchanced_Demixing.out' has not changed.
+(rerunfilecheck)             Checksum: E8A25DF82B058F2AB7AE0028328CF3F7;1000.
  ) 
 Here is how much of TeX's memory you used:
- 13173 strings out of 478907
- 198548 string characters out of 5866571
- 557345 words of memory out of 5000000
- 32813 multiletter control sequences out of 15000+600000
+ 13172 strings out of 478907
+ 198542 string characters out of 5866571
+ 556935 words of memory out of 5000000
+ 32812 multiletter control sequences out of 15000+600000
  419384 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,11n,77p,914b,426s stack positions out of 5000i,500n,10000p,200000b,80000s

@@ -9,3 +9,4 @@ demixing
 Swarmalators
 Yichen
 swarmalator
+Eqs

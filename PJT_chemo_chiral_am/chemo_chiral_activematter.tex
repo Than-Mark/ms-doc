@@ -139,22 +139,26 @@ Let $F_1\left( c_1,c_2 \right)=c_1\left( k_1-k_2c_2 \right)$ and $F_2\left( c_1,
 
 \begin{subequations}
     \begin{align}
-        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\\
-        &\dot{\theta}_{i}^{1,2}=\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\\
+        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\label{dotR}\\
+        &\dot{\theta}_{i}^{1,2}=\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
         &\dot{c}_1=D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
 \end{subequations}
 
 \section{Behaviors}
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figs/bigGraphParticle_k23_0.5.png}
 \end{figure}
 
 
 \section{Continuum model}
-The continuum model can be derived from a Boltzmann-like approach for the probability density $P(\mathbf{r}, \theta, t)$ of finding a particle at position $\mathbf{r}$ with orientation $\theta$ at time $t$. 
+In the thermodynamic limit $N\rightarrow \infty$, the Eqs.~\eqref{dotR} and \eqref{dotTheta} give rise to the following continuum model:
+\begin{equation}
+    \partial _t\rho _{i}^{1,2}\left( \mathbf{r},\theta ,t \right) =-\dot{\mathbf{r}}\cdot \nabla \rho _{i}^{1,2}-\dot{\theta}\partial _{\theta}\rho _{i}^{1,2}\;,
+\end{equation}
+where $\rho _{i}^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of $i$-th swarmalators of species $1,2$ at position $\mathbf{r}$ and orientation $\theta$. Then, for $\rho ^{1,2}\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\rho _{i}^{1,2}\left( \mathbf{r},\theta ,t \right)}$ we find:
 
 
 
