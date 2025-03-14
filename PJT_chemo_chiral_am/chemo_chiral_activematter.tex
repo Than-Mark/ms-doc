@@ -52,9 +52,9 @@
 for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $\theta _i$ is the orientation of the $i$-th particle, $v$ is the self-propulsion velocity, $\mathbf{p}\left( \theta _i \right)=\left( \cos \theta _i,\sin \theta _i \right)$ is the unit vector pointing in the direction of the $i$-th particle, $\omega _i$ is the natural frequency of the $i$-th particle, $G\left( \mathbf{r},\theta ,c \right)$ is the coupling function between particles and chemical fields, $H\left( \Delta \theta _{ij},\Delta \mathbf{r}_{ij} \right)$ is the coupling function between partials, $c\left( \mathbf{r},t \right)$ is the chemical concentration, $D$ is the diffusion coefficient, $F\left( c \right)$ is the production rate of the chemical field, $A_{i}^{1,2}=\left\{ j\mid r_c\geqslant | \mathbf{r}_j-\mathbf{r}_i | \right\}$, $\Delta \mathbf{r}_{ij}=\mathbf{r}_j-\mathbf{r}_i$, $\Delta \theta _{ij}=\theta _j-\theta _i$, $\mathbf{I}\left( \Delta \mathbf{r}_{ij} \right)=\frac{\Delta \mathbf{r}_{ij}}{|\Delta \mathbf{r}_{ij}|^{2}}$.
 The natural frequencies $\omega_i$ are distributed with following two cases:
 \begin{enumerate}
-    \item \textbf{Single-chiral swarmalators:} The natural frequencies $\omega_i$ are distributed in $U\left( \omega _{\min},\omega _{\max} \right)$ for all swarmalators and $\omega _{\min}\omega _{\max}>0$.
+    \item \textbf{Single-chiral particles:} The natural frequencies $\omega_i$ are distributed in $U\left( \omega _{\min},\omega _{\max} \right)$ for all particles and $\omega _{\min}\omega _{\max}>0$.
     
-    \item \textbf{Double-chiral swarmalators:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the swarmalators have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
+    \item \textbf{Double-chiral particles:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the particles have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
 \end{enumerate}
 
 \subsubsection{Polar alignment Interaction}
@@ -66,15 +66,9 @@ The natural frequencies $\omega_i$ are distributed with following two cases:
     \end{equation}
     \item Mean-field coupling by oscillator number:
     \begin{equation}
-        \label{eq:swarmalatorDotTheta}
+        \label{eq:particleDotTheta}
         \dot{\theta}_i=\omega _i+\frac{K}{N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
     \end{equation}
-    which is similar to the swarmalator model.
-    % \item Mean-field coupling by oscillator density:
-    % \begin{equation}
-    %     \dot{\theta}_i=\omega _i+\frac{KL^2}{\pi d_{0}^{2}N}\sum_{j=1}^N{f}\left( r_{ij} \right) \sin \left( \theta _j-\theta _i+\alpha \right) \;,
-    % \end{equation}
-    % where $d_0$ is the radius of the interaction circle.
 \end{itemize}
 Here,  $f\left( r_{ij} \right)$ is a function of $r=\left| \mathbf{r}_i-\mathbf{r}_j \right|$, and $K$ is the coupling strength. 
 The function $f\left( r \right)$ can be defined as
@@ -123,23 +117,45 @@ Let $F_1\left( c_1,c_2 \right)=c_1\left( k_1-k_2c_2 \right)$ and $F_2\left( c_1,
 \section{Continuum model}
 In the thermodynamic limit $N\rightarrow \infty$, the Eqs.~\eqref{dotR} and \eqref{dotTheta} give rise to the following continuum model:
 \begin{equation}
-    \frac{\partial}{\partial t}\rho ^{1,2}\left( \mathbf{r},\theta ,t \right) =-\frac{\partial}{\partial \theta}\left( \rho ^{1,2}v_{\theta}^{1,2} \right) -\nabla \cdot \left( \rho ^{1,2}\mathbf{v}_{\mathbf{r}}^{1,2} \right) \;, \label{eq:continuumModel}
+    \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =-\frac{\partial}{\partial \theta}\left( f ^{1,2}v_{\theta}^{1,2} \right) -\nabla \cdot \left( f ^{1,2}\mathbf{v}_{\mathbf{r}}^{1,2} \right) \;, \label{eq:continuumModel}
 \end{equation}
-where $\rho^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of swarmalators of species 1 or 2 at position $\mathbf{r}$ and orientation $\theta$ at time $t$, and $\mathbf{v}_{\mathbf{r}}^{1,2}$ and $v_{\theta}^{1,2}$ are the velocity fields in the position and orientation space, respectively. The velocity fields are given by
+where $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of particles of species 1 or 2 at position $\mathbf{r}$ and orientation $\theta$ at time $t$, and $\mathbf{v}_{\mathbf{r}}^{1,2}$ and $v_{\theta}^{1,2}$ are the velocity fields in the position and orientation space, respectively. The velocity fields are given by
 \begin{subequations}
     \begin{align}
         &v_{\theta}^{1,2}\left( \mathbf{r},\theta ,t \right) =\omega +\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}} -\theta \right) +F\left( \theta ,\mathbf{r} \right)  \;,\\
-        &\mathbf{v}_{\mathbf{r}}^{1,2}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) -\int d\theta 'd\mathbf{r}'\rho ^{1,2}\left( \mathbf{r}',\theta ',t \right)\mathbf{I}\left( \mathbf{r}-\mathbf{r}' \right) \;,
+        &\mathbf{v}_{\mathbf{r}}^{1,2}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) -\int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)} \;,
     \end{align}
     \label{eq:velocityFields}
 \end{subequations}
 where $\mathbf{I}\left( \mathbf{r} \right)=|\mathbf{r}|^{-2}\mathbf{r}$. By substituting Eqs.~\eqref{eq:velocityFields} into Eq.~\eqref{eq:continuumModel}, we obtain
 \begin{equation}
     \begin{aligned}
-        \frac{\partial}{\partial t}\rho ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-\omega \partial _{\theta}\rho ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ \rho ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\\
-        &-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^{1,2}-\nabla \cdot \int{d\theta \prime d\mathbf{r}\prime \rho ^{1,2}\left( \mathbf{r}\prime ,\theta \prime ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}\prime \right)}\;.
+        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\\
+        &-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}\;.
     \end{aligned}
 \end{equation}
+From here, we expand $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ in a Fourier series $f ^{1,2}\left( \mathbf{r},\theta ,t \right) =\sum_{k=-\infty}^{\infty}{f _{k}^{1,2}\left( \mathbf{r},t \right) \mathrm{e}^{-\mathrm{i}k\theta}}$ with $f _{k}^{1,2}\left( \mathbf{r},t \right) =\frac{1}{2\pi}\int{\mathrm{d}\theta f ^{1,2}\left( \mathbf{r},\theta ,t \right) \mathrm{e}^{\mathrm{i}k\theta}}$ and define the coefficients  as the particle density $ \rho\left(\mathbf{r}, t\right)$ and the density-weighted polar order $\boldsymbol{p}\left(\mathbf{r}, t\right)$ by relating them to the harmonics via the Fourier expansion:
+\begin{subequations}
+    \begin{align}
+        \rho \left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta f^{1,2}\left( \mathbf{r},\theta ,t \right)}=2\pi f_{0}^{1,2}\left( \mathbf{r},t \right)\\
+        \boldsymbol{p}\left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta \mathbf{p}\left( \theta \right) f^{1,2}\left( \mathbf{r},\theta ,t \right)}\notag\\
+        &=\int_0^{2\pi}{\mathrm{d}\theta \left[ \begin{array}{c}
+        \cos \theta\\
+        \sin \theta\\
+    \end{array} \right] f^{1,2}\left( \mathbf{r},\theta ,t \right)}=\int_0^{2\pi}{\mathrm{d}\theta \frac{1}{2}\left[ \begin{array}{c}
+        \mathrm{e}^{\mathrm{i}\theta}+\mathrm{e}^{-\mathrm{i}\theta}\\
+        \mathrm{i}\left( \mathrm{e}^{-\mathrm{i}\theta}-\mathrm{e}^{\mathrm{i}\theta} \right)\\
+    \end{array} \right] f^{1,2}\left( \mathbf{r},\theta ,t \right)}\notag\\
+        &=\pi \left[ \begin{array}{c}
+        \frac{1}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \left( \mathrm{e}^{\mathrm{i}\theta}+\mathrm{e}^{-\mathrm{i}\theta} \right) f^{1,2}\left( \mathbf{r},\theta ,t \right)}\\
+        \frac{1}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{i}\left( \mathrm{e}^{-\mathrm{i}\theta}-\mathrm{e}^{\mathrm{i}\theta} \right) f^{1,2}\left( \mathbf{r},\theta ,t \right)}\\
+    \end{array} \right] =\pi \left[ \begin{array}{c}
+        f_{1}^{1,2}\left( \mathbf{r},t \right) +f_{-1}^{1,2}\left( \mathbf{r},t \right)\\
+        \mathrm{i}\left( f_{1}^{1,2}\left( \mathbf{r},t \right) -f_{-1}^{1,2}\left( \mathbf{r},t \right) \right)\\
+    \end{array} \right]
+    \end{align}
+\end{subequations}
+
 
 \section{Behaviors}
 \begin{figure}[H]
