@@ -41,18 +41,23 @@
 \newpage
 \section{Models}
 \subsection{Definitions}
-\subsubsection{Self-propelled dynamics}
-
+\subsubsection{General Model}
 \begin{subequations}
     \begin{align}
-    \dot{x}_i&=v\cos \theta _i\;,
-    \\
-    \dot{y}_i&=v\sin \theta _i\;,
+        &\dot{\mathbf{r}}_i\left( t \right) =v\mathbf{p}\left( \theta _i \right) +\sum_{j\in A_{i}^{1,2}}{\mathbf{I}\left( \Delta \mathbf{r}_{ij} \right)}\;,\\
+        &\dot{\theta}_i\left( t \right) =\omega _i+G\left( \mathbf{r},\theta ,c \right) +\sum_{j\ne i}{H\left( \Delta \theta _{ij},\Delta \mathbf{r}_{ij} \right)}\;,\\
+        &\dot{c}\left( \mathbf{r},t \right) =D\nabla ^2c+F\left( c \right) \sum_{j=1}{\delta \left( \mathbf{r}-\mathbf{r}_i \right)}\;,
     \end{align}
-    \label{eq:dotxy}
 \end{subequations}
+for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $\theta _i$ is the orientation of the $i$-th particle, $v$ is the self-propulsion velocity, $\mathbf{p}\left( \theta _i \right)=\left( \cos \theta _i,\sin \theta _i \right)$ is the unit vector pointing in the direction of the $i$-th particle, $\omega _i$ is the natural frequency of the $i$-th particle, $G\left( \mathbf{r},\theta ,c \right)$ is the coupling function between particles and chemical fields, $H\left( \Delta \theta _{ij},\Delta \mathbf{r}_{ij} \right)$ is the coupling function between partials, $c\left( \mathbf{r},t \right)$ is the chemical concentration, $D$ is the diffusion coefficient, $F\left( c \right)$ is the production rate of the chemical field, $A_{i}^{1,2}=\left\{ j\mid r_c\geqslant | \mathbf{r}_j-\mathbf{r}_i | \right\}$, $\Delta \mathbf{r}_{ij}=\mathbf{r}_j-\mathbf{r}_i$, $\Delta \theta _{ij}=\theta _j-\theta _i$, $\mathbf{I}\left( \Delta \mathbf{r}_{ij} \right)=\frac{\Delta \mathbf{r}_{ij}}{|\Delta \mathbf{r}_{ij}|^{2}}$.
+The natural frequencies $\omega_i$ are distributed with following two cases:
+\begin{enumerate}
+    \item \textbf{Single-chiral swarmalators:} The natural frequencies $\omega_i$ are distributed in $U\left( \omega _{\min},\omega _{\max} \right)$ for all swarmalators and $\omega _{\min}\omega _{\max}>0$.
+    
+    \item \textbf{Double-chiral swarmalators:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the swarmalators have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
+\end{enumerate}
 
-\subsubsection{Polar alignment dynamics}
+\subsubsection{Polar alignment Interaction}
 \begin{itemize}
     \item Additive coupling: 
     \begin{equation}
@@ -77,47 +82,15 @@ The function $f\left( r \right)$ can be defined as
     \item $f_H\left( r \right)=H\left( d_0-r \right),\;r_0>0$;
     \item $f_E\left( r \right)=e^{-\frac{r}{d_0}},\;r_0>0$.
 \end{enumerate}
-The natural frequencies $\omega_i$ are distributed with following two cases:
-\begin{enumerate}
-    \item \textbf{Single-chiral swarmalators:} The natural frequencies $\omega_i$ are distributed in $U\left( \omega _{\min},\omega _{\max} \right)$ for all swarmalators and $\omega _{\min}\omega _{\max}>0$.
-    
-    \item \textbf{Double-chiral swarmalators:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the swarmalators have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
-\end{enumerate}
 
-\subsubsection{Chemotactic dynamics}
+\subsubsection{Chemotactic Interaction}
+\noindent\textbf{General Chemotactic Model For Two Species}
 
-Consider two chemical fields $u\left( \mathbf{r},t \right), v\left( \mathbf{r},t \right)$ that are produced by the ensemble of two symmetrically chiral swarmalators. Swarmalators interact with the chemical field and move towards/against the regions with higher concentration, which can be described by the following equation ($i=1, 2, \dots, N$):
-\begin{subequations}
-    \begin{align}
-        \dot{\mathbf{r}}_{i}^{s}&=v\mathbf{p}\left(\theta_{i}^{s}\right)\\
-        \dot{\theta}_{i}^{s}&=\omega _{i}^{s}+\alpha ^{s}\mathbf{p}_{i}^{s}\times \nabla u+\beta ^{s}\mathbf{p}_{i}^{s}\times \nabla v
-    \end{align}
-\end{subequations}
-where $\alpha, \beta _{i}^{s}$ denote the ‘chemotactic’ coupling strength and $\mathbf{p}\left(\theta\right)=(\cos \theta,\sin \theta )$ is the unit vector pointing in the direction of the $i$-th swarmalator, $s\in\{p, n\}$ denotes the two chiral species. Here, we used the notation $\mathbf{a}\times\mathbf{b}=a_1 b_2-a_2 b_1$.
-
-These two fields evolve as
-\begin{subequations}
-    \begin{align}
-    \dot{u}&=k_0\sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{p} \right)}-k_du+D_u\nabla ^2u\;,\\
-    \dot{v}&=k_0\sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{n} \right)}-k_dv+D_v\nabla ^2v\;,
-    \end{align}
-\end{subequations}
-where $S_+$ and $S_-$ are the sets of two chiral swarmalators, $k_0$ is the production rate, $k_d$ is the decay rate, $D_{u,v}$ are the diffusion coefficients.
-
-\subsubsection{Mixed phase dynamics}
-\begin{subequations}
-    \begin{align}
-        \dot{\mathbf{r}}_i&=v\mathbf{p}_i\\
-        \dot{\theta}_i&=\omega _i+\beta _{i}^{u}\mathbf{p}_i\times \nabla u+\beta _{i}^{v}\mathbf{p}_i\times \nabla v+\frac{K}{N}\sum_{j=1}^N{f}\left( \left| \mathbf{r}_j-\mathbf{r}_i \right| \right) \sin \left( \theta _j-\theta _i \right) \;,
-    \end{align}
-\end{subequations}
-
-\subsubsection{General Chemotactic Model For Two Species}
 \textcolor{red}{Type 1:}
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\\
-        &\dot{\theta}_{i}^{1,2}=\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\\
+        &\dot{\theta}_{i}^{1,2}=\omega_i + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\\
         &\dot{c}_1=D_1\nabla ^2c_1+F_1\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+F_2\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
@@ -128,40 +101,51 @@ where $\mathbf{I}_{ij}^{1,2}=\frac{\mathbf{r}_j-\mathbf{r}_{i}^{1,2}}{|\mathbf{r
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) +\alpha _{1,2}\nabla c_{1,2}-\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\\
-        &\dot{\theta}_{i}^{1,2}=F\left( \theta ,\mathbf{r} \right) \;,\\
+        &\dot{\theta}_{i}^{1,2}=\omega_i + F\left( \theta ,\mathbf{r} \right) \;,\\
         &\dot{c}_1=D_1\nabla ^2c_1+F_1\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+F_2\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
 \end{subequations}
 
-\subsubsection{Chemotactic Model with Lotka-Volterra Functions}
+\noindent\textbf{Chemotactic Model with Lotka-Volterra Functions}
+
 Let $F_1\left( c_1,c_2 \right)=c_1\left( k_1-k_2c_2 \right)$ and $F_2\left( c_1,c_2 \right)=c_2\left( k_3c_1-k_4 \right)$, where $k_1,k_2,k_3,k_4$ are constants.
 
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\label{dotR}\\
-        &\dot{\theta}_{i}^{1,2}=\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
+        &\dot{\theta}_{i}^{1,2}=\omega_i + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
         &\dot{c}_1=D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
 \end{subequations}
+
+\section{Continuum model}
+In the thermodynamic limit $N\rightarrow \infty$, the Eqs.~\eqref{dotR} and \eqref{dotTheta} give rise to the following continuum model:
+\begin{equation}
+    \frac{\partial}{\partial t}\rho ^{1,2}\left( \mathbf{r},\theta ,t \right) =-\frac{\partial}{\partial \theta}\left( \rho ^{1,2}v_{\theta}^{1,2} \right) -\nabla \cdot \left( \rho ^{1,2}\mathbf{v}_{\mathbf{r}}^{1,2} \right) \;, \label{eq:continuumModel}
+\end{equation}
+where $\rho^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of swarmalators of species 1 or 2 at position $\mathbf{r}$ and orientation $\theta$ at time $t$, and $\mathbf{v}_{\mathbf{r}}^{1,2}$ and $v_{\theta}^{1,2}$ are the velocity fields in the position and orientation space, respectively. The velocity fields are given by
+\begin{subequations}
+    \begin{align}
+        &v_{\theta}^{1,2}\left( \mathbf{r},\theta ,t \right) =\omega +\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}} -\theta \right) +F\left( \theta ,\mathbf{r} \right)  \;,\\
+        &\mathbf{v}_{\mathbf{r}}^{1,2}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) -\int d\theta 'd\mathbf{r}'\rho ^{1,2}\left( \mathbf{r}',\theta ',t \right)\mathbf{I}\left( \mathbf{r}-\mathbf{r}' \right) \;,
+    \end{align}
+    \label{eq:velocityFields}
+\end{subequations}
+where $\mathbf{I}\left( \mathbf{r} \right)=|\mathbf{r}|^{-2}\mathbf{r}$. By substituting Eqs.~\eqref{eq:velocityFields} into Eq.~\eqref{eq:continuumModel}, we obtain
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial t}\rho ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-\omega \partial _{\theta}\rho ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ \rho ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\\
+        &-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho ^{1,2}-\nabla \cdot \int{d\theta \prime d\mathbf{r}\prime \rho ^{1,2}\left( \mathbf{r}\prime ,\theta \prime ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}\prime \right)}\;.
+    \end{aligned}
+\end{equation}
 
 \section{Behaviors}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figs/bigGraphParticle_k23_0.5.png}
 \end{figure}
-
-
-\section{Continuum model}
-In the thermodynamic limit $N\rightarrow \infty$, the Eqs.~\eqref{dotR} and \eqref{dotTheta} give rise to the following continuum model:
-\begin{equation}
-    \partial _t\rho _{i}^{1,2}\left( \mathbf{r},\theta ,t \right) =-\dot{\mathbf{r}}\cdot \nabla \rho _{i}^{1,2}-\dot{\theta}\partial _{\theta}\rho _{i}^{1,2}\;,
-\end{equation}
-where $\rho _{i}^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of $i$-th swarmalators of species $1,2$ at position $\mathbf{r}$ and orientation $\theta$. Then, for $\rho ^{1,2}\left( \mathbf{r},\theta ,t \right) =\sum_{i=1}^N{\rho _{i}^{1,2}\left( \mathbf{r},\theta ,t \right)}$ we find:
-
-
-
 
 % \bibliography{ref}
 
