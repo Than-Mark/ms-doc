@@ -130,15 +130,27 @@ where $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of
 where $\mathbf{I}\left( \mathbf{r} \right)=|\mathbf{r}|^{-2}\mathbf{r}$. By substituting Eqs.~\eqref{eq:velocityFields} into Eq.~\eqref{eq:continuumModel}, we obtain
 \begin{equation}
     \begin{aligned}
-        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\\
-        &-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}\;.
+        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}\\
+        &-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]
     \end{aligned}
 \end{equation}
-From here, we expand $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ in a Fourier series $f ^{1,2}\left( \mathbf{r},\theta ,t \right) =\sum_{k=-\infty}^{\infty}{f _{k}^{1,2}\left( \mathbf{r},t \right) \mathrm{e}^{-\mathrm{i}k\theta}}$ with $f _{k}^{1,2}\left( \mathbf{r},t \right) =\frac{1}{2\pi}\int{\mathrm{d}\theta f ^{1,2}\left( \mathbf{r},\theta ,t \right) \mathrm{e}^{\mathrm{i}k\theta}}$ and define the coefficients  as the particle density $ \rho\left(\mathbf{r}, t\right)$ and the density-weighted polar order $\boldsymbol{p}\left(\mathbf{r}, t\right)$ by relating them to the harmonics via the Fourier expansion:
+The equation accounts for self-propulsion, and short-range repulsion between particles, rotational diffusion and chemotactic alignment.
+From here, we expand $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ in a Fourier series 
+\begin{equation}
+    f ^{1,2}\left( \mathbf{r},\theta ,t \right) =\sum_{k=-\infty}^{\infty}{f _{k}^{1,2}\left( \mathbf{r},t \right) \mathrm{e}^{\mathrm{i}k\theta}}\;,
+\end{equation} 
+with the projection 
+\begin{equation}
+    \label{eq:fourierCoefficients}
+    f _{k}^{1,2}\left( \mathbf{r},t \right) =\frac{1}{2\pi}\int{\mathrm{d}\theta f ^{1,2}\left( \mathbf{r},\theta ,t \right) \mathrm{e}^{-\mathrm{i}k\theta}}\;,
+\end{equation}
+and define the coefficients  as the particle density $ \rho\left(\mathbf{r}, t\right)$ and the density-weighted polar order $\boldsymbol{p}\left(\mathbf{r}, t\right)$ by relating them to the harmonics via the Fourier expansion:
 \begin{subequations}
     \begin{align}
-        \rho \left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta f^{1,2}\left( \mathbf{r},\theta ,t \right)}=2\pi f_{0}^{1,2}\left( \mathbf{r},t \right)\\
-        \boldsymbol{p}\left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta \mathbf{p}\left( \theta \right) f^{1,2}\left( \mathbf{r},\theta ,t \right)}\notag\\
+        \rho^{1,2} \left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta f^{1,2}\left( \mathbf{r},\theta ,t \right)}=2\pi f_{0}^{1,2}\left( \mathbf{r},t \right)
+        \label{eq:particleDensity}
+        \\
+        \boldsymbol{p}^{1,2}\left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta \mathbf{p}\left( \theta \right) f^{1,2}\left( \mathbf{r},\theta ,t \right)}\notag\\
         &=\int_0^{2\pi}{\mathrm{d}\theta \left[ \begin{array}{c}
         \cos \theta\\
         \sin \theta\\
@@ -153,9 +165,53 @@ From here, we expand $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ in a Fourier s
         f_{1}^{1,2}\left( \mathbf{r},t \right) +f_{-1}^{1,2}\left( \mathbf{r},t \right)\\
         \mathrm{i}\left( f_{1}^{1,2}\left( \mathbf{r},t \right) -f_{-1}^{1,2}\left( \mathbf{r},t \right) \right)\\
     \end{array} \right]
+    \label{eq:polarOrder}
     \end{align}
 \end{subequations}
-
+In the following, the different contributions to the continuum model, Eq.~\eqref{eq:continuumModel}, are analyzed separately.
+First, in order to derive expressions for the self-propulsion, $-v\mathbf{p}\left( \theta \right) \cdot \nabla f^{1,2}$, we apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial t}f_{k,\mathrm{prop}}^{1,2}=&\frac{1}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ -v\mathbf{p}\left( \theta \right) \cdot \nabla f^{1,2} \right]}\\
+        =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta} \right) \right.}\\
+        &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta} \right) \right]\\
+        =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m-k+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-k-1 \right) \theta} \right) \right.}\\
+        &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m-k-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m-k+1 \right) \theta} \right) \right]\\
+        =&-\frac{v}{2}\left\{ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-k+1 \right) +\delta \left( m-k-1 \right) \right] \right.\\
+        &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-k-1 \right) -\delta \left( m-k+1 \right) \right] \right\}\;.
+    \end{aligned}
+\end{equation}
+With the definitions, Eqs.~\eqref{eq:particleDensity} and \eqref{eq:polarOrder}, we obtain for the field variables
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial t}\rho _{\mathrm{prop}}^{1,2}=&2\pi \frac{\partial}{\partial t}f_{0,\mathrm{prop}}^{1,2}\\
+        =&-v\pi \left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m+1 \right) +\delta \left( m-1 \right) \right] \right.\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-1 \right) -\delta \left( m+1 \right) \right] \right]\\
+        =&-v\pi \left[ \partial _x\left( f_{-1}^{1,2}+f_{1}^{1,2} \right) +\mathrm{i}\partial _y\left( f_{1}^{1,2}-f_{-1}^{1,2} \right) \right]\\
+        =&-v\nabla \cdot \boldsymbol{p}_{\mathrm{prop}}^{1,2}\;,\\
+    \end{aligned}
+\end{equation}
+and because of 
+\begin{subequations}
+    \begin{align}
+        \partial _tf_{1}^{1,2}&=-\frac{v}{2}\left\{ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m \right) +\delta \left( m-2 \right) \right] +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-2 \right) -\delta \left( m \right) \right] \right\}\notag\\
+        &=-\frac{v}{2}\left[ \partial _x\left( f_{0}^{1,2}+f_{2}^{1,2} \right) +\mathrm{i}\partial _y\left( f_{2}^{1,2}-f_{0}^{1,2} \right) \right]\\
+        \partial _tf_{-1}^{1,2}&=-\frac{v}{2}\left\{ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-2 \right) +\delta \left( m \right) \right] +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m \right) -\delta \left( m-2 \right) \right] \right\}\notag\\
+        &=-\frac{v}{2}\left[ \partial _x\left( f_{0}^{1,2}+f_{2}^{1,2} \right) +\mathrm{i}\partial _y\left( f_{0}^{1,2}-f_{2}^{1,2} \right) \right]\;,
+    \end{align}
+\end{subequations}
+we have
+\begin{equation}
+    \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{prop}}^{1,2}=\pi \left[ \begin{array}{c}
+        \partial _t\left( f_{1}^{1,2}+f_{-1}^{1,2} \right)\\
+        \mathrm{i}\partial _t\left( f_{1}^{1,2}-f_{-1}^{1,2} \right)\\
+    \end{array} \right] =\pi \left[ \begin{array}{c}
+        -v\partial _x\left( f_{0}^{1,2}+f_{2}^{1,2} \right)\\
+        v\partial _y\left( f_{2}^{1,2}-f_{0}^{1,2} \right)\\
+    \end{array} \right] \approx -\frac{v}{2}\left[ \begin{array}{c}
+        \partial _xf_{0}^{1,2}\\
+        \partial _yf_{0}^{1,2}\\
+    \end{array} \right] =-\frac{v}{2}\nabla \rho _{\mathrm{prop}}^{1,2}\;.
+\end{equation}
 
 \section{Behaviors}
 \begin{figure}[H]

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  14 MAR 2025 23:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  17 MAR 2025 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -513,24 +513,20 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [1
 
-] [2] [3]
-Overfull \hbox (6.13104pt too wide) in paragraph at lines 136--139
-\TU/lmr/m/n/10 From here, we expand $\OML/cmm/m/it/10 f[] []$ \TU/lmr/m/n/10 in a Fourier series $\OML/cmm/m/it/10 f[] [] \OT1/cmr/m/n/10 = [][] []$ \TU/lmr/m/n/10 with $\OML/cmm/m/it/10 f[] [] \OT1/cmr/m/n/10 =
- []
-
+] [2] [3] [4]
 File: figs/bigGraphParticle_k23_0.5.png Graphic file (type bmp)
 <figs/bigGraphParticle_k23_0.5.png>
-[4] (./chemo_chiral_activematter.aux)
+ [5] [6] (./chemo_chiral_activematter.aux)
 Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not changed.
 (rerunfilecheck)             Checksum: DCFE2BB75756169AA5EB0C7E4D39199E;922.
  ) 
 Here is how much of TeX's memory you used:
- 12182 strings out of 478907
- 183269 string characters out of 5866571
- 522684 words of memory out of 5000000
- 31859 multiletter control sequences out of 15000+600000
+ 12185 strings out of 478907
+ 183328 string characters out of 5866571
+ 522817 words of memory out of 5000000
+ 31862 multiletter control sequences out of 15000+600000
  416713 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,17n,77p,1080b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on chemo_chiral_activematter.pdf (4 pages).
+Output written on chemo_chiral_activematter.pdf (6 pages).
