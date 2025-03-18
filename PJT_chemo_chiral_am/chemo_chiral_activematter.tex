@@ -131,7 +131,7 @@ where $\mathbf{I}\left( \mathbf{r} \right)=|\mathbf{r}|^{-2}\mathbf{r}$. By subs
 \begin{equation}
     \begin{aligned}
         \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}\\
-        &-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]
+        &-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\;.
     \end{aligned}
 \end{equation}
 The equation accounts for self-propulsion, and short-range repulsion between particles, rotational diffusion and chemotactic alignment.
@@ -171,14 +171,12 @@ and define the coefficients  as the particle density $ \rho\left(\mathbf{r}, t\r
 In the following, the different contributions to the continuum model, Eq.~\eqref{eq:continuumModel}, are analyzed separately.
 First, in order to derive expressions for the self-propulsion, $-v\mathbf{p}\left( \theta \right) \cdot \nabla f^{1,2}$, we apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
 \begin{equation}
+    \small
     \begin{aligned}
         \frac{\partial}{\partial t}f_{k,\mathrm{prop}}^{1,2}=&\frac{1}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ -v\mathbf{p}\left( \theta \right) \cdot \nabla f^{1,2} \right]}\\
-        =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta} \right) \right.}\\
-        &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta} \right) \right]\\
-        =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m-k+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-k-1 \right) \theta} \right) \right.}\\
-        &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left( \mathrm{e}^{\mathrm{i}\left( m-k-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m-k+1 \right) \theta} \right) \right]\\
-        =&-\frac{v}{2}\left\{ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-k+1 \right) +\delta \left( m-k-1 \right) \right] \right.\\
-        &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}}\left[ \delta \left( m-k-1 \right) -\delta \left( m-k+1 \right) \right] \right\}\;.
+        =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}\left( \mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta} \right)}+\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}\left( \mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta} \right)} \right]}\\
+        =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}\left( \mathrm{e}^{\mathrm{i}\left( m-k+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-k-1 \right) \theta} \right)}+\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}\left( \mathrm{e}^{\mathrm{i}\left( m-k-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m-k+1 \right) \theta} \right)} \right]}\\
+        =&-\frac{v}{2}\left\{ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}^{1,2}\left[ \delta \left( m-k+1 \right) +\delta \left( m-k-1 \right) \right] +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}^{1,2}\left[ \delta \left( m-k-1 \right) -\delta \left( m-k+1 \right) \right]}} \right\} \;.\\
     \end{aligned}
 \end{equation}
 With the definitions, Eqs.~\eqref{eq:particleDensity} and \eqref{eq:polarOrder}, we obtain for the field variables
@@ -212,6 +210,8 @@ we have
         \partial _yf_{0}^{1,2}\\
     \end{array} \right] =-\frac{v}{2}\nabla \rho _{\mathrm{prop}}^{1,2}\;.
 \end{equation}
+
+Next, we turn to the short-range repulsion, $-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}$. We apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
 
 \section{Behaviors}
 \begin{figure}[H]
