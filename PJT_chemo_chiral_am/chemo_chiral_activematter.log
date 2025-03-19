@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  18 MAR 2025 23:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  20 MAR 2025 00:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -515,102 +515,103 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ] [2] [3]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 174.
+LaTeX Font Warning: Command \small invalid in math mode on input line 190.
 
 
-Overfull \hbox (4.4434pt too wide) detected at line 181
+Overfull \hbox (4.4434pt too wide) detected at line 197
 [][][]
  []
 
-LaTeX Font Info:    Calculating math sizes for size <> on input line 181.
+[4]
+LaTeX Font Info:    Calculating math sizes for size <> on input line 197.
+
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 181.
+(Font)              size <5> substituted on input line 197.
 
-[4]
 File: figs/bigGraphParticle_k23_0.5.png Graphic file (type bmp)
 <figs/bigGraphParticle_k23_0.5.png>
- [5] (./chemo_chiral_activematter.aux)
+[5] [6] (./chemo_chiral_activematter.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
@@ -619,12 +620,12 @@ Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not change
 (rerunfilecheck)             Checksum: DCFE2BB75756169AA5EB0C7E4D39199E;922.
  ) 
 Here is how much of TeX's memory you used:
- 12236 strings out of 478907
- 184004 string characters out of 5866571
- 526817 words of memory out of 5000000
- 31904 multiletter control sequences out of 15000+600000
+ 12237 strings out of 478907
+ 184021 string characters out of 5866571
+ 523867 words of memory out of 5000000
+ 31905 multiletter control sequences out of 15000+600000
  421287 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,17n,77p,1080b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on chemo_chiral_activematter.pdf (5 pages).
+Output written on chemo_chiral_activematter.pdf (6 pages).

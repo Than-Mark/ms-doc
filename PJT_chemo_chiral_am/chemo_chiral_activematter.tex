@@ -80,11 +80,11 @@ The function $f\left( r \right)$ can be defined as
 \subsubsection{Chemotactic Interaction}
 \noindent\textbf{General Chemotactic Model For Two Species}
 
-\textcolor{red}{Type 1:}
+\noindent\textcolor{red}{Type 1:}
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\\
-        &\dot{\theta}_{i}^{1,2}=\omega_i + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\\
+        &\dot{\theta}_{i}^{1,2}=\omega + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\\
         &\dot{c}_1=D_1\nabla ^2c_1+F_1\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+F_2\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
@@ -95,7 +95,7 @@ where $\mathbf{I}_{ij}^{1,2}=\frac{\mathbf{r}_j-\mathbf{r}_{i}^{1,2}}{|\mathbf{r
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) +\alpha _{1,2}\nabla c_{1,2}-\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\\
-        &\dot{\theta}_{i}^{1,2}=\omega_i + F\left( \theta ,\mathbf{r} \right) \;,\\
+        &\dot{\theta}_{i}^{1,2}=\omega + F\left( \theta ,\mathbf{r} \right) \;,\\
         &\dot{c}_1=D_1\nabla ^2c_1+F_1\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+F_2\left( c_1,c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
@@ -108,13 +108,16 @@ Let $F_1\left( c_1,c_2 \right)=c_1\left( k_1-k_2c_2 \right)$ and $F_2\left( c_1,
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\label{dotR}\\
-        &\dot{\theta}_{i}^{1,2}=\omega_i + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
+        &\dot{\theta}_{i}^{1,2}=\omega + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
         &\dot{c}_1=D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
         &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
     \end{align}
+    \label{eq:chemoLVModel}
 \end{subequations}
 
 \section{Continuum model}
+We start with the model as given by Eqs. \eqref{eq:chemoLVModel} in the main text but replace the finite range alignment interaction by a pseudopotential ($\delta$-interaction), which is justified if the interaction is short ranged enough, such that the shape of the associated interaction potential is irrelevant to the many particle dynamics:
+
 In the thermodynamic limit $N\rightarrow \infty$, the Eqs.~\eqref{dotR} and \eqref{dotTheta} give rise to the following continuum model:
 \begin{equation}
     \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =-\frac{\partial}{\partial \theta}\left( f ^{1,2}v_{\theta}^{1,2} \right) -\nabla \cdot \left( f ^{1,2}\mathbf{v}_{\mathbf{r}}^{1,2} \right) \;, \label{eq:continuumModel}
@@ -123,15 +126,28 @@ where $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of
 \begin{subequations}
     \begin{align}
         &v_{\theta}^{1,2}\left( \mathbf{r},\theta ,t \right) =\omega +\left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}} -\theta \right) +F\left( \theta ,\mathbf{r} \right)  \;,\\
-        &\mathbf{v}_{\mathbf{r}}^{1,2}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) -\int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)} \;,
+        &\mathbf{v}_{\mathbf{r}}^{1,2}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) -\int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}^{\prime}-\mathbf{r} \right)} \;,
     \end{align}
     \label{eq:velocityFields}
 \end{subequations}
 where $\mathbf{I}\left( \mathbf{r} \right)=|\mathbf{r}|^{-2}\mathbf{r}$. By substituting Eqs.~\eqref{eq:velocityFields} into Eq.~\eqref{eq:continuumModel}, we obtain
 \begin{equation}
     \begin{aligned}
-        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}\\
-        &-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\;.
+        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \mathbf{F}^{1,2}\left( \mathbf{r},\theta ,t \right) \\
+        &-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\;,
+    \end{aligned}
+\end{equation}
+where
+\begin{equation}
+    \mathbf{F}^{1,2}\left( \mathbf{r},\theta ,t \right)=\nabla \cdot \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\;,
+\end{equation}
+and 
+\begin{equation}
+    \begin{aligned}
+        \nabla\cdot\mathbf{F}^{1,2}\left( \mathbf{r},\theta ,t \right) &=\nabla \cdot \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\\
+        &=\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \nabla \cdot \left[ f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2} \right]}\\
+        &=\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \left[ -2\pi \delta \left( \mathbf{r}^{\prime}-\mathbf{r} \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) +\nabla f^{1,2}\left( \mathbf{r},\theta ,t \right) \cdot \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2} \right]}\\
+        &=-2\pi \left[ f^{1,2}\left( \mathbf{r},\theta ,t \right) \right] ^2+\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \nabla f^{1,2}\left( \mathbf{r},\theta ,t \right) \cdot \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\\
     \end{aligned}
 \end{equation}
 The equation accounts for self-propulsion, and short-range repulsion between particles, rotational diffusion and chemotactic alignment.
