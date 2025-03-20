@@ -133,21 +133,21 @@ where $f^{1,2}\left( \mathbf{r},\theta ,t \right)$ is the probability density of
 where $\mathbf{I}\left( \mathbf{r} \right)=|\mathbf{r}|^{-2}\mathbf{r}$. By substituting Eqs.~\eqref{eq:velocityFields} into Eq.~\eqref{eq:continuumModel}, we obtain
 \begin{equation}
     \begin{aligned}
-        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \mathbf{F}^{1,2}\left( \mathbf{r},\theta ,t \right) \\
+        \frac{\partial}{\partial t}f ^{1,2}\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f ^{1,2}-\nabla \cdot \mathbf{F}^{1,2}_{\text{coll}}\left( \mathbf{r},\theta ,t \right) \\
         &-\omega \partial _{\theta}f ^{1,2}-\left| \nabla c_{1,2} \right|\partial _{\theta}\left[ f ^{1,2}\sin \left( \varphi _{c_{1,2}}-\theta \right) \right]\;,
     \end{aligned}
 \end{equation}
 where
 \begin{equation}
-    \mathbf{F}^{1,2}\left( \mathbf{r},\theta ,t \right)=\nabla \cdot \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\;,
+    \mathbf{F}^{1,2}_{\text{coll}}\left( \mathbf{r},\theta ,t \right)=\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\;,
 \end{equation}
 and 
 \begin{equation}
     \begin{aligned}
-        \nabla\cdot\mathbf{F}^{1,2}\left( \mathbf{r},\theta ,t \right) &=\nabla \cdot \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\\
+        \nabla \cdot \mathbf{F}_{\mathrm{coll}}^{1,2}\left( \mathbf{r},\theta ,t \right) &=\nabla \cdot \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\\
         &=\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \nabla \cdot \left[ f^{1,2}\left( \mathbf{r},\theta ,t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2} \right]}\\
         &=\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \left[ -2\pi \delta \left( \mathbf{r}^{\prime}-\mathbf{r} \right) f^{1,2}\left( \mathbf{r},\theta ,t \right) +\nabla f^{1,2}\left( \mathbf{r},\theta ,t \right) \cdot \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2} \right]}\\
-        &=-2\pi \left[ f^{1,2}\left( \mathbf{r},\theta ,t \right) \right] ^2+\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \nabla f^{1,2}\left( \mathbf{r},\theta ,t \right) \cdot \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\\
+        &=-2\pi f^{1,2}\left( \mathbf{r},\theta ,t \right) \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}f^{1,2}\left( \mathbf{r},\theta ^{\prime},t \right)}+\nabla f^{1,2}\left( \mathbf{r},\theta ,t \right) \cdot \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f^{1,2}\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}
     \end{aligned}
 \end{equation}
 The equation accounts for self-propulsion, and short-range repulsion between particles, rotational diffusion and chemotactic alignment.
@@ -227,7 +227,60 @@ we have
     \end{array} \right] =-\frac{v}{2}\nabla \rho _{\mathrm{prop}}^{1,2}\;.
 \end{equation}
 
-Next, we turn to the short-range repulsion, $-\nabla \cdot \int{\mathrm{d}\theta ^{\prime} \mathrm{d}\mathbf{r}^{\prime} f ^{1,2}\left( \mathbf{r}^{\prime} ,\theta ^{\prime} ,t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)}$. We apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
+Next, we turn to the short-range repulsion, $-\nabla \cdot \mathbf{F}^{1,2}_{\text{coll}}\left( \mathbf{r},\theta ,t \right)$. We apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial t}f_{k,\mathrm{coll}}^{1,2}&=\frac{1}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ \nabla \cdot \mathbf{F}_{\mathrm{coll}}^{1,2}\left( \mathbf{r},\theta ,t \right) \right]}\\
+        &=-4\pi ^2f_{0,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) f_{k,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) +2\pi \nabla f_{k,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) \cdot \int{\mathrm{d}\mathbf{r}^{\prime}f_{0,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\;,\\
+    \end{aligned}
+\end{equation}
+With the definitions, Eqs.~\eqref{eq:particleDensity} and \eqref{eq:polarOrder}, we obtain for the field variables
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial t}\rho _{\mathrm{coll}}^{1,2}&=2\pi \frac{\partial}{\partial t}f_{0,\mathrm{coll}}^{1,2}\\
+        &=-2\pi \left[ f_{0,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) \right] ^2+\nabla f_{0,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) \cdot \int{\mathrm{d}\mathbf{r}^{\prime}f_{0,\mathrm{coll}}^{1,2}\left( \mathbf{r},t \right) \frac{\mathbf{r}^{\prime}-\mathbf{r}}{\left| \mathbf{r}^{\prime}-\mathbf{r} \right|^2}}\;,\\
+    \end{aligned}
+\end{equation}
+and
+\begin{equation}
+    \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{coll}}^{1,2}=-2\pi \rho _{\mathrm{coll}}^{1,2}\boldsymbol{p}_{\mathrm{coll}}^{1,2}+\dots 
+\end{equation}
+
+Next, we turn to the rotational diffusion, $-\omega \partial _{\theta}f^{1,2}$. We apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial t}f_{k,\mathrm{rota}}^{1,2}\left( \mathbf{r},t \right) &=-\frac{\omega}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\partial _{\theta}f^{1,2}\left( \mathbf{r},\theta ,t \right)}\\
+        &=-\frac{\omega}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\sum_{m=-\infty}^{\infty}{f_{m,\mathrm{rota}}^{1,2}\left( \mathbf{r},t \right) \partial _{\theta}\mathrm{e}^{\mathrm{i}m\theta}}}\\
+        &=-\frac{\omega}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \sum_{m=-\infty}^{\infty}{\mathrm{i}mf_{m,\mathrm{rota}}^{1,2}\left( \mathbf{r},t \right) \mathrm{e}^{\mathrm{i}\left( m-k \right) \theta}}}\\
+        &=-\frac{\omega}{2\pi}\sum_{m=-\infty}^{\infty}{\mathrm{i}mf_{m,\mathrm{rota}}^{1,2}\left( \mathbf{r},t \right) \int_0^{2\pi}{\mathrm{d}\theta}\mathrm{e}^{\mathrm{i}\left( m-k \right) \theta}}\\
+        &=-\omega \sum_{m=-\infty}^{\infty}{\mathrm{i}mf_{m,\mathrm{rota}}^{1,2}\left( \mathbf{r},t \right) \delta \left( m-k \right)}\\
+        &=-\mathrm{i}k\omega f_{k,\mathrm{rota}}^{1,2}\left( \mathbf{r},t \right)\\
+    \end{aligned}
+\end{equation}
+With the definitions, Eqs.~\eqref{eq:particleDensity} and \eqref{eq:polarOrder}, we obtain for the field variables
+\begin{equation}
+    \frac{\partial}{\partial t}\rho _{\mathrm{rota}}^{1,2}=0\;,
+\end{equation}
+and
+\begin{equation}
+    \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{rota}}^{1,2}=\pi \left[ \begin{array}{c}
+        \partial _tf_{1,\mathrm{rota}}^{1,2}+\partial _tf_{-1,\mathrm{rota}}^{1,2}\\
+        \mathrm{i}\left( \partial _tf_{1,\mathrm{rota}}^{1,2}-\partial _tf_{-1,\mathrm{rota}}^{1,2} \right)\\
+    \end{array} \right] =\omega \pi \left[ \begin{array}{c}
+        \mathrm{i}\left( f_{-1,\mathrm{rota}}^{1,2}-f_{1,\mathrm{rota}}^{1,2} \right)\\
+        f_{-1,\mathrm{rota}}^{1,2}+f_{1,\mathrm{rota}}^{1,2}\\
+    \end{array} \right] =\omega \boldsymbol{p}_{\mathrm{rota},\bot}^{1,2}\;,
+\end{equation}
+where $\boldsymbol{p}_{\mathrm{rota},\bot}^{1,2}=\left( -p_{\mathrm{rota},y}^{1,2},p_{\mathrm{rota},x}^{1,2} \right)$.
+
+Next, we turn to the chemotactic alignment, $-\omega \partial _{\theta}f^{1,2}$. We apply the projection operator, Eq.~\eqref{eq:fourierCoefficients}, onto the corresponding term in Eq.~\eqref{eq:continuumModel} and obtain
+\begin{equation}
+    \frac{\partial}{\partial t}\rho _{\mathrm{chem}}^{1,2}=0\;,
+\end{equation}
+and
+\begin{equation}
+    \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{chem}}^{1,2}=\rho _{\mathrm{chem}}^{1,2}\nabla c_{1,2}\;.
+\end{equation}
 
 \section{Behaviors}
 \begin{figure}[H]
