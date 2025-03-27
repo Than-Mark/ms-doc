@@ -279,8 +279,19 @@ Next, we turn to the chemotactic alignment, $-\omega \partial _{\theta}f^{1,2}$.
 \end{equation}
 and
 \begin{equation}
-    \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{chem}}^{1,2}=\rho _{\mathrm{chem}}^{1,2}\nabla c_{1,2}\;.
+    \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{chem}}^{1,2}=-\rho _{\mathrm{chem}}^{1,2}\nabla c_{1,2}\;.
 \end{equation}
+
+To summarize, the continuum model, Eq.~\eqref{eq:continuumModel}, can be written as
+\begin{subequations}
+    \begin{align}
+        &\dot{\rho}^{1,2}\left( \mathbf{r},t \right) =-v\nabla \cdot \boldsymbol{p}^{1,2}+D\nabla ^2\rho ^{1,2}\;,\\
+        &\dot{\boldsymbol{p}}^{1,2}\left( \mathbf{r},t \right) =-\frac{v}{2}\nabla \rho ^{1,2}+D\nabla ^2\boldsymbol{p}^{1,2}+\omega \boldsymbol{p}_{\bot}^{1,2}-\rho ^{1,2}\nabla c_{1,2}\;,\\
+        &\dot{c}_1\left( \mathbf{r},t \right) =D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
+        &\dot{c}_2\left( \mathbf{r},t \right) =D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}
+    \end{align}
+\end{subequations}
+where $\boldsymbol{p}_{\bot}^{1,2}=\left( -p_{y}^{1,2},p_{x}^{1,2} \right)$, and $D$ describes the effective diffusion caused by particle collisions.
 
 \section{Behaviors}
 \begin{figure}[H]
