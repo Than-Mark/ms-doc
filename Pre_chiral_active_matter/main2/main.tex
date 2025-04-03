@@ -1,0 +1,294 @@
+\documentclass[10pt,aspectratio=43,mathserif,table]{beamer} 
+%  设置为 Beamer 文档类型，设置字体为 10pt，长宽比为16:9，数学字体为 serif 风格
+\batchmode
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fontspec}
+\usepackage{multicol}
+
+% \setmainfont{Harding Text Web Regular Regular.ttf}
+\usepackage{diagbox} % 表头斜线分区
+\usepackage{unicode-math}
+\usefonttheme{serif}
+
+\usetheme{Berlin} %主题
+\setbeamertemplate{page number in head/foot}[pagenumber]
+%\usecolortheme{sustech} %主题颜色
+
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\usepackage{fancybox}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\usepackage{booktabs}
+\usepackage{colortbl}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+%题目，作者，学校，日期
+\title{Session II: \textbf{Hydrodynamics Analysis}}
+%\subtitle{\fontsize{9pt}{14pt}\textbf{跨临界分岔}}
+\author{Speaker: Yichen Lu\quad \newline  \newline \quad }
+\institute{School of Mathematical Science}
+\date{\today}
+\newcommand{\concept}{Paper Reading}
+
+\usepackage{ragged2e}
+\justifying
+
+%学校Logo
+%\pgfdeclareimage[height=0.5cm]{sustech-logo}{sustech-logo.pdf}
+%\logo{\pgfuseimage{sustech-logo}\hspace*{0.3cm}}
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+	\frametitle{\textbf{Contents}}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+% \beamerdefaultoverlayspecification{<+->}
+% -----------------------------------------------------------------------------
+\begin{document}
+% -----------------------------------------------------------------------------
+
+% \frame{\titlepage}
+\subsection{Active Matter}
+\begin{frame}
+    \makebox[\textwidth][c]{
+        \includegraphics[width=1.36\textwidth]{front.png}
+    }
+\end{frame}
+
+\subsection{General Agent-based Model}
+\begin{frame}
+    \small
+    \begin{subequations}
+        \begin{align}
+            &\dot{\mathbf{r}}_i\left( t \right) =v\mathbf{p}\left( \theta _i \right) +\sum_{j\ne i}{\mathbf{I}\left( \Delta \mathbf{r}_{ij} \right) }\;,\\
+            &\dot{\theta}_i\left( t \right) =\omega _i +\sum_{j\ne i}{H\left( \Delta \theta _{ji},\Delta \mathbf{r}_{ij} \right)}\;,
+        \end{align}
+    \end{subequations}
+    for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ and $\theta _i$ is the position and orientation of the $i$-th particle, respectively,
+    $v$ is the self-propulsion velocity, $\mathbf{p}\left( \theta _i \right)=\left( \cos \theta _i,\sin \theta _i \right)$ is the instantaneous unit orientation, $\omega _i$ is the natural frequency, $H\left( \Delta \theta _{ij},\Delta \mathbf{r}_{ij} \right)$ is the coupling function between partials, $\Delta \mathbf{r}_{ij}=\mathbf{r}_i-\mathbf{r}_j$, $\Delta \theta _{ij}=\theta _i-\theta _j$.
+    \begin{eqnarray}
+        &&\mathbf{I}\left( \Delta \mathbf{r} \right) =\frac{\Delta \mathbf{r}}{\left| \Delta \mathbf{r} \right|}k\left( R_r-\left| \Delta \mathbf{r} \right| \right) \Theta \left( R_r-\left| \Delta \mathbf{r} \right| \right) \\
+        &&H\left( \Delta \theta ,\Delta \mathbf{r} \right) =K\sin \left( \Delta \theta \right) \Theta \left( R_{\theta}-\left| \Delta \mathbf{r} \right| \right) 
+    \end{eqnarray}
+\end{frame}
+
+\subsection{Coarse-grained Description}
+\begin{frame}
+    \small
+    In the thermodynamic limit $N\rightarrow \infty$, the agent-based model gives rise to the following continuum form:
+    \begin{equation}
+        \frac{\partial}{\partial t}f\left( \mathbf{r},\theta ,t \right) =-\frac{\partial}{\partial \theta}\left( fv_{\theta} \right) -\nabla \cdot \left( f\mathbf{v}_{\mathbf{r}} \right) \;, \label{eq:continuumModel}
+    \end{equation}
+    where $f\left( \mathbf{r},\theta ,t \right)$ is the probability density of particles at position $\mathbf{r}$ and orientation $\theta$ at time $t$, and $\mathbf{v}_{\mathbf{r}}$ and $v_{\theta}$ are the velocity fields in the position and orientation space, respectively. The velocity fields are given by
+    \begin{subequations}
+        \begin{align}
+            &v_{\theta}\left( \mathbf{r},\theta ,t \right) =\omega +K\int{\mathrm{d}\theta ^{\prime}f\left( \mathbf{r},\theta ^{\prime},t \right) \sin \left( \theta ^{\prime}-\theta \right)}\;,\\
+            &\mathbf{v}_{\mathbf{r}}\left( \mathbf{r},\theta ,t \right) =v\mathbf{p}\left( \theta \right) +\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right) \;.}
+        \end{align}
+        \label{eq:velocityFields}
+    \end{subequations}
+    By substituting Eqs.~\eqref{eq:velocityFields} into Eq.~\eqref{eq:continuumModel}, we obtain
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}f\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f-\nabla \cdot \left[ f\left( \mathbf{r},\theta ,t \right) \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)} \right]\\
+            &-\omega \partial _{\theta}f-K\partial _{\theta}\left[f\left( \mathbf{r},\theta ,t \right) \int{\mathrm{d}\theta ^{\prime}f\left( \mathbf{r},\theta ^{\prime},t \right) \sin \left( \theta ^{\prime}-\theta \right)}\right]\;,\\
+        \end{aligned}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \small
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}f\left( \mathbf{r},\theta ,t \right) =&-v\mathbf{p}\left( \theta \right) \cdot \nabla f-\nabla \cdot \left[ f\left( \mathbf{r},\theta ,t \right) \int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \mathbf{I}\left( \mathbf{r}-\mathbf{r}^{\prime} \right)} \right]\\
+            &-\omega \partial _{\theta}f-K\partial _{\theta}\int{\mathrm{d}\theta ^{\prime}\mathrm{d}\mathbf{r}^{\prime}f\left( \mathbf{r},\theta ^{\prime},t \right) \sin \left( \theta ^{\prime}-\theta \right)}\;,\\
+        \end{aligned}
+    \end{equation}
+    The equation accounts for self-propulsion, and short-range repulsion between particles, rotational diffusion and alignment interactions. 
+    From here, we expand $f\left( \mathbf{r},\theta ,t \right)$ in a Fourier series 
+    \begin{equation}
+        f \left( \mathbf{r},\theta ,t \right) =\sum_{k=-\infty}^{\infty}{f _{k}\left( \mathbf{r},t \right) \mathrm{e}^{\mathrm{i}k\theta}}\;,
+    \end{equation} 
+    with the projection 
+    \begin{equation}
+        \label{eq:fourierCoefficients}
+        f _{k}\left( \mathbf{r},t \right) =\frac{1}{2\pi}\int{\mathrm{d}\theta f \left( \mathbf{r},\theta ,t \right) \mathrm{e}^{-\mathrm{i}k\theta}}\;,
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \small
+    and define the coefficients  as the particle density $ \rho\left(\mathbf{r}, t\right)$ and the density-weighted polar order $\boldsymbol{p}\left(\mathbf{r}, t\right)$ by relating them to the harmonics via the Fourier expansion:
+    \begin{subequations}
+        \begin{align}
+            \rho \left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta f\left( \mathbf{r},\theta ,t \right)}=2\pi f_{0}\left( \mathbf{r},t \right)
+            \label{eq:particleDensity}
+            \\
+            \boldsymbol{p}\left( \mathbf{r},t \right) &\equiv \int_0^{2\pi}{\mathrm{d}\theta \mathbf{p}\left( \theta \right) f\left( \mathbf{r},\theta ,t \right)}\notag\\
+            &=\int_0^{2\pi}{\mathrm{d}\theta \left[ \begin{array}{c}
+            \cos \theta\\
+            \sin \theta\\
+        \end{array} \right] f\left( \mathbf{r},\theta ,t \right)}=\int_0^{2\pi}{\mathrm{d}\theta \frac{1}{2}\left[ \begin{array}{c}
+            \mathrm{e}^{\mathrm{i}\theta}+\mathrm{e}^{-\mathrm{i}\theta}\\
+            \mathrm{i}\left( \mathrm{e}^{-\mathrm{i}\theta}-\mathrm{e}^{\mathrm{i}\theta} \right)\\
+        \end{array} \right] f\left( \mathbf{r},\theta ,t \right)}\notag\\
+            &=\pi \left[ \begin{array}{c}
+            f_{1}\left( \mathbf{r},t \right) +f_{-1}\left( \mathbf{r},t \right)\\
+            \mathrm{i}\left( f_{1}\left( \mathbf{r},t \right) -f_{-1}\left( \mathbf{r},t \right) \right)\\
+        \end{array} \right]
+        \label{eq:polarOrder}
+        \end{align}
+    \end{subequations}
+\end{frame}
+
+\begin{frame}
+    \small
+    In the following, the different contributions to the continuum model, are analyzed separately.
+
+    Firstly, in order to derive expressions for the self-propulsion, $-v\mathbf{p}\left( \theta \right) \cdot \nabla f$, we apply the projection operator, $f _{k}\left( \mathbf{r},t \right) =\frac{1}{2\pi}\int{\mathrm{d}\theta f \left( \mathbf{r},\theta ,t \right) \mathrm{e}^{-\mathrm{i}k\theta}}$, onto the corresponding term and obtain
+    \begin{equation}
+        \small
+        \begin{aligned}
+            \frac{\partial}{\partial t}f_{k,\mathrm{prop}}=&\frac{1}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\left[ -v\mathbf{p}\left( \theta \right) \cdot \nabla f \right]}\\
+            =&-\frac{v}{4\pi}\int_0^{2\pi}{\mathrm{d}\theta \left\{ \mathrm{e}^{-\mathrm{i}k\theta}\left[ \partial _x\sum_{m=-\infty}^{\infty}{f_m\left( \mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta}+\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta} \right)} \right. \right.}\\
+            &\left. \left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_m\left( \mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta}-\mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta} \right)} \right] \right\}\\
+            =&-\frac{v}{2}\left\{ \partial _x\sum_{m=-\infty}^{\infty}{f_m\left[ \delta \left( m-k+1 \right) +\delta \left( m-k-1 \right) \right]} \right.\\
+            &\left. +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_m\left[ \delta \left( m-k-1 \right) -\delta \left( m-k+1 \right) \right]} \right\} \;.\\
+        \end{aligned}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \small
+    With the definitions of $\rho \left( \mathbf{r},t \right)$ and $\boldsymbol{p}\left( \mathbf{r},t \right)$, we obtain for the field variables
+    \begin{equation}
+        \small
+        \begin{aligned}
+            \frac{\partial}{\partial t}\rho _{\mathrm{prop}}=&2\pi \frac{\partial}{\partial t}f_{0,\mathrm{prop}}\\
+            =&-v\pi \left[ \partial _x\sum_{m=-\infty}^{\infty}{f_{m}\left( \delta _{m+1}+\delta _{m-1} \right)} +\mathrm{i}\partial _y\sum_{k=-\infty}^{\infty}{f_{m}\left( \delta _{m-1}-\delta _{m+1} \right)} \right]\\
+            =&-v\pi \left[ \partial _x\left( f_{-1}+f_{1} \right) +\mathrm{i}\partial _y\left( f_{1}-f_{-1} \right) \right]\\
+            =&-v\nabla \cdot \boldsymbol{p}_{\mathrm{prop}}\;,\\
+        \end{aligned}
+    \end{equation}
+    and because of 
+    \begin{subequations}
+        \begin{align}
+            \partial _tf_{1}&=-\frac{v}{2}\left[ \partial _x\left( f_{0}+f_{2} \right) +\mathrm{i}\partial _y\left( f_{2}-f_{0} \right) \right] \;,\\
+            \partial _tf_{-1}&=-\frac{v}{2}\left[ \partial _x\left( f_{0}+f_{2} \right) +\mathrm{i}\partial _y\left( f_{0}-f_{2} \right) \right] \;,
+        \end{align}
+    \end{subequations}
+    we have
+    \begin{equation}
+        \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{prop}}=\pi \left[ \begin{array}{c}
+            -v\partial _x\left( f_{0}+f_{2} \right)\\
+            v\partial _y\left( f_{2}-f_{0} \right)\\
+        \end{array} \right] \approx -\frac{v}{2}\left[ \begin{array}{c}
+            \partial _xf_{0}\\
+            \partial _yf_{0}\\
+        \end{array} \right] =-\frac{v}{2}\nabla \rho _{\mathrm{prop}}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \small
+    Next, we turn to the rotational diffusion, $-\omega \partial _{\theta}f$. 
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}f_{k,\mathrm{rota}}\left( \mathbf{r},t \right) &=-\frac{\omega}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{-\mathrm{i}k\theta}\partial _{\theta}f\left( \mathbf{r},\theta ,t \right)}\\
+            &=-\frac{\omega}{2\pi}\sum_{m=-\infty}^{\infty}{\mathrm{i}mf_{m,\mathrm{rota}}\left( \mathbf{r},t \right) \int_0^{2\pi}{\mathrm{d}\theta \mathrm{e}^{\mathrm{i}\left( m-k \right) \theta}}}\\
+            &=-\omega \sum_{m=-\infty}^{\infty}{\mathrm{i}mf_{m,\mathrm{rota}}\left( \mathbf{r},t \right) \delta \left( m-k \right)}\\
+            &=-\mathrm{i}k\omega f_{k,\mathrm{rota}}\left( \mathbf{r},t \right)\\
+        \end{aligned}
+    \end{equation}
+    With the definitions of $\rho \left( \mathbf{r},t \right)$ and $\boldsymbol{p}\left( \mathbf{r},t \right)$, we obtain for the field variables
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}\rho _{\mathrm{rota}}&=0\;,\\
+            \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{rota}}& =\omega \pi \left[ \begin{array}{c}
+            \mathrm{i}\left( f_{-1,\mathrm{rota}}-f_{1,\mathrm{rota}} \right)\\
+            f_{-1,\mathrm{rota}}+f_{1,\mathrm{rota}}\\
+        \end{array} \right] =\omega \boldsymbol{p}_{\mathrm{rota},\bot}\;,\\
+        \end{aligned}
+    \end{equation}
+    where $\boldsymbol{p}_{\mathrm{rota},\bot}=\left( -p_{\mathrm{rota},y},p_{\mathrm{rota},x} \right)$.
+\end{frame}
+
+\begin{frame}
+    \small
+    Next, we turn to the alignment interactions,
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}f_{\mathrm{alig}}\left( \mathbf{r},\theta ,t \right) =&-K\partial _{\theta}\left[f\left( \mathbf{r},\theta ,t \right) \int{\mathrm{d}\theta ^{\prime}f\left( \mathbf{r},\theta ^{\prime},t \right) \sin \left( \theta ^{\prime}-\theta \right)}\right]\\
+            =&K\mathrm{i}\pi \left( \mathrm{e}^{-\mathrm{i}\theta}f_{-1,\mathrm{alig}}-\mathrm{e}^{\mathrm{i}\theta}f_{1,\mathrm{alig}} \right) \sum_{-\infty}^{+\infty}{mf_{k,\mathrm{alig}}\mathrm{e}^{\mathrm{i}m\theta}}+\\
+            &K\pi \left( \mathrm{e}^{-\mathrm{i}\theta}f_{-1,\mathrm{alig}}+\mathrm{e}^{\mathrm{i}\theta}f_{1,\mathrm{alig}} \right) f_{\mathrm{alig}}\\
+        \end{aligned}
+    \end{equation}
+    and
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}f_{k,\mathrm{alig}}\left( \mathbf{r},t \right) =&\frac{1}{2\pi}\int{\mathrm{d}\theta f_{\mathrm{alig}}\left( \mathbf{r},\theta ,t \right) \mathrm{e}^{-\mathrm{i}k\theta}}\\
+            =&-K\pi \left( f_{-1,\mathrm{alig}}\sum_{-\infty}^{+\infty}{mf_{k,\mathrm{alig}}\delta _{k-m+1}}-f_{1,\mathrm{alig}}\sum_{-\infty}^{+\infty}{mf_{k,\mathrm{alig}}\delta _{k-m-1}} \right) \\
+            &+K\pi \left( f_{k+1,\mathrm{alig}}f_{-1,\mathrm{alig}}+f_{k-1,\mathrm{alig}}f_{1,\mathrm{alig}} \right)\\
+            =&-K\pi \left[ \left( k+1 \right) f_{-1,\mathrm{alig}}f_{k,\mathrm{alig}}-\left( k-1 \right) f_{1,\mathrm{alig}}f_{k,\mathrm{alig}} \right] \\
+            &+K\pi \left( f_{k+1,\mathrm{alig}}f_{-1,\mathrm{alig}}+f_{k-1,\mathrm{alig}}f_{1,\mathrm{alig}} \right) \\
+        \end{aligned}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    With the definitions of $\rho \left( \mathbf{r},t \right)$ and $\boldsymbol{p}\left( \mathbf{r},t \right)$, we obtain for the field variables
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial t}\rho _{\mathrm{alig}}&=0\;,\\
+            \frac{\partial}{\partial t}\boldsymbol{p}_{\mathrm{alig}}&=\pi \left[ \begin{array}{c}
+            \partial _t\left[ f_1\left( \mathbf{r},t \right) +f_{-1}\left( \mathbf{r},t \right) \right]\\
+            \mathrm{i}\partial _t\left[ f_1\left( \mathbf{r},t \right) -f_{-1}\left( \mathbf{r},t \right) \right]\\
+        \end{array} \right] =K\rho _{\mathrm{alig}}\boldsymbol{p}_{\mathrm{alig}}\\
+        \end{aligned}
+    \end{equation}
+    because of
+    \begin{eqnarray}
+        \begin{aligned}
+            &&\frac{\partial}{\partial t}f_1&=K\pi \left( f_2f_{-1}+f_0f_1-2f_{-1}f_1 \right) =K\pi f_1\left( f_0-2f_{-1} \right)\\
+            &&\frac{\partial}{\partial t}f_{-1}&=K\pi \left( f_0f_{-1}+f_{-2}f_1-2f_{-1}f_1 \right) =K\pi f_{-1}\left( f_0-2f_1 \right)\\
+        \end{aligned}
+    \end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+    \small
+    Next, we turn to the short-range repulsion
+    \begin{equation}
+        \begin{aligned}
+            \int{\boldsymbol{F}_{\mathrm{sr}}f\left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \mathrm{d}\mathbf{r}^{\prime}\mathrm{d}\theta ^{\prime}}&=2\pi \int{\frac{\mathbf{r}-\mathbf{r}^{\prime}}{\left| \mathbf{r}-\mathbf{r}^{\prime} \right|}k\left( R_r-\left| \mathbf{r}-\mathbf{r}^{\prime} \right| \right) \Theta \left( R_r-\left| \mathbf{r}-\mathbf{r}^{\prime} \right| \right) f\left( \mathbf{r}^{\prime},t \right) \mathrm{d}\mathbf{r}^{\prime}}\\
+            &=2\pi \int_0^{R_r}{\int_0^{2\pi}{\mathbf{p}\left( \phi \right) k\left( R_r-d \right) \left[ f\left( 0,t \right) +d\nabla f\left( \mathbf{r}^{\prime},t \right) \right] \mathrm{d}d\mathrm{d}\phi}}\\
+            &=\frac{4\pi ^2}{3}R_{r}^{4}\nabla f\left( \mathbf{r}^{\prime},t \right)\\
+        \end{aligned}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    To summarize, the continuum model can be written as
+    \begin{subequations}
+        \begin{align}
+            &\dot{\rho}^{1,2}\left( \mathbf{r},t \right) =-v\nabla \cdot \boldsymbol{p}^{1,2}+D\nabla ^2\rho ^{1,2}\;,\\
+            &\dot{\boldsymbol{p}}^{1,2}\left( \mathbf{r},t \right) =-\frac{v}{2}\nabla \rho ^{1,2}+D\nabla ^2\boldsymbol{p}^{1,2}+\omega \boldsymbol{p}_{\bot}^{1,2}-K\rho\boldsymbol{p}\;,
+        \end{align}
+    \end{subequations}
+\end{frame}
+
+
+
+% -----------------------------------------------------------------------------
+\end{document}
