@@ -103,14 +103,14 @@ where $\mathbf{I}_{ij}^{1,2}=\frac{\mathbf{r}_j-\mathbf{r}_{i}^{1,2}}{|\mathbf{r
 
 \noindent\textbf{Chemotactic Model with Lotka-Volterra Functions}
 
-Let $F_1\left( c_1,c_2 \right)=c_1\left( k_1-k_2c_2 \right)$ and $F_2\left( c_1,c_2 \right)=c_2\left( k_3c_1-k_4 \right)$, where $k_1,k_2,k_3,k_4$ are constants.
+Let $F_1\left( c_1,c_2 \right)=k_1c_1\left( 1-c_2 \right)$ and $F_2\left( c_1,c_2 \right)=k_2c_2\left( c_1-1 \right)$, where $k_1,k_2$ are constants.
 
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\label{dotR}\\
         &\dot{\theta}_{i}^{1,2}=\omega + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
-        &\dot{c}_1=D_1\nabla ^2c_1+c_1\left( k_1-k_2c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right) \;,}\\
-        &\dot{c}_2=D_2\nabla ^2c_2+c_2\left( k_3c_1-k_4 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right) \;,}
+        &\dot{c}_1=D_1\nabla ^2c_1+k_1c_1\left( 1-c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right)}\;,\\
+        &\dot{c}_2=D_2\nabla ^2c_2+k_2c_2\left( c_1-1 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right)}\;,
     \end{align}
     \label{eq:chemoLVModel}
 \end{subequations}
