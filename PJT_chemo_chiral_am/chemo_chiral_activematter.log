@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  13 APR 2025 16:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.9.9)  27 APR 2025 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -331,117 +331,148 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \mult@nat@firstbox=\box96
 \colbreak@box=\box97
 \mc@col@check@num=\count287
+) (e:/texlive/2021/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
+ (e:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (e:/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count288
+\calc@Bcount=\count289
+\calc@Adimen=\dimen170
+\calc@Bdimen=\dimen171
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count290
+\calc@Cskip=\skip57
+) (e:/texlive/2021/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen172
+\ESO@tempdimb=\dimen173
+)
+\AM@pagewidth=\dimen174
+\AM@pageheight=\dimen175
+\AM@fboxrule=\dimen176
+ (e:/texlive/2021/texmf-dist/tex/latex/pdfpages/ppxetex.def
+File: ppxetex.def 2021/03/06 v0.5t Pdfpages driver for XeTeX (AM)
+)
+\pdfpages@includegraphics@status=\count291
+\AM@pagebox=\box98
+\AM@global@opts=\toks23
+\AM@pagecnt=\count292
+\AM@toc@title=\toks24
+\c@AM@survey=\count293
+\AM@templatesizebox=\box99
 ) (e:/texlive/2021/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count288
- (e:/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\algocf@hangindent=\skip55
+\c@AlgoLine=\count294
+\algocf@hangindent=\skip58
  (e:/texlive/2021/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count289
+\c@checkoddpage=\count295
 ) (e:/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (e:/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip56
-\skiplinenumber=\skip57
-\skiprule=\skip58
-\skiphlne=\skip59
-\skiptext=\skip60
-\skiplength=\skip61
-\algomargin=\skip62
-\skipalgocfslide=\skip63
-\algowidth=\dimen170
-\inoutsize=\dimen171
-\inoutindent=\dimen172
-\interspacetitleruled=\dimen173
-\interspacealgoruled=\dimen174
-\interspacetitleboxruled=\dimen175
-\algocf@ruledwidth=\skip64
-\algocf@inoutbox=\box98
-\algocf@inputbox=\box99
-\AlCapSkip=\skip65
-\AlCapHSkip=\skip66
-\algoskipindent=\skip67
-\algocf@nlbox=\box100
-\algocf@hangingbox=\box101
-\algocf@untilbox=\box102
-\algocf@skipuntil=\skip68
-\algocf@capbox=\box103
-\algocf@lcaptionbox=\skip69
-\algoheightruledefault=\skip70
-\algoheightrule=\skip71
-\algotitleheightruledefault=\skip72
-\algotitleheightrule=\skip73
-\c@algocfline=\count290
-\c@algocfproc=\count291
-\c@algocf=\count292
-\algocf@algoframe=\box104
-\algocf@algobox=\box105
+\skiptotal=\skip59
+\skiplinenumber=\skip60
+\skiprule=\skip61
+\skiphlne=\skip62
+\skiptext=\skip63
+\skiplength=\skip64
+\algomargin=\skip65
+\skipalgocfslide=\skip66
+\algowidth=\dimen177
+\inoutsize=\dimen178
+\inoutindent=\dimen179
+\interspacetitleruled=\dimen180
+\interspacealgoruled=\dimen181
+\interspacetitleboxruled=\dimen182
+\algocf@ruledwidth=\skip67
+\algocf@inoutbox=\box100
+\algocf@inputbox=\box101
+\AlCapSkip=\skip68
+\AlCapHSkip=\skip69
+\algoskipindent=\skip70
+\algocf@nlbox=\box102
+\algocf@hangingbox=\box103
+\algocf@untilbox=\box104
+\algocf@skipuntil=\skip71
+\algocf@capbox=\box105
+\algocf@lcaptionbox=\skip72
+\algoheightruledefault=\skip73
+\algoheightrule=\skip74
+\algotitleheightruledefault=\skip75
+\algotitleheightrule=\skip76
+\c@algocfline=\count296
+\c@algocfproc=\count297
+\c@algocf=\count298
+\algocf@algoframe=\box106
+\algocf@algobox=\box107
 ) (e:/texlive/2021/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (e:/texlive/2021/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count293
-\Gm@cntv=\count294
-\c@Gm@tempcnt=\count295
-\Gm@bindingoffset=\dimen176
-\Gm@wd@mp=\dimen177
-\Gm@odd@mp=\dimen178
-\Gm@even@mp=\dimen179
-\Gm@layoutwidth=\dimen180
-\Gm@layoutheight=\dimen181
-\Gm@layouthoffset=\dimen182
-\Gm@layoutvoffset=\dimen183
-\Gm@dimlist=\toks23
+\Gm@cnth=\count299
+\Gm@cntv=\count300
+\c@Gm@tempcnt=\count301
+\Gm@bindingoffset=\dimen183
+\Gm@wd@mp=\dimen184
+\Gm@odd@mp=\dimen185
+\Gm@even@mp=\dimen186
+\Gm@layoutwidth=\dimen187
+\Gm@layoutheight=\dimen188
+\Gm@layouthoffset=\dimen189
+\Gm@layoutvoffset=\dimen190
+\Gm@dimlist=\toks25
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 30.
+Package hyperref Info: Option `colorlinks' set `true' on input line 31.
  (e:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
  (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count296
-\l__color_backend_stack_int=\count297
-\g__color_backend_stack_int=\count298
-\g__graphics_track_int=\count299
-\l__pdf_internal_box=\box106
-\g__pdf_backend_object_int=\count300
-\g__pdf_backend_annotation_int=\count301
-\g__pdf_backend_link_int=\count302
+\c__kernel_sys_dvipdfmx_version_int=\count302
+\l__color_backend_stack_int=\count303
+\g__color_backend_stack_int=\count304
+\g__graphics_track_int=\count305
+\l__pdf_internal_box=\box108
+\g__pdf_backend_object_int=\count306
+\g__pdf_backend_annotation_int=\count307
+\g__pdf_backend_link_int=\count308
 ) (./chemo_chiral_activematter.aux)
 \openout1 = `chemo_chiral_activematter.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 36.
  (e:/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-Package hyperref Info: Link coloring ON on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+Package hyperref Info: Link coloring ON on input line 36.
  (e:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (e:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -449,11 +480,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (e:/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count309
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
  (./chemo_chiral_activematter.out) (./chemo_chiral_activematter.out)
 \@outlinefile=\write3
 \openout3 = `chemo_chiral_activematter.out'.
@@ -461,7 +492,13 @@ LaTeX Info: Redefining \nameref on input line 35.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
+ (e:/texlive/2021/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+ (e:/texlive/2021/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -496,15 +533,15 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
 (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 38.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39.
  (e:/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (./chemo_chiral_activematter.toc)
@@ -515,125 +552,131 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ] [2] [3]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 190.
+LaTeX Font Warning: Command \small invalid in math mode on input line 200.
 
 
-Overfull \hbox (4.4434pt too wide) detected at line 197
+Overfull \hbox (4.4434pt too wide) detected at line 207
 [][][]
  []
 
 [4]
-LaTeX Font Info:    Calculating math sizes for size <> on input line 197.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 207.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 197.
+(Font)              size <5> substituted on input line 207.
 
-[5]
-File: figs/bigGraphParticle_k23_0.5.png Graphic file (type bmp)
-<figs/bigGraphParticle_k23_0.5.png>
- [6]
+[5] [6]
+File: figs/bigGraphParticle_o0_sP0.01.png Graphic file (type bmp)
+<figs/bigGraphParticle_o0_sP0.01.png>
+File: figs/bigGraphParticle_o0_sP0.1.png Graphic file (type bmp)
+<figs/bigGraphParticle_o0_sP0.1.png>
+ [7]
+File: figs/bigGraphField_o0_sP0.01.png Graphic file (type bmp)
+<figs/bigGraphField_o0_sP0.01.png>
+ [8]
+File: figs/bigGraphField_o0_sP0.1.png Graphic file (type bmp)
+<figs/bigGraphField_o0_sP0.1.png>
+ [9]
 File: figs/particle.png Graphic file (type bmp)
 <figs/particle.png>
 File: figs/streamplot.png Graphic file (type bmp)
 <figs/streamplot.png>
-File: figs/meanCs.png Graphic file (type bmp)
-<figs/meanCs.png>
- [7] [8] (./chemo_chiral_activematter.aux)
+ (./chemo_chiral_activematter.bbl) [10] (./chemo_chiral_activematter.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.5pt have occurred.
 
 Package rerunfilecheck Info: File `chemo_chiral_activematter.out' has not changed.
-(rerunfilecheck)             Checksum: DCFE2BB75756169AA5EB0C7E4D39199E;922.
+(rerunfilecheck)             Checksum: 112B8CAF03807E2997266FEEA25C320D;1369.
  ) 
 Here is how much of TeX's memory you used:
- 12269 strings out of 478907
- 184677 string characters out of 5866571
- 528867 words of memory out of 5000000
- 31930 multiletter control sequences out of 15000+600000
- 421303 words of font info for 108 fonts, out of 8000000 for 9000
+ 13025 strings out of 478907
+ 197240 string characters out of 5866571
+ 543960 words of memory out of 5000000
+ 32657 multiletter control sequences out of 15000+600000
+ 421311 words of font info for 109 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,17n,77p,1080b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,17n,77p,1080b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on chemo_chiral_activematter.pdf (8 pages).
+Output written on chemo_chiral_activematter.pdf (10 pages).

@@ -10,6 +10,7 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{multicol}
+\usepackage{pdfpages}
 \usepackage[ruled,linesnumbered]{algorithm2e}
 
 \bibliographystyle{plain}
@@ -53,6 +54,15 @@ for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particl
 The natural frequencies $\omega_i$ are distributed with following two cases:
 \begin{enumerate}
     \item \textbf{Single-chiral particles:} The natural frequencies $\omega_i$ are distributed in $U\left( \omega _{\min},\omega _{\max} \right)$ for all particles and $\omega _{\min}\omega _{\max}>0$.
+    The chemotactic dynamics of Single-chiral particles has been studied by Liebchen et al. \cite{C6SM01162D}:
+    \begin{subequations}
+        \begin{align}
+            \dot{\rho}&=-v_0\nabla \cdot \left( \rho \mathbf{p} \right) +D_{\rho}\nabla ^2\rho +K\nabla ^2\rho ^3\\
+            \dot{\phi}&=\omega +\beta \mathbf{\hat{p}}\times \nabla c; \mathbf{p}=\left( \cos \phi ,\sin \phi \right) ^{\top}\\
+            \dot{c}&=k_0\rho -k_dc+D_c\nabla ^2c+\varepsilon \left( c_0-c \right) ^3
+        \end{align}
+    \end{subequations}
+        where $\rho$ is the density of particles, $\phi$ is the angle of the particle, $c$ is the concentration of the chemical field, $k_0$ is the production rate of the chemical field, $k_d$ is the degradation rate of the chemical field, $D_c$ is the diffusion coefficient of the chemical field, $\varepsilon$ is a constant, and $c_0$ is a constant.
     
     \item \textbf{Double-chiral particles:} The frequencies are distributed in two symmetric uniform distributions, representing two types of chirality. Exactly half of the particles have natural frequencies $\omega_i \sim U\left( \omega _{\min},\omega _{\max} \right)$ and the other half have natural frequencies $\omega_i \sim U\left( -\omega _{\max},-\omega _{\min} \right)$.
 \end{enumerate}
@@ -91,7 +101,7 @@ The function $f\left( r \right)$ can be defined as
 \end{subequations}
 where $\mathbf{I}_{ij}^{1,2}=\frac{\mathbf{r}_j-\mathbf{r}_{i}^{1,2}}{|\mathbf{r}_j-\mathbf{r}_{i}^{1,2}|^{2}}$, $\varphi _{c_{1,2}}=\arctan \left( \frac{\partial _yc_{1,2}}{\partial _xc_{1,2}} \right) $ and $A_{i}^{1,2}=\left\{ j\mid r_c\geqslant | \mathbf{r}_j-\mathbf{r}_{i}^{1,2} | \right\}$.
 
-\noindent Type 2:
+\noindent\textcolor{red}{Type 2 (Now Considering):}
 \begin{subequations}
     \begin{align}
         &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) +\alpha _{1,2}\nabla c_{1,2}-\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\\
@@ -293,10 +303,51 @@ To summarize, the continuum model, Eq.~\eqref{eq:continuumModel}, can be written
 \end{subequations}
 where $\boldsymbol{p}_{\bot}^{1,2}=\left( -p_{y}^{1,2},p_{x}^{1,2} \right)$, and $D$ describes the effective diffusion caused by particle collisions.
 
+\newpage
 \section{Behaviors}
+\subsection{Snapshots of Particle Distributions}
+The time varying version of the snapshots can be found at the tail end of the document. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figs/bigGraphParticle_k23_0.5.png}
+    \includegraphics[width=\textwidth]{figs/bigGraphParticle_o0_sP0.01.png}
+    \caption{
+        Particle distribution of the chemotactic model with Lotka-Volterra functions in Eqs.~\eqref{eq:chemoLVModel}. The parameters used are: $\omega=0$, $D_1=D_2=1$, $v=0.01$.
+    }
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/bigGraphParticle_o0_sP0.1.png}
+    \caption{
+        Particle distribution of the chemotactic model with Lotka-Volterra functions in Eqs.~\eqref{eq:chemoLVModel}. The parameters used are: $\omega=0$, $D_1=D_2=1$, $v=0.1$.
+    }
+\end{figure}
+
+% \includepdf[pages={9}, width=0.9\textwidth]{figs/snapshots_o0_sP0.01.pdf}
+% \subsection{Time Varying Snapshots of Particle Distributions}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{figs/snapshots_o0_sP0.01.png}
+%     % \caption{
+%     %     Time varying snapshots of the particle distribution of the chemotactic model with Lotka-Volterra functions in Eqs.~\eqref{eq:chemoLVModel}. The parameters used are: $\omega=0$, $D_1=D_2=1$, $v=0.01$. The time step is 0.01 and the total time is 10.
+%     % }
+% \end{figure}
+
+\subsection{Snapshots of Chemical Fields}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/bigGraphField_o0_sP0.01.png}
+    \caption{
+        Chemical fields of the chemotactic model with Lotka-Volterra functions in Eqs.~\eqref{eq:chemoLVModel}. The parameters used are: $\omega=0$, $D_1=D_2=1$, $v=0.01$.
+    }
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figs/bigGraphField_o0_sP0.1.png}
+    \caption{
+        Chemical fields of the chemotactic model with Lotka-Volterra functions in Eqs.~\eqref{eq:chemoLVModel}. The parameters used are: $\omega=0$, $D_1=D_2=1$, $v=0.1$.
+    }
 \end{figure}
 
 \begin{figure}[htbp]
@@ -313,13 +364,7 @@ where $\boldsymbol{p}_{\bot}^{1,2}=\left( -p_{y}^{1,2},p_{x}^{1,2} \right)$, and
     % }
 \end{figure}
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figs/meanCs.png}
-\end{figure}
 
-
-
-% \bibliography{ref}
+\bibliography{ref}
 
 \end{document}

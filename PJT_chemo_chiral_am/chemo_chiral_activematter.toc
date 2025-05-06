@@ -2,6 +2,8 @@
 \contentsline {subsection}{\numberline {1.1}Definitions}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}General Model}{2}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Polar alignment Interaction}{2}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Chemotactic Interaction}{2}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.3}Chemotactic Interaction}{3}{subsubsection.1.1.3}%
 \contentsline {section}{\numberline {2}Continuum model}{3}{section.2}%
 \contentsline {section}{\numberline {3}Behaviors}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Snapshots of Particle Distributions}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Snapshots of Chemical Fields}{9}{subsection.3.2}%
