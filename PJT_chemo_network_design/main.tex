@@ -18,7 +18,7 @@
 \usepackage{geometry}
 \geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
 
-% 设置文章行距
+% set line spacing
 % \renewcommand{\baselinestretch}{1.5}
 
 % define reference format
@@ -110,21 +110,32 @@ where $\mathbf{v}=v_{\boldsymbol{c}}\sum_{i=1}^N{\delta \left( \mathbf{r}-\mathb
 is the angle toward the particle's center of mass at position $\mathbf{r}$, where $\left( x_{\mathrm{cm}},y_{\mathrm{cm}} \right) ^{\top}=N^{-1}\sum\nolimits_i^{}{\mathbf{r}_i}$.
 
 
-\subsection{Final Definitions}
-We consider a 2D box with $N$ chemotactic particles and $M$ food source nodes. The particles are subject to a chemotactic force, a short-range repulsion force, and a noise term. The chemical concentration field evolves via diffusion, decay, and production from the target nodes, while each particle’s internal state regulates the local chemical concentration. 
-The dynamics are governed by the following equations:
 \begin{subequations}
     \begin{align}
-        &\dot{\mathbf{r}}_i\left( t \right) =\alpha _c\nabla c-\nabla _{\mathbf{r}_i}V+\sqrt{2D_p}\boldsymbol{\eta }_i \;,
+        &\mathbf{\dot{r}}_i\left( t \right) =\alpha _c\nabla c-\nabla _{\mathbf{r}_i}V+\sqrt{2D_p}\boldsymbol{\eta }_i\;,
         \\
-        &\dot{s}_i\left( t \right) =s_i\left( 1-s_i \right) \left( c_{\mathbf{r}_i}-c_s \right) \;,
+        &\dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c-k_cc+\sum\nolimits_j^{}{s_j\delta \left( \mathbf{r}-\mathbf{r}_{j}^{*} \right)}\;,
         \\
-        &\dot{c}\left( \mathbf{r},t \right) = D_c\nabla ^2c-k_c\left( 1-s_{\mathbf{r}} \right) c+\beta _c\sum\nolimits_j^{}{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{*} \right)} \;,
+        &\dot{s}_j\left( t \right) =\left( 1+s_j \right) \left( 1-s_j \right) \left( s_{\text{th}}-\sum\nolimits_i^{}{\delta \left( \mathbf{r}_i-\mathbf{r}_{j}^{*} \right)} \right) 
     \end{align}
-    \label{eq:finalModel}
 \end{subequations}
-for $i=1,2,\cdots,N$ and $j=1,2,\cdots,M$. Here, $\mathbf{r}_i$ and $\mathbf{r}_j^*$ denote the positions of the $i$-th particle and $j$-th node, respectively, $c$ is the concentration of chemical released by nodes, $\alpha _c<0$ is the chemotactic sensitivity, $V$ is the potential field of short-range repulsion, $D_p$ is the intensity of thermal noise, $s_i$ is the internal state of the $i$-th particle, $c_{\mathbf{r}_i}=c\left( \mathbf{r}_i\left( t \right) ,t \right) $ is the local chemical concentration at the position of the $i$-th particle, $D_c$ and $k_c$ are the diffusion coefficient and decay rate of the chemical, $s_{\mathbf{r}}=\sum\nolimits_i^{}{s_i\delta \left( \mathbf{r}-\mathbf{r}_i \right)}$ aggregates the internal states of particles at $\mathbf{r}$ (zero if no particle exists there), $\beta _c$ is the saturation concentration preventing unbounded growth. 
-The term $s_i\in \left[ 0,1 \right]$ and the repulsive interaction $\nabla _{\mathbf{r}_i}V$ ensure at most one particle occupies any position $\mathbf{r}$. Thus, $s_{\mathbf{r}} \leqslant 1$, guaranteeing the decay term $-k_c\left( 1-s_{\mathbf{r}} \right) c$ remains non-positive. In other words, particles modulate the chemical decay rate but do not contribute to its production, which is solely driven by the nodes.
+
+
+% \subsection{Final Definitions}
+% We consider a 2D box with $N$ chemotactic particles and $M$ food source nodes. The particles are subject to a chemotactic force, a short-range repulsion force, and a noise term. The chemical concentration field evolves via diffusion, decay, and production from the target nodes, while each particle’s internal state regulates the local chemical concentration. 
+% The dynamics are governed by the following equations:
+% \begin{subequations}
+%     \begin{align}
+%         &\dot{\mathbf{r}}_i\left( t \right) =\alpha _c\nabla c-\nabla _{\mathbf{r}_i}V+\sqrt{2D_p}\boldsymbol{\eta }_i \;,
+%         \\
+%         &\dot{s}_i\left( t \right) =s_i\left( 1-s_i \right) \left( c_{\mathbf{r}_i}-c_s \right) \;,
+%         \\
+%         &\dot{c}\left( \mathbf{r},t \right) = D_c\nabla ^2c-k_c\left( 1-s_{\mathbf{r}} \right) c+\beta _c\sum\nolimits_j^{}{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{*} \right)} \;,
+%     \end{align}
+%     \label{eq:finalModel}
+% \end{subequations}
+% for $i=1,2,\cdots,N$ and $j=1,2,\cdots,M$. Here, $\mathbf{r}_i$ and $\mathbf{r}_j^*$ denote the positions of the $i$-th particle and $j$-th node, respectively, $c$ is the concentration of chemical released by nodes, $\alpha _c<0$ is the chemotactic sensitivity, $V$ is the potential field of short-range repulsion, $D_p$ is the intensity of thermal noise, $s_i$ is the internal state of the $i$-th particle, $c_{\mathbf{r}_i}=c\left( \mathbf{r}_i\left( t \right) ,t \right) $ is the local chemical concentration at the position of the $i$-th particle, $D_c$ and $k_c$ are the diffusion coefficient and decay rate of the chemical, $s_{\mathbf{r}}=\sum\nolimits_i^{}{s_i\delta \left( \mathbf{r}-\mathbf{r}_i \right)}$ aggregates the internal states of particles at $\mathbf{r}$ (zero if no particle exists there), $\beta _c$ is the saturation concentration preventing unbounded growth. 
+% The term $s_i\in \left[ 0,1 \right]$ and the repulsive interaction $\nabla _{\mathbf{r}_i}V$ ensure at most one particle occupies any position $\mathbf{r}$. Thus, $s_{\mathbf{r}} \leqslant 1$, guaranteeing the decay term $-k_c\left( 1-s_{\mathbf{r}} \right) c$ remains non-positive. In other words, particles modulate the chemical decay rate but do not contribute to its production, which is solely driven by the nodes.
 
 \section{Behaviors}
 
