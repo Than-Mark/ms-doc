@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.9)  19 JUN 2025 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.9)  20 JUN 2025 17:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -764,66 +764,260 @@ LaTeX Info: Redefining \nameref on input line 17.
 Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 17.
 \openout3 = `reviewNotes.bib'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
  (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
  (e:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 1052) in paragraph at lines 43--44
-\T1/cmr/m/n/10 field has emerged as a vi-brant area of in-ter-dis-ci-
- []
-
-<./figs/vicsekSnapshots.png, id=77, 696.35156pt x 596.2275pt>
+) [1{e:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<./figs/vicsekSnapshots.png, id=165, 696.35156pt x 596.2275pt>
 File: ./figs/vicsekSnapshots.png Graphic file (type png)
 <use ./figs/vicsekSnapshots.png>
-Package pdftex.def Info: ./figs/vicsekSnapshots.png  used on input line 72.
+Package pdftex.def Info: ./figs/vicsekSnapshots.png  used on input line 69.
 (pdftex.def)             Requested size: 242.59091pt x 207.70929pt.
 
-Overfull \hbox (2.55193pt too wide) in paragraph at lines 72--73
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 69--70
  [][] 
  []
 
-[1{e:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<./figs/Farrell.png, id=169, 986.18437pt x 395.22656pt>
+File: ./figs/Farrell.png Graphic file (type png)
+<use ./figs/Farrell.png>
+Package pdftex.def Info: ./figs/Farrell.png  used on input line 90.
+(pdftex.def)             Requested size: 242.59091pt x 97.22032pt.
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 84.
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 90--91
+ [][] 
+ []
 
-(./review.bbl) [2 <./figs/vicsekSnapshots.png>] (./review.aux)
+[2 <./figs/vicsekSnapshots.png>]
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 108.
+
+<./figs/2017Lieb.png, id=200, 1714.90688pt x 684.30656pt>
+File: ./figs/2017Lieb.png Graphic file (type png)
+<use ./figs/2017Lieb.png>
+Package pdftex.def Info: ./figs/2017Lieb.png  used on input line 110.
+(pdftex.def)             Requested size: 242.59091pt x 96.79422pt.
+
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 110--111
+ [][] 
+ []
+
+<./figs/chemoBehaviors1.png, id=203, 1556.06343pt x 497.60907pt>
+File: ./figs/chemoBehaviors1.png Graphic file (type png)
+<use ./figs/chemoBehaviors1.png>
+Package pdftex.def Info: ./figs/chemoBehaviors1.png  used on input line 132.
+(pdftex.def)             Requested size: 242.59091pt x 77.57658pt.
+
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 132--133
+ [][] 
+ []
+
+[3 <./figs/Farrell.png> <./figs/2017Lieb.png (PNG copy)> <./figs/chemoBehaviors1.png (PNG copy)>]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 181.
 
 
-Package rerunfilecheck Warning: File `review.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Overfull \hbox (6.83315pt too wide) detected at line 187
+[][][][]
+ []
 
-Package rerunfilecheck Info: Checksums for `review.out':
-(rerunfilecheck)             Before: 7BB5C7FEC372B12A7879D7E3E06BB2AD;2244
-(rerunfilecheck)             After:  8FD8DBCB705DD657B0B686227E898182;1329.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 187.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 187.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 190.
+
+
+Overfull \hbox (2.58978pt too wide) detected at line 196
+[][][][]
+ []
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 237.
+
+[4]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 266.
+
+
+Overfull \hbox (2.72559pt too wide) detected at line 274
+[][][]\OML/cmm/b/it/9 p[] \OT1/cmr/m/n/9 = \OML/cmm/m/it/9 ^^Y [] \OMS/cmsy/m/n/9 ^^Y ^^@[] [] \OT1/cmr/m/n/9 = \OMS/cmsy/m/n/9 ^^@[]r\OML/cmm/m/it/9 ^^Z[]
+ []
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 278.
+
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 300.
+
+
+Overfull \hbox (5.24667pt too wide) detected at line 306
+[][][][]
+ []
+
+[5]
+Underfull \hbox (badness 1817) in paragraph at lines 372--373
+[]\T1/cmr/m/n/10 One ob-vi-ous so-lu-tion of Eqs. [] is $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Z; c\OT1/cmr/m/n/10 ) =
+ []
+
+<./figs/schematicPlot1.png, id=285, 1091.57813pt x 478.03593pt>
+File: ./figs/schematicPlot1.png Graphic file (type png)
+<use ./figs/schematicPlot1.png>
+Package pdftex.def Info: ./figs/schematicPlot1.png  used on input line 434.
+(pdftex.def)             Requested size: 242.59091pt x 106.23318pt.
+
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 434--435
+ [][] 
+ []
+
+<./figs/VelocityCorr.png, id=288, 513.41812pt x 428.35031pt>
+File: ./figs/VelocityCorr.png Graphic file (type png)
+<use ./figs/VelocityCorr.png>
+Package pdftex.def Info: ./figs/VelocityCorr.png  used on input line 445.
+(pdftex.def)             Requested size: 242.59091pt x 202.39659pt.
+
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 445--446
+ [][] 
+ []
+
+[6]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 455.
+
+<./figs/rotationalOrderParameter.png, id=314, 402.00188pt x 280.04625pt>
+File: ./figs/rotationalOrderParameter.png Graphic file (type png)
+<use ./figs/rotationalOrderParameter.png>
+Package pdftex.def Info: ./figs/rotationalOrderParameter.png  used on input line 457.
+(pdftex.def)             Requested size: 242.59091pt x 168.99477pt.
+
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 457--458
+ [][] 
+ []
+
+<./figs/orderParameters.pdf, id=315, 852.08022pt x 227.45476pt>
+File: ./figs/orderParameters.pdf Graphic file (type pdf)
+<use ./figs/orderParameters.pdf>
+Package pdftex.def Info: ./figs/orderParameters.pdf  used on input line 467.
+(pdftex.def)             Requested size: 242.59091pt x 64.75586pt.
+
+Overfull \hbox (2.55193pt too wide) in paragraph at lines 467--468
+ [][] 
+ []
+
+[7 <./figs/schematicPlot1.png (PNG copy)> <./figs/VelocityCorr.png (PNG copy)>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 501.
+
+[8 <./figs/rotationalOrderParameter.png> <./figs/orderParameters.pdf>] (./review.bbl
+Underfull \hbox (badness 2351) in paragraph at lines 292--297
+ []\T1/cmr/m/n/9 I. Butti-noni, J. Bialké, F. Küm-mel, H. Löwen,
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 465--469
+ []\T1/cmr/m/n/9 C. Re-ich-hardt, J. Thibault, S. Pa-paniko-laou, and
+ []
+
+[9]
+Overfull \hbox (12.02667pt too wide) in paragraph at lines 550--559
+ [][]\T1/cmr/m/n/9 https://www.pnas.org/doi/pdf/10.1073/pnas.1005766107[][]. 
+ []
+
+) [10] (./review.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.5pt have occurred.
+
+Package rerunfilecheck Info: File `review.out' has not changed.
+(rerunfilecheck)             Checksum: 5A806DD5214334A57D9167DD0B9ED27B;2540.
  ) 
 Here is how much of TeX's memory you used:
- 26425 strings out of 480943
- 456899 string characters out of 5907278
- 888619 words of memory out of 5000000
- 43111 multiletter control sequences out of 15000+600000
- 422129 words of font info for 80 fonts, out of 8000000 for 9000
+ 26738 strings out of 480943
+ 463463 string characters out of 5907278
+ 941391 words of memory out of 5000000
+ 43293 multiletter control sequences out of 15000+600000
+ 426292 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 128i,8n,130p,1490b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.11} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.10} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.9} has been referenced but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.8} has been referenced but does not exist, replaced by a fixed one
-
-{e:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on review.pdf (2 pages, 448455 bytes).
+ 128i,18n,130p,1933b,645s stack positions out of 5000i,500n,10000p,200000b,80000s
+{e:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb><e:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on review.pdf (10 pages, 6137330 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 685 PDF objects out of 1000 (max. 8388607)
+ 536 compressed objects within 6 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
