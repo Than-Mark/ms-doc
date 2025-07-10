@@ -78,14 +78,14 @@ The counter term $-\sin\alpha$ is introduced to ensure that frustration only int
     In which regions of frustration does it appear? (And what are the corresponding coupling conditions and natural frequency distributions?)
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.49\textwidth]{./figs/achiral_snapshot.pdf}
-    \caption{
-        \label{fig:achiral_snapshot}
-        Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at $t=80$ with $N=1000$, $K=20$, $\alpha =0.6\pi$, $\omega _{\min}=0$, and $\Delta \omega =1$.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{./figs/achiral_snapshot.pdf}
+%     \caption{
+%         \label{fig:achiral_snapshot}
+%         Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at $t=80$ with $N=1000$, $K=20$, $\alpha =0.6\pi$, $\omega _{\min}=0$, and $\Delta \omega =1$.
+%     }
+% \end{figure}
 
 \begin{figure}[H]
     \centering
@@ -140,24 +140,24 @@ The counter term $-\sin\alpha$ is introduced to ensure that frustration only int
     }
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_freq_a1.88_Do1_aN1000.pdf}
-    \caption{
-        \label{fig:snapshot0.6pi_chiral}
-        Snapshots of system at different coupling strengths $K$ and radius $d_0$ with $N=1000$, $K=20$, $\alpha =0.6\pi$, $\omega _{\min}=0$, and $\Delta \omega =1$. 固定阻锉为$0.6\pi$，不同的耦合强度$K$和半径$d_0$下的手性粒子系统快照。粒子颜色根据其瞬时相位$\theta_i$着色。随着两个耦合参数的增加，粒子在空间中逐渐形成三角晶格结构且尺寸和彼此距离不断增加。
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_freq_a1.88_Do1_aN1000.pdf}
+%     \caption{
+%         \label{fig:snapshot0.6pi_chiral}
+%         Snapshots of system at different coupling strengths $K$ and radius $d_0$ with $N=1000$, $K=20$, $\alpha =0.6\pi$, $\omega _{\min}=0$, and $\Delta \omega =1$. 固定阻锉为$0.6\pi$，不同的耦合强度$K$和半径$d_0$下的手性粒子系统快照。粒子颜色根据其瞬时相位$\theta_i$着色。随着两个耦合参数的增加，粒子在空间中逐渐形成三角晶格结构且尺寸和彼此距离不断增加。
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/noncounter_snapshot.pdf}
-    \caption{
-        Snapshot of the system without counter term $-\sin\alpha$ at $t=80$ with $N=1000$, $K=20$, $\omega _{\min}=0.1$ and $\Delta \omega=1$. The particles are colored according to their instantaneous phase $\theta_i$. There is no triangular lattice structure, and the particles are randomly distributed in space.
-        系统终态的快照，粒子颜色根据其瞬时相位$\theta_i$着色。空间排列没有三角晶格结构，粒子在空间中随机分布。
-    }
-    \label{fig:noncounter_shotsnaps}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/noncounter_snapshot.pdf}
+%     \caption{
+%         Snapshot of the system without counter term $-\sin\alpha$ at $t=80$ with $N=1000$, $K=20$, $\omega _{\min}=0.1$ and $\Delta \omega=1$. The particles are colored according to their instantaneous phase $\theta_i$. There is no triangular lattice structure, and the particles are randomly distributed in space.
+%         系统终态的快照，粒子颜色根据其瞬时相位$\theta_i$着色。空间排列没有三角晶格结构，粒子在空间中随机分布。
+%     }
+%     \label{fig:noncounter_shotsnaps}
+% \end{figure}
 
 % \begin{figure}[H]  % 如果希望把图片放在当前段落中，可以使用[H]选项
 %     \centering
@@ -212,7 +212,26 @@ The counter term $-\sin\alpha$ is introduced to ensure that frustration only int
 
 陆羿辰：调整完图层之后色调发生了改变，目前猜测应该不是类似棋盘格的分布
 
-\section{Mechanism}
+\section{Phase Diagram and Mechanism}
+
+\subsection{Phase Diagram}
+
+The phase diagram of the system is constructed by varying the key parameters, including the coupling strength $K$, the radius $d_0$. The resulting patterns are classified into ordered and lattice states. 
+
+The order parameter $\sigma _{\rho}\left( t \right)$ is defined as the standard deviation of the density, which quantifies the degree of spatial ordering in the system.
+\begin{equation}
+    \sigma _{\rho}\left( t \right) =\sqrt{\frac{1}{L^2}\int{\left[ \rho \left( \mathbf{r},t \right) -\left< \rho \left( \mathbf{r},t \right) \right> \right] ^2\mathrm{d}\mathbf{r}}}\;,
+\end{equation}
+where $\rho \left( \mathbf{r},t \right) =\int_0^{2\pi}{f\left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}$ is the density of particles at position $\mathbf{r}$ and time $t$, and $\left< \rho \left( \mathbf{r},t \right) \right> =\frac{1}{L^2}\int{\rho \left( \mathbf{r},t \right) \mathrm{d}\mathbf{r}}$ is the average density over the system. 
+% The boundaries between these phases are determined by analyzing the stability of the system and the behavior of the order parameter.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./figs/orderParameter_varying_strengthK_and_distanceD0.png}
+    \caption{
+        \label{fig:orderParameter_varying_strengthK_and_distanceD0}
+        The order parameter $\sigma _{\rho}\left( t \right)$ as a function of coupling strength $K$ and radius $d_0$. The color indicates the value of the order parameter, with red representing high cohesiveness and blue representing low cohesiveness. 
+    }
+\end{figure}
 
 \subsection{Hydrodynamics}
 
@@ -290,7 +309,7 @@ Since the distribution $\rho \left( \theta ,\omega ,t \right)$ is $2\pi$-periodi
     \rho \left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{n=-\infty}^{+\infty}{a _n\left( \omega ,t \right) \mathrm{e}^{\mathrm{i}n\theta}}\;,
     \label{eq:rhoFourier}
 \end{equation}
-where $a _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient. In particular, we have $a _0\left( \omega ,t \right) =\equiv 1$ owing to the normalization condition in Eq.~(\ref{eq:normalization}) and $a _{-n}\left( \omega ,t \right) =a _n^{*}\left( \omega ,t \right)$, where $*$ denotes the complex conjugate.
+where $a _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient. In particular, we have $a _0\left( \omega ,t \right) \equiv 1$ owing to the normalization condition in Eq.~(\ref{eq:normalization}) and $a _{-n}\left( \omega ,t \right) =a _n^{*}\left( \omega ,t \right)$, where $*$ denotes the complex conjugate.
 
 According to the Ott-Antonsen ansatz \cite{10.1063/1.2930766,10.1063/1.3136851}, it states that the $n$-th Fourier coefficient $a_n\left(\omega, t\right)$ can be expressed in terms of the first-order coefficient, i.e., $a_n\left(\omega, t\right) = a^{n}\left(\omega, t\right)$. In this regard, the evolution of $\rho\left(\theta, \omega, t\right)$ degenerates to an invariant manifold, which is
 \begin{equation}

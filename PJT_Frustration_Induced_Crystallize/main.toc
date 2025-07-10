@@ -1,6 +1,7 @@
 \contentsline {section}{\numberline {1}The Model}{1}{section.1}%
 \contentsline {section}{\numberline {2}Phase frustration-induced crystallization}{1}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Key properties}{1}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Mechanism}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Hydrodynamics}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Abstract phase oscillator model}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {3}Phase Diagram and Mechanism}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Phase Diagram}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Hydrodynamics}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Abstract phase oscillator model}{6}{subsection.3.3}%
