@@ -118,9 +118,18 @@ The phase diagram of the system is constructed by varying the key parameters, in
 Single chirality particles can also form a triangular lattice structure:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{./figs/asymmetric.png}
+    \includegraphics[width=0.9\textwidth]{./figs/asymmetric.png}
     \caption{
         Snapshots of asymmetric chiral system ($\omega _{i}\sim[0, 2]$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$.
+    }
+\end{figure}
+\vspace{-0.5cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./figs/uniform.pdf}
+    \caption{
+        The probability distribution functions (PDF) of distances, $r$, normalized with the mean particle spacing, $r_0$.
+        The dash line is the PDF of Rayleigh Distribution $P(r)=2\pi r\exp\left[-\pi r^2\right]$.
     }
 \end{figure}
 
@@ -195,6 +204,32 @@ respiration frequency of the cells exhibit synchronization.
     \includegraphics[width=0.7\textwidth]{./figs/lattice_constant.pdf}
     \caption{
         Lattice constant $a$ as a function of coupling strength $K$ and radius $d_0$ for $\alpha=0.6\pi$. The dash line represents the theoretical lattice constant $a$ in Eq.~\eqref{eq:latticeConstant}.
+    }
+\end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{./figs/lattice_constant_vs_kstar.pdf}
+%     \caption{
+%         Mean lattice constant $a$ versus the critical wave number $k^*$ (defined as the first local maximum point of $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$).
+%     }
+% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subcaptionbox{
+        Mean lattice constant $a$ versus the critical wave number $k^*$ (defined as the first local maximum point of $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$).
+    }[0.49\linewidth]{
+        \includegraphics[width=\linewidth]{./figs/lattice_constant_vs_kstar.pdf}
+    }
+    \hfill
+    \subcaptionbox{
+        Mean lattice constant $a$ versus the period of zero point, $T^*$.
+    }[0.49\linewidth]{
+        \includegraphics[width=\linewidth]{./figs/lattice_constant_vs_kdiff.pdf}
+    }
+    \caption{
+        Lattice constant $a$ as a function of coupling strength $K$ and radius $d_0$ for $\alpha=0.6\pi$.
     }
 \end{figure}
 
