@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.10)  7 AUG 2025 18:58
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.10)  8 AUG 2025 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,15 +756,13 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ]
 
 [2]
+
+[3]
 File: ./figs/snapshotsAndPhaseDiagram.pdf Graphic file (type pdf)
 <use ./figs/snapshotsAndPhaseDiagram.pdf>
-File: ./figs/snapshot_v_alpha_K16.83_d01.55.pdf Graphic file (type pdf)
-<use ./figs/snapshot_v_alpha_K16.83_d01.55.pdf>
 File: ./figs/snapshot_v_alpha_K20.00_d01.00.pdf Graphic file (type pdf)
 <use ./figs/snapshot_v_alpha_K20.00_d01.00.pdf>
 
-
-[3]
 
 [4]
 File: ./figs/asymmetric.png Graphic file (type bmp)
@@ -797,18 +795,23 @@ File: ./figs/respiration_snapshot.pdf Graphic file (type pdf)
 <use ./figs/respiration_snapshot.pdf>
 File: ./figs/respiration_amplitude.pdf Graphic file (type pdf)
 <use ./figs/respiration_amplitude.pdf>
-File: ./figs/lattice_constant.pdf Graphic file (type pdf)
-<use ./figs/lattice_constant.pdf>
+File: ./figs/respiration_snapshot_decoupled.pdf Graphic file (type pdf)
+<use ./figs/respiration_snapshot_decoupled.pdf>
 
 
 [10]
-File: ./figs/lattice_constant_vs_kstar.pdf Graphic file (type pdf)
-<use ./figs/lattice_constant_vs_kstar.pdf>
-File: ./figs/lattice_constant_vs_kdiff.pdf Graphic file (type pdf)
-<use ./figs/lattice_constant_vs_kdiff.pdf>
+File: ./figs/respiration_amplitude_cells_decouled.pdf Graphic file (type pdf)
+<use ./figs/respiration_amplitude_cells_decouled.pdf>
 
 
 [11]
+File: ./figs/continuous_spectrum.pdf Graphic file (type pdf)
+<use ./figs/continuous_spectrum.pdf>
+File: ./figs/lattice_constant_vs_kstar.pdf Graphic file (type pdf)
+<use ./figs/lattice_constant_vs_kstar.pdf>
+
+
+[12]
 File: figs/halfSide.png Graphic file (type bmp)
 <figs/halfSide.png>
 File: figs/chess.png Graphic file (type bmp)
@@ -819,39 +822,32 @@ File: ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf
 <use ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf>
 
 
-[12]
-File: figs/phaseLagPatternFormation_lambda_m_varyK.pdf Graphic file (type pdf)
-<use figs/phaseLagPatternFormation_lambda_m_varyK.pdf>
-File: figs/phaseLagPatternFormation_lambda_m_zeroPoint.pdf Graphic file (type pdf)
-<use figs/phaseLagPatternFormation_lambda_m_zeroPoint.pdf>
-
-
 [13]
-File: figs/phaseLagPatternFormation_lambda_m.pdf Graphic file (type pdf)
-<use figs/phaseLagPatternFormation_lambda_m.pdf>
-File: figs/orderParameter_Kstar_varying_strengthK_and_distanceD0.png Graphic file (type bmp)
-<figs/orderParameter_Kstar_varying_strengthK_and_distanceD0.png>
+File: ./figs/continuous_spectrum.pdf Graphic file (type pdf)
+<use ./figs/continuous_spectrum.pdf>
 
 
 [14]
 
-[15] (./Yichen_Lu_Lattice.bbl)
+[15] (./Yichen_Lu_Lattice.bbl
 
-[16] (./Yichen_Lu_Lattice.aux)
+[16])
+
+[17] (./Yichen_Lu_Lattice.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `Yichen_Lu_Lattice.out' has not changed.
-(rerunfilecheck)             Checksum: D1EB55CCBC54F8ED5B3F488B9B123D4E;2126.
+(rerunfilecheck)             Checksum: A94437FB0A502F4730A60AAD742E5B37;2277.
  ) 
 Here is how much of TeX's memory you used:
- 18979 strings out of 473832
- 378898 string characters out of 5729027
- 848000 words of memory out of 5000000
- 41735 multiletter control sequences out of 15000+600000
+ 18944 strings out of 473832
+ 377003 string characters out of 5729027
+ 848215 words of memory out of 5000000
+ 41704 multiletter control sequences out of 15000+600000
  575429 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 74i,14n,91p,640b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,91p,762b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Yichen_Lu_Lattice.pdf (16 pages).
+Output written on Yichen_Lu_Lattice.pdf (17 pages).
