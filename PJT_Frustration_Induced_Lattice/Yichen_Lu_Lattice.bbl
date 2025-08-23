@@ -15,11 +15,6 @@ Benno Liebchen and Demian Levis.
 \newblock Collective behavior of chiral active matter: Pattern formation and enhanced flocking.
 \newblock {\em Phys. Rev. Lett.}, 119:058002, Aug 2017.
 
-\bibitem{LU2025115794}
-Yichen Lu, Yixin Xu, Wanrou Cai, Zhuanghe Tian, Jie Xu, Simin Wang, Tong Zhu, Yali Liu, Mengchu Wang, Yilin Zhou, Chengxu Yan, Chenlu Li, and Zhigang Zheng.
-\newblock Self-organized circling, clustering and swarming in populations of chiral swarmalators.
-\newblock {\em Chaos, Solitons \& Fractals}, 191:115794, 2025.
-
 \bibitem{10.1063/1.2930766}
 Edward Ott and Thomas~M. Antonsen.
 \newblock Low dimensional behavior of large systems of globally coupled oscillators.
@@ -29,6 +24,11 @@ Edward Ott and Thomas~M. Antonsen.
 Edward Ott and Thomas~M. Antonsen.
 \newblock Long time evolution of phase oscillator systems.
 \newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 19(2):023117, 05 2009.
+
+\bibitem{10.1143/PTP.79.1069}
+Hidetsugu Sakaguchi, Shigeru Shinomoto, and Yoshiki Kuramoto.
+\newblock Mutual entrainment in oscillator lattices with nonvariational type interaction.
+\newblock {\em Progress of Theoretical Physics}, 79(5):1069--1079, 05 1988.
 
 \bibitem{PhysRevLett.127.238001}
 Bruno Ventejou, Hugues Chat\'e, Raul Montagne, and Xia-qing Shi.

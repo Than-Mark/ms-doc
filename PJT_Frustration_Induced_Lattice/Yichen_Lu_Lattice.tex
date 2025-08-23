@@ -32,7 +32,7 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Phase Frustration-Induced Spatial Lattice Symmetry}}
+\title{\textbf{Phase Frustration-Induced Spatial Lattice Symmetry in the Vicsek-Kuramoto-Sakaguchi Model}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -50,7 +50,7 @@ Particles have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an 
     \begin{align}
         \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\;\label{eq:dotR},
         \\
-        \dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha \right) -\sin \alpha \right]}\;\label{eq:dotTheta},
+        \dot{\theta}_i&=\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha \right) -\sin \alpha \right]}\;\label{eq:dotTheta},
     \end{align}
 \end{subequations}
 for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$, which means each particle rotates with a constant speed $v$ in the direction of its instantaneous phase $\theta_i (t)$. 
@@ -59,17 +59,35 @@ As per Eq.~(\ref{eq:dotTheta}), the mean runs over neighbors within a coupling r
 \begin{equation}
     A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
 \end{equation}
-$K \left(\geqslant 0\right)$ is the coupling strength, and $\left\{\omega_i\right\}$ are the natural frequencies distributed according to a given frequency distribution $g\left(\omega\right)$. 
-This means that a particle will rotate with the angular velocity $|\omega_i |$ in the absence of mutual coupling ($K=0$), and the sign of $\omega_i$ represents the direction of rotation, namely, the tribute of the chirality of the $i$-th particle. A positive (negative) chirality ($\omega$) describes the counterclockwise (clockwise) rotations of the particle in space.
+$K \left(\geqslant 0\right)$ is the coupling strength, $\alpha$ is the phase frustration between two neighboring particles. When $\alpha_0=0$, the dynamics reduces to the normal Vicsek-like model.
+% The counter term $-\sin\alpha$ is introduced to ensure that frustration only interferes with the phase coupling without changing the sign of effective frequency.
+The introduction of counter term $-\sin\alpha$ ensures that the interaction force cancels exactly when phase differences vanish ($\theta_j - \theta_i = 0$). This guarantees that perfect synchronization is always an equilibrium state. Without this term, synchronized oscillators would experience a net force $K\sin\alpha$, artificially shifting their frequencies \cite{10.1143/PTP.79.1069}.
 
-Additionally, $\alpha$ is the phase frustration between two neighboring particles. When $\alpha_0=0$, the dynamics reduces to the normal chiral model \cite{LU2025115794}. 
-The counter term $-\sin\alpha$ is introduced to ensure that frustration only interferes with the phase coupling without changing the sign of effective frequency. 
-
-The order parameter $\sigma _{\rho}\left( t \right)$ is defined as the standard deviation of the density, which quantifies the degree of spatial ordering in the system.
+Some necessary order parameters can be introduced to measure the level of coordination among swarmalators in space motion and phase dynamics. Firstly, at the macroscopic level, the system may be described by the single-partial distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the normalization condition
 \begin{equation}
-    \sigma _{\rho}\left( t \right) =\sqrt{\frac{1}{L^2}\int{\left[ \rho \left( \mathbf{r},t \right) -\left< \rho \left( \mathbf{r},t \right) \right> \right] ^2\mathrm{d}\mathbf{r}}}\;,
+    \int_{L\times L}{\mathrm{d}^2\mathbf{r}\int_0^{2\pi}{\mathrm{d}\theta \;\rho \left( \mathbf{r},\theta ,t \right)}}=1\;,
 \end{equation}
-where $\rho \left( \mathbf{r},t \right) =\int_0^{2\pi}{f\left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}$ is the density of particles at position $\mathbf{r}$ and time $t$, and $\left< \rho \left( \mathbf{r},t \right) \right> =\frac{1}{L^2}\int{\rho \left( \mathbf{r},t \right) \mathrm{d}\mathbf{r}}$ is the average density over the system. 
+where $L$ is the size of the system in two dimensions. Next, we define the coarse-grained spatial density $\varrho \left( \mathbf{r}, t \right) $ and the global polarization $p(\theta, t)$ density by integrating $\rho\left( \mathbf{r},\theta ,t \right)$ over the phase and spatial, respectively:
+\begin{subequations}
+    \begin{align}
+        \varrho \left( \mathbf{r},t \right)& =\int_0^{2\pi}{\rho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\theta}\;,\\
+        p\left( \theta ,t \right) & =\int_{L\times L}{\rho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\mathbf{r}}\;.
+    \end{align}
+\end{subequations}
+In the homogeneous state, these quantities take uniform values $\left( \rho ,\varrho ,p \right) =\left( \rho _0,\varrho _0,p_0 \right) =\left( 1/\left( 2\pi L^2 \right) ,1/L^2,1/2\pi \right) $.
+
+To measure deviations from uniformity, we define the following single-particle order parameters:
+\begin{equation}
+    \rho _{\mathrm{std}}(t)=\frac{1}{1-\rho _0}\left[ \max_{\mathbf{r}\in L\times L,\ \theta \in \left[ 0,2\pi \right]} \rho \left( \mathbf{r},\theta ,t \right) -\rho _0 \right]  \;,
+\end{equation}
+Similarly, we can define order parameters for spatial and phase polarization densities, denoted as $\varrho _{\mathrm{std}}$ and $p_{\mathrm{std}}$, respectively.
+These order parameters range from 0 to 1, reflecting the degree of spatial and phase coherence in the system. When particles are uniformly distributed in both space and phase, $\rho ,\varrho ,p_{\mathrm{std}} \approx 0$. Conversely, if full condensation and polarization occur, $\rho ,\varrho ,p_{\mathrm{std}}\approx 1$.
+
+We conducted numerical simulations to investigate the performance and characteristics of our system under various conditions.
+For simplicity, we assume that particles are initially distributed uniformly in a two-dimensional $L\times L$ square with periodic boundary conditions.
+Unless otherwise stated, all the numerical simulations of the model Eq.~(\ref{eq:totalDynamicsMeanField}) were run on Python using Euler integration with box size of $L=7$, population sizes of $N=2000$, self-propulsion speed of $v=3$. 
+For the final state and phase diagram, each data point of order parameters was collected by averaging last 500 time steps of the simulation to discard the transients.
+ 
 
 \newpage
 \section{Phase Frustration-Induced Crystallization}
