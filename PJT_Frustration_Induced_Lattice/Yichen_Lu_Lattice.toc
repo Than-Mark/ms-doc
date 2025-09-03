@@ -2,9 +2,8 @@
 \contentsline {section}{\numberline {2}Phase Frustration-Induced Crystallization}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Key properties}{3}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Snapshots and phase diagram}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Respiration-like motion of unit cells}{10}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Lattice constant}{12}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Initial conditions determined cells composition }{13}{subsubsection.2.1.4}%
-\contentsline {section}{\numberline {3}Critical condition for phase transition and mechanism}{14}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Linear stability analysis with amplitude ansatz}{14}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Abstract phase oscillator model}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {2.1.2}Respiration-like motion of unit cells}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Initial conditions determined cells composition }{8}{subsubsection.2.1.3}%
+\contentsline {section}{\numberline {3}Critical condition for phase transition and mechanism}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Linear stability analysis with amplitude ansatz}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Abstract phase oscillator model}{11}{subsection.3.2}%

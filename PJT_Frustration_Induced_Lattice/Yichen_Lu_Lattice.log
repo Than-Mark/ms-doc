@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.10)  28 AUG 2025 19:57
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.10)  3 SEP 2025 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -765,37 +765,15 @@ Overfull \hbox (28.39209pt too wide) in paragraph at lines 75--78
 [3]
 File: ./figs/snapshotsAndPhaseDiagram.pdf Graphic file (type pdf)
 <use ./figs/snapshotsAndPhaseDiagram.pdf>
-File: ./figs/snapshot_v_alpha_K20.00_d01.00.pdf Graphic file (type pdf)
-<use ./figs/snapshot_v_alpha_K20.00_d01.00.pdf>
+File: ./figs/phaseDiagramAndRespiration.pdf Graphic file (type pdf)
+<use ./figs/phaseDiagramAndRespiration.pdf>
+File: ./figs/hyperuniform.pdf Graphic file (type pdf)
+<use ./figs/hyperuniform.pdf>
 
 
 [4]
-File: ./figs/asymmetric.png Graphic file (type bmp)
-<./figs/asymmetric.png>
-File: ./figs/uniform.pdf Graphic file (type pdf)
-<use ./figs/uniform.pdf>
-File: ./figs/snapshot0.6pi.pdf Graphic file (type pdf)
-<use ./figs/snapshot0.6pi.pdf>
-
 
 [5]
-File: ./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a3.14_Do0_aN2000_distuniform.pdf Graphic file (type pdf)
-<use ./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a3.14_Do0_aN2000_distuniform.pdf>
-
-
-[6]
-File: ./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a1.88_Do0_aN2000_distuniform.png Graphic file (type bmp)
-<./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a1.88_Do0_aN2000_distuniform.png>
-
-
-[7]
-File: ./figs/orderParameter_varying_strengthK_and_distanceD0.png Graphic file (type bmp)
-<./figs/orderParameter_varying_strengthK_and_distanceD0.png>
-
-
-[8]
-
-[9]
 File: ./figs/respiration_snapshot.pdf Graphic file (type pdf)
 <use ./figs/respiration_snapshot.pdf>
 File: ./figs/respiration_amplitude_inset.pdf Graphic file (type pdf)
@@ -804,23 +782,12 @@ File: ./figs/respiration_snapshot_decoupled.pdf Graphic file (type pdf)
 <use ./figs/respiration_snapshot_decoupled.pdf>
 
 
-[10]
+[6]
 File: ./figs/respiration_amplitude_cells_decouled.pdf Graphic file (type pdf)
 <use ./figs/respiration_amplitude_cells_decouled.pdf>
 
 
-[11]
-File: ./figs/continuous_spectrum.pdf Graphic file (type pdf)
-<use ./figs/continuous_spectrum.pdf>
-File: ./figs/lattice_constant_vs_kstar_discrete.pdf Graphic file (type pdf)
-<use ./figs/lattice_constant_vs_kstar_discrete.pdf>
-File: ./figs/initDistribution.png Graphic file (type bmp)
-<./figs/initDistribution.png>
-File: ./figs/finalDistribution.png Graphic file (type bmp)
-<./figs/finalDistribution.png>
-
-
-[12]
+[7]
 File: figs/halfSide.png Graphic file (type bmp)
 <figs/halfSide.png>
 File: figs/chess.png Graphic file (type bmp)
@@ -831,35 +798,42 @@ File: ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf
 <use ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf>
 
 
-[13]
-File: ./figs/continuous_spectrum.pdf Graphic file (type pdf)
-<use ./figs/continuous_spectrum.pdf>
+[8]
+File: ./figs/eigenvaluesAndLatticeConstants.pdf Graphic file (type pdf)
+<use ./figs/eigenvaluesAndLatticeConstants.pdf>
 
 
-[14]
-File: ./figs/continuous_spectrum_uniform_sync.pdf Graphic file (type pdf)
-<use ./figs/continuous_spectrum_uniform_sync.pdf>
+LaTeX Warning: Reference `fig:phaseDiagramAndKStar' on page 9 undefined on input line 487.
 
 
-[15]
 
-[16] (./Yichen_Lu_Lattice.bbl)
+[9]
 
-[17] (./Yichen_Lu_Lattice.aux)
+[10]
+
+[11] (./Yichen_Lu_Lattice.bbl
+
+[12])
+
+[13] (./Yichen_Lu_Lattice.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Yichen_Lu_Lattice.out' has not changed.
-(rerunfilecheck)             Checksum: A94437FB0A502F4730A60AAD742E5B37;2277.
+(rerunfilecheck)             Checksum: D1EB55CCBC54F8ED5B3F488B9B123D4E;2126.
  ) 
 Here is how much of TeX's memory you used:
- 18971 strings out of 473832
- 378180 string characters out of 5729027
- 847254 words of memory out of 5000000
- 41728 multiletter control sequences out of 15000+600000
- 575429 words of font info for 122 fonts, out of 8000000 for 9000
+ 18891 strings out of 473832
+ 374668 string characters out of 5729027
+ 847200 words of memory out of 5000000
+ 41665 multiletter control sequences out of 15000+600000
+ 572790 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 74i,11n,91p,762b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,91p,912b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Yichen_Lu_Lattice.pdf (17 pages).
+Output written on Yichen_Lu_Lattice.pdf (13 pages).

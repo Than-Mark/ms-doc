@@ -118,8 +118,26 @@ For the final state and phase diagram, each data point of order parameters was c
     \centering
     \includegraphics[width=\textwidth]{./figs/snapshotsAndPhaseDiagram.pdf}
     \caption{
-        (a)-(h) Representative simulation snapshots for synchronization state [(a), (b)] and disordered state [(c), (d), (g)] and lattice state [(e), (f), (h)] at different phase frustration $\alpha$. The orientation and color of particles represent their instantaneous phase $\theta_i$.
-        (i) Phase diagram and order parameters of the system with respect to the phase frustration $\alpha$. The crosses mark the snapshots in (a)-(h). Regions of blue, yellow and green (with single point $\alpha/\pi=1$) respectively represent the synchronized, nonuniform disordered, uniform disordered and lattice states.  
+        \label{fig:snapshotsAndPhaseDiagram}
+        (a)-(h) Representative simulation snapshots for synchronization state [(a)-(c)] and lattice state [(d)-(h)] at different phase frustration $\alpha$. The orientation and color of particles represent their instantaneous phase $\theta_i$.
+        (i) Phase diagram and order parameters of the system with respect to the phase frustration $\alpha$. The crosses mark the snapshots in (a)-(h). Regions of blue and green respectively represent the synchronization and lattice states. The horizontal dashed line indicates the values of the value of order parameter $p_{\mathrm{std}}$ when $\max p(\theta, t)=1/2$ (Dual cluster synchronization). Parameters: $K=20$, $d_0=1.55$, $L=7$.
+    }
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./figs/phaseDiagramAndRespiration.pdf}
+    \caption{
+        111
+    }
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{./figs/hyperuniform.pdf}
+    \caption{
+        \label{fig:hyperuniform}
+        1
     }
 \end{figure}
 
@@ -133,68 +151,68 @@ For the final state and phase diagram, each data point of order parameters was c
 %     }
 % \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/snapshot_v_alpha_K20.00_d01.00.pdf}
-    \caption{
-        Snapshot of the achiral system ($\omega _{\min}=0$, $\Delta \omega=0$) at $t=200$ with $N=2000$, $K=20$, and $d_0=1$.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/snapshot_v_alpha_K20.00_d01.00.pdf}
+%     \caption{
+%         Snapshot of the achiral system ($\omega _{\min}=0$, $\Delta \omega=0$) at $t=200$ with $N=2000$, $K=20$, and $d_0=1$.
+%     }
+% \end{figure}
 
-\newpage
-The phase diagram of the system is constructed by varying the key parameters, including the coupling strength $K$, the radius $d_0$. The resulting patterns are classified into ordered and lattice states. 
+% \newpage
+% The phase diagram of the system is constructed by varying the key parameters, including the coupling strength $K$, the radius $d_0$. The resulting patterns are classified into ordered and lattice states. 
 
-Single chirality particles can also form a triangular lattice structure:
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{./figs/asymmetric.png}
-    \caption{
-        Snapshots of asymmetric chiral system ($\omega _{i}\sim[0, 2]$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$.
-    }
-\end{figure}
-\vspace{-0.5cm}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{./figs/uniform.pdf}
-    \caption{
-        The probability distribution functions (PDF) of distances, $r$, normalized with the mean particle spacing, $r_0$.
-        The dash line is the PDF of Rayleigh Distribution $P(r)=2\pi r\exp\left[-\pi r^2\right]$.
-    }
-\end{figure}
+% Single chirality particles can also form a triangular lattice structure:
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{./figs/asymmetric.png}
+%     \caption{
+%         Snapshots of asymmetric chiral system ($\omega _{i}\sim[0, 2]$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$.
+%     }
+% \end{figure}
+% \vspace{-0.5cm}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{./figs/uniform.pdf}
+%     \caption{
+%         The probability distribution functions (PDF) of distances, $r$, normalized with the mean particle spacing, $r_0$.
+%         The dash line is the PDF of Rayleigh Distribution $P(r)=2\pi r\exp\left[-\pi r^2\right]$.
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/snapshot0.6pi.pdf}
-    \caption{
-        Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$. 
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/snapshot0.6pi.pdf}
+%     \caption{
+%         Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$. 
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a3.14_Do0_aN2000_distuniform.pdf}
-    \caption{
-        Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = \pi$. 
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a3.14_Do0_aN2000_distuniform.pdf}
+%     \caption{
+%         Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = \pi$. 
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a1.88_Do0_aN2000_distuniform.png}
-    \caption{
-        \label{fig:snapshot0.6pi_chiral}
-        Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$ with higher granularity. 
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/PhaseLagPatternFormation_varying_strengthK_and_distanceD0_phase_a1.88_Do0_aN2000_distuniform.png}
+%     \caption{
+%         \label{fig:snapshot0.6pi_chiral}
+%         Snapshots of achiral system ($\omega _{\min}=0$ and $\Delta \omega=0$) at different coupling strengths $K$ and radius $d_0$ for $\alpha = 0.6\pi$ with higher granularity. 
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{./figs/orderParameter_varying_strengthK_and_distanceD0.png}
-    \caption{
-        \label{fig:orderParameter_varying_strengthK_and_distanceD0}
-        The order parameter $\sigma _{\rho}\left( t \right)$ as a function of coupling strength $K$ and radius $d_0$(Corresponding to Fig.~\ref{fig:snapshot0.6pi_chiral}). The color indicates the value of the order parameter.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{./figs/orderParameter_varying_strengthK_and_distanceD0.png}
+%     \caption{
+%         \label{fig:orderParameter_varying_strengthK_and_distanceD0}
+%         The order parameter $\sigma _{\rho}\left( t \right)$ as a function of coupling strength $K$ and radius $d_0$(Corresponding to Fig.~\ref{fig:snapshot0.6pi_chiral}). The color indicates the value of the order parameter.
+%     }
+% \end{figure}
 
 \newpage
 \subsubsection{Respiration-like motion of unit cells}
@@ -245,45 +263,45 @@ respiration frequency of the cells exhibit synchronization.
     }
 \end{figure}
 
-\newpage
-\subsubsection{Lattice constant}
+% \newpage
+% \subsubsection{Lattice constant}
 
-\begin{figure}[H]
-    \centering
-    \subcaptionbox{
-        Continuous spectrum $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$ as a function of wave number $k$ for $K=20, d_0=1$.
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{./figs/continuous_spectrum.pdf}
-    }
-    \hfill
-    \subcaptionbox{
-        Mean lattice constant $a$ versus the most unstable wave number $k^*$ (defined as the maximum point of $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$).
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{./figs/lattice_constant_vs_kstar_discrete.pdf}
-    }
-    \caption{
-        Lattice constant $a$ as a function of coupling strength $K$ and radius $d_0$ for $\alpha=0.6\pi$.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \subcaptionbox{
+%         Continuous spectrum $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$ as a function of wave number $k$ for $K=20, d_0=1$.
+%     }[0.49\linewidth]{
+%         \includegraphics[width=\linewidth]{./figs/continuous_spectrum.pdf}
+%     }
+%     \hfill
+%     \subcaptionbox{
+%         Mean lattice constant $a$ versus the most unstable wave number $k^*$ (defined as the maximum point of $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$).
+%     }[0.49\linewidth]{
+%         \includegraphics[width=\linewidth]{./figs/lattice_constant_vs_kstar_discrete.pdf}
+%     }
+%     \caption{
+%         Lattice constant $a$ as a function of coupling strength $K$ and radius $d_0$ for $\alpha=0.6\pi$.
+%     }
+% \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \subcaptionbox{
-        1111
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{./figs/initDistribution.png}
-    }
-    \hfill
-    \subcaptionbox{
-        2222
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{./figs/finalDistribution.png}
-    }
-    \caption{
-        The probability distribution functions (PDF) of distances, $r$, normalized with the mean particle spacing, $r_0$.
-        The dash line is the PDF of Rayleigh Distribution $P(r)=2\pi r\exp\left[-\pi r^2\right]$.
-    }
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \subcaptionbox{
+%         1111
+%     }[0.49\linewidth]{
+%         \includegraphics[width=\linewidth]{./figs/initDistribution.png}
+%     }
+%     \hfill
+%     \subcaptionbox{
+%         2222
+%     }[0.49\linewidth]{
+%         \includegraphics[width=\linewidth]{./figs/finalDistribution.png}
+%     }
+%     \caption{
+%         The probability distribution functions (PDF) of distances, $r$, normalized with the mean particle spacing, $r_0$.
+%         The dash line is the PDF of Rayleigh Distribution $P(r)=2\pi r\exp\left[-\pi r^2\right]$.
+%     }
+% \end{figure}
 
 \newpage
 \subsubsection{Initial conditions determined cells composition \label{sec:cellComposition}}
@@ -395,9 +413,19 @@ respiration frequency of the cells exhibit synchronization.
 \newpage
 \section{Critical condition for phase transition and mechanism}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{./figs/eigenvaluesAndLatticeConstants.pdf}
+    \caption{
+        \label{fig:eigenvaluesAndLatticeConstants}
+        (a)-(b) Computations of the $\lambda(k)$ with the largest real part as a function of the continuous wavenumber $k$ [(a)] and standardized discrete wavenumber $\bar{k}L/(2\pi)$ [(b)] and $\alpha$ in the truncated basis $M=10$. Other parameters as in Fig.~\ref{fig:snapshotsAndPhaseDiagram}. Insets: magnified views.
+        (b) Thick colored lines denote positive eigenvalues (unstable modes), while thin dashed lines indicate stable modes. Stars mark the first unstable wavenumber at criticality. (c) Measured mean lattice constant $\langle a \rangle$ compared to theoretical prediction. Horizontal and vertical error bars represent standard deviations across $K$ and unit cells, respectively. The black dashed line indicates a 1:1 correspondence.
+    }
+\end{figure}
+
 \subsection{Linear stability analysis with amplitude ansatz}
 
-In the thermodynamic limit $N\to \infty$, the state of the system in Eq.~\eqref{eq:totalDynamicsMeanField} can be characterized by the single-oscillator distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the continuity equation
+In the thermodynamic limit $N\to \infty$, the state of the system in Eq.~\eqref{eq:totalDynamicsMeanField} can be characterized by the single-partial distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the continuity equation
 \begin{equation}
     \frac{\partial \rho}{\partial t}=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho -\frac{\partial}{\partial \theta}\left\{ \mathcal{T} \left[ \rho \right] \rho \right\} \;,
     \label{eq:globalContinuityEquation}
@@ -434,23 +462,38 @@ where $J_1\left( x \right)$ is the Bessel function of the first kind of order on
 \begin{equation}
     \mathcal{L} _1\mathrm{e}^{\mathrm{i}m\theta}=\frac{1}{2}\left( \mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta -\mathrm{i}\vartheta}+\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta +\mathrm{i}\vartheta} \right)  \;,
 \end{equation}
-where $\vartheta$ is the forms $\mathbf{k}$ with the $x$ axis. Without the loss of generality, we can define the $x$ axis parallel to $\mathbf{k}$, and, therefore, take $\vartheta = 0$.
+where $\vartheta$ is the forms $\mathbf{k}$ with the $x$ axis. Without the loss of generality, we can define the $x$ axis parallel to $\mathbf{k}$, and, therefore, take $\vartheta = 0$. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./figs/continuous_spectrum.pdf}
-    \caption{
-        Continuous spectrum $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$ as a function of wave number $k$ for $K=20, d_0=1, alpha=0.5009\pi$.
-    }
-\end{figure}
+Therefore, we have the characteristic polynomial
+\begin{equation}
+    \mathrm{p}_{2M+1}\left( \lambda \right) =\left| \begin{matrix}
+	\lambda _{-M}^{\left[ 0 \right]}-\lambda&		b&		\cdots&		0\\
+	b&		\lambda _{-M+1}^{\left[ 0 \right]}-\lambda&		b&		\vdots\\
+	\vdots&		b&		\ddots&		b\\
+	0&		\cdots&		b&		\lambda _{M}^{\left[ 0 \right]}-\lambda\\
+\end{matrix} \right|\;,
+\end{equation}
+where $b=-\mathrm{i}kv/2$. For analytical convenience, we truncate the expansion at order $M=2$, resulting in a polynomial of degree 5 with the following coefficients:
+\begin{equation}
+    \begin{array}{c}
+	c_5=1,\;c_4=-\frac{2KJ_1\left( d_0k \right) \cos \alpha}{d_0k},\;c_3=\frac{K^2J_{1}^{2}\left( d_0k \right)}{d_{0}^{2}k^2}+k^2v^2\\
+	c_2=-\frac{Kkv^2J_1\left( d_0k \right) \cos \alpha}{d_0},\;c_1=\frac{3k^4v^4}{16},\;c_0=0\;.\\
+\end{array}
+\end{equation}
+It is evident that $\lambda =0$ is always a root of the characteristic polynomial. To analyze the signs of the remaining eigenvalues, we factor out this zero root and apply the Routh–Hurwitz criterion to the reduced polynomial. This yields a necessary and sufficient condition for system stability:
+\begin{equation}
+    J_1\left( d_0k \right) \cos \alpha <0\;,
+\end{equation}
+This inequality shows that stability depends on the interplay among the frustration $\alpha$ (critical at $\pi/2$), coupling distance $d_0$, and the wavenumber $k$, but is independent of the coupling strength $K$. This analytical conclusion aligns with the numerical results presented in Fig.~\ref{fig:phaseDiagramAndKStar}(d), where the lattice constant remains unaffected by $K$ in the manifest lattice states.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./figs/continuous_spectrum_uniform_sync.pdf}
-    \caption{
-        Continuous spectrum $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$ as a function of wave number $k$ for $K=20, d_0=1, alpha=0$.
-    }
-\end{figure}
+The periodic boundary conditions lead to quantization conditions on the wavenumber $k$, resulting in discrete wavenumbers $k_n=2\pi n/L$. 
+
+% and there exists a critical wavenumber $k^*(d_0)$ uniquely depending on $d_0$
+
+\begin{equation}
+    \frac{2\pi}{k^*\left( d_0 \right)}=\frac{v}{K}
+    \label{eq:criticalLineOfKD0}
+\end{equation}
 
 % \begin{figure}[H]
 %     \centering
