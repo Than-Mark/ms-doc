@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.10)  4 SEP 2025 20:34
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.10)  4 SEP 2025 21:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -788,40 +788,39 @@ File: ./figs/respiration_amplitude_cells_decouled.pdf Graphic file (type pdf)
 
 
 [7]
-File: figs/halfSide.png Graphic file (type bmp)
-<figs/halfSide.png>
-File: figs/chess.png Graphic file (type bmp)
-<figs/chess.png>
-File: ./figs/HalfInitPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf Graphic file (type pdf)
-<use ./figs/HalfInitPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf>
-File: ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf Graphic file (type pdf)
-<use ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf>
-
-
-[8]
 File: ./figs/eigenvaluesAndLatticeConstants.pdf Graphic file (type pdf)
 <use ./figs/eigenvaluesAndLatticeConstants.pdf>
 
 
-[9]
+[8]
 
-[10] (./Yichen_Lu_Lattice.bbl)
+[9] (./Yichen_Lu_Lattice.bbl)
 
-[11] (./Yichen_Lu_Lattice.aux)
+[10] (./Yichen_Lu_Lattice.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
-Package rerunfilecheck Info: File `Yichen_Lu_Lattice.out' has not changed.
-(rerunfilecheck)             Checksum: 5C534FBE3DF0FF44F91DE7EAC6DFDA63;1905.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Yichen_Lu_Lattice.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Yichen_Lu_Lattice.out':
+(rerunfilecheck)             Before: 5C534FBE3DF0FF44F91DE7EAC6DFDA63;1905
+(rerunfilecheck)             After:  9C6474AEDE162FF0432A61028D431B2A;1583.
  ) 
 Here is how much of TeX's memory you used:
- 18879 strings out of 473832
- 374429 string characters out of 5729027
+ 18831 strings out of 473832
+ 372400 string characters out of 5729027
  846527 words of memory out of 5000000
- 41653 multiletter control sequences out of 15000+600000
- 572790 words of font info for 111 fonts, out of 8000000 for 9000
+ 41613 multiletter control sequences out of 15000+600000
+ 572782 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 74i,11n,91p,912b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,91p,909b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Yichen_Lu_Lattice.pdf (11 pages).
+Output written on Yichen_Lu_Lattice.pdf (10 pages).
