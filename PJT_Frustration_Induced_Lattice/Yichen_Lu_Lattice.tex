@@ -128,7 +128,8 @@ For the final state and phase diagram, each data point of order parameters was c
     \centering
     \includegraphics[width=\textwidth]{./figs/phaseDiagramAndRespiration.pdf}
     \caption{
-        111
+        \label{fig:phaseDiagramAndRespiration}
+        (a)-(c) Snapshots of $(K, d_0)$ phase diagram for different frustration $\alpha$ at system size $L=7$. The regions of manifest and cryptic lattice states are indicated by the black dashed lines given by Eq.~\eqref{eq:criticalLineOfKD0}. (d) 
     }
 \end{figure}
 
@@ -484,14 +485,14 @@ It is evident that $\lambda =0$ is always a root of the characteristic polynomia
 \begin{equation}
     J_1\left( d_0k \right) \cos \alpha <0\;,
 \end{equation}
-This inequality shows that stability depends on the interplay among the frustration $\alpha$ (critical at $\pi/2$), coupling distance $d_0$, and the wavenumber $k$, but is independent of the coupling strength $K$. This analytical conclusion aligns with the numerical results presented in Fig.~\ref{fig:phaseDiagramAndKStar}(d), where the lattice constant remains unaffected by $K$ in the manifest lattice states.
+This inequality shows that stability depends on the interplay among the frustration $\alpha$ (critical at $\pi/2$), coupling distance $d_0$, and the wavenumber $k$, but is independent of the coupling strength $K$. This analytical conclusion aligns with the numerical results presented in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(c), where the lattice constant remains unaffected by $K$ in the manifest lattice states.
 
 The periodic boundary conditions lead to quantization conditions on the wavenumber $k$, resulting in discrete wavenumbers $k_n=2\pi n/L$. 
 
 % and there exists a critical wavenumber $k^*(d_0)$ uniquely depending on $d_0$
 
 \begin{equation}
-    \frac{2\pi}{k^*\left( d_0 \right)}=\frac{v}{K}
+    \frac{2\pi}{k^*\left( d_0 \right)}=\frac{2v}{K}
     \label{eq:criticalLineOfKD0}
 \end{equation}
 
@@ -534,102 +535,102 @@ The periodic boundary conditions lead to quantization conditions on the wavenumb
 % \end{figure}
 
 
-\subsection{Abstract phase oscillator model}
-Let us consider a decoupled phase-oscillator system 
-\begin{equation}
-    \dot{\theta}_i=\omega _i-K\sin \alpha +\frac{K}{N}\sum_{j=1}^N{\sin \left( \theta _j-\theta _i+\alpha \right)}\;.
-    \label{eq:decoupledPhaseModel}
-\end{equation}
+% \subsection{Abstract phase oscillator model}
+% Let us consider a decoupled phase-oscillator system 
+% \begin{equation}
+%     \dot{\theta}_i=\omega _i-K\sin \alpha +\frac{K}{N}\sum_{j=1}^N{\sin \left( \theta _j-\theta _i+\alpha \right)}\;.
+%     \label{eq:decoupledPhaseModel}
+% \end{equation}
 
-To quantify the phase coherence of the system, it is convenient to define the generalized complex-valued order parameters, i.e.,
-\begin{equation}
-    \label{eq:orderParameter}
-    Z\left( t \right) =R\left( t \right) \text{e}^{\text{i}\psi\left( t \right)}=\frac{1}{N}\sum_{j=1}^N{\text{e}^{\text{i}\theta _{j}\left( t \right)}}\;,
-\end{equation}
-where $n=1,2,\dots, N$, and $r\left( t \right)$, $\psi \left( t \right)$ are the amplitudes and arguments of the order parameter.
-Our starting point is to analyze the critical point for the coherence of the order parameter.
-In the thermodynamic limit $N\to \infty$, the state of the system in Eq.~(\ref{eq:decoupledPhaseModel}) can be characterized by the single-oscillator distribution $\rho\left( \theta ,\omega, t \right)$, which satisfies the continuity equation
-\begin{equation}
-    \frac{\partial \rho}{\partial t}+\frac{\partial \left( \rho v \right)}{\partial \theta}=0\;,
-    \label{eq:continuityEquation}
-\end{equation}
-where $\rho \left( \theta ,\omega ,t \right)$ accounts for the fraction of oscillators with phase $\theta$ lying in the interval $\left( \theta ,\theta +\mathrm{d}\theta \right)$ at fixed frequency $\omega$ and time $t$, it satisfies the normalization condition
-\begin{equation}
-    \label{eq:normalization}
-    \int_{0}^{2\pi}{\rho \left( \theta ,\omega ,t \right) \text{d}\theta} =1\;.
-\end{equation}
-Here, $v\left( \theta ,\omega ,t \right)$ is the velocity field, given by
-\begin{equation}
-    \begin{aligned}
-        v\left( \theta ,\omega ,t \right) =&K\int_{-\infty}^{+\infty}{\int_0^{2\pi}{\sin \left( \theta ^{\prime}-\theta +\alpha \right) \rho \mathrm{d}\theta ^{\prime}\mathrm{d}\omega ^{\prime}}}\\
-        &+\omega -K\sin \alpha \;.
-    \end{aligned} 
-\end{equation}
-Correspondingly, the order parameter defined in Eq.~(\ref{eq:orderParameter}) in the thermodynamic limit reads
-\begin{equation}
-    Z\left( t \right) =\int_{-\infty}^{+\infty}{g\left(\omega\right)\mathrm{d}\omega \int_0^{2\pi}{\mathrm{e}^{\mathrm{i}\theta}\rho \left( \theta ,\omega ,t \right) \mathrm{d}\theta }} \;,
-    \label{eq:orderParameterContinuum}
-\end{equation}
-then $v\left( \theta ,\omega ,t \right)$ simplifies to
-\begin{equation}
-    v\left( \theta ,\omega ,t \right) =\omega -K\sin \alpha +\mathrm{Im}\left[ H\left( t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] \;,
-    \label{eq:velocityField}
-\end{equation}
-with the mean-field being
-\begin{equation}
-    H\left( t \right) =KZ\left( t \right) \mathrm{e}^{\mathrm{i}\alpha} \;.
-\end{equation}
+% To quantify the phase coherence of the system, it is convenient to define the generalized complex-valued order parameters, i.e.,
+% \begin{equation}
+%     \label{eq:orderParameter}
+%     Z\left( t \right) =R\left( t \right) \text{e}^{\text{i}\psi\left( t \right)}=\frac{1}{N}\sum_{j=1}^N{\text{e}^{\text{i}\theta _{j}\left( t \right)}}\;,
+% \end{equation}
+% where $n=1,2,\dots, N$, and $r\left( t \right)$, $\psi \left( t \right)$ are the amplitudes and arguments of the order parameter.
+% Our starting point is to analyze the critical point for the coherence of the order parameter.
+% In the thermodynamic limit $N\to \infty$, the state of the system in Eq.~(\ref{eq:decoupledPhaseModel}) can be characterized by the single-oscillator distribution $\rho\left( \theta ,\omega, t \right)$, which satisfies the continuity equation
+% \begin{equation}
+%     \frac{\partial \rho}{\partial t}+\frac{\partial \left( \rho v \right)}{\partial \theta}=0\;,
+%     \label{eq:continuityEquation}
+% \end{equation}
+% where $\rho \left( \theta ,\omega ,t \right)$ accounts for the fraction of oscillators with phase $\theta$ lying in the interval $\left( \theta ,\theta +\mathrm{d}\theta \right)$ at fixed frequency $\omega$ and time $t$, it satisfies the normalization condition
+% \begin{equation}
+%     \label{eq:normalization}
+%     \int_{0}^{2\pi}{\rho \left( \theta ,\omega ,t \right) \text{d}\theta} =1\;.
+% \end{equation}
+% Here, $v\left( \theta ,\omega ,t \right)$ is the velocity field, given by
+% \begin{equation}
+%     \begin{aligned}
+%         v\left( \theta ,\omega ,t \right) =&K\int_{-\infty}^{+\infty}{\int_0^{2\pi}{\sin \left( \theta ^{\prime}-\theta +\alpha \right) \rho \mathrm{d}\theta ^{\prime}\mathrm{d}\omega ^{\prime}}}\\
+%         &+\omega -K\sin \alpha \;.
+%     \end{aligned} 
+% \end{equation}
+% Correspondingly, the order parameter defined in Eq.~(\ref{eq:orderParameter}) in the thermodynamic limit reads
+% \begin{equation}
+%     Z\left( t \right) =\int_{-\infty}^{+\infty}{g\left(\omega\right)\mathrm{d}\omega \int_0^{2\pi}{\mathrm{e}^{\mathrm{i}\theta}\rho \left( \theta ,\omega ,t \right) \mathrm{d}\theta }} \;,
+%     \label{eq:orderParameterContinuum}
+% \end{equation}
+% then $v\left( \theta ,\omega ,t \right)$ simplifies to
+% \begin{equation}
+%     v\left( \theta ,\omega ,t \right) =\omega -K\sin \alpha +\mathrm{Im}\left[ H\left( t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] \;,
+%     \label{eq:velocityField}
+% \end{equation}
+% with the mean-field being
+% \begin{equation}
+%     H\left( t \right) =KZ\left( t \right) \mathrm{e}^{\mathrm{i}\alpha} \;.
+% \end{equation}
 
-Since the distribution $\rho \left( \theta ,\omega ,t \right)$ is $2\pi$-periodic in $\theta$, we can expand it in Fourier series as
-\begin{equation}
-    \rho \left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{n=-\infty}^{+\infty}{a _n\left( \omega ,t \right) \mathrm{e}^{\mathrm{i}n\theta}}\;,
-    \label{eq:rhoFourier}
-\end{equation}
-where $a _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient. In particular, we have $a _0\left( \omega ,t \right) \equiv 1$ owing to the normalization condition in Eq.~(\ref{eq:normalization}) and $a _{-n}\left( \omega ,t \right) =a _n^{*}\left( \omega ,t \right)$, where $*$ denotes the complex conjugate.
+% Since the distribution $\rho \left( \theta ,\omega ,t \right)$ is $2\pi$-periodic in $\theta$, we can expand it in Fourier series as
+% \begin{equation}
+%     \rho \left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{n=-\infty}^{+\infty}{a _n\left( \omega ,t \right) \mathrm{e}^{\mathrm{i}n\theta}}\;,
+%     \label{eq:rhoFourier}
+% \end{equation}
+% where $a _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient. In particular, we have $a _0\left( \omega ,t \right) \equiv 1$ owing to the normalization condition in Eq.~(\ref{eq:normalization}) and $a _{-n}\left( \omega ,t \right) =a _n^{*}\left( \omega ,t \right)$, where $*$ denotes the complex conjugate.
 
-According to the Ott-Antonsen ansatz \cite{10.1063/1.2930766,10.1063/1.3136851}, it states that the $n$-th Fourier coefficient $a_n\left(\omega, t\right)$ can be expressed in terms of the first-order coefficient, i.e., $a_n\left(\omega, t\right) = a^{n}\left(\omega, t\right)$. In this regard, the evolution of $\rho\left(\theta, \omega, t\right)$ degenerates to an invariant manifold, which is
-\begin{equation}
-    \dot{a}\left( t \right) =\mathrm{i}\left( K\sin \alpha -\omega \right) a\left( t \right) +\frac{1}{2}\left[ H^{*}\left( t \right) -H\left( t \right) a^2\left( t \right) \right] \;.
-    \label{eq:OttAntonsen}
-\end{equation}
-Consequently, Eq.~(\ref{eq:OttAntonsen}) is closed by the definition of the order parameter in Eq.~(\ref{eq:orderParameterContinuum}), where
-\begin{equation}
-    \begin{aligned}
-        Z\left( t \right) &=\int_{-\infty}^{+\infty}{g\left( \omega \right) a_{-1}\left( \omega ,t \right) \mathrm{d}\omega} \;,\\
-        &=\int_{-\infty}^{+\infty}{g\left( \omega \right) a^{*}\left( \omega ,t \right) \mathrm{d}\omega} \;.\\
-    \end{aligned}
-    \label{eq:orderParameterOttAntonsen}
-\end{equation}
+% According to the Ott-Antonsen ansatz \cite{10.1063/1.2930766,10.1063/1.3136851}, it states that the $n$-th Fourier coefficient $a_n\left(\omega, t\right)$ can be expressed in terms of the first-order coefficient, i.e., $a_n\left(\omega, t\right) = a^{n}\left(\omega, t\right)$. In this regard, the evolution of $\rho\left(\theta, \omega, t\right)$ degenerates to an invariant manifold, which is
+% \begin{equation}
+%     \dot{a}\left( t \right) =\mathrm{i}\left( K\sin \alpha -\omega \right) a\left( t \right) +\frac{1}{2}\left[ H^{*}\left( t \right) -H\left( t \right) a^2\left( t \right) \right] \;.
+%     \label{eq:OttAntonsen}
+% \end{equation}
+% Consequently, Eq.~(\ref{eq:OttAntonsen}) is closed by the definition of the order parameter in Eq.~(\ref{eq:orderParameterContinuum}), where
+% \begin{equation}
+%     \begin{aligned}
+%         Z\left( t \right) &=\int_{-\infty}^{+\infty}{g\left( \omega \right) a_{-1}\left( \omega ,t \right) \mathrm{d}\omega} \;,\\
+%         &=\int_{-\infty}^{+\infty}{g\left( \omega \right) a^{*}\left( \omega ,t \right) \mathrm{d}\omega} \;.\\
+%     \end{aligned}
+%     \label{eq:orderParameterOttAntonsen}
+% \end{equation}
 
-We stress that Eq.~(\ref{eq:OttAntonsen}) is still infinite dimensional
-because of the distributed natural frequencies. Thus, we may make a specific choice for the frequency distribution to get around this difficulty, e.g. a Lorentzian distribution $g\left(\omega\right)=\varDelta / [ \pi\left(\omega-\mu\right)^2+\varDelta ^2 ]$ with $\varDelta $ being the width of the distribution and $\mu$ being the mean frequency.
-In this setting, the order parameters defined in Eq.~(\ref{eq:orderParameterOttAntonsen}) can be calculated by using Cauchy's residue theorem with analytical continuation of $a\left(\omega, t\right)$ into the lower half complex plane, which leads to
-\begin{equation}
-    Z(t)=a^{*}\left(\mu-\mathrm{i}\varDelta, t\right) \;.
-\end{equation}
-As a result, the low-dimensional evolution of the order parameter can be obtained by replacing $\omega$ with $\mu-\mathrm{i}\varDelta$ and by taking into account the complex conjugate, which reads
-\begin{equation}
-    \dot{Z}=-\Delta Z+\mathrm{i}Z\left( \mu -K\sin \alpha \right) +\frac{1}{2}\left[ KZ\mathrm{e}^{\mathrm{i}\alpha}-KZ^*Z^2\mathrm{e}^{-\mathrm{i}\alpha} \right] \;.
-    \label{eq:orderParameterEvolution}
-\end{equation}
-Rewrite above equation using polar coordinates $Z\left( t \right) =R\left( t \right) \mathrm{e}^{\mathrm{i}\psi \left( t \right)}$, we have
-\begin{subequations}
-    \begin{align}
-        \dot{R}&=\frac{R}{2}\left( K-2\varDelta -KR^2 \right) \cos \alpha \;, \label{eq:dotAmplitudeR}\\
-        \dot{\psi}&=\mu +\frac{K}{2}\left( R^2-1 \right) \sin \alpha \label{detPsi}\;.
-    \end{align}
-\end{subequations}
-Obviously, the amplitude $R\left( t \right)$ is decoupled from the mean phase $\psi\left( t \right)$ and Eq.~(\ref{eq:dotAmplitudeR}) have a critical coupling strength $K_c=2\varDelta$ and a pair of critical phase frustration $\left|\alpha_c\right| = \pi/2$.
-Let us first consider the simplest case of $ \varDelta =0, \mu=0$, which corresponds to the case of achiral particles. In this case, when $\left|\alpha_c\right| > \pi/2$, the system bifurcates to $R=0$, which corresponds to the incoherent state in phase oscillators and lattice state in self-propelled particles, while for $\left|\alpha_c\right| < \pi/2$, the system has a unique stable fixed point at $R=1$, which corresponds to the coherent state and swarming state, respectively.
+% We stress that Eq.~(\ref{eq:OttAntonsen}) is still infinite dimensional
+% because of the distributed natural frequencies. Thus, we may make a specific choice for the frequency distribution to get around this difficulty, e.g. a Lorentzian distribution $g\left(\omega\right)=\varDelta / [ \pi\left(\omega-\mu\right)^2+\varDelta ^2 ]$ with $\varDelta $ being the width of the distribution and $\mu$ being the mean frequency.
+% In this setting, the order parameters defined in Eq.~(\ref{eq:orderParameterOttAntonsen}) can be calculated by using Cauchy's residue theorem with analytical continuation of $a\left(\omega, t\right)$ into the lower half complex plane, which leads to
+% \begin{equation}
+%     Z(t)=a^{*}\left(\mu-\mathrm{i}\varDelta, t\right) \;.
+% \end{equation}
+% As a result, the low-dimensional evolution of the order parameter can be obtained by replacing $\omega$ with $\mu-\mathrm{i}\varDelta$ and by taking into account the complex conjugate, which reads
+% \begin{equation}
+%     \dot{Z}=-\Delta Z+\mathrm{i}Z\left( \mu -K\sin \alpha \right) +\frac{1}{2}\left[ KZ\mathrm{e}^{\mathrm{i}\alpha}-KZ^*Z^2\mathrm{e}^{-\mathrm{i}\alpha} \right] \;.
+%     \label{eq:orderParameterEvolution}
+% \end{equation}
+% Rewrite above equation using polar coordinates $Z\left( t \right) =R\left( t \right) \mathrm{e}^{\mathrm{i}\psi \left( t \right)}$, we have
+% \begin{subequations}
+%     \begin{align}
+%         \dot{R}&=\frac{R}{2}\left( K-2\varDelta -KR^2 \right) \cos \alpha \;, \label{eq:dotAmplitudeR}\\
+%         \dot{\psi}&=\mu +\frac{K}{2}\left( R^2-1 \right) \sin \alpha \label{detPsi}\;.
+%     \end{align}
+% \end{subequations}
+% Obviously, the amplitude $R\left( t \right)$ is decoupled from the mean phase $\psi\left( t \right)$ and Eq.~(\ref{eq:dotAmplitudeR}) have a critical coupling strength $K_c=2\varDelta$ and a pair of critical phase frustration $\left|\alpha_c\right| = \pi/2$.
+% Let us first consider the simplest case of $ \varDelta =0, \mu=0$, which corresponds to the case of achiral particles. In this case, when $\left|\alpha_c\right| > \pi/2$, the system bifurcates to $R=0$, which corresponds to the incoherent state in phase oscillators and lattice state in self-propelled particles, while for $\left|\alpha_c\right| < \pi/2$, the system has a unique stable fixed point at $R=1$, which corresponds to the coherent state and swarming state, respectively.
 
-For the incoherent state, the system is totally disordered with the phases distributed uniformly around the unit circle, i.e., $\rho\left(\theta, \omega, t\right) = g(\omega)/2\pi$, which implies that the phase velocity of each oscillator/particle becomes
-\begin{equation}
-    \dot{\theta}_i=\omega_i-K\sin \alpha \;.
-\end{equation}
-Correspondingly, the rotational radii of $i$-th particle is
-\begin{equation}
-    r_i=\frac{v}{\dot{\theta}_i}=\frac{v}{\omega _i-K\sin \alpha}\;.
-\end{equation}
+% For the incoherent state, the system is totally disordered with the phases distributed uniformly around the unit circle, i.e., $\rho\left(\theta, \omega, t\right) = g(\omega)/2\pi$, which implies that the phase velocity of each oscillator/particle becomes
+% \begin{equation}
+%     \dot{\theta}_i=\omega_i-K\sin \alpha \;.
+% \end{equation}
+% Correspondingly, the rotational radii of $i$-th particle is
+% \begin{equation}
+%     r_i=\frac{v}{\dot{\theta}_i}=\frac{v}{\omega _i-K\sin \alpha}\;.
+% \end{equation}
 
 % $$
 % \begin{aligned}
