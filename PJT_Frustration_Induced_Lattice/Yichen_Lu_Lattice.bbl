@@ -1,9 +1,34 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{RevModPhys.65.851}
+M.~C. Cross and P.~C. Hohenberg.
+\newblock Pattern formation outside of equilibrium.
+\newblock {\em Rev. Mod. Phys.}, 65:851--1112, Jul 1993.
+
+\bibitem{PhysRevE.109.024602}
+Daniel Escaff.
+\newblock Anti-aligning interaction between active particles induces a finite wavelength instability: The dancing hexagons.
+\newblock {\em Phys. Rev. E}, 109:024602, Feb 2024.
+
+\bibitem{PhysRevE.110.024603}
+Daniel Escaff.
+\newblock Self-organization of anti-aligning active particles: Waving pattern formation and chaos.
+\newblock {\em Phys. Rev. E}, 110:024603, Aug 2024.
 
 \bibitem{Fruchart2021}
 Michel Fruchart, Ryo Hanai, Peter~B. Littlewood, and Vincenzo Vitelli.
 \newblock Non-reciprocal phase transitions.
 \newblock {\em Nature}, 592(7854):363--369, Apr 2021.
+
+\bibitem{PhysRevE.102.022604}
+Nikita Kruk, Jos\'e~A. Carrillo, and Heinz Koeppl.
+\newblock Traveling bands, clouds, and vortices of chiral active matter.
+\newblock {\em Phys. Rev. E}, 102:022604, Aug 2020.
+
+\bibitem{PhysRevE.98.032219}
+Nikita Kruk, Yuri Maistrenko, and Heinz Koeppl.
+\newblock Self-propelled chimeras.
+\newblock {\em Phys. Rev. E}, 98:032219, Sep 2018.
 
 \bibitem{PhysRevResearch.1.023026}
 D.~Levis, I.~Pagonabarraga, and B.~Liebchen.
@@ -15,20 +40,16 @@ Benno Liebchen and Demian Levis.
 \newblock Collective behavior of chiral active matter: Pattern formation and enhanced flocking.
 \newblock {\em Phys. Rev. Lett.}, 119:058002, Aug 2017.
 
-\bibitem{10.1063/1.2930766}
-Edward Ott and Thomas~M. Antonsen.
-\newblock Low dimensional behavior of large systems of globally coupled oscillators.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 18(3):037113, 09 2008.
-
-\bibitem{10.1063/1.3136851}
-Edward Ott and Thomas~M. Antonsen.
-\newblock Long time evolution of phase oscillator systems.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 19(2):023117, 05 2009.
-
 \bibitem{10.1143/PTP.79.1069}
 Hidetsugu Sakaguchi, Shigeru Shinomoto, and Yoshiki Kuramoto.
 \newblock Mutual entrainment in oscillator lattices with nonvariational type interaction.
 \newblock {\em Progress of Theoretical Physics}, 79(5):1069--1079, 05 1988.
+
+\bibitem{TORQUATO20181}
+Salvatore Torquato.
+\newblock Hyperuniform states of matter.
+\newblock {\em Physics Reports}, 745:1--95, 2018.
+\newblock Hyperuniform States of Matter.
 
 \bibitem{PhysRevLett.127.238001}
 Bruno Ventejou, Hugues Chat\'e, Raul Montagne, and Xia-qing Shi.

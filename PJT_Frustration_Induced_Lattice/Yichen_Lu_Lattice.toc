@@ -1,7 +1,5 @@
 \contentsline {section}{\numberline {1}The Model}{1}{section.1}%
-\contentsline {section}{\numberline {2}Phase Frustration-Induced Crystallization}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Key properties}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Snapshots and phase diagram}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Respiration-like motion of unit cells}{6}{subsubsection.2.1.2}%
-\contentsline {section}{\numberline {3}Critical condition for phase transition and mechanism}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Linear stability analysis with amplitude ansatz}{8}{subsection.3.1}%
+\contentsline {section}{\numberline {2}Lattice Structures and Spatiotemporal Patterns}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Respiration-like motion of unit cells}{5}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Dominant-Recessive Lattice and Hyperuniformity}{7}{section.3}%
+\contentsline {section}{\numberline {4}Critical transition and mechanism}{8}{section.4}%

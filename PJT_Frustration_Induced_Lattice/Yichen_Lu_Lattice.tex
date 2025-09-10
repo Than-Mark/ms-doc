@@ -63,7 +63,7 @@ $K \left(\geqslant 0\right)$ is the coupling strength, $\alpha$ is the phase fru
 % The counter term $-\sin\alpha$ is introduced to ensure that frustration only interferes with the phase coupling without changing the sign of effective frequency.
 The introduction of counter term $-\sin\alpha$ ensures that the interaction force cancels exactly when phase differences vanish ($\theta_j - \theta_i = 0$). This guarantees that perfect synchronization is always an equilibrium state. Without this term, synchronized oscillators would experience a net force $K\sin\alpha$, artificially shifting their frequencies \cite{10.1143/PTP.79.1069}.
 
-Some necessary order parameters can be introduced to measure the level of coordination among swarmalators in space motion and phase dynamics. Firstly, at the macroscopic level, the system may be described by the single-partial distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the normalization condition
+Some necessary order parameters can be introduced to measure the level of coordination among particles in space motion and phase dynamics. Firstly, at the macroscopic level, the system may be described by the single-partial distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the normalization condition
 \begin{equation}
     \int_{L\times L}{\mathrm{d}^2\mathbf{r}\int_0^{2\pi}{\mathrm{d}\theta \;\rho \left( \mathbf{r},\theta ,t \right)}}=1\;,
 \end{equation}
@@ -74,7 +74,7 @@ where $L$ is the size of the system in two dimensions. Next, we define the coars
         p\left( \theta ,t \right) & =\int_{L\times L}{\rho \left( \mathbf{r},\theta ,t \right) \mathrm{d}\mathbf{r}}\;.
     \end{align}
 \end{subequations}
-In the homogeneous state, these quantities take uniform values $\left( \rho ,\varrho ,p \right) =\left( \rho _0,\varrho _0,p_0 \right) =\left( 1/\left( 2\pi L^2 \right) ,1/L^2,1/2\pi \right) $.
+In the homogeneous state, these quantities take uniform values $( \rho ,\varrho ,p ) =( \rho _0,\varrho _0,p_0 ) =( 1/\left( 2\pi L^2 \right) ,1/L^2,1/2\pi ) $.
 
 To measure deviations from uniformity, we define the following single-particle order parameters:
 \begin{equation}
@@ -85,62 +85,96 @@ These order parameters range from 0 to 1, reflecting the degree of spatial and p
 
 We conducted numerical simulations to investigate the performance and characteristics of our system under various conditions.
 For simplicity, we assume that particles are initially distributed uniformly in a two-dimensional $L\times L$ square with periodic boundary conditions.
-Unless otherwise stated, all the numerical simulations of the model Eq.~(\ref{eq:totalDynamicsMeanField}) were run on Python using Euler integration with box size of $L=7$, population sizes of $N=2000$, self-propulsion speed of $v=3$. 
+Unless otherwise stated, all the numerical simulations of the model Eq.~(\ref{eq:totalDynamicsMeanField}) were run on Python using Euler integration.
 For the final state and phase diagram, each data point of order parameters was collected by averaging last 500 time steps of the simulation to discard the transients.
  
 
+% \newpage
+% \section{Phase Frustration-Induced Crystallization}
+
+% \subsection{Key properties}
+
+% \begin{enumerate}
+%     \item \textbf{\textcolor{red}{[Done]}} What does the lattice structure look like? What is the unit cell structure, and what is the spatial arrangement of the unit cells? Besides triangular, what other spatial structures exist? In which regions of frustration does it appear? (And what are the corresponding coupling conditions and natural frequency distributions?)
+    
+%         Lattice structure emerges when $\alpha\in\left(\pi/2, \pi\right]$
+%         For $\pi/2<\alpha\ll\pi$, the lattice structure exhibits a triangular arrangement (Sometimes it is a tetragonal lattice, but in most cases it is stable in a triangular lattice), where in each cell, particles are arranged in a vortex pattern independent of natural frequency (mainly determined by initial conditions). This arrangement leads to a stable and ordered configuration, where the cells maintain a fixed distance from each other and the particles rotate in a coordinated manner in the form of cycloids, which leads to respiration-like motion of the cells.
+%         While for $\alpha=\pi$ (anti-alignment coupling), the system transforms into a double-lane structure with particles in each lane propelling in opposite directions. 
+%     \item \textbf{\textcolor{red}{[Done]}} What is each cell composed of?
+    
+%         Each cell is composed of particles with the neighboring particles at initial conditions, whose criterion is discussed in Sec.~\ref{sec:cellComposition}. 
+%     \item \textbf{\textcolor{red}{[Done]}} What is the internal dynamics within a cell?
+    
+%         Within a cell, particles are all-to-all coupled, and they rotate in a Kuramoto-like manner.
+%     \item \textbf{\textcolor{red}{[Done]}} What determines the length (periodicity)? (Interaction distance?)
+
+%         The lattice constant (distance) is determined by the coupling strength $K$, the radius $d_0$, and the frustration $\alpha$. For $\alpha\gtrapprox0.5\pi$ The theoretical lattice constant is given by Eq.~\eqref{eq:latticeConstant}. 
+% \end{enumerate}
+
+% \newpage
+% \subsubsection{Snapshots and phase diagram}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/snapshotsAndPhaseDiagram.pdf}
+%     \caption{
+%         \label{fig:snapshotsAndPhaseDiagram}
+%         (a)-(h) Representative simulation snapshots for synchronization state [(a)-(c)] and lattice state [(d)-(h)] at different phase frustration $\alpha$. The orientation and color of particles represent their instantaneous phase $\theta_i$.
+%         (i) Phase diagram and order parameters of the system with respect to the phase frustration $\alpha$. The crosses mark the snapshots in (a)-(h). Regions of blue and green respectively represent the synchronization and lattice states. The horizontal dashed line indicates the values of the value of order parameter $p_{\mathrm{std}}$ when $\max p(\theta, t)=1/2$ (Dual cluster synchronization). Parameters: $K=20$, $d_0=1.55$, $L=7$.
+%     }
+% \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figs/phaseDiagramAndRespiration.pdf}
+%     \caption{
+%         \label{fig:phaseDiagramAndRespiration}
+%         (a)-(c) Snapshots of $(K, d_0)$ phase diagram for different frustration $\alpha$ at system size $L=7$. The regions of manifest and cryptic lattice states are indicated by the black dashed lines given by Eq.~\eqref{eq:criticalLineOfKD0}. (d) 
+%     }
+% \end{figure}
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{./figs/hyperuniform.pdf}
+%     \caption{
+%         \label{fig:hyperuniform}
+%         1
+%     }
+% \end{figure}
+
 \newpage
-\section{Phase Frustration-Induced Crystallization}
 
-\subsection{Key properties}
+\section{\label{sec:latticeStructure}Lattice Structures and Spatiotemporal Patterns}
 
-\begin{enumerate}
-    \item \textbf{\textcolor{red}{[Done]}} What does the lattice structure look like? What is the unit cell structure, and what is the spatial arrangement of the unit cells? Besides triangular, what other spatial structures exist? In which regions of frustration does it appear? (And what are the corresponding coupling conditions and natural frequency distributions?)
-    
-        Lattice structure emerges when $\alpha\in\left(\pi/2, \pi\right]$
-        For $\pi/2<\alpha\ll\pi$, the lattice structure exhibits a triangular arrangement (Sometimes it is a tetragonal lattice, but in most cases it is stable in a triangular lattice), where in each cell, particles are arranged in a vortex pattern independent of natural frequency (mainly determined by initial conditions). This arrangement leads to a stable and ordered configuration, where the cells maintain a fixed distance from each other and the particles rotate in a coordinated manner in the form of cycloids, which leads to respiration-like motion of the cells.
-        While for $\alpha=\pi$ (anti-alignment coupling), the system transforms into a double-lane structure with particles in each lane propelling in opposite directions. 
-    \item \textbf{\textcolor{red}{[Done]}} What is each cell composed of?
-    
-        Each cell is composed of particles with the neighboring particles at initial conditions, whose criterion is discussed in Sec.~\ref{sec:cellComposition}. 
-    \item \textbf{\textcolor{red}{[Done]}} What is the internal dynamics within a cell?
-    
-        Within a cell, particles are all-to-all coupled, and they rotate in a Kuramoto-like manner.
-    \item \textbf{\textcolor{red}{[Done]}} What determines the length (periodicity)? (Interaction distance?)
-
-        The lattice constant (distance) is determined by the coupling strength $K$, the radius $d_0$, and the frustration $\alpha$. For $\alpha\gtrapprox0.5\pi$ The theoretical lattice constant is given by Eq.~\eqref{eq:latticeConstant}. 
-\end{enumerate}
-
-\newpage
-\subsubsection{Snapshots and phase diagram}
-
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{./figs/snapshotsAndPhaseDiagram.pdf}
     \caption{
         \label{fig:snapshotsAndPhaseDiagram}
         (a)-(h) Representative simulation snapshots for synchronization state [(a)-(c)] and lattice state [(d)-(h)] at different phase frustration $\alpha$. The orientation and color of particles represent their instantaneous phase $\theta_i$.
-        (i) Phase diagram and order parameters of the system with respect to the phase frustration $\alpha$. The crosses mark the snapshots in (a)-(h). Regions of blue and green respectively represent the synchronization and lattice states. The horizontal dashed line indicates the values of the value of order parameter $p_{\mathrm{std}}$ when $\max p(\theta, t)=1/2$ (Dual cluster synchronization). Parameters: $K=20$, $d_0=1.55$, $L=7$.
-    }
+        (i) Phase diagram and order parameters of the system with respect to the phase frustration $\alpha$. The crosses mark the snapshots in (a)-(h). Regions of blue and green respectively represent the synchronization and lattice states. The horizontal dashed line indicates the values of the value of order parameter $p_{\mathrm{std}}$ when $\max p(\theta, t)=1/2$ (Dual cluster synchronization). 
+        (j), (k) Time evolution of respiration motion of vortex [(j), $\alpha=0.6\pi$] and double clustered [(k), $\alpha=0.9\pi$] unit cell. 
+        (k) The red and blue arrows represent the two clusters divided by their phases, and dashed circles of corresponding colors are estimated motion trajectories based on their instantaneous actual frequencies.
+        (l) Respiration amplitude revealed by the time evolution for $\alpha=0.6\pi$.
+        Other parameters: $K=20$, $d_0=1.55$, $L=7, N=2000, v=3$. 
+        }
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figs/phaseDiagramAndRespiration.pdf}
-    \caption{
-        \label{fig:phaseDiagramAndRespiration}
-        (a)-(c) Snapshots of $(K, d_0)$ phase diagram for different frustration $\alpha$ at system size $L=7$. The regions of manifest and cryptic lattice states are indicated by the black dashed lines given by Eq.~\eqref{eq:criticalLineOfKD0}. (d) 
-    }
-\end{figure}
+Our system consists of self-propelled particles with local phase interactions, leading to a rich variety of collective behaviors. As shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(a), when the phase frustration $\alpha$ is small, the system tends to synchronize in phase, resulting in a globally synchronized state where all particles move coherently in the same direction. This state is characterized by high values of the order parameter$p_{\mathrm{std}}$ and low values of $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$, indicating uniform spatial distribution but strong phase coherence. As $\alpha$ gradually increases but still maintains continuity ($\alpha < \pi/2$), the system exhibits a swarming synchronization state, as shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(b). In this state, particles form a large, coherent cluster that moves collectively, with phases still largely aligned. The order parameters reflect this state, with $p_{\mathrm{std}}$ remaining high, while $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$ bifurcate from zero due to the formation of the cluster. The parameter space and phenomena mentioned above have been extensively studied in previous works \cite{PhysRevE.98.032219,PhysRevE.102.022604}.
+With increasing $\alpha$ beyond $\pi/2$, the system undergoes a transition to a lattice state, as shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(d)-(h). In this state, particles arrange themselves into a hexagonal lattice structure, breaking the spatial uniformity. The order parameters reflect this change, with $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$ non-zero significantly remaining constant over a large range ($0.55\pi<\alpha<0.9\pi$), indicating the formation of spatial patterns. $p_{\mathrm{std}}$ decreases at first ($0.5\pi<\alpha<0.7\pi$, the vortex lattice state, Fig.~\ref{fig:snapshotsAndPhaseDiagram}(e)), showing reduced phase coherence, but then increases again ($0.7\pi<\alpha<\pi$), indicating the emergence of dual-cluster synchronization where particles form two distinct phase clusters (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(f)). This dual-cluster state is characterized by two dominant phases that differ by $\pi$, leading to a bimodal distribution in $p(\theta, t)$. 
+Continuing to increase $\alpha$ towards $\pi$, the three order parameters decrease again, indicating a return to a more disordered state (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(g)).
+While at $\alpha = \pi$, system reaches a state of perfect anti-synchronization, where neighboring particles have phases differing by $\pi$, leading to a dual-lane pattern in space and dual-cluster synchronization in phase (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(h)). Different from the previous dual-cluster state in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(f), here the two phase clusters are fixed, resulting in a continuous linear arrangement of motion in space. This pattern has also been observed in Escaff's work on anti-aligning interactions \cite{PhysRevE.109.024602,PhysRevE.110.024603}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.49\textwidth]{./figs/hyperuniform.pdf}
-    \caption{
-        \label{fig:hyperuniform}
-        1
-    }
-\end{figure}
+For a more detailed understanding of the spatiotemporal pattern for lattice states, we examined the time evolution of individual unit cells in the vortex lattice and dual-cluster states, as shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(j) and (k). In the vortex lattice state (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(j)), particles within a unit cell exhibit a respiration motion, where they periodically expand and contract around their analysis average radius $v/\langle \dot{\theta} \rangle$, where $\langle \dot{\theta} \rangle$ is given by the phase dynamics in incoherent states
+\begin{equation}
+    \begin{aligned}
+        \langle \dot{\theta}\rangle &=-K\sin \alpha +\frac{K}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\sin \left( \theta ^{\prime}-\theta +\alpha \right)}\\
+        &=-K\sin \alpha\;.\\
+    \end{aligned}  
+\end{equation}
+This dynamic behavior is characterized by oscillations in the distance between particles and the centers of their unit cells $\left| \mathbf{r}_i\left( t \right) -\mathbf{c}_i\left( \bar{t} \right) \right|$, as illustrated in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(l), where $\mathbf{c}_i\left( \bar{t} \right)$ is the center of the unit cell averaged over one period. 
+The amplitude of these oscillations provides insight into the stability of the lattice structure (see Sec.~\ref{sec:mechanism}). In contrast, the dual-cluster state (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(k)) shows a more ordered arrangement, with particles maintaining their positions relative to each other while exhibiting phase differences (Note that they are not only two particles but two groups of particles fully condensed). Two groups of particles rotate around the center of the unit cell in opposite directions along approximately fixed trajectory.
+This state is less dynamic than the vortex lattice but still represents a significant lattice symmetry.
 
 % \vspace{l}
 
@@ -216,7 +250,7 @@ For the final state and phase diagram, each data point of order parameters was c
 % \end{figure}
 
 \newpage
-\subsubsection{Respiration-like motion of unit cells}
+\subsection{Respiration-like motion of unit cells}
 
 For $\alpha=0.6\pi$, the system exhibits the respiration-like motion of the cells. Since the phases of particles in each cell are uniformly distributed in $[0, 2\pi]$ and the distance between cells is large enough to be considered decoupled, the effective frequency of each particle can be approximated by
 \begin{equation}
@@ -263,6 +297,29 @@ respiration frequency of the cells exhibit synchronization.
         Respiration amplitude of the decoupled cells ($t > 80$). The parameters are the same as in Fig.~\ref{fig:respiration_snapshot}.
     }
 \end{figure}
+
+\newpage
+\section{\label{sec:hyperuniformity}Dominant-Recessive Lattice and Hyperuniformity}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{./figs/phaseDiagramAndHyperuniformity.pdf}
+    \caption{
+        \label{fig:phaseDiagramAndHyperuniformity}
+        (a)-(c) Snapshots of $(K, d_0)$ phase diagram for different frustration $\alpha$ at population $N=2000$. The regions of dominant and recessive lattice states are indicated by the black dashed lines given by Eq.~\eqref{eq:criticalLineOfKD0}. Other parameters: $L=7, v=3$.
+        (d), (e) Snapshots of random uniform (d, initial conditions) and hyperuniform (e, final state of (d)) for $K=20, d_0=0.25, N=5000, \alpha=0.6\pi$.
+        Hyperuniformity of (d) and (e) is characterized by the structure factor $S(q)$ (f) and number variance $\sigma _N^2(R)$ (g). The black dashed lines indicate the scaling behaviors $S(q)\sim q^{-2}$ and $\sigma _N^2(R)\sim R^{1,2}$, respectively.
+    }
+\end{figure}
+
+As discussed above, the lattice state emerges when the phase frustration $\alpha$ exceeds a critical value of $\pi/2$, and $\alpha$ mainly controls the topology of the lattice pattern.
+However, the prominence of this lattice structure depends on the coupling strength $K$ and coupling radius $d_0$.
+As shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(a)-(c), for a given $\alpha$, there exists a region in the top right of $(K, d_0)$ parameter space where the lattice structure is dominant, characterized by long lattice constants (the average distance between neighboring unit cells) and high volume fractions (the area occupied by particles within a unit cell) of unit cells.
+Within this region, the lattice constant increases with $d_0$ but is insensitive to $K$. Conversely, the volume of the unit cell decreases with increasing $K$ but is insensitive to $d_0$.
+Outside this region, the lattice structure becomes recessive, and the system tends to return to a more uniform state. The boundary between these regions can be approximated by the relation \eqref{eq:criticalLineOfKD0} (see Sec.~\ref{sec:mechanism} for details), which balances the spatial periodicity of pattern formation and the spatial dynamics of particles.
+
+Interestingly, even in the recessive lattice region, where the system appears macroscopically uniform, it still exhibits microscopic hyperuniformity, as shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(e).
+To quantify the degree of order in hyperuniformity, we computed the structure factor $S(q)=N^{-1}\sum_{i,j=1}^{N}e^{i\mathbf{q}\cdot(\mathbf{r}_i-\mathbf{r}_j)}$ and number variance $\sigma _N^2(R)=N^{-1}\sum_{i=1}^{N}(\rho _i-\bar{\rho})^2$, which are standard measures for characterizing hyperuniformity\cite{TORQUATO20181}. 
 
 % \newpage
 % \subsubsection{Lattice constant}
@@ -412,7 +469,8 @@ respiration frequency of the cells exhibit synchronization.
 % \end{figure}
 
 \newpage
-\section{Critical condition for phase transition and mechanism}
+
+\section{\label{sec:mechanism}Critical transition and mechanism}
 
 \begin{figure}
     \centering
@@ -423,8 +481,6 @@ respiration frequency of the cells exhibit synchronization.
         (b) Thick colored lines denote positive eigenvalues (unstable modes), while thin dashed lines indicate stable modes. Stars mark the first unstable wavenumber at criticality. (c) Measured mean lattice constant $\langle a \rangle$ compared to theoretical prediction. Horizontal and vertical error bars represent standard deviations across $K$ and unit cells, respectively. The black dashed line indicates a 1:1 correspondence.
     }
 \end{figure}
-
-\subsection{Linear stability analysis with amplitude ansatz}
 
 In the thermodynamic limit $N\to \infty$, the state of the system in Eq.~\eqref{eq:totalDynamicsMeanField} can be characterized by the single-partial distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the continuity equation
 \begin{equation}
@@ -467,12 +523,13 @@ where $\vartheta$ is the forms $\mathbf{k}$ with the $x$ axis. Without the loss 
 
 Therefore, we have the characteristic polynomial
 \begin{equation}
-    \mathrm{p}_{2M+1}\left( \lambda \right) =\left| \begin{matrix}
-	\lambda _{-M}^{\left[ 0 \right]}-\lambda&		b&		\cdots&		0\\
-	b&		\lambda _{-M+1}^{\left[ 0 \right]}-\lambda&		b&		\vdots\\
-	\vdots&		b&		\ddots&		b\\
-	0&		\cdots&		b&		\lambda _{M}^{\left[ 0 \right]}-\lambda\\
-\end{matrix} \right|\;,
+        \mathrm{p}_{2M+1}\left( \lambda \right) =\left| \begin{matrix}
+        \lambda _{-M}^{\left[ 0 \right]}-\lambda&		b&		\cdots&		0\\
+        b&		\lambda _{-M+1}^{\left[ 0 \right]}-\lambda&		b&		\vdots\\
+        \vdots&		b&		\ddots&		b\\
+        0&		\cdots&		b&		\lambda _{M}^{\left[ 0 \right]}-\lambda\\
+    \end{matrix} \right|\;,
+    \label{eq:characteristicPolynomial}
 \end{equation}
 where $b=-\mathrm{i}kv/2$. For analytical convenience, we truncate the expansion at order $M=2$, resulting in a polynomial of degree 5 with the following coefficients:
 \begin{equation}
@@ -483,306 +540,22 @@ where $b=-\mathrm{i}kv/2$. For analytical convenience, we truncate the expansion
 \end{equation}
 It is evident that $\lambda =0$ is always a root of the characteristic polynomial. To analyze the signs of the remaining eigenvalues, we factor out this zero root and apply the Routh–Hurwitz criterion to the reduced polynomial. This yields a necessary and sufficient condition for system stability:
 \begin{equation}
-    J_1\left( d_0k \right) \cos \alpha <0\;,
+    J_1\left( d_0k \right) \cos \alpha <0\;.
 \end{equation}
-This inequality shows that stability depends on the interplay among the frustration $\alpha$ (critical at $\pi/2$), coupling distance $d_0$, and the wavenumber $k$, but is independent of the coupling strength $K$. This analytical conclusion aligns with the numerical results presented in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(c), where the lattice constant remains unaffected by $K$ in the manifest lattice states.
+This inequality shows that stability depends on the interplay among the frustration $\alpha$ and coupling distance $d_0$, but is independent of the coupling strength $K$ and self-propulsion speed $v$. 
+As shown in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(a), for $\alpha < \pi/2$, both the instability and the maximum growth rate occur at $k=0$, belonging to the type III instability \cite{RevModPhys.65.851}, which does not involve pattern formation in an essential way. While for $\alpha > \pi/2$, Descartes' Rule of Signs indicates polynomial \eqref{eq:characteristicPolynomial} has no positive real roots, which belongs to the II$_o$ instability (also known as Hopf–Turing bifurcation), resulting in spatiotemporal patterns. Specifically, in our system, it dominants as respiration motions of the lattice states. Overall, the control parameter for the emergence of lattice structures is $\alpha$, with a critical point at $\alpha = \pi/2$.
 
-The periodic boundary conditions lead to quantization conditions on the wavenumber $k$, resulting in discrete wavenumbers $k_n=2\pi n/L$. 
+And as illustrated in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(a) and (b), the most unstable wave number $k^{*}/k^{*}_n(d_0)$ (periodic boundary conditions require discrete wavenumbers $k_n=2\pi n/L$ with $n=1,2,\cdots$) is insensitive to the value of $\alpha (>\pi/2)$. 
+Therefore, it can be considered that the patterns occur on a long length scale near the threshold $\alpha = \pi/2$, and they are spatially periodic with similar properties, which is consistent with the numerical results shown in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(c) that the lattice constant of different $\alpha, K$ is nearly identical and can be predicted by the wavelength $2\pi/k^{*}_n(d_0)$.
 
-% and there exists a critical wavenumber $k^*(d_0)$ uniquely depending on $d_0$
-
+Significantly, apart from spatial periodicity, the volume of the unit cell is another important characteristic of the lattice state. 
+Near the critical point $\alpha = \pi/2$, the spatiotemporal distribution of phases is similar to that of the uniform state (see Fig.~\ref{fig:snapshotsAndPhaseDiagram}(d)), where the effective rotational radius of particles is approximately $v/|\dot{\theta}_i| \approx v/K$.
+Therefore, the critical condition for the emergence of dominant lattice states can be estimated by balancing the spatial periodicity of pattern formation and spatial dynamics of particles. The transition happens to be two unit cells tangent to each other:
 \begin{equation}
-    \frac{2\pi}{k^*\left( d_0 \right)}=\frac{2v}{K}
+    \frac{2\pi}{k^*\left( d_0 \right)}=\frac{2v}{K}\;,
     \label{eq:criticalLineOfKD0}
 \end{equation}
-
-% \begin{figure}[H]
-%     \centering
-%     \subcaptionbox{
-%         $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$.
-%         Different K have the same zero point.
-%     }[0.49\linewidth]{
-%         \includegraphics[width=\linewidth]{figs/phaseLagPatternFormation_lambda_m_varyK.pdf}
-%     }
-%     \hfill
-%     \subcaptionbox{
-%         The zero point of $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$ as a function of wave number $k$. The zero point solutions exhibit periodicity.
-%     }[0.49\linewidth]{
-%         \includegraphics[width=\linewidth]{figs/phaseLagPatternFormation_lambda_m_zeroPoint.pdf}
-%     }
-%     \caption{
-%         Simulation results for the linear stability analysis with $K=20$ and $\alpha=0.6\pi$.
-%     }
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \subcaptionbox{
-%         $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$.
-%         The smaller $d_0$, the slower the instability speed, which corresponding to the simulation.
-%     }[0.49\linewidth]{
-%         \includegraphics[width=\linewidth]{figs/phaseLagPatternFormation_lambda_m.pdf}
-%     }
-%     \hfill
-%     \subcaptionbox{
-%         Phase diagram of critical wave number $k^*$ (first zero point of $\mathrm{Re}[ \lambda _{m}^{\left[ 0 \right]}\left( k \right) ]$) as a function of $(K, d_0)$, 
-%     }[0.49\linewidth]{
-%         \includegraphics[width=\linewidth]{figs/orderParameter_Kstar_varying_strengthK_and_distanceD0.png}
-%     }
-%     \caption{
-%         Simulation results for the linear stability analysis with $K=20$ and $\alpha=0.6\pi$.
-%     }
-% \end{figure}
-
-
-% \subsection{Abstract phase oscillator model}
-% Let us consider a decoupled phase-oscillator system 
-% \begin{equation}
-%     \dot{\theta}_i=\omega _i-K\sin \alpha +\frac{K}{N}\sum_{j=1}^N{\sin \left( \theta _j-\theta _i+\alpha \right)}\;.
-%     \label{eq:decoupledPhaseModel}
-% \end{equation}
-
-% To quantify the phase coherence of the system, it is convenient to define the generalized complex-valued order parameters, i.e.,
-% \begin{equation}
-%     \label{eq:orderParameter}
-%     Z\left( t \right) =R\left( t \right) \text{e}^{\text{i}\psi\left( t \right)}=\frac{1}{N}\sum_{j=1}^N{\text{e}^{\text{i}\theta _{j}\left( t \right)}}\;,
-% \end{equation}
-% where $n=1,2,\dots, N$, and $r\left( t \right)$, $\psi \left( t \right)$ are the amplitudes and arguments of the order parameter.
-% Our starting point is to analyze the critical point for the coherence of the order parameter.
-% In the thermodynamic limit $N\to \infty$, the state of the system in Eq.~(\ref{eq:decoupledPhaseModel}) can be characterized by the single-oscillator distribution $\rho\left( \theta ,\omega, t \right)$, which satisfies the continuity equation
-% \begin{equation}
-%     \frac{\partial \rho}{\partial t}+\frac{\partial \left( \rho v \right)}{\partial \theta}=0\;,
-%     \label{eq:continuityEquation}
-% \end{equation}
-% where $\rho \left( \theta ,\omega ,t \right)$ accounts for the fraction of oscillators with phase $\theta$ lying in the interval $\left( \theta ,\theta +\mathrm{d}\theta \right)$ at fixed frequency $\omega$ and time $t$, it satisfies the normalization condition
-% \begin{equation}
-%     \label{eq:normalization}
-%     \int_{0}^{2\pi}{\rho \left( \theta ,\omega ,t \right) \text{d}\theta} =1\;.
-% \end{equation}
-% Here, $v\left( \theta ,\omega ,t \right)$ is the velocity field, given by
-% \begin{equation}
-%     \begin{aligned}
-%         v\left( \theta ,\omega ,t \right) =&K\int_{-\infty}^{+\infty}{\int_0^{2\pi}{\sin \left( \theta ^{\prime}-\theta +\alpha \right) \rho \mathrm{d}\theta ^{\prime}\mathrm{d}\omega ^{\prime}}}\\
-%         &+\omega -K\sin \alpha \;.
-%     \end{aligned} 
-% \end{equation}
-% Correspondingly, the order parameter defined in Eq.~(\ref{eq:orderParameter}) in the thermodynamic limit reads
-% \begin{equation}
-%     Z\left( t \right) =\int_{-\infty}^{+\infty}{g\left(\omega\right)\mathrm{d}\omega \int_0^{2\pi}{\mathrm{e}^{\mathrm{i}\theta}\rho \left( \theta ,\omega ,t \right) \mathrm{d}\theta }} \;,
-%     \label{eq:orderParameterContinuum}
-% \end{equation}
-% then $v\left( \theta ,\omega ,t \right)$ simplifies to
-% \begin{equation}
-%     v\left( \theta ,\omega ,t \right) =\omega -K\sin \alpha +\mathrm{Im}\left[ H\left( t \right) \mathrm{e}^{-\mathrm{i}\theta} \right] \;,
-%     \label{eq:velocityField}
-% \end{equation}
-% with the mean-field being
-% \begin{equation}
-%     H\left( t \right) =KZ\left( t \right) \mathrm{e}^{\mathrm{i}\alpha} \;.
-% \end{equation}
-
-% Since the distribution $\rho \left( \theta ,\omega ,t \right)$ is $2\pi$-periodic in $\theta$, we can expand it in Fourier series as
-% \begin{equation}
-%     \rho \left( \theta ,\omega ,t \right) =\frac{1}{2\pi}\sum_{n=-\infty}^{+\infty}{a _n\left( \omega ,t \right) \mathrm{e}^{\mathrm{i}n\theta}}\;,
-%     \label{eq:rhoFourier}
-% \end{equation}
-% where $a _n\left( \omega ,t \right)$ is the $n$-th Fourier coefficient. In particular, we have $a _0\left( \omega ,t \right) \equiv 1$ owing to the normalization condition in Eq.~(\ref{eq:normalization}) and $a _{-n}\left( \omega ,t \right) =a _n^{*}\left( \omega ,t \right)$, where $*$ denotes the complex conjugate.
-
-% According to the Ott-Antonsen ansatz \cite{10.1063/1.2930766,10.1063/1.3136851}, it states that the $n$-th Fourier coefficient $a_n\left(\omega, t\right)$ can be expressed in terms of the first-order coefficient, i.e., $a_n\left(\omega, t\right) = a^{n}\left(\omega, t\right)$. In this regard, the evolution of $\rho\left(\theta, \omega, t\right)$ degenerates to an invariant manifold, which is
-% \begin{equation}
-%     \dot{a}\left( t \right) =\mathrm{i}\left( K\sin \alpha -\omega \right) a\left( t \right) +\frac{1}{2}\left[ H^{*}\left( t \right) -H\left( t \right) a^2\left( t \right) \right] \;.
-%     \label{eq:OttAntonsen}
-% \end{equation}
-% Consequently, Eq.~(\ref{eq:OttAntonsen}) is closed by the definition of the order parameter in Eq.~(\ref{eq:orderParameterContinuum}), where
-% \begin{equation}
-%     \begin{aligned}
-%         Z\left( t \right) &=\int_{-\infty}^{+\infty}{g\left( \omega \right) a_{-1}\left( \omega ,t \right) \mathrm{d}\omega} \;,\\
-%         &=\int_{-\infty}^{+\infty}{g\left( \omega \right) a^{*}\left( \omega ,t \right) \mathrm{d}\omega} \;.\\
-%     \end{aligned}
-%     \label{eq:orderParameterOttAntonsen}
-% \end{equation}
-
-% We stress that Eq.~(\ref{eq:OttAntonsen}) is still infinite dimensional
-% because of the distributed natural frequencies. Thus, we may make a specific choice for the frequency distribution to get around this difficulty, e.g. a Lorentzian distribution $g\left(\omega\right)=\varDelta / [ \pi\left(\omega-\mu\right)^2+\varDelta ^2 ]$ with $\varDelta $ being the width of the distribution and $\mu$ being the mean frequency.
-% In this setting, the order parameters defined in Eq.~(\ref{eq:orderParameterOttAntonsen}) can be calculated by using Cauchy's residue theorem with analytical continuation of $a\left(\omega, t\right)$ into the lower half complex plane, which leads to
-% \begin{equation}
-%     Z(t)=a^{*}\left(\mu-\mathrm{i}\varDelta, t\right) \;.
-% \end{equation}
-% As a result, the low-dimensional evolution of the order parameter can be obtained by replacing $\omega$ with $\mu-\mathrm{i}\varDelta$ and by taking into account the complex conjugate, which reads
-% \begin{equation}
-%     \dot{Z}=-\Delta Z+\mathrm{i}Z\left( \mu -K\sin \alpha \right) +\frac{1}{2}\left[ KZ\mathrm{e}^{\mathrm{i}\alpha}-KZ^*Z^2\mathrm{e}^{-\mathrm{i}\alpha} \right] \;.
-%     \label{eq:orderParameterEvolution}
-% \end{equation}
-% Rewrite above equation using polar coordinates $Z\left( t \right) =R\left( t \right) \mathrm{e}^{\mathrm{i}\psi \left( t \right)}$, we have
-% \begin{subequations}
-%     \begin{align}
-%         \dot{R}&=\frac{R}{2}\left( K-2\varDelta -KR^2 \right) \cos \alpha \;, \label{eq:dotAmplitudeR}\\
-%         \dot{\psi}&=\mu +\frac{K}{2}\left( R^2-1 \right) \sin \alpha \label{detPsi}\;.
-%     \end{align}
-% \end{subequations}
-% Obviously, the amplitude $R\left( t \right)$ is decoupled from the mean phase $\psi\left( t \right)$ and Eq.~(\ref{eq:dotAmplitudeR}) have a critical coupling strength $K_c=2\varDelta$ and a pair of critical phase frustration $\left|\alpha_c\right| = \pi/2$.
-% Let us first consider the simplest case of $ \varDelta =0, \mu=0$, which corresponds to the case of achiral particles. In this case, when $\left|\alpha_c\right| > \pi/2$, the system bifurcates to $R=0$, which corresponds to the incoherent state in phase oscillators and lattice state in self-propelled particles, while for $\left|\alpha_c\right| < \pi/2$, the system has a unique stable fixed point at $R=1$, which corresponds to the coherent state and swarming state, respectively.
-
-% For the incoherent state, the system is totally disordered with the phases distributed uniformly around the unit circle, i.e., $\rho\left(\theta, \omega, t\right) = g(\omega)/2\pi$, which implies that the phase velocity of each oscillator/particle becomes
-% \begin{equation}
-%     \dot{\theta}_i=\omega_i-K\sin \alpha \;.
-% \end{equation}
-% Correspondingly, the rotational radii of $i$-th particle is
-% \begin{equation}
-%     r_i=\frac{v}{\dot{\theta}_i}=\frac{v}{\omega _i-K\sin \alpha}\;.
-% \end{equation}
-
-% $$
-% \begin{aligned}
-% \begin{aligned}
-% 	\dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\\
-% 	\dot{\theta}_i&=\omega _i+\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha \right) -\sin \alpha \right]}\\
-% \end{aligned}
-% \\
-% A_i=\left\{ j\mid \left| \mathbf{r}_i-\mathbf{r}_i \right|\leqslant d_0 \right\} 
-% \\
-% \frac{\partial \rho}{\partial t}=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho -\frac{\partial}{\partial \theta}\left\{ \mathcal{T} \left[ \rho \right] \rho \right\} 
-% \\
-% \mathcal{T} \left[ \rho \right] =\frac{K}{A}\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\rho \left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}}
-% \\
-% A=\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\rho \left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right)}}
-% \\
-% \mathrm{For} \mathrm{all} \mathrm{to} \mathrm{all}
-% \\
-% p\left( \theta ,t \right) =\int_{L\times L}{\mathrm{d}^2\mathbf{r}\rho \left( \mathbf{r},\theta ,t \right)}
-% \\
-% \frac{\partial p}{\partial t}=-\frac{\partial}{\partial \theta}\left\{ \mathcal{T} \left[ \rho \right] \rho \right\} 
-% \\
-% \mathcal{T} \left[ \rho \right] =K\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}p\left( \theta ^{\prime},t \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}
-% \\
-% p_0=\frac{1}{2\pi}
-% \\
-% p\left( \theta ,t \right) =p_0+\varepsilon \mathrm{e}^{\lambda t}\Phi \left( \theta \right) 
-% \\
-% \begin{aligned}
-% 	\mathcal{T} \left[ \rho \right] &=K\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\left( p_0+\varepsilon \mathrm{e}^{\lambda t}\Phi \left( \theta ^{\prime} \right) \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}\\
-% 	&=K\varepsilon \mathrm{e}^{\lambda t}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}\\
-% \end{aligned}
-% \\
-% \mathcal{T} \left[ \rho \right] \rho \approx \frac{K\varepsilon \mathrm{e}^{\lambda t}}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}
-% \\
-% \frac{\partial}{\partial \theta}\left\{ \mathcal{T} \left[ \rho \right] \rho \right\} \approx \frac{\partial}{\partial \theta}\left\{ \frac{K\varepsilon \mathrm{e}^{\lambda t}}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} 
-% \\
-% \sin \left( \theta ^{\prime}-\theta +\alpha \right) =\sin \left( \theta ^{\prime}-\theta \right) \cos \alpha +\sin \alpha \cos \left( \theta ^{\prime}-\theta +\alpha \right) 
-% \\
-% \begin{aligned}
-% 	\lambda \varepsilon \mathrm{e}^{\lambda t}\Phi \left( \theta \right) &=-\frac{\partial}{\partial \theta}\left\{ \frac{K\varepsilon \mathrm{e}^{\lambda t}}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% 	\lambda \Phi \left( \theta \right) &=-\frac{\partial}{\partial \theta}\left\{ \frac{K}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% \end{aligned}
-% \\
-% \mathcal{L} _{00}\Phi \left( \theta \right) =-\frac{\partial}{\partial \theta}\left\{ \frac{K}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} 
-% \\
-% \mathcal{L} _{00}\Phi =\lambda \Phi 
-% \\
-% \Phi \left( \theta \right) =\sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta}}=\sum_{m=-\infty}^{+\infty}{c_m\Phi _m\left( \theta \right)}, \Phi _m\left( \theta \right) =\mathrm{e}^{\mathrm{i}m\theta}
-% \\
-% \begin{aligned}
-% 	\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}&=\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}\\
-% 	&=\sum_{m=-\infty}^{+\infty}{c_m\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}}\\
-% \end{aligned}
-% \\
-% \begin{aligned}
-% 	\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}&=\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\sin \left( \theta ^{\prime}-\theta +\alpha \right)}-\sin \alpha \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}}\\
-% 	&=-2\pi \delta _{m,0}\sin \alpha +\frac{1}{2\mathrm{i}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \mathrm{e}^{\mathrm{i}\left( \theta ^{\prime}-\theta +\alpha \right)}-\mathrm{e}^{-\mathrm{i}\left( \theta ^{\prime}-\theta +\alpha \right)} \right]}\\
-% 	&=-2\pi \delta _{m,0}\sin \alpha +\frac{\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}}{2\mathrm{i}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta ^{\prime}}}-\frac{\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}}{2\mathrm{i}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta ^{\prime}}}\\
-% 	&=-2\pi \delta _{m,0}\sin \alpha -\mathrm{i}\pi \delta _{m,-1}\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}+\mathrm{i}\pi \delta _{m,1}\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}\\
-% \end{aligned}
-% \\
-% \frac{\partial}{\partial \theta}\left\{ \frac{K}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} =-\frac{K\delta _{m,-1}}{2}\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}-\frac{K\delta _{m,1}}{2}\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}
-% \\
-% \begin{aligned}
-% 	\mathcal{L} _{00}\sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta}}&=\lambda \sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta}}\\
-% 	\mathcal{L} _{00}\mathrm{e}^{\mathrm{i}m\theta}&=\lambda _m\mathrm{e}^{\mathrm{i}m\theta}\\
-% 	\lambda _m\mathrm{e}^{\mathrm{i}m\theta}&=-\frac{\partial}{\partial \theta}\left\{ \frac{K}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% 	\lambda _m\mathrm{e}^{\mathrm{i}m\theta}&=\frac{K\delta _{m,-1}}{2}\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}+\frac{K\delta _{m,1}}{2}\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}\\
-% 	\lambda _m&=\frac{K}{2}\left( \delta _{m,-1}\mathrm{e}^{\mathrm{i}\alpha}+\delta _{m,1}\mathrm{e}^{-\mathrm{i}\alpha} \right)\\
-% \end{aligned}
-% \\
-% \mathrm{For} \mathrm{finite} \mathrm{range}
-% \\
-% \rho _0=\frac{1}{2\pi L^2}
-% \\
-% \rho \left( \mathbf{r},\theta ,t \right) =\rho _0+\varepsilon \mathrm{e}^{\lambda \left( k \right) t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Phi \left( \theta \right) , k=\left| \mathbf{k} \right|
-% \\
-% \frac{\partial \rho}{\partial t}=\varepsilon \lambda \mathrm{e}^{\lambda \left( k \right) t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Phi \left( \theta \right) 
-% \\
-% -v\mathbf{p}\left( \theta \right) \cdot \nabla \rho =-v\mathbf{p}\left( \theta \right) \cdot \left[ \mathrm{i}\mathbf{k}\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Phi \left( \theta \right) \right] =-\mathrm{i}v\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Phi \left( \theta \right) \mathbf{p}\left( \theta \right) \cdot \mathbf{k}
-% \\
-% \Theta _k=\int{\mathrm{d}^2\mathbf{R}\Theta \left( \left| \mathbf{R} \right|-d_0 \right) \mathrm{e}^{\mathrm{i}\mathbf{k}\cdot \mathbf{R}}}
-% \\
-% \begin{aligned}
-% 	A&=\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\rho \left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right)}}\\
-% 	&=\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\left[ \rho _0+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}^{\prime}}\Phi \left( \theta ^{\prime} \right) \right] \Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right)}}\\
-% 	&=\frac{1}{L^2}\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right)}+\varepsilon \mathrm{e}^{\lambda t}\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right) \mathrm{e}^{\mathrm{i}\mathbf{k}\cdot \mathbf{r}^{\prime}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right)}}\\
-% 	&=\frac{1}{L^2}\int_{L\times L}{\mathrm{d}^2\mathbf{R}\Theta \left( \left| \mathbf{R} \right|-d_0 \right)}+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\int_{L\times L}{\mathrm{d}^2\mathbf{R}\Theta \left( \left| \mathbf{R} \right|-d_0 \right) \mathrm{e}^{\mathrm{i}\mathbf{k}\cdot \mathbf{R}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right)}}\\
-% 	&=\frac{1}{L^2}\Theta _0+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right)}\\
-% \end{aligned}
-% \\
-% \begin{aligned}
-% 	\mathcal{T} \left[ \rho \right] &=\frac{K}{A}\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\rho \left( \mathbf{r}^{\prime},\theta ^{\prime},t \right) \Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}}\\
-% 	&=\frac{K}{A}\int_{L\times L}{\mathrm{d}^2\mathbf{r}^{\prime}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\left[ \rho _0+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}^{\prime}}\Phi \left( \theta ^{\prime} \right) \right] \Theta \left( \left| \mathbf{r}^{\prime}-\mathbf{r} \right|-d_0 \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}}\\
-% 	&=-\frac{K\sin \alpha}{L^2A}\int_{L\times L}{\mathrm{d}^2\mathbf{R}\Theta \left( \left| \mathbf{R} \right|-d_0 \right)}+\frac{K\varepsilon}{A}\mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\int_{L\times L}{\mathrm{d}^2\mathbf{R}\Theta \left( \left| \mathbf{R} \right|-d_0 \right) \mathrm{e}^{\mathrm{i}\mathbf{k}\cdot \mathbf{R}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}}\\
-% 	&=-\frac{K\sin \alpha}{L^2A}\Theta _0+\frac{K\varepsilon}{A}\mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}\\
-% 	&=\frac{K}{A}\left\{ -\frac{\Theta _0\sin \alpha}{L^2}+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% \end{aligned}
-% \\
-% \mathcal{T} \left[ \rho \right] \rho \approx \frac{1}{2\pi L^2}\frac{K}{A}\left\{ -\frac{\Theta _0\sin \alpha}{L^2}+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} 
-% \\
-% \frac{\partial}{\partial \theta}\left\{ \mathcal{T} \left[ \rho \right] \rho \right\} \approx \frac{1}{2\pi L^2}\frac{K}{A}\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\frac{\partial}{\partial \theta}\left\{ \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} 
-% \\
-% \begin{aligned}
-% 	\frac{\partial \rho}{\partial t}&=-v\mathbf{p}\left( \theta \right) \cdot \nabla \rho -\frac{\partial}{\partial \theta}\left\{ \mathcal{T} \left[ \rho \right] \rho \right\}\\
-% 	\varepsilon \lambda \mathrm{e}^{\lambda \left( k \right) t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Phi \left( \theta \right) &=-\mathrm{i}v\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\left( \mathbf{p}\left( \theta \right) \cdot \mathbf{k} \right) \Phi \left( \theta \right) -\frac{1}{2\pi L^2}\frac{K}{A}\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\frac{\partial}{\partial \theta}\left\{ \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% 	\lambda \Phi \left( \theta \right) &=-\mathrm{i}v\left( \mathbf{p}\left( \theta \right) \cdot \mathbf{k} \right) \Phi \left( \theta \right) -\frac{K\Theta _k}{2\pi L^2A}\frac{\partial}{\partial \theta}\left\{ \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% 	\mathcal{L} \Phi &=\left( \mathcal{L} _0-\mathrm{i}vk\mathcal{L} _1 \right) \Phi =\lambda \Phi\\
-% \end{aligned}
-% \\
-% \begin{aligned}
-% 	\mathcal{L} _0\Phi &=-\frac{K\Theta _k}{2\pi L^2A}\frac{\partial}{\partial \theta}\left\{ \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\}\\
-% 	\mathcal{L} _1\Phi &=\left( \mathbf{p}\left( \theta \right) \cdot \bar{\mathbf{k}} \right) \Phi , \bar{\mathbf{k}}=\mathbf{k}/k\\
-% \end{aligned}
-% \\
-% \Phi \left( \theta \right) =\sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta}}=\sum_{m=-\infty}^{+\infty}{c_m\Phi _m\left( \theta \right)}, \Phi _m\left( \theta \right) =\mathrm{e}^{\mathrm{i}m\theta}
-% \\
-% \begin{array}{c}
-% 	\mathcal{L} \sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta}}=\lambda \sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta}}\\
-% 	\mathcal{L} \Phi _m=\lambda _m\Phi _m\\
-% \end{array}
-% \\
-% \mathcal{L} _0\Phi _m=\lambda _{m}^{\left[ 0 \right]}\mathrm{e}^{\mathrm{i}m\theta}=-\frac{K\Theta _k}{2\pi L^2A_m}\frac{\partial}{\partial \theta}\left\{ \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} 
-% \\
-% A_m=\frac{1}{L^2}\Theta _0+\varepsilon \mathrm{e}^{\lambda t+\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\Theta _k\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta}}=\frac{1}{L^2}\Theta _0
-% \\
-% \mathcal{L} _1\Phi _m=\mathcal{L} _1\mathrm{e}^{\mathrm{i}m\theta}=\left( \mathbf{p}\left( \theta \right) \cdot \bar{\mathbf{k}} \right) \mathrm{e}^{\mathrm{i}m\theta}=\cos \theta \mathrm{e}^{\mathrm{i}m\theta}=\left( e^{i\left( m+1 \right) \theta}+e^{i\left( m-1 \right) \theta} \right) /2\;\left( \mathrm{Let} \mathbf{k}\,\,\mathrm{along} x-\mathrm{direction} \right) 
-% \\
-% \begin{aligned}
-% 	\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\Phi \left( \theta ^{\prime} \right) \left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}&=\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\sum_{m=-\infty}^{+\infty}{c_m\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}\\
-% 	&=\sum_{m=-\infty}^{+\infty}{c_m\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}}\\
-% \end{aligned}
-% \\
-% \begin{aligned}
-% 	\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]}&=\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\sin \left( \theta ^{\prime}-\theta +\alpha \right)}-\sin \alpha \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}}\\
-% 	&=-2\pi \delta _{m,0}\sin \alpha +\frac{1}{2\mathrm{i}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta ^{\prime}}\left[ \mathrm{e}^{\mathrm{i}\left( \theta ^{\prime}-\theta +\alpha \right)}-\mathrm{e}^{-\mathrm{i}\left( \theta ^{\prime}-\theta +\alpha \right)} \right]}\\
-% 	&=-2\pi \delta _{m,0}\sin \alpha +\frac{\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}}{2\mathrm{i}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}\left( m+1 \right) \theta ^{\prime}}}-\frac{\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}}{2\mathrm{i}}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}\left( m-1 \right) \theta ^{\prime}}}\\
-% 	&=-2\pi \delta _{m,0}\sin \alpha -\mathrm{i}\pi \delta _{m,-1}\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}+\mathrm{i}\pi \delta _{m,1}\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}\\
-% \end{aligned}
-% \\
-% \frac{\partial}{\partial \theta}\left\{ \int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\mathrm{e}^{\mathrm{i}m\theta}\left[ \sin \left( \theta ^{\prime}-\theta +\alpha \right) -\sin \alpha \right]} \right\} =-\pi \delta _{m,-1}\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}-\pi \delta _{m,1}\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)}
-% \\
-% \begin{aligned}
-% 	\lambda _{m}^{\left[ 0 \right]}\left( k \right) \mathrm{e}^{\mathrm{i}m\theta}&=\frac{K\Theta _k}{2\Theta _0}\left( \delta _{m,-1}\mathrm{e}^{-\mathrm{i}\left( \theta -\alpha \right)}+\delta _{m,1}\mathrm{e}^{\mathrm{i}\left( \theta -\alpha \right)} \right)\\
-% 	\lambda _{m}^{\left[ 0 \right]}\left( k \right) &=\frac{K\Theta _k}{2\Theta _0}\left( \delta _{m,-1}\mathrm{e}^{\mathrm{i}\alpha}+\delta _{m,1}\mathrm{e}^{-\mathrm{i}\alpha} \right)\\
-% \end{aligned}
-% \\
-% \Theta _k=\int{\mathrm{d}^2\mathbf{R}\Theta \left( \left| \mathbf{R} \right|-d_0 \right) \mathrm{e}^{\mathrm{i}\mathbf{k}\cdot \mathbf{R}}}
-% \\
-% \end{aligned}
-% $$
+which is consistent with the numerical results shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(a)-(c). When the wavelength is too short to overcome the volume of the cells, the cells overlap together, resulting in macroscopic uniformity, but it still possesses unstable pattern-forming modes, resulting in microscopic hyperuniformity.
 
 \bibliography{ref}
 
