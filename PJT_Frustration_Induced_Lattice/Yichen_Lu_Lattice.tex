@@ -154,7 +154,7 @@ For the final state and phase diagram, each data point of order parameters was c
         (a)-(h) Representative simulation snapshots for synchronization state [(a)-(c)] and lattice state [(d)-(h)] at different phase frustration $\alpha$. The orientation and color of particles represent their instantaneous phase $\theta_i$.
         (i) Phase diagram and order parameters of the system with respect to the phase frustration $\alpha$. The crosses mark the snapshots in (a)-(h). Regions of blue and green respectively represent the synchronization and lattice states. The horizontal dashed line indicates the values of the value of order parameter $p_{\mathrm{std}}$ when $\max p(\theta, t)=1/2$ (Dual cluster synchronization). 
         (j), (k) Time evolution of respiration motion of vortex [(j), $\alpha=0.6\pi$] and double clustered [(k), $\alpha=0.9\pi$] unit cell. 
-        (k) The red and blue arrows represent the two clusters divided by their phases, and dashed circles of corresponding colors are estimated motion trajectories based on their instantaneous actual frequencies.
+        (k) The red and blue arrows represent the two clusters divided by their phases, and dashed circles of corresponding colors are estimated motion trajectories based on their instantaneous effective frequencies in Eq.~\eqref{eq:averageFrequency}.
         (l) Respiration amplitude revealed by the time evolution for $\alpha=0.6\pi$.
         Other parameters: $K=20$, $d_0=1.55$, $L=7, N=2000, v=3$. 
         }
@@ -171,10 +171,10 @@ For a more detailed understanding of the spatiotemporal pattern for lattice stat
         \langle \dot{\theta}\rangle &=-K\sin \alpha +\frac{K}{2\pi}\int_0^{2\pi}{\mathrm{d}\theta ^{\prime}\sin \left( \theta ^{\prime}-\theta +\alpha \right)}\\
         &=-K\sin \alpha\;.\\
     \end{aligned}  
+    \label{eq:averageFrequency}
 \end{equation}
 This dynamic behavior is characterized by oscillations in the distance between particles and the centers of their unit cells $\left| \mathbf{r}_i\left( t \right) -\mathbf{c}_i\left( \bar{t} \right) \right|$, as illustrated in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(l), where $\mathbf{c}_i\left( \bar{t} \right)$ is the center of the unit cell averaged over one period. 
-The amplitude of these oscillations provides insight into the stability of the lattice structure (see Sec.~\ref{sec:mechanism}). In contrast, the dual-cluster state (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(k)) shows a more ordered arrangement, with particles maintaining their positions relative to each other while exhibiting phase differences (Note that they are not only two particles but two groups of particles fully condensed). Two groups of particles rotate around the center of the unit cell in opposite directions along approximately fixed trajectory.
-This state is less dynamic than the vortex lattice but still represents a significant lattice symmetry.
+The amplitude of these oscillations provides insight into the stability of the lattice structure (see Hopf–Turing bifurcation in Sec.~\ref{sec:mechanism}). As respiration motion, compared to the vortex lattice state, the dual-cluster state (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(k)) shows a more ordered arrangement, with two groups of particles rotating around the center of the unit cell in opposite directions along approximately fixed trajectory (Note that they are not only two particles but two groups of particles fully condensed). The trajectories of these two groups can be approximated by circles with radii determined by their instantaneous effective frequencies in Eq.~\ref{eq:averageFrequency}, as indicated by the dashed circles in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(k). 
 
 % \vspace{l}
 
@@ -319,7 +319,7 @@ Within this region, the lattice constant increases with $d_0$ but is insensitive
 Outside this region, the lattice structure becomes recessive, and the system tends to return to a more uniform state. The boundary between these regions can be approximated by the relation \eqref{eq:criticalLineOfKD0} (see Sec.~\ref{sec:mechanism} for details), which balances the spatial periodicity of pattern formation and the spatial dynamics of particles.
 
 Interestingly, even in the recessive lattice region, where the system appears macroscopically uniform, it still exhibits microscopic hyperuniformity, as shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(e).
-To quantify the degree of order in hyperuniformity, we computed the structure factor $S(q)=N^{-1}\sum_{i,j=1}^{N}e^{i\mathbf{q}\cdot(\mathbf{r}_i-\mathbf{r}_j)}$ and number variance $\sigma _N^2(R)=N^{-1}\sum_{i=1}^{N}(\rho _i-\bar{\rho})^2$, which are standard measures for characterizing hyperuniformity\cite{TORQUATO20181}. 
+To quantify the degree of order in hyperuniformity, we computed the structure factor $S(q)=N^{-1}\sum_{i,j=1}^{N}e^{i\mathbf{q}\cdot(\mathbf{r}_i-\mathbf{r}_j)}$ and number variance $\sigma _N^2(R)=\langle \left[ N\left( R \right) -\langle N\left( R \right) \rangle \right] ^2\rangle $, which are standard measures for characterizing hyperuniformity\cite{TORQUATO20181}. 
 
 % \newpage
 % \subsubsection{Lattice constant}
