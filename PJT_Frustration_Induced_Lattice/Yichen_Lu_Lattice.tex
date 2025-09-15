@@ -44,7 +44,7 @@
 % \newpage
 \section{The Model}
 
-Particles have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an internal phase $\theta_i$ which evolve according to equations:
+Particles are characterized by their spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and a phase angle $\theta_i$, whose dynamics are governed by the following equations:
 \begin{subequations} 
     \label{eq:totalDynamicsMeanField}
     \begin{align}
@@ -53,15 +53,15 @@ Particles have a spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and an 
         \dot{\theta}_i&=\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha \right) -\sin \alpha \right]}\;\label{eq:dotTheta},
     \end{align}
 \end{subequations}
-for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =\left( \cos \theta ,\sin \theta \right)$, which means each particle rotates with a constant speed $v$ in the direction of its instantaneous phase $\theta_i (t)$. 
-The particles are treated as point-like with no direct spatial interactions, consistent with classical models of chiral self-propelled particles \cite{PhysRevResearch.1.023026,PhysRevLett.119.058002,Fruchart2021,PhysRevLett.127.238001,PhysRevLett.133.258302}.
-As per Eq.~(\ref{eq:dotTheta}), the mean runs over neighbors within a coupling radius $d_0$ around particle $i$:
+for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =( \cos \theta ,\sin \theta )$denotes the direction vector, implying that each particle moves at a constant speed $v$ along the direction of its instantaneous phase $\theta_i (t)$. 
+According to Eq.~(\ref{eq:dotTheta}), the phase evolution involves a local average over neighbors within a coupling radius $d_0$ of particle $i$:
 \begin{equation}
     A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
 \end{equation}
-$K \left(\geqslant 0\right)$ is the coupling strength, $\alpha$ is the phase frustration between two neighboring particles. When $\alpha_0=0$, the dynamics reduces to the normal Vicsek-like model.
-% The counter term $-\sin\alpha$ is introduced to ensure that frustration only interferes with the phase coupling without changing the sign of effective frequency.
-The introduction of counter term $-\sin\alpha$ ensures that the interaction force cancels exactly when phase differences vanish ($\theta_j - \theta_i = 0$). This guarantees that perfect synchronization is always an equilibrium state. Without this term, synchronized oscillators would experience a net force $K\sin\alpha$, artificially shifting their frequencies \cite{10.1143/PTP.79.1069}.
+where $K \left(\geqslant 0\right)$ represents the coupling strength and $\alpha$ is the phase frustration between two neighboring particles. 
+The introduction of counter term $-\sin\alpha$ ensures that the frustration vanishes exactly when phase differences vanish ($\theta_j - \theta_i = 0$), thereby guaranteeing that perfect synchronization remains an equilibrium state. Without this term, synchronized oscillators would experience a net force $K\sin\alpha$, artificially shifting their frequencies \cite{10.1143/PTP.79.1069}.
+This model generalizes both aligning \cite{PhysRevLett.119.058002,PhysRevResearch.1.023026,Escaff2020,PhysRevLett.127.238001,PhysRevLett.133.258302} and anti-aligning \cite{PhysRevE.109.024602,PhysRevE.110.024603} interaction models. When $\alpha_0=0$, the dynamics reduces to the Vicsek-Kuramoto model.
+In the case where $\alpha=\pi$, the system exhibits anti-aligning interactions, causing particles to adopt phases opposite to those of their neighbors.
 
 Some necessary order parameters can be introduced to measure the level of coordination among particles in space motion and phase dynamics. Firstly, at the macroscopic level, the system may be described by the single-partial distribution $\rho \left( \mathbf{r},\theta ,t \right) $, which satisfies the normalization condition
 \begin{equation}
@@ -161,7 +161,7 @@ For the final state and phase diagram, each data point of order parameters was c
 \end{figure}
 
 Our system consists of self-propelled particles with local phase interactions, leading to a rich variety of collective behaviors. As shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(a), when the phase frustration $\alpha$ is small, the system tends to synchronize in phase, resulting in a globally synchronized state where all particles move coherently in the same direction. This state is characterized by high values of the order parameter$p_{\mathrm{std}}$ and low values of $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$, indicating uniform spatial distribution but strong phase coherence. As $\alpha$ gradually increases but still maintains continuity ($\alpha < \pi/2$), the system exhibits a swarming synchronization state, as shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(b). In this state, particles form a large, coherent cluster that moves collectively, with phases still largely aligned. The order parameters reflect this state, with $p_{\mathrm{std}}$ remaining high, while $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$ bifurcate from zero due to the formation of the cluster. The parameter space and phenomena mentioned above have been extensively studied in previous works \cite{PhysRevE.98.032219,PhysRevE.102.022604}.
-With increasing $\alpha$ beyond $\pi/2$, the system undergoes a transition to a lattice state, as shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(d)-(h). In this state, particles arrange themselves into a hexagonal lattice structure, breaking the spatial uniformity. The order parameters reflect this change, with $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$ non-zero significantly remaining constant over a large range ($0.55\pi<\alpha<0.9\pi$), indicating the formation of spatial patterns. $p_{\mathrm{std}}$ decreases at first ($0.5\pi<\alpha<0.7\pi$, the vortex lattice state, Fig.~\ref{fig:snapshotsAndPhaseDiagram}(e)), showing reduced phase coherence, but then increases again ($0.7\pi<\alpha<\pi$), indicating the emergence of dual-cluster synchronization where particles form two distinct phase clusters (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(f)). This dual-cluster state is characterized by two dominant phases that differ by $\pi$, leading to a bimodal distribution in $p(\theta, t)$. 
+With increasing $\alpha$ beyond $\pi/2$, the system undergoes a transition to a lattice state, as shown in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(d)-(h). In this state, particles arrange themselves into a hexagonal lattice structure, breaking the spatial uniformity. The order parameters reflect this change, with $\rho_{\mathrm{std}}$ and $\varrho_{\mathrm{std}}$ non-zero significantly remaining constant over a large range ($0.55\pi<\alpha<0.9\pi$), indicating the formation of spatial patterns. $p_{\mathrm{std}}$ decreases at first ($0.5\pi<\alpha<0.7\pi$, the vortex lattice state, Fig.~\ref{fig:snapshotsAndPhaseDiagram}(e)), showing reduced phase coherence, but then increases again ($0.7\pi<\alpha<\pi$), indicating the emergence of dual-cluster synchronization where particles form two distinct phase clusters (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(f)). This dual-cluster state is characterized by two clustered phases that differ by $\pi$, leading to a bimodal distribution in $p(\theta, t)$. 
 Continuing to increase $\alpha$ towards $\pi$, the three order parameters decrease again, indicating a return to a more disordered state (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(g)).
 While at $\alpha = \pi$, system reaches a state of perfect anti-synchronization, where neighboring particles have phases differing by $\pi$, leading to a dual-lane pattern in space and dual-cluster synchronization in phase (Fig.~\ref{fig:snapshotsAndPhaseDiagram}(h)). Different from the previous dual-cluster state in Fig.~\ref{fig:snapshotsAndPhaseDiagram}(f), here the two phase clusters are fixed, resulting in a continuous linear arrangement of motion in space. This pattern has also been observed in Escaff's work on anti-aligning interactions \cite{PhysRevE.109.024602,PhysRevE.110.024603}
 
@@ -250,7 +250,7 @@ The amplitude of these oscillations provides insight into the stability of the l
 % \end{figure}
 
 \newpage
-\subsection{Respiration-like motion of unit cells}
+\section{Respiration-like motion of unit cells \textcolor{red}{[In future publications]}}
 
 For $\alpha=0.6\pi$, the system exhibits the respiration-like motion of the cells. Since the phases of particles in each cell are uniformly distributed in $[0, 2\pi]$ and the distance between cells is large enough to be considered decoupled, the effective frequency of each particle can be approximated by
 \begin{equation}
@@ -266,7 +266,7 @@ and the lattice constant $a$ can be approximated as
     \includegraphics[width=\textwidth]{./figs/respiration_snapshot.pdf}
     \caption{
         \label{fig:respiration_snapshot}
-        respiration-like motion of the cells with $\omega _{\min}=0$, $\Delta \omega=0$, $N=3000$, $K=10.5$, $d_0=1.07$, and $\alpha=0.6\pi$. Black hollow dots represent the center of mass of each cell, black dash circles represent the theoretical unit cell radius $v/\dot{\theta}_i$, and the gray dash lines represent the theoretical distance between unit cells $d_0$.
+        respiration-like motion of the cells with $\omega _{\min}=0$, $\Delta \omega=1$, $N=3000$, $K=10.5$, $d_0=1.07$, and $\alpha=0.6\pi$. Black hollow dots represent the center of mass of each cell, black dash circles represent the theoretical unit cell radius $v/\dot{\theta}_i$, and the gray dash lines represent the theoretical distance between unit cells $d_0$.
     }
 \end{figure}
 \begin{figure}[H]
@@ -306,20 +306,24 @@ respiration frequency of the cells exhibit synchronization.
     \includegraphics[width=\textwidth]{./figs/phaseDiagramAndHyperuniformity.pdf}
     \caption{
         \label{fig:phaseDiagramAndHyperuniformity}
-        (a)-(c) Snapshots of $(K, d_0)$ phase diagram for different frustration $\alpha$ at population $N=2000$. The regions of dominant and recessive lattice states are indicated by the black dashed lines given by Eq.~\eqref{eq:criticalLineOfKD0}. Other parameters: $L=7, v=3$.
-        (d), (e) Snapshots of random uniform (d, initial conditions) and hyperuniform (e, final state of (d)) for $K=20, d_0=0.25, N=5000, \alpha=0.6\pi$.
-        Hyperuniformity of (d) and (e) is characterized by the structure factor $S(q)$ (f) and number variance $\sigma _N^2(R)$ (g). The black dashed lines indicate the scaling behaviors $S(q)\sim q^{-2}$ and $\sigma _N^2(R)\sim R^{1,2}$, respectively.
+        (a)-(c) Snapshots of $(K, d_0)$ phase diagram under different frustration $\alpha$ for $L=7, N=2000$ and $v=3$. The boundaries between dominant and recessive lattice states, determined by Eq.~\eqref{eq:criticalLineOfKD0}, are indicated with black dashed lines.
+        (d), (e) Snapshots comparing random uniform initial conditions (d) and the resulting hyperuniform final state (e) for $K=20, d_0=0.25, \alpha=0.6\pi$ and $N=5000$ (large population for better showcase).
+        Hyperuniformity of the recessive lattice states is characterized by the structure factor $S(q)$ in (f) and the density variance $\langle \delta \rho ^2\left( R \right) \rangle $ in (g). 
+        Black dashed lines indicate the scaling behaviors $S(q)\sim q^{-2}$ and $\langle \delta \rho ^2\left( R \right) \rangle\sim R^{-2,-3}$, respectively.
+        In (f), gray dots represent the sample of $S(\mathbf{q}_{\mathbf{n}})$ for periodic boundary conditions allowed wavevectors $\mathbf{q}_{\mathbf{n}}=(2\pi n_1/L,2\pi n_2/L)$ with $\mathbf{n}\in \left( \mathbb{Z} ^* \right) ^2$ at $K=20, d_0=0.25$, and the point-fold curves with error bars show the binned average and standard deviation of their respective $S(\mathbf{q}_{\mathbf{n}})$.
+        Solid dots and text label in (a) mark the location in $(K, d_0)$ phase diagram corresponding to the parameters analyzed in (e)-(g).
     }
 \end{figure}
 
-As discussed above, the lattice state emerges when the phase frustration $\alpha$ exceeds a critical value of $\pi/2$, and $\alpha$ mainly controls the topology of the lattice pattern.
+As discussed above, the lattice state emerges when the phase frustration $\alpha$ exceeds the critical value $\pi/2$, with $\alpha$ primarily governing the topology of the lattice pattern.
 However, the prominence of this lattice structure depends on the coupling strength $K$ and coupling radius $d_0$.
-As shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(a)-(c), for a given $\alpha$, there exists a region in the top right of $(K, d_0)$ parameter space where the lattice structure is dominant, characterized by long lattice constants (the average distance between neighboring unit cells) and high volume fractions (the area occupied by particles within a unit cell) of unit cells.
-Within this region, the lattice constant increases with $d_0$ but is insensitive to $K$. Conversely, the volume of the unit cell decreases with increasing $K$ but is insensitive to $d_0$.
-Outside this region, the lattice structure becomes recessive, and the system tends to return to a more uniform state. The boundary between these regions can be approximated by the relation \eqref{eq:criticalLineOfKD0} (see Sec.~\ref{sec:mechanism} for details), which balances the spatial periodicity of pattern formation and the spatial dynamics of particles.
+As illustrated in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(a)-(c), for a fixed $\alpha$, a region exists in the high $(K, d_0)$ parameter space where the lattice structure is dominant, characterized by large lattice constants (i.e., the average distance between neighboring unit cells) and large unit cell volumes (i.e., the area occupied by particles within a unit cell).
+Within this region, the lattice constant increases with $d_0$ but remains largely insensitive to $K$. Conversely, the unit cell volume decreases as $K$ increases but shows little dependence on $d_0$.
+Outside this region, the lattice structure becomes recessive, and the system tends to revert to a more uniform state. The boundary between these two regimes can be approximated by relation \eqref{eq:criticalLineOfKD0} (see Sec.~\ref{sec:mechanism} for details), which reflects a balance between the spatial periodicity of pattern formation and the spatial dynamics of the particles. The sawtooth shape of this boundary arises from the discrete nature of the wavenumber $k_n=2\pi n/L$ in a finite system with periodic boundary conditions.
 
-Interestingly, even in the recessive lattice region, where the system appears macroscopically uniform, it still exhibits microscopic hyperuniformity, as shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(e).
-To quantify the degree of order in hyperuniformity, we computed the structure factor $S(q)=N^{-1}\sum_{i,j=1}^{N}e^{i\mathbf{q}\cdot(\mathbf{r}_i-\mathbf{r}_j)}$ and number variance $\sigma _N^2(R)=\langle \left[ N\left( R \right) -\langle N\left( R \right) \rangle \right] ^2\rangle $, which are standard measures for characterizing hyperuniformity\cite{TORQUATO20181}. 
+Interestingly, even in the recessive region, where the system appears macroscopically uniform, it still exhibits microscopic hyperuniformity, as shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(e), which is the final state of a random uniform initial conditions (see Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(d)).
+To quantify the degree of order in hyperuniformity, we computed the structure factor $S(q)=N^{-1}\sum_{i,j=1}^{N}e^{i\mathbf{q}\cdot(\mathbf{r}_i-\mathbf{r}_j)}$ and density variance $\langle \delta \rho ^2\left( R \right) \rangle =\langle \left[ \rho \left( R \right) -\langle \rho \left( R \right) \rangle \right] ^2\rangle $, which are standard measures for characterizing hyperuniformity\cite{PhysRevE.68.041113,TORQUATO20181}. 
+As shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(f) and (g), the recessive lattice states for large coupling strength and small coupling radius ($K=20, d_0=0.1,0.25$) exhibit a scaling behavior of $S(q\to 0)\sim q^{2}$, and $\langle \delta \rho ^2\left( R \to \infty \right) \rangle \sim R^{-3}$, which is characteristic of class I hyperuniformity \cite{TORQUATO20181}. While for smaller coupling strength ($K=1$), the system shows a scaling behavior of $S(q\to 0)\sim q^{0}$, and $\langle \delta \rho ^2\left( R \to \infty \right) \rangle \sim R^{-2}$, indicating Poisson-like density fluctuations. This suggests that a stronger coupling strength is easier to induce hyperuniformity in the recessive lattice. It should be noted that the high $K$ is not a necessary condition, as discussed in Sec.~\ref{sec:mechanism}, where the instability condition for the random uniform state is independent of $K$.
 
 % \newpage
 % \subsubsection{Lattice constant}
@@ -361,42 +365,42 @@ To quantify the degree of order in hyperuniformity, we computed the structure fa
 %     }
 % \end{figure}
 
-% \newpage
-% \subsubsection{Initial conditions determined cells composition \label{sec:cellComposition}}
+\newpage
+\section{Initial conditions determined cells composition \label{sec:cellComposition}  \textcolor{red}{[In future publications]}}
 
-% \begin{figure}[H]
-%     \centering
-%     \subcaptionbox{Initial conditions of half on each side.}[0.49\linewidth]{
-%       \includegraphics[width=\linewidth]{figs/halfSide.png}
-%     }
-%     \hfill
-%     \subcaptionbox{
-%         Initial conditions of chessboard pattern.
-%     }[0.49\linewidth]{
-%       \includegraphics[width=\linewidth]{figs/chess.png}
-%     }
-%     \caption{
-%         Two artificial non-uniform initial conditions in space. Red and blue particles represent particles with positive and negative chirality, respectively. 
-%     }
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \subcaptionbox{Initial conditions of half on each side.}[0.49\linewidth]{
+      \includegraphics[width=\linewidth]{figs/halfSide.png}
+    }
+    \hfill
+    \subcaptionbox{
+        Initial conditions of chessboard pattern.
+    }[0.49\linewidth]{
+      \includegraphics[width=\linewidth]{figs/chess.png}
+    }
+    \caption{
+        Two artificial non-uniform initial conditions in space. Red and blue particles represent particles with positive and negative chirality, respectively. 
+    }
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{./figs/HalfInitPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf}
-%     \caption{
-%         \label{fig:half}
-%         Snapshot of the system at $t=80$ with $N=1000$, $K=20$, $\omega _{\min}=0$, $\Delta \omega=1$ and initial conditions of half on each side.
-%     }
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./figs/HalfInitPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf}
+    \caption{
+        \label{fig:half}
+        Snapshot of the system at $t=80$ with $N=1000$, $K=20$, $\omega _{\min}=0$, $\Delta \omega=1$ and initial conditions of half on each side.
+    }
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=\textwidth]{./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf}
-%     \caption{
-%         \label{fig:chess}
-%         Snapshot of the system at $t=80$ with $N=1000$, $K=20$, $\omega _{\min}=0$, $\Delta \omega=1$ and initial conditions of chessboard pattern.
-%     }
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf}
+    \caption{
+        \label{fig:chess}
+        Snapshot of the system at $t=80$ with $N=1000$, $K=20$, $\omega _{\min}=0$, $\Delta \omega=1$ and initial conditions of chessboard pattern.
+    }
+\end{figure}
 
 % \newpage
 
@@ -531,19 +535,23 @@ Therefore, we have the characteristic polynomial
     \end{matrix} \right|\;,
     \label{eq:characteristicPolynomial}
 \end{equation}
-where $b=-\mathrm{i}kv/2$. For analytical convenience, we truncate the expansion at order $M=2$, resulting in a polynomial of degree 5 with the following coefficients:
+where $b=-\mathrm{i}kv/2$. For analytical convenience, we truncate the expansion at order $M=2$, resulting in a 5-th degree polynomial $P_5(\lambda)$ with the following coefficients:
 \begin{equation}
     \begin{array}{c}
 	c_5=1,\;c_4=-\frac{2KJ_1\left( d_0k \right) \cos \alpha}{d_0k},\;c_3=\frac{K^2J_{1}^{2}\left( d_0k \right)}{d_{0}^{2}k^2}+k^2v^2\\
 	c_2=-\frac{Kkv^2J_1\left( d_0k \right) \cos \alpha}{d_0},\;c_1=\frac{3k^4v^4}{16},\;c_0=0\;.\\
 \end{array}
 \end{equation}
-It is evident that $\lambda =0$ is always a root of the characteristic polynomial. To analyze the signs of the remaining eigenvalues, we factor out this zero root and apply the Routh–Hurwitz criterion to the reduced polynomial. This yields a necessary and sufficient condition for system stability:
+It is evident that $\lambda =0$ is always a root of the characteristic polynomial. To analyze the signs of the remaining eigenvalues, we factor out this zero root and apply the Routh–Hurwitz criterion to the reduced polynomial $P_4\left( \lambda \right) =c_5\lambda ^4+\cdots +c_2\lambda +c_1$. This yields a necessary and sufficient condition for system stability:
 \begin{equation}
     J_1\left( d_0k \right) \cos \alpha <0\;.
 \end{equation}
-This inequality shows that stability depends on the interplay among the frustration $\alpha$ and coupling distance $d_0$, but is independent of the coupling strength $K$ and self-propulsion speed $v$. 
-As shown in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(a), for $\alpha < \pi/2$, both the instability and the maximum growth rate occur at $k=0$, belonging to the type III instability \cite{RevModPhys.65.851}, which does not involve pattern formation in an essential way. While for $\alpha > \pi/2$, Descartes' Rule of Signs indicates polynomial \eqref{eq:characteristicPolynomial} has no positive real roots, which belongs to the II$_o$ instability (also known as Hopf–Turing bifurcation), resulting in spatiotemporal patterns. Specifically, in our system, it dominants as respiration motions of the lattice states. Overall, the control parameter for the emergence of lattice structures is $\alpha$, with a critical point at $\alpha = \pi/2$.
+This inequality indicates that stability depends on the interplay between the frustration $\alpha$ and coupling distance $d_0$, but is independent of both the coupling strength $K$ and self-propulsion speed $v$. 
+
+As shown in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(a), for $\alpha < \pi/2$, both the instability and the maximum growth rate occur at $k=0$, corresponding to a type III instability \cite{RevModPhys.65.851}, which does not lead to pattern formation in an essential way. 
+In contrast, for $\alpha > \pi/2$, we examine the discriminant $\Delta$ of the cubic polynomial $P_3(\lambda)=P_4^{\prime}(\lambda)$ and find that $\Delta <0$ for all $k, K$ and $d_0$, indicating the presence of at most one real root of $P_4(\lambda)$.
+But Descartes' rule of signs shows that $P_4(\lambda)$ has an even number of positive roots, which means that there is no positive real root, and the instability must arise from a pair of complex conjugate roots with positive real parts.
+This corresponds to a II$_o$ instability (also known as Hopf–Turing bifurcation), which gives rise to spatiotemporal patterns. In our system, this instability manifests dominantly as respiration motions of the lattice states. Overall, the frustration parameter $\alpha$ serves as the key control parameter for the emergence of lattice structures, with a critical point at $\alpha = \pi/2$.
 
 And as illustrated in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(a) and (b), the most unstable wave number $k^{*}/k^{*}_n(d_0)$ (periodic boundary conditions require discrete wavenumbers $k_n=2\pi n/L$ with $n=1,2,\cdots$) is insensitive to the value of $\alpha (>\pi/2)$. 
 Therefore, it can be considered that the patterns occur on a long length scale near the threshold $\alpha = \pi/2$, and they are spatially periodic with similar properties, which is consistent with the numerical results shown in Fig.~\ref{fig:eigenvaluesAndLatticeConstants}(c) that the lattice constant of different $\alpha, K$ is nearly identical and can be predicted by the wavelength $2\pi/k^{*}_n(d_0)$.
@@ -556,6 +564,12 @@ Therefore, the critical condition for the emergence of dominant lattice states c
     \label{eq:criticalLineOfKD0}
 \end{equation}
 which is consistent with the numerical results shown in Fig.~\ref{fig:phaseDiagramAndHyperuniformity}(a)-(c). When the wavelength is too short to overcome the volume of the cells, the cells overlap together, resulting in macroscopic uniformity, but it still possesses unstable pattern-forming modes, resulting in microscopic hyperuniformity.
+
+\section{\label{sec:conclusions}Conclusions}
+In summary, we have investigated a system of self-propelled particles with local phase interactions and phase frustration $\alpha$. Our study reveals that $\alpha$ plays a crucial role in determining the collective behavior of the system, leading to the emergence of various spatiotemporal patterns, including globally synchronized states, swarming states, and lattice structures, which can be further classified into dominant and recessive lattice states based on the coupling strength $K$ and coupling radius $d_0$.
+Notably, we identified a critical transition at $\alpha = \pi/2$, beyond which the system exhibits a Hopf–Turing bifurcation, resulting in the formation of hexagonal lattice patterns characterized by respiration or dual-lane self-propelled motions in space and uniform incoherent distribution or dual-cluster synchronization in phase. The emergence of these patterns is governed by different values of $\alpha > \pi/2$.
+
+Furthermore, we discovered that even in regimes where the lattice structure is recessive, the system exhibits hyperuniformity, characterized by suppressed density fluctuations at large scales. This hyperuniformity arises from the interplay between phase frustration and local interactions, highlighting the intricate relationship between activity and order in active matter systems. Our findings contribute to a deeper understanding of the mechanisms underlying pattern formation and hyperuniformity in active matter, with potential implications for designing materials with novel properties.
 
 \bibliography{ref}
 

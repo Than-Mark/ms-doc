@@ -15,10 +15,10 @@ Daniel Escaff.
 \newblock Self-organization of anti-aligning active particles: Waving pattern formation and chaos.
 \newblock {\em Phys. Rev. E}, 110:024603, Aug 2024.
 
-\bibitem{Fruchart2021}
-Michel Fruchart, Ryo Hanai, Peter~B. Littlewood, and Vincenzo Vitelli.
-\newblock Non-reciprocal phase transitions.
-\newblock {\em Nature}, 592(7854):363--369, Apr 2021.
+\bibitem{Escaff2020}
+Daniel Escaff and Rafael Delpiano.
+\newblock Flocking transition within the framework of kuramoto paradigm for synchronization: Clustering and the role of the range of interaction.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 30(8):083137, 08 2020.
 
 \bibitem{PhysRevE.102.022604}
 Nikita Kruk, Jos\'e~A. Carrillo, and Heinz Koeppl.
@@ -50,6 +50,11 @@ Salvatore Torquato.
 \newblock Hyperuniform states of matter.
 \newblock {\em Physics Reports}, 745:1--95, 2018.
 \newblock Hyperuniform States of Matter.
+
+\bibitem{PhysRevE.68.041113}
+Salvatore Torquato and Frank~H. Stillinger.
+\newblock Local density fluctuations, hyperuniformity, and order metrics.
+\newblock {\em Phys. Rev. E}, 68:041113, Oct 2003.
 
 \bibitem{PhysRevLett.127.238001}
 Bruno Ventejou, Hugues Chat\'e, Raul Montagne, and Xia-qing Shi.
