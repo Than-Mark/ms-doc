@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}The Model}{1}{section.1}%
+\contentsline {section}{\numberline {2}Lattice Structures and Spatiotemporal Patterns}{3}{section.2}%
+\contentsline {section}{\numberline {3}Respiration-like motion of unit cells \textcolor {red}{[In future publications]}}{5}{section.3}%
+\contentsline {section}{\numberline {4}Dominant-Recessive Lattice and Hyperuniformity}{7}{section.4}%
+\contentsline {section}{\numberline {5}Initial conditions determined cells composition \textcolor {red}{[In future publications]}}{9}{section.5}%
+\contentsline {section}{\numberline {6}Critical transition and mechanism}{10}{section.6}%
+\contentsline {section}{\numberline {7}Conclusions}{12}{section.7}%

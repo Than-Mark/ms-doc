@@ -773,4 +773,62 @@ File: ./figs/respiration_snapshot.pdf Graphic file (type pdf)
 File: ./figs/respiration_amplitude_inset.pdf Graphic file (type pdf)
 <use ./figs/respiration_amplitude_inset.pdf>
 File: ./figs/respiration_snapshot_decoupled.pdf Graphic file (type pdf)
-<use ./figs/respiration_snapshot_decoupl
+<use ./figs/respiration_snapshot_decoupled.pdf>
+
+
+[5]
+File: ./figs/respiration_amplitude_cells_decouled.pdf Graphic file (type pdf)
+<use ./figs/respiration_amplitude_cells_decouled.pdf>
+
+
+[6]
+File: ./figs/phaseDiagramAndHyperuniformity.pdf Graphic file (type pdf)
+<use ./figs/phaseDiagramAndHyperuniformity.pdf>
+
+
+[7]
+
+[8]
+Overfull \hbox (0.11322pt too wide) in paragraph at lines 369--369
+[]\TU/lmr/bx/n/14.4 Initial conditions determined cells composition [][][In future pub-
+ []
+
+File: figs/halfSide.png Graphic file (type bmp)
+<figs/halfSide.png>
+File: figs/chess.png Graphic file (type bmp)
+<figs/chess.png>
+File: ./figs/HalfInitPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf Graphic file (type pdf)
+<use ./figs/HalfInitPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf>
+File: ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf Graphic file (type pdf)
+<use ./figs/ChessboardPhaseLagPatternFormation_a0.00_Do1_aN1000_distuniform.pdf>
+
+
+[9]
+File: ./figs/eigenvaluesAndLatticeConstants.pdf Graphic file (type pdf)
+<use ./figs/eigenvaluesAndLatticeConstants.pdf>
+
+
+[10]
+
+[11] (./Yichen_Lu_Lattice.bbl
+
+[12])
+
+[13] (./Yichen_Lu_Lattice.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2022/08/05>
+ ***********
+Package rerunfilecheck Info: File `Yichen_Lu_Lattice.out' has not changed.
+(rerunfilecheck)             Checksum: FE9031D8BA7500769A20FE214B097ECC;1779.
+ ) 
+Here is how much of TeX's memory you used:
+ 18883 strings out of 473832
+ 374545 string characters out of 5729027
+ 849237 words of memory out of 5000000
+ 41659 multiletter control sequences out of 15000+600000
+ 572782 words of font info for 110 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 74i,11n,91p,1509b,568s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on Yichen_Lu_Lattice.pdf (13 pages).
