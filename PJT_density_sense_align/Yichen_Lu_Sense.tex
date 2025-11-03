@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage[numbers, sort&compress]{natbib}
+
+\bibliographystyle{plain}
+\setlength{\parindent}{2em}
+\usepackage{geometry}
+\geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+
+% set line spacing
+% \renewcommand{\baselinestretch}{1.5}
+
+% define reference format
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    linkbordercolor=white
+}
+
+\title{\textbf{Phase Frustration-Induced Spatial Lattice Symmetry in the Vicsek-Kuramoto-Sakaguchi Model}}
+\author{Yichen Lu}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% \newpage
+\section{The Model}
+
+Particles are characterized by their spatial position $\mathbf{r}_i=\left( x_i, y_i \right)$ and a phase angle $\theta_i$, whose dynamics are governed by the following equations:
+\begin{subequations} 
+    \label{eq:totalDynamicsMeanField}
+    \begin{align}
+        \dot{\mathbf{r}}_i&=v\mathbf{p}\left( \theta _i \right)\;\label{eq:dotR},
+        \\
+        \dot{\theta}_i&=\frac{K}{\left| A_i \right|}\sum_{j\in A_i}{\left[ \sin \left( \theta _j-\theta _i+\alpha \right) -\sin \alpha \right]}\;\label{eq:dotTheta},
+    \end{align}
+\end{subequations}
+for $i=1,2,\ldots,N$. Here in Eq.~(\ref{eq:dotR}), $\mathbf{p}\left( \theta \right) =( \cos \theta ,\sin \theta )$denotes the direction vector, implying that each particle moves at a constant speed $v$ along the direction of its instantaneous phase $\theta_i (t)$. 
+According to Eq.~(\ref{eq:dotTheta}), the phase evolution involves a local average over neighbors within a coupling radius $d_0$ of particle $i$:
+\begin{equation}
+    A_i\left( t \right) =\left\{ j\mid \left| \mathbf{r}_i\left( t \right) -\mathbf{r}_j\left( t \right) \right|\leqslant d_0 \right\} \;,
+\end{equation}
+where $K \left(\geqslant 0\right)$ represents the coupling strength and $\alpha$ is the phase frustration between two neighboring particles. 
+The introduction of counter term $-\sin\alpha$ ensures that the frustration vanishes exactly when phase differences vanish ($\theta_j - \theta_i = 0$), thereby guaranteeing that perfect synchronization remains an equilibrium state. Without this term, synchronized oscillators would experience a net force $K\sin\alpha$, artificially shifting their frequencies \cite{10.1143/PTP.79.1069}.
+This model generalizes both aligning \cite{PhysRevLett.119.058002,PhysRevResearch.1.023026,Escaff2020,PhysRevLett.127.238001,PhysRevLett.133.258302} and anti-aligning \cite{PhysRevE.109.024602,PhysRevE.110.024603} interaction models. When $\alpha_0=0$, the dynamics reduces to the Vicsek-Kuramoto model.
+In the case where $\alpha=\pi$, the system exhibits anti-aligning interactions, causing particles to adopt phases opposite to those of their neighbors.
+
+\bibliography{ref}
+
+\end{document}
