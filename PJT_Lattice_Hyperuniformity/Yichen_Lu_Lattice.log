@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.27)  10 NOV 2025 20:47
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.27)  17 NOV 2025 20:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -763,6 +763,17 @@ File: figs/density_fluctuation_variance_vary_K.pdf Graphic file (type pdf)
 
 
 [2]
+File: figs/Sq_vs_q_hyperuniformity_vary_K_d0_0.25.png Graphic file (type bmp)
+<figs/Sq_vs_q_hyperuniformity_vary_K_d0_0.25.png>
+File: figs/density_fluctuation_variance_vary_K_d0_0.25.png Graphic file (type bmp)
+<figs/density_fluctuation_variance_vary_K_d0_0.25.png>
+
+
+[3]
+File: ./figs/forward.png Graphic file (type bmp)
+<./figs/forward.png>
+File: ./figs/backward.png Graphic file (type bmp)
+<./figs/backward.png>
 File: ./figs/K_vs_slope.pdf Graphic file (type pdf)
 <use ./figs/K_vs_slope.pdf>
 File: figs/Sq_vs_q_hyperuniformity_vary_d0.pdf Graphic file (type pdf)
@@ -771,9 +782,9 @@ File: figs/density_fluctuation_variance_vary_d0.pdf Graphic file (type pdf)
 <use figs/density_fluctuation_variance_vary_d0.pdf>
 
 
-[3] (./Yichen_Lu_Lattice.bbl)
+[4] (./Yichen_Lu_Lattice.bbl)
 
-[4] (./Yichen_Lu_Lattice.aux)
+[5] (./Yichen_Lu_Lattice.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
@@ -782,12 +793,12 @@ Package rerunfilecheck Info: File `Yichen_Lu_Lattice.out' has not changed.
 (rerunfilecheck)             Checksum: E265011CE03BE70E69DF2FD84BE79A8A;227.
  ) 
 Here is how much of TeX's memory you used:
- 18823 strings out of 473832
- 371715 string characters out of 5729027
+ 18860 strings out of 473832
+ 373111 string characters out of 5729027
  831211 words of memory out of 5000000
- 41596 multiletter control sequences out of 15000+600000
+ 41628 multiletter control sequences out of 15000+600000
  575429 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,10n,91p,1459b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Yichen_Lu_Lattice.pdf (4 pages).
+Output written on Yichen_Lu_Lattice.pdf (5 pages).
