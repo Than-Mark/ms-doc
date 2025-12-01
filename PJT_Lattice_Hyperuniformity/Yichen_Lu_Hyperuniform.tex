@@ -1,41 +1,37 @@
-\documentclass{article}
-\usepackage{xeCJK}
+\documentclass[aps, superscriptaddress]{revtex4} 
+
+\usepackage[switch]{lineno}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{mathrsfs}
-\usepackage{xcolor}
-\usepackage{bm}
-\usepackage{hyperref}
-\usepackage{graphicx}
+\usepackage{empheq}
+\usepackage[parfill]{parskip}
+\usepackage[active]{srcltx}
+\usepackage{color}
+\usepackage{array}
 \usepackage{subcaption}
-\usepackage{float}
-\usepackage{multicol}
-\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{graphicx}
 \usepackage{csquotes}
-\usepackage[ruled,linesnumbered]{algorithm2e}
-\usepackage[numbers, sort&compress]{natbib}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[pdftex, pdftitle={Article}, pdfauthor={Author}]{hyperref} % For hyperlinks in the PDF
 
-\bibliographystyle{plain}
-\setlength{\parindent}{2em}
-\usepackage{geometry}
-\geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
-
-% set line spacing
-% \renewcommand{\baselinestretch}{1.5}
-
-% define reference format
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    urlcolor=blue,
     citecolor=blue,
-    linkbordercolor=white
+    urlcolor=blue
 }
+
+\begin{document}
+
+\setlength{\parindent}{0.5cm}
 
 \title{\textbf{Hyperuniformity in the Frustrated Vicsek-Kuramoto Model}}
 \author{Yichen Lu}
 
-\begin{document}
 
 \maketitle
 
@@ -57,6 +53,25 @@ where $A_i\left( t \right) =\left\{ j: \left| \mathbf{r}_i\left( t \right) -\mat
 The term $-\sin\alpha$ ensures synchronization ($\theta_j = \theta_i$) remains an equilibrium \cite{10.1143/PTP.79.1069}.
 This model generalizes alignments \cite{PhysRevLett.119.058002,PhysRevResearch.1.023026,Escaff2020,PhysRevLett.127.238001,PhysRevLett.133.258302}, anti-alignments \cite{PhysRevE.109.024602,PhysRevE.110.024603}, and chimera states \cite{PhysRevE.98.032219,PhysRevE.102.022604}. It reduces to normal Vicsek–Kuramoto for $\alpha=0$ and anti-aligning interactions for $\alpha=\pi$.
 
+A hyperuniform \cite{PhysRevE.68.041113,TORQUATO20181} (also known as superhomogeneous \cite{PhysRevD.65.083523}) point configuration is characterized by structure factor $S\left( \mathbf{q} \right)$ tends to zero as wavenumber $q\equiv \left| \mathbf{q} \right|\to 0$:
+\begin{equation}
+    \lim _{q\to 0}S\left( \mathbf{q} \right) =0,
+    \label{eq:hyperuniformDefinition}
+\end{equation}
+indicating single scattering of incident radiation vanishes in the infinite-wavelength limit. 
+Equivalently, the number variance $\sigma _N ^2\left( R \right)$ within a spherical observation window of radius $R$ grows more slowly than the window volume in large-$R$ limit:
+\begin{equation}
+    \lim _{R\to \infty}\frac{\sigma _N ^2\left( R \right)}{R^d}=0,
+    \label{eq:hyperuniformDefinition_variance}
+\end{equation}
+where $d$ is the spatial dimension. 
+The two definitions are linked via the relation \cite{PhysRevE.68.041113}:
+\begin{equation}
+    \sigma _N ^2\left( R \right) =\rho v_1\left( R \right) \left[ 1+\rho \int _{\mathbb{R} ^d}{h\left( \mathbf{r} \right) \alpha \left( r; R \right) d\mathbf{r}} \right],
+    \label{eq:variance_structureFactor_relation}
+\end{equation}
+where $\rho$ is number density, $v_1\left( R \right)$ is the volume of a $d$-dimensional sphere of radius $R$, $h\left( \mathbf{r} \right)=g_2\left( \mathbf{r} \right) -1$ is the total correlation function with $g_2\left( \mathbf{r} \right)$ being the pair correlation function, and $\alpha \left( r; R \right)$ is the scaled intersection volume of two spheres of radius $R$ separated by distance $r$.
+
 \newpage
 \section{Simulation Results}
 
@@ -76,82 +91,40 @@ This model generalizes alignments \cite{PhysRevLett.119.058002,PhysRevResearch.1
 
 \begin{figure}[H]
     \centering
-    \subcaptionbox{
-        Structure factor $S(\mathbf{q})$
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{figs/Sq_vs_q_hyperuniformity_vary_K.pdf}
-    }
-    \hfill
-    \subcaptionbox{
-        Density fluctuation variance $\left< \delta \rho ^2 \right>$
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{figs/density_fluctuation_variance_vary_K.pdf}
-    }
+    \includegraphics[width=\textwidth]{Figs/Sq_and_variance_rho.pdf}
     \caption{
-        (a) Structure factor $S(\mathbf{q})$ for varying coupling strength $K$ for $\alpha=0.6\pi, d_0=0.1$. (b) Density fluctuation variance $\left< \delta \rho ^2 \right>$ as a function of mean density $\left< \rho \right>$ for different $K$ values.
+        \label{fig:Sq_and_variance_rho}
+        Structure factor scaling and density fluctuations across varying control parameters.
+        (a) Structure factor $S(q)$ and (b) variance of density fluctuations $\langle \delta \rho ^2\left( R \right) \rangle$ for values of the frustration $\alpha / \pi$ at $K=24$. 
+        The dashed lines indicate reference scaling behaviors for Poisson-like and hyperuniformity.
+        Inset (c): The scaling exponent (slope) extracted from the curves in (b) plotted against $\alpha / \pi$.
+        (d, e) Analogous plots to (a) and (b), respectively, showing the evolution of $S(q)$ and $\langle \delta \rho ^2\left( R \right) \rangle$ with increasing coupling strength $K$.
+        Inset (f): The corresponding scaling exponent (slope) from (e) as a function of $K$.
+        Other parameters: $d_0=0.25, v=3, L=7, N=5000$.
     }
-\end{figure}
+\end{figure}   
 
 \begin{figure}[H]
     \centering
-    \subcaptionbox{
-        Structure factor $S(\mathbf{q})$
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{figs/Sq_vs_q_hyperuniformity_vary_K_d0_0.25.png}
-    }
-    \hfill
-    \subcaptionbox{
-        Density fluctuation variance $\left< \delta \rho ^2 \right>$
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{figs/density_fluctuation_variance_vary_K_d0_0.25.png}
-    }
+    \includegraphics[width=\textwidth]{Figs/phase_bins_Sq_and_variance_rho.pdf}
     \caption{
-        (a) Structure factor $S(\mathbf{q})$ for varying coupling strength $K$ for $\alpha=0.6\pi, d_0=0.25$. (b) Density fluctuation variance $\left< \delta \rho ^2 \right>$ as a function of mean density $\left< \rho \right>$ for different $K$ values.
+        \label{fig:phase_bins_Sq_and_variance_rho}
+        The impact of angular selectivity on global order and hyperuniformity. Particle configurations within specific angular ranges (a) exhibit distinct structural signatures, as quantified by the structure factor $S(q)$(b) and density fluctuations (c). 
+        Parameters: $K=24, d_0=0.25, \alpha=0.8\pi, v=3, L=7, N=5000$.
     }
-\end{figure}
-
-\newpage
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{./figs/forward.png}
-    \caption{
-        Forward snapshots.
-    }
-\end{figure}
+\end{figure} 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{./figs/backward.png}
+    \includegraphics[width=\textwidth]{Figs/slope_heatmap_and_hysteresis.pdf}
     \caption{
-        Backward snapshots.
+        \label{fig:slope_heatmap_and_hysteresis}
+        Phase behavior and hysteresis of density fluctuation scaling. (a) Heat map of the scaling exponent of density fluctuations $\langle \delta \rho ^2\left( R \right) \rangle \sim R^{\lambda}$
+        in the parameter space of coupling strength $K$ and frustration $\alpha/\pi$. The exponent $\lambda$ (color-coded) serves as an indicator of hyperuniformity ($\lambda \leqslant -2$) and other phases. (b, c) Hysteresis loops observed when sweeping the control parameter $K$ (b) and $\alpha/\pi$ (c), demonstrating second-order phase transitions between disordered and hyperuniform states.
+        Other parameters are same as in Fig.~\ref{fig:Sq_and_variance_rho}.
     }
-\end{figure}
+\end{figure} 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figs/K_vs_slope.pdf}
-    \caption{
-        The slope of $S(q)$ in the small-$q$ regime as a function of coupling strength $K$ at fixed frustration $\alpha=0.6\pi$.
-    }
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \subcaptionbox{
-        Structure factor $S(\mathbf{q})$
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{figs/Sq_vs_q_hyperuniformity_vary_d0.pdf}
-    }
-    \hfill
-    \subcaptionbox{
-        Density fluctuation variance $\left< \delta \rho ^2 \right>$
-    }[0.49\linewidth]{
-        \includegraphics[width=\linewidth]{figs/density_fluctuation_variance_vary_d0.pdf}
-    }
-    \caption{
-        (a) Structure factor $S(\mathbf{q})$ for varying coupling radius $d_0$ at fixed frustration $\alpha=0.6\pi$. (b) Density fluctuation variance $\left< \delta \rho ^2 \right>$ as a function of mean density $\left< \rho \right>$ for different $K$ values.
-    }
-\end{figure}
 
 \bibliography{ref}
 

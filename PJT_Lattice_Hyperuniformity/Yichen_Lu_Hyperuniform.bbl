@@ -1,53 +1,54 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{13}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+  \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+  \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+  \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{PhysRevE.109.024602}
-Daniel Escaff.
-\newblock Anti-aligning interaction between active particles induces a finite wavelength instability: The dancing hexagons.
-\newblock {\em Phys. Rev. E}, 109:024602, Feb 2024.
+\bibitem[{\citenamefont{Sakaguchi et~al.}(1988)\citenamefont{Sakaguchi, Shinomoto, and Kuramoto}}]{10.1143/PTP.79.1069}
+\bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Sakaguchi}}, \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Shinomoto}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Kuramoto}}, \bibinfo{journal}{Progress of Theoretical Physics} \textbf{\bibinfo{volume}{79}}, \bibinfo{pages}{1069} (\bibinfo{year}{1988}), ISSN \bibinfo{issn}{0033-068X}, \urlprefix\url{https://doi.org/10.1143/PTP.79.1069}.
 
-\bibitem{PhysRevE.110.024603}
-Daniel Escaff.
-\newblock Self-organization of anti-aligning active particles: Waving pattern formation and chaos.
-\newblock {\em Phys. Rev. E}, 110:024603, Aug 2024.
+\bibitem[{\citenamefont{Liebchen and Levis}(2017)}]{PhysRevLett.119.058002}
+\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Liebchen}} \bibnamefont{and} \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Levis}}, \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{119}}, \bibinfo{pages}{058002} (\bibinfo{year}{2017}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevLett.119.058002}.
 
-\bibitem{Escaff2020}
-Daniel Escaff and Rafael Delpiano.
-\newblock Flocking transition within the framework of kuramoto paradigm for synchronization: Clustering and the role of the range of interaction.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 30(8):083137, 08 2020.
+\bibitem[{\citenamefont{Levis et~al.}(2019)\citenamefont{Levis, Pagonabarraga, and Liebchen}}]{PhysRevResearch.1.023026}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Levis}}, \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{Pagonabarraga}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Liebchen}}, \bibinfo{journal}{Phys. Rev. Res.} \textbf{\bibinfo{volume}{1}}, \bibinfo{pages}{023026} (\bibinfo{year}{2019}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevResearch.1.023026}.
 
-\bibitem{PhysRevE.102.022604}
-Nikita Kruk, Jos\'e~A. Carrillo, and Heinz Koeppl.
-\newblock Traveling bands, clouds, and vortices of chiral active matter.
-\newblock {\em Phys. Rev. E}, 102:022604, Aug 2020.
+\bibitem[{\citenamefont{Escaff and Delpiano}(2020)}]{Escaff2020}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Escaff}} \bibnamefont{and} \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Delpiano}}, \bibinfo{journal}{Chaos: An Interdisciplinary Journal of Nonlinear Science} \textbf{\bibinfo{volume}{30}}, \bibinfo{pages}{083137} (\bibinfo{year}{2020}), ISSN \bibinfo{issn}{1054-1500}, \urlprefix\url{https://doi.org/10.1063/5.0006218}.
 
-\bibitem{PhysRevE.98.032219}
-Nikita Kruk, Yuri Maistrenko, and Heinz Koeppl.
-\newblock Self-propelled chimeras.
-\newblock {\em Phys. Rev. E}, 98:032219, Sep 2018.
+\bibitem[{\citenamefont{Ventejou et~al.}(2021)\citenamefont{Ventejou, Chat\'e, Montagne, and Shi}}]{PhysRevLett.127.238001}
+\bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Ventejou}}, \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Chat\'e}}, \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{Montagne}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{X.-q.} \bibnamefont{Shi}}, \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{127}}, \bibinfo{pages}{238001} (\bibinfo{year}{2021}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevLett.127.238001}.
 
-\bibitem{PhysRevResearch.1.023026}
-D.~Levis, I.~Pagonabarraga, and B.~Liebchen.
-\newblock Activity induced synchronization: Mutual flocking and chiral self-sorting.
-\newblock {\em Phys. Rev. Res.}, 1:023026, Sep 2019.
+\bibitem[{\citenamefont{Wang et~al.}(2024)\citenamefont{Wang, Vent\'ejou, Chat\'e, and Shi}}]{PhysRevLett.133.258302}
+\bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Wang}}, \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Vent\'ejou}}, \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Chat\'e}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{X.-q.} \bibnamefont{Shi}}, \bibinfo{journal}{Phys. Rev. Lett.} \textbf{\bibinfo{volume}{133}}, \bibinfo{pages}{258302} (\bibinfo{year}{2024}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevLett.133.258302}.
 
-\bibitem{PhysRevLett.119.058002}
-Benno Liebchen and Demian Levis.
-\newblock Collective behavior of chiral active matter: Pattern formation and enhanced flocking.
-\newblock {\em Phys. Rev. Lett.}, 119:058002, Aug 2017.
+\bibitem[{\citenamefont{Escaff}(2024{\natexlab{a}})}]{PhysRevE.109.024602}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Escaff}}, \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{109}}, \bibinfo{pages}{024602} (\bibinfo{year}{2024}{\natexlab{a}}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevE.109.024602}.
 
-\bibitem{10.1143/PTP.79.1069}
-Hidetsugu Sakaguchi, Shigeru Shinomoto, and Yoshiki Kuramoto.
-\newblock Mutual entrainment in oscillator lattices with nonvariational type interaction.
-\newblock {\em Progress of Theoretical Physics}, 79(5):1069--1079, 05 1988.
+\bibitem[{\citenamefont{Escaff}(2024{\natexlab{b}})}]{PhysRevE.110.024603}
+\bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Escaff}}, \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{110}}, \bibinfo{pages}{024603} (\bibinfo{year}{2024}{\natexlab{b}}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevE.110.024603}.
 
-\bibitem{PhysRevLett.127.238001}
-Bruno Ventejou, Hugues Chat\'e, Raul Montagne, and Xia-qing Shi.
-\newblock Susceptibility of orientationally ordered active matter to chirality disorder.
-\newblock {\em Phys. Rev. Lett.}, 127:238001, Nov 2021.
+\bibitem[{\citenamefont{Kruk et~al.}(2018)\citenamefont{Kruk, Maistrenko, and Koeppl}}]{PhysRevE.98.032219}
+\bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Kruk}}, \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{Maistrenko}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Koeppl}}, \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{98}}, \bibinfo{pages}{032219} (\bibinfo{year}{2018}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevE.98.032219}.
 
-\bibitem{PhysRevLett.133.258302}
-Yujia Wang, Bruno Vent\'ejou, Hugues Chat\'e, and Xia-qing Shi.
-\newblock Condensation and synchronization in aligning chiral active matter.
-\newblock {\em Phys. Rev. Lett.}, 133:258302, Dec 2024.
+\bibitem[{\citenamefont{Kruk et~al.}(2020)\citenamefont{Kruk, Carrillo, and Koeppl}}]{PhysRevE.102.022604}
+\bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Kruk}}, \bibinfo{author}{\bibfnamefont{J.~A.} \bibnamefont{Carrillo}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{Koeppl}}, \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{102}}, \bibinfo{pages}{022604} (\bibinfo{year}{2020}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevE.102.022604}.
+
+\bibitem[{\citenamefont{Torquato and Stillinger}(2003)}]{PhysRevE.68.041113}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Torquato}} \bibnamefont{and} \bibinfo{author}{\bibfnamefont{F.~H.} \bibnamefont{Stillinger}}, \bibinfo{journal}{Phys. Rev. E} \textbf{\bibinfo{volume}{68}}, \bibinfo{pages}{041113} (\bibinfo{year}{2003}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevE.68.041113}.
+
+\bibitem[{\citenamefont{Torquato}(2018)}]{TORQUATO20181}
+\bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Torquato}}, \bibinfo{journal}{Physics Reports} \textbf{\bibinfo{volume}{745}}, \bibinfo{pages}{1} (\bibinfo{year}{2018}), ISSN \bibinfo{issn}{0370-1573}, \bibinfo{note}{hyperuniform States of Matter}, \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S037015731830036X}.
+
+\bibitem[{\citenamefont{Gabrielli et~al.}(2002)\citenamefont{Gabrielli, Joyce, and Sylos~Labini}}]{PhysRevD.65.083523}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Gabrielli}}, \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Joyce}}, \bibnamefont{and} \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Sylos~Labini}}, \bibinfo{journal}{Phys. Rev. D} \textbf{\bibinfo{volume}{65}}, \bibinfo{pages}{083523} (\bibinfo{year}{2002}), \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevD.65.083523}.
 
 \end{thebibliography}
