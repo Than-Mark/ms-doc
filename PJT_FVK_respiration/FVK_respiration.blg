@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: FVK_respiration.aux
+The style file: plain.bst
+Database file #1: ref.bib
+Warning--to sort, need author or key in mycomment2023
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            579 strings with 6082 characters,
+and the built_in function-call counts, 3463 in all, are:
+= -- 325
+> -- 159
+< -- 0
++ -- 63
+- -- 52
+* -- 276
+:= -- 593
+add.period$ -- 31
+call.type$ -- 11
+change.case$ -- 58
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 117
+empty$ -- 279
+format.name$ -- 52
+if$ -- 703
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 10
+newline$ -- 56
+num.names$ -- 20
+pop$ -- 48
+preamble$ -- 1
+purify$ -- 48
+quote$ -- 0
+skip$ -- 78
+stack$ -- 0
+substring$ -- 244
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 1
+while$ -- 30
+width$ -- 13
+write$ -- 117
+(There was 1 warning)
