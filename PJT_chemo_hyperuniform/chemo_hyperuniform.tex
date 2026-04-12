@@ -41,31 +41,40 @@
 
 \section{Models}
 
-\subsection{General Model}
+\subsection{Particle-based isotropic model}
 \begin{subequations}
     \begin{align}
-        &\dot{\mathbf{r}}_i\left( t \right) =v\mathbf{p}\left( \theta _i \right) +\sum_{j\in A_{i}^{1,2}}{\mathbf{I}\left( \Delta \mathbf{r}_{ij} \right)}\;,\\
-        &\dot{\theta}_i\left( t \right) =\omega _i+G\left( \mathbf{r},\theta ,c \right) +\sum_{j\ne i}{H\left( \Delta \theta _{ij},\Delta \mathbf{r}_{ij} \right)}\;,\\
-        &\dot{c}\left( \mathbf{r},t \right) =D\nabla ^2c+F\left( c \right) \sum_{j=1}{\delta \left( \mathbf{r}-\mathbf{r}_i \right)}\;,
+        &\dot{\mathbf{r}}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
+        &\dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +k\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;,
     \end{align}
 \end{subequations}
-for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $\theta _i$ is the orientation of the $i$-th particle, $v$ is the self-propulsion velocity, $\mathbf{p}\left( \theta _i \right)=\left( \cos \theta _i,\sin \theta _i \right)$ is the unit vector pointing in the direction of the $i$-th particle, $\omega _i$ is the natural frequency of the $i$-th particle, $G\left( \mathbf{r},\theta ,c \right)$ is the coupling function between particles and chemical fields, $H\left( \Delta \theta _{ij},\Delta \mathbf{r}_{ij} \right)$ is the coupling function between partials, $c\left( \mathbf{r},t \right)$ is the chemical concentration, $D$ is the diffusion coefficient, $F\left( c \right)$ is the production rate of the chemical field, $A_{i}^{1,2}=\left\{ j\mid r_c\geqslant | \mathbf{r}_j-\mathbf{r}_i | \right\}$, $\Delta \mathbf{r}_{ij}=\mathbf{r}_j-\mathbf{r}_i$, $\Delta \theta _{ij}=\theta _j-\theta _i$, $\mathbf{I}\left( \Delta \mathbf{r}_{ij} \right)=\frac{\Delta \mathbf{r}_{ij}}{|\Delta \mathbf{r}_{ij}|^{2}}$.
-The natural frequencies $\omega_i$ are distributed with following two cases:
+for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $c$ is the concentration field of the chemoattractant, $\alpha$ is the chemotactic sensitivity. If $\alpha > 0$, the particles are attracted to higher concentrations of the chemoattractant (chemoattraction/positive chemotaxis), while if $\alpha < 0$, the particles are repelled by higher concentrations of the chemoattractant (chemorepulsion/negative chemotaxis).
+$D$ is the diffusion coefficient of the particles, $\boldsymbol{\xi }$ is a Gaussian white noise with zero mean and unit variance, $D_c$ is the diffusion coefficient of the chemoattractant, $\mu$ is the decay ($\mu < 0$) or growth ($\mu > 0$) rate of the chemoattractant, and $k$ is the production ($k > 0$) or consumption rate ($k < 0$) of the chemoattractant by the particles.
 
-\subsection{Chemotactic Lotka-Volterra Model}
+For simplicity, we assume that particles are point-like and move in a two-dimensional $L \times L$ square domain with periodic boundary conditions. The initial positions of the particles can be randomly distributed, and the initial concentration field can be set to a small random perturbation around a uniform background concentration $c_0$.
 
-Let $F_1\left( c_1,c_2 \right)=k_1c_1\left( 1-c_2 \right)$ and $F_2\left( c_1,c_2 \right)=k_2c_2\left( c_1-1 \right)$, where $k_1,k_2$ are constants.
-
+To reduce the parameter space, we can non-dimensionalize the equations by introducing $x_0 = L$, $t_0 = 1/k$ and $c_0$ as characteristic scales of length, time and concentration. The resulting dimensionless parameters are $\tilde{\alpha} = \frac{\alpha c_0}{L^2k}$, $\tilde{D} = \frac{D}{L^2k}$, $\tilde{D}_c = \frac{D_c}{L^2k}$, and $\tilde{\mu} = \frac{\mu}{k}$. We can omit the tildes and work with the dimensionless equations:
 \begin{subequations}
     \begin{align}
-        &\dot{\mathbf{r}}_{i}^{1,2}=v\mathbf{p}\left( \theta _{i}^{1,2} \right) -\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}\;,}\label{dotR}\\
-        &\dot{\theta}_{i}^{1,2}=\omega + \left| \nabla c_{1,2} \right|\sin \left( \varphi _{c_{1,2}}-\theta _{i}^{1,2} \right) +F\left( \theta ,\mathbf{r} \right) \;,\label{dotTheta}\\
-        &\dot{c}_1=D_1\nabla ^2c_1+k_1c_1\left( 1-c_2 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{1} \right)}\;,\\
-        &\dot{c}_2=D_2\nabla ^2c_2+k_2c_2\left( c_1-1 \right) \sum_{j=1}^N{\delta \left( \mathbf{r}-\mathbf{r}_{j}^{2} \right)}\;,
+        &\dot{\mathbf{r}}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
+        &\dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.\label{eq:dimensionlessCplus}
     \end{align}
-    \label{eq:chemoLVModel}
 \end{subequations}
-where $\mathbf{r}_{i}^{1,2}$ and $\theta _{i}^{1,2}$ are the position and orientation of the $i$-th particle of species 1 and 2, respectively. $v$ is the self-propulsion speed, $\omega$ is the intrinsic angular velocity, and $\mathbf{p}(\theta) = (\cos\theta, \sin\theta)$ is the unit vector in the direction of $\theta$. The term $\sum_{j\in A_{i}^{1,2}}{\mathbf{I}_{ij}^{1,2}}$ represents the interaction forces between particles, where $A_{i}^{1,2}$ denotes the set of neighboring particles that interact with particle $i$ of species 1 or 2. The function $F(\theta, \mathbf{r})$ represents any additional torque that may depend on the orientation and position of the particles. The equations for $c_1$ and $c_2$ describe the diffusion and production of the chemical fields by the particles. The parameters $D_1$ and $D_2$ are the diffusion coefficients for the chemical fields, and the terms involving $k_1$ and $k_2$ represent the production of the chemicals by the particles, which depends on the local concentrations of the chemicals.
+Note that the above equations mathematically implies the assumption of $k>0$. If $k<0$, the non-dimensionalization would be different, and the Eq.~\eqref{eq:dimensionlessCplus} would have a negative sign in front of the summation term:
+\begin{equation}
+    \dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) -\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.
+\end{equation}
+In the following, we will focus on the case of $k<0$ (chemorepulsion/negative chemotaxis), which is more relevant to the emergence of hyperuniformity.
+
+\subsection{Continuum model}
+It is convenient to describe collective behavior using a particle density field $\rho \left( \mathbf{r},t \right)=\sum_{i=1}^{N}\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)$. The continuum model can be derived from the particle-based model using a mean-field approximation, which assumes that the particles are uniformly distributed and that the fluctuations around the mean density are negligible. The resulting equations are:
+\begin{subequations}
+    \begin{align}
+        &\dot{\rho}\left( \mathbf{r},t \right) =- \alpha \nabla \cdot \left( \rho \nabla c \right) +D\nabla ^2\rho  \;,\\
+        &\dot{c}\left( \mathbf{r},t \right)=D_c\nabla ^2c +\mu c -\rho \;.
+    \end{align}
+\end{subequations}
+Note that the $\rho \left( \mathbf{r},t \right)$ here is particle number density, not probability density. 
 
 
 
