@@ -1,0 +1,91 @@
+% !TEX root = ../main.tex
+
+\section{二维 Vicsek-like 模型}\label{sec:2d-model}
+
+\subsection{模型定义}
+
+为了将一维分析中的洞察推广到更现实的二维系统，论文研究了一个连续时间的 Vicsek-like 模型\cite{boltz2025}。该模型描述自驱动粒子的动力学，其中取向演化包含反排列相互作用。
+
+\subsubsection{运动方程}
+
+描述粒子 $i$（$i = 1, \ldots, N$）的取向 $\vartheta_i$（相对于固定参考轴的角度），动力学方程为：
+
+\begin{keybox}[二维 Vicsek-like 模型]
+\begin{align}
+\dot{\mathbf{r}}_i &= v_0 \mathbf{n}(\vartheta_i) \label{eq:vicsek-pos}\\
+\dot{\vartheta}_i &= -\epsilon \sum_{j \in \mathcal{N}_i} \sin(\vartheta_j - \vartheta_i) \label{eq:vicsek-angle}
+\end{align}
+\end{keybox}
+
+其中：
+\begin{itemize}
+    \item $\mathbf{n}(\vartheta) = (\cos\vartheta, \sin\vartheta)^T$ 是对应于 $\vartheta$ 方向的单位矢量
+    \item $\mathcal{N}_i = \{j \,|\, j \neq i \text{ 且 } |\mathbf{r}_i - \mathbf{r}_j| \leq R\}$ 是粒子 $i$ 周围半径 $R$ 内的邻居集合
+    \item $\epsilon > 0$ 表示\textbf{反排列}相互作用（若为负则是传统的排列相互作用）
+\end{itemize}
+
+\subsection{数值模拟方法}
+
+\subsubsection{模拟参数}
+
+论文使用 Heun 方法（一种二阶随机微分方程积分器）积分运动方程，参数设置为：
+\begin{itemize}
+    \item $\epsilon = v = R = M = 1$（$M = \rho\pi R^2$ 是约化密度中的预期邻居数）
+    \item 粒子数 $N$ 从 25 变化到 $2^{12} = 4096$
+    \item 无量纲时间 $t = 500\pi$ 后计算结构因子
+    \item 结果在 $10^4$ 个样本上平均
+\end{itemize}
+
+\subsubsection{临界噪声的估计}
+
+数值上很容易研究噪声的影响。位置和取向噪声最终都会破坏长程关联。这里更相关的是\textbf{取向噪声}，因为我们关注的是排列相互作用的效应。
+
+可以通过以下论证粗略估计临界噪声水平：
+\begin{enumerate}
+    \item 相互作用的典型时间尺度由平均自由程给出：$\tau_{\text{free}} \sim R/(Mv)$
+    \item 如果活性粒子在该时间内由于扩散在垂直于确定方向移动约 $\Delta \sim R$，它们将与不同的粒子相互作用
+    \item 这导致临界取向扩散强度的估计：$D_c \approx MvR/\pi$
+\end{enumerate}
+
+这与文献\cite{boltz2025}中报道的不稳定性阈值标度相同。
+
+\subsection{数值结果}
+
+\subsubsection{表观超均匀行为}
+
+从直接的多体模拟中观察到：
+\begin{itemize}
+    \item 在约化结构因子和粒子数涨落中存在看似一致的表观幂律行为
+    \item 然而，必须警惕这可能是\textbf{有限尺寸伪影}
+    \item 类似于 1D 模型预测（方程~(\ref{eq:structure-factor-final})）的描述也能拟合数据
+\end{itemize}
+
+\subsubsection{对虚假超均匀性的警告}
+
+论文特别强调了以下重要观点：
+
+\begin{notebox}[从数值推断超均匀性的风险]
+类似的表观超均匀性 $S \sim k^\alpha$ 且``反常''（非整数）指数 $\alpha \approx 0.5$ 已在手性自驱动粒子系统中被发现。就本文目的而言，主要关注的是长程密度涨落的\textbf{显著降低}。
+
+\textbf{实际超均匀性}（即 $S(0) = 0$）的问题最好通过解析方法解决——目前对于二维模型这仍然是未解决的。一维结果应该作为对此的警告。
+\end{notebox}
+
+\subsubsection{参数空间的探索}
+
+对于截然不同的预期相互作用数 $M = \rho\pi R^2$ 和无量纲相互作用强度 $S_c = \epsilon R/v$ 值，数据显示：
+\begin{itemize}
+    \item 所有数据都显示在大距离上密度涨落的明显减少
+    \item 但表观幂律行为是\textbf{非普适的}
+    \item 对于 $M = 1, S_c = 1$ 参数集，约化结构因子 $\delta S = S - S_0$ 可以用 $k^2$ 行为合理解释
+\end{itemize}
+
+\subsubsection{噪声导致的效应崩溃}
+
+对于足够强的噪声，长程抑制会被破坏：
+\begin{itemize}
+    \item 无取向噪声（全圆）：显著的涨落抑制
+    \item 弱噪声（$\mu = 0.1$）：效应仍然存在
+    \item 相关噪声（$\mu = 1$）：涨落抑制被破坏，恢复到普通行为
+\end{itemize}
+
+这与活性物质系统中有效温度概念的直觉一致：反排列模型中的自混合动力学在大尺度上可能看起来类似于热噪声的效果，但\textbf{长程关联的缺失}是足够强显式噪声情况下的一个显著区别。

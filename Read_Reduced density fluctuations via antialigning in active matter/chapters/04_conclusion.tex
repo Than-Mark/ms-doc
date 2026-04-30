@@ -1,0 +1,41 @@
+% !TEX root = ../main.tex
+
+\section{总结与讨论}\label{sec:conclusion}
+
+\subsection{主要结论}
+
+本文系统整理了 Boltz 和 Ihle 关于反排列活性物质系统中密度涨落抑制的理论分析。核心发现包括：
+
+\begin{enumerate}
+    \item \textbf{一维解析解}：通过 Poisson 表示法，严格推导了具有反排列相互作用的一维活性晶格气体模型的结构因子，发现长程密度涨落被显著抑制到 Poisson 值的约 1/2
+    
+    \item \textbf{虚噪声的物理意义}：Poisson 表示中自然出现的虚噪声标志着非 Poisson 统计——这是活性系统偏离平衡态统计的数学表现
+    
+    \item \textbf{二维数值验证}：在 Vicsek-like 模型中观察到表观超均匀行为，但强调这可能是有限尺寸效应或对有限偏移的误解
+    
+    \item \textbf{对数值推断的警告}：缺乏理论基础时，从数值数据推断超均匀性是不可靠的
+\end{enumerate}
+
+\subsection{理论方法的价值}
+
+Poisson 表示法在本研究中的优势：
+\begin{itemize}
+    \item 直接、非渐近地访问涨落（最终 Langevin 方程中的噪声项）
+    \item 直接获得噪声的关联，这对确定结构因子至关重要
+    \item 与某些路径积分方法（渐近地导出高斯不相关噪声）形成对比
+\end{itemize}
+
+\subsection{开放问题}
+
+\begin{enumerate}
+    \item \textbf{严格超均匀性}：二维连续系统中是否真正存在超均匀性（$S(0) = 0$），还是仅为有限偏移的 $k^2$ 行为？
+    \item \textbf{高维推广}：一维晶格模型的解析描述如何推广到更高维度？
+    \item \textbf{实验联系}：与反排列自驱动粒子实验（如文献\cite{boltz2025}中引用的工作）的比较
+    \item \textbf{点阵统计的调控}：反排列自驱动粒子作为生成可调统计的无序点阵模式的独立动力学过程
+\end{enumerate}
+
+\begin{notebox}[最终评论]
+从 $v = 0$（被动系统）的 Poisson 统计到 $v > 0$（活性系统）的非 Poisson、可能超均匀的统计的转变，是长程关联即使在无直接有序的情况下也具有相关性的显著体现。
+
+这种密度涨落的抑制纯粹是动力学建立关联的结果（由于排列相互作用），而非弹性等更传统机制的结果。正是这种长程效应使得一维解析可解玩具模型能够捕捉到并与更复杂的二维 Vicsek-like 模型联系起来。
+\end{notebox}

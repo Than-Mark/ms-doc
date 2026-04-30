@@ -1,0 +1,55 @@
+% !TEX root = ../main.tex
+
+\section{引言}\label{sec:intro}
+
+\subsection{研究背景}
+
+\textbf{主动物质}(Active Matter)是指在粒子尺度上被驱动至非平衡态的颗粒系统\cite{boltz2025}。这类系统展现出许多平衡态物理无法企及的集体现象，其中最著名的例子是二维平面上的长程取向序\cite{vicsek1995}。
+
+一般而言，活性（特别是粒子的自驱动）是在稀疏系统中建立长程关联的途径，即使相互作用是短程的。这一性质在没有全局空间序、取向序或其他序的情况下依然成立。将此推向极端：即使非平衡稳态以均匀的\textbf{单粒子分布函数}为特征，粒子间的关联仍然对理解系统行为至关重要。
+
+\begin{notebox}[关键物理图像]
+这些关联量化了位置构型的统计与简单\textbf{均匀Poisson点过程}的实现之间的偏离。即使在没有任何宏观有序的情况下，活性系统中的长程关联仍然可以导致显著的统计涨落修正。
+\end{notebox}
+
+\subsection{超均匀性}
+
+\textbf{超均匀构型}(Hyperuniform configurations)\cite{torquato2018}是一类特殊的无序点阵，其大子系统的粒子数涨落呈现\textbf{反常的标度行为}：
+\begin{equation}\label{eq:hyperuniform-def}
+\Delta N \sim r^\beta \quad (r \to \infty), \quad d-1 < \beta < d
+\end{equation}
+其中 $d$ 是空间维度。这与普通Poisson过程的体定律 $\Delta N \sim \sqrt{N} \sim r^{d/2}$ 形成鲜明对比。
+
+\textbf{互补定义}：超均匀性也可以通过静态结构因子来定义：
+\begin{equation}\label{eq:structure-factor-def}
+S(\mathbf{k}) = \langle \delta\tilde{\rho}(\mathbf{k})\, \delta\tilde{\rho}(-\mathbf{k}) \rangle
+\end{equation}
+当 $S(\mathbf{k} \to \mathbf{0}) \to 0$ 时，系统处于超均匀态。
+
+\subsection{反排列相互作用}
+
+\textbf{反排列}(antialigning)取向相互作用比对齐(aligning)相互作用研究较少，但在某些实验中存在\cite{boltz2025}。对于稀疏系统，密度涨落会导致粒子相互作用并通常产生相反取向。因此，\textbf{质心运动}被抑制（尽管不完全被守恒律禁止），同一粒子的连续相互作用也被抑制。
+
+\begin{notebox}[核心直觉]
+本文的核心直觉是：在具有短程反排列相互作用的自驱动粒子系统中，密度涨落会以非局部的方式被``消解''。类似于具有质心守恒的Manna过程或吸附态系统，反排列系统中的关联机制可以有效地抑制大尺度密度涨落。
+\end{notebox}
+
+\subsection{论文的主要贡献}
+
+本文的主要贡献包括：
+
+\begin{enumerate}
+    \item \textbf{一维解析模型}：建立了一个一维活性晶格气体模型，使用\textbf{Poisson表示法}进行严格分析
+    \item \textbf{波动流体动力学}：导出了Poisson场的波动流体动力学方程
+    \item \textbf{虚噪声的发现}：发现了描述非Poisson统计的\textbf{虚噪声}，它标志着粒子数涨落的非Poisson特性
+    \item \textbf{结构因子解析计算}：解析计算了非平庸的结构因子 $S(k)$
+    \item \textbf{二维数值验证}：通过离晶格(off-lattice)的Vicsek型模型的模拟验证了理论预测
+\end{enumerate}
+
+本文将重点补全原文中省略的理论推导细节，特别是：
+\begin{itemize}
+    \item Master方程的建立与Poisson表示法的完整推导
+    \item Fokker-Planck方程的详细构建
+    \item Langevin方程的导出过程
+    \item 结构因子的解析计算
+\end{itemize}

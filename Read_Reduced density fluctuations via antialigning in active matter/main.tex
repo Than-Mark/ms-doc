@@ -1,0 +1,195 @@
+\documentclass[a4paper,10pt]{article}
+
+% 中文支持
+\usepackage{ctex}
+
+% 页面几何
+\usepackage{geometry}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% 数学包
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% 图形与颜色
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+% 表格
+\usepackage{booktabs}
+\usepackage{array}
+
+% 列表
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=0.3em, leftmargin=1.5em}
+\setlist[enumerate]{itemsep=0.3em, leftmargin=1.5em}
+
+% 页眉页脚
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape 主动物质系统中的密度涨落抑制}
+\fancyhead[R]{\small\itshape 阅读笔记}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 标题格式
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\heiti}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\heiti}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\heiti}{\thesubsubsection}{1em}{}
+
+% 行距
+\usepackage{setspace}
+\onehalfspacing
+
+% 引用格式
+\usepackage[numbers,super,sort&compress]{natbib}
+\bibliographystyle{unsrtnat}
+
+% 超链接 - 必须最后加载
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=gray!70!black,
+    urlcolor=blue!70!black,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    unicode=true
+]{hyperref}
+
+% 定义定理环境（使用amsthm）
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}{命题}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{备注}
+
+% 定义笔记框环境（使用简单格式）
+\usepackage{mdframed}
+\definecolor{noteblue}{RGB}{230,240,250}
+\definecolor{notegreen}{RGB}{230,250,240}
+\definecolor{notered}{RGB}{255,230,230}
+\definecolor{notegray}{RGB}{245,245,245}
+
+\newmdenv[backgroundcolor=notegray,linewidth=0.5pt,frametitle=\relax]{noteboxframed}
+\newenvironment{notebox}[1][]{
+    \begin{noteboxframed}
+    \ifx&#1&\else\noindent\textbf{#1}\\\fi
+}{
+    \end{noteboxframed}
+}
+
+\newmdenv[backgroundcolor=noteblue,linewidth=0.5pt,frametitle=\relax]{derivationframed}
+\newenvironment{derivation}[1][]{
+    \begin{derivationframed}
+    \ifx&#1&\else\noindent\textbf{#1}\\\fi
+}{
+    \end{derivationframed}
+}
+
+% tcolorbox用于带标题的彩色框（避免中文标题问题）
+\newtcolorbox{keybox}[1][]{
+    colback=blue!3!white,
+    colframe=blue!40!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+\newtcolorbox{resultbox}[1][]{
+    colback=red!5!white,
+    colframe=red!50!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+\newtcolorbox{eqbox}[1][]{
+    colback=green!5!white,
+    colframe=green!50!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+% 自定义命令
+\newcommand{\avg}[1]{\langle #1 \rangle}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dd}{\mathrm{d}}
+
+% 标题信息
+\title{
+    \vspace{-1cm}
+    {\Large\heiti 阅读笔记}\\[0.5em]
+    {\LARGE\bfseries\heiti 反排列相互作用降低主动物质系统中的密度涨落}\\[0.3em]
+    {\large\itshape Reduced Density Fluctuations via Antialigning in Active Matter}
+}
+\author{
+    \kaishu 论文作者：Horst-Holger Boltz \& Thomas Ihle\\
+    \kaishu 笔记整理
+}
+\date{\kaishu\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+\noindent
+本文是对 Boltz 和 Ihle 于 2025 年发表在 Physical Review E 上的论文\cite{boltz2025}的理论分析部分的详细阅读笔记。论文研究了反排列(antialigning)相互作用如何降低主动物质系统中的长程密度涨落，甚至可能导致超均匀(hyperuniform)态的形成。笔记重点补全了原文中省略或简化的理论推导步骤，包括：一维晶格模型的 Master 方程建立、Poisson 表示法的详细推导、Fokker-Planck 方程的构建、Langevin 方程的导出、以及结构因子 $S(k)$ 的解析计算。最后简要介绍了二维 Vicsek-like 模型的数值模拟结果。
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\input{chapters/01_introduction}
+\input{chapters/02_theory}
+\input{chapters/03_2dmodel}
+\input{chapters/04_conclusion}
+
+\input{frontmatter/acknowledgement}
+
+\begin{thebibliography}{10}
+\bibitem{boltz2025}
+H.-H. Boltz and T. Ihle,
+``Reduced density fluctuations via antialigning in active matter,''
+Phys. Rev. E \textbf{112}, 065414 (2025).
+
+\bibitem{gardiner1977}
+C. W. Gardiner and S. Chaturvedi,
+``The Poisson representation. I. A new technique for chemical master equations,''
+J. Stat. Phys. \textbf{17}, 429 (1977).
+
+\bibitem{vicsek1995}
+T. Vicsek, A. Czir\'{o}k, E. Ben-Jacob, I. Cohen, and O. Shochet,
+``Novel type of phase transition in a system of self-driven particles,''
+Phys. Rev. Lett. \textbf{75}, 1226 (1995).
+
+\bibitem{torquato2018}
+S. Torquato,
+``Hyperuniform states of matter,''
+Phys. Rep. \textbf{745}, 1 (2018).
+
+\bibitem{bertrand2019}
+T. Bertrand, D. Chatenay, and R. Voituriez,
+``Nonlinear diffusion and hyperuniformity from Poisson representation in systems with interaction mediated dynamics,''
+New J. Phys. \textbf{21}, 123048 (2019).
+
+\bibitem{toner1998}
+J. Toner and Y. Tu,
+``Flocks, herds, and schools: A quantitative theory of flocking,''
+Phys. Rev. E \textbf{58}, 4828 (1998).
+
+\bibitem{wiese2016}
+K. J. Wiese,
+``Coherent-state path integral versus coarse-grained effective stochastic equation of motion,''
+Phys. Rev. E \textbf{93}, 042117 (2016).
+\end{thebibliography}
+
+\end{document}
