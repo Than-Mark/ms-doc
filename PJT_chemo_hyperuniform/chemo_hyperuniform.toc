@@ -1,3 +1,7 @@
 \contentsline {section}{\numberline {1}Models}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Particle-based isotropic model}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}Particle-based model}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Continuum model}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Linear stability analysis of the homogeneous state}{2}{subsubsection.1.2.1}%
+\contentsline {paragraph}{Stability criteria.}{3}{section*.2}%
+\contentsline {paragraph}{Dispersion relation near onset.}{3}{section*.3}%
+\contentsline {paragraph}{Physical interpretation.}{4}{section*.5}%
