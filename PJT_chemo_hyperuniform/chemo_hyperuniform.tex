@@ -44,8 +44,8 @@
 \subsection{Particle-based model}
 \begin{subequations}
     \begin{align}
-        &\dot{\mathbf{r}}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
-        &\dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +k\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;,
+        &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
+        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +k\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;,
     \end{align}
 \end{subequations}
 for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $c$ is the concentration field of the chemoattractant, $\alpha$ is the chemotactic sensitivity. If $\alpha > 0$, the particles are attracted to higher concentrations of the chemoattractant (chemoattraction/positive chemotaxis), while if $\alpha < 0$, the particles are repelled by higher concentrations of the chemoattractant (chemorepulsion/negative chemotaxis).
@@ -56,13 +56,13 @@ For simplicity, we assume that particles are point-like and move in a two-dimens
 To reduce the parameter space, we can non-dimensionalize the equations by introducing $x_0 = L$, $t_0 = 1/k$ and $c_0$ as characteristic scales of length, time and concentration. The resulting dimensionless parameters are $\tilde{\alpha} = \frac{\alpha c_0}{L^2k}$, $\tilde{D} = \frac{D}{L^2k}$, $\tilde{D}_c = \frac{D_c}{L^2k}$, and $\tilde{\mu} = \frac{\mu}{k}$. We can omit the tildes and work with the dimensionless equations:
 \begin{subequations}
     \begin{align}
-        &\dot{\mathbf{r}}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
-        &\dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.\label{eq:dimensionlessCplus}
+        &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
+        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.\label{eq:dimensionlessCplus}
     \end{align}
 \end{subequations}
 Note that the above equations mathematically implies the assumption of $k>0$. If $k<0$, the non-dimensionalization would be different, and the Eq.~\eqref{eq:dimensionlessCplus} would have a negative sign in front of the summation term:
 \begin{equation}
-    \dot{c}\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) -\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.
+    \frac{\partial}{\partial t} c\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) -\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.
 \end{equation}
 In the following, we will focus on the case of $k<0$ (chemorepulsion/negative chemotaxis), which is more relevant to the emergence of hyperuniformity.
 
@@ -70,8 +70,8 @@ In the following, we will focus on the case of $k<0$ (chemorepulsion/negative ch
 It is convenient to describe collective behavior using a particle density field $\rho \left( \mathbf{r},t \right)=\sum_{i=1}^{N}\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)$. The continuum model can be derived from the particle-based model using a mean-field approximation, which assumes that the particles are uniformly distributed and that the fluctuations around the mean density are negligible. The resulting equations are:
 \begin{subequations}
     \begin{align}
-        &\dot{\rho}\left( \mathbf{r},t \right) =- \alpha \nabla \cdot \left( \rho \nabla c \right) +D\nabla ^2\rho  \;,\\
-        &\dot{c}\left( \mathbf{r},t \right)=D_c\nabla ^2c +\mu c -\rho \;.
+        &\frac{\partial}{\partial t} \rho\left( \mathbf{r},t \right) =- \alpha \nabla \cdot \left( \rho \nabla c \right) +D\nabla ^2\rho  \;,\\
+        &\frac{\partial}{\partial t} c\left( \mathbf{r},t \right)=D_c\nabla ^2c +\mu c -\rho \;.
     \end{align}
 \end{subequations}
 Note that the $\rho \left( \mathbf{r},t \right)$ here is particle number density, not probability density.
