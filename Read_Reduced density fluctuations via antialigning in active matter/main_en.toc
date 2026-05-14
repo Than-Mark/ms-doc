@@ -1,0 +1,45 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Research Background}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Hyperuniformity}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Antialigning Interactions}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Main Contributions of the Paper}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}One-Dimensional Pedagogical Model}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Model Definition}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Master Equation}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Explicit Expressions for Probability Currents}{5}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Poisson Representation}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Core Idea}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Mismatch Between General Discrete Processes and Poisson Processes}{6}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Replacement Rules: From Master Equation to Fokker-Planck Equation}{6}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Detailed Derivation: Obtaining the Replacement Rules}{7}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Fokker-Planck Equation}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Streaming Contribution $F_\lambda $}{8}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Conversion Contribution $F_r$}{8}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Noise Term $J$}{8}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Deterministic Equations of Motion}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Noise Analysis}{9}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Matrix Square Root and Imaginary Noise}{9}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Langevin Equations}{9}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Analytical Calculation of the Structure Factor}{11}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Linearization and Simplification}{11}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Overdamped Approximation}{11}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}First-Order Langevin Equation}{13}{subsubsection.2.8.3}%
+\contentsline {subsubsection}{\numberline {2.8.4}Definition of Correlated Noise}{13}{subsubsection.2.8.4}%
+\contentsline {subsubsection}{\numberline {2.8.5}Final Expression for the Structure Factor}{13}{subsubsection.2.8.5}%
+\contentsline {subsubsection}{\numberline {2.8.6}Physical Analysis}{14}{subsubsection.2.8.6}%
+\contentsline {subsection}{\numberline {2.9}Numerical Verification (One-Dimensional Model)}{15}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Two-Dimensional Vicsek-like Model}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Model Definition}{15}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Equations of Motion}{15}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Numerical Simulation Methods}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Simulation Parameters}{15}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Estimate of Critical Noise}{16}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Numerical Results}{16}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Apparent Hyperuniform Behavior}{16}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Warning about Spurious Hyperuniformity}{16}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Exploration of Parameter Space}{16}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Collapse of the Effect due to Noise}{17}{subsubsection.3.3.4}%
+\contentsline {section}{\numberline {4}Summary and Discussion}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Main Conclusions}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Value of the Theoretical Method}{17}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Open Questions}{18}{subsection.4.3}%

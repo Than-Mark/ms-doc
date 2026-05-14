@@ -1,0 +1,192 @@
+\documentclass[a4paper,10pt]{article}
+
+% Page geometry
+\usepackage{geometry}
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Graphics and colors
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins,breakable}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{array}
+
+% Lists
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=0.3em, leftmargin=1.5em}
+\setlist[enumerate]{itemsep=0.3em, leftmargin=1.5em}
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Density Fluctuation Suppression in Active Matter Systems}
+\fancyhead[R]{\small\itshape Reading Notes}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Section formatting
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Citation format
+\usepackage[numbers,super,sort&compress]{natbib}
+\bibliographystyle{unsrtnat}
+
+% Hyperlinks - load last
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=gray!70!black,
+    urlcolor=blue!70!black,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    unicode=true
+]{hyperref}
+
+% Define theorem environments (using amsthm)
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Define note box environments (using simple format)
+\usepackage{mdframed}
+\definecolor{noteblue}{RGB}{230,240,250}
+\definecolor{notegreen}{RGB}{230,250,240}
+\definecolor{notered}{RGB}{255,230,230}
+\definecolor{notegray}{RGB}{245,245,245}
+
+\newmdenv[backgroundcolor=notegray,linewidth=0.5pt,frametitle=\relax]{noteboxframed}
+\newenvironment{notebox}[1][]{
+    \begin{noteboxframed}
+    \ifx&#1&\else\noindent\textbf{#1}\\\fi
+}{
+    \end{noteboxframed}
+}
+
+\newmdenv[backgroundcolor=noteblue,linewidth=0.5pt,frametitle=\relax]{derivationframed}
+\newenvironment{derivation}[1][]{
+    \begin{derivationframed}
+    \ifx&#1&\else\noindent\textbf{#1}\\\fi
+}{
+    \end{derivationframed}
+}
+
+% tcolorbox for titled colored boxes
+\newtcolorbox{keybox}[1][]{
+    colback=blue!3!white,
+    colframe=blue!40!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+\newtcolorbox{resultbox}[1][]{
+    colback=red!5!white,
+    colframe=red!50!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+\newtcolorbox{eqbox}[1][]{
+    colback=green!5!white,
+    colframe=green!50!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+% Custom commands
+\newcommand{\avg}[1]{\langle #1 \rangle}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dd}{\mathrm{d}}
+
+% Title information
+\title{
+    \vspace{-1cm}
+    {\Large Reading Notes}\\[0.5em]
+    {\LARGE\bfseries Reduced Density Fluctuations via Antialigning in Active Matter}\\[0.3em]
+    {\large\itshape Reduced Density Fluctuations via Antialigning in Active Matter}
+}
+\author{
+    Paper authors: Horst-Holger Boltz \& Thomas Ihle\\
+    Notes compiled
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+\noindent
+This document provides detailed reading notes on the theoretical analysis section of the paper by Boltz and Ihle, published in Physical Review E in 2025\cite{boltz2025}. The paper investigates how antialigning interactions reduce long-range density fluctuations in active matter systems, and may even lead to the formation of hyperuniform states. These notes focus on filling in the theoretical derivation steps that were omitted or simplified in the original article, including: construction of the one-dimensional lattice model and its master equation, detailed derivation of the Poisson representation, construction of the Fokker-Planck equation, derivation of the Langevin equations, and analytical calculation of the structure factor $S(k)$. Finally, numerical simulation results for a two-dimensional Vicsek-like model are briefly discussed.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\input{chapters/01_introduction_en}
+\input{chapters/02_theory_en}
+\input{chapters/03_2dmodel_en}
+\input{chapters/04_conclusion_en}
+
+\input{frontmatter/acknowledgement_en}
+
+\begin{thebibliography}{10}
+\bibitem{boltz2025}
+H.-H. Boltz and T. Ihle,
+``Reduced density fluctuations via antialigning in active matter,''
+Phys. Rev. E \textbf{112}, 065414 (2025).
+
+\bibitem{gardiner1977}
+C. W. Gardiner and S. Chaturvedi,
+``The Poisson representation. I. A new technique for chemical master equations,''
+J. Stat. Phys. \textbf{17}, 429 (1977).
+
+\bibitem{vicsek1995}
+T. Vicsek, A. Czir\'{o}k, E. Ben-Jacob, I. Cohen, and O. Shochet,
+``Novel type of phase transition in a system of self-driven particles,''
+Phys. Rev. Lett. \textbf{75}, 1226 (1995).
+
+\bibitem{torquato2018}
+S. Torquato,
+``Hyperuniform states of matter,''
+Phys. Rep. \textbf{745}, 1 (2018).
+
+\bibitem{bertrand2019}
+T. Bertrand, D. Chatenay, and R. Voituriez,
+``Nonlinear diffusion and hyperuniformity from Poisson representation in systems with interaction mediated dynamics,''
+New J. Phys. \textbf{21}, 123048 (2019).
+
+\bibitem{toner1998}
+J. Toner and Y. Tu,
+``Flocks, herds, and schools: A quantitative theory of flocking,''
+Phys. Rev. E \textbf{58}, 4828 (1998).
+
+\bibitem{wiese2016}
+K. J. Wiese,
+``Coherent-state path integral versus coarse-grained effective stochastic equation of motion,''
+Phys. Rev. E \textbf{93}, 042117 (2016).
+\end{thebibliography}
+
+\end{document}

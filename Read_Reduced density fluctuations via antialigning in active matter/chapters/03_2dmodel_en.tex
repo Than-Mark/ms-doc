@@ -1,0 +1,91 @@
+% !TEX root = ../main_en.tex
+
+\section{Two-Dimensional Vicsek-like Model}\label{sec:2d-model}
+
+\subsection{Model Definition}
+
+To generalize the insights from the one-dimensional analysis to more realistic two-dimensional systems, the paper studies a continuous-time Vicsek-like model\cite{boltz2025}. This model describes the dynamics of self-driven particles in which the orientational evolution includes antialigning interactions.
+
+\subsubsection{Equations of Motion}
+
+Denoting the orientation $\vartheta_i$ (angle relative to a fixed reference axis) of particle $i$ ($i = 1, \ldots, N$), the dynamical equations are:
+
+\begin{keybox}[2D Vicsek-like Model]
+\begin{align}
+\dot{\mathbf{r}}_i &= v_0 \mathbf{n}(\vartheta_i) \label{eq:vicsek-pos}\\
+\dot{\vartheta}_i &= -\epsilon \sum_{j \in \mathcal{N}_i} \sin(\vartheta_j - \vartheta_i) \label{eq:vicsek-angle}
+\end{align}
+\end{keybox}
+
+where:
+\begin{itemize}
+    \item $\mathbf{n}(\vartheta) = (\cos\vartheta, \sin\vartheta)^T$ is the unit vector corresponding to direction $\vartheta$
+    \item $\mathcal{N}_i = \{j \,|\, j \neq i \text{ and } |\mathbf{r}_i - \mathbf{r}_j| \leq R\}$ is the set of neighbors within radius $R$ around particle $i$
+    \item $\epsilon > 0$ denotes \textbf{antialigning} interactions (if negative, it corresponds to conventional aligning interactions)
+\end{itemize}
+
+\subsection{Numerical Simulation Methods}
+
+\subsubsection{Simulation Parameters}
+
+The paper integrates the equations of motion using the Heun method (a second-order stochastic differential equation integrator), with parameter settings:
+\begin{itemize}
+    \item $\epsilon = v = R = M = 1$ ($M = \rho\pi R^2$ is the expected number of neighbors in the reduced density)
+    \item Particle number $N$ varies from 25 to $2^{12} = 4096$
+    \item Structure factor computed after dimensionless time $t = 500\pi$
+    \item Results averaged over $10^4$ samples
+\end{itemize}
+
+\subsubsection{Estimate of Critical Noise}
+
+The effect of noise can easily be studied numerically. Both positional and orientational noise eventually destroy long-range correlations. Here, \textbf{orientational noise} is more relevant, because we are focusing on the effect of aligning interactions.
+
+A rough estimate of the critical noise level can be obtained through the following argument:
+\begin{enumerate}
+    \item The typical timescale of interactions is given by the mean free path: $\tau_{\text{free}} \sim R/(Mv)$
+    \item If active particles move perpendicular to their deterministic direction by about $\Delta \sim R$ due to diffusion during this time, they will interact with different particles
+    \item This leads to an estimate of the critical orientational diffusion strength: $D_c \approx MvR/\pi$
+\end{enumerate}
+
+This is the same scaling as the instability threshold reported in the literature\cite{boltz2025}.
+
+\subsection{Numerical Results}
+
+\subsubsection{Apparent Hyperuniform Behavior}
+
+From direct many-body simulations, the following is observed:
+\begin{itemize}
+    \item Seemingly consistent apparent power-law behavior in the reduced structure factor and particle number fluctuations
+    \item However, one must be wary that this may be a \textbf{finite-size artifact}
+    \item A description similar to the 1D model prediction (Eq.~(\ref{eq:structure-factor-final})) can also fit the data
+\end{itemize}
+
+\subsubsection{Warning about Spurious Hyperuniformity}
+
+The paper particularly emphasizes the following important point:
+
+\begin{notebox}[Risk of inferring hyperuniformity from numerics]
+Similar apparent hyperuniformity $S \sim k^\alpha$ with ``anomalous'' (non-integer) exponent $\alpha \approx 0.5$ has been discovered in chiral self-driven particle systems. For the purposes of this paper, the main concern is the \textbf{significant reduction} of long-range density fluctuations.
+
+The question of \textbf{true hyperuniformity} (i.e., $S(0) = 0$) is best addressed by analytical methods---for the two-dimensional model this remains unresolved at present. The one-dimensional result should serve as a warning in this regard.
+\end{notebox}
+
+\subsubsection{Exploration of Parameter Space}
+
+For vastly different values of the expected number of interactions $M = \rho\pi R^2$ and dimensionless interaction strength $S_c = \epsilon R/v$, the data show:
+\begin{itemize}
+    \item All data show a significant reduction of density fluctuations at large distances
+    \item But the apparent power-law behavior is \textbf{non-universal}
+    \item For the parameter set $M = 1, S_c = 1$, the reduced structure factor $\delta S = S - S_0$ can be reasonably explained by $k^2$ behavior
+\end{itemize}
+
+\subsubsection{Collapse of the Effect due to Noise}
+
+For sufficiently strong noise, the long-range suppression is destroyed:
+\begin{itemize}
+    \item No orientational noise (full circle): significant fluctuation suppression
+    \item Weak noise ($\mu = 0.1$): the effect still persists
+    \item Correlated noise ($\mu = 1$): fluctuation suppression is destroyed, reverting to ordinary behavior
+\end{itemize}
+
+This is consistent with the intuition behind the concept of effective temperature in active matter systems: the self-hybrid dynamics in antialigning models may look similar to the effect of thermal noise at large scales, but the \textbf{absence of long-range correlations} is a notable distinction in the case of sufficiently strong explicit noise.
