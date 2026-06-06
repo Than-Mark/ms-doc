@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.27)  7 MAY 2026 20:33
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.27)  6 JUN 2026 13:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -553,28 +553,21 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ]
 
-[2]
-File: figs/dispersion_relation.pdf Graphic file (type pdf)
-<use figs/dispersion_relation.pdf>
-
-
-[3]
-
-[4] (./chemo_hyperuniform.aux)
+[2] (./chemo_hyperuniform.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `chemo_hyperuniform.out' has not changed.
-(rerunfilecheck)             Checksum: 435D72E684FF57EA5BA2D89AB7559637;703.
+(rerunfilecheck)             Checksum: 730CF2A860ABC47B521DC97F7BA906FF;368.
  ) 
 Here is how much of TeX's memory you used:
- 13911 strings out of 473832
- 221810 string characters out of 5729027
- 654528 words of memory out of 5000000
- 36766 multiletter control sequences out of 15000+600000
- 572144 words of font info for 98 fonts, out of 8000000 for 9000
+ 13873 strings out of 473832
+ 220821 string characters out of 5729027
+ 652554 words of memory out of 5000000
+ 36736 multiletter control sequences out of 15000+600000
+ 572120 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,14n,79p,1064b,400s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,10n,79p,1036b,330s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chemo_hyperuniform.pdf (4 pages).
+Output written on chemo_hyperuniform.pdf (2 pages).
