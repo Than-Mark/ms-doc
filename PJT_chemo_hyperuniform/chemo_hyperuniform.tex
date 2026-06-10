@@ -1,5 +1,5 @@
 \documentclass{article}
-% \usepackage{xeCJK}
+\usepackage{xeCJK}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
@@ -12,14 +12,22 @@
 \usepackage{multicol}
 \usepackage{pdfpages}
 \usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage[numbers]{natbib}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
 
-\bibliographystyle{plain}
+\newtcolorbox{keybox}[1][]{
+    colback=blue!3!white,
+    colframe=blue!40!black,
+    fonttitle=\bfseries,
+    title={#1},
+    breakable
+}
+
+% \bibliographystyle{plain}
 \setlength{\parindent}{2em}
 \usepackage{geometry}
 \geometry{a4paper, left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
-
-% 设置文章行距
-% \renewcommand{\baselinestretch}{1.5}
 
 % define reference format
 \hypersetup{
@@ -66,129 +74,164 @@ Note that the above equations mathematically implies the assumption of $k>0$. If
 \end{equation}
 In the following, we will focus on the case of $k<0$ (chemorepulsion/negative chemotaxis), which is more relevant to the emergence of hyperuniformity.
 
+As shown in the snapshots, the case of production ($k>0$) leads to aggregation of particles and formation of dense clusters, while the case of consumption ($k<0$) leads to dispersion of particles and formation of more uniform distributions. The latter case is more likely to exhibit hyperuniformity.
+
+\begin{figure}[htbp]
+    \centering
+    \subcaptionbox{Production [$\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}$]}[0.49\linewidth]{
+      \includegraphics[width=\linewidth]{figs/particle_snapshot_k1.pdf}
+    }
+    \hfill
+    \subcaptionbox{Consumption [$-\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}$]}[0.49\linewidth]{
+      \includegraphics[width=\linewidth]{figs/particle_snapshot_k-1.pdf}
+    }
+    \caption{
+        Snapshots of particle configurations for (a) production and (b) consumption of chemoattractant. The parameters are $\alpha=0.1$, $D=0.001$, $D_c=0.1$, $\mu=0.1$, and $N=2000$ particles in an $L=20$ domain. The background color represents the concentration field $c(\mathbf{r},t)$, with colorbar indicating the concentration level. The positions and velocity direction of the particles are shown as arrows.
+    }
+\end{figure}
+
 \subsection{Continuum model}
-It is convenient to describe collective behavior using a particle density field $\rho \left( \mathbf{r},t \right)=\sum_{i=1}^{N}\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)$. The continuum model can be derived from the particle-based model using a mean-field approximation, which assumes that the particles are uniformly distributed and that the fluctuations around the mean density are negligible. The resulting equations are:
+It is convenient to describe collective behavior using a particle density field $\rho \left( \mathbf{r},t \right)=\sum_{i=1}^{N}\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)$ (Note that the $\rho \left( \mathbf{r},t \right)$ here is particle number density, not probability density). By applying the Dean's method \cite{David_S_Dean_1996}, we can derive the following stochastic partial differential equations for $\rho$ and $c$:
+\begin{subequations}
+    \begin{align}
+        &\frac{\partial}{\partial t} \rho\left( \mathbf{r},t \right) =- \alpha \nabla \cdot \left( \rho \nabla c \right) +D\nabla ^2\rho - \nabla\cdot \left[ \sqrt{2D\rho}\boldsymbol{\Lambda} \right] \;,\\
+        &\frac{\partial}{\partial t} c\left( \mathbf{r},t \right)=D_c\nabla ^2c +\mu c -\rho \;,
+    \end{align}
+    \label{eq:stochasticKSmodel}
+\end{subequations}
+where $\boldsymbol{\Lambda}(\mathbf r,t)$ is a Gaussian white noise with zero mean and unit variance, satisfying 
+\begin{equation}
+    \langle \Lambda_a(\mathbf r,t)\Lambda_b(\mathbf r',t')\rangle = \delta_{ab}\delta(\mathbf r-\mathbf r')\delta(t-t')\;.
+\end{equation}
+
+Under the mean-field approximation, $\langle \boldsymbol{\Lambda}\rangle=0$ leads to $\left\langle -\nabla\cdot \left[ \sqrt{2D\rho}\boldsymbol{\Lambda} \right] \right\rangle \approx0$, and we can neglect the noise term. This gives us the classical Keller-Segel model \cite{KELLER1971225,KELLER1970399}:
 \begin{subequations}
     \begin{align}
         &\frac{\partial}{\partial t} \rho\left( \mathbf{r},t \right) =- \alpha \nabla \cdot \left( \rho \nabla c \right) +D\nabla ^2\rho  \;,\\
         &\frac{\partial}{\partial t} c\left( \mathbf{r},t \right)=D_c\nabla ^2c +\mu c -\rho \;.
     \end{align}
+    \label{eq:KSmodel}
 \end{subequations}
-Note that the $\rho \left( \mathbf{r},t \right)$ here is particle number density, not probability density.
+One can perform linear stability analysis on the Keller-Segel model to determine the conditions for pattern formation. However, the mean-field approximation neglects fluctuations, which can be crucial for understanding the emergence of hyperuniformity. Therefore, we need to consider the full stochastic equations with noise to capture the effects of fluctuations on the system's behavior.
 
-% \subsubsection{Linear stability analysis of the homogeneous state}
-% Consider the homogeneous steady state (uniform solution) of the continuum model, where both the particle density and the chemical concentration are constant in space:
+One obvious solution of Eqs.~\eqref{eq:KSmodel} is the homogeneous state $\rho(\mathbf r,t) = \rho_0$ and $c(\mathbf r,t) = c_0$, where $c_0 = \rho_0 / \mu$, which can be regarded as solution to Eqs.~\eqref{eq:stochasticKSmodel} in the mean-field sense. 
+To analyze the stability of this homogeneous state, we can introduce small perturbations $\delta \rho(\mathbf r,t)$ and $\delta c(\mathbf r,t)$ around the homogeneous solution:
+\begin{equation}
+    \rho(\mathbf r,t) = \rho_0 + \delta \rho(\mathbf r,t), \quad c(\mathbf r,t) = c_0 + \delta c(\mathbf r,t)\;.
+\end{equation}
+Introducing these perturbations into Eqs.~\eqref{eq:stochasticKSmodel} gives us the following linearized equations:
+\begin{subequations}
+    \begin{align}
+        &\frac{\partial}{\partial t}\delta \rho =-\alpha \rho _0\nabla ^2\delta c+D\nabla ^2\delta \rho -\nabla \cdot \left[ \sqrt{2D\rho _0}\boldsymbol{\Lambda } \right] \;,\\
+        &\frac{\partial}{\partial t}\delta c=D_c\nabla ^2\delta c+\mu \delta c-\delta \rho \;.
+    \end{align}
+    \label{eq:linearizedKSmodel}
+\end{subequations}
+
+By performing Fourier transform on the linearized equations, we can analyze the growth rates of different modes and determine the conditions for instability. The presence of noise can lead to fluctuations that may drive the system towards hyperuniform states, even in regimes where the mean-field analysis predicts stability. Therefore, it is essential to consider the full stochastic dynamics to understand the emergence of hyperuniformity in chemotactic active matter.
+
+We take the Fourier expansion under periodic boundary conditions:
+\begin{equation}
+    \delta \rho (\mathbf{r},t)=\sum_{\mathbf{k}}{\delta \rho _{\mathbf{k}}(t)e^{\mathrm{i}\mathbf{k}\cdot \mathbf{r}},\quad \delta c(\mathbf{r},t)}=\sum_{\mathbf{k}}{\delta c_{\mathbf{k}}(t)e^{\mathrm{i}\mathbf{k}\cdot \mathbf{r}}}\;.
+\end{equation}
+Equivalently, it can also be written as a continuous Fourier transform:
+\begin{equation}
+    \delta \rho _{\mathbf{k}}(t)=\int{\mathrm{e}^{-\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\delta \rho \left( \mathbf{r},t \right) \mathrm{d}\mathbf{k}},\quad \delta c_{\mathbf{k}}(t)=\int{\mathrm{e}^{-\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\delta c\left( \mathbf{r},t \right) \mathrm{d}\mathbf{k}}\;.
+\end{equation}
+The specific normalization factor does not affect the symbol structure here. There is a subtlety in the Fourier transform of the noise term, which can be expressed as:
+\begin{equation}
+    \nabla \cdot \left[ \sqrt{2D\rho _0}\boldsymbol{\Lambda } \right] = \sum_{\mathbf{k}}{\mathrm{i}\mathbf{k} \cdot \sqrt{2D\rho_0}\boldsymbol{\Lambda}_{\mathbf{k}}}\;.
+\end{equation}
+After Fourier transform, the linearized equations become:
+\begin{subequations}
+    \begin{align}
+        \frac{\partial}{\partial t}\delta \rho _{\mathbf{k}}&=-Dk^2\delta \rho _{\mathbf{k}}+\alpha \rho _0k^2\delta c_{\mathbf{k}}+\eta _{\mathbf{k}}\;,\\
+        \frac{\partial}{\partial t}\delta c_{\mathbf{k}}&=-(D_ck^2-\mu )\delta c_{\mathbf{k}}-\delta \rho _{\mathbf{k}}\;,
+    \end{align}
+    \label{eq:FourierLinearizedKSmodel}
+\end{subequations}
+where $\eta _{\mathbf{k}}=-\mathrm{i}\mathbf{k} \cdot \sqrt{2D\rho_0}\boldsymbol{\Lambda}_{\mathbf{k}}$. The noise term $\eta _{\mathbf{k}}$ has zero mean and its correlation can be calculated as follows:
+\begin{equation}
+    \langle \eta _{\mathbf{k}}(t)\eta _{\mathbf{k}'}(t')\rangle = 2D\rho_0 k^2 \delta(t-t')\;.
+\end{equation}
+
+\subsubsection{Fast chemical field approximation}
+In the limit of fast chemical diffusion, we can assume that the chemical field $c$ quickly reaches a quasi-steady state, which allows us to eliminate $c$ from the equations. Setting $\frac{\partial}{\partial t}\delta c_{\mathbf{k}} \approx 0$ in Eq.~\eqref{eq:FourierLinearizedKSmodel} gives us:
+\begin{equation}
+    \delta c_{\mathbf{k}} \approx -\frac{\delta \rho _{\mathbf{k}}}{D_ck^2-\mu}\;.
+\end{equation}
+Substituting this back into the equation for $\delta \rho _{\mathbf{k}}$
+yields:
+\begin{equation}
+    \partial_t\delta\rho_{\mathbf k} = - k^2 \left[ D+ \frac{\alpha\rho_0}{D_c k^2-\mu} \right] \delta\rho_{\mathbf k} + \eta_{\mathbf k}\;.
+\end{equation}
+Define effective diffusion coefficient $D_{\mathrm{eff}}(k) = D + \frac{\alpha\rho_0}{D_c k^2 - \mu}$, we can rewrite the equation as:
+\begin{equation}
+    \partial_t\delta\rho_{\mathbf k} = - k^2 D_{\mathrm{eff}}(k) \delta\rho_{\mathbf k} + \eta_{\mathbf k}\;.
+\end{equation}
+This equation is an Ornstein-Uhlenbeck process, and we can calculate the steady-state structure factor, which is the variance of density fluctuations at wavevector $\mathbf{k}$, using the formula for the variance of an Ornstein-Uhlenbeck process (see Appendix~\ref{appendix:OUvariance}):
+\begin{equation}
+    S(k) = \langle \delta \rho _{\mathbf{k}}\delta \rho _{-\mathbf{k}}\rangle = \frac{2D\rho_0 k^2}{2 k^2 D_{\mathrm{eff}}(k)} = \frac{D\rho_0}{D + \frac{\alpha\rho_0}{D_c k^2 - \mu}}\;.
+    \label{eq:structureFactorFastC}
+\end{equation}
+Here, the structure factor $S(k)$ can be interpreted as a noise–relaxation balance. The numerator $2D\rho_0 k^2$ represents the strength of the noise driving the fluctuations, while the denominator $2 k^2 D_{\mathrm{eff}}(k)$ represents the relaxation rate of the fluctuations due to diffusion and chemotactic interactions.  
+
+% For $k \to 0$, the structure factor approaches:
 % \begin{equation}
-%     \rho(\mathbf{r},t) = \rho_0, \qquad c(\mathbf{r},t) = c_0 .
-% \end{equation}
-% Substituting into the reaction--diffusion equations and setting time derivatives to zero gives the relation
-% \begin{equation}
-%     c_0 = \frac{\rho_0}{\mu} ,
-% \end{equation}
-% provided $\mu\neq 0$. In the physically relevant case of chemoattractant decay ($\mu<0$), the homogeneous concentration is negative, which is a formal artefact of the closed model without external sources; the linear stability analysis, however, only concerns small perturbations around this reference state and is unaffected by the overall offset.
-
-% To perform the linear stability analysis, we introduce small perturbations around the homogeneous state:
-% \begin{equation}
-%     \rho(\mathbf{r},t) = \rho_0 + \delta\rho(\mathbf{r},t), \qquad c(\mathbf{r},t) = c_0 + \delta c(\mathbf{r},t) ,
-% \end{equation}
-% with $|\delta\rho|\ll\rho_0$ and $|\delta c|\ll|c_0|$. Substituting these into the continuum equations and retaining only linear terms in the perturbations yields the linearized system:
-% \begin{subequations}
-%     \begin{align}
-%         &\partial_t \delta\rho = -\alpha\rho_0 \nabla^2 \delta c + D\nabla^2 \delta\rho \;,\\
-%         &\partial_t \delta c = D_c\nabla^2 \delta c + \mu\,\delta c - \delta\rho \;.
-%     \end{align}
-% \end{subequations}
-% Because the background concentration $c_0$ is spatially uniform, its gradient vanishes and the advective nonlinearity $\nabla\cdot(\delta\rho\,\nabla\delta c)$ is second-order; hence it does not appear in the linearized equations.
-
-% We now decompose the perturbations into Fourier modes:
-% \begin{equation}
-%     \delta\rho(\mathbf{r},t) = \hat{\rho}_q\,e^{\lambda t + i\mathbf{q}\cdot\mathbf{r}}, \qquad \delta c(\mathbf{r},t) = \hat{c}_q\,e^{\lambda t + i\mathbf{q}\cdot\mathbf{r}} .
-% \end{equation}
-% The plane wave $e^{i\mathbf{q}\cdot\mathbf{r}}$ is an eigenfunction of the Laplacian operator $\nabla^2$ with eigenvalue $-q^2$, since
-% \begin{equation}
-%     \nabla^2 e^{i\mathbf{q}\cdot\mathbf{r}}
-%     = \nabla\cdot\bigl(i\mathbf{q}\,e^{i\mathbf{q}\cdot\mathbf{r}}\bigr)
-%     = i\mathbf{q}\cdot(i\mathbf{q})\,e^{i\mathbf{q}\cdot\mathbf{r}}
-%     = -|\mathbf{q}|^2 e^{i\mathbf{q}\cdot\mathbf{r}} = -q^2 e^{i\mathbf{q}\cdot\mathbf{r}} .
-% \end{equation}
-% Similarly, for any spatial differential operator appearing in the linearized system we have the replacements
-% \begin{equation}
-%     \nabla^2 \to -q^2, \qquad \nabla \to i\mathbf{q}, \qquad \nabla\cdot \to i\mathbf{q}\cdot\; ,
-% \end{equation}
-% which turn the linear PDEs into algebraic equations for the Fourier amplitudes $(\hat{\rho}_q,\hat{c}_q)$.  Consequently, the algebraic eigenvalue problem reads
-% \begin{equation}
-%     \lambda \begin{pmatrix} \hat{\rho}_q \\ \hat{c}_q \end{pmatrix} =
-%     \underbrace{
-%     \begin{pmatrix}
-%         -Dq^2 & \alpha\rho_0 q^2 \\[4pt]
-%         -1 & \mu - D_c q^2
-%     \end{pmatrix}}_{\displaystyle M(q)}
-%     \begin{pmatrix} \hat{\rho}_q \\ \hat{c}_q \end{pmatrix} .
-% \end{equation}
-% The dispersion relation $\lambda(q)$ is obtained from the characteristic equation $\det(M-\lambda I)=0$:
-% \begin{equation}
-%     \lambda^2 + \bigl[(D+D_c)q^2 - \mu\bigr]\lambda + q^2\bigl(DD_c q^2 - D\mu + \alpha\rho_0\bigr) = 0 .
-%     \label{eq:characteristic}
+%     S(0) = \frac{D\rho_0}{D + \frac{\alpha\rho_0}{-\mu}}\;.
 % \end{equation}
 
-% \paragraph{Stability criteria.}
-% For a second-order polynomial $\lambda^2 + b\lambda + a = 0$, the Routh--Hurwitz conditions guarantee that both roots have negative real parts (asymptotic stability) if and only if $b>0$ and $a>0$ for all wavenumbers $q$.  From Eq.~\eqref{eq:characteristic}:
-% \begin{align}
-%     b(q) &= (D+D_c)q^2 - \mu ,\\
-%     a(q) &= q^2\bigl(DD_c q^2 - D\mu + \alpha\rho_0\bigr) .
-% \end{align}
-% Because the system focuses on chemoattractant decay, we set $\mu = -|\mu|<0$; then $b(q)=(D+D_c)q^2+|\mu|>0$ automatically for every $q\neq 0$.  The remaining condition $a(q)>0$ reduces to
-% \begin{equation}
-%     DD_c q^2 + D|\mu| + \alpha\rho_0 > 0 \qquad \forall\, q\neq 0 .
-%     \label{eq:stability_condition}
-% \end{equation}
-% Since the term $DD_c q^2$ is non-negative, the most dangerous (i.e. least stable) mode is the long-wavelength limit $q\to 0$.  Evaluating Eq.~\eqref{eq:stability_condition} at $q\to 0$ gives the critical threshold:
+Let
+\begin{equation}
+    A_0 = D - \frac{\alpha\rho_0}{\mu}\;.
+\end{equation}
+For $k \to 0$, $\frac{D_c}{|\mu |}k^2 \to 0$, so we can expand the denominator in a Taylor series:
+\begin{equation}
+    \begin{aligned}
+        \frac{1}{-\mu +D_ck^2}&=-\frac{1}{\mu}\frac{1}{1-\frac{D_c}{\mu}k^2}\\
+        &=-\frac{1}{\mu}\left[ 1+\frac{D_c}{\mu}k^2+\left( \frac{D_c}{-\mu} \right) ^2k^4+\cdots \right] \;,\\
+    \end{aligned}
+\end{equation}
+then
+\begin{equation}
+    D_{\mathrm{eff}}(k)=D-\frac{\alpha \rho _0}{\mu}-\frac{\alpha \rho _0D_c}{\mu ^2}k^2-\cdots \;,
+\end{equation}
+and the structure factor can be approximated as:
+\begin{equation}
+    \begin{aligned}
+        S(k)&=\rho _0\frac{D}{A_0}\left[ 1+\frac{\alpha \rho _0D_c}{|\mu |^2A_0}k^2+\cdots \right]\\
+        &=S_0+Bk^2+\cdots \;,
+    \end{aligned}
+\end{equation}
+where $S_0 = \frac{D\rho_0}{A_0}$ and $B = \frac{\alpha \rho _0^2 D D_c}{|\mu |^2 A_0^2}$.
 
-% \begin{itemize}
-%     \item \textbf{Chemoattraction} ($\alpha>0$):  the term $\alpha\rho_0$ is positive, so $D|\mu|+\alpha\rho_0>0$ and the homogeneous state is \emph{linearly stable} for all wavenumbers.  Consumption locally depresses the chemical concentration, which counteracts the attractive drift and suppresses clustering.
+\section{Appendix}
 
-%     \item \textbf{Chemorepulsion} ($\alpha<0$):  writing $\alpha=-|\alpha|$, the stability condition becomes
-%     \begin{equation}
-%         D|\mu| > |\alpha|\rho_0 .
-%         \label{eq:chemorepulsion_stability}
-%     \end{equation}
-%     When the repulsive chemotactic feedback is weak ($|\alpha|\rho_0 < D|\mu|$), diffusion dominates and the uniform state is stable.  When the feedback is strong ($|\alpha|\rho_0 > D|\mu|$), condition \eqref{eq:stability_condition} is violated for small $q$, and the homogeneous state undergoes a \emph{long-wave instability}.  The critical parameter for the onset of instability is therefore
-%     \begin{equation}
-%         \boxed{\;\rho_0^{\text{crit}} = \frac{D|\mu|}{|\alpha|}\;}
-%         \qquad\text{or equivalently}\qquad
-%         \boxed{\;|\alpha|^{\text{crit}} = \frac{D|\mu|}{\rho_0}\;}. 
-%     \end{equation}
-% \end{itemize}
+\subsection{Calculation of variance for Ornstein-Uhlenbeck process\label{appendix:OUvariance}}
 
-% \paragraph{Dispersion relation near onset.}
-% Setting $\mu=-|\mu|$ and $\alpha=-|\alpha|$, the two branches of the dispersion relation are
-% \begin{equation}
-%     \lambda_{\pm}(q) = \frac{1}{2}\Bigl[-(D+D_c)q^2 - |\mu| \pm \sqrt{\bigl((D+D_c)q^2+|\mu|\bigr)^2 + 4q^2\bigl(|\alpha|\rho_0 - D|\mu| - DD_c q^2\bigr)}\,\Bigr] .
-% \end{equation}
-% In the long-wavelength limit ($q\to 0$), a Taylor expansion gives the asymptotic behaviour:
-% \begin{equation}
-%     \lambda_{+}(q) \simeq \frac{|\alpha|\rho_0 - D|\mu|}{|\mu|}\,q^2 , \qquad
-%     \lambda_{-}(q) \simeq -|\mu| - \Bigl(D_c + \frac{|\alpha|\rho_0}{|\mu|}\Bigr)q^2 .
-%     \label{eq:asymptotic_lambdas}
-% \end{equation}
-% The branch $\lambda_{-}$ is always negative and represents a rapidly relaxing chemical mode (decay rate $\sim |\mu|$).  The branch $\lambda_{+}$ governs the density mode and is the one that changes sign at the instability threshold:
-% \begin{itemize}
-%     \item In the stable regime ($|\alpha|\rho_0 < D|\mu|$): $\lambda_{+}(q)<0$ for all $q$, with $\lambda_{+}\propto -q^2$ as $q\to 0$.  Density fluctuations diffuse away and the uniform state is restored.
-%     \item In the unstable regime ($|\alpha|\rho_0 > D|\mu|$): $\lambda_{+}(q)>0$ for a band of long wavelengths $0<q<q_{\text{max}}$, with $\lambda_{+}\propto +q^2$ as $q\to 0$.  Small inhomogeneities are amplified, and the system spontaneously develops large-scale density modulations.
-% \end{itemize}
-
-% Figure~\ref{fig:dispersion} illustrates the two scenarios.  The unstable branch exhibits a maximum at a finite wavenumber $q^{*}$, implying that the instability initially selects a characteristic length scale; however, because the growth rate remains positive down to $q\to 0$, the ultimate nonlinear state typically coarsens toward ever larger structures.
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.85\textwidth]{figs/dispersion_relation.pdf} 
-%     \caption{Dispersion relation $\lambda(q)$ for the continuum chemotaxis model with $D=1$, $D_c=0.1$, $\mu=-0.5$, $\rho_0=1$.  \textbf{Left:} stable regime ($\alpha=-0.2$, $D|\mu|>|\alpha|\rho_0$); both eigenvalues are negative for all $q$.  \textbf{Right:} unstable regime ($\alpha=-1.0$, $D|\mu|<|\alpha|\rho_0$); the slow density mode $\lambda_{+}$ becomes positive at long wavelengths, signalling a linear instability of the homogeneous state.}
-%     \label{fig:dispersion}
-% \end{figure}
-
-% \paragraph{Physical interpretation.}
-% The long-wave instability in the chemorepulsive--consumption regime has a simple physical interpretation.  A local excess of particles consumes more chemical ($-\rho$), creating a local depression in $c$.  Because the particles are chemorepulsive ($\alpha<0$), they drift toward lower concentrations, i.e. toward the very region that already has an excess of particles.  This constitutes a positive feedback loop: density fluctuations seed chemical depressions, which in turn attract more particles and amplify the original fluctuation.  Diffusion competes against this feedback; the instability threshold \eqref{eq:chemorepulsion_stability} states that the effect wins when the chemotactic drift $|\alpha|\rho_0$ exceeds the diffusive damping $D|\mu|$ set by particle diffusion and chemical decay.  Notably, because the instability is strongest at $q\to 0$, the resulting clustering is large-scale and long-ranged, a feature that will be important when discussing the hyperuniform character of the density field.
+For an Ornstein-Uhlenbeck process described by the equation 
+\begin{equation}
+    \partial_t x(t) = -\lambda x(t) + \eta(t)\;,
+\end{equation}
+where $\eta(t)$ is a Gaussian white noise with zero mean and correlation $\langle \eta(t)\eta(t')\rangle = 2\Gamma\delta(t-t')$, the formal solution is 
+\begin{equation}
+    X\left( t \right) =X\left( 0 \right) \mathrm{e}^{-\lambda t}+\int_{-\infty}^t{\mathrm{e}^{-\lambda \left( t-s \right)}\eta \left( s \right) \mathrm{d}s }\;.
+\end{equation}
+After a long time, the initial condition becomes irrelevant:
+\begin{equation}
+    X\left( t \right) \approx \int_{-\infty}^t{\mathrm{e}^{-\lambda \left( t-s \right)}\eta \left( s \right) \mathrm{d}s }\;.
+\end{equation}
+The variance of $X(t)$ can be calculated as:
+\begin{equation}
+    \begin{aligned}
+        \langle X^2(t)\rangle &=\int_{-\infty}^t{\int_{-\infty}^t{\mathrm{e}^{-\lambda (2t-s-s^{\prime})}\langle \eta (s)\eta (s^{\prime})\rangle \mathrm{d}s\mathrm{d}s^{\prime}}}\\
+        &=2\Gamma \int_{-\infty}^t{e^{-2\lambda (t-s)}\mathrm{d}s}\\
+        &=\frac{\Gamma}{\lambda}\;.\\
+    \end{aligned}
+\end{equation}
 
 
+\bibliographystyle{unsrt}
+\bibliography{ref}
 
 \end{document}

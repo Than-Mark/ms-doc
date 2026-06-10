@@ -1,3 +1,6 @@
 \contentsline {section}{\numberline {1}Models}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Particle-based model}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Continuum model}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Fast chemical field approximation}{3}{subsubsection.1.2.1}%
+\contentsline {section}{\numberline {2}Appendix}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Calculation of variance for Ornstein-Uhlenbeck process}{4}{subsection.2.1}%
