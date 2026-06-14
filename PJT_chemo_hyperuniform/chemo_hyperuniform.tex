@@ -261,6 +261,70 @@ From the expression for $S(k)$, we can analyze the conditions under which the sy
 
 \section{Appendix}
 
+\subsection{Derivation of Dean's equation}
+
+The continuum equation for the particle density can be derived from the microscopic Langevin dynamics by applying It\^{o}'s formula. We start from the microscopic density
+\begin{equation}
+    \rho(\mathbf r,t) = \sum_{i=1}^{N}\delta(\mathbf r-\mathbf r_i(t)).
+    \label{eq:microscopicDensity}
+\end{equation}
+Taking the time derivative and using the chain rule gives the exact continuity equation
+\begin{equation}
+    \partial_t\rho(\mathbf r,t) = -\nabla\cdot\mathbf J(\mathbf r,t),
+\end{equation}
+where the microscopic current is
+\begin{equation}
+    \mathbf J(\mathbf r,t) = \sum_{i=1}^{N}\dot{\mathbf r}_i(t)\,\delta(\mathbf r-\mathbf r_i(t)).
+\end{equation}
+
+Substituting the particle Langevin equation into the current yields two contributions. The chemotactic drift gives
+\begin{equation}
+    \mathbf J_{\rm chemo}(\mathbf r,t) = \alpha\sum_{i=1}^{N}\nabla c(\mathbf r_i,t)\,\delta(\mathbf r-\mathbf r_i).
+\end{equation}
+Under the local-field approximation $\nabla c(\mathbf r_i,t)\approx\nabla c(\mathbf r,t)$, this becomes
+\begin{equation}
+    \mathbf J_{\rm chemo}(\mathbf r,t) \approx \alpha\rho(\mathbf r,t)\nabla c(\mathbf r,t),
+\end{equation}
+which leads to the deterministic chemotactic term in the density equation.
+
+The Brownian noise contribution requires an It\^{o} expansion. For a single particle,
+\begin{equation}
+    \mathrm{d}\delta(\mathbf r-\mathbf r_i) = -\nabla\delta(\mathbf r-\mathbf r_i)\cdot \mathrm{d}\mathbf r_i + D\nabla^2\delta(\mathbf r-\mathbf r_i)\,dt.
+\end{equation}
+The first term on the right-hand side is the stochastic contribution. Summing over all particles, it can be written as the divergence of a random current:
+\begin{equation}
+    \mathbf J_{\rm noise}(\mathbf r,t) = \sqrt{2D}\sum_{i=1}^{N}\delta(\mathbf r-\mathbf r_i)\,\boldsymbol{\xi}_i(t).
+\end{equation}
+The second term gives the diffusive contribution after summation:
+\begin{equation}
+    \sum_{i=1}^{N}D\nabla^2\delta(\mathbf r-\mathbf r_i) = D\nabla^2\rho(\mathbf r,t).
+\end{equation}
+
+The random current has the correlation
+\begin{equation}
+    \langle J_{{\rm noise},a}(\mathbf r,t)J_{{\rm noise},b}(\mathbf r',t')\rangle = 2D\rho(\mathbf r,t)\delta_{ab}\delta(\mathbf r-\mathbf r')\delta(t-t').
+\end{equation}
+It can therefore be represented by a spatio-temporal white noise field $\boldsymbol{\Lambda}(\mathbf r,t)$ with unit variance:
+\begin{equation}
+    \mathbf J_{\rm noise}(\mathbf r,t) = \sqrt{2D\rho(\mathbf r,t)}\,\boldsymbol{\Lambda}(\mathbf r,t),
+\end{equation}
+where
+\begin{equation}
+    \langle \Lambda_a(\mathbf r,t)\Lambda_b(\mathbf r',t')\rangle = \delta_{ab}\delta(\mathbf r-\mathbf r')\delta(t-t').
+\end{equation}
+
+Collecting all terms, we arrive at the Dean equation:
+\begin{equation}
+    \boxed{\partial_t\rho = -\alpha\nabla\cdot(\rho\nabla c) + D\nabla^2\rho - \nabla\cdot\left[\sqrt{2D\rho}\,\boldsymbol{\Lambda}\right].}
+    \label{eq:DeanEquation}
+\end{equation}
+
+Under the mean-field approximation, the noise term vanishes on average since $\langle\boldsymbol{\Lambda}\rangle=0$, giving the Keller-Segel type equation
+\begin{equation}
+    \partial_t\langle\rho\rangle = -\alpha\nabla\cdot(\langle\rho\rangle\nabla c) + D\nabla^2\langle\rho\rangle.
+\end{equation}
+However, this noise term must be retained when calculating fluctuation quantities such as the structure factor $S(k)$.
+
 \subsection{Calculation of variance for Ornstein-Uhlenbeck process\label{appendix:OUvariance}}
 
 For an Ornstein-Uhlenbeck process described by the equation 
