@@ -52,41 +52,41 @@
 \subsection{Particle-based model}
 \begin{subequations}
     \begin{align}
-        &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
-        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +k\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;,
+        &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }_i\left( t \right) \;,\\
+        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +k\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;,
     \end{align}
 \end{subequations}
 for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $c$ is the concentration field of the chemoattractant, $\alpha$ is the chemotactic sensitivity. If $\alpha > 0$, the particles are attracted to higher concentrations of the chemoattractant (chemoattraction/positive chemotaxis), while if $\alpha < 0$, the particles are repelled by higher concentrations of the chemoattractant (chemorepulsion/negative chemotaxis).
-$D$ is the diffusion coefficient of the particles, $\boldsymbol{\xi }$ is a Gaussian white noise with zero mean and unit variance, $D_c$ is the diffusion coefficient of the chemoattractant, $\mu$ is the decay ($\mu < 0$) or growth ($\mu > 0$) rate of the chemoattractant, and $k$ is the production ($k > 0$) or consumption rate ($k < 0$) of the chemoattractant by the particles.
+$D$ is the diffusion coefficient of the particles, $\boldsymbol{\xi }_i$ is an independent Gaussian white noise with zero mean and unit variance for each particle, $D_c$ is the diffusion coefficient of the chemoattractant, $\mu$ is the decay ($\mu < 0$) or growth ($\mu > 0$) rate of the chemoattractant, and $k$ is the production ($k > 0$) or consumption rate ($k < 0$) of the chemoattractant by the particles.
 
 For simplicity, we assume that particles are point-like and move in a two-dimensional $L \times L$ square domain with periodic boundary conditions. The initial positions of the particles can be randomly distributed, and the initial concentration field can be set to a small random perturbation around a uniform background concentration $c_0$.
 
 To reduce the parameter space, we can non-dimensionalize the equations by introducing $x_0 = L$, $t_0 = 1/k$ and $c_0$ as characteristic scales of length, time and concentration. The resulting dimensionless parameters are $\tilde{\alpha} = \frac{\alpha c_0}{L^2k}$, $\tilde{D} = \frac{D}{L^2k}$, $\tilde{D}_c = \frac{D_c}{L^2k}$, and $\tilde{\mu} = \frac{\mu}{k}$. We can omit the tildes and work with the dimensionless equations:
 \begin{subequations}
     \begin{align}
-        &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }\left( t \right) \;,\\
-        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.\label{eq:dimensionlessCplus}
+        &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }_i\left( t \right) \;,\\
+        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;.\label{eq:dimensionlessCplus}
     \end{align}
 \end{subequations}
 Note that the above equations mathematically implies the assumption of $k>0$. If $k<0$, the non-dimensionalization would be different, and the Eq.~\eqref{eq:dimensionlessCplus} would have a negative sign in front of the summation term:
 \begin{equation}
-    \frac{\partial}{\partial t} c\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) -\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}\;.
+    \frac{\partial}{\partial t} c\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) -\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;.
 \end{equation}
-In the following, we will focus on the case of $k<0$ (chemorepulsion/negative chemotaxis), which is more relevant to the emergence of hyperuniformity.
+In the following, we focus on the case $k<0$, corresponding to chemical consumption. For $\alpha>0$, consumption lowers the chemical concentration around particles and thereby generates an effective repulsion between them, which is more relevant to the suppression of density fluctuations.
 
 As shown in the snapshots, the case of production ($k>0$) leads to aggregation of particles and formation of dense clusters, while the case of consumption ($k<0$) leads to dispersion of particles and formation of more uniform distributions. The latter case is more likely to exhibit hyperuniformity.
 
 \begin{figure}[htbp]
     \centering
-    \subcaptionbox{Production [$\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}$]}[0.49\linewidth]{
+    \subcaptionbox{Production [$\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}$]}[0.49\linewidth]{
       \includegraphics[width=\linewidth]{figs/particle_snapshot_k1.pdf}
     }
     \hfill
-    \subcaptionbox{Consumption [$-\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_i\left( t \right) \right)}$]}[0.49\linewidth]{
+    \subcaptionbox{Consumption [$-\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}$]}[0.49\linewidth]{
       \includegraphics[width=\linewidth]{figs/particle_snapshot_k-1.pdf}
     }
     \caption{
-        Snapshots of particle configurations for (a) production and (b) consumption of chemoattractant. The parameters are $\alpha=0.5$, $D=0.001$, $D_c=0.1$, $\mu=-0.001$, and $N=2000$ particles in an $L=20$ domain. 
+        Snapshots of particle configurations for (a) production and (b) consumption of chemoattractant. The parameters are $\alpha=5$, $D=0.0001$, $D_c=5$, $\mu=-0.0001$, and $N=6400$ particles in an $L=20$ domain. 
         % The background color represents the concentration field $c(\mathbf{r},t)$, with colorbar indicating the concentration level.
         The positions and velocity direction of the particles are shown as arrows.
     }
@@ -132,19 +132,28 @@ Introducing these perturbations into Eqs.~\eqref{eq:stochasticKSmodel} gives us 
 
 By performing Fourier transform on the linearized equations, we can analyze the growth rates of different modes and determine the conditions for instability. The presence of noise can lead to fluctuations that may drive the system towards hyperuniform states, even in regimes where the mean-field analysis predicts stability. Therefore, it is essential to consider the full stochastic dynamics to understand the emergence of hyperuniformity in chemotactic active matter.
 
-We take the Fourier expansion under periodic boundary conditions:
+Let $V=L^d$ denote the system volume. Under periodic boundary conditions, the allowed wavevectors are $\mathbf{k}=2\pi\mathbf{n}/L$. We use the symmetric Fourier convention
+\begin{subequations}
+    \begin{align}
+        \delta\rho(\mathbf r,t)&=\frac{1}{\sqrt V}\sum_{\mathbf k}\delta\rho_{\mathbf k}(t)e^{\mathrm{i}\mathbf k\cdot\mathbf r},
+        &\delta\rho_{\mathbf k}(t)&=\frac{1}{\sqrt V}\int_V \mathrm d\mathbf r\,e^{-\mathrm{i}\mathbf k\cdot\mathbf r}\delta\rho(\mathbf r,t),\\
+        \delta c(\mathbf r,t)&=\frac{1}{\sqrt V}\sum_{\mathbf k}\delta c_{\mathbf k}(t)e^{\mathrm{i}\mathbf k\cdot\mathbf r},
+        &\delta c_{\mathbf k}(t)&=\frac{1}{\sqrt V}\int_V \mathrm d\mathbf r\,e^{-\mathrm{i}\mathbf k\cdot\mathbf r}\delta c(\mathbf r,t).
+    \end{align}
+    \label{eq:FourierConvention}
+\end{subequations}
+The factor $1/\sqrt V$ is chosen so that the Fourier-space density covariance has the same units as the mean number density. With this convention, the corresponding Fourier component of the white-noise field is
 \begin{equation}
-    \delta \rho (\mathbf{r},t)=\sum_{\mathbf{k}}{\delta \rho _{\mathbf{k}}(t)e^{\mathrm{i}\mathbf{k}\cdot \mathbf{r}},\quad \delta c(\mathbf{r},t)}=\sum_{\mathbf{k}}{\delta c_{\mathbf{k}}(t)e^{\mathrm{i}\mathbf{k}\cdot \mathbf{r}}}\;.
+    \boldsymbol{\Lambda}_{\mathbf k}(t)=\frac{1}{\sqrt V}\int_V\mathrm d\mathbf r\,
+    e^{-\mathrm{i}\mathbf k\cdot\mathbf r}\boldsymbol{\Lambda}(\mathbf r,t),
 \end{equation}
-Equivalently, it can also be written as a continuous Fourier transform:
+and
 \begin{equation}
-    \delta \rho _{\mathbf{k}}(t)=\int{\mathrm{e}^{-\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\delta \rho \left( \mathbf{r},t \right) \mathrm{d}\mathbf{k}},\quad \delta c_{\mathbf{k}}(t)=\int{\mathrm{e}^{-\mathrm{i}\mathbf{k}\cdot \mathbf{r}}\delta c\left( \mathbf{r},t \right) \mathrm{d}\mathbf{k}}\;.
+    \nabla\cdot\left[\sqrt{2D\rho_0}\boldsymbol{\Lambda}(\mathbf r,t)\right]
+    =\frac{1}{\sqrt V}\sum_{\mathbf k}\mathrm{i}\mathbf k\cdot
+    \sqrt{2D\rho_0}\boldsymbol{\Lambda}_{\mathbf k}(t)e^{\mathrm{i}\mathbf k\cdot\mathbf r}.
 \end{equation}
-The specific normalization factor does not affect the symbol structure here. There is a subtlety in the Fourier transform of the noise term, which can be expressed as:
-\begin{equation}
-    \nabla \cdot \left[ \sqrt{2D\rho _0}\boldsymbol{\Lambda } \right] = \sum_{\mathbf{k}}{\mathrm{i}\mathbf{k} \cdot \sqrt{2D\rho_0}\boldsymbol{\Lambda}_{\mathbf{k}}}\;.
-\end{equation}
-After Fourier transform, the linearized equations become:
+After the Fourier transform, the linearized equations become:
 \begin{subequations}
     \begin{align}
         \frac{\partial}{\partial t}\delta \rho _{\mathbf{k}}&=-Dk^2\delta \rho _{\mathbf{k}}+\alpha \rho _0k^2\delta c_{\mathbf{k}}+\eta _{\mathbf{k}}\;,\label{eq:FourierLinearizedKSmodel1}\\
@@ -152,10 +161,13 @@ After Fourier transform, the linearized equations become:
     \end{align}
     \label{eq:FourierLinearizedKSmodel}
 \end{subequations}
-where $\eta _{\mathbf{k}}=-\mathrm{i}\mathbf{k} \cdot \sqrt{2D\rho_0}\boldsymbol{\Lambda}_{\mathbf{k}}$. The noise term $\eta _{\mathbf{k}}$ has zero mean and its correlation can be calculated as follows:
+where $\eta_{\mathbf k}=-\mathrm{i}\mathbf k\cdot\sqrt{2D\rho_0}\boldsymbol{\Lambda}_{\mathbf k}$. The noise has zero mean and covariance
 \begin{equation}
-    \langle \eta _{\mathbf{k}}(t)\eta _{\mathbf{k}'}(t')\rangle = 2D\rho_0 k^2 \delta(t-t')\;.
+    \left\langle\eta_{\mathbf k}(t)\eta_{\mathbf k'}(t')\right\rangle
+    =2D\rho_0k^2\,\delta_{\mathbf k,-\mathbf k'}\delta(t-t').
+    \label{eq:FourierNoiseCorrelation}
 \end{equation}
+Thus, for the conjugate pair $\mathbf k'=-\mathbf k$, the noise strength entering the covariance of a single mode is $2D\rho_0k^2$. In a continuous Fourier convention, the Kronecker delta is replaced by the corresponding Dirac delta in wavevector space.
 Eqs.~\eqref{eq:FourierLinearizedKSmodel} can be rewritten in matrix form as
 \begin{equation}
     \partial _t\left[ \begin{array}{c}
@@ -199,65 +211,135 @@ Therefore, the homogeneous state is linearly stable if $\mu < \min\{(D+D_c)k^2, 
 \end{equation}
 However, even in the stable regime, fluctuations can still play a significant role in shaping the spatial distribution of particles, which is crucial for understanding the emergence of hyperuniformity.
 
-\subsubsection{Structure factor}
-In the limit of fast chemical diffusion, we can assume that the chemical field $c$ quickly reaches a quasi-steady state, which allows us to eliminate $c$ from the equations. Setting $\frac{\partial}{\partial t}\delta c_{\mathbf{k}} \approx 0$ in Eq.~\eqref{eq:FourierLinearizedKSmodel} gives us:
+\subsubsection{Density spectrum and normalized structure factor}
+
+Before calculating the fluctuation spectrum, it is important to distinguish two closely related quantities. With the Fourier convention in Eq.~\eqref{eq:FourierConvention}, define the density covariance spectrum
 \begin{equation}
-    \delta c_{\mathbf{k}} \approx -\frac{\delta \rho _{\mathbf{k}}}{D_ck^2-\mu}\;.
+    C_{\rho\rho}(k)\equiv
+    \left\langle\delta\rho_{\mathbf k}\delta\rho_{-\mathbf k}\right\rangle,
+    \label{eq:densityCovarianceSpectrum}
 \end{equation}
-Substituting this back into the equation for $\delta \rho _{\mathbf{k}}$
-yields:
+and the conventional dimensionless structure factor
 \begin{equation}
-    \partial_t\delta\rho_{\mathbf k} = - k^2 \left[ D+ \frac{\alpha\rho_0}{D_c k^2-\mu} \right] \delta\rho_{\mathbf k} + \eta_{\mathbf k}\;.
+    S(k)\equiv\frac{C_{\rho\rho}(k)}{\rho_0}.
+    \label{eq:normalizedStructureFactor}
 \end{equation}
-Define effective diffusion coefficient $D_{\mathrm{eff}}(k) = D + \frac{\alpha\rho_0}{D_c k^2 - \mu}$, we can rewrite the equation as:
+For a microscopic point configuration and a nonzero allowed wavevector, this definition is equivalent to
 \begin{equation}
-    \partial_t\delta\rho_{\mathbf k} = - k^2 D_{\mathrm{eff}}(k) \delta\rho_{\mathbf k} + \eta_{\mathbf k}\;.
+    S(k)=\frac{1}{N}\left\langle
+    \left|\sum_{j=1}^{N}e^{-\mathrm{i}\mathbf k\cdot\mathbf r_j}\right|^2
+    \right\rangle.
 \end{equation}
-This equation is an Ornstein-Uhlenbeck process, and we can calculate the steady-state structure factor, which is the variance of density fluctuations at wavevector $\mathbf{k}$, using the formula for the variance of an Ornstein-Uhlenbeck process (see Appendix~\ref{appendix:OUvariance}):
+Consequently, a homogeneous Poisson point process has
 \begin{equation}
-    S(k) = \langle \delta \rho _{\mathbf{k}}\delta \rho _{-\mathbf{k}}\rangle = \frac{2D\rho_0 k^2}{2 k^2 D_{\mathrm{eff}}(k)} = \frac{D\rho_0}{D + \frac{\alpha\rho_0}{D_c k^2 - \mu}}\;.
+    C_{\rho\rho}^{\mathrm P}(k)=\rho_0,
+    \qquad S^{\mathrm P}(k)=1,
+    \qquad \mathbf k\neq\mathbf 0.
+\end{equation}
+The strictly zero mode is excluded: in a system with fixed particle number, it is constrained by number conservation, whereas hyperuniformity concerns the limit $k\to0$ through nonzero wavevectors.
+
+In the limit in which the chemical field relaxes sufficiently rapidly compared with the density mode, we may set $\partial_t\delta c_{\mathbf k}\approx0$ in Eq.~\eqref{eq:FourierLinearizedKSmodel}, obtaining
+\begin{equation}
+    \delta c_{\mathbf k}\approx-\frac{\delta\rho_{\mathbf k}}{D_ck^2-\mu}.
+\end{equation}
+Substitution into the density equation gives
+\begin{equation}
+    \partial_t\delta\rho_{\mathbf k}
+    =-k^2\left[D+\frac{\alpha\rho_0}{D_ck^2-\mu}\right]\delta\rho_{\mathbf k}
+    +\eta_{\mathbf k}.
+\end{equation}
+Defining
+\begin{equation}
+    D_{\mathrm{eff}}(k)=D+\frac{\alpha\rho_0}{D_ck^2-\mu},
+\end{equation}
+we obtain an Ornstein--Uhlenbeck process with relaxation rate $k^2D_{\mathrm{eff}}(k)$. Using Appendix~\ref{appendix:OUvariance}, its steady-state density covariance is
+\begin{equation}
+    C_{\rho\rho}^{\mathrm{qs}}(k)
+    =\frac{2D\rho_0k^2}{2k^2D_{\mathrm{eff}}(k)}
+    =\frac{D\rho_0}{D+\dfrac{\alpha\rho_0}{D_ck^2-\mu}},
+    \label{eq:densitySpectrumFastC}
+\end{equation}
+and therefore the normalized structure factor is
+\begin{equation}
+    \boxed{
+    S_{\mathrm{qs}}(k)
+    =\frac{C_{\rho\rho}^{\mathrm{qs}}(k)}{\rho_0}
+    =\frac{D}{D+\dfrac{\alpha\rho_0}{D_ck^2-\mu}}
+    }.
     \label{eq:structureFactorFastC}
 \end{equation}
-Here, the structure factor $S(k)$ can be interpreted as a noise–relaxation balance. The numerator $2D\rho_0 k^2$ represents the strength of the noise driving the fluctuations, while the denominator $2 k^2 D_{\mathrm{eff}}(k)$ represents the relaxation rate of the fluctuations due to diffusion and chemotactic interactions.  
+The numerator of the covariance calculation represents the strength $2D\rho_0k^2$ of the conserved Dean noise, while the denominator contains twice the relaxation rate. The normalization in Eq.~\eqref{eq:normalizedStructureFactor} removes the Poisson density scale. In particular, setting $\alpha=0$ gives $S(k)=1$, as required for independent Brownian particles.
 
-In an infinitely large system, the behavior of $S(k)$ as $k \to 0$ is crucial for determining whether the system is hyperuniform. Hyperuniformity is characterized by the suppression of density fluctuations at large scales, which corresponds to $S(k) \to 0$ as $k \to 0$ \cite{TORQUATO20181}. From Eq.~\eqref{eq:structureFactorFastC}, we can analyze the limit
+For fixed $\mu<0$, the long-wavelength limit of Eq.~\eqref{eq:structureFactorFastC} is
 \begin{equation}
-    \lim_{k\rightarrow 0} S\left( k \right) = S_0 = \frac{D\rho_0}{D - \frac{\alpha\rho_0}{\mu}}\;.
+    S_0\equiv\lim_{k\to0}S_{\mathrm{qs}}(k)
+    =\frac{D}{D-\dfrac{\alpha\rho_0}{\mu}}
+    =\frac{D|\mu|}{D|\mu|+\alpha\rho_0}.
     \label{eq:Sk0FastC}
 \end{equation}
-For the stable regime where $\mu < 0$ and $\alpha > 0$, $S_0$ is lower than the value of $S(k)$ for a Poisson process (which is $S(k) = \rho_0$ for all $k$), indicating that the system exhibits suppressed density fluctuations at large scales. However, $S_0$ is not zero, which means that the system is not perfectly hyperuniform. Instead, it is a ``hyperuniform-like" state where density fluctuations are reduced but not completely eliminated at large scales.
-
-If we do not assume fast chemical diffusion, we can solve the full two-dimensional linear Ornstein-Uhlenbeck system given by Eq.~\eqref{eq:matrixFormLinearizedKSmodel} to obtain the structure factor $S(k)$. The detailed calculation is provided in Appendix~\ref{appendix:LyapunovSk}, and the final expression for $S(k)$ is given by
+Hence, in the stable regime $\mu<0$ and $\alpha>0$,
 \begin{equation}
-    S(k) = D\rho_0 k^2 \frac{ Dk^2(D_ck^2-\mu) + \alpha\rho_0k^2 + (D_ck^2-\mu)^2 } { D^2k^4(D_ck^2-\mu) + D\alpha\rho_0k^4 + Dk^2(D_ck^2-\mu)^2 + \alpha\rho_0k^2(D_ck^2-\mu) }\;.
+    0<S_0<1.
 \end{equation}
-This expression appears complicated, but it can be simplified into the same form as Eq.~\eqref{eq:Sk0FastC} when $k \to 0$, which confirms the consistency between the complete linear result and the fast chemical field approximation in the long-wavelength limit. The full expression for $S(k)$ also allows us to analyze the behavior of density fluctuations at intermediate and large wavevectors, which can provide insights into the spatial structure of the system at different length scales.
+The large-scale fluctuations are suppressed relative to a Poisson process, but the nonzero plateau means that the state is not strictly hyperuniform.
 
-\subsubsection{Hyperuniformity}
-From the expression for $S(k)$, we can analyze the conditions under which the system exhibits hyperuniformity. In the stable regime where $\mu < 0$ and $\alpha > 0$, we have $S_0 > 0$, which means that the system is not perfectly hyperuniform. However, we can achieve a state that is close to hyperuniform by tuning the parameters to following three conditions:
-\begin{itemize}
-    \item $D \to 0$, which means that the particles do not diffuse on their own and their movement is solely driven by chemotactic interactions. But the Dean-noise term also vanishes in this limit, and the linear steady-state fluctuations naturally tend to zero. This is a trivial way to achieve hyperuniformity, where deterministic exclusion gradually smooths out initial fluctuations without continuous noise injection.
-    
-    \item $\mu \to 0^-$ and the chemical field is in a quasi-static state. If $\mu$ is close to zero, the chemical field satisfies a Poisson-like equation
-    \begin{equation}
-        0 \approx D_c\nabla^2 c - \rho\;,
-    \end{equation}
-    which means that the chemical field is directly determined by the particle density distribution. In this case, 
-    \begin{equation}
-        \delta c_{\mathbf k} \sim -\frac{\delta\rho_{\mathbf k}}{D_ck^2}\;.
-    \end{equation}
-    Introducing this into Eq.~\eqref{eq:FourierLinearizedKSmodel1} gives us
-    \begin{equation}
-        \partial_t\delta\rho_{\mathbf k} \sim -\frac{\alpha\rho_0}{D_c}\delta\rho_{\mathbf k} +\eta_{\mathbf k}\;,
-    \end{equation}
-    which is an Ornstein-Uhlenbeck process with a $k$-independent relaxation rate, with the structure factor
-    \begin{equation}
-        S\left( k \right) =\langle \delta \rho _{\mathbf{k}}\delta \rho _{-\mathbf{k}}\rangle =\frac{\Gamma _k}{\lambda _k}\sim k^2\;,
-    \end{equation}
-    which indicates that the system is hyperuniform with class I scaling.
-    
-    Physically, when $\mu$ is close to zero, the chemical field can be regarded as a long-range field that mediates effective long-range interactions between particles. This can lead to strong suppression of density fluctuations at large scales, resulting in hyperuniformity. 
-\end{itemize}
+Without the quasi-steady approximation, the full two-component Ornstein--Uhlenbeck system in Eq.~\eqref{eq:matrixFormLinearizedKSmodel} can be solved using the Lyapunov equation. As derived in Appendix~\ref{appendix:LyapunovSk}, the normalized structure factor is
+\begin{equation}
+    \boxed{
+    S_{\mathrm{full}}(k)=
+    D\,
+    \frac{\alpha\rho_0k^2+(D_ck^2-\mu)\left[(D+D_c)k^2-\mu\right]}
+    {\left[(D+D_c)k^2-\mu\right]\left[D(D_ck^2-\mu)+\alpha\rho_0\right]}
+    }.
+    \label{eq:SkFullMain}
+\end{equation}
+This expression satisfies the consistency checks $S_{\mathrm{full}}(k)=1$ when $\alpha=0$ and $S_{\mathrm{full}}(k)\to1$ as $k\to\infty$. For any fixed $\mu<0$, its $k\to0$ limit is exactly Eq.~\eqref{eq:Sk0FastC}. The point $\mu=0$, however, is singular and must be treated separately because the chemical relaxation rate $D_ck^2-\mu$ then also vanishes as $k\to0$.
+
+\subsubsection{Hyperuniformity and the order of limits}
+
+A statistically homogeneous point pattern is hyperuniform when its conventional structure factor satisfies
+\begin{equation}
+    \lim_{k\to0}S(k)=0.
+\end{equation}
+For every fixed $\mu<0$ and finite $D>0$, Eq.~\eqref{eq:Sk0FastC} gives a positive long-wavelength plateau. Thus the present linear theory predicts suppressed, but not strictly hyperuniform, density fluctuations in that parameter regime.
+
+Two singular limits require special care. First, $D\to0$ removes both ordinary particle diffusion and the Dean-noise amplitude. The resulting disappearance of steady-state fluctuations is therefore a trivial zero-noise limit rather than a nontrivial fluctuation-suppression mechanism.
+
+Second, if one imposes a quasi-static chemical field and then sets $\mu=0$, Eq.~\eqref{eq:structureFactorFastC} becomes
+\begin{equation}
+    S_{\mathrm{qs}}(k)
+    =\frac{DD_ck^2}{DD_ck^2+\alpha\rho_0}
+    \underset{k\to0}{\sim}
+    \frac{DD_c}{\alpha\rho_0}k^2.
+    \label{eq:SkQuasiStaticMuZero}
+\end{equation}
+Within this instantaneous, elliptic-field approximation, the model displays class-I hyperuniform scaling. However, this conclusion cannot be transferred directly to the full dynamical chemical field. At $\mu=0$, the chemical relaxation rate is $D_ck^2$, which vanishes at long wavelength; therefore the chemical field is not a fast variable in the limit $k\to0$, and the adiabatic elimination used above ceases to be uniformly valid.
+
+Setting $\mu=0$ directly in the full result, Eq.~\eqref{eq:SkFullMain}, gives
+\begin{equation}
+    S_{\mathrm{full}}(k;\mu=0)
+    =\frac{D}{D+D_c}
+    \frac{\alpha\rho_0+D_c(D+D_c)k^2}
+    {\alpha\rho_0+DD_ck^2},
+    \label{eq:SkFullMuZero}
+\end{equation}
+so that
+\begin{equation}
+    \lim_{k\to0}S_{\mathrm{full}}(k;\mu=0)
+    =\frac{D}{D+D_c}>0.
+\end{equation}
+The limits $k\to0$ and $\mu\to0^-$ therefore do not commute:
+\begin{equation}
+    \lim_{\mu\to0^-}\lim_{k\to0}S_{\mathrm{full}}(k)=0,
+    \qquad
+    \lim_{k\to0}\lim_{\mu\to0^-}S_{\mathrm{full}}(k)=\frac{D}{D+D_c}.
+    \label{eq:NoncommutingLimits}
+\end{equation}
+For small but nonzero $|\mu|$, a natural crossover wave number is
+\begin{equation}
+    k_\mu\sim\sqrt{\frac{|\mu|}{D_c}}.
+\end{equation}
+At $k\ll k_\mu$, the structure factor approaches the finite plateau in Eq.~\eqref{eq:Sk0FastC}. Over a finite intermediate range above this crossover, the spectrum may show an apparent $k^2$-like suppression if the chemical field is sufficiently fast, but this should be described as finite-scale or ``hyperuniform-like'' behavior rather than strict asymptotic hyperuniformity.
 
 \section{Appendix}
 
@@ -348,85 +430,107 @@ The variance of $X(t)$ can be calculated as:
     \end{aligned}
 \end{equation}
 
-\subsection{Structure factor from Lyapunov equation}
+\subsection{Structure factor from the Lyapunov equation}
 \label{appendix:LyapunovSk}
 
-The complete expression for $S(k)$ can be obtained directly from the steady-state covariance equation of the two-dimensional linear Ornstein-Uhlenbeck system, i.e., the Lyapunov equation. We start from the Fourier-space linearized system in matrix form:
+The complete density covariance follows from the steady-state covariance equation of the two-dimensional linear Ornstein--Uhlenbeck system,
 \begin{equation}
-    \frac{d}{dt}\begin{pmatrix} \delta\rho_{\mathbf k}\\ \delta c_{\mathbf k} \end{pmatrix} = A(k)\begin{pmatrix} \delta\rho_{\mathbf k}\\ \delta c_{\mathbf k} \end{pmatrix} + \begin{pmatrix} \eta_{\mathbf k}\\ 0 \end{pmatrix},
+    \frac{\mathrm d}{\mathrm dt}
+    \begin{pmatrix}\delta\rho_{\mathbf k}\\ \delta c_{\mathbf k}\end{pmatrix}
+    =A(k)\begin{pmatrix}\delta\rho_{\mathbf k}\\ \delta c_{\mathbf k}\end{pmatrix}
+    +\begin{pmatrix}\eta_{\mathbf k}\\0\end{pmatrix},
 \end{equation}
 where
 \begin{equation}
-    A(k)=\begin{pmatrix} -Dk^2 & \alpha\rho_0k^2\\ -1 & -(D_ck^2-\mu) \end{pmatrix}.
+    A(k)=\begin{pmatrix}
+        -Dk^2 & \alpha\rho_0k^2\\
+        -1 & -(D_ck^2-\mu)
+    \end{pmatrix}.
 \end{equation}
-To simplify the notation, we define
+Introduce
 \begin{equation}
-    a=Dk^2,\quad b=\alpha\rho_0k^2,\quad q=D_ck^2-\mu,\quad \Gamma=D\rho_0k^2,
+    a=Dk^2,
+    \qquad b=\alpha\rho_0k^2,
+    \qquad q=D_ck^2-\mu,
+    \qquad \Gamma=D\rho_0k^2,
 \end{equation}
 so that
 \begin{equation}
-    A=\begin{pmatrix} -a & b\\ -1 & -q \end{pmatrix},
+    A=\begin{pmatrix}-a&b\\-1&-q\end{pmatrix},
+    \qquad
+    Q=\begin{pmatrix}2\Gamma&0\\0&0\end{pmatrix}.
 \end{equation}
-and the noise covariance matrix is
-\begin{equation}
-    Q=\begin{pmatrix} 2\Gamma & 0\\ 0 & 0 \end{pmatrix}.
-\end{equation}
+Here $Q$ is the covariance matrix of the additive noise for the conjugate pair $\mathbf k$ and $-\mathbf k$.
 
-Defining covariance matrix $C$ in component form as
+Write the steady covariance matrix as
 \begin{equation}
-    C=\begin{pmatrix} x & y\\ y & z \end{pmatrix},
+    C=\begin{pmatrix}x&y\\y&z\end{pmatrix},
 \end{equation}
-where $x=\langle \delta \rho _{\mathbf{k}}\delta \rho _{-\mathbf{k}}\rangle =S(k)$, $y=\langle \delta \rho _{\mathbf{k}}\delta c_{-\mathbf{k}}\rangle $, $z=\langle \delta c_{\mathbf{k}}\delta c_{-\mathbf{k}}\rangle $. The Lyapunov equation for the steady-state covariance is given by
+where
 \begin{equation}
-    AC + CA^T + Q = 0\;,
+    x=\left\langle\delta\rho_{\mathbf k}\delta\rho_{-\mathbf k}\right\rangle
+    =C_{\rho\rho}(k)=\rho_0S(k).
+    \label{eq:xIsDensityCovariance}
+\end{equation}
+The Lyapunov equation
+\begin{equation}
+    AC+CA^T+Q=0
     \label{eq:Lyapunov}
 \end{equation}
-which can be explicitly written as three independent algebraic equations:
+produces
 \begin{subequations}
     \begin{align}
-        &ax-by = \Gamma\;,\label{eq:Lyap1}\\
-        &x+(a+q)y-bz = 0\;,\label{eq:Lyap2}\\
-        &y = -qz\;.\label{eq:Lyap3}
+        ax-by&=\Gamma,\label{eq:Lyap1}\\
+        x+(a+q)y-bz&=0,\label{eq:Lyap2}\\
+        y&=-qz.\label{eq:Lyap3}
     \end{align}
 \end{subequations}
-
-From Eq.~\eqref{eq:Lyap3} we have $z=-y/q$. Substituting into Eq.~\eqref{eq:Lyap2} gives
+Using $z=-y/q$ in Eq.~\eqref{eq:Lyap2} gives
 \begin{equation}
     y=-\frac{xq}{q(a+q)+b}.
 \end{equation}
-Inserting this into Eq.~\eqref{eq:Lyap1} and solving for $x$, we obtain
+Substitution into Eq.~\eqref{eq:Lyap1} then yields
 \begin{equation}
-    x=\Gamma\,\frac{q(a+q)+b}{(a+q)(aq+b)}.
+    x=\Gamma\,
+    \frac{q(a+q)+b}{(a+q)(aq+b)}.
+    \label{eq:DensityCovarianceLyapunov}
 \end{equation}
-Since $x=S(k)$, the structure factor reads
+Because $S(k)=x/\rho_0$, the normalized structure factor is
 \begin{equation}
-    S(k)=\Gamma\,\frac{q(a+q)+b}{(a+q)(aq+b)}\;.
-    \label{eq:SkLyapunov}
+    S(k)=\frac{\Gamma}{\rho_0}\,
+    \frac{q(a+q)+b}{(a+q)(aq+b)}.
 \end{equation}
-
-Substituting back the original variables $a$, $b$, $q$, and $\Gamma$, we arrive at the final expression:
+Substituting the original variables and cancelling the common factor $k^2$ gives
 \begin{equation}
-    S(k)=D\rho_0k^2\,\frac{\alpha\rho_0k^2+(D_ck^2-\mu)\left[(D+D_c)k^2-\mu\right]}{\left[(D+D_c)k^2-\mu\right]\left[Dk^2(D_ck^2-\mu)+\alpha\rho_0k^2\right]}\;.
+    \boxed{
+    S(k)=D\,
+    \frac{\alpha\rho_0k^2+(D_ck^2-\mu)\left[(D+D_c)k^2-\mu\right]}
+    {\left[(D+D_c)k^2-\mu\right]\left[D(D_ck^2-\mu)+\alpha\rho_0\right]}
+    }.
     \label{eq:SkFull}
 \end{equation}
-The denominator and numerator of Eq.~\eqref{eq:SkFull} can be expanded as
-\begin{align}
-    &\text{Denominator: }D^2k^4(D_ck^2-\mu)+D\alpha\rho_0k^4+Dk^2(D_ck^2-\mu)^2+\alpha\rho_0k^2(D_ck^2-\mu)\;,\\
-    &\text{Numerator: }Dk^2(D_ck^2-\mu)+(D_ck^2-\mu)^2+\alpha\rho_0k^2\;.
-\end{align}
-Equation~\eqref{eq:SkFull} is valid only when the linear system is stable, i.e., both eigenvalues of $A(k)$ have negative real parts. The stability conditions are
+The corresponding unnormalized density spectrum is simply
 \begin{equation}
-    a+q>0,\quad aq+b>0,
+    C_{\rho\rho}(k)=\rho_0S(k).
 \end{equation}
-which, in terms of the original parameters, read
+Equation~\eqref{eq:SkFull} immediately gives $S(k)=1$ for $\alpha=0$, confirming the Poisson normalization, and it approaches unity at large $k$. For fixed $\mu<0$,
 \begin{equation}
-    (D+D_c)k^2-\mu>0,\quad Dk^2(D_ck^2-\mu)+\alpha\rho_0k^2>0\;.
+    \lim_{k\to0}S(k)
+    =\frac{D}{D-\dfrac{\alpha\rho_0}{\mu}}.
 \end{equation}
-Equivalently,
+For $\mu=0$, the separate expression in Eq.~\eqref{eq:SkFullMuZero} must be used when discussing the long-wavelength limit.
+
+Equation~\eqref{eq:SkFull} is valid only when both eigenvalues of $A(k)$ have negative real parts. The stability conditions are
 \begin{equation}
-    \mu<(D+D_c)k^2,\quad \alpha\rho_0+D(D_ck^2-\mu)>0\;.
+    a+q>0,
+    \qquad aq+b>0,
 \end{equation}
-If these conditions are not satisfied, the Lyapunov equation does not admit a positive-definite steady-state solution, and the structure factor is not well-defined as a steady-state quantity.
+which are equivalent to
+\begin{equation}
+    (D+D_c)k^2-\mu>0,
+    \qquad D(D_ck^2-\mu)+\alpha\rho_0>0
+\end{equation}
+for nonzero $k$. If these conditions fail, the Lyapunov equation does not describe a stationary positive-definite covariance, and a steady-state structure factor is not defined within the linear theory.
 
 \bibliographystyle{unsrt}
 \bibliography{ref}

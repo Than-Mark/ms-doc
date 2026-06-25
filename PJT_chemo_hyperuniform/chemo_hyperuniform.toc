@@ -1,9 +1,9 @@
 \contentsline {section}{\numberline {1}Models}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Particle-based model}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Continuum model}{2}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Structure factor}{4}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Hyperuniformity}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Density spectrum and normalized structure factor}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Hyperuniformity and the order of limits}{5}{subsubsection.1.2.2}%
 \contentsline {section}{\numberline {2}Appendix}{6}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Derivation of Dean's equation}{6}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Calculation of variance for Ornstein-Uhlenbeck process}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Structure factor from Lyapunov equation}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Structure factor from the Lyapunov equation}{8}{subsection.2.3}%
