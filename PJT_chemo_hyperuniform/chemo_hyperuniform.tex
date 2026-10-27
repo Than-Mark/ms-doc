@@ -720,7 +720,7 @@ At small argument, one can expand $J_0(u)=1-u^2/4+u^4/64+O(u^6)$ and integrate t
     +O((kd_c)^6)\right].
     \label{eq:ffKernelSmall}
 \end{equation}
-At large argument, $F(x)=1+O(x^{-1/2})$, with an oscillatory correction from the sharp sensing boundary. Consequently,
+At large argument, $F(x)=1+O(x^{-1/2})$, with an oscillatory correction from the sharp sensing boundary (For details, see Appendix~\ref{appendix:ffIntegratedKernel}). Consequently,
 \begin{equation}
     \widehat K_{d_c}(k)=\frac1k[1+O((kd_c)^{-1/2})],
     \qquad d_c^{-1}\ll k\ll a^{-1}.
@@ -745,23 +745,23 @@ If $B\gg1$, there is a separated interval
 \end{equation}
 One must also impose the microscopic and continuum upper cutoffs. In this interval the relaxation rate is $\lambda\simeq\rho_0gk$, whereas the conserved noise power remains proportional to $k^2$. Their ratio gives the exponent one. This is the same noise-versus-relaxation methodology as the chemotaxis example, but here the nonlocal response is instantaneous by definition, so no slow chemical mode is eliminated.
 
-\paragraph{Fixed finite sensing radius.}
-For any fixed finite $d_c$ and finite regular coefficients, the actual $k\to0$ prediction is
-\begin{align}
-    S_0&=\frac{1}{1+B}>0,\\
-    S(k)&=\frac{1}{1+B}
-    \left[1+\frac{B}{12(1+B)}(kd_c)^2+O((kd_c)^4)\right].
-    \label{eq:ffPlateau}
-\end{align}
-Thus the linear closure predicts a suppressed plateau followed, when $B\gg1$, by a $k$-like interval, and eventually a return toward $S=1$. The local logarithmic slope approaches zero at the smallest $k$, even if it is close to one over a broad accessible interval. The observation of $S\sim k$ at finite size is therefore consistent with this mechanism without establishing asymptotic hyperuniformity. This conclusion concerns the homogeneous linear theory; it is not a no-go theorem for nonlinear or absorbing-state mechanisms.
+% \paragraph{Fixed finite sensing radius.}
+% For any fixed finite $d_c$ and finite regular coefficients, the actual $k\to0$ prediction is
+% \begin{align}
+%     S_0&=\frac{1}{1+B}>0,\\
+%     S(k)&=\frac{1}{1+B}
+%     \left[1+\frac{B}{12(1+B)}(kd_c)^2+O((kd_c)^4)\right].
+%     \label{eq:ffPlateau}
+% \end{align}
+% Thus the linear closure predicts a suppressed plateau followed, when $B\gg1$, by a $k$-like interval, and eventually a return toward $S=1$. The local logarithmic slope approaches zero at the smallest $k$, even if it is close to one over a broad accessible interval. The observation of $S\sim k$ at finite size is therefore consistent with this mechanism without establishing asymptotic hyperuniformity. This conclusion concerns the homogeneous linear theory; it is not a no-go theorem for nonlinear or absorbing-state mechanisms.
 
-\paragraph{An unscreened limit needs a defined background.}
-Formally $\widehat K_\infty(k)=1/k$ for $k>0$, which gives $S=k/(k+k_*)$ and class-II hyperuniformity. However, the same unnormalized kernel has $\bar P=\rho_0d_c\to\infty$. It is inconsistent to send $d_c\to\infty$ while silently keeping $\bar D$ and $g$ fixed for an arbitrary prescribed response law. A well-defined extension can instead sense deviations from a reference background,
-\begin{equation}
-    P_{\rm ref}(\mathbf r)=P_b+
-    \int K_{d_c}(|\mathbf r-\mathbf r'|)[\rho(\mathbf r')-\rho_0]\,\mathrm d^2r',
-\end{equation}
-with $D(P_b)>0$ and $D'(P_b)>0$, or specify a family of response laws with a controlled operating point. Only when this limit retains a positive finite $k_*$ does the above formal exponent describe asymptotic hyperuniformity. Such background subtraction is an additional model choice. For the original bounded threshold law at fixed $P_{\rm th}$, increasing $d_c$ can instead saturate the response on the $D_{\max}$ branch and destroy the susceptibility needed for the $k$ regime.
+% \paragraph{An unscreened limit needs a defined background.}
+% Formally $\widehat K_\infty(k)=1/k$ for $k>0$, which gives $S=k/(k+k_*)$ and class-II hyperuniformity. However, the same unnormalized kernel has $\bar P=\rho_0d_c\to\infty$. It is inconsistent to send $d_c\to\infty$ while silently keeping $\bar D$ and $g$ fixed for an arbitrary prescribed response law. A well-defined extension can instead sense deviations from a reference background,
+% \begin{equation}
+%     P_{\rm ref}(\mathbf r)=P_b+
+%     \int K_{d_c}(|\mathbf r-\mathbf r'|)[\rho(\mathbf r')-\rho_0]\,\mathrm d^2r',
+% \end{equation}
+% with $D(P_b)>0$ and $D'(P_b)>0$, or specify a family of response laws with a controlled operating point. Only when this limit retains a positive finite $k_*$ does the above formal exponent describe asymptotic hyperuniformity. Such background subtraction is an additional model choice. For the original bounded threshold law at fixed $P_{\rm th}$, increasing $d_c$ can instead saturate the response on the $D_{\max}$ branch and destroy the susceptibility needed for the $k$ regime.
 
 \subsection{Continuous approximations to the increasing threshold response}
 
@@ -777,7 +777,7 @@ Equivalently, this is a hyperbolic-tangent response with argument $(P-P_{\rm th}
     q=\frac{1}{1+\exp[-(\bar P-P_{\rm th})/\epsilon]},\qquad
     \Delta D=D_{\max}-D_{\min},
 \end{equation}
-its operating-point coefficients are
+its operating-point (the fixed point where the system is linearized) coefficients are
 \begin{equation}
     \bar D=D_{\min}+\Delta D q,\qquad
     g=\frac{\Delta D}{\epsilon}q(1-q),\qquad
@@ -814,62 +814,6 @@ It follows from Eq.~\eqref{eq:ffThresholdClosure} if the unresolved variable $\z
     g=\frac{\Delta D}{\sqrt{2\pi}\sigma}.
 \end{equation}
 The logistic and Gaussian approximations have identical linear predictions when their background diffusivities and slopes match, i.e., $4\epsilon=\sqrt{2\pi}\sigma$ at threshold. Thus the predicted exponent comes from the sensing kernel, while the effective response width controls the prefactor and the extent of the scaling interval. A finite Gaussian perception variance is an assumption, not a consequence of the unregularized microscopic $1/r$ kernel.
-
-\subsection{Connection to the supplied simulation parameters}
-\label{sec:ffParameters}
-
-Inspection of \texttt{Reference/main.py}, without running the particle dynamics, identifies the default sensing rule as \texttt{inverse\_distance\_sum}. The function \texttt{\_Pi} uses minimum-image distances, excludes zero distances, and sums $1/(2\pi r)$ for $r\leq d_c$. The update evaluates diffusivities at the current positions and applies independent displacements $\sqrt{2D_i\Delta t}\,\boldsymbol\eta_i$, followed by periodic wrapping. This is the Euler--Maruyama discretization of Eq.~\eqref{eq:ffParticle}. No positive short-distance cutoff is imposed in this implementation. The continuum theory describes its small-time-step limit.
-
-For the supplied call with \texttt{distanceDc=1.6}, \texttt{thresLp=1.6}, \texttt{agentsNum=3000}, and \texttt{dt=0.01}, the remaining constructor defaults give
-\begin{equation}
-    L=10,\quad N=3000,\quad \rho_0=30,\quad d_c=1.6,\quad
-    D_{\min}=0.01,\quad D_{\max}=0.1,\quad \Delta t=0.01.
-\end{equation}
-In the inverse-distance branch the code sets $P_{\rm th}=\ell_p\rho_0$, with $\ell_p=\texttt{thresLp}$, rather than setting $P_{\rm th}=\ell_p$ or normalizing the perception sum by the disk area. Consequently,
-\begin{equation}
-    \boxed{P_{\rm th}=1.6\times30=48=\rho_0d_c=\bar P.}
-    \label{eq:ffThresholdMatched}
-\end{equation}
-Here $\ell_p$ has length units if dimensions are restored. The equality is a continuum mean-field operating-point relation. The actual tagged-particle mean is affected by pair correlations; in an isotropic homogeneous state it is $\langle P_i\rangle=\rho_0\int_0^{d_c}g_2(r)\,\mathrm dr$, with $g_2$ the pair distribution function. Even an uncorrelated fixed-$N$ sample has the small self-exclusion correction $(N-1)d_c/L^2$. Therefore equal mean-field perception and threshold do not guarantee an exactly one-half high-diffusivity population in the nonlinear simulations.
-
-At the mean-field switching point, the logistic approximation gives, in the simulation units,
-\begin{equation}
-    \bar D=0.055,\qquad g=\frac{0.0225}{\epsilon},\qquad
-    k_* =\frac{12.2727}{\epsilon},\qquad B=\frac{19.6364}{\epsilon}.
-\end{equation}
-The explicit one-parameter theoretical spectrum is therefore
-\begin{equation}
-    \boxed{S_\epsilon(k)=
-    \left[1+\frac{12.2727}{\epsilon k}F(1.6k)\right]^{-1}.}
-    \label{eq:ffNumericalPrediction}
-\end{equation}
-Its plateau and intermediate-range asymptote are
-\begin{equation}
-    S_\epsilon(0^+)=\frac{\epsilon}{\epsilon+19.6364},\qquad
-    S_\epsilon(k)\simeq0.08148\epsilon k,
-    \quad 0.625\ll k\ll12.2727/\epsilon.
-    \label{eq:ffNumericalLimits}
-\end{equation}
-The interval must also lie within the continuum regime. These numerical prefactors are conditional on the centered logistic closure; the code does not supply $\epsilon$, so a numerical plateau height or scaling-window width cannot be predicted without calibration. At a shifted effective operating point, use Eq.~\eqref{eq:ffLogisticGeneral} instead. For the centered error-function closure, $k_*\simeq19.584/\sigma$.
-
-The smallest nonzero angular wave number in this box is
-\begin{equation}
-    k_{\min}=\frac{2\pi}{L}=0.62832,\qquad
-    k_{\min}d_c=1.00531,\qquad d_c^{-1}=0.625.
-    \label{eq:ffAccessibleModes}
-\end{equation}
-Hence the available modes do not access the deep plateau region $kd_c\ll1$. The first shell is near the crossover, not in the controlled $kd_c\gg1$ regime either. An approximately linear spectrum over higher shells is consistent with positive perception feedback if $k_*d_c\gg1$, but its existence and width cannot be established from the listed parameters alone. The full $F(1.6k)$ should be retained when comparing with the data, especially near the first shells; a sharp cutoff can produce oscillatory deviations from a straight power law.
-
-\begin{figure}[htbp]
-    \centering
-    % TODO: replace this box with \includegraphics[width=0.62\linewidth]{figs/feifei_snapshot.pdf}
-    \fbox{\parbox[c][3cm][c]{0.86\linewidth}{\centering
-    Simulation snapshot to be inserted manually.\\[0.5em]
-    Show the full periodic box and a sensing disk of radius $d_c=1.6$.\\
-    Optional coloring: $D_{\min}$ and $D_{\max}$ populations.}}
-    \caption{Reserved for a stationary particle snapshot for $N=3000$, $L=10$, $d_c=1.6$, $\ell_p=1.6$, $D_{\min}=0.01$, $D_{\max}=0.1$, and $\Delta t=0.01$. Add the sampling time and equilibration protocol when inserting the data. Spatial uniformity in a snapshot alone does not determine the small-$k$ structure factor.}
-    \label{fig:ffSnapshot}
-\end{figure}
 
 \subsection{Tests against the particle simulations}
 
@@ -1387,6 +1331,62 @@ which are equivalent to
     \qquad D(D_ck^2-\mu)+\alpha\rho_0>0
 \end{equation}
 for nonzero $k$. If these conditions fail, the Lyapunov equation does not describe a stationary positive-definite covariance, and a steady-state structure factor is not defined within the linear theory.
+
+\subsection{Large-argument asymptotics of the integrated sensing kernel}
+\label{appendix:ffIntegratedKernel}
+
+For the sensing kernel in Eq.~\eqref{eq:ffFourierKernel}, define
+\begin{equation}
+    F(x)=\int_0^x J_0(u)\,\mathrm du.
+\end{equation}
+We show that $F(x)=1+O(x^{-1/2})$ as $x\to\infty$, and identify the leading oscillatory correction. The standard improper integral of the Bessel function is
+\begin{equation}
+    \int_0^\infty J_0(u)\,\mathrm du=1.
+    \label{eq:ffBesselTotalIntegral}
+\end{equation}
+For example, its value follows from the Laplace transform
+\begin{equation}
+    \int_0^\infty e^{-s u}J_0(u)\,\mathrm du
+    =\frac{1}{\sqrt{1+s^2}},\qquad s>0,
+\end{equation}
+by taking $s\to0^+$. The undamped improper integral converges by the oscillatory large-$u$ expansion below, so its Abel limit agrees with its ordinary improper value. Consequently,
+\begin{equation}
+    F(x)=1-\int_x^\infty J_0(u)\,\mathrm du.
+    \label{eq:ffBesselTail}
+\end{equation}
+
+The large-argument expansion of $J_0$ is
+\begin{equation}
+    J_0(u)=\sqrt{\frac{2}{\pi u}}
+    \left[\cos\left(u-\frac{\pi}{4}\right)
+    +\frac{1}{8u}\sin\left(u-\frac{\pi}{4}\right)
+    +O(u^{-2})\right].
+    \label{eq:ffBesselAsymptotic}
+\end{equation}
+Integration by parts gives
+\begin{align}
+    \int_x^\infty u^{-1/2}\cos\left(u-\frac{\pi}{4}\right)\,\mathrm du
+    ={}&-x^{-1/2}\sin\left(x-\frac{\pi}{4}\right)\nonumber\\
+    &+\frac12\int_x^\infty u^{-3/2}\sin\left(u-\frac{\pi}{4}\right)\,\mathrm du.
+\end{align}
+A second integration by parts shows that the last integral is $O(x^{-3/2})$. The sine term in Eq.~\eqref{eq:ffBesselAsymptotic} therefore contributes only $O(x^{-3/2})$ to the tail, while the remaining $O(u^{-5/2})$ term has an absolutely convergent tail of the same order. Hence
+\begin{equation}
+    \int_x^\infty J_0(u)\,\mathrm du
+    =-\sqrt{\frac{2}{\pi x}}\sin\left(x-\frac{\pi}{4}\right)
+    +O(x^{-3/2}).
+\end{equation}
+Substitution into Eq.~\eqref{eq:ffBesselTail} yields
+\begin{equation}
+    \boxed{F(x)=1+\sqrt{\frac{2}{\pi x}}\sin\left(x-\frac{\pi}{4}\right)
+    +O(x^{-3/2})=1+O(x^{-1/2}).}
+    \label{eq:ffIntegratedKernelAsymptotic}
+\end{equation}
+Thus $F(x)$ approaches unity through oscillations with a leading amplitude proportional to $x^{-1/2}$, rather than monotonically. Equivalently, for $kd_c\gg1$,
+\begin{equation}
+    \widehat K_{d_c}(k)=\frac1k\left[
+    1+\sqrt{\frac{2}{\pi k d_c}}\sin\left(kd_c-\frac{\pi}{4}\right)
+    +O((kd_c)^{-3/2})\right].
+\end{equation}
 
 \bibliographystyle{unsrt}
 \bibliography{ref}

@@ -16,27 +16,25 @@
 \contentsline {subsection}{\numberline {3.1}Particle model, sensing kernel, and stochastic convention}{11}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Stochastic continuum equation and linear-noise approximation}{12}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Fourier kernel and the origin of an approximately linear spectrum}{13}{subsection.3.3}%
-\contentsline {paragraph}{Fixed finite sensing radius.}{13}{section*.7}%
-\contentsline {paragraph}{An unscreened limit needs a defined background.}{14}{section*.8}%
-\contentsline {subsection}{\numberline {3.4}Continuous approximations to the increasing threshold response}{14}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Connection to the supplied simulation parameters}{15}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Tests against the particle simulations}{16}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Appendix}{17}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Derivation of the linear-noise approximation}{17}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}A route using fixed-point linearization and ordinary Taylor series}{17}{subsubsection.4.1.1}%
-\contentsline {paragraph}{Start with the familiar deterministic calculation.}{17}{section*.11}%
-\contentsline {paragraph}{Why use $\sqrt {\varepsilon }$ for the fluctuation size?}{17}{section*.12}%
-\contentsline {paragraph}{Derive the result for one variable.}{18}{section*.13}%
-\contentsline {paragraph}{Several variables: replace $f'(u_0)$ by the Jacobian.}{18}{section*.14}%
-\contentsline {paragraph}{What is a Fr\'echet derivative?}{19}{section*.15}%
-\contentsline {paragraph}{Why does white noise not invalidate the power counting?}{19}{section*.16}%
-\contentsline {paragraph}{What are the Frobenius and Hilbert--Schmidt norms?}{19}{section*.17}%
-\contentsline {subsubsection}{\numberline {4.1.2}Operator form, explicit remainder terms, and the chemotaxis example}{20}{subsubsection.4.1.2}%
-\contentsline {paragraph}{1. Stochastic equation and expansion assumptions.}{20}{section*.18}%
-\contentsline {paragraph}{2. Functional Taylor expansion of the drift.}{20}{section*.19}%
-\contentsline {paragraph}{3. Expansion of the multiplicative noise coefficient.}{21}{section*.20}%
-\contentsline {paragraph}{4. Collecting orders and taking the leading equation.}{21}{section*.21}%
-\contentsline {paragraph}{5. Physical fluctuation and covariance normalization.}{22}{section*.22}%
-\contentsline {subsection}{\numberline {4.2}Derivation of Dean's equation}{22}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Calculation of variance for Ornstein-Uhlenbeck process}{23}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Structure factor from the Lyapunov equation}{23}{subsection.4.4}%
+\contentsline {subsection}{\numberline {3.4}Continuous approximations to the increasing threshold response}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Tests against the particle simulations}{14}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Appendix}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Derivation of the linear-noise approximation}{15}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}A route using fixed-point linearization and ordinary Taylor series}{15}{subsubsection.4.1.1}%
+\contentsline {paragraph}{Start with the familiar deterministic calculation.}{15}{section*.8}%
+\contentsline {paragraph}{Why use $\sqrt {\varepsilon }$ for the fluctuation size?}{15}{section*.9}%
+\contentsline {paragraph}{Derive the result for one variable.}{16}{section*.10}%
+\contentsline {paragraph}{Several variables: replace $f'(u_0)$ by the Jacobian.}{16}{section*.11}%
+\contentsline {paragraph}{What is a Fr\'echet derivative?}{17}{section*.12}%
+\contentsline {paragraph}{Why does white noise not invalidate the power counting?}{17}{section*.13}%
+\contentsline {paragraph}{What are the Frobenius and Hilbert--Schmidt norms?}{18}{section*.14}%
+\contentsline {subsubsection}{\numberline {4.1.2}Operator form, explicit remainder terms, and the chemotaxis example}{18}{subsubsection.4.1.2}%
+\contentsline {paragraph}{1. Stochastic equation and expansion assumptions.}{18}{section*.15}%
+\contentsline {paragraph}{2. Functional Taylor expansion of the drift.}{19}{section*.16}%
+\contentsline {paragraph}{3. Expansion of the multiplicative noise coefficient.}{19}{section*.17}%
+\contentsline {paragraph}{4. Collecting orders and taking the leading equation.}{19}{section*.18}%
+\contentsline {paragraph}{5. Physical fluctuation and covariance normalization.}{20}{section*.19}%
+\contentsline {subsection}{\numberline {4.2}Derivation of Dean's equation}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Calculation of variance for Ornstein-Uhlenbeck process}{21}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Structure factor from the Lyapunov equation}{21}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Large-argument asymptotics of the integrated sensing kernel}{23}{subsection.4.5}%
