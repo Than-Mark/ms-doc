@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}General $n$-field theory of long-wavelength density fluctuations}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Stochastic continuum model and controlled linearization}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Conservation and the stationary covariance theorem}{2}{subsection.1.2}%
+\contentsline {paragraph}{Stationary covariance theorem.}{2}{section*.2}%
+\contentsline {subsection}{\numberline {1.3}Exact density criterion and frequency representation}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Mode-resolved formula and conditional scaling laws}{3}{subsection.1.4}%
+\contentsline {paragraph}{Single-mode scaling theorem.}{4}{section*.3}%
+\contentsline {paragraph}{Multi-mode scaling theorem with explicit hypotheses.}{4}{section*.4}%
+\contentsline {subsection}{\numberline {1.5}Exact field elimination and conditions for a Markov approximation}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Workflow and connection to chemotaxis}{5}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Example: chemotactic particles and a dynamical chemical field}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Particle-based model}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Continuum model}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Density spectrum and normalized structure factor}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Hyperuniformity and the order of limits}{10}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Appendix}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Derivation of the linear-noise approximation}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}A route using fixed-point linearization and ordinary Taylor series}{12}{subsubsection.3.1.1}%
+\contentsline {paragraph}{Start with the familiar deterministic calculation.}{12}{section*.7}%
+\contentsline {paragraph}{Why use $\sqrt {\varepsilon }$ for the fluctuation size?}{12}{section*.8}%
+\contentsline {paragraph}{Derive the result for one variable, without new derivative concepts.}{12}{section*.9}%
+\contentsline {paragraph}{Several variables: replace $f'(u_0)$ by the Jacobian.}{13}{section*.10}%
+\contentsline {paragraph}{What is a Fr\'echet derivative?}{13}{section*.11}%
+\contentsline {paragraph}{Why does white noise not invalidate the power counting?}{14}{section*.12}%
+\contentsline {paragraph}{What are the Frobenius and Hilbert--Schmidt norms?}{14}{section*.13}%
+\contentsline {subsubsection}{\numberline {3.1.2}Operator form, explicit remainder terms, and the chemotaxis example}{15}{subsubsection.3.1.2}%
+\contentsline {paragraph}{1. Stochastic equation and expansion assumptions.}{15}{section*.14}%
+\contentsline {paragraph}{2. Functional Taylor expansion of the drift.}{15}{section*.15}%
+\contentsline {paragraph}{3. Expansion of the multiplicative noise coefficient.}{15}{section*.16}%
+\contentsline {paragraph}{4. Collecting orders and taking the leading equation.}{16}{section*.17}%
+\contentsline {paragraph}{5. Physical fluctuation and covariance normalization.}{16}{section*.18}%
+\contentsline {paragraph}{6. Explicit check for the chemotaxis fields.}{16}{section*.19}%
+\contentsline {subsection}{\numberline {3.2}Derivation of Dean's equation}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Calculation of variance for Ornstein-Uhlenbeck process}{18}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Structure factor from the Lyapunov equation}{19}{subsection.3.4}%

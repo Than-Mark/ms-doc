@@ -38,7 +38,7 @@
     linkbordercolor=white
 }
 
-\title{\textbf{Hyperuniformity in Chemotactic Active Matter}}
+\title{\textbf{Dynamical Mechanisms of Hyperuniformity: \\ A General Framework for Coupled Stochastic Fields}}
 \author{Yichen Lu}
 
 \begin{document}
@@ -47,48 +47,312 @@
 
 \tableofcontents
 
-\section{Models}
+\section{General \texorpdfstring{$n$}{n}-field theory of long-wavelength density fluctuations}
+\label{sec:generalFramework}
+
+The purpose of this framework is to identify the dynamical mechanisms controlling density fluctuations around a homogeneous state. The deterministic spectrum determines stability, but the stationary structure factor also depends on stochastic forcing and on how the excited modes project onto density. All exact statements below refer to the specified linear Gaussian fluctuation theory; they are not claims of exactness for the underlying nonlinear many-body dynamics.
+
+\subsection{Stochastic continuum model and controlled linearization}
+
+Consider $n$ real fields on a periodic volume $V=L^d$,
+\begin{equation}
+    \mathbf u=(\rho,\phi_1,\ldots,\phi_{n-1})^{\top},
+    \qquad \partial_t\mathbf u=\mathbf F[\mathbf u]
+    +\sqrt{\varepsilon}\,\mathbf G[\mathbf u]\boldsymbol\xi.
+    \label{eq:gfSPDE}
+\end{equation}
+Here $\rho$ is a conserved number density, the auxiliary fields may themselves be conserved, and $\mathbf G$ can contain spatial derivatives or convolution kernels, $G[\mathbf u]\in \mathbb{C}^{n\times p}$. The equation is interpreted in the It\^{o} sense, with $p$ independent real noise channels 
+\begin{equation}
+    \boldsymbol\xi=(\xi_1,\ldots,\xi_p)^{\top},
+    \qquad \langle\xi_a(\mathbf r,t)\rangle=0,
+\end{equation}
+satisfying
+\begin{equation}
+    \langle\xi_a(\mathbf r,t)\xi_b(\mathbf r',t')\rangle
+    =\delta_{ab}\delta(\mathbf r-\mathbf r')\delta(t-t').
+\end{equation}
+A spatial cutoff is understood whenever required to define the continuum noise. Assume a homogeneous deterministic solution $\mathbf u_0$ with $\mathbf F[\mathbf u_0]=0$ and $\rho_0>0$, and translation-invariant linearized coefficients. Writing $\mathbf u=\mathbf u_0+\sqrt{\varepsilon}\,\mathbf v$ gives, at leading order,
+\begin{equation}
+    \partial_t\mathbf v=\mathcal L\mathbf v+\mathbf G[\mathbf u_0]\boldsymbol\xi,
+    \qquad \mathcal L=\left.\frac{\delta\mathbf F}{\delta\mathbf u}\right|_{\mathbf u_0}.
+    \label{eq:gfLeadingFluctuation}
+\end{equation}
+The expansion and its order counting are derived in Appendix~\ref{appendix:linearNoiseExpansion}. Thus freezing multiplicative noise at $\mathbf u_0$ is a linear-noise approximation justified by the fluctuation expansion, not an exact linearization at arbitrary noise strength. Below $\mathbf x$ denotes the physical fluctuation within this approximation; its noise matrix includes $\sqrt{\varepsilon}$ if that parameter is retained. Nonlinear corrections and fluctuation-induced changes of the background are outside the present closure.
+
+Use the volume-normalized Fourier transform
+\begin{equation}
+    \mathbf x_{\mathbf k}=V^{-1/2}\int_V e^{-\mathrm i\mathbf k\cdot\mathbf r}
+    \delta\mathbf u(\mathbf r)\,\mathrm d\mathbf r,
+    \qquad \mathbf k=2\pi\mathbf m/L,\quad \mathbf m\in\mathbb Z^d.
+\end{equation}
+Each nonzero wavevector obeys an $n$-component Ornstein--Uhlenbeck equation,
+\begin{equation}
+    \boxed{\dot{\mathbf x}_{\mathbf k}=A(\mathbf k)\mathbf x_{\mathbf k}
+    +\boldsymbol\eta_{\mathbf k},\qquad Q(\mathbf k)=B(\mathbf k)B(\mathbf k)^\dagger,}
+    \label{eq:gfOU}
+\end{equation}
+where $A$ is the Fourier symbol of $\mathcal L$, $B$ is an $n\times p$ matrix, and $\boldsymbol\eta=B\boldsymbol\xi$. The dagger denotes conjugate transpose. Reality requires $\mathbf x_{-\mathbf k}=\mathbf x_{\mathbf k}^*$, $A(-\mathbf k)=A(\mathbf k)^*$, and $Q(-\mathbf k)=Q(\mathbf k)^*$. In particular, the two equivalent noise conventions are
+\begin{align}
+    \langle\boldsymbol\eta_{\mathbf k}(t)\boldsymbol\eta_{\mathbf k'}^\dagger(t')\rangle
+    &=Q(\mathbf k)\delta_{\mathbf k,\mathbf k'}\delta(t-t'),\\
+    \langle\boldsymbol\eta_{\mathbf k}(t)\boldsymbol\eta_{\mathbf k'}^{\top}(t')\rangle
+    &=Q(\mathbf k)\delta_{\mathbf k,-\mathbf k'}\delta(t-t').
+    \label{eq:gfNoise}
+\end{align}
+The sign in the wavevector delta must therefore change when transpose is replaced by conjugate transpose. Correlated physical noise channels can always be included through a positive-semidefinite $Q$ and a matrix square root $B$.
+
+\subsection{Conservation and the stationary covariance theorem}
+
+Let $\mathbf e_\rho=(1,0,\ldots,0)^{\top}$. Exact number conservation, $\partial_t\rho=-\nabla\cdot\mathbf J$, implies
+\begin{equation}
+    \mathbf e_\rho^\dagger A(\mathbf0)=0,
+    \qquad \mathbf e_\rho^\dagger B(\mathbf0)=0.
+    \label{eq:gfConservation}
+\end{equation}
+Thus conservation supplies a left zero eigenvector and a zero eigenvalue, but the associated right eigenvector need not be the density coordinate vector. Several conservation laws give several such constraints. For a random current with a bounded long-wavelength covariance, $Q_{\rho\rho}(\mathbf k)=O(k^2)$; conservation alone does not imply a nonzero $k^2$ coefficient or constrain singular, spatially correlated currents to this power.
+
+\paragraph{Stationary covariance theorem.}
+For every fixed $\mathbf k\ne0$ in the range of validity of the continuum theory, assume that $A(\mathbf k)$ is Hurwitz:
+\begin{equation}
+    \max_j\operatorname{Re}\lambda_j[A(\mathbf k)]<0.
+    \label{eq:gfHurwitz}
+\end{equation}
+Then the linear process has a unique attracting stationary Gaussian law (possibly degenerate), whose Hermitian positive-semidefinite covariance is
+\begin{align}
+    C(\mathbf k)&=\langle\mathbf x_{\mathbf k}\mathbf x_{\mathbf k}^\dagger\rangle
+    =\langle\mathbf x_{\mathbf k}\mathbf x_{-\mathbf k}^{\top}\rangle,\\
+    C(\mathbf k)&=\int_0^\infty e^{A(\mathbf k)t}Q(\mathbf k)
+    e^{A(\mathbf k)^\dagger t}\,\mathrm dt,
+    \label{eq:gfGramian}\\
+    AC+CA^\dagger+Q&=0.
+    \label{eq:gfLyapunov}
+\end{align}
+Indeed, the finite-time covariance is
+\begin{equation}
+    C(t)=e^{At}C(0)e^{A^\dagger t}
+    +\int_0^{\top} e^{As}Qe^{A^\dagger s}\,\mathrm ds.
+\end{equation}
+Exponential decay at fixed $\mathbf k$ removes the initial term and makes the integral converge. Differentiating its integrand proves Eq.~\eqref{eq:gfLyapunov}. If two solutions differed by $H$, then $e^{At}He^{A^\dagger t}=H$ for all $t$, so decay implies $H=0$. Positive semidefiniteness follows directly from the integral; positive definiteness additionally requires that the noise excite every state direction through the dynamics. No diagonalizability or normality assumption is needed.
+
+The Hurwitz condition ensures an attracting stationary law for arbitrary finite initial covariance. Without it, unforced neutral or unstable directions can admit exceptional invariant measures, but these do not establish a robust stationary fluctuation theory around a stable state. At exactly $\mathbf k=0$, conservation precludes the above Hurwitz assumption. Fixed particle number sets $\delta\rho_{\mathbf0}=0$; this constraint is not evidence of hyperuniformity.
+
+\subsection{Exact density criterion and frequency representation}
+
+With the Fourier normalization above, the dimensionless structure factor is
+\begin{equation}
+    \boxed{S(\mathbf k)=\rho_0^{-1}\mathbf e_\rho^\dagger C(\mathbf k)\mathbf e_\rho.}
+    \label{eq:gfStructure}
+\end{equation}
+For point particles this agrees, at nonzero allowed wavevectors, with $N^{-1}\langle|\sum_j e^{-\mathrm i\mathbf k\cdot\mathbf r_j}|^2\rangle$. Hyperuniformity is the limit $S(\mathbf k)\to0$ through nonzero wavevectors in the thermodynamic limit at fixed $\rho_0$. For anisotropic systems this limit must hold along every approach to the origin; radial averaging alone does not establish it.
+
+Equations~\eqref{eq:gfGramian}--\eqref{eq:gfStructure} give the following necessary and sufficient criterion within the linear theory:
+\begin{equation}
+    \boxed{\text{hyperuniformity}\ \Longleftrightarrow\
+    \lim_{\mathbf k\to0}\int_0^\infty
+    \|\mathbf e_\rho^\dagger e^{A(\mathbf k)t}B(\mathbf k)\|_2^2\,\mathrm dt=0.}
+    \label{eq:gfExactHU}
+\end{equation}
+This nonnegative expression includes all interference and transient amplification. With temporal convention $\mathbf x(t)=\int e^{-\mathrm i\omega t}\widehat{\mathbf x}(\omega)\,\mathrm d\omega/(2\pi)$, define
+\begin{equation}
+    R(\mathbf k,\omega)=(-\mathrm i\omega I-A(\mathbf k))^{-1}.
+\end{equation}
+The equivalent frequency-domain formula is
+\begin{equation}
+    C=\int_{-\infty}^{\infty}RQR^\dagger\frac{\mathrm d\omega}{2\pi},
+    \qquad S=\frac1{\rho_0}\int_{-\infty}^{\infty}
+    \|\mathbf e_\rho^\dagger RB\|_2^2\frac{\mathrm d\omega}{2\pi}.
+    \label{eq:gfResolvent}
+\end{equation}
+Stationarity is taken first for each nonzero mode. Neither interchange of the long-time and long-wavelength limits nor interchange with a singular parameter limit follows from stability at fixed $\mathbf k$.
+
+\subsection{Mode-resolved formula and conditional scaling laws}
+
+When $A(\mathbf k)$ is diagonalizable at fixed nonzero $\mathbf k$, choose biorthogonal right and left eigenvectors,
+\begin{equation}
+    A\mathbf r_j=\lambda_j\mathbf r_j,\qquad
+    \mathbf l_j^\dagger A=\lambda_j\mathbf l_j^\dagger,\qquad
+    \mathbf l_i^\dagger\mathbf r_j=\delta_{ij}.
+\end{equation}
+Define $h_j=\mathbf e_\rho^\dagger\mathbf r_j$ and $q_{ij}=\mathbf l_i^\dagger Q\mathbf l_j$. Substitution of $e^{At}=\sum_j e^{\lambda_jt}\mathbf r_j\mathbf l_j^\dagger$ into Eq.~\eqref{eq:gfGramian} yields
+\begin{equation}
+    \boxed{S(\mathbf k)=-\frac1{\rho_0}\sum_{i,j=1}^n
+    \frac{h_i q_{ij}h_j^*}{\lambda_i+\lambda_j^*}.}
+    \label{eq:gfModes}
+\end{equation}
+The denominators encode relaxation and relative propagation frequencies; $q_{ij}$ encodes noise excitation and correlations; $h_i h_j^*$ encodes density content. The slowest eigenvalue alone is insufficient. Individual cross terms need not be positive, although their complete sum is real and nonnegative. At defective points one must use Eq.~\eqref{eq:gfGramian} or \eqref{eq:gfResolvent}; Jordan blocks generate polynomial factors in $t$ that can alter scaling.
+
+\paragraph{Single-mode scaling theorem.}
+For an exact scalar closure $\dot x=(-\Gamma(k)+\mathrm i\Omega(k))x+\eta$ with $\Gamma>0$ and noise covariance $q(k)\delta(t-t')$, its stationary variance is $q/(2\Gamma)$. If density equals $h(k)x$, and
+\begin{equation}
+    \Gamma\sim g k^z,\qquad q\sim q_* k^\beta,\qquad
+    |h|^2\sim H k^{2\gamma},\qquad g,q_*,H>0,
+\end{equation}
+then
+\begin{equation}
+    S(k)\sim\frac{Hq_*}{2\rho_0g}k^{\beta+2\gamma-z}.
+    \label{eq:gfScalarScaling}
+\end{equation}
+The same conclusion holds for a reduced scalar description only if the omitted contribution to the density covariance is of smaller order than this expression. For $h=1$, this is the familiar $\beta-z$ rule. Dean noise gives $q=2D\rho_0 k^2$: ordinary diffusion has $\Gamma=Dk^2$ and $S=1$, whereas a valid scalar model with $\Gamma\to g>0$ has $S\sim(D/g)k^2$. A finite limiting rate at nonzero $k$ is incompatible with a regular local scalar conserved drift at $k=0$; it requires, for example, a singular nonlocal kernel. Conservation by itself does not justify such a closure.
+
+\paragraph{Multi-mode scaling theorem with explicit hypotheses.}
+Set $\Gamma_j=-\operatorname{Re}\lambda_j>0$ and
+\begin{equation}
+    d_j=\frac{|h_j|^2q_{jj}}{2\rho_0\Gamma_j},\qquad
+    S_{\rm diag}=\sum_j d_j,\qquad S_{\rm cross}=S-S_{\rm diag}.
+\end{equation}
+Assume finitely many modes and positive leading power laws for all nonzero $d_j$:
+\begin{equation}
+    \Gamma_j\sim g_jk^{z_j},\quad q_{jj}\sim q_jk^{\beta_j},\quad
+    |h_j|^2\sim H_jk^{2\gamma_j},\qquad g_j,q_j,H_j>0.
+\end{equation}
+If $q_{ij}=0$ for $i\ne j$, or more generally $S_{\rm cross}=o(S_{\rm diag})$, then
+\begin{equation}
+    \boxed{S(k)\sim K k^\nu,\qquad
+    \nu=\min_{j:d_j\not\equiv0}(\beta_j+2\gamma_j-z_j),\qquad K>0.}
+    \label{eq:gfMultiScaling}
+\end{equation}
+The proof is the finite sum of positive diagonal terms; $K$ is the sum of their leading coefficients at the minimal exponent. All contributing modes, including gapped modes, must be included. The separate exponents of $q_{jj}$ and $|h_j|^2$ depend on eigenvector normalization, but their product and the exponent in Eq.~\eqref{eq:gfMultiScaling} do not. Here $\nu$ is used to avoid confusion with the chemotactic sensitivity $\alpha$.
+
+A useful sufficient criterion survives without neglecting cross terms. Define the noise-channel row function $f_j(t)=h_j e^{\lambda_jt}\mathbf l_j^\dagger B$. Cauchy--Schwarz in time and noise space gives
+\begin{equation}
+    0\le S=\rho_0^{-1}\|\sum_j f_j\|_{L^2}^2
+    \le\left(\sum_j\sqrt{d_j}\right)^2\le n\sum_j d_j.
+    \label{eq:gfModeBound}
+\end{equation}
+Consequently $d_j\to0$ for every mode is sufficient for hyperuniformity even with correlated modal noise. The converse and the minimum-exponent equality need not hold because of cancellations. Singular eigenvectors, degeneracy, and non-normal amplification must be evaluated using the full covariance rather than an unconditional exponent rule.
+
+Under the hypotheses of Eq.~\eqref{eq:gfMultiScaling}, $\nu>0$ implies hyperuniformity, $\nu=0$ a finite positive plateau, and $\nu<0$ divergent long-wavelength fluctuations. Logarithmic or non-power-law spectra must instead be classified by Eq.~\eqref{eq:gfExactHU}. In an infinite system, a divergent spectrum must also be locally integrable for the claimed stationary field to have finite infrared variance (for an isotropic power law, this requires $\nu>-d$).
+
+\subsection{Exact field elimination and conditions for a Markov approximation}
+
+Partition the fields into retained variables $x$ (including density) and auxiliary variables $y$, suppressing $\mathbf k$:
+\begin{equation}
+    \frac{\mathrm d}{\mathrm dt}\begin{pmatrix}x\\y\end{pmatrix}
+    =\begin{pmatrix}A_{ss}&A_{sf}\\A_{fs}&A_{ff}\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}+\begin{pmatrix}\eta_s\\\eta_f\end{pmatrix}.
+\end{equation}
+If $A_{ff}$ is Hurwitz, solving the second equation from the remote past gives the exact stationary equation
+\begin{align}
+    \dot x(t)&=A_{ss}x(t)+\int_0^\infty K(\tau)x(t-\tau)\,\mathrm d\tau
+    +\zeta(t),\\
+    K(\tau)&=A_{sf}e^{A_{ff}\tau}A_{fs},\\
+    \zeta(t)&=\eta_s(t)+A_{sf}\int_0^\infty e^{A_{ff}\tau}\eta_f(t-\tau)\,\mathrm d\tau.
+    \label{eq:gfMemory}
+\end{align}
+Elimination is exact here, but produces a memory kernel and generally colored noise. In frequency space put
+\begin{align}
+    R_f(\omega)&=(-\mathrm i\omega I-A_{ff})^{-1},\\
+    A_{\rm eff}(\omega)&=A_{ss}+A_{sf}R_f(\omega)A_{fs},\\
+    T(\omega)&=\begin{pmatrix}I&A_{sf}R_f(\omega)\end{pmatrix},\qquad
+    Q_{\rm eff}(\omega)=T(\omega)Q T(\omega)^\dagger.
+    \label{eq:gfEffectiveNoise}
+\end{align}
+Thus $\widehat x=[-\mathrm i\omega I-A_{\rm eff}(\omega)]^{-1}T(\omega)\widehat\eta$. This expression retains auxiliary noise and its cross-correlations with the retained noise, and reproduces the retained block of the full covariance through the frequency integral.
+
+The instantaneous approximation replaces $R_f(\omega)$ by $-A_{ff}^{-1}$, giving
+\begin{equation}
+    A_{\rm eff}^{(0)}=A_{ss}-A_{sf}A_{ff}^{-1}A_{fs},\qquad
+    Q_{\rm eff}^{(0)}=T_0QT_0^\dagger,\qquad
+    T_0=\begin{pmatrix}I&-A_{sf}A_{ff}^{-1}\end{pmatrix}.
+    \label{eq:gfSchur}
+\end{equation}
+It is generally incorrect to change the drift while leaving the noise unchanged. A common sufficient starting point for a controlled reduction is a uniformly fast auxiliary semigroup,
+\begin{equation}
+    \|e^{A_{ff}(\mathbf k)t}\|\le M e^{-g t},\qquad M,g>0
+    \text{ independent of small }\mathbf k,
+    \label{eq:gfUniformGap}
+\end{equation}
+together with bounded couplings and retained frequencies small compared with $g$. More directly, the expansion requires $|\omega|\|A_{ff}^{-1}\|\ll1$ over the frequencies relevant to density fluctuations. A spectral gap alone does not bound non-normal transient growth or establish this separation. Moreover, a correct low-frequency response is insufficient unless the omitted frequency range contributes a smaller order to the equal-time density covariance. For a proposed reduced spectrum $S_{\rm red}>0$, an explicit sufficient check is
+\begin{equation}
+    \int_{-\infty}^{\infty}|P_\rho(\mathbf k,\omega)
+    -P_{\rho,\rm red}(\mathbf k,\omega)|\frac{\mathrm d\omega}{2\pi}
+    =o\bigl(\rho_0 S_{\rm red}(\mathbf k)\bigr),
+    \label{eq:gfReductionError}
+\end{equation}
+where $P_\rho=\mathbf e_\rho^\dagger RQR^\dagger\mathbf e_\rho$ and $P_{\rho,\rm red}$ is the corresponding reduced density spectrum. This implies equality of the leading static asymptotics.
+
+\begin{keybox}[Slow-sector completeness]
+Every mode contributing to the leading density covariance must be retained, or its memory and noise effects must be represented with an error smaller than that covariance. An auxiliary relaxation rate tending to zero warns that a uniform fast-gap argument fails. Such a mode can still be eliminated in special cases with proven relative time-scale separation or exact decoupling; it cannot be discarded solely by setting its time derivative to zero. Conversely, a finite auxiliary gap permits a reduction only after noise transfer and the covariance error have been checked.
+\end{keybox}
+
+% \subsection{Workflow and connection to chemotaxis}
+
+% The logical structure of the calculation is
+% \begin{equation}
+% \begin{gathered}
+%     \text{Microscopic stochastic dynamics}\ \longrightarrow\ \text{continuum theory}
+%     \ \longrightarrow\ \text{homogeneous reference state}\\
+%     \longrightarrow\ (A,B),\qquad
+%     \begin{cases}
+%         A\longrightarrow\text{stability and slow modes},\\
+%         B\longrightarrow Q\longrightarrow\text{noise injection},
+%     \end{cases}\\
+%     (A,Q)\longrightarrow AC+CA^\dagger+Q=0
+%     \longrightarrow S(\mathbf k)=C_{\rho\rho}/\rho_0
+%     \longrightarrow\text{long-wavelength classification}.
+% \end{gathered}
+% \end{equation}
+% Before a reduction, verify slow-sector completeness; before quoting a power-law exponent, verify the modal hypotheses. Stability, noise injection, and density projection are distinct ingredients of the same covariance problem.
+
+% For the consumption model developed below, the identification is simply
+% \begin{equation}
+%     n=2,\quad \mathbf x_{\mathbf k}=(\delta\rho_{\mathbf k},\delta c_{\mathbf k})^{\top},
+%     \quad A(k)=\begin{pmatrix}-Dk^2&\alpha\rho_0k^2\\-1&\mu-D_ck^2\end{pmatrix},
+%     \quad Q(k)=\begin{pmatrix}2D\rho_0k^2&0\\0&0\end{pmatrix}.
+%     \label{eq:gfChemoExample}
+% \end{equation}
+% Its exact Lyapunov solution is Eq.~\eqref{eq:SkFullMain}. For fixed $\mu<0$ and $\alpha>0$, it has the positive plateau $D|\mu|/(D|\mu|+\alpha\rho_0)$. At $\mu=0$, the nonzero-mode eigenvalues are
+% \begin{equation}
+%     \lambda_\pm=-\frac{D+D_c}{2}k^2
+%     \pm\sqrt{\frac{(D-D_c)^2}{4}k^4-\alpha\rho_0 k^2}.
+% \end{equation}
+% They have propagation frequencies of order $k$ and damping of order $k^2$, while the bare chemical rate is $D_ck^2$. The chemical response is therefore not instantaneous on the relevant frequencies as $k\to0$. The full theory yields $S(0^+)=D/(D+D_c)$, whereas setting $\dot{\delta c}=0$ yields a spurious asymptotic $k^2$ law for this dynamical model.
+
+% There is a background-state qualification: at $\mu=0$ and $\rho_0>0$, the unforced consumption equation has no time-independent homogeneous chemical solution. These stationary nonzero-mode covariances refer instead to fluctuations about a spatially uniform solution $\dot{\bar c}=-\rho_0$, whose drift leaves the gradient coupling and the linear coefficients unchanged. Alternatively, a uniform compensating source can fix the mean without changing nonzero-mode equations. For $\mu<0$, the formal value $c_0=\rho_0/\mu$ is negative; a physical nonnegative concentration likewise requires a suitable supply or an interpretation as a concentration deviation. The covariance result is a statement about the specified linear field model, subject to these background assumptions.
+
+\section{Example: chemotactic particles and a dynamical chemical field}
+\label{sec:chemoExample}
 
 \subsection{Particle-based model}
 \begin{subequations}
     \begin{align}
         &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }_i\left( t \right) \;,\\
-        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +k\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;,
+        &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +r\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;,
     \end{align}
 \end{subequations}
 for $i=1,2,\cdots,N$. Here, $\mathbf{r}_i$ is the position of the $i$-th particle, $c$ is the concentration field of the chemoattractant, $\alpha$ is the chemotactic sensitivity. If $\alpha > 0$, the particles are attracted to higher concentrations of the chemoattractant (chemoattraction/positive chemotaxis), while if $\alpha < 0$, the particles are repelled by higher concentrations of the chemoattractant (chemorepulsion/negative chemotaxis).
-$D$ is the diffusion coefficient of the particles, $\boldsymbol{\xi }_i$ is an independent Gaussian white noise with zero mean and unit variance for each particle, $D_c$ is the diffusion coefficient of the chemoattractant, $\mu$ is the decay ($\mu < 0$) or growth ($\mu > 0$) rate of the chemoattractant, and $k$ is the production ($k > 0$) or consumption rate ($k < 0$) of the chemoattractant by the particles.
+$D$ is the diffusion coefficient of the particles, $\boldsymbol{\xi }_i$ is an independent Gaussian white noise with zero mean and unit variance for each particle, $D_c$ is the diffusion coefficient of the chemoattractant, $\mu$ is the decay ($\mu < 0$) or growth ($\mu > 0$) rate of the chemoattractant, and $r$ is the production ($r > 0$) or consumption rate ($r < 0$) of the chemoattractant by the particles.
 
 For simplicity, we assume that particles are point-like and move in a two-dimensional $L \times L$ square domain with periodic boundary conditions. The initial positions of the particles can be randomly distributed, and the initial concentration field can be set to a small random perturbation around a uniform background concentration $c_0$.
 
-To reduce the parameter space, we can non-dimensionalize the equations by introducing $x_0 = L$, $t_0 = 1/k$ and $c_0$ as characteristic scales of length, time and concentration. The resulting dimensionless parameters are $\tilde{\alpha} = \frac{\alpha c_0}{L^2k}$, $\tilde{D} = \frac{D}{L^2k}$, $\tilde{D}_c = \frac{D_c}{L^2k}$, and $\tilde{\mu} = \frac{\mu}{k}$. We can omit the tildes and work with the dimensionless equations:
+To reduce the parameter space, we can non-dimensionalize the equations by introducing $x_0 = L$, $t_0 = 1/r$ and $c_0$ as characteristic scales of length, time and concentration. The resulting dimensionless parameters are $\tilde{\alpha} = \frac{\alpha c_0}{L^2 r}$, $\tilde{D} = \frac{D}{L^2 r}$, $\tilde{D}_c = \frac{D_c}{L^2 r}$, and $\tilde{\mu} = \frac{\mu}{r}$. We can omit the tildes and work with the dimensionless equations:
 \begin{subequations}
     \begin{align}
         &\frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\alpha \nabla c\left( \mathbf{r}_i\left( t \right) ,t \right) +\sqrt{2D}\boldsymbol{\xi }_i\left( t \right) \;,\\
         &\frac{\partial}{\partial t} c \left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) +\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;.\label{eq:dimensionlessCplus}
     \end{align}
 \end{subequations}
-Note that the above equations mathematically implies the assumption of $k>0$. If $k<0$, the non-dimensionalization would be different, and the Eq.~\eqref{eq:dimensionlessCplus} would have a negative sign in front of the summation term:
+Note that the above equations mathematically implies the assumption of $r>0$. If $r<0$, the non-dimensionalization would be different, and the Eq.~\eqref{eq:dimensionlessCplus} would have a negative sign in front of the summation term:
 \begin{equation}
     \frac{\partial}{\partial t} c\left( \mathbf{r},t \right) =D_c\nabla ^2c\left( \mathbf{r},t \right) +\mu c\left( \mathbf{r},t \right) -\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}\;.
 \end{equation}
-In the following, we focus on the case $k<0$, corresponding to chemical consumption. For $\alpha>0$, consumption lowers the chemical concentration around particles and thereby generates an effective repulsion between them, which is more relevant to the suppression of density fluctuations.
 
-As shown in the snapshots, the case of production ($k>0$) leads to aggregation of particles and formation of dense clusters, while the case of consumption ($k<0$) leads to dispersion of particles and formation of more uniform distributions. The latter case is more likely to exhibit hyperuniformity.
+In the following, we focus on the case $r<0$, corresponding to chemical consumption. For $\alpha>0$, consumption lowers the chemical concentration around particles and thereby generates an effective repulsion between them, which is more relevant to the suppression of density fluctuations.
+As shown in the snapshots, the case of production ($r>0$) leads to aggregation of particles and formation of dense clusters, while the case of consumption ($r<0$) leads to dispersion of particles and formation of more uniform distributions. The latter case is more likely to exhibit hyperuniformity.
 
 \begin{figure}[htbp]
     \centering
     \subcaptionbox{Production [$\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}$]}[0.49\linewidth]{
-      \includegraphics[width=\linewidth]{figs/particle_snapshot_k1.pdf}
+      \includegraphics[width=\linewidth]{figs/snapshot_k1.pdf}
     }
     \hfill
     \subcaptionbox{Consumption [$-\sum_{j=1}^{N}{\delta \left( \mathbf{r}-\mathbf{r}_j\left( t \right) \right)}$]}[0.49\linewidth]{
-      \includegraphics[width=\linewidth]{figs/particle_snapshot_k-1.pdf}
+      \includegraphics[width=\linewidth]{figs/snapshot_k-1.pdf}
     }
     \caption{
-        Snapshots of particle configurations for (a) production and (b) consumption of chemoattractant. The parameters are $\alpha=5$, $D=0.0001$, $D_c=5$, $\mu=-0.0001$, and $N=6400$ particles in an $L=20$ domain. 
+        Snapshots of particle configurations for (a) production and (b) consumption of chemoattractant. The parameters are $\alpha=5$, $D=10^{-4}$, $D_c=5$, $\mu=-10^{-4}$, $N=6400$ and $L=20$. 
         % The background color represents the concentration field $c(\mathbf{r},t)$, with colorbar indicating the concentration level.
-        The positions and velocity direction of the particles are shown as arrows.
+        % The positions and velocity direction of the particles are shown as arrows.
     }
 \end{figure}
 
@@ -227,7 +491,7 @@ and the conventional dimensionless structure factor
 For a microscopic point configuration and a nonzero allowed wavevector, this definition is equivalent to
 \begin{equation}
     S(k)=\frac{1}{N}\left\langle
-    \left|\sum_{j=1}^{N}e^{-\mathrm{i}\mathbf k\cdot\mathbf r_j}\right|^2
+    \left|\sum_{j=1}^{N}\mathrm{e}^{-\mathrm{i}\mathbf k\cdot\mathbf r_j}\right|^2
     \right\rangle.
 \end{equation}
 Consequently, a homogeneous Poisson point process has
@@ -308,9 +572,8 @@ Two singular limits require special care. First, $D\to0$ removes both ordinary p
 Second, if one imposes a quasi-static chemical field and then sets $\mu=0$, Eq.~\eqref{eq:structureFactorFastC} becomes
 \begin{equation}
     S_{\mathrm{qs}}(k)
-    =\frac{DD_ck^2}{DD_ck^2+\alpha\rho_0}
-    \underset{k\to0}{\sim}
-    \frac{DD_c}{\alpha\rho_0}k^2.
+    =\frac{1}{1+\frac{\alpha \rho _0}{DD_ck^2}}
+    {\sim}\frac{DD_c}{\alpha\rho_0}k^2.
     \label{eq:SkQuasiStaticMuZero}
 \end{equation}
 Within this instantaneous, elliptic-field approximation, the model displays class-I hyperuniform scaling. However, this conclusion cannot be transferred directly to the full dynamical chemical field. At $\mu=0$, the chemical relaxation rate is $D_ck^2$, which vanishes at long wavelength; therefore the chemical field is not a fast variable in the limit $k\to0$, and the adiabatic elimination used above ceases to be uniformly valid.
@@ -341,7 +604,336 @@ For small but nonzero $|\mu|$, a natural crossover wave number is
 \end{equation}
 At $k\ll k_\mu$, the structure factor approaches the finite plateau in Eq.~\eqref{eq:Sk0FastC}. Over a finite intermediate range above this crossover, the spectrum may show an apparent $k^2$-like suppression if the chemical field is sufficiently fast, but this should be described as finite-scale or ``hyperuniform-like'' behavior rather than strict asymptotic hyperuniformity.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/structure_factor_chemo_alpha.pdf}
+    \caption{Structure factor as a function of wave number $k$ for different values of $\alpha$.}
+    \label{fig:structure_factor}
+\end{figure}
+
+\section{Example: Feifei's quorum sensing model}
+
+\subsection{Particle-based model}
+
+\begin{equation}
+    \frac{\mathrm{d}}{\mathrm{d}t}\mathbf{r}_i\left( t \right) =\sqrt{2D\left( P_i \right)}\boldsymbol{\eta }_i\left( t \right) \;,
+\end{equation}
+where the sensing function of particle $i$ is defined as
+\begin{equation}
+    P_i\left( d_c \right) =\sum_{j\in V_{i}^{\alpha}}{\frac{1}{2\pi r_{ij}}}\;,
+\end{equation}
+and $V_{i}^{\alpha}$ is the set of particles within a sensing radius $d_c$ of particle $i$. The diffusion coefficient $D(P_i)$ is a function of the sensing function, which can be defined as
+\begin{equation}
+    D\left( P_i \right) =D_0\left( 1-\frac{P_i}{P_0} \right) \;,
+\end{equation}
+where $D_0$ is the maximum diffusion coefficient and $P_0$ is
+\begin{equation}
+    D\left( P_i \right) =\begin{cases}
+        D_{\min}\;,&		P_i\leqslant P_{\mathrm{th}}\;,\\
+        D_{\max}\;,&		P_i>P_{\mathrm{th}}\;.\\
+    \end{cases}
+\end{equation}
+
 \section{Appendix}
+
+\subsection{Derivation of the linear-noise approximation}
+\label{appendix:linearNoiseExpansion}
+
+This appendix derives Eq.~\eqref{eq:gfLeadingFluctuation} from Eq.~\eqref{eq:gfSPDE}. The essential point is that the physical fluctuation and the imposed noise amplitude are both of order $\sqrt{\varepsilon}$. The dependence of the noise amplitude on that fluctuation therefore first enters at order $\varepsilon$ in the original field equation.
+
+\subsubsection{A route using fixed-point linearization and ordinary Taylor series}
+
+The derivation can be understood using the same steps as a stability calculation near a fixed point. We first keep a fixed spatial grid, as already assumed by the spatial cutoff in the main text. This changes the notation to ordinary vectors and matrices without introducing an additional approximation to that regularized model. We do not assert that taking the grid spacing to zero is automatically justified. The detailed operator notation and stochastic error estimate are supplied in the following subsubsection.
+
+\paragraph{Start with the familiar deterministic calculation.}
+For $\dot u=f(u)$ and a fixed point $f(u_0)=0$, substitute $u=u_0+\delta u$ and expand:
+\begin{equation}
+    \dot{\delta u}=f'(u_0)\delta u+\frac12f''(u_0)(\delta u)^2+\cdots.
+\end{equation}
+The first term describes the leading restoring or destabilizing motion. The stochastic calculation uses this same Taylor expansion, but must also expand the amplitude of the random forcing.
+
+\paragraph{Why use $\sqrt{\varepsilon}$ for the fluctuation size?}
+Write $a=\sqrt{\varepsilon}$ to make the powers easier to follow. Here $a$ controls the noise amplitude and $a^2=\varepsilon$ controls its variance. For example, the stable scalar equation
+\begin{equation}
+    \mathrm d\delta u=-\kappa\delta u\,\mathrm dt+a g_0\,\mathrm dW_t,
+    \qquad \kappa>0,
+\end{equation}
+has stationary variance and root-mean-square fluctuation
+\begin{equation}
+    \langle(\delta u)^2\rangle=\frac{a^2g_0^2}{2\kappa},\qquad
+    \sqrt{\langle(\delta u)^2\rangle}=\frac{a|g_0|}{\sqrt{2\kappa}}.
+\end{equation}
+At fixed $\kappa$, the fluctuation is therefore of order $a$. Writing $\delta u=a v$ measures the small physical fluctuation in units of its expected size: $v$ stays of order one as $a\to0$. This is a motivated scaling assumption, not a universal conclusion for every stochastic system. Near a vanishing restoring rate, or with a large initial perturbation, it requires a separate check. In particular, a small-noise limit at fixed nonzero $k$ need not be uniform as $k\to0$.
+
+\paragraph{Derive the result for one variable.}
+Consider
+\begin{equation}
+    \mathrm du=f(u)\,\mathrm dt+a g(u)\,\mathrm dW_t,\qquad f(u_0)=0,
+    \qquad u=u_0+a v^\varepsilon.
+\end{equation}
+The superscript only records that the exact rescaled fluctuation can still depend on $\varepsilon$. Ordinary Taylor series give
+\begin{align}
+    f(u_0+a v^\varepsilon)
+    &=a f'(u_0)v^\varepsilon+\frac{a^2}{2}f''(u_0)(v^\varepsilon)^2+O(a^3),\\
+    a g(u_0+a v^\varepsilon)
+    &=a g(u_0)+a^2 g'(u_0)v^\varepsilon+O(a^3).
+\end{align}
+Since $\mathrm du=a\,\mathrm dv^\varepsilon$, divide both sides by $a$:
+\begin{align}
+    \mathrm dv^\varepsilon={}&f'(u_0)v^\varepsilon\,\mathrm dt+g(u_0)\,\mathrm dW_t\nonumber\\
+    &+a\left[\frac12f''(u_0)(v^\varepsilon)^2\,\mathrm dt
+    +g'(u_0)v^\varepsilon\,\mathrm dW_t\right]
+    +O(a^2)\,\mathrm dt+O(a^2)\,\mathrm dW_t.
+    \label{eq:appElementaryScalar}
+\end{align}
+There is now a direct separation: the first line has no small prefactor, while the second line has the small prefactor $a$. Keeping the leading equation gives
+\begin{equation}
+    \boxed{\mathrm dv=f'(u_0)v\,\mathrm dt+g(u_0)\,\mathrm dW_t.}
+\end{equation}
+Thus the random forcing itself remains. Only the change in its amplitude caused by the small displacement from $u_0$ is higher order. No averaging of the noise to zero has been used.
+
+\paragraph{Several variables: replace $f'(u_0)$ by the Jacobian.}
+On a fixed grid of $M$ sites, stack all $n$ fields at all sites into a vector $U$ with $N=nM$ entries. Use $P$ independent Brownian noise channels, absorbing the grid-volume normalization into their coefficient matrix $G$. The It\^{o} equations are ordinary coupled stochastic equations,
+\begin{equation}
+    \mathrm dU_i=F_i(U)\,\mathrm dt
+    +a\sum_{b=1}^{P}G_{ib}(U)\,\mathrm dW_b,\qquad i=1,\ldots,N.
+\end{equation}
+For a fixed point $F(U_0)=0$, let $U=U_0+a V^\varepsilon$. Define the usual Jacobian
+\begin{equation}
+    J_{ij}=\left.\frac{\partial F_i}{\partial U_j}\right|_{U_0}.
+\end{equation}
+Expanding every component gives
+\begin{align}
+    F_i(U_0+aV^\varepsilon)
+    &=a\sum_jJ_{ij}V_j^\varepsilon
+    +\frac{a^2}{2}\sum_{j,\ell}
+    \left.\frac{\partial^2F_i}{\partial U_j\partial U_\ell}\right|_{U_0}
+    V_j^\varepsilon V_\ell^\varepsilon+O(a^3),\\
+    aG_{ib}(U_0+aV^\varepsilon)
+    &=aG_{ib}(U_0)+a^2\sum_j
+    \left.\frac{\partial G_{ib}}{\partial U_j}\right|_{U_0}V_j^\varepsilon+O(a^3).
+\end{align}
+Division by $a$ and retention of the leading terms produce
+\begin{equation}
+    \mathrm dV_i=\sum_jJ_{ij}V_j\,\mathrm dt
+    +\sum_bG_{ib}(U_0)\,\mathrm dW_b.
+    \label{eq:appGridLinearNoise}
+\end{equation}
+In field notation, the Jacobian action $JV$ is written $\mathcal L\mathbf v$, and the matrix acting on the noise is written $\mathbf G[\mathbf u_0]$. Equation~\eqref{eq:appGridLinearNoise} is exactly the grid version of
+\begin{equation}
+    \boxed{\partial_t\mathbf v=\mathcal L\mathbf v+\mathbf G[\mathbf u_0]\boldsymbol\xi.}
+\end{equation}
+The substantive approximation is the stated leading-order expansion in noise strength; writing its finite-grid Jacobian in operator notation does not introduce a new physical assumption.
+
+\paragraph{What is a Fr\'echet derivative?}
+This term comes from functional analysis, the extension of vector-space calculus to spaces whose elements can be whole functions. It expresses the same local linear approximation as a Jacobian. More precisely, for chosen input and output norms, a linear map $\mathcal L$ is the Fr\'echet derivative when
+\begin{equation}
+    \frac{\|\mathbf F[\mathbf u_0+\mathbf h]-\mathbf F[\mathbf u_0]
+    -\mathcal L\mathbf h\|}{\|\mathbf h\|}\longrightarrow0
+    \quad\text{as }\|\mathbf h\|\longrightarrow0.
+\end{equation}
+The condition says that the error of the linear approximation becomes small compared with the perturbation itself. At fixed grid size this is precisely ordinary differentiability with $\mathcal L=J$. For an unregularized PDE, the spaces and norms must be chosen to handle spatial derivatives; this extra mathematical issue is not being silently assumed away here.
+
+For example, for the scalar reaction--diffusion drift $F[u]=D\nabla^2u+r u-bu^3$ and a uniform fixed point $u_0$, direct substitution gives
+\begin{equation}
+    F[u_0+h]-F[u_0]
+    =\underbrace{D\nabla^2h+(r-3bu_0^2)h}_{\mathcal Lh}
+    -3bu_0h^2-bh^3.
+\end{equation}
+One can simply collect the terms linear in $h$ to obtain $\mathcal L$. The name ``Fr\'echet derivative'' provides a general definition of that operation; it is not an additional calculation required for this example.
+
+\paragraph{Why does white noise not invalidate the power counting?}
+Brownian motion has independent increments with $\mathbb E\Delta W_b=0$ and $\mathbb E(\Delta W_b\Delta W_c)=\delta_{bc}\Delta t$. The notation $\xi=\dot W$ is shorthand: it has no finite ordinary value at a single instant. To check smallness, compare accumulated random increments rather than pointwise values of $\xi$.
+
+Let $H_{ib}(t)$ be the coefficient of a discarded noise term in the rescaled equation. During one short step, its contribution has the form
+\begin{equation}
+    \Delta Z_i=a\sum_bH_{ib}(t)\Delta W_b.
+\end{equation}
+The It\^{o} convention uses the coefficient evaluated from the state at the beginning of the step. Conditional on that state, the new Brownian increments are independent of it, so
+\begin{equation}
+    \mathbb E\left[\left.\sum_i(\Delta Z_i)^2\right|\text{state at }t\right]
+    =a^2\Delta t\sum_{i,b}H_{ib}(t)^2.
+\end{equation}
+For such left-endpoint sums, cross terms between distinct time steps vanish by conditioning on the earlier history. Passing to the stochastic integral gives the exact identity
+\begin{equation}
+    \mathbb E\sum_i\left(a\sum_b\int_0^T H_{ib}(s)\,\mathrm dW_b(s)\right)^2
+    =a^2\int_0^T\mathbb E\sum_{i,b}H_{ib}(s)^2\,\mathrm ds.
+    \label{eq:appElementaryIsometry}
+\end{equation}
+This is the finite-dimensional It\^{o} isometry. If the integral on the right stays bounded as $a\to0$, the root-mean-square size of the discarded accumulated noise is $O(a)$. This is why the extra power of $a$ really makes the correction small. It is an estimate of the discarded forcing; controlling the resulting trajectory error additionally uses smooth drift coefficients and bounded fluctuations on the time interval considered.
+
+\paragraph{What are the Frobenius and Hilbert--Schmidt norms?}
+The Frobenius norm is a matrix norm from linear algebra. It is simply the Euclidean length obtained by listing all the matrix entries:
+\begin{equation}
+    \|H\|_{\rm F}=\left(\sum_{i,b}|H_{ib}|^2\right)^{1/2}.
+\end{equation}
+For instance, if $H=\begin{pmatrix}1&2\\0&3\end{pmatrix}$, then $\|H\|_{\rm F}^2=1+4+0+9=14$ and $\|H\|_{\rm F}=\sqrt{14}$. It is the \emph{squared} norm, not the norm itself, that sums the squared amplitudes in Eq.~\eqref{eq:appElementaryIsometry}.
+
+The Hilbert--Schmidt norm comes from operator theory and functional analysis. It extends this idea to a linear operator $H$ between Hilbert spaces, which are vector spaces equipped with an inner product and the corresponding notion of length. For an orthonormal basis $\{e_b\}$ of the input noise space,
+\begin{equation}
+    \|H\|_{\rm HS}^2=\sum_b\|He_b\|^2.
+\end{equation}
+It adds the squared output produced by each independent unit input. For a finite matrix in orthonormal coordinates it equals the Frobenius norm. With infinitely many channels the sum must converge; spatial white noise and differential noise operators can fail this requirement without regularization. This is why the fixed cutoff matters. For the finite-grid derivation, every occurrence of $\|H\|_{\rm HS}^2$ can be read literally as $\sum_{i,b}|H_{ib}|^2$.
+
+\begin{keybox}[What has and has not been approximated]
+The Jacobian calculation and the component-wise noise-variance identity are ordinary finite-dimensional versions of the operator statements below. They retain the same rigor at the fixed spatial cutoff. The approximation is to retain the leading small-noise equation, under smooth coefficients, initial fluctuations of order $\sqrt{\varepsilon}$, and bounded rescaled fluctuations over the time interval considered. Neither the continuum limit nor a uniform stationary or long-wavelength error bound is proved by this local expansion. These qualifications are retained throughout.
+\end{keybox}
+
+\subsubsection{Operator form, explicit remainder terms, and the chemotaxis example}
+
+The following derivation records the same calculation in compact field notation. In it, $\mathcal L$ is the field version of the Jacobian, $\mathbf F_0^{(2)}[h,h]$ is the component-wise Hessian sum, and $\mathbf G_0^{(1)}[h]$ means differentiating each entry of the noise matrix in the direction $h$.
+
+\paragraph{1. Stochastic equation and expansion assumptions.}
+To avoid differentiating white noise as an ordinary function, write the It\^{o} equation in differential form,
+\begin{equation}
+    \mathrm d\mathbf u^\varepsilon
+    =\mathbf F[\mathbf u^\varepsilon]\,\mathrm dt
+    +\sqrt{\varepsilon}\,\mathbf G[\mathbf u^\varepsilon]\,\mathrm d\mathbf W_t,
+    \label{eq:appSmallNoiseSDE}
+\end{equation}
+where $\boldsymbol\xi=\mathrm d\mathbf W_t/\mathrm dt$ is only formal notation. Work at a fixed spatial regularization, so the stochastic integrals and derivatives of $\mathbf F$ and $\mathbf G$ are defined. Assume these maps are sufficiently smooth near a deterministic stationary state $\mathbf u_0$, with $\mathbf F[\mathbf u_0]=0$. Take initial data $\mathbf u^\varepsilon(0)=\mathbf u_0+\sqrt{\varepsilon}\,\mathbf v^\varepsilon(0)$ with scaled fluctuations bounded in the moments needed below. The expansion applies on time intervals where those fluctuations remain bounded; uniformity as $t\to\infty$ or $k\to0$ needs additional estimates.
+
+Define the exact rescaled fluctuation at each $\varepsilon>0$ by
+\begin{equation}
+    \mathbf v^\varepsilon
+    =\frac{\mathbf u^\varepsilon-\mathbf u_0}{\sqrt{\varepsilon}}.
+    \label{eq:appScaledFluctuation}
+\end{equation}
+Since $\mathbf u_0$ is constant in time and this change of variables is affine, It\^{o}'s formula gives $\mathrm d\mathbf u^\varepsilon=\sqrt{\varepsilon}\,\mathrm d\mathbf v^\varepsilon$ with no second-derivative correction. Equation~\eqref{eq:appSmallNoiseSDE} therefore becomes exactly
+\begin{equation}
+    \mathrm d\mathbf v^\varepsilon
+    =\frac{\mathbf F[\mathbf u_0+\sqrt{\varepsilon}\,\mathbf v^\varepsilon]
+    -\mathbf F[\mathbf u_0]}{\sqrt{\varepsilon}}\,\mathrm dt
+    +\mathbf G[\mathbf u_0+\sqrt{\varepsilon}\,\mathbf v^\varepsilon]\,\mathrm d\mathbf W_t.
+    \label{eq:appExactRescaled}
+\end{equation}
+
+\paragraph{2. Functional Taylor expansion of the drift.}
+Let $D\mathbf F[\mathbf u_0]$ denote the first Fr\'echet derivative, acting on a perturbation field $\mathbf h$ as
+\begin{equation}
+    (\mathcal L\mathbf h)_a(\mathbf r)
+    =\sum_{b=1}^n\int_V\mathrm d\mathbf r'\,
+    \left.\frac{\delta F_a[\mathbf u](\mathbf r)}{\delta u_b(\mathbf r')}\right|_{\mathbf u_0}
+    h_b(\mathbf r'),\qquad \mathcal L=D\mathbf F[\mathbf u_0].
+    \label{eq:appFunctionalJacobian}
+\end{equation}
+For local differential equations this kernel can contain derivatives of delta functions; its action is the usual linear differential operator. Write $\mathbf F_0^{(2)}=D^2\mathbf F[\mathbf u_0]$ for the bilinear second derivative. For a bounded perturbation $\mathbf h$,
+\begin{equation}
+    \mathbf F[\mathbf u_0+\sqrt{\varepsilon}\,\mathbf h]
+    =\underbrace{\mathbf F[\mathbf u_0]}_{=0}
+    +\sqrt{\varepsilon}\,\mathcal L\mathbf h
+    +\frac{\varepsilon}{2}\mathbf F_0^{(2)}[\mathbf h,\mathbf h]
+    +O(\varepsilon^{3/2}).
+    \label{eq:appDriftTaylor}
+\end{equation}
+The first nonzero drift term is consequently of order $\sqrt{\varepsilon}$ in the physical equation, and of order one after dividing by $\sqrt{\varepsilon}$.
+
+\paragraph{3. Expansion of the multiplicative noise coefficient.}
+Set $\mathbf G_0=\mathbf G[\mathbf u_0]$ and $\mathbf G_0^{(1)}=D\mathbf G[\mathbf u_0]$. Its Taylor expansion is
+\begin{equation}
+    \mathbf G[\mathbf u_0+\sqrt{\varepsilon}\,\mathbf h]
+    =\mathbf G_0+\sqrt{\varepsilon}\,\mathbf G_0^{(1)}[\mathbf h]
+    +O(\varepsilon).
+\end{equation}
+Here $\mathbf G_0^{(1)}[\mathbf h]$ is still an operator mapping noise channels into field increments. Including the explicit prefactor in Eq.~\eqref{eq:appSmallNoiseSDE} gives
+\begin{equation}
+    \sqrt{\varepsilon}\,\mathbf G[\mathbf u_0+\sqrt{\varepsilon}\,\mathbf h]\,\mathrm d\mathbf W_t
+    =\sqrt{\varepsilon}\,\mathbf G_0\,\mathrm d\mathbf W_t
+    +\varepsilon\,\mathbf G_0^{(1)}[\mathbf h]\,\mathrm d\mathbf W_t
+    +O(\varepsilon^{3/2})\,\mathrm d\mathbf W_t.
+    \label{eq:appNoiseTaylor}
+\end{equation}
+The powers here count $\varepsilon$, not the time increment. For example, It\^{o} isometry at fixed regularization gives
+\begin{equation}
+    \mathbb E\left\|\sqrt{\varepsilon}\int_0^T H_s\,\mathrm d\mathbf W_s\right\|^2
+    =\varepsilon\,\mathbb E\int_0^T\|H_s\|_{\mathrm{HS}}^2\,\mathrm ds,
+\end{equation}
+where the squared Hilbert--Schmidt norm is the sum of squared noise-channel amplitudes: $\|H\|_{\mathrm{HS}}^2=\sum_{i,b}|H_{ib}|^2$ for a finite matrix in orthonormal coordinates. This is exactly the component-wise variance calculation in Eq.~\eqref{eq:appElementaryIsometry}. Thus the stochastic correction is small in mean square when the integral on the right is uniformly bounded. White noise does not cancel the extra factor of $\sqrt{\varepsilon}$.
+
+\paragraph{4. Collecting orders and taking the leading equation.}
+Substituting the expansions into Eq.~\eqref{eq:appExactRescaled} yields
+\begin{align}
+    \mathrm d\mathbf v^\varepsilon
+    ={}&\mathcal L\mathbf v^\varepsilon\,\mathrm dt+\mathbf G_0\,\mathrm d\mathbf W_t\nonumber\\
+    &+\sqrt{\varepsilon}\left\{
+    \frac12\mathbf F_0^{(2)}[\mathbf v^\varepsilon,\mathbf v^\varepsilon]\,\mathrm dt
+    +\mathbf G_0^{(1)}[\mathbf v^\varepsilon]\,\mathrm d\mathbf W_t\right\}
+    +O(\varepsilon)\,\mathrm dt+O(\varepsilon)\,\mathrm d\mathbf W_t.
+    \label{eq:appOrdersCollected}
+\end{align}
+The remainder notation refers to the drift and stochastic-integrand coefficients on bounded sets. Retaining only terms of order one in this rescaled equation defines the leading fluctuation $\mathbf v$:
+\begin{equation}
+    \mathrm d\mathbf v=\mathcal L\mathbf v\,\mathrm dt+\mathbf G_0\,\mathrm d\mathbf W_t,
+    \qquad\boxed{\partial_t\mathbf v=\mathcal L\mathbf v+\mathbf G[\mathbf u_0]\boldsymbol\xi.}
+    \label{eq:appLeadingNoiseEquation}
+\end{equation}
+In particular, the term $\mathbf G_0^{(1)}[\mathbf v]\boldsymbol\xi$ is not discarded because its mean vanishes. It is discarded because it carries an additional factor $\sqrt{\varepsilon}$ in Eq.~\eqref{eq:appOrdersCollected}, at the same order as the quadratic drift correction. At fixed noise strength, a Taylor expansion only in the state perturbation would retain a linear multiplicative-noise term and would not in general give an additive Ornstein--Uhlenbeck process.
+
+For completeness, the formal next-order ansatz $\mathbf u^\varepsilon=\mathbf u_0+\sqrt{\varepsilon}\,\mathbf v+\varepsilon\mathbf w+\cdots$ gives
+\begin{equation}
+    \mathrm d\mathbf w=\left(\mathcal L\mathbf w+
+    \frac12\mathbf F_0^{(2)}[\mathbf v,\mathbf v]\right)\mathrm dt
+    +\mathbf G_0^{(1)}[\mathbf v]\,\mathrm d\mathbf W_t.
+    \label{eq:appNextOrderNoise}
+\end{equation}
+This identifies both corrections omitted from the leading equation. With zero-mean leading initial fluctuations, $\mathbb E\mathbf v=0$, but the quadratic term can produce an order-$\varepsilon$ shift of $\mathbb E\mathbf u^\varepsilon$ through $\mathbb E\mathbf w$. The original equation was already It\^{o}; a Stratonovich starting equation would first require its drift conversion, which is of order $\varepsilon$ for the noise amplitude in Eq.~\eqref{eq:appSmallNoiseSDE}.
+
+\paragraph{5. Physical fluctuation and covariance normalization.}
+The leading physical fluctuation is $\delta\mathbf u_{\rm lin}=\sqrt{\varepsilon}\,\mathbf v$, and therefore
+\begin{equation}
+    \partial_t\delta\mathbf u_{\rm lin}
+    =\mathcal L\delta\mathbf u_{\rm lin}
+    +\sqrt{\varepsilon}\,\mathbf G_0\boldsymbol\xi.
+\end{equation}
+If $B_0(\mathbf k)$ is the Fourier noise operator for $\mathbf v$, the physical Fourier variable $\mathbf x_{\mathbf k}$ in Eq.~\eqref{eq:gfOU} has
+\begin{equation}
+    B=\sqrt{\varepsilon}\,B_0,\qquad Q=\varepsilon B_0B_0^\dagger,
+    \qquad C_{\rm lin}=\varepsilon C_v.
+\end{equation}
+Thus removing $\sqrt{\varepsilon}$ from the rescaled equation does not remove the physical noise strength. If $\varepsilon$ is only a bookkeeping parameter and is subsequently set to one, the result remains a linear-noise approximation whose accuracy must be assessed for the particular model.
+
+% \paragraph{6. Explicit check for the chemotaxis fields.}
+% For the consumption model, insert a bookkeeping factor $\sqrt{\varepsilon}$ in front of the Dean noise and let
+% \begin{equation}
+%     \rho=\rho_0+\sqrt{\varepsilon}\,v_\rho,\qquad
+%     c=c_0+\sqrt{\varepsilon}\,v_c,\qquad
+%     \mu c_0-\rho_0=0.
+% \end{equation}
+% The uniform background has $\nabla c_0=0$. The deterministic terms expand as
+% \begin{align}
+%     -\alpha\nabla\cdot(\rho\nabla c)+D\nabla^2\rho
+%     & =\sqrt{\varepsilon}\left(D\nabla^2v_\rho
+%     -\alpha\rho_0\nabla^2v_c\right)
+%     -\varepsilon\alpha\nabla\cdot(v_\rho\nabla v_c),\\
+%     D_c\nabla^2c+\mu c-\rho
+%     &=\sqrt{\varepsilon}\left(D_c\nabla^2v_c+\mu v_c-v_\rho\right).
+% \end{align}
+% For $\rho_0>0$ and fluctuations small compared with $\rho_0$, the noise amplitude is
+% \begin{equation}
+%     \sqrt{2D\rho}=\sqrt{2D\rho_0}
+%     \left(1+\frac{\sqrt{\varepsilon}\,v_\rho}{2\rho_0}+O(\varepsilon)\right).
+% \end{equation}
+% Consequently the physical random-current divergence becomes
+% \begin{align}
+%     -\sqrt{\varepsilon}\,\nabla\cdot[\sqrt{2D\rho}\boldsymbol\Lambda]
+%     ={}&-\sqrt{\varepsilon}\,\nabla\cdot[\sqrt{2D\rho_0}\boldsymbol\Lambda]\nonumber\\
+%     &-\varepsilon\,\nabla\cdot\left[
+%     \frac{\sqrt{2D\rho_0}}{2\rho_0}v_\rho\boldsymbol\Lambda\right]
+%     +O(\varepsilon^{3/2}),
+% \end{align}
+% with stochastic products interpreted through It\^{o} integrals. Dividing the field equations by $\sqrt{\varepsilon}$ and retaining the leading terms gives
+% \begin{equation}
+%     \partial_t\begin{pmatrix}v_\rho\\v_c\end{pmatrix}
+%     =\underbrace{\begin{pmatrix}
+%         D\nabla^2&-\alpha\rho_0\nabla^2\\
+%         -1&D_c\nabla^2+\mu
+%     \end{pmatrix}}_{\mathcal L}
+%     \begin{pmatrix}v_\rho\\v_c\end{pmatrix}
+%     +\underbrace{\begin{pmatrix}
+%         -\nabla\cdot[\sqrt{2D\rho_0}\boldsymbol\Lambda]\\0
+%     \end{pmatrix}}_{\mathbf G[\mathbf u_0]\boldsymbol\xi}.
+% \end{equation}
+% Here $\boldsymbol\xi=\boldsymbol\Lambda$ consists of the $d$ random-current components. Fourier transformation gives precisely the drift matrix in Eq.~\eqref{eq:gfChemoExample}, and $Q_{v,\rho\rho}=2D\rho_0k^2$ for the rescaled variable. The physical noise covariance is $\varepsilon$ times this value. At $\mu=0$, the same calculation uses a deterministic uniform trajectory $\bar c(t)$ with $\dot{\bar c}=-\rho_0$: subtracting its equation replaces the stationary-background cancellation above, while the gradient coupling leaves $\mathcal L$ unchanged.
 
 \subsection{Derivation of Dean's equation}
 
@@ -371,7 +963,7 @@ which leads to the deterministic chemotactic term in the density equation.
 
 The Brownian noise contribution requires an It\^{o} expansion. For a single particle,
 \begin{equation}
-    \mathrm{d}\delta(\mathbf r-\mathbf r_i) = -\nabla\delta(\mathbf r-\mathbf r_i)\cdot \mathrm{d}\mathbf r_i + D\nabla^2\delta(\mathbf r-\mathbf r_i)\,dt.
+    \mathrm{d}\delta(\mathbf r-\mathbf r_i) = -\nabla\delta(\mathbf r-\mathbf r_i)\cdot \mathrm{d}\mathbf r_i + D\nabla^2\delta(\mathbf r-\mathbf r_i)\,\mathrm{d}t.
 \end{equation}
 The first term on the right-hand side is the stochastic contribution. Summing over all particles, it can be written as the divergence of a random current:
 \begin{equation}
@@ -415,17 +1007,17 @@ For an Ornstein-Uhlenbeck process described by the equation
 \end{equation}
 where $\eta(t)$ is a Gaussian white noise with zero mean and correlation $\langle \eta(t)\eta(t')\rangle = 2\Gamma\delta(t-t')$, the formal solution is 
 \begin{equation}
-    X\left( t \right) =X\left( 0 \right) \mathrm{e}^{-\lambda t}+\int_{-\infty}^t{\mathrm{e}^{-\lambda \left( t-s \right)}\eta \left( s \right) \mathrm{d}s }\;.
+    X\left( t \right) =X\left( 0 \right) \mathrm{e}^{-\lambda t}+\int_{-\infty}^{\top}{\mathrm{e}^{-\lambda \left( t-s \right)}\eta \left( s \right) \mathrm{d}s }\;.
 \end{equation}
 After a long time, the initial condition becomes irrelevant:
 \begin{equation}
-    X\left( t \right) \approx \int_{-\infty}^t{\mathrm{e}^{-\lambda \left( t-s \right)}\eta \left( s \right) \mathrm{d}s }\;.
+    X\left( t \right) \approx \int_{-\infty}^{\top}{\mathrm{e}^{-\lambda \left( t-s \right)}\eta \left( s \right) \mathrm{d}s }\;.
 \end{equation}
 The variance of $X(t)$ can be calculated as:
 \begin{equation}
     \begin{aligned}
-        \langle X^2(t)\rangle &=\int_{-\infty}^t{\int_{-\infty}^t{\mathrm{e}^{-\lambda (2t-s-s^{\prime})}\langle \eta (s)\eta (s^{\prime})\rangle \mathrm{d}s\mathrm{d}s^{\prime}}}\\
-        &=2\Gamma \int_{-\infty}^t{e^{-2\lambda (t-s)}\mathrm{d}s}\\
+        \langle X^2(t)\rangle &=\int_{-\infty}^{\top}{\int_{-\infty}^{\top}{\mathrm{e}^{-\lambda (2t-s-s^{\prime})}\langle \eta (s)\eta (s^{\prime})\rangle \mathrm{d}s\mathrm{d}s^{\prime}}}\\
+        &=2\Gamma \int_{-\infty}^{\top}{e^{-2\lambda (t-s)}\mathrm{d}s}\\
         &=\frac{\Gamma}{\lambda}\;.\\
     \end{aligned}
 \end{equation}
@@ -474,7 +1066,7 @@ where
 \end{equation}
 The Lyapunov equation
 \begin{equation}
-    AC+CA^T+Q=0
+    AC+CA^{\top}+Q=0
     \label{eq:Lyapunov}
 \end{equation}
 produces
