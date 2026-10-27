@@ -1,0 +1,733 @@
+                                                            Nonlocal Sensing Drives Hybrid Phase Separation in Brownian Matter
+
+                                                              Benchang Wu,1, ∗ Ziluo Zhang,1, ∗ Shutong Guo,2, ∗ Hepeng Zhang,2, † and Zhihong You1, ‡
+                                                                         1
+                                                                           Fujian Provincial Key Laboratory for Soft Functional Materials Research,
+                                                                                     Research Institute for Biomimetics and Soft Matter,
+                                                                         Department of Physics, Xiamen University, Xiamen, Fujian 361005, China
+                                                                      2
+                                                                        School of Physics and Astronomy, Institute of Natural Sciences and MOE-LSC,
+                                                                                   Shanghai Jiao Tong University, Shanghai 200240, China
+                                                                                                    (Dated: June 23, 2026)
+                                                                 Matter can organize not only through forces, but also through the information its constituents
+                                                              acquire from their surroundings. Here we use perceptive Brownian particles as a minimal model
+                                                              to isolate nonlocal sensing as an organizing principle for nonequilibrium matter. The particles
+arXiv:2606.21464v1 [cond-mat.soft] 19 Jun 2026
+
+
+
+
+                                                              undergo purely Brownian motion, with no mechanical interactions, self-propulsion, alignment, or
+                                                              auxiliary fields. Their only coupling is informational, through diffusivity regulated by density mea-
+                                                              sured over a finite perception zone. Whereas local sensing, when unstable, produces conventional
+                                                              long-wavelength demixing, nonlocal perception restructures the instability spectrum, introducing
+                                                              finite-wavelength patterning and nonlinear bubbling instabilities. More fundamentally, it reshapes
+                                                              the ordering pathway by assembling a cascade of instabilities: macroscopic demixing creates dense
+                                                              domains, finite-wavelength modes pattern them internally, and nonlinear feedback hollows them
+                                                              into void bubbles. This produces hybrid phase separation, where a macroscopic dense phase co-
+                                                              exists with a dilute background while retaining ordered internal microstructure, whose symmetry,
+                                                              anisotropy, and length scales are selected by the perception kernel. These results establish infor-
+                                                              mation acquisition as a constitutive principle of nonequilibrium matter, capable of governing both
+                                                              phase stability and the dynamical pathways through which order emerges.
+
+
+                                                    Information transfer offers a route by which nonequi-         may also be geometrical, as in anisotropic or vision-based
+                                                 librium matter can couple its internal dynamics to its           sensing, where the spatial region over which information
+                                                 surroundings [1–3]. In many living and engineered sys-           is acquired encodes directional or nonlocal environmental
+                                                 tems, constituents do not merely respond to instanta-            cues [18, 19, 28–32]. These advances show that sensing
+                                                 neous forces or local thermodynamic variables. They              can strongly reshape active matter. Yet in most exist-
+                                                 sense their environment, process the acquired informa-           ing settings, perception remains tied to self-propulsion,
+                                                 tion through a perception rule, and use it to update how         alignment, chemical propulsion, external control or addi-
+                                                 they move, fluctuate or interact [4]. The material con-          tional fields, making its independent role difficult to iso-
+                                                 figuration then determines what is perceived, while the          late. The key unresolved question is whether the way
+                                                 perceived information feeds back on the subsequent evo-          matter acquires information can itself generate a new
+                                                 lution of the configuration. This feedback suggests a form       route to self-organization, rather than merely renormaliz-
+                                                 of self-organization that is not reducible to direct me-         ing motility, modifying interactions or imposing external
+                                                 chanical interactions or intrinsic motility alone. A cen-        feedback.
+                                                 tral question is whether information acquisition can be             Here we employ perceptive Brownian particles (PBPs),
+                                                 isolated as a physical organizing principle in its own right,    a minimal model in which otherwise passive Brownian
+                                                 and whether the geometry by which matter perceives its           particles regulate their diffusivity according to the den-
+                                                 environment can define new modes of phase ordering.              sity they perceive [8, 9, 33]. By removing self-propulsion,
+                                                    Active matter provides a natural arena for this ques-         alignment and direct attractive interactions, the model
+                                                 tion. Sustained nonequilibrium driving has been shown            exposes perception-mediated feedback as the essential
+                                                 to generate collective phenomena such as motility-               source of nonequilibrium organization. We show that
+                                                 induced phase separation, flocking, clustering and ac-           nonlocal perception does not simply shift the onset of
+                                                 tive turbulence [2, 3, 5–10]. When this driving is reg-          phase separation. Instead, it reshapes the instability
+                                                 ulated by sensing or information exchange, the range of          spectrum and couples long-wavelength demixing to finite-
+                                                 possible behaviours expands further [11, 12]. Density-           wavelength structuring, producing a perception-induced
+                                                 dependent motility and quorum sensing provide simple             hybrid instability. The resulting state is hybrid phase
+                                                 examples in which local population cues regulate activ-          separation: a macroscopic dense phase coexists with a
+                                                 ity and thereby couple sensing to aggregation or phase           dilute phase while developing ordered microstructures in-
+                                                 separation [9, 13–21]. More elaborate forms of communi-          ternally [34–36]. The perception kernel acts as an infor-
+                                                 cation arise in chemotactic, phoretic and field-mediated         mation filter, so that its geometry selects the balance be-
+                                                 systems, where particles respond to signals produced by          tween macrophase separation and internal ordering, and
+                                                 others, giving rise to long-ranged interactions, pattern         thereby controls the hierarchy of length scales. As in-
+                                                 formation and collective transport [22–27]. Perception           ternal microstructure develops, nonlocal perception can
+                                                                                                                             2
+
+
+
+
+FIG. 1. State diagram for circular perception. (a) Schematic of PBPs with a circular perception zone marked in red.
+(b) Parabolic form of diffusivity D. (c) State diagram at circular perception spanned by the radius r0 and the mean density
+ρ0 = N/L2 . Solid lines denote state boundaries from the linear analysis of the continuum theory. (d-g) Representative particle
+configurations at steady state in the (d) homogeneous, (e-f) HPS, (g) MPS states (red symbol shows the perception zone). The
+mean densities are: (d) ρ0 = 0.13, (e) ρ0 = 0.53, (f) ρ0 = 0.89, and (g) ρ0 = 1.24.
+
+
+further destabilize the microdomains through a nonlinear          figuration, perception, and fluctuation regulation. We
+                                                                                                        √
+bubbling instability, generating ordered arrays of voids          nondimensionalize lengths by ℓ = 1/ ρc and times by
+within the dense phase. These results establish that in-          τ = 1/(D0 ρc ). All results are reported in these units
+formation acquisition reshapes nonequilibrium phase be-           unless stated otherwise. Simulation details are given in
+havior by controlling both instability spectra and order-         Sec. S1 of the SI.
+ing pathways, placing the perception rule on equal foot-
+ing with mechanical interactions.                                    Particle simulations. To probe the effects of nonlocal
+  Particle model. We consider a minimal model of N                perception, we first consider a circular perception region
+overdamped Brownian particles in a two-dimensional box            of radius r0 (Fig. 1a). Varying r0 continuously tunes the
+of size L × L. The particles exert no direct mechanical           range of information acquisition. Figure 1c summarizes
+forces and obey purely diffusive dynamics [8, 33],                the steady states in the (r0 , ρ0 ) plane, where ρ0 = N/L2 .
+                         p                                        For sufficiently small r0 , perception is effectively local
+                    ṙi = 2D(ρ̃i ) ηi (t),            (1)         and the system remains visually homogeneous over the
+                                                                  parameter range studied (Fig. 1d and yellow region in
+where ηi (t) is Gaussian white noise with ⟨ηiα (t)ηjβ (t′ )⟩ =    Fig. 1c). Once r0 exceeds a critical value, nonlocal sens-
+δij δαβ δ(t − t′ ). The only coupling is informational: par-      ing destabilizes the homogeneous state and opens two or-
+ticle i sets its diffusivity from the perceived density           dered regimes inaccessible to local perception. At lower
+ρ̃i = ni /Si , where ni is the number of particles, including     ρ0 , the system exhibits a multiscale ordering dynamics:
+itself, inside its perception zone of area Si (Fig. 1a). The      dense clusters nucleate, hollow into bubble-bearing do-
+geometry of this zone specifies how density information           mains, and coarsen by coalescence and Ostwald ripen-
+is acquired and is the central control hparameter. We use     i   ing [39, 40] (Fig. 1e, Vid. S1, and blue region in Fig. 1c).
+                                                            2
+the parabolic response D(ρ̃i ) = D0 χ + (ρ̃i /ρc − 1) ,           The final state consists of a single internally patterned
+where D0 sets the diffusivity scale, ρc is the preferred per-     dense phase coexisting with a dilute background. This
+ceived density, and χD0 is a small bare diffusivity with          state is intrinsically multiscale: it emerges through large-
+χ ≪ 1 (Fig. 1b). Thus particles fluctuate least when              scale phase separation while retaining finite-wavelength
+ρ̃i = ρc and become more mobile when the perceived                order within the dense phase, a signature of microphase
+environment is either too dilute or too crowded, as in            separation [34–36, 41, 42]. We therefore refer to this
+quorum-sensing systems, spacing-regulating swarms, and            multiscale coexistence as hybrid phase separation (HPS).
+feedback-controlled colloids [14–16, 37, 38]. Since motil-        As ρ0 increases, the dense phase occupies a larger frac-
+ity is regulated by density reconstructed through a per-          tion of the system, whereas the internal bubble spac-
+ception zone rather than by the instantaneous local den-          ing remains nearly unchanged (Fig. 1f, Vid. S2). At
+sity, any organization arises from feedback between con-          still higher density, the dilute background disappears and
+                                                                                                                          3
+
+                                                                Bubble arrangements also reflect the kernel geometry,
+                                                                with each bubble occupying an exclusion neighborhood
+                                                                set by the perception zone. Thus the perception kernel
+                                                                acts as a morphological selector, imprinting its symme-
+                                                                try, anisotropy, and characteristic length scales onto the
+                                                                emergent multiscale morphology.
+                                                                  Continuum theory. To reveal the nonequilibrium
+                                                                mechanism underlying the emergent organization, we
+                                                                coarse-grain the particle dynamics using a Dean-type
+                                                                construction [43] (Sec. S2 of the SI). Retaining the deter-
+                                                                ministic contribution gives a conserved density dynamics,
+                                                                             ∂t ρ(r, t) = ∇2 µP (r, t) − κ∇4 ρ,         (2)
+                                                                where the fourth-order term stabilizes short wave-
+                                                                lengths [41, 44]. Here, µP (r, t) = D[ρ̄(r, t)] ρ(r, t) is
+                                                                the perception-mediated chemical  R potential, with D(ρ̄) =
+                                                                D0 [χ+(ρ̄/ρc −1)2 ] and ρ̄(r, t) = dr′RK(r−r′ )ρ(r′ , t). K
+                                                                is the normalized perception kernel, dr, K(r) = 1. For
+                                                                circular perception, K(r) = Θ(r0 − |r|)/(πr02 ). Unlike
+                                                                conventional chemical potentials tied to the local com-
+                                                                position field [41, 44, 45], µP is information-mediated:
+                                                                the density is first sampled over a finite perception range
+                                                                and only then converted into a local motility response.
+                                                                Perception therefore enters as a constitutive ingredient
+FIG. 2. Perception geometry determines the multi-               of Brownian matter, rather than merely renormalizing a
+scale morphology of the emerging structures. Columns            local diffusivity. Numerical solutions of Eq. (2) qualita-
+show particle simulations with square, cross-shaped, and
+double-circle perception zones, respectively, while rows cor-
+                                                                tively reproduce the morphologies observed in the parti-
+respond to different mean densities. Red symbols in the bot-    cle model (Sec. S3).
+tom row indicate the corresponding perception zones. The           Nonlocal sensing reshapes phase ordering. The con-
+mean densities are: (a,d,g) ρ0 = 0.53, (b,e,h) ρ0 = 0.89, (c)   tinuum theory further shows that perception fundamen-
+ρ0 = 1.51, (f) ρ0 = 1.78, (i) ρ0 = 1.24.                        tally reshapes nonequilibrium organization at the level
+                                                                of the instability spectrum. In conserved density dy-
+                                                                namics, the nature of an instability is encoded in its
+the system crosses over to a microphase-separated state         dispersion relation: unstable modes near k = 0 produce
+(MPS), where periodic bubble arrays span the entire sys-        macrophase separation, while growth at finite k produces
+tem (Fig. 1g, Vid. S3).                                         intrinsic wavelength selection and yields pattern forma-
+   Finite-range sensing opens a route to phase ordering,        tion [46, 47]. The striking feature of nonlocal sensing
+while sensing geometry selects the morphology of the or-        is that it does not merely shift the demixing threshold,
+dered state. As shown in Fig. 2, changing the percep-           but restructures the unstable spectrum and opens new
+tion kernel preserves the overall organization—HPS at           pathways of phase ordering.
+lower density and MPS at higher density—but strongly               To see this, we linearize Eq. (2) about a homogeneous
+reshapes the structures across scales. At the macroscale,       state of density ρ0 (Sec. S4 of the SI). For perturbations
+anisotropic kernels stabilize anisotropic dense domains         δρk ∼ eσ(k)t , the growth rate is
+rather than the nearly circular droplets typical of con-                            h                              i
+ventional phase separation [42]. Square and cross-shaped               σ(k) = −k 2 D(ρ0 ) + ρ0 D′ (ρ0 )K(k)
+                                                                                                        b    + κk 2 , (3)
+perception both yield square-like droplets and cavities,
+but with interfaces aligned along diagonal and cardi-           with k = |k|.           The first term in brackets is
+nal directions, respectively. Double-circle perception in-      the local diffusive response, while the second is the
+stead elongates dense domains along the sensing axis.           perception-mediated feedback, whose sign is controlled
+This suggests that sensing anisotropy induces an effective      by D′ (ρ0 )K(k).
+                                                                           b       In the local limit, K(r) = δ(r) and
+anisotropic interfacial response that shapes the dense–         K(k) = 1, so the only wavelength dependence comes
+                                                                 b
+dilute boundary. The internal microstructure is selected        from the stabilizing term κk 2 . Any instability is there-
+in the same way. Square and cross-shaped perception             fore attached to k = 0 (blue line in Fig. 3a) and re-
+produce square-like microbubbles with different orien-          quires D(ρ0 ) + ρ0 D′ (ρ0 ) < 0. This criterion reflects the
+tations, while double-circle perception yields elongated        sign of the local chemical-potential response to a den-
+bubbles perpendicular to the sensing axis (Figs. 2c,f,i).       sity perturbation. For local perception, µP = D(ρ)ρ, so
+                                                                                                                              4
+
+                                                                    with the local density. With finite-range perception, how-
+                                                                    ever, negative lobes of K(k)b     make the feedback term
+                                                                         ′
+                                                                    ρ0 D (ρ0 )K(k)
+                                                                               b     destabilizing at finite k. When this con-
+                                                                    tribution overcomes D(ρ0 ) + κk 2 , σ(k) develops a finite-
+                                                                    wavelength unstable band (orange line in Fig. 3a). Intu-
+                                                                    itively, nonlocal filtering can make the perceived-density
+                                                                    modulation, and hence µP , out of phase with the actual
+                                                                    density field, reversing the diffusive flux and amplifying
+                                                                    density peaks (Fig. 3c). This mechanism accounts for the
+                                                                    MPS observed at large ρ0 in Figs. 1 and 2 [34–36]. Consis-
+                                                                    tently, linear stability predicts both the ordering thresh-
+                                                                    old (red line in Fig. 1c) and the characteristic structures:
+                                                                    the dominant peaks in the simulated structure factors co-
+                                                                    incide with the fastest-growing modes of σ(k) (Sec. S4).
+                                                                    Nonlocal perception therefore destabilizes density modes
+                                                                    that are stable in the local limit, turning information
+                                                                    range into a wavelength-selection mechanism.
+                                                                       For ρ0 < ρc , where D′ (ρ0 ) < 0, finite-range perception
+                                                                    modifies the growth rates but not the long-wavelength
+                                                                    character of the primary instability, since K(k)b    → 1 as
+                                                                    k → 0 (red line in Fig. 3a and Fig. 3d). Thus, when
+                                                                    unstable, the homogeneous state first follows the conven-
+FIG. 3. Linear instability for circular perception. (a)             tional Cahn–Hilliard route: long-wavelength fluctuations
+Dispersion relations σ(k) for different perception radii r0 and     grow and separate the system into dense and dilute re-
+mean densities ρ0 . (b) In the local limit with D′ (ρ0 ) < 0,       gions [41, 42]. As demixing proceeds, however, the den-
+the chemical potential µP is out of phase with the density
+                                                                    sity inside the dense domains ρd can rise to ρd > ρc ,
+ρ, producing fluxes (blue arrows) that amplify the density
+fluctuation. (c) For finite-range perception with D′ (ρ0 ) > 0,     where D′ (ρd ) > 0. The sign-changing perception ker-
+nonlocal filtering can make ρ̄, and hence µP , out of phase         nel can then destabilize finite-k modes within the dense
+with ρ, reversing the fluxes (blue arrows) so that material         phase, inducing a secondary pattern-forming instability,
+is driven into the density peak. (d) In the long-wavelength         as illustrated by the finite-k unstable branch (orange line
+limit (k → 0) with D′ (ρ0 ) < 0, the perceived density ρ̄ closely   in Fig. 3a). The dense domains thereby acquire internal
+follows the local density ρ, so finite-range perception does not    order while macroscopic phase separation persists. This
+change the long-wavelength nature of the instability.
+                                                                    hierarchical sequence—large-scale demixing followed by
+                                                                    internal wavelength selection—produces HPS, showing
+                                                                    that nonlocal sensing restructures not only the instability
+δµP = [D(ρ0 ) + ρ0 D′ (ρ0 )] δρ. The homogeneous state              threshold but also the route of phase ordering.
+is unstable only when a density increase lowers the lo-
+                                                                       Nonlocal sensing induced bubbling. While linear stabil-
+cal chemical potential. A density peak then becomes a
+                                                                    ity explains the onset of HPS and MPS, it does not ac-
+chemical-potential minimum, and the current J = −∇µP
+                                                                    count for the robust emergence of bubbles across sensing
+drives material into the peak, amplifying the fluctuation
+                                                                    geometries. These bubble-based microstructures differ
+(Fig. 3b). Local perception thus supports only a Cahn–
+                                                                    from conventional microphase-separated states, whose el-
+Hilliard-like long-wavelength demixing instability, analo-
+                                                                    ementary units are typically compact dense domains [34–
+gous to the onset of MIPS [10, 13, 41, 42].
+                                                                    36]. To examine the onset of bubbling more directly,
+   Finite-range perception fundamentally alters the                 we simulate a one-dimensional version of Eq. (2) in
+linear-stability spectrum [27, 48, 49]. For circular per-           the MPS regime (Fig. 4a and Sec. S3C). Starting from
+ception of radius r0 , the Fourier kernel is K(k) b      =          a nearly uniform state, the fastest-growing mode first
+2J1 (kr0 )/(kr0 ), where J1 is the first-order Bessel func-         grows as predicted by Eq. (3). At later times, the density
+tion. Because K(k)
+                 b    is nonmonotonic and sign-changing,            maxima develop central indentations that deepen into a
+the dispersion relation becomes wavelength selective:               one-dimensional bubbling state. The mechanism follows
+modes unstable in the local theory can be suppressed,               from how finite-range perception filters a growing den-
+while locally stable modes can become unstable at                   sity peak. For an early profile ρ(x) = ρ0 + A cos(k∗ x),
+perception-selected wavelengths. This is clearest for               where k∗ is the most unstable mode, the perceived den-
+ρ0 > ρc , where D′ (ρ0 ) > 0. In such case, the homo-                                     b ∗ ) cos(k∗ x). In the MPS regime
+                                                                    sity is ρ̄(x) = ρ0 + AK(k
+geneous state is always stable at local sensing, since the          considered here, where D′ (ρ0 ) > 0, the finite-k∗ insta-
+chemical potential µP = D(ρ)ρ increases monotonically                                b ∗ ) < 0, the peak center perceives an
+                                                                    bility requires K(k
+                                                                                                                             5
+
+                                                                   only reshapes the instability spectrum, but also reorga-
+                                                                   nizes the route to order. In the system studied here, non-
+                                                                   local sensing produces HPS at lower densities, MPS at
+                                                                   higher densities, and robust bubbling within the ordered
+                                                                   microstructures. In particular, the HPS state arises
+                                                                   through a cascade of perception-mediated instabilities
+                                                                   (Fig. 4d): long-wavelength demixing first forms macro-
+                                                                   scopic dense domains, finite-wavelength modes then pat-
+                                                                   tern those domains internally, and nonlinear feedback fi-
+                                                                   nally hollows the microdomains into void bubbles. The
+                                                                   resulting multiscale morphology is further sculpted by
+                                                                   the perception kernel, whose geometry selects the sym-
+                                                                   metry, anisotropy, and characteristic length scales of the
+                                                                   ordered state.
+                                                                      This picture is distinct from previous routes to phase
+                                                                   ordering, which typically rely on competing interactions,
+                                                                   self-propulsion, chemical fields, or explicit interparticle
+                                                                   forces [34–36, 45, 50, 51]. Here the particles are other-
+                                                                   wise Brownian, and the nonlocal kernel is not mechan-
+                                                                   ical but an information-acquisition rule that filters the
+                                                                   density field before it is converted into motility. Sens-
+FIG. 4. Nonlinear mechanism of bubbling. (a) Spa-
+tiotemporal evolution of the one-dimensional density field         ing therefore does not merely renormalize motility or
+ρ(x, t), showing the growth of a finite-wavelength mode and        shift instability thresholds. It enters as a constitutive
+its nonlinear transformation into a bubbling state. See            ingredient of nonequilibrium matter, determining both
+Sec. S3C of the SI for simulation details. (b,c) Chemical-         phase stability and the sequence of instabilities through
+potential response generated by representative single-mode         which ordered states are dynamically assembled. More
+profiles ρ(x) ≃ ρ0 + A cos(k∗ x). (b) For small amplitude A,       broadly, our results suggest that nonequilibrium phases
+the perceived density at the peak remains above ρc , and the
+                                                                   can be shaped not only by forces, activity, and conserva-
+perception-mediated chemical potential reinforces the density
+modulation. (c) For large A, nonlocal filtering lowers the per-    tion laws, but also by how constituents measure their sur-
+ceived density at the peak below ρc , reversing the local curva-   roundings. This points toward a broader statistical me-
+ture of µP and driving material outward from the peak center,      chanics of adaptive matter, in which sensing kernels and
+thereby initiating hollowing. (d) Schematic illustration of the    information-processing rules enter as constitutive laws
+cascade of instabilities leading to HPS.                           that shape phases, mechanics, interfaces, fluctuations,
+                                                                   and defects.
+
+increasingly depleted environment as A grows (Fig. 4b).
+At small amplitude, the perceived density at the peak
+remains above ρc , so the peak center is a chemical-                 ∗
+potential minimum and continues to accumulate mass.                     These authors contributed equally
+                                                                     †
+                                                                        Corresponding author: Hepeng zhang@sjtu.edu.cn
+When A > (ρ0 − ρc )/|K(k   b ∗ )|, the perceived density              ‡
+                                                                        Corresponding author: zhyou@xmu.edu.cn
+crosses ρc , reversing the local curvature of µP (Fig. 4c           [1] S. Ramaswamy, Annual Review of Condensed Matter
+and Sec. S5). The density peak then becomes a chemical-                 Physics 1, 323 (2010).
+potential maximum, driving a conserved outward flux                 [2] M. C. Marchetti, J.-F. Joanny, S. Ramaswamy, T. B.
+toward the shoulders. The compact density maximum                       Liverpool, J. Prost, M. Rao, and R. A. Simha, Reviews
+consequently flattens, hollows, and becomes a bubble.                   of Modern Physics 85, 1143 (2013).
+Thus nonlocal perception converts finite-wavelength den-            [3] C. Bechinger, R. Di Leonardo, H. Löwen, C. Reichhardt,
+                                                                        G. Volpe, and G. Volpe, Reviews of Modern Physics 88,
+sity peaks into void-bearing domains through a nonlinear                045006 (2016).
+inversion of the perception-mediated chemical-potential             [4] I. D. Couzin, J. Krause, N. R. Franks, and S. A. Levin,
+landscape.                                                              Nature 433, 513 (2005).
+   Discussion. We have used perceptive Brownian parti-              [5] T. Vicsek, A. Czirók, E. Ben-Jacob, I. Cohen, and
+cles as a minimal model to isolate how finite-range sens-               O. Shochet, Physical Review Letters 75, 1226 (1995).
+                                                                    [6] J. Toner and Y. Tu, Physical Review Letters 75, 4326
+ing organizes nonequilibrium Brownian matter. Previous
+                                                                        (1995).
+works on related Brownian models showed that density-               [7] H. H. Wensink, J. Dunkel, S. Heidenreich, K. Drescher,
+dependent mobility can produce aggregation, demixing,                   R. E. Goldstein, H. Löwen, and J. M. Yeomans, Pro-
+or pattern formation [8, 9, 27]. Here we show that finite-              ceedings of the National Academy of Sciences 109, 14308
+range perception plays a more fundamental role: it not                  (2012).
+                                                                                                                               6
+
+ [8] C. López, Physical Review E 74, 012102 (2006).               [34] L. Leibler, Macromolecules 13, 1602 (1980).
+ [9] Y. Zhou, Y. Li, and F. Marchesoni, National Science           [35] T. Ohta and K. Kawasaki, Macromolecules 19, 2621
+     Open 3, 20230081 (2024).                                           (1986).
+[10] M. E. Cates and J. Tailleur, Annual Review of Condensed       [36] M. Seul and D. Andelman, Science 267, 476 (1995).
+     Matter Physics 6, 219 (2015).                                 [37] M. Rubenstein, A. Cornejo, and R. Nagpal, Science 345,
+[11] S. Li, T. V. Phan, L. Di Carlo, G. Wang, V. H. Do,                 795 (2014).
+     E. Mikhail, R. H. Austin, and L. Liu, Physical Review         [38] M. A. Fernandez-Rodriguez, F. Grillo, L. Alvarez,
+     Letters 136, 138302 (2026).                                        M. Rathlef, I. Buttinoni, G. Volpe, and L. Isa, Nature
+[12] B. VanSaders, M. Fruchart, and V. Vitelli, PNAS Nexus              Communications 11, 4223 (2020).
+     5, pgag077 (2026).                                            [39] I. M. Lifshitz and V. V. Slyozov, Journal of Physics and
+[13] J. Tailleur and M. E. Cates, Physical Review Letters 100,          Chemistry of Solids 19, 35 (1961).
+     218103 (2008).                                                [40] C. Wagner, Zeitschrift für Elektrochemie 65, 581 (1961).
+[14] M. B. Miller and B. L. Bassler, Annual Review of Micro-       [41] J. W. Cahn and J. E. Hilliard, The Journal of Chemical
+     biology 55, 165 (2001).                                            Physics 28, 258 (1958).
+[15] C. M. Waters and B. L. Bassler, Annual Review of Cell         [42] A. J. Bray, Advances in Physics 43, 357 (1994).
+     and Developmental Biology 21, 319 (2005).                     [43] D. S. Dean, Journal of Physics A: Mathematical and Gen-
+[16] A. Fischer, F. Schmid, and T. Speck, Physical Review E             eral 29, L613 (1996).
+     101, 012601 (2020).                                           [44] P. C. Hohenberg and B. I. Halperin, Reviews of Modern
+[17] A. Dinelli, J. O’Byrne, and J. Tailleur, Journal of Physics        Physics 49, 435 (1977).
+     A: Mathematical and Theoretical 57, 395002 (2024).            [45] R. Wittkowski, A. Tiribocchi, J. Stenhammar, R. J.
+[18] Y. Zhou, Q. Yin, S. Nayak, P. Bag, P. K. Ghosh, Y. Li,             Allen, D. Marenduzzo, and M. E. Cates, Nature Com-
+     and F. Marchesoni, PNAS Nexus 4, pgaf373 (2025).                   munications 5, 4351 (2014).
+[19] Y. Zhou, Y. Li, and F. Marchesoni, Chinese Physics Let-       [46] M. C. Cross and P. C. Hohenberg, Reviews of Modern
+     ters 40, 100505 (2023).                                            Physics 65, 851 (1993).
+[20] T. Lefranc, A. Dinelli, C. Fernández-Rico, R. P. Dullens,    [47] S. A. Brazovskii, Soviet Physics JETP 41, 85 (1975).
+     J. Tailleur, and D. Bartolo, Physical Review X 15, 031050     [48] C. M. Topaz, A. L. Bertozzi, and M. A. Lewis, Bulletin
+     (2025).                                                            of Mathematical Biology 68, 1601 (2006).
+[21] M. Rein, N. Heinß, F. Schmid, and T. Speck, Physical          [49] T. J. Jewell, A. L. Krause, P. K. Maini, and E. A.
+     Review Letters 116, 058102 (2016).                                 Gaffney, Mathematical Biosciences 366, 109093 (2023).
+[22] E. F. Keller and L. A. Segel, Journal of Theoretical Bi-      [50] C. Nardini, É. Fodor, E. Tjhung, F. van Wijland,
+     ology 30, 225 (1971).                                              J. Tailleur, and M. E. Cates, Physical Review X 7, 021007
+[23] R. Golestanian, Physical Review Letters 108, 038303                (2017).
+     (2012).                                                       [51] E. Tjhung, C. Nardini, and M. E. Cates, Physical Review
+[24] S. Saha, R. Golestanian, and S. Ramaswamy, Physical                X 8, 031080 (2018).
+     Review E 89, 062316 (2014).
+[25] O. Pohl and H. Stark, Physical Review Letters 112,
+     238303 (2014).
+[26] B. Liebchen, D. Marenduzzo, and M. E. Cates, Physical                        ACKNOWLEDGEMENTS
+     Review Letters 118, 268001 (2017).
+[27] F. C. Thewes, Y. Qiang, O. W. Paulin, and D. Zwicker,
+     Physical Review Research 8, L022023 (2026).                     ZY was supported by the National Key Research and
+[28] M. Ballerini, N. Cabibbo, R. Candelier, A. Cavagna,           Development Program of China (No. 2023YFA1407500),
+     E. Cisbani, I. Giardina, V. Lecomte, A. Orlandi,              the National Natural Science Foundation of China No.
+     G. Parisi, A. Procaccini, M. Viale, and V. Zdravkovic,        12374219, the 111 project (B16029). HPZ was supported
+     Proceedings of the National Academy of Sciences 105,          by the National Natural Science Foundation of China
+     1232 (2008).
+                                                                   (No. 12225410, No. 12074243) and by the China Manned
+[29] Z. Liu and M. Dijkstra, Soft Matter 21, 1529 (2025).
+[30] F. A. Lavergne, H. Wendehenne, T. Bäuerle, and               Space Engineering Program (Project number: KJZ-YY-
+     C. Bechinger, Science 364, 70 (2019).                         NLT0502).
+[31] R. S. Negi, R. G. Winkler, and G. Gompper, Physical
+     Review Research 6, 013118 (2024).
+[32] R. Saavedra and F. Peruani, Physical Review E 110,                         CONFLICTS OF INTEREST
+     064602 (2024).
+[33] M. Burger, J. Haškovec, and M.-T. Wolfram, Physica D:
+     Nonlinear Phenomena 260, 145 (2013).                            There are no conflicts of interest.
+   Supplemental Material for “Nonlocal Sensing Drives Hybrid Phase Separation in
+                                Brownian Matter”
+
+             Benchang Wu,1, ∗ Ziluo Zhang,1, ∗ Shutong Guo,2, ∗ Hepeng Zhang,2, † and Zhihong You1, ‡
+                          1
+                           Fujian Provincial Key Laboratory for Soft Functional Materials Research,
+                                     Research Institute for Biomimetics and Soft Matter,
+                         Department of Physics, Xiamen University, Xiamen, Fujian 361005, China
+                      2
+                        School of Physics and Astronomy, Institute of Natural Sciences and MOE-LSC,
+                                   Shanghai Jiao Tong University, Shanghai 200240, China
+                                                    (Dated: June 23, 2026)
+
+
+
+                         S1.    SIMULATION PROTOCOL FOR THE PARTICLE MODEL
+
+   We simulate the particle dynamics by integrating Eq. (1) of the main text with the Euler–Maruyama scheme [1]
+using a time step δt = 0.1. At each step, the perceived density ρ̃i (t) is evaluated from the particle configuration before
+the update. The corresponding diffusivity D[ρ̃i (t)] is then assigned, and the particle position is advanced according
+to
+                                                                p
+                                          ri (t + δt) = ri (t) + 2D[ρ̃i (t)]δt ζi ,                                    (S1)
+
+where ζi is a vector of independent Gaussian random variables with zero mean and unit variance.
+   This update corresponds to the Itô convention and reflects the causal structure of perception-regulated Brownian
+motion: a particle first senses its environment, uses the acquired information to set its diffusivity, and then undergoes
+a stochastic displacement. Equivalently, the noise amplitude during [t, t + δt] is determined only by information
+available at time t.
+   For each particle, the perceived density is ρ̃i = ni /Si , where ni is the number of particles inside the prescribed
+perception zone (including itself) and Si is its area. The perception zone is centered on the particle and translated
+with it. Unless otherwise stated, simulations are performed in the dimensionless units defined in the main text, with
+                        √
+length measured in 1/ ρc and time in 1/(D0 ρc ). We use a square domain of size L × L with periodic boundary
+conditions and initialize the system from nearly uniform random particle positions. The parameters used for each
+figure are listed in Table S1.
+
+
+TABLE S1. Simulation parameters and sensing-kernel geometries. Each sensing kernel is centered at the origin and normalized
+by its support area. All values are measured in dimensionless units.
+
+Quantity                                     Symbol             Value                             Definition
+System size                                    L                 150                             Lx = Ly = L
+Time step                                      δt                0.1                        integration time step
+Particle basic diffusion coefficient           χ             2.0 × 10−3                 basic bare diffusive coefficient
+Disk radius                                    r0                 10                radius of the circular sensing domain
+Square width                                   a                  20              side length of the square sensing domain
+Cross length                                    l                 30                 length of each rectangle of the cross
+Cross width                                    w                 10                  width of each rectangle of the cross
+Double-circle radius                           r0′               7.5                         radius of each circle
+
+
+
+
+                               S2.     DERIVATION OF THE CONTINUUM EQUATIONS
+
+  Here we derive the stochastic density equation associated with the particle dynamics. We start from the Langevin
+equation under the Itô convention
+                                   p
+                              ṙi = 2Di ηi (t),    Di ≡ D(ρ̃i ) = D0 [χ + (ρ̃i /ρc − 1)2 ],                   (S2)
+                                                                                                                         2
+
+where ηi (t) is Gaussian white noise satisfying ⟨ηiα (t)ηjβ (t′ )⟩ = δij δαβ δ(t − t′ ). The diffusivity Di depends on the
+particle configuration through the perceived density ρ̃i .
+  Following Dean’s construction [2], we define the microscopic density
+                                                                      N
+                                                                      X
+                                                       ρ(r, t) =            δ[r − ri (t)].                             (S3)
+                                                                      i=1
+
+For an arbitrary smooth test function f (r),
+                                                                  Z
+                                                 f [ri (t)] =         drδ[r − ri (t)]f (r).                            (S4)
+
+Applying Ito’s lemma gives
+                                                  p
+                                  df [ri (t)] =        2Di ∇f [ri (t)] · dWi + Di ∇2 f [ri (t)]dt,                     (S5)
+where dWi is a Wiener increment. Rewriting the right-hand side in terms of the microscopic density and integrating
+by parts, one obtains the exact stochastic equation
+                                          N
+                                          X                                      N hp
+                                                                                 X                               i
+                           ∂t ρ(r, t) =         ∇2 [Di δ(r − ri )] − ∇ ·                     2Di δ(r − ri )ηi (t) .    (S6)
+                                          i=1                                    i=1
+
+  For the perceptive Brownian particles considered here, the particle diffusivity can be written as a field evaluated at
+the particle position,
+                                            Di = D[ρ̄(ri , t)] = D0 [(ρ̄/ρc − 1)2 + χ],                                (S7)
+where the perceived density is the nonlocal average
+                                                              Z
+                                                 ρ̄(r, t) =       dr′ K(r − r′ )ρ(r′ , t).                             (S8)
+                                      R
+The perception kernel is normalized as dr, K(r) = 1 and is set by the geometry of the perception zone. For example,
+for a perception zone of area S, K = 1/S inside the zone and K = 0 outside. Using the sifting property of the delta
+function, the deterministic part becomes
+                                                N
+                                                X
+                                                      ∇2 [Di δ(r − ri )] = ∇2 [D(ρ̄)ρ] .                               (S9)
+                                                i=1
+
+  The noise term can be written in Dean form by introducing a Gaussian vector white-noise field ξ(r, t) with
+                                          ⟨ξα (r, t)ξβ (r′ , t′ )⟩ = δαβ δ(r − r′ )δ(t − t′ ).                        (S10)
+Matching the noise correlations gives
+                                      N hp
+                                      X                              i      hp               i
+                               −∇ ·              2Di δ(r − ri )ηi (t) ≡ ∇ ·    2D(ρ̄)ρξ(r, t) ,                       (S11)
+                                      i=1
+
+where the overall sign has been absorbed into the definition of ξ. The stochastic density equation is therefore
+                                                                  hp              i
+                                   ∂t ρ(r, t) = ∇2 [D(ρ̄)ρ] + ∇ ·   2D(ρ̄)ρξ(r, t) .                            (S12)
+
+Equation (S12) is the Dean equation for Brownian particles whose diffusivity is regulated by a nonlocal perceived
+density.
+  In the main text, we focus on the deterministic mean-field dynamics that controls the instability spectrum and
+morphology selection. We therefore neglect the multiplicative noise in Eq. (S12) and add a stabilizing fourth-order
+gradient term to regularize short wavelengths. This gives
+                                              ∂t ρ(r, t) = ∇2 [D(ρ̄)ρ] − κ∇4 ρ(r, t),                                 (S13)
+which is the continuum equation analyzed in the main text. Equivalently, Eq. (S13) can be written as
+                                            ∂t ρ = ∇2 µP − κ∇4 ρ,                  µP = D(ρ̄)ρ.                       (S14)
+Here µP is a perception-mediated chemical potential: unlike a local chemical potential, it depends on the density field
+sampled over a finite perception range before being converted into a local transport response.
+                                                                                                                             3
+
+
+
+
+FIG. S1. Continuum-field simulations with different perception kernels. Representative steady-state density fields
+obtained from the deterministic continuum model for several finite-range perception geometries. The icons above each column
+indicate the corresponding perception kernel: circular, square, cross-shaped, and double-circle sensing regions. For each
+geometry, finite-range perception generates internally patterned dense domains at intermediate densities and system-spanning
+microphase-separated states at higher densities. The continuum theory qualitatively reproduces the particle-level morphologies,
+including hybrid phase separation, ordered bubble structures, and geometry-dependent anisotropic pattern selection.
+
+
+                                      S3.   SIMULATIONS OF FIELD THEORY
+
+                                                 A.    Simulation protocol
+
+   To simulate the continuum theory, we solve Eq. (2) of the main text on a two-dimensional square grid using a finite-
+difference scheme [3]. Unless otherwise stated, the grid spacing is h = 1, the time step is ∆t = 0.5 in the dimensionless
+units of the particle model and the stabilizing hyperdiffusionR coefficient is κ = 0.001. At each time step, the perceived
+density is computed from the nonlocal convolution ρ̄(r, t) = dr′ K(r − r′ )ρ(r′ , t) via FFT with the periodic boundary
+conditions, and using the same perception kernel as in the particle simulations. The perception-mediated chemical
+potential µP = D(ρ̄)ρ is then evaluated locally, and the density field is advanced according to Eq. (2) of the main
+text. The total mass is conserved up to numerical accuracy throughout the simulations. Unless otherwise stated, all
+other parameters are the same as those used in the particle model and listed in Table S1.
+
+
+                                                  B.   Simulation results
+
+   As shown in Fig. S1, the continuum theory qualitatively reproduces the homogeneous, hybrid phase-separated, and
+microphase-separated morphologies observed in the particle model. In particular, it captures both the emergence of
+internally patterned dense domains and the transition to system-spanning microphase order. This agreement supports
+                                                                                                                        4
+
+Eq. (S13) as a minimal field theory for perception-induced organization.
+
+
+                             C.   Simulation protocol for one-dimensional perception
+
+   Now we introduce the protocol of the simulation shown in Fig. 4(a) of the main text. We simulate the one-
+dimensional version of the continuum equation on a periodic domain of length L = 150. The domain is discretized
+into N = 450 lattice sites, corresponding to a spatial resolution h = 1/3. The density field evolves according to
+the same conserved dynamics used in two dimensions and is integrated by a finite-difference scheme with time step
+∆t = 10−3 . We use a stabilizing hyperdiffusion coefficient κ = 0.01 and a perception radius r0 = 15. The system is
+initialized near a homogeneous state with a single weak sinusoidal perturbation,
+                                                                      
+                                                                  2πn
+                                           ρ(x, 0) = ρ0 + A cos       x ,                                     (S15)
+                                                                   L
+where ρ0 = 1.05, A = 0.01, and n = 8. This choice selectively excites the fundamental patterning mode in the MPS
+regime, allowing its linear growth and subsequent nonlinear hollowing into a one-dimensional bubbling state to be
+resolved.
+
+
+                                      S4.   LINEAR STABILITY ANALYSIS
+
+  This section shows detailed derivation and analysis of the linear stability of the continuum equation. To this end,
+we introduce the following convention for the Fourier series of the density field defined on a domain of size L × L:
+                                          X                              X
+                                ρ(r, t) =     eikn r1 +ikm r2 ρn,m (t) ≡   eikn ·r ρn (t) ,                      (S16)
+                                            n,m                            n
+
+where we use the vector index n = [n, m]T , the wavevector kn = (2π/L)[n, m]T , and the Fourier amplitude ρn = ρ[n,m]
+to simplify the notation. The zero mode n = 0 corresponds to the conserved homogeneous       background density, such
+that ρ0 = ρ0 . The non-local perception density is defined via a convolution ρ̄(r) = dr′ K(r − r′ )ρ(r′ ). In reciprocal
+                                                                                    R
+                                                               b n )ρn , where K(k)
+space, this convolution simplifies to a direct product: ρ̄n = K(k                b    is the Fourier transform of the
+perception kernel. For a uniform sensing region Ω of area SΩ , the normalized kernel is:
+                                                           Z
+                                              b n) = 1
+                                             K(k
+                                                                      ′
+                                                              e−ikn ·r dr ′ .                                      (S17)
+                                                       SΩ Ω
+To obtain the time evolution of the Fourier modes, we substitute the Fourier series into the continuum dynamics
+∂t ρ = ∇2 [D(ρ̄)ρ] − κ∇4 ρ. Instead of assuming a specific functional form for the mobility, we perform a general Taylor
+expansion of D(ρ̄) around the homogeneous background density ρ0 :
+                                         D(ρ̄) = D(ρ0 ) + D′ (ρ0 )δ ρ̄ + O(δ ρ̄2 ) ,                                (S18)
+where δ ρ̄ = ρ̄ − ρ0 . Substituting this into the chemical potential µP = D(ρ̄)ρ, applying the Laplacian operator
+∇2 → −kn2 and setting ρn (t) ∼ exp (σ(kn )t), we obtain the dispersion relation
+                                                 h                              i
+                                     σ(k) = −k 2 D(ρ0 ) + ρ0 D′ (ρ0 )K(k)
+                                                                     b    + κk 2 ,                          (S19)
+
+presented in the main text.
+  The function K(k)
+                 b     acts as a wavevector-dependent spectral weight, encoding how the perception geometry selects
+the Fourier modes that enter the instability. For standard sensing domains, K(k) b       can be obtained analytically. For
+a circular perception region of radius r0 , the normalized Fourier kernel for nonzero modes is
+                                                 Z 2π Z r0
+                                  b n) = 1
+                                 K(k                 dθ     dr r e−ikr cos θ =
+                                                                               2J1 (kr0 )
+                                                                                          ,                          (S20)
+                                             πr02 0      0                       kr0
+where k = |kn | and J1 is the Bessel function of the first kind. We also use a quasi-one-dimensional perception domain,
+a rectangle of size 2r0 × L, to isolate the mechanism of cluster formation. Its Fourier kernel is
+                                            Z r0    Z L/2
+                             b n) = 1
+                            K(k                  dx         dy e−(ikn x+ikm y) =
+                                                                                 sin(kn r0 )
+                                                                                             δm,0 .               (S21)
+                                       2r0 L −r0      −L/2                          kn r0
+                                                                                                                             5
+
+
+
+
+FIG. S2. Structure factors and linear-stability prediction for different perception kernels. Comparison between
+particle simulations and linear stability analysis for circular, square, cross-shaped, and double-circle perception geometries.
+The first row shows the structure factor S(k) measured from particle configurations, where bright peaks indicate the dominant
+density modes selected by the steady-state pattern. The second row shows the corresponding linearly unstable modes predicted
+from the dispersion relation of the continuum theory. The third row presents representative particle configurations, with red
+dashed curves marking the shape and orientation of the perception zone. Across different sensing geometries, the dominant
+peaks in S(k) agree with the unstable modes predicted by linear stability analysis, demonstrating that the perception kernel
+selects both the characteristic wavelength and the symmetry of the emergent microstructure.
+
+
+The factor δm,0 reflects translational invariance along the transverse direction, so only density modulations along x
+are coupled by this quasi-one-dimensional sensing kernel.
+  To examine the effect of broken rotational symmetry, we also consider anisotropic perception domains. For a square
+perception region of side length a centered at the origin, the normalized kernel factorizes as
+                                                                                            
+                                          kx a          ky a        4            kx a         ky a
+                          K(k)
+                           b    = sinc           sinc          =           sin          sin          ,          (S22)
+                                           2             2       kx ky a 2        2            2
+                                                                                                                             6
+
+where sinc(z) = sin z/z.
+   For a cross-shaped perception region constructed from five identical squares of side length ℓ/3, with total bounding
+size ℓ, the kernel follows by superposing the horizontal and vertical arms and subtracting their overlap:
+                                                                                                          
+                        1           kx ℓ          ky ℓ              kx ℓ          ky ℓ            kx ℓ           ky ℓ
+              K(k) =
+               b           3 sinc          sinc          + 3 sinc          sinc          − sinc           sinc
+                        5            2              6                6             2                6              6
+                                                                                                       
+                           36            kx ℓ         ky ℓ           kx ℓ         ky ℓ           kx ℓ         ky ℓ
+                     = 2           sin          sin          + sin          sin          − sin          sin           .  (S23)
+                        5ℓ kx ky          2            6              6            2              6            6
+
+  Finally, for a double-circle perception region consisting of two tangent disks of radius r0 centered at (±r0 , 0), the
+Fourier shift theorem gives
+
+                                                                   2J1 (kr0 )
+                                                K(k)
+                                                b    = cos(kx r0 )            ,                                          (S24)
+                                                                     kr0
+          q
+with k = kx2 + ky2 . All expressions are understood in their continuous limits when a denominator vanishes, so that
+K(0)
+ b    = 1 for each normalized perception kernel.
+   This mode selection is directly reflected in the simulated structures. The unstable modes predicted by the linear
+dispersion relation in Eq. (S19) correspond to the dominant peaks in the structure factor of the ordered states. As
+shown by comparing the structure factors from particle simulations with the dispersion relations (Fig. S2), the peaks
+of S(k) align with the fastest-growing modes of σ(k), confirming that the emergent spatial order is selected by the
+perception-mediated linear instability.
+
+
+                            S5.   KINEMATIC ORIGIN OF THE BUBBLING PHASE
+
+   In this section, we analyze the local mechanism by which a growing density peak hollows into a bubble. Using a
+single-mode ansatz, we show that nonlocal perception can invert the curvature of the perception-mediated chemical
+potential at the peak center once the mode amplitude exceeds a critical value. This inversion reverses the local
+conserved flux and drives material from the peak center toward its shoulders, thereby exciting higher harmonics that
+produce the hollow core. Here, we focus on the case ρ0 > ρc .
+   The one-dimensional continuum dynamics is governed by
+
+                                                    ∂t ρ = ∂x2 µP − κ∂x4 ρ ,                                             (S25)
+
+where the nonlocal chemical potential is µP (x) = D[ρ̄(x)]ρ(x). In this analysis we neglect the small bare diffusivity
+χ since it contributes a local term to chemical potential but does not change the curvature-inversion mechanism as
+presented later. Therefore, we use D(ρ̄) = D0 (ρ̄/ρc − 1)2 . To isolate the nonlinear step, we approximate the density
+by the fundamental mode
+
+                                                  ρ(x) = ρ0 + A cos(k∗ x),                                               (S26)
+
+where A > 0 and x = 0 is the center of a density peak. The corresponding perceived density is
+                                                               b ∗ cos(k∗ x),
+                                                 ρ̄(x) = ρ0 + AK                                                         (S27)
+
+     b ∗ ≡ K(k
+with K     b ∗ ). Defining the perceived-density bias
+
+                                      f (x) = ρ̄(x) − ρc = (ρ0 − ρc ) + AK
+                                                                         b ∗ cos(k∗ x),                                  (S28)
+
+the chemical potential becomes µP = (D0 /ρ2c )f (x)2 ρ(x).
+   We now evaluate the curvature of µP at the peak center. At x = 0, the relevant quantities are ρ(0) = ρ0 + A,
+ ′
+ρ (0) = 0, ρ′′ (0) = −Ak∗2 , f (0) = ρ0 − ρc + AK b ∗ , f ′ (0) = 0, and f ′′ (0) = −AK
+                                                                                      b ∗ k 2 . Applying the product rule twice
+                                                                                           ∗
+                    2      2
+to µP (x) = (D0 /ρc )f (x) ρ(x) gives
+                                                                                                         
+                       ′′            2      ′   2             ′′                   ′  ′            2 ′′
+                      µP (x) = (D0 /ρc ) 2[f (x) + f (x)f (x)]ρ(x) + 4f (x)f (x)ρ (x) + f (x) ρ (x) .                     (S29)
+                                                                                                                            7
+
+Since the first derivatives vanish at the peak center, this reduces to
+
+                                       µ′′P (0) = −(D0 /ρ2c )Ak∗2 f (0)[2ρ(0)K
+                                                                             b ∗ + f (0)].                              (S30)
+
+  We focus on the dense regime ρ0 > ρc , where the finite-k∗ instability occurs on a negative lobe of the perception
+        b ∗ < 0. The bracketed factor can be written as
+kernel, K
+                                           b ∗ + f (0) = (ρ0 − ρc + 2ρ0 K
+                                      2ρ(0)K                                      b∗.
+                                                                        b ∗ ) + 3AK                                     (S31)
+
+The first term is proportional to the linear chemical-potential response of the fundamental mode and is negative for
+the unstable mode considered here, while the nonlinear contribution 3AK     b ∗ is also negative because A > 0 and Kb ∗ < 0.
+                                                          ′′
+Thus the bracket remains negative, and the sign of µP (0) is controlled by the perceived-density bias f (0).
+    This gives a two-stage picture of bubbling. For small amplitudes, f (0) > 0, so µ′′P (0) > 0: the peak center is a local
+minimum of the chemical potential, and the conserved current drives material into the density maximum, amplifying
+it. As the fundamental mode grows, the negative kernel value lowers the perceived density at the peak center. When
+A exceeds the critical value Ac = (ρ0 − ρc )/|K b ∗ |, the bias f (0) changes sign. The curvature then becomes negative,
+  ′′
+µP (0) < 0, so the peak center becomes a local maximum of the chemical potential. The conserved current reverses
+and transports material outward from the center toward the shoulders. A pure cosine mode cannot accommodate this
+redistribution, so higher spatial harmonics are generated; in real space, the compact peak flattens and hollows into a
+bubble.
+
+
+
+
+ ∗
+    These authors contributed equally
+ †
+    Corresponding author: Hepeng zhang@sjtu.edu.cn
+  ‡
+    Corresponding author: zhyou@xmu.edu.cn
+[1] P. E. Kloeden and E. Platen, Numerical Solution of Stochastic Differential Equations (Springer, Berlin, Heidelberg, 1992).
+[2] D. S. Dean, Journal of Physics A: Mathematical and General 29, L613 (1996).
+[3] R. L. Burden, J. D. Faires, and A. M. Burden, Numerical Analysis (Cengage Learning, 2015).
+

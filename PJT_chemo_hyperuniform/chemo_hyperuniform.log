@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.27)  27 OCT 2026 10:55
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.27)  27 OCT 2026 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -795,11 +795,11 @@ File: figs/snapshot_k-1.pdf Graphic file (type pdf)
 [8]
 
 [9]
+
+[10]
 File: figs/structure_factor_chemo_alpha.pdf Graphic file (type pdf)
 <use figs/structure_factor_chemo_alpha.pdf>
 
-
-[10]
 
 [11]
 
@@ -815,23 +815,35 @@ File: figs/structure_factor_chemo_alpha.pdf Graphic file (type pdf)
 
 [17]
 
-[18] (./chemo_hyperuniform.bbl)
+[18]
 
-[19] (./chemo_hyperuniform.aux)
+[19]
+
+[20]
+
+[21]
+
+[22]
+
+[23] (./chemo_hyperuniform.bbl
+
+[24])
+
+[25] (./chemo_hyperuniform.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `chemo_hyperuniform.out' has not changed.
-(rerunfilecheck)             Checksum: 286549C1F299605892D03DCB6701155A;5838.
+(rerunfilecheck)             Checksum: A98591B0AD89B6DEAA509CDCD8306739;7780.
  ) 
 Here is how much of TeX's memory you used:
- 26753 strings out of 473832
- 512028 string characters out of 5729027
- 911670 words of memory out of 5000000
- 49363 multiletter control sequences out of 15000+600000
- 577413 words of font info for 119 fonts, out of 8000000 for 9000
+ 26780 strings out of 473832
+ 512404 string characters out of 5729027
+ 916583 words of memory out of 5000000
+ 49385 multiletter control sequences out of 15000+600000
+ 577437 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,14n,101p,797b,759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,14n,101p,912b,676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chemo_hyperuniform.pdf (19 pages).
+Output written on chemo_hyperuniform.pdf (25 pages).
