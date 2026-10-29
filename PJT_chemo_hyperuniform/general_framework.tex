@@ -620,9 +620,10 @@ Consider particles in two dimensions obeying the It\^{o} equations
 \begin{equation}
     \mathrm d\mathbf r_i=\sqrt{2D(P_i)}\,\mathrm d\mathbf W_i \;,
     \qquad
-    P_i=\sum_{\substack{j\ne i\\0<r_{ij}<d_c}}\frac{1}{2\pi r_{ij}}\;.
+    P_i(t)=\sum_{\substack{j\ne i\\0<r_{ij}<d_c}}\frac{1}{2\pi r_{ij}(t)}\;,
     \label{eq:ffParticle}
 \end{equation}
+where $r_{ij}=|\mathbf r_i-\mathbf r_j|$ is the interparticle distance, $d_c$ is a finite sensing cutoff, and $\mathbf W_i(t)$ is a standard two-dimensional Wiener process. 
 The Wiener processes are independent. This convention corresponds to evaluating perception before each Euler--Maruyama displacement, as in the continuum construction of Ref.~\cite{Wu2026NonlocalSensing}, Supplemental Material, Secs.~S1--S2. Self-sensing must be excluded for the singular $1/r$ kernel. A microscopic regularization at distances $r\lesssim a$ can be included; all statements below concern wavelengths much larger than $a$. Unless specified otherwise, the sensing region is a full isotropic disk. The disk formulas apply directly on a periodic square when $d_c<L/2$; a system-spanning minimum-image kernel requires its actual periodic Fourier coefficients.
 
 The diffusivity used in the simulations is the increasing threshold law
@@ -681,8 +682,8 @@ The leading fluctuation expansion of Sec.~\ref{sec:generalFramework} gives
 \end{equation}
 Using the volume-normalized Fourier convention of Eq.~\eqref{eq:FourierConvention}, every nonzero mode satisfies
 \begin{align}
-    \partial_t\delta\rho_{\mathbf k}&=-\lambda(k)\delta\rho_{\mathbf k}+\eta_{\mathbf k},
-    &\lambda(k)&=k^2[\bar D+\rho_0g\widehat K_{d_c}(k)],\\
+    \partial_t\delta\rho_{\mathbf k}&=-\lambda(k)\delta\rho_{\mathbf k}+\eta_{\mathbf k},\\
+    \lambda(k)&=k^2[\bar D+\rho_0g\widehat K_{d_c}(k)],\\
     \langle\eta_{\mathbf k}(t)\eta_{\mathbf k'}(t')\rangle
     &=2\rho_0\bar D k^2\delta_{\mathbf k,-\mathbf k'}\delta(t-t')\;,
     \label{eq:ffOU}
@@ -743,17 +744,17 @@ If $B\gg1$, there is a separated interval
     S(k)\simeq\frac{k}{k_*}=\frac{\bar D}{\rho_0g}\,k.}
     \label{eq:ffLinearScaling}
 \end{equation}
-One must also impose the microscopic and continuum upper cutoffs. In this interval the relaxation rate is $\lambda\simeq\rho_0gk$, whereas the conserved noise power remains proportional to $k^2$. Their ratio gives the exponent one. This is the same noise-versus-relaxation methodology as the chemotaxis example, but here the nonlocal response is instantaneous by definition, so no slow chemical mode is eliminated.
+One must also impose the microscopic and continuum upper cutoffs. In this interval the relaxation rate is $\lambda\simeq\rho_0gk$, whereas the conserved noise power remains proportional to $k^2$. Their ratio gives the exponent one.  
 
-% \paragraph{Fixed finite sensing radius.}
-% For any fixed finite $d_c$ and finite regular coefficients, the actual $k\to0$ prediction is
-% \begin{align}
-%     S_0&=\frac{1}{1+B}>0,\\
-%     S(k)&=\frac{1}{1+B}
-%     \left[1+\frac{B}{12(1+B)}(kd_c)^2+O((kd_c)^4)\right].
-%     \label{eq:ffPlateau}
-% \end{align}
-% Thus the linear closure predicts a suppressed plateau followed, when $B\gg1$, by a $k$-like interval, and eventually a return toward $S=1$. The local logarithmic slope approaches zero at the smallest $k$, even if it is close to one over a broad accessible interval. The observation of $S\sim k$ at finite size is therefore consistent with this mechanism without establishing asymptotic hyperuniformity. This conclusion concerns the homogeneous linear theory; it is not a no-go theorem for nonlinear or absorbing-state mechanisms.
+\paragraph{Fixed finite sensing radius.}
+For any fixed finite $d_c$ and finite regular coefficients, the actual $k\to0$ prediction is
+\begin{align}
+    S_0&=\frac{1}{1+B}>0,\\
+    S(k)&=\frac{1}{1+B}
+    \left[1+\frac{B}{12(1+B)}(kd_c)^2+O((kd_c)^4)\right].
+    \label{eq:ffPlateau}
+\end{align}
+Thus the linear closure predicts a suppressed plateau followed, when $B\gg1$, by a $k$-like interval, and eventually a return toward $S=1$. The local logarithmic slope approaches zero at the smallest $k$, even if it is close to one over a broad accessible interval. The observation of $S\sim k$ at finite size is therefore consistent with this mechanism without establishing asymptotic hyperuniformity. This conclusion concerns the homogeneous linear theory; it is not a no-go theorem for nonlinear or absorbing-state mechanisms.
 
 % \paragraph{An unscreened limit needs a defined background.}
 % Formally $\widehat K_\infty(k)=1/k$ for $k>0$, which gives $S=k/(k+k_*)$ and class-II hyperuniformity. However, the same unnormalized kernel has $\bar P=\rho_0d_c\to\infty$. It is inconsistent to send $d_c\to\infty$ while silently keeping $\bar D$ and $g$ fixed for an arbitrary prescribed response law. A well-defined extension can instead sense deviations from a reference background,
@@ -785,13 +786,6 @@ its operating-point (the fixed point where the system is linearized) coefficient
     \label{eq:ffLogisticGeneral}
 \end{equation}
 These expressions quantify how moving away from the switching region reduces the response slope and eventually eliminates the linear scaling window.
-At $\bar P=P_{\rm th}$,
-\begin{equation}
-    \bar D=\frac{D_{\min}+D_{\max}}2,\qquad
-    g=\frac{D_{\max}-D_{\min}}{4\epsilon},\qquad
-    k_* =\frac{\rho_0(D_{\max}-D_{\min})}
-    {2\epsilon(D_{\min}+D_{\max})}.
-\end{equation}
 The linear-noise expansion requires perception fluctuations small compared with the response width $\epsilon$; taking $\epsilon\to0$ at fixed fluctuations is not controlled.
 
 For a literal threshold process, unresolved perception fluctuations may smooth the \emph{coarse-grained} response. As a stated closure, suppose the perception of a tagged particle is $P=m+\zeta$, with a normalized, smooth probability density $p_\zeta$ whose shape is unchanged by a weak slow modulation of $m$. Then
@@ -803,43 +797,53 @@ For a literal threshold process, unresolved perception fluctuations may smooth t
 \end{align}
 If these fast fluctuations can be eliminated into a local instantaneous constitutive law with noise mobility $\rho_0\bar D_{\rm eff}$, Eq.~\eqref{eq:ffFiniteRangeSk} follows with $k_* =\rho_0g_{\rm eff}/\bar D_{\rm eff}$. This is a testable effective closure, not an exact consequence of the microscopic step. Changes in the conditional perception distribution, slow switching, and density--mobility correlations can change both the drift and effective noise. In particular, the width of $p_\zeta$ cannot be inferred from the threshold parameters alone. The singular kernel makes short-distance statistics relevant to that width; a microscopic cutoff may be needed for finite perception variance.
 
-Another useful continuous approximation is the error-function response,
-\begin{equation}
-    D_\sigma(P)=D_{\min}+\frac{\Delta D}{2}
-    \left[1+\operatorname{erf}\left(\frac{P-P_{\rm th}}{\sqrt{2}\sigma}\right)\right].
-\end{equation}
-It follows from Eq.~\eqref{eq:ffThresholdClosure} if the unresolved variable $\zeta$ is Gaussian with zero mean and fixed variance $\sigma^2$. At the threshold,
-\begin{equation}
-    \bar D=\frac{D_{\min}+D_{\max}}2,\qquad
-    g=\frac{\Delta D}{\sqrt{2\pi}\sigma}.
-\end{equation}
-The logistic and Gaussian approximations have identical linear predictions when their background diffusivities and slopes match, i.e., $4\epsilon=\sqrt{2\pi}\sigma$ at threshold. Thus the predicted exponent comes from the sensing kernel, while the effective response width controls the prefactor and the extent of the scaling interval. A finite Gaussian perception variance is an assumption, not a consequence of the unregularized microscopic $1/r$ kernel.
-
-\subsection{Tests against the particle simulations}
-
-The prediction can be tested without assuming a power law over the entire spectrum. For a smooth response, or a validated effective closure, measure the operating-point diffusivity and susceptibility and compare with
-\begin{equation}
-    \boxed{S(k)^{-1}-1=k_*\widehat K_{d_c}(k).}
-    \label{eq:ffFitTest}
-\end{equation}
-For a threshold process the susceptibility should be measured using weak long-wavelength density modulations and the particle-weighted response, rather than by differentiating the bare step. Independently measure the density relaxation rate: the same closure predicts $\lambda(k)S(k)/k^2=\bar D$. A failure of this identity signals missing effective dynamics or noise even if a fitted static slope looks close to one.
-
-To distinguish finite-range suppression from asymptotic hyperuniformity, increase $L$ at fixed $\rho_0$, $d_c$, and response parameters until $k_{\min}d_c=2\pi d_c/L\ll1$. The predicted plateau should then become accessible. A broad linear window requires $k_*d_c\gg1$, sufficient spatial resolution, and equilibration times much longer than $\lambda(k_{\min})^{-1}$. If $d_c$ is scaled with $L$, track the background perception and susceptibility as well; this changes the model family. For a system-spanning sensing region, use its actual periodic kernel rather than substituting the infinite-plane disk transform for the lowest modes.
-
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    % TODO: replace this box with \includegraphics[width=0.86\linewidth]{figs/feifei_structure_factor.pdf}
-    \fbox{\parbox[c][3.2cm][c]{0.86\linewidth}{\centering
-    Structure factor versus angular wave number $k$ to be inserted manually.\\[0.5em]
-    Log--log axes: simulation data, a slope-one guide, and the full theory.\\
-    Mark $k=d_c^{-1}=0.625$; optionally show $S^{-1}-1$ versus $\widehat K(k)$ in an inset.}}
-    \caption{Reserved for the structure factor at the parameters of Fig.~\ref{fig:ffSnapshot}. Use $S(\mathbf k)=N^{-1}\langle|\sum_j e^{-\mathrm i\mathbf k\cdot\mathbf r_j}|^2\rangle$ for nonzero periodic wavevectors $\mathbf k=2\pi(n_x,n_y)/L$. Radial bins should average per-mode values, not sum them: in two dimensions a shell sum can itself introduce a factor proportional to $k$. State the time averaging, bin widths, uncertainty estimates, and fitted wave-number interval. Overlay Eq.~\eqref{eq:ffNumericalPrediction} only with a reported calibrated or fitted $\epsilon$; label a fitted curve as such. If the horizontal axis uses cycles per unit length, convert with $k=2\pi f$. This placeholder contains no simulated data.}
-    \label{fig:ffStructureFactor}
+    \includegraphics[width=\textwidth]{figs/feifeimodel_simulation.pdf}
+    \caption{Snapshot and structure factor of the simulated Feifei's quorum sensing model. (a) A representative configuration of $N=1024$ particles in a periodic square with $L=32$, $d_c=1.6$, $D_{\min}=0.01$, $D_{\max}=0.1$, and $P_{\rm th}=0.5$. (b) The corresponding structure factor $S(k)$ as a function of wave number $k$. The dashed line indicates the predicted linear scaling regime, while the solid line represents the full theory from Eq.~\eqref{eq:ffFiniteRangeSk}. }
+    % \label{fig:structure_factor}
 \end{figure}
 
-\begin{keybox}[Conditional prediction for Feifei's model]
-In two dimensions, the $1/r$ sensing tail produces $\widehat K(k)\simeq k^{-1}$ over $kd_c\gg1$. A positive, regular response susceptibility then yields $\lambda(k)\sim k$ and $S(k)\sim k$ when feedback dominates bare diffusion. Fixed finite sensing range instead gives $S(0^+)>0$ within the homogeneous linear-noise theory. The increasing step law is represented by a smooth response with a finite width, whose effective susceptibility must be calibrated for quantitative comparison. Consequently, an observed near-unit exponent is consistent with the nonlocal positive-response mechanism, but is not by itself a proof of asymptotic hyperuniformity or an exact exponent calculation for the discontinuous threshold process.
-\end{keybox}
+% Another useful continuous approximation is the error-function response,
+% \begin{equation}
+%     D_\sigma(P)=D_{\min}+\frac{\Delta D}{2}
+%     \left[1+\operatorname{erf}\left(\frac{P-P_{\rm th}}{\sqrt{2}\sigma}\right)\right].
+% \end{equation}
+% It follows from Eq.~\eqref{eq:ffThresholdClosure} if the unresolved variable $\zeta$ is Gaussian with zero mean and fixed variance $\sigma^2$. At a general homogeneous background $\bar P$, its coefficients are
+% \begin{align}
+%     \bar D&=D_{\min}+\frac{\Delta D}{2}
+%     \left[1+\operatorname{erf}\left(\frac{\bar P-P_{\rm th}}{\sqrt{2}\sigma}\right)\right],\\
+%     g&=\frac{\Delta D}{\sqrt{2\pi}\sigma}
+%     \exp\left[-\frac{(\bar P-P_{\rm th})^2}{2\sigma^2}\right],\qquad
+%     k_* =\frac{\rho_0g}{\bar D}.
+% \end{align}
+% The logistic and Gaussian approximations have identical linear predictions when their background diffusivities and slopes match. These coefficients can be inserted directly into Eq.~\eqref{eq:ffFiniteRangeSk}; no equality between $\bar P$ and $P_{\rm th}$ is assumed. Thus the predicted exponent comes from the sensing kernel, while the effective response width and the background's position relative to the threshold control the prefactor and the extent of the scaling interval. A finite Gaussian perception variance is an assumption, not a consequence of the unregularized microscopic $1/r$ kernel.
+
+% \subsection{Tests against the particle simulations}
+
+% The prediction can be tested without assuming a power law over the entire spectrum. For a smooth response, or a validated effective closure, measure the operating-point diffusivity and susceptibility and compare with
+% \begin{equation}
+%     \boxed{S(k)^{-1}-1=k_*\widehat K_{d_c}(k).}
+%     \label{eq:ffFitTest}
+% \end{equation}
+% For a threshold process the susceptibility should be measured using weak long-wavelength density modulations and the particle-weighted response, rather than by differentiating the bare step. Independently measure the density relaxation rate: the same closure predicts $\lambda(k)S(k)/k^2=\bar D$. A failure of this identity signals missing effective dynamics or noise even if a fitted static slope looks close to one.
+
+% To distinguish finite-range suppression from asymptotic hyperuniformity, increase $L$ at fixed $\rho_0$, $d_c$, and response parameters until $k_{\min}d_c=2\pi d_c/L\ll1$. The predicted plateau should then become accessible. A broad linear window requires $k_*d_c\gg1$, sufficient spatial resolution, and equilibration times much longer than $\lambda(k_{\min})^{-1}$. If $d_c$ is scaled with $L$, track the background perception and susceptibility as well; this changes the model family. For a system-spanning sensing region, use its actual periodic kernel rather than substituting the infinite-plane disk transform for the lowest modes.
+
+% \begin{figure}[htbp]
+%     \centering
+%     % TODO: replace this box with \includegraphics[width=0.86\linewidth]{figs/feifei_structure_factor.pdf}
+%     \fbox{\parbox[c][3.2cm][c]{0.86\linewidth}{\centering
+%     Structure factor versus angular wave number $k$ to be inserted manually.\\[0.5em]
+%     Log--log axes: simulation data, a slope-one guide, and the full theory.\\
+%     Mark $k=d_c^{-1}=0.625$; optionally show $S^{-1}-1$ versus $\widehat K(k)$ in an inset.}}
+%     \caption{Reserved for the structure factor of the simulated threshold model. Use $S(\mathbf k)=N^{-1}\langle|\sum_j e^{-\mathrm i\mathbf k\cdot\mathbf r_j}|^2\rangle$ for nonzero periodic wavevectors $\mathbf k=2\pi(n_x,n_y)/L$. Radial bins should average per-mode values, not sum them: in two dimensions a shell sum can itself introduce a factor proportional to $k$. State the time averaging, bin widths, uncertainty estimates, and fitted wave-number interval. Overlay Eq.~\eqref{eq:ffFiniteRangeSk} using the general-background coefficients in Eq.~\eqref{eq:ffLogisticGeneral}, with a reported calibrated or fitted $\epsilon$; label a fitted curve as such. If the horizontal axis uses cycles per unit length, convert with $k=2\pi f$. This placeholder contains no simulated data.}
+%     \label{fig:ffStructureFactor}
+% \end{figure}
+
+% \begin{keybox}[Conditional prediction for Feifei's model]
+% In two dimensions, the $1/r$ sensing tail produces $\widehat K(k)\simeq k^{-1}$ over $kd_c\gg1$. A positive, regular response susceptibility then yields $\lambda(k)\sim k$ and $S(k)\sim k$ when feedback dominates bare diffusion. Fixed finite sensing range instead gives $S(0^+)>0$ within the homogeneous linear-noise theory. The increasing step law is represented by a smooth response with a finite width, whose effective susceptibility must be calibrated for quantitative comparison. Consequently, an observed near-unit exponent is consistent with the nonlocal positive-response mechanism, but is not by itself a proof of asymptotic hyperuniformity or an exact exponent calculation for the discontinuous threshold process.
+% \end{keybox}
 
 
 \section{Appendix}

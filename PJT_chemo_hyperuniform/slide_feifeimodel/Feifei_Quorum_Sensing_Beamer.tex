@@ -1,0 +1,125 @@
+% Compile with XeLaTeX. Requires Times New Roman and Latin Modern Math.
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\usefonttheme{serif}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmathfont{Latin Modern Math}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{frametitle}{\vspace{3mm}\insertframetitle\par}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+\setlength{\parskip}{2pt}
+\newcommand{\Db}{\overline D}
+\newcommand{\Pb}{\overline P}
+\newcommand{\rh}{\rho_0}
+\begin{document}
+
+\begin{frame}{1. Feifei's quorum sensing model}
+Particles diffuse faster when their perceived crowding exceeds a threshold.
+\[
+ \mathrm d\mathbf r_i=\sqrt{2D(P_i)}\,\mathrm d\mathbf W_i\;,
+ \qquad P_i=\sum_{\substack{j\ne i\\0<r_{ij}<d_c}}\frac{1}{2\pi r_{ij}}\;.
+\]
+\[
+D(P)=\begin{cases}D_{\min},&P\le P_{\mathrm{th}},\\D_{\max},&P>P_{\mathrm{th}},\end{cases}
+\qquad 0<D_{\min}<D_{\max}.
+\]
+\textbf{Nonlocal perception: an unnormalized, isotropic sensing kernel}
+\[
+K(r)=\frac{\Theta(d_c-r)}{2\pi r},\qquad P=K*\rho,
+\qquad\int K(r)\,\mathrm d^2r=d_c.
+\]
+\textbf{Itô expansion and random-current covariance give the density equation}
+\[
+\partial_t\rho=\nabla^2[\rho D(P)]
+ -\nabla\!\cdot\!\left[\sqrt{2\rho D(P)}\,\boldsymbol\Lambda\right].
+\]
+\small $\boldsymbol\Lambda$ is unit vector white noise. Self-sensing is excluded.
+% Source: Section 3.1--3.2, Eqs. (74)--(79).
+\end{frame}
+
+\begin{frame}{2. Linear fluctuations and the structure factor}
+\textbf{Assume a smooth response near the uniform state}
+\[
+\rho=\rh+\delta\rho,\qquad \Pb=\rh d_c,\qquad
+\Db=D(\Pb)>0,\qquad g=D'(\Pb).
+\]
+\[
+\partial_t\delta\rho=
+\nabla^2\!\left[\Db\,\delta\rho+\rh g(K*\delta\rho)\right]
+-\nabla\!\cdot\!\left[\sqrt{2\rh\Db}\,\boldsymbol\Lambda\right].
+\]
+\textbf{Each nonzero Fourier mode is a scalar Ornstein--Uhlenbeck process}
+\[
+\partial_t\delta\rho_{\mathbf k}=-\lambda(k)\delta\rho_{\mathbf k}+\eta_{\mathbf k},
+\qquad\lambda(k)=k^2\left[\Db+\rh g\widehat K(k)\right].
+\]
+\[
+\underbrace{Q(k)=2\rh\Db k^2}_{\text{noise power}},\qquad
+\underbrace{2\lambda(k)C(k)=Q(k)}_{\text{stationary variance}},\qquad
+C(k)=\langle|\delta\rho_{\mathbf k}|^2\rangle.
+\]
+\[
+\mathord{\displaystyle S(k)=\frac{C(k)}{\rh}
+=\frac{\Db}{\Db+\rh g\widehat K(k)}}
+\]
+\small Valid for stable modes, $\Db+\rh g\widehat K(k)>0$, within the linear-noise approximation.
+% Source: Section 3.2, Eqs. (80)--(86). Volume-normalized Fourier convention.
+\end{frame}
+
+\begin{frame}{3. Why an approximately linear spectrum appears}
+\textbf{The 2D Fourier transform reduces to a Bessel integral}
+\[
+\widehat K(k)=\int_0^{d_c}J_0(kr)\,\mathrm dr
+=\frac{F(kd_c)}{k},\qquad F(x)=\int_0^x J_0(u)\,\mathrm du.
+\]
+Define $k_*={\rh g}/{\Db}>0$ and $B=k_*d_c$. Then
+\[
+\displaystyle S(k)=\left[1+\frac{k_*}{k}F(kd_c)\right]^{-1}.
+\]
+For $kd_c\gg1$, $F(kd_c)\simeq1$ and $\widehat K(k)\simeq1/k$.
+\[
+\mathord{\displaystyle \underbrace{B\gg1}_{\text{For $P$ \rightarrow $P_{\mathrm{th}}$, $D(P)$ has a sharp transition $g \rightarrow \infty$, $B \rightarrow \infty$}},\quad d_c^{-1}\ll k\ll k_*
+\quad\Longrightarrow\quad S(k)\simeq\frac{k}{k_*}}
+\]
+\textbf{Mechanism: the sensing kernel changes the relaxation scaling}
+\[
+\lambda(k)\simeq\rh gk,\qquad Q(k)\propto k^2,
+\qquad S(k)=\frac{Q(k)}{2\rh\lambda(k)}\propto k.
+\]
+\small This intermediate range must lie below the microscopic and continuum cutoffs.
+% Source: Section 3.3, Eqs. (87)--(92).
+\end{frame}
+
+\begin{frame}{4. Finite-range limit and the threshold approximation}
+\textbf{At fixed finite sensing radius, the true small-$k$ limit is a plateau}
+\[
+\widehat K(k)=d_c\!\left[1-\frac{(kd_c)^2}{12}+\cdots\right],
+\qquad \lim_{k\to0}S(k)=\frac{1}{1+B}>0.
+\]
+A finite-range $S(k)\sim k$ window alone does not establish asymptotic hyperuniformity.
+\medskip
+
+\textbf{The microscopic step needs an explicit smooth or effective response}
+\[
+D_\varepsilon(P)=D_{\min}+
+\frac{D_{\max}-D_{\min}}{1+\exp[-(P-P_{\mathrm{th}})/\varepsilon]}.
+\]
+\[
+g=D_\varepsilon'(\Pb)>0\text{ near the switching region},
+\qquad |\delta P|\ll\varepsilon.
+\]
+For the literal step, $g=0$ away from threshold and is undefined at threshold.
+\medskip
+
+Thus the prediction is a smooth-response or effective-closure result.
+% Source: Section 3.3--3.4, Eqs. (93)--(99). Conclusions refer to homogeneous linear theory.
+\end{frame}
+\end{document}
