@@ -1,0 +1,150 @@
+\documentclass[aps,prl,reprint,letterpaper]{revtex4-2}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+\renewcommand{\theequation}{S\arabic{equation}}
+
+\section*{Supplementary Material}
+
+We seek to explain the linear total structure factor in Fig.~2 at \(d_c=L_p\), where \(L_p=P_{\mathrm{th}}/\rho_0\) sets the switching threshold at mean density \(\rho_0\). We derive the spectrum of the total density and identify when threshold matching produces a range of wavenumbers with \(S_{\mathrm{tot}}(q)\sim q\).
+
+\subsection*{From particle dynamics to the Dean equation}
+
+The particle model in the main text includes short-range hard-shell repulsion. To simplify the derivation, we treat the particles as points and neglect this repulsion. We expect its effect to be negligible for the weak, long-wavelength density fluctuations about the spatially uniform state considered here.
+
+In a two-dimensional periodic box of side \(L\), the position \(\mathbf r_i(t)\) of particle \(i=1,\ldots,N\) at time \(t\) obeys the It\^{o} dynamics
+\begin{equation}
+    \begin{aligned}
+    \mathrm{d}\mathbf r_i &= \sqrt{2D(P_i)}\,\mathrm{d}\mathbf W_i,\\
+    D(P_i)&=
+    \begin{cases}
+    D_m, & P_i\le P_{\mathrm{th}},\\
+    D_M, & P_i>P_{\mathrm{th}},
+    \end{cases}
+    \qquad D_M>D_m .
+    \end{aligned}
+    \label{eq:qs-particles}
+\end{equation}
+Here \(\mathbf W_i\) are independent standard two-dimensional Wiener processes. \(D(P_i)\) is the diffusivity of particle \(i\), which switches from \(D_m\) to \(D_M\) when \(P_i\) exceeds the sensing threshold \(P_{\mathrm{th}}\). The signal \(P_i\) sums \(1/(2\pi r_{ij})\) over other particles \(j\) within the sensing radius \(d_c\), where \(r_{ij}\) is the minimum-image distance between particles \(i\) and \(j\). The sensed field \(P(\mathbf r,t)\) is the spatial convolution \(P=K_{d_c}*\rho\) of the density \(\rho\) with the sensing kernel
+\begin{equation}
+    K_{d_c}(r)=\frac{\Theta(d_c-r)}{2\pi r}.
+    \label{eq:qs-kernel}
+\end{equation}
+Here \(r=|\mathbf r|\) is the magnitude of the separation vector \(\mathbf r\), and \(\Theta\) is the Heaviside step function. We take \(d_c<L/2\) and omit self contributions at particle positions.
+
+Let \(\rho(\mathbf r,t)=\sum_i\delta(\mathbf r-\mathbf r_i(t))\) be the empirical number density, with \(\delta\) the Dirac delta. For a smooth periodic test function \(f\), It\^{o}'s formula gives
+\begin{equation}
+    \begin{aligned}
+        \mathrm{d}\!\int f\rho\,\mathrm{d}^2r
+        ={}&\sum_i D(P_i)\nabla^2 f(\mathbf r_i)\,\mathrm{d}t\\
+        &+\sum_i\sqrt{2D(P_i)}\,\nabla f(\mathbf r_i)\cdot \mathrm{d}\mathbf W_i .
+    \end{aligned}
+    \label{eq:qs-ito}
+\end{equation}
+The drift in Eq.~\eqref{eq:qs-ito} moves both derivatives onto \(\rho D(P)\) upon integration by parts. The independent particle increments give a local random-current covariance of intensity \(2\rho D(P)\) in each Cartesian component. Thus the density equation has the formal Dean form~\cite{Dean1996}
+\begin{equation}
+    \begin{aligned}
+        \partial_t\rho={}&\nabla^2[\rho D(P)]
+        -\nabla\cdot\!\left[\sqrt{2\rho D(P)}\,\boldsymbol\Lambda\right],\\
+        P={}&K_{d_c}*\rho ,
+    \end{aligned}
+    \label{eq:qs-dean}
+\end{equation}
+The zero-mean Gaussian vector white noise \(\boldsymbol\Lambda\) has covariance
+\[
+    \langle\Lambda_\alpha(\mathbf r,t)\Lambda_\beta(\mathbf r',t')\rangle
+    =\delta_{\alpha\beta}\delta(\mathbf r-\mathbf r')\delta(t-t').
+\]
+Here \(\alpha,\beta\) index the Cartesian components, \(\delta_{\alpha\beta}\) is the Kronecker delta, and angle brackets denote ensemble averages. Both terms in the density equation are current divergences, so the total particle number \(N\) is conserved.
+
+\subsection*{Derivation of the structure factor}
+
+For smooth fields, we replace \(D(P)\) in the drift and noise amplitude of Eq.~\eqref{eq:qs-dean} by an effective diffusivity. To smooth the threshold, we write the signal at a particle as the slow field \(P\) plus a fast fluctuation \(\zeta\) with probability density \(p_\zeta\). We hold that distribution fixed under weak modulations of \(P\). Averaging the switch gives
+\begin{equation}
+    D_{\mathrm{eff}}(P)
+    = D_m+(D_M-D_m)\Pr(\zeta>P_{\mathrm{th}}-P).
+    \label{eq:qs-slope}
+\end{equation}
+Here \(\Pr\) denotes probability with respect to the density \(p_\zeta\).
+
+The homogeneous background has density \(\rho_0=N/L^2\) and perception \(\overline P=\rho_0 d_c\). Let \(\overline D=D_{\mathrm{eff}}(\overline P)\) and define the linear response slope \(g=D_{\mathrm{eff}}'(\overline P) = (D_M-D_m)p_\zeta(P_{\mathrm{th}}-\overline P)\), where the prime denotes differentiation with respect to \(P\). For a weak perturbation \(\delta\rho=\rho-\rho_0\), the change in perception is \(\delta P=K_{d_c}*\delta\rho\). To first order the product \(\rho D_{\mathrm{eff}}(P)\) changes by \(\overline D\,\delta\rho+\rho_0 g\,\delta P\). Evaluating the noise amplitude at the homogeneous state then gives
+\begin{equation}
+    \begin{aligned}
+    \partial_t\delta\rho={}&
+    \nabla^2[\overline D\,\delta\rho+\rho_0 g(K_{d_c}*\delta\rho)]\\
+    &-\nabla\cdot\!\left[\sqrt{2\rho_0\overline D}\,\boldsymbol\Lambda\right].
+    \end{aligned}
+    \label{eq:qs-linear}
+\end{equation}
+The first term inside the Laplacian is ordinary diffusion. The second comes from the response of diffusivity to the sensed density. Their relative strengths therefore depend on the Fourier transform of the sensing kernel.
+
+Let \(\Omega=[-L/2,L/2)^2\) be the centered periodic cell and \(\mathbf q=2\pi\mathbf n/L\) a nonzero wavevector, with \(\mathbf n\) an integer pair and \(q=|\mathbf q|\). The Fourier amplitude is \(\delta\rho_{\mathbf q} = L^{-1}\int_\Omega e^{-i\mathbf q\cdot\mathbf r} \delta\rho(\mathbf r,t)\,\mathrm{d}^2r\). The radial sensing kernel has Fourier transform
+\[
+    \widehat K_{d_c}(q)
+    =\int_\Omega K_{d_c}(|\mathbf r|)
+        e^{-i\mathbf q\cdot\mathbf r}\,\mathrm{d}^2r .
+\]
+The support of the kernel lies within \(\Omega\) because \(d_c<L/2\). With the same Fourier normalization for \(\delta P_{\mathbf q}\), convolution gives \(\delta P_{\mathbf q}=\widehat K_{d_c}(q)\delta\rho_{\mathbf q}\), so Eq.~\eqref{eq:qs-linear} becomes
+\begin{equation}
+    \begin{aligned}
+    \partial_t\delta\rho_{\mathbf q}
+    &=-\lambda(q)\delta\rho_{\mathbf q}+\eta_{\mathbf q},\\
+    \lambda(q)&=q^2[\overline D+\rho_0 g\widehat K_{d_c}(q)] .
+    \end{aligned}
+    \label{eq:qs-modes}
+\end{equation}
+Here \(\lambda(q)\) is the mode relaxation rate and \(\eta_{\mathbf q}\) is the Fourier amplitude of the conserved noise in Eq.~\eqref{eq:qs-linear}. Its covariance is
+\begin{equation}
+ \langle\eta_{\mathbf q}(t)\eta_{\mathbf q'}^*(t')\rangle
+ =2\rho_0\overline D q^2\,\delta_{\mathbf q,\mathbf q'}\delta(t-t').
+ \label{eq:qs-noise}
+\end{equation}
+The superscript \(*\) denotes complex conjugation and \(\delta_{\mathbf q,\mathbf q'}\) is the Kronecker delta on wavevectors. Each mode in Eq.~\eqref{eq:qs-modes} is an Ornstein--Uhlenbeck process. Applying It\^{o}'s product rule to \(|\delta\rho_{\mathbf q}|^2\) gives the scalar Lyapunov equation for \(C(q,t)=\langle|\delta\rho_{\mathbf q}(t)|^2\rangle\)
+\[
+ \partial_t C(q,t)=-2\lambda(q)C(q,t)+2\rho_0\overline Dq^2 .
+\]
+For \(\lambda(q)>0\), setting \(\partial_t C=0\) gives the stationary variance \(C(q)=\rho_0\overline Dq^2/\lambda(q)\). For \(\mathbf q\ne 0\), the uniform background contributes nothing to the Fourier amplitude. The total static structure factor \(S_{\mathrm{tot}}(q)\) is
+\[
+ S_{\mathrm{tot}}(q)=\frac{1}{N}
+ \left\langle\left|\sum_j e^{-i\mathbf q\cdot\mathbf r_j}\right|^2
+ \right\rangle=\frac{C(q)}{\rho_0}
+\]
+Substitution of the stationary variance yields
+\begin{equation}
+ S_{\mathrm{tot}}(q)=
+ \frac{\overline D}{\overline D+\rho_0g\widehat K_{d_c}(q)} .
+ \label{eq:qs-spectrum}
+\end{equation}
+For independent Brownian particles with constant diffusivity, \(g=0\) and \(\lambda(q)=\overline Dq^2\). The stationary Lyapunov equation then gives \(C(q)=\rho_0\), hence \(S_{\mathrm{tot}}(q)=1\) for all nonzero modes. In the particle definition, the \(N\) self terms each contribute one and the cross terms average to zero for independent uniform positions. This recovers the ideal-gas normalization.
+When \(g\ne0\), the sensing kernel modifies the relaxation rate, while the linearized noise retains its \(q^2\) power.
+
+\subsection*{Linear scaling at the switching threshold}
+
+The angular average of the Fourier phase gives \(J_0(qr)\), the Bessel function of order zero. The radial measure cancels the \(1/r\) factor in Eq.~\eqref{eq:qs-kernel}, leaving
+\begin{equation}
+ \widehat K_{d_c}(q)=\int_0^{d_c}J_0(qr)\,\mathrm{d}r
+   =\frac{1}{q}\int_0^{qd_c}J_0(u)\,\mathrm{d}u .
+ \label{eq:qs-bessel}
+\end{equation}
+With \(u=qr\), the integral over \(u\) tends for \(qd_c\gg1\) to \(\int_0^\infty J_0(u)\,\mathrm{d}u=1\), giving \(\widehat K_{d_c}(q)\sim q^{-1}\). We use this result for wavelengths that remain within the continuum regime.
+
+In the point-particle approximation, the homogeneous signal is \(\overline P=\rho_0 d_c\). Thus \(d_c=L_p\) places \(\overline P\) at \(P_{\mathrm{th}}\). The microscopic step is discontinuous. In the smoothed response of Eq.~\eqref{eq:qs-slope}, threshold matching gives \(g=(D_M-D_m)p_\zeta(0)\), which can be large if the fast signal fluctuations are narrowly distributed about zero. For example, for \(p_\zeta(z)=\epsilon^{-1}p_0(z/\epsilon)\), with \(p_0\) a fixed probability density peaked at zero and \(\epsilon\) the width scale, \(g=(D_M-D_m)p_0(0)/\epsilon\). The linearization assumes that \(\delta P\) is small on this width scale.
+
+For \(g>0\), define \(q_*=\rho_0g/\overline D\), where sensing and ordinary diffusion are comparable in the \(1/q\) kernel approximation. At \(d_c=L_p\), a separated linear regime requires \(\rho_0 g L_p/\overline D\gg1\) and accessible continuum modes in the band \(L_p^{-1}\ll q\ll q_*\). In that band the sensing term dominates the relaxation rate, giving
+\begin{equation}
+ \lambda(q)\sim \rho_0gq,\qquad
+ S_{\mathrm{tot}}(q)\sim \frac{\overline D}{\rho_0g}\,q .
+ \label{eq:qs-scaling}
+\end{equation}
+At threshold matching, the theory thus gives \(S_{\mathrm{tot}}(q)\sim q\) in this band. The conserved noise injects fluctuations with power \(q^2\), while the sensing term makes them decay at a rate linear in \(q\).
+
+At fixed finite \(d_c\), modes with \(qd_c\ll1\) probe the integrated kernel. In this limit \(\widehat K_{d_c}(q)\to d_c\), and Eq.~\eqref{eq:qs-spectrum} approaches the plateau \(\overline D/[\overline D+\rho_0g d_c]\). This plateau is the \(q\to0\) limit of the linear theory at fixed \(d_c\) and finite \(g\). The prediction for Fig.~2 concerns the scaling band above it.
+
+% Standalone reference. When merging, use the corresponding bibliography key.
+\begin{thebibliography}{1}
+\bibitem{Dean1996}
+D.~S. Dean, Langevin equation for the density of a system of interacting Langevin processes, J. Phys. A: Math. Gen. \textbf{29}, L613--L617 (1996).
+\end{thebibliography}
+
+\end{document}

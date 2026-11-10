@@ -1,0 +1,44 @@
+\documentclass[aps,prl,reprint,letterpaper,nobalancelastpage]{revtex4-2}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\emph{Continuum theory.} Applying It\^{o}'s formula to the empirical number density \(\rho(\mathbf r,t)\) gives a diffusive drift and a Brownian current in the point-particle approximation (see Supplementary Material). To coarse-grain the diffusivity switch, we write the sensed signal as a slow field \(P\) plus a fast fluctuation \(\zeta\) of probability density \(p_\zeta\). Holding \(p_\zeta\) fixed under weak modulations of \(P\), we average the switch to obtain
+\begin{equation}
+ D_{\mathrm{eff}}(P)
+ =D_m+(D_M-D_m)\Pr(\zeta>P_{\mathrm{th}}-P),
+ \label{eq:qs-main-effective}
+\end{equation}
+where \(\Pr\) denotes probability over \(\zeta\). The resulting Dean-type equation is
+\begin{equation}
+    \begin{aligned}
+        \partial_t\rho={}&\nabla^2[\rho D_{\mathrm{eff}}(P)]-\nabla\cdot\!\left[\sqrt{2\rho D_{\mathrm{eff}}(P)}\,\boldsymbol\Lambda\right],\\
+        \qquad P={}&K_{d_c}*\rho ,
+    \end{aligned}
+    \label{eq:qs-main-continuum}
+\end{equation}
+Here \(\boldsymbol\Lambda\) is zero-mean Gaussian vector white noise of unit covariance, and \(*\) denotes spatial convolution. The kernel is \(K_{d_c}(r)=1/(2\pi r)\) for \(0<r<d_c\) and zero outside, where \(r\) is the separation. Both terms are divergences and conserve particle number.
+
+\emph{Relaxation and static fluctuations.} We linearize Eq.~\eqref{eq:qs-main-continuum} about the homogeneous state, where the mean sensed signal is \(\overline P=\rho_0d_c\). Let \(\overline D=D_{\mathrm{eff}}(\overline P)\) and \(g=D_{\mathrm{eff}}'(\overline P)\), with the prime denoting differentiation with respect to \(P\). The relaxation rate of a Fourier mode at \(q\) is
+\begin{equation}
+ \lambda(q)=q^2[\overline D+\rho_0g\widehat K_{d_c}(q)],
+ \label{eq:qs-main-relaxation}
+\end{equation}
+where \(\widehat K_{d_c}\) is the Fourier transform of the sensing kernel. Ordinary diffusion and sensing both contribute to this rate. The conserved noise supplies power \(2\rho_0\overline Dq^2\). For a stable nonzero mode (\(\lambda(q)>0\)), the scalar Lyapunov equation gives the stationary variance. Dividing by \(\rho_0\) gives the total static structure factor
+\begin{equation}
+ S_{\mathrm{tot}}(q)=
+ \frac{\overline D}{\overline D+\rho_0g\widehat K_{d_c}(q)} .
+ \label{eq:qs-main-spectrum}
+\end{equation}
+The constant-diffusivity limit \(g=0\) recovers \(S_{\mathrm{tot}}(q)=1\) for independent Brownian particles.
+
+\emph{Linear spectrum at threshold matching.} At \(d_c=L_p\), \(\overline P=P_{\mathrm{th}}\), and Eq.~\eqref{eq:qs-main-effective} gives \(g=(D_M-D_m)p_\zeta(0)\). A narrow distribution peaked at zero can give a steep positive response. For \(qL_p\gg1\), the truncated \(1/r\) kernel has \(\widehat K_{d_c}(q)\sim 1/q\). Where sensing dominates diffusion, the relaxation rate is then proportional to \(q\), while the noise power remains proportional to \(q^2\). This balance predicts a linear regime of the form observed in Fig.~2,
+\begin{equation}
+ S_{\mathrm{tot}}(q)\sim\frac{\overline D}{\rho_0g}\,q,
+ \qquad L_p^{-1}\ll q\ll\frac{\rho_0g}{\overline D}.
+ \label{eq:qs-main-linear}
+\end{equation}
+A separated scaling band requires \(\rho_0gL_p/\overline D\gg1\) within the continuum regime. For \(qL_p\ll1\), the kernel tends to \(L_p\), and Eq.~\eqref{eq:qs-main-spectrum} approaches the nonzero plateau \(\overline D/(\overline D+\rho_0gL_p)\).
+
+\end{document}

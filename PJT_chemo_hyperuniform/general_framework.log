@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.26)  28 OCT 2026 08:31
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.26)  9 NOV 2026 09:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -815,8 +815,14 @@ File: figs/feifeimodel_simulation.pdf Graphic file (type pdf)
 [15]
 
 [16]
+File: notes_sensing_comparison/density_scan_loglog_scaling.pdf Graphic file (type pdf)
+<use notes_sensing_comparison/density_scan_loglog_scaling.pdf>
+
 
 [17]
+File: notes_sensing_comparison/six_final_snapshots.pdf Graphic file (type pdf)
+<use notes_sensing_comparison/six_final_snapshots.pdf>
+
 
 [18]
 
@@ -826,25 +832,33 @@ File: figs/feifeimodel_simulation.pdf Graphic file (type pdf)
 
 [21]
 
-[22] (./general_framework.bbl
+[22]
 
-[23])
+[23]
 
-[24] (./general_framework.aux)
+[24]
+
+[25]
+
+[26] (./general_framework.bbl
+
+[27])
+
+[28] (./general_framework.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `general_framework.out' has not changed.
-(rerunfilecheck)             Checksum: 27C0D9FDD19303F017CDAF3EB88D2B93;7578.
+(rerunfilecheck)             Checksum: F5B4114C39DA59F31A5B4D631F141B28;9391.
  ) 
 Here is how much of TeX's memory you used:
- 26775 strings out of 473832
- 509442 string characters out of 5733157
- 915354 words of memory out of 5000000
- 49384 multiletter control sequences out of 15000+600000
+ 26817 strings out of 473832
+ 510895 string characters out of 5733157
+ 919986 words of memory out of 5000000
+ 49423 multiletter control sequences out of 15000+600000
  577413 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,14n,101p,807b,676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on general_framework.pdf (24 pages).
+Output written on general_framework.pdf (28 pages).

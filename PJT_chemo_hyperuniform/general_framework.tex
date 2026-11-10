@@ -846,6 +846,183 @@ If these fast fluctuations can be eliminated into a local instantaneous constitu
 % \end{keybox}
 
 
+\section{Example: Brownian particles with equal-weight disk sensing}
+\label{sec:wuDiskSensing}
+
+\subsection{Particle model and sensing kernel}
+
+Consider the circular sensing geometry of Wu et al.~\cite{Wu2026NonlocalSensing}. Let $N$ point particles move on a periodic square of area $V=L^2$, with $R<L/2$ so that the sensing disk is represented without distortion by the minimum-image convention. In the dimensionless units of the particle model, the equations are
+\begin{align}
+    \mathrm d\mathbf r_i&=\sqrt{2D(P_i)}\,\mathrm d\mathbf W_i,
+    & D(P)&=\chi+(P-1)^2, \qquad \chi=0.002,\\
+    P_i&=\sum_{j=1}^N W_R(\mathbf r_i-\mathbf r_j)
+        =\frac{n_i}{\pi R^2},
+    & W_R(\mathbf r)&=\frac{\Theta(R-|\mathbf r|)}{\pi R^2}.
+    \label{eq:wuParticle}
+\end{align}
+Here $\mathbf W_i$ are independent standard two-dimensional Wiener processes, and $n_i$ includes the sensing particle. The disk kernel has unit integral. As in Supplemental Material Sec.~S1 of Ref.~\cite{Wu2026NonlocalSensing}, the particle update is It\^{o}:
+\begin{equation}
+    \mathbf r_i(t+\Delta t)
+    =\mathbf r_i(t)+\sqrt{2D(P_i(t))\Delta t}\,\boldsymbol\zeta_i(t)
+    \pmod L.
+    \label{eq:wuEulerMaruyama}
+\end{equation}
+The components of $\boldsymbol\zeta_i$ are independent standard normal variables at each step. All perceptions are evaluated from the pre-update configuration. A particle in a region of higher perceived density becomes more mobile when $P_i>1$, since $D'(P_i)=2(P_i-1)>0$ on this branch.
+
+\subsection{Stochastic continuum equation and linear-noise approximation}
+
+Define the empirical density $\rho_{\mathrm m}(\mathbf r,t)=\sum_i\delta(\mathbf r-\mathbf r_i(t))$ and the perception field $P_{\mathrm m}=W_R*\rho_{\mathrm m}$. At each particle position $P_{\mathrm m}(\mathbf r_i,t)=P_i(t)$, with the self contribution $W_R(\mathbf 0)=1/(\pi R^2)$ included. For a smooth periodic test function $f$, It\^{o}'s formula gives
+\begin{equation}
+    \mathrm d\langle\rho_{\mathrm m},f\rangle
+    =\sum_i D(P_i)\nabla^2 f(\mathbf r_i)\,\mathrm dt+\mathrm dM_f,
+    \qquad
+    \mathrm dM_f=\sum_i\sqrt{2D(P_i)}\nabla f(\mathbf r_i)\cdot\mathrm d\mathbf W_i,
+    \label{eq:wuItoWeak}
+\end{equation}
+where $\langle\rho_{\mathrm m},f\rangle=\int_V\rho_{\mathrm m}f\,\mathrm d^2r$. Independence of the particle increments gives the conditional quadratic covariation for any two real test functions $f,h$:
+\begin{align}
+    \mathrm d[M_f,M_h]_t
+    &=2\sum_i D(P_i)\nabla f(\mathbf r_i)\cdot\nabla h(\mathbf r_i)\,\mathrm dt\\
+    &=2\int_V\rho_{\mathrm m}D(P_{\mathrm m})\nabla f\cdot\nabla h\,\mathrm d^2r\,\mathrm dt.
+    \label{eq:wuWeakNoise}
+\end{align}
+Integrating the drift by parts and matching Eq.~\eqref{eq:wuWeakNoise} yields the formal Dean equation \cite{David_S_Dean_1996,Wu2026NonlocalSensing}. In smooth-density notation it is
+\begin{equation}
+    \partial_t\rho=\nabla^2[\rho D(P)]
+    -\nabla\cdot[\sqrt{2\rho D(P)}\,\boldsymbol\Lambda],
+    \qquad P=W_R*\rho,
+    \label{eq:wuDean}
+\end{equation}
+where $\boldsymbol\Lambda$ is a vector white noise with unit covariance as in Sec.~\ref{sec:generalFramework}. The microscopic equation is understood through the weak form above. The Laplacian acts on the whole product $\rho D(P)$, generating the linear density feedback through $\rho\nabla D(P)$ in the flux. Both terms in Eq.~\eqref{eq:wuDean} preserve total particle number. The fourth-order term $-\kappa\nabla^4\rho$ in the paper's deterministic continuum model is a separate regularization and is absent from the particle update considered here.
+
+For the smooth homogeneous reference, $\rho_0=N/V$ and $P_0=\rho_0$ by normalization of $W_R$. This replacement of the empirical field omits the conditional sampling of perception at a particle position, including the explicit self contribution. For example, in an independent uniform configuration at fixed $N$, the mean disk count seen by a tagged particle is $1+(N-1)\pi R^2/V$, giving mean perception $\rho_0+1/(\pi R^2)-1/V$. In the interacting process the other particles' conditional distribution also affects the background. The coefficients below use the smooth reference $P_0=\rho_0$.
+
+Write $\rho=\rho_0+\delta\rho$ and $P=\rho_0+\delta P$, with $\delta P=W_R*\delta\rho$. Set
+\begin{equation}
+    \bar D=D(\rho_0)=\chi+(\rho_0-1)^2,
+    \qquad g=D'(\rho_0)=2(\rho_0-1).
+    \label{eq:wuLinearCoefficients}
+\end{equation}
+The product in Eq.~\eqref{eq:wuDean} expands as
+\begin{equation}
+    \rho D(P)=\rho_0\bar D+\bar D\,\delta\rho+\rho_0g\,\delta P
+       +O\bigl((|\delta\rho|+|\delta P|)^2\bigr).
+\end{equation}
+In the linear-noise expansion of Appendix~\ref{appendix:linearNoiseExpansion}, the correction to the noise amplitude multiplies an already first-order noise term. Keeping the leading drift and noise gives
+\begin{equation}
+    \partial_t\delta\rho
+    =\nabla^2[\bar D\,\delta\rho+\rho_0g(W_R*\delta\rho)]
+       -\sqrt{2\rho_0\bar D}\,\nabla\cdot\boldsymbol\Lambda .
+    \label{eq:wuLinearSPDE}
+\end{equation}
+Perception is an instantaneous functional of density, so this is a one-field application of the general framework.
+
+\subsection{Fourier kernel and linear stability}
+
+For $k=|\mathbf k|$ the convolution multiplier is real and depends only on $kR$. Angular integration gives $2\pi J_0(kr)$, and the identity $(uJ_1(u))'=uJ_0(u)$ gives the radial integral:
+\begin{align}
+    \widehat W_R(k)
+    &=\int_{|\mathbf r|<R}W_R(\mathbf r)\mathrm e^{-\mathrm i\mathbf k\cdot\mathbf r}\,\mathrm d^2r\\
+    &=\frac{2}{R^2}\int_0^R rJ_0(kr)\,\mathrm dr
+      =\frac{2J_1(kR)}{kR}.
+    \label{eq:wuFourierKernel}
+\end{align}
+At $k=0$ the multiplier is defined by continuity as $1$. Under the volume-normalized Fourier convention of Sec.~\ref{sec:generalFramework}, Eq.~\eqref{eq:wuLinearSPDE} becomes
+\begin{align}
+    \partial_t\delta\rho_{\mathbf k}&=-\lambda(k)\delta\rho_{\mathbf k}+\eta_{\mathbf k},
+    & \lambda(k)&=k^2[\bar D+\rho_0g\widehat W_R(k)],\\
+    \eta_{\mathbf k}&=-\mathrm i\sqrt{2\rho_0\bar D}\,\mathbf k\cdot\boldsymbol\Lambda_{\mathbf k},
+    & Q(k)&=2\rho_0\bar D k^2.
+    \label{eq:wuOU}
+\end{align}
+Here $\langle\eta_{\mathbf k}(t)\eta_{\mathbf k'}^*(t')\rangle
+=Q(k)\delta_{\mathbf k,\mathbf k'}\delta(t-t')$. The deterministic generator in Eq.~\eqref{eq:gfOU} is the scalar $A(k)=-\lambda(k)$.
+
+Define $B=\rho_0g/\bar D$ and $F(x)=2J_1(x)/x$. An attracting stationary covariance requires $1+BF(kR)>0$ for every nonzero mode under consideration. For $g>0$, $F$ is positive at small $kR$, but the sharp disk boundary generates negative lobes at finite $kR$. In particular, $F'(x)=-2J_2(x)/x$ and the first negative minimum is at $x_{\min}\simeq5.136$. It is the global minimum: $F$ satisfies $F''+3F'/x+F=0$, so $(F^2+(F')^2)'=-6(F')^2/x\leq0$ and the magnitudes at successive extrema decrease. Using $F(x_{\min})\simeq-0.13228$ gives the stability condition for the full continuous band on the increasing branch:
+\begin{equation}
+    0<B<B_{\mathrm c},\qquad B_{\mathrm c}=-\frac{1}{F(x_{\min})}\simeq7.56.
+    \label{eq:wuStability}
+\end{equation}
+At $B=B_{\mathrm c}$ the minimum becomes marginal, and for $B>B_{\mathrm c}$ modes near $k=x_{\min}/R$ grow. For a finite box the condition is tested on $\mathbf k=2\pi\mathbf m/L$ with $\mathbf m\in\mathbb Z^2\setminus\{\mathbf0\}$. For $-1<B<0$, the negative susceptibility $g<0$ weakens long-wavelength relaxation while preserving stability. For $B<-1$ the long-wavelength growth rate is positive. In the regularized deterministic model of Ref.~\cite{Wu2026NonlocalSensing}, $\kappa>0$ adds $\kappa k^4$ to $\lambda(k)$ and shifts the finite-wavelength threshold. Its contribution to $\lambda(k)/k^2$ vanishes as $k\to0$.
+
+\subsection{Stationary structure factor and the long-wavelength limit}
+
+For each stable nonzero mode, the scalar Lyapunov equation \eqref{eq:gfLyapunov} gives
+\begin{equation}
+    -2\lambda(k)C_{\rho\rho}(k)+2\rho_0\bar D k^2=0.
+\end{equation}
+Dividing the stationary covariance by $\rho_0$ as in Eq.~\eqref{eq:gfStructure} yields
+\begin{equation}
+    \boxed{S_{\mathrm{lin}}(k)=\frac{\bar D k^2}{\lambda(k)}
+    =\frac{\bar D}{\bar D+\rho_0g\widehat W_R(k)}
+    =\frac{1}{1+BF(kR)}.}
+    \label{eq:wuStructureFactor}
+\end{equation}
+At $g=0$ the linear spectrum is the uncorrelated baseline $S_{\mathrm{lin}}=1$. When $g>0$ the positive lobe of the disk transform strengthens density relaxation, giving $S_{\mathrm{lin}}<1$ there. Stable modes in the negative lobes instead have $S_{\mathrm{lin}}>1$. Equation~\eqref{eq:wuStructureFactor} is the stationary spectrum of the linear Gaussian closure.
+
+For $x=kR\ll1$, the Bessel series gives $F(x)=1-x^2/8+x^4/192+O(x^6)$. For $1+B>0$ this implies
+\begin{align}
+    \lambda(k)&=\bar D(1+B)k^2+O(k^4),\\
+    S_{\mathrm{lin}}(k)
+    &=\frac{1}{1+B}
+      \left[1+\frac{B}{8(1+B)}(kR)^2+O((kR)^4)\right].
+    \label{eq:wuPlateau}
+\end{align}
+Both the conserved noise power and the relaxation rate are proportional to $k^2$, so their ratio tends to a finite positive value. At fixed $R$, $\chi$, and $\rho_0$ on the stable increasing branch, the thermodynamic limit through nonzero modes therefore gives $0<S_{\mathrm{lin}}(0^+)<1$. The mode at exactly $k=0$ is fixed by number conservation. For $B>0$ the local logarithmic slope of Eq.~\eqref{eq:wuStructureFactor} is
+\begin{equation}
+    \frac{\mathrm d\log S_{\mathrm{lin}}}{\mathrm d\log k}
+    =-\frac{BxF'(x)}{1+BF(x)}
+    =\frac{2B J_2(x)}{1+BF(x)}, \qquad x=kR.
+    \label{eq:wuLogSlope}
+\end{equation}
+This slope can be appreciable across the sensing-scale crossover and vanishes as $O((kR)^2)$ on approach to the plateau.
+
+\subsection{Comparison with particle simulations}
+
+The comparison runs use Eq.~\eqref{eq:wuEulerMaruyama} with $R=5$, $\Delta t=0.05$, $L=40$ or $80$, and $\rho_0=1.6,2,3$. Equation~\eqref{eq:wuLinearCoefficients} gives $B\simeq5.30,3.99,3.00$, respectively, all below the threshold in Eq.~\eqref{eq:wuStability}. The predicted plateaus are $0.159$, $0.200$, and $0.250$. For each saved configuration the microscopic estimator is
+\begin{equation}
+    S(\mathbf k,t)=\frac{1}{N}
+    \left|\sum_{j=1}^N\mathrm e^{-\mathrm i\mathbf k\cdot\mathbf r_j(t)}\right|^2,
+    \qquad \mathbf k\ne\mathbf0.
+\end{equation}
+Modes of equal magnitude are averaged within each shell, and the shell values are averaged over the saved configurations with $500<t\leq1500$. There is one trajectory per parameter set. The error bars are standard errors across six time blocks within each trajectory, so they quantify within-run variability.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.77\linewidth]{notes_sensing_comparison/density_scan_loglog_scaling.pdf}
+    \caption{Structure factor for equal-weight disk sensing. Circles and squares show the shell averages for $L=40$ and $L=80$, respectively. Dot--dash curves show Eq.~\eqref{eq:wuStructureFactor} without fitted parameters. The dotted line is the uncorrelated baseline $S=1$.}
+    \label{fig:wuDiskStructureFactor}
+\end{figure}
+
+For $L=80$, the first shell has $k_{\min}=2\pi/L$ and $k_{\min}R\simeq0.393$. Table~\ref{tab:wuFirstShell} compares the measured values at that shell with the two linear predictions, at $k_{\min}$ and at the limiting plateau. The fitted slopes come from a linear regression of $\log S$ on $\log k$ over $0.5\leq k\leq1$ ($2.5\leq kR\leq5$), across the crossover in Fig.~\ref{fig:wuDiskStructureFactor}. The two box sizes broadly agree where their spectra overlap. The two system sizes at fixed $R$ give only a limited test of the thermodynamic limit of the particle process.
+
+\begin{table}[htbp]
+    \centering
+    \caption{First-shell structure factors and finite-interval slopes for $L=80$. Errors are time-block standard errors.}
+    \label{tab:wuFirstShell}
+    \begin{tabular}{ccccc}
+        \hline
+        $\rho_0$ & $S_{\mathrm{lin}}(0^+)$ & $S_{\mathrm{lin}}(k_{\min})$ &
+        Measured $S(k_{\min})$ & Fitted slope\\
+        \hline
+        $1.6$ & $0.159$ & $0.161$ & $0.187\pm0.021$ & $3.61$\\
+        $2$   & $0.200$ & $0.203$ & $0.235\pm0.045$ & $2.76$\\
+        $3$   & $0.250$ & $0.254$ & $0.268\pm0.014$ & $1.89$\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\linewidth]{notes_sensing_comparison/six_final_snapshots.pdf}
+    \caption{Particle configurations at $t=1500$ for the six runs in Fig.~\ref{fig:wuDiskStructureFactor}. Columns show $\rho_0=1.6,2,3$ and rows show $L=40,80$. Each panel shows the full periodic square.}
+    \label{fig:wuDiskSnapshots}
+\end{figure}
+
+\begin{keybox}[Long-wavelength suppression for equal-weight sensing]
+A finite normalized sensing disk with a positive diffusivity response can suppress long-wavelength density fluctuations in a stable homogeneous state. The linear-noise theory predicts the positive plateau $S_{\mathrm{lin}}(0^+)=(1+B)^{-1}$, whereas hyperuniformity requires $S(0^+)=0$. The particle runs show suppression below the uncorrelated baseline over the sampled long wavelengths. Their finite-interval slopes describe the sensing-scale crossover and provide no asymptotic exponent for the nonlinear particle process.
+\end{keybox}
+
 \section{Appendix}
 
 \subsection{Derivation of the linear-noise approximation}

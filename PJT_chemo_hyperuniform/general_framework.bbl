@@ -2,8 +2,10 @@
 
 \bibitem{David_S_Dean_1996}
 David~S Dean.
-\newblock Langevin equation for the density of a system of interacting {Langevin} processes.
-\newblock {\em Journal of Physics A: Mathematical and General}, 29(24):L613, dec 1996.
+\newblock Langevin equation for the density of a system of interacting
+  {Langevin} processes.
+\newblock {\em Journal of Physics A: Mathematical and General}, 29(24):L613,
+  dec 1996.
 
 \bibitem{KELLER1971225}
 Evelyn~F. Keller and Lee~A. Segel.
@@ -17,7 +19,8 @@ Evelyn~F. Keller and Lee~A. Segel.
 
 \bibitem{Wu2026NonlocalSensing}
 Benchang Wu, Ziluo Zhang, Shutong Guo, Hepeng Zhang, and Zhihong You.
-\newblock Nonlocal sensing drives hybrid phase separation in brownian matter, 2026.
+\newblock Nonlocal sensing drives hybrid phase separation in brownian matter,
+  2026.
 \newblock Version 1; Supplemental Material, Secs. S1--S2.
 
 \end{thebibliography}
